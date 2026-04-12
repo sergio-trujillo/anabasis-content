@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-climbing-stairs",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: number of ways to climb a staircase (1 or 2 steps)",
+    "es": "cross-canonical: número de formas de subir una escalera (1 o 2 pasos)"
+  },
+  "prompt": {
+    "en": "Count the number of distinct ways to climb n stairs, taking either 1 or 2 steps at a time. Which canonical pattern applies?",
+    "es": "Cuenta el número de formas distintas de subir n escalones, tomando 1 o 2 pasos a la vez. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "binary-search — binary-search the answer space [1, 2^n]; for each candidate, count paths via simulation", "es": "binary-search — buscar binariamente el espacio de respuesta [1, 2^n]; para cada candidato, contar caminos via simulación" } },
+    { "id": "b", "label": { "en": "greedy-interval-scheduling — greedily take 2-step jumps and fill remainder with 1-step jumps", "es": "greedy-interval-scheduling — tomar codiciosamente saltos de 2 pasos y llenar el resto con saltos de 1 paso" } },
+    { "id": "c", "label": { "en": "sliding-window — maintain a window of the last two stair counts and extend the window to stair n", "es": "sliding-window — mantener una ventana de los últimos dos conteos de escalones y extender la ventana hasta el escalón n" } },
+    { "id": "d", "label": { "en": "dp-1d — dp[i] = dp[i-1] + dp[i-2]; the number of ways to reach stair i equals ways from i-1 (1 step) plus ways from i-2 (2 steps)", "es": "dp-1d — dp[i] = dp[i-1] + dp[i-2]; el número de formas de llegar al escalón i es igual a formas desde i-1 (1 paso) más formas desde i-2 (2 pasos)" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "Climbing stairs is the textbook 1D DP (Fibonacci-style): to reach stair i, you came from stair i-1 (1-step) or stair i-2 (2-step), so dp[i] = dp[i-1] + dp[i-2]. Base cases: dp[1] = 1, dp[2] = 2. Option C (sliding window) is a near-miss in naming: the space-optimized DP implementation uses two rolling variables (`prev` and `curr`), which superficially resembles a window. But sliding window solves contiguous subarray constraints, not recurrence counting — the correct canonical is dp-1d. Option B (greedy 2-step) gives the number of ways to use the most 2-steps, not the total count of all distinct sequences.",
+    "es": "Subir escaleras es el DP 1D de libro de texto (estilo Fibonacci): para llegar al escalón i, viniste del escalón i-1 (1 paso) o del i-2 (2 pasos), por lo que dp[i] = dp[i-1] + dp[i-2]. Casos base: dp[1] = 1, dp[2] = 2. La opción C (ventana deslizante) es un distractor cercano en nombre: la implementación DP optimizada en espacio usa dos variables rotativas (`prev` y `curr`), lo que se parece superficialmente a una ventana. Pero la ventana deslizante resuelve restricciones de subarreglos contiguos, no conteo de recurrencias — el canónico correcto es dp-1d. La opción B (greedy 2 pasos) da el número de formas de usar la mayor cantidad de 2-pasos, no el conteo total de todas las secuencias distintas."
+  }
+}

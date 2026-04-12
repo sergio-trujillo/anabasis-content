@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-shortest-path-positive-weights",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: shortest path in weighted graph with positive weights",
+    "es": "cross-canonical: camino más corto en grafo ponderado con pesos positivos"
+  },
+  "prompt": {
+    "en": "Given a directed weighted graph where all edge weights are positive, find the shortest path from a single source to all other vertices. Which canonical pattern applies?",
+    "es": "Dado un grafo ponderado dirigido donde todos los pesos de las aristas son positivos, encuentra el camino más corto desde una fuente única a todos los demás vértices. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "BFS — traverse level by level; the number of levels to reach each node is its shortest distance", "es": "BFS — recorrer nivel por nivel; el número de niveles para alcanzar cada nodo es su distancia más corta" } },
+    { "id": "b", "label": { "en": "dp-1d — dp[v] = shortest distance to v; relax edges iteratively until no change", "es": "dp-1d — dp[v] = distancia más corta a v; relajar aristas iterativamente hasta que no haya cambio" } },
+    { "id": "c", "label": { "en": "Dijkstra (graph-shortest-path) — greedy shortest path using a min-heap, valid for all non-negative weights", "es": "Dijkstra (graph-shortest-path) — camino más corto greedy usando un min-heap, válido para todos los pesos no negativos" } },
+    { "id": "d", "label": { "en": "greedy-interval-scheduling — model edges as intervals and select a non-overlapping path with minimum total weight", "es": "greedy-interval-scheduling — modelar aristas como intervalos y seleccionar un camino no superpuesto con peso total mínimo" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "All-positive edge weights → Dijkstra is the canonical and optimal choice: O((V + E) log V) with a binary heap, correct for all non-negative weights, and widely expected in interviews. Option A (BFS) only produces correct shortest paths when all edges have equal weight (unit-weight graphs). Option B describes Bellman-Ford in spirit (repeated edge relaxation), which also works but at O(V × E) — significantly slower and not the expected answer for a positive-weight graph.",
+    "es": "Pesos de aristas todos positivos → Dijkstra es la elección canónica y óptima: O((V + E) log V) con un heap binario, correcto para todos los pesos no negativos, y ampliamente esperado en entrevistas. La opción A (BFS) solo produce caminos más cortos correctos cuando todas las aristas tienen peso igual (grafos de peso unitario). La opción B describe Bellman-Ford en esencia (relajación repetida de aristas), que también funciona pero en O(V × E) — significativamente más lento y no la respuesta esperada para un grafo de pesos positivos."
+  }
+}

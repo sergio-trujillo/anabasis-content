@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-prefix-sum-advanced-edge-case",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "prefix-sum-advanced: edge case — subarray sum equals k with empty subarray",
+    "es": "prefix-sum-advanced: caso límite — suma de subarreglo igual a k con subarreglo vacío"
+  },
+  "prompt": {
+    "en": "The subarray-sum-equals-k algorithm uses a HashMap seeded with {0: 1}. What does this seed represent?",
+    "es": "El algoritmo de suma de subarreglo igual a k usa un HashMap inicializado con {0: 1}. ¿Qué representa este valor inicial?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "A dummy sentinel to prevent NullPointerException on the first HashMap lookup", "es": "Un centinela ficticio para prevenir NullPointerException en la primera búsqueda del HashMap" } },
+    { "id": "b", "label": { "en": "The count of subarrays that start at index 0, initializing the rolling count correctly", "es": "El conteo de subarreglos que comienzan en el índice 0, inicializando correctamente el conteo acumulado" } },
+    { "id": "c", "label": { "en": "The empty prefix (prefix sum = 0) has been seen once, so any subarray starting at index 0 with sum k is counted correctly", "es": "El prefijo vacío (suma de prefijo = 0) se ha visto una vez, por lo que cualquier subarreglo que comience en el índice 0 con suma k se cuenta correctamente" } },
+    { "id": "d", "label": { "en": "It handles the k = 0 edge case specifically, preventing division-by-zero in the formula", "es": "Maneja específicamente el caso límite k = 0, previniendo la división por cero en la fórmula" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The algorithm counts subarrays with sum k using `count += map.getOrDefault(prefixSum - k, 0)`. Without the seed {0: 1}, a subarray starting at index 0 with sum exactly k would never be counted: prefixSum - k = 0, but 0 has not been seen in the map yet. The seed represents the empty prefix — the conceptual prefix sum of zero elements is 0, and it has occurred exactly once before any element is processed. Option B is partially correct in spirit but imprecise: it's not about subarrays starting at 0 specifically, but about the empty prefix sum.",
+    "es": "El algoritmo cuenta subarreglos con suma k usando `count += map.getOrDefault(prefixSum - k, 0)`. Sin el valor inicial {0: 1}, un subarreglo que comience en el índice 0 con suma exactamente k nunca se contaría: prefixSum - k = 0, pero 0 aún no se ha visto en el mapa. El valor inicial representa el prefijo vacío — la suma de prefijo conceptual de cero elementos es 0, y ha ocurrido exactamente una vez antes de procesar cualquier elemento. La opción B es parcialmente correcta en espíritu pero imprecisa: no es específicamente sobre subarreglos que comienzan en 0, sino sobre la suma del prefijo vacío."
+  }
+}

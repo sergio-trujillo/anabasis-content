@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-sliding-window-standalone-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "sliding-window-standalone: Java loop idiom",
+    "es": "sliding-window-standalone: idioma de bucle en Java"
+  },
+  "prompt": {
+    "en": "Which Java skeleton correctly implements a variable-size sliding window tracking the current window size as `right - left + 1`?",
+    "es": "¿Qué esqueleto en Java implementa correctamente una ventana deslizante de tamaño variable rastreando el tamaño actual como `right - left + 1`?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "int left=0; for(int right=0; right<n; right++){ add(arr[right]); while(!valid()) remove(arr[left++]); ans=Math.max(ans, right-left+1); }", "es": "int left=0; for(int right=0; right<n; right++){ add(arr[right]); while(!valid()) remove(arr[left++]); ans=Math.max(ans, right-left+1); }" } },
+    { "id": "b", "label": { "en": "for(int left=0; left<n; left++) for(int right=left; right<n; right++){ if(valid(left,right)) ans=Math.max(ans,right-left+1); }", "es": "for(int left=0; left<n; left++) for(int right=left; right<n; right++){ if(valid(left,right)) ans=Math.max(ans,right-left+1); }" } },
+    { "id": "c", "label": { "en": "int left=n-1; for(int right=n-1; right>=0; right--){ add(arr[right]); while(!valid()) remove(arr[left--]); ans=Math.max(ans,left-right+1); }", "es": "int left=n-1; for(int right=n-1; right>=0; right--){ add(arr[right]); while(!valid()) remove(arr[left--]); ans=Math.max(ans,left-right+1); }" } },
+    { "id": "d", "label": { "en": "int right=0; while(right<n){ if(valid()) { ans=Math.max(ans,right); right++; } else { add(arr[right++]); remove(arr[right-1]); } }", "es": "int right=0; while(right<n){ if(valid()) { ans=Math.max(ans,right); right++; } else { add(arr[right++]); remove(arr[right-1]); }" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is the standard expand-then-shrink template: the right pointer iterates forward, each new element is added to the window state, then the inner while loop shrinks from the left until the window is valid again. The answer is updated after shrinking. Option B is the brute-force O(n²) approach — it checks every subarray pair independently, defeating the purpose of sliding window. Option C scans right-to-left and would compute window size as `left - right + 1`, but the pointer arithmetic is inverted and incorrect.",
+    "es": "La opción A es la plantilla estándar de expandir-luego-contraer: el puntero derecho itera hacia adelante, cada nuevo elemento se agrega al estado de la ventana, luego el bucle while interno contrae desde la izquierda hasta que la ventana sea válida de nuevo. La respuesta se actualiza después de contraer. La opción B es el enfoque de fuerza bruta O(n²) — verifica cada par de subarreglos de forma independiente, anulando el propósito de la ventana deslizante. La opción C escanea de derecha a izquierda y calcularía el tamaño de ventana como `left - right + 1`, pero la aritmética de punteros está invertida e incorrecta."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-graph-shortest-path-edge-case",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "graph-shortest-path: edge case — negative-weight cycle",
+    "es": "graph-shortest-path: caso límite — ciclo de peso negativo"
+  },
+  "prompt": {
+    "en": "A directed graph contains a negative-weight cycle reachable from the source. Which algorithm correctly detects this and which one produces silently wrong results?",
+    "es": "Un grafo dirigido contiene un ciclo de peso negativo alcanzable desde la fuente. ¿Qué algoritmo detecta esto correctamente y cuál produce resultados incorrectos silenciosamente?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Bellman-Ford detects it (a V-th relaxation pass still improves a distance); Dijkstra produces silently wrong results because it never revisits settled nodes", "es": "Bellman-Ford lo detecta (una V-ésima pasada de relajación aún mejora una distancia); Dijkstra produce resultados incorrectos silenciosamente porque nunca revisita nodos asentados" } },
+    { "id": "b", "label": { "en": "BFS detects it by finding a back edge; Dijkstra correctly reports -∞ for nodes on the cycle", "es": "BFS lo detecta al encontrar una arista posterior; Dijkstra reporta correctamente -∞ para los nodos en el ciclo" } },
+    { "id": "c", "label": { "en": "Both Dijkstra and Bellman-Ford loop infinitely on a negative-weight cycle — you must preprocess to remove all negative edges", "es": "Tanto Dijkstra como Bellman-Ford entran en bucle infinito con un ciclo de peso negativo — debes preprocesar para eliminar todas las aristas negativas" } },
+    { "id": "d", "label": { "en": "Topological-sort-based DP detects it because the graph has a cycle and topological sort fails", "es": "El DP basado en ordenamiento topológico lo detecta porque el grafo tiene un ciclo y el ordenamiento topológico falla" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Bellman-Ford runs V-1 relaxation passes for a graph with V vertices. If a V-th pass still reduces any distance, a negative-weight cycle exists. Dijkstra assumes non-negative weights; once a node is 'settled' (extracted from the min-heap), its distance is considered final. With a negative cycle, a settled node's distance could be further reduced, but Dijkstra never re-opens it — so it returns incorrect distances without any warning. Option D is also partially correct (topo-sort fails on cyclic graphs), but topo-sort DP cannot detect negative-weight cycles specifically — it just fails on all cycles.",
+    "es": "Bellman-Ford ejecuta V-1 pasadas de relajación para un grafo con V vértices. Si una V-ésima pasada aún reduce alguna distancia, existe un ciclo de peso negativo. Dijkstra asume pesos no negativos; una vez que un nodo está 'asentado' (extraído del min-heap), su distancia se considera final. Con un ciclo negativo, la distancia de un nodo asentado podría reducirse aún más, pero Dijkstra nunca lo reabre — por lo que devuelve distancias incorrectas sin ninguna advertencia. La opción D también es parcialmente correcta (el ordenamiento topológico falla en grafos cíclicos), pero el DP de ordenamiento topológico no puede detectar específicamente ciclos de peso negativo — simplemente falla en todos los ciclos."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-ship-capacity",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: minimum ship capacity in D days",
+    "es": "cross-canonical: capacidad mínima de barco en D días"
+  },
+  "prompt": {
+    "en": "Packages have weights weights[i]. A ship must deliver all packages in order within D days. Find the minimum ship capacity. Which canonical pattern applies?",
+    "es": "Los paquetes tienen pesos weights[i]. Un barco debe entregar todos los paquetes en orden en D días. Encuentra la capacidad mínima del barco. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "greedy-interval-scheduling — schedule packages into D non-overlapping day-intervals greedily", "es": "greedy-interval-scheduling — programar paquetes en D intervalos de día no superpuestos codiciosamente" } },
+    { "id": "b", "label": { "en": "binary-search — search the answer space [max(weights), sum(weights)]; for each candidate capacity, simulate whether D days suffice", "es": "binary-search — buscar en el espacio de respuesta [max(weights), sum(weights)]; para cada capacidad candidata, simular si D días son suficientes" } },
+    { "id": "c", "label": { "en": "dp-1d — dp[i] = minimum days to ship first i packages; extend by checking if adding package i fits the current day", "es": "dp-1d — dp[i] = mínimo de días para enviar los primeros i paquetes; extender verificando si agregar el paquete i cabe en el día actual" } },
+    { "id": "d", "label": { "en": "sliding-window — maintain a window of packages whose total weight fits the ship; shrink when overloaded", "es": "sliding-window — mantener una ventana de paquetes cuyo peso total cabe en el barco; contraer cuando está sobrecargado" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "This is a classic 'binary search on the answer space' problem. The answer (minimum capacity) is monotone: if capacity C allows delivery in D days, then capacity C+1 also works. Binary-search the range [max(weights), sum(weights)] and for each midpoint capacity, simulate greedily whether delivery fits in D days — O(n) per check, O(n log(sum-max)) overall. Option D (sliding window) is the near-miss: the simulation step inside the check resembles a sliding window scan, but the outer binary search is the essential pattern that cuts the answer space.",
+    "es": "Este es un problema clásico de 'búsqueda binaria en el espacio de respuesta'. La respuesta (capacidad mínima) es monótona: si la capacidad C permite la entrega en D días, entonces la capacidad C+1 también funciona. Busca binariamente en el rango [max(weights), sum(weights)] y para cada capacidad del punto medio, simula codiciosamente si la entrega cabe en D días — O(n) por verificación, O(n log(suma-max)) en total. La opción D (ventana deslizante) es el distractor cercano: el paso de simulación dentro de la verificación se parece a un escaneo de ventana deslizante, pero la búsqueda binaria exterior es el patrón esencial que reduce el espacio de respuesta."
+  }
+}

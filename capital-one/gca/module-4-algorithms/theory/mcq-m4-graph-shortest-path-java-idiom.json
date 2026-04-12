@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-graph-shortest-path-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "graph-shortest-path: Java Dijkstra priority-queue idiom",
+    "es": "graph-shortest-path: idioma de cola de prioridad Dijkstra en Java"
+  },
+  "prompt": {
+    "en": "In a Java Dijkstra implementation using PriorityQueue<int[]>, what does each entry in the queue typically represent and how is it ordered?",
+    "es": "En una implementación de Dijkstra en Java usando PriorityQueue<int[]>, ¿qué representa típicamente cada entrada en la cola y cómo se ordena?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Each entry is {node, distance}; ordered by distance descending (max-heap) to visit farthest nodes first", "es": "Cada entrada es {node, distance}; ordenada por distancia descendente (max-heap) para visitar primero los nodos más lejanos" } },
+    { "id": "b", "label": { "en": "Each entry is {distance, node}; ordered by distance ascending (min-heap) so the smallest known distance is processed first", "es": "Cada entrada es {distance, node}; ordenada por distancia ascendente (min-heap) para procesar primero la menor distancia conocida" } },
+    { "id": "c", "label": { "en": "Each entry is {node, parentNode}; ordered by node index to reconstruct the path in order", "es": "Cada entrada es {node, parentNode}; ordenada por índice de nodo para reconstruir el camino en orden" } },
+    { "id": "d", "label": { "en": "Each entry is {distance, node}; ordered by insertion time (FIFO) to avoid revisiting nodes", "es": "Cada entrada es {distance, node}; ordenada por tiempo de inserción (FIFO) para evitar revisar nodos" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Dijkstra's greedy invariant requires always expanding the node with the smallest current known distance. Java's PriorityQueue is a min-heap by default when the comparator uses ascending order. Entries are typically `{dist, node}` (distance first so the natural array comparison orders by distance). Option A (max-heap) would process the farthest node first, which is the wrong greedy direction. Option D (FIFO) describes a queue (BFS), not a priority queue — BFS cannot handle weighted edges correctly.",
+    "es": "El invariante greedy de Dijkstra requiere expandir siempre el nodo con la menor distancia conocida actualmente. El PriorityQueue de Java es un min-heap por defecto cuando el comparador usa orden ascendente. Las entradas típicamente son `{dist, node}` (distancia primero para que la comparación natural de arreglos ordene por distancia). La opción A (max-heap) procesaría el nodo más lejano primero, que es la dirección greedy incorrecta. La opción D (FIFO) describe una cola (BFS), no una cola de prioridad — BFS no puede manejar aristas ponderadas correctamente."
+  }
+}

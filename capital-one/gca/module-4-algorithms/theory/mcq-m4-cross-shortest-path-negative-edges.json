@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-shortest-path-negative-edges",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: shortest path with some negative-weight edges",
+    "es": "cross-canonical: camino más corto con algunas aristas de peso negativo"
+  },
+  "prompt": {
+    "en": "A directed graph has some edges with negative weights but is guaranteed to have no negative-weight cycle. Find the shortest path from a source to all vertices. Which canonical pattern applies?",
+    "es": "Un grafo dirigido tiene algunas aristas con pesos negativos pero se garantiza que no tiene ciclo de peso negativo. Encuentra el camino más corto desde una fuente a todos los vértices. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Dijkstra — add a constant offset to all edge weights to make them non-negative, then run Dijkstra", "es": "Dijkstra — agregar un desplazamiento constante a todos los pesos de aristas para hacerlos no negativos, luego ejecutar Dijkstra" } },
+    { "id": "b", "label": { "en": "BFS — BFS finds shortest paths regardless of edge weights as long as there are no cycles", "es": "BFS — BFS encuentra caminos más cortos independientemente de los pesos de las aristas siempre que no haya ciclos" } },
+    { "id": "c", "label": { "en": "Bellman-Ford (graph-shortest-path) — run V-1 relaxation passes over all edges; correctly handles negative weights without cycles", "es": "Bellman-Ford (graph-shortest-path) — ejecutar V-1 pasadas de relajación sobre todas las aristas; maneja correctamente pesos negativos sin ciclos" } },
+    { "id": "d", "label": { "en": "greedy-interval-scheduling — negative weights indicate intervals that save time, handled by reversing the sort order", "es": "greedy-interval-scheduling — los pesos negativos indican intervalos que ahorran tiempo, manejados invirtiendo el orden de clasificación" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Bellman-Ford is the correct algorithm when negative-weight edges are present (but no negative-weight cycle). It relaxes all edges V-1 times, which is sufficient because any shortest path in a V-node graph visits at most V-1 edges. Option A (adding a constant offset) is incorrect: adding C to every edge does not preserve path lengths proportionally — a 3-edge path gains 3C while a 1-edge path gains 1C, changing which path is shortest. BFS (Option B) is only valid for unit-weight graphs.",
+    "es": "Bellman-Ford es el algoritmo correcto cuando hay aristas de peso negativo presentes (pero sin ciclo de peso negativo). Relaja todas las aristas V-1 veces, lo cual es suficiente porque cualquier camino más corto en un grafo de V nodos visita como máximo V-1 aristas. La opción A (agregar un desplazamiento constante) es incorrecta: agregar C a cada arista no preserva las longitudes de camino proporcionalmente — un camino de 3 aristas gana 3C mientras que uno de 1 arista gana 1C, cambiando cuál camino es el más corto. BFS (opción B) solo es válido para grafos de peso unitario."
+  }
+}

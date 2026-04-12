@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-binary-search-variants-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "binary-search-variants: time complexity",
+    "es": "binary-search-variants: complejidad temporal"
+  },
+  "prompt": {
+    "en": "Classic binary search repeatedly halves the search range on a sorted array of n elements. What is its time complexity?",
+    "es": "La búsqueda binaria clásica reduce a la mitad el rango de búsqueda repetidamente en un arreglo ordenado de n elementos. ¿Cuál es su complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) — in the worst case every element must be checked", "es": "O(n) — en el peor caso hay que revisar cada elemento" } },
+    { "id": "b", "label": { "en": "O(log n) — the range is halved at each step, giving at most log₂ n comparisons", "es": "O(log n) — el rango se reduce a la mitad en cada paso, dando como máximo log₂ n comparaciones" } },
+    { "id": "c", "label": { "en": "O(√n) — each step eliminates a square-root-sized chunk", "es": "O(√n) — cada paso elimina un bloque del tamaño de la raíz cuadrada" } },
+    { "id": "d", "label": { "en": "O(n log n) — sorting cost dominates even when the array is already sorted", "es": "O(n log n) — el costo de ordenar domina incluso cuando el arreglo ya está ordenado" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Each comparison discards half the remaining search space, so after k steps the range is n/2^k. Setting n/2^k = 1 gives k = log₂ n, hence O(log n). Option A (O(n)) describes linear search, not binary search. Option D (O(n log n)) confuses the search cost with the cost of sorting the array beforehand — binary search itself is O(log n) once the array is sorted.",
+    "es": "Cada comparación descarta la mitad del espacio restante, por lo que tras k pasos el rango es n/2^k. Al igualar n/2^k = 1 se obtiene k = log₂ n, de ahí O(log n). La opción A (O(n)) describe la búsqueda lineal, no la binaria. La opción D (O(n log n)) confunde el costo de búsqueda con el costo de ordenar el arreglo previamente — la búsqueda binaria en sí es O(log n) una vez que el arreglo está ordenado."
+  }
+}

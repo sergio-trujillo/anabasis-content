@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-house-robber",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: maximum money robbing non-adjacent houses",
+    "es": "cross-canonical: dinero máximo robando casas no adyacentes"
+  },
+  "prompt": {
+    "en": "Each house in a row has some money. You cannot rob two adjacent houses. Maximize the total money robbed. Which canonical pattern applies?",
+    "es": "Cada casa en una fila tiene algo de dinero. No puedes robar dos casas adyacentes. Maximiza el total de dinero robado. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "greedy-interval-scheduling — model each house as an interval of width 1 and greedily select non-adjacent ones by end position", "es": "greedy-interval-scheduling — modelar cada casa como un intervalo de ancho 1 y seleccionar codiciosamente los no adyacentes por posición final" } },
+    { "id": "b", "label": { "en": "sliding-window — maintain a window of 2 houses; the running maximum of alternate houses is the answer", "es": "sliding-window — mantener una ventana de 2 casas; el máximo acumulado de casas alternas es la respuesta" } },
+    { "id": "c", "label": { "en": "prefix-sum — compute prefix sums for even and odd indices separately, return the maximum", "es": "prefix-sum — calcular sumas de prefijos para índices pares e impares por separado, retornar el máximo" } },
+    { "id": "d", "label": { "en": "dp-1d — dp[i] = max(dp[i-1], dp[i-2] + nums[i]); at each house decide to rob it (plus best without last two) or skip (keep best up to previous house)", "es": "dp-1d — dp[i] = max(dp[i-1], dp[i-2] + nums[i]); en cada casa decide robarla (más el mejor sin las dos últimas) o saltarla (mantener el mejor hasta la casa anterior)" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "House Robber is the classic dp-1d problem: at each index i, you decide to rob house i (gaining nums[i] plus the best solution from i-2 backwards) or skip it (keeping the best solution from i-1 backwards). The recurrence dp[i] = max(dp[i-1], dp[i-2] + nums[i]) captures this exactly. With space optimization, only two variables are needed (O(1) space). Option A (greedy by end) only maximizes the count of selected houses, not the total value — a greedy counterexample exists: [1, 100, 1] → greedy picks houses 0 and 2 (value 2), but optimal picks house 1 (value 100).",
+    "es": "El Ladrón de Casas es el problema dp-1d clásico: en cada índice i, decides robar la casa i (ganando nums[i] más la mejor solución desde i-2 hacia atrás) o saltarla (conservando la mejor solución desde i-1 hacia atrás). La recurrencia dp[i] = max(dp[i-1], dp[i-2] + nums[i]) captura esto exactamente. Con optimización de espacio, solo se necesitan dos variables (espacio O(1)). La opción A (greedy por fin) solo maximiza el conteo de casas seleccionadas, no el valor total — existe un contraejemplo greedy: [1, 100, 1] → greedy elige casas 0 y 2 (valor 2), pero el óptimo elige la casa 1 (valor 100)."
+  }
+}

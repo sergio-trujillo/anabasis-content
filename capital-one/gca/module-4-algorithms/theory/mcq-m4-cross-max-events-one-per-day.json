@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-max-events-one-per-day",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: maximum events attending one per day",
+    "es": "cross-canonical: máximo de eventos asistiendo uno por día"
+  },
+  "prompt": {
+    "en": "Each event i spans days [startDay_i, endDay_i]. You may attend at most one event per day. Maximize the number of events attended. Which canonical pattern applies?",
+    "es": "Cada evento i abarca días [startDay_i, endDay_i]. Puedes asistir a lo sumo a un evento por día. Maximiza el número de eventos asistidos. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "binary-search — binary-search the maximum events count; for each candidate, check feasibility greedily", "es": "binary-search — buscar binariamente el conteo máximo de eventos; para cada candidato, verificar factibilidad codiciosamente" } },
+    { "id": "b", "label": { "en": "greedy-interval-scheduling — sort events by end day; use a min-heap of end days to always pick the event expiring soonest for the current day", "es": "greedy-interval-scheduling — ordenar eventos por día de fin; usar un min-heap de días de fin para siempre elegir el evento que expira más pronto para el día actual" } },
+    { "id": "c", "label": { "en": "prefix-sum — precompute how many events are available on each day, then greedily pick days with fewest options", "es": "prefix-sum — precomputar cuántos eventos están disponibles cada día, luego elegir codiciosamente los días con menos opciones" } },
+    { "id": "d", "label": { "en": "dp-1d — dp[day] = max events attended by day; extend by checking which events open on that day", "es": "dp-1d — dp[day] = máximo de eventos asistidos hasta ese día; extender verificando qué eventos se abren ese día" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "This is a greedy-interval problem with a min-heap twist: iterate day by day (from earliest start to latest end), add all events that start on or before today to a min-heap keyed by end day, remove expired events (end < today), then greedily attend the event that ends soonest (heap.poll()) — it's the most urgent and yields the most future flexibility. This is the Activity Selection theorem applied at day granularity. Option D (dp-1d) is tempting because day-by-day DP seems natural, but the optimal substructure requires knowing which events were used — a set-based state, not a scalar.",
+    "es": "Este es un problema greedy-interval con un giro de min-heap: iterar día a día (desde el inicio más temprano hasta el fin más tardío), agregar al min-heap (con clave por día de fin) todos los eventos que comienzan en o antes del día de hoy, eliminar los eventos expirados (fin < hoy), luego asistir codiciosamente al evento que termina más pronto (heap.poll()) — es el más urgente y ofrece la mayor flexibilidad futura. Este es el teorema de Selección de Actividades aplicado a granularidad de días. La opción D (dp-1d) es tentadora porque el DP día a día parece natural, pero la subestructura óptima requiere saber qué eventos se usaron — un estado basado en conjuntos, no un escalar."
+  }
+}

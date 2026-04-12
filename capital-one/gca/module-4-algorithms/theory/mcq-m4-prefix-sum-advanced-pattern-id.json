@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-prefix-sum-advanced-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "prefix-sum-advanced: pattern identification",
+    "es": "prefix-sum-advanced: identificación del patrón"
+  },
+  "prompt": {
+    "en": "A problem gives an immutable integer array and asks you to answer thousands of sum queries on arbitrary subarrays. Which canonical pattern is optimal?",
+    "es": "Un problema da un arreglo entero inmutable y te pide responder miles de consultas de suma sobre subarreglos arbitrarios. ¿Qué patrón canónico es óptimo?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sliding-window — maintain a running window sum, repositioning it for each query", "es": "sliding-window — mantener una suma de ventana acumulada, reposicionándola para cada consulta" } },
+    { "id": "b", "label": { "en": "prefix-sum — precompute cumulative sums once, then answer each query in O(1)", "es": "prefix-sum — precomputar sumas acumuladas una vez, luego responder cada consulta en O(1)" } },
+    { "id": "c", "label": { "en": "binary-search — sort the elements and binary-search for the boundary of each query range", "es": "binary-search — ordenar los elementos y buscar binariamente el límite de cada rango de consulta" } },
+    { "id": "d", "label": { "en": "dp-1d — treat each query as a subproblem and memoize overlapping range sums", "es": "dp-1d — tratar cada consulta como un subproblema y memoizar sumas de rangos superpuestos" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When the array is immutable and many range-sum queries must be answered, prefix-sum is the standard optimal solution: O(n) build, O(1) per query, O(n) total space. Sliding window (Option A) cannot serve arbitrary [l, r] queries efficiently — repositioning means rescanning. Option C (binary-search) applies to sorted arrays for value queries, not sum queries on arbitrary ranges. Option D (dp-1d) could technically memoize sums but that is exactly what a prefix-sum array does — the distinction is naming, and prefix-sum is the canonical term.",
+    "es": "Cuando el arreglo es inmutable y se deben responder muchas consultas de suma de rango, prefix-sum es la solución óptima estándar: O(n) de construcción, O(1) por consulta, O(n) espacio total. La ventana deslizante (opción A) no puede servir consultas arbitrarias [l, r] eficientemente — reposicionar significa volver a escanear. La opción C (búsqueda binaria) aplica a arreglos ordenados para consultas de valor, no consultas de suma en rangos arbitrarios. La opción D (dp-1d) podría técnicamente memoizar sumas pero eso es exactamente lo que hace un arreglo de suma de prefijos — la distinción es de nomenclatura, y prefix-sum es el término canónico."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-prefix-sum-advanced-canonical-specific-insight",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "prefix-sum-advanced: HashMap seeding for subarray-sum-equals-k",
+    "es": "prefix-sum-advanced: inicialización del HashMap para suma-de-subarreglo-igual-a-k"
+  },
+  "prompt": {
+    "en": "In the subarray-sum-equals-k algorithm, what is the time complexity of counting all valid subarrays using a prefix-sum HashMap?",
+    "es": "En el algoritmo de suma de subarreglo igual a k, ¿cuál es la complejidad temporal de contar todos los subarreglos válidos usando un HashMap de suma de prefijos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n²) — for each right endpoint you scan all left endpoints", "es": "O(n²) — para cada extremo derecho escaneas todos los extremos izquierdos" } },
+    { "id": "b", "label": { "en": "O(n log n) — the HashMap operations require a sorted key structure", "es": "O(n log n) — las operaciones del HashMap requieren una estructura de claves ordenadas" } },
+    { "id": "c", "label": { "en": "O(n) — a single pass maintains a running prefix sum, and each HashMap lookup/insert is O(1) amortized", "es": "O(n) — un solo recorrido mantiene una suma de prefijo acumulada, y cada búsqueda/inserción del HashMap es O(1) amortizado" } },
+    { "id": "d", "label": { "en": "O(n + k) where k is the target sum value, because the HashMap must allocate k buckets", "es": "O(n + k) donde k es el valor de la suma objetivo, porque el HashMap debe asignar k cubetas" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The algorithm iterates once over the array, maintaining a running prefix sum. At each index i, it looks up `(prefixSum - k)` in the HashMap to count how many previous prefix sums, when subtracted from the current one, yield k — each such pair defines a valid subarray. Both lookup and insert are O(1) amortized for Java's HashMap. The total complexity is O(n). This is a dramatic improvement over the O(n²) brute-force approach (Option A), which is the common near-miss that students reach for first.",
+    "es": "El algoritmo itera una vez sobre el arreglo, manteniendo una suma de prefijo acumulada. En cada índice i, busca `(prefixSum - k)` en el HashMap para contar cuántas sumas de prefijo anteriores, al restarse de la actual, dan k — cada par define un subarreglo válido. Tanto la búsqueda como la inserción son O(1) amortizado para el HashMap de Java. La complejidad total es O(n). Esta es una mejora dramática sobre el enfoque de fuerza bruta O(n²) (opción A), que es el distractor cercano al que los estudiantes suelen llegar primero."
+  }
+}

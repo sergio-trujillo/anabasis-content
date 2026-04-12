@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-graph-shortest-path-canonical-specific-insight",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "graph-shortest-path: Dijkstra vs. Bellman-Ford vs. BFS decision tree",
+    "es": "graph-shortest-path: árbol de decisión Dijkstra vs. Bellman-Ford vs. BFS"
+  },
+  "prompt": {
+    "en": "A graph has edges with mixed weights including some zeros but no negatives, and you need shortest paths from one source. Which algorithm should you use and why?",
+    "es": "Un grafo tiene aristas con pesos mixtos incluyendo algunos ceros pero sin negativos, y necesitas caminos más cortos desde una fuente. ¿Qué algoritmo debes usar y por qué?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "BFS — zero-weight edges mean the graph is effectively unweighted, so BFS suffices", "es": "BFS — las aristas de peso cero significan que el grafo es efectivamente sin peso, por lo que BFS es suficiente" } },
+    { "id": "b", "label": { "en": "Bellman-Ford — zero-weight edges are technically non-positive, so Bellman-Ford is required for correctness", "es": "Bellman-Ford — las aristas de peso cero son técnicamente no positivas, por lo que Bellman-Ford es requerido para corrección" } },
+    { "id": "c", "label": { "en": "Dijkstra — it requires non-negative weights (≥ 0), which is satisfied; zero weights are fine", "es": "Dijkstra — requiere pesos no negativos (≥ 0), lo cual se cumple; los pesos cero están bien" } },
+    { "id": "d", "label": { "en": "0-1 BFS (deque-based) — any graph with zero-weight edges must use a deque to process zero-cost transitions in O(V + E)", "es": "0-1 BFS (basado en deque) — cualquier grafo con aristas de peso cero debe usar un deque para procesar transiciones de costo cero en O(V + E)" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Dijkstra's precondition is that all edge weights are non-negative (≥ 0) — zero is explicitly allowed. Zero-weight edges do not cause incorrect relaxations; they just mean some nodes have equal cost from the source. Bellman-Ford (Option B) is overkill for non-negative graphs. Option D (0-1 BFS) is a clever optimization for graphs where edge weights are only 0 or 1 — valid but narrower than Dijkstra. Option A (BFS) is wrong: a mix of 0 and non-zero positive weights requires a weighted algorithm; ignoring positive weights gives incorrect distances.",
+    "es": "La precondición de Dijkstra es que todos los pesos de las aristas sean no negativos (≥ 0) — cero está explícitamente permitido. Las aristas de peso cero no causan relajaciones incorrectas; simplemente significan que algunos nodos tienen el mismo costo desde la fuente. Bellman-Ford (opción B) es excesivo para grafos no negativos. La opción D (0-1 BFS) es una optimización inteligente para grafos donde los pesos de aristas son solo 0 o 1 — válido pero más estrecho que Dijkstra. La opción A (BFS) es incorrecta: una mezcla de pesos 0 y positivos no cero requiere un algoritmo ponderado; ignorar los pesos positivos da distancias incorrectas."
+  }
+}

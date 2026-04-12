@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-sorted-array-target",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: find target in sorted array",
+    "es": "cross-canonical: encontrar objetivo en arreglo ordenado"
+  },
+  "prompt": {
+    "en": "Given a sorted array of integers, find the index of a specific target value (return -1 if not found). Which canonical pattern applies?",
+    "es": "Dado un arreglo de enteros ordenado, encuentra el índice de un valor objetivo específico (retorna -1 si no se encuentra). ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sliding-window — scan the array from both ends until the target is found or the window collapses", "es": "sliding-window — escanear el arreglo desde ambos extremos hasta encontrar el objetivo o que la ventana colapse" } },
+    { "id": "b", "label": { "en": "prefix-sum — precompute cumulative values and use a lookup to locate the target offset", "es": "prefix-sum — precomputar valores acumulados y usar una búsqueda para localizar el desplazamiento del objetivo" } },
+    { "id": "c", "label": { "en": "binary-search — exploit the sorted order to halve the search space per comparison", "es": "binary-search — aprovechar el orden de clasificación para reducir a la mitad el espacio de búsqueda por comparación" } },
+    { "id": "d", "label": { "en": "dp-1d — define dp[i] = 1 if arr[i] == target and build a running match tracker", "es": "dp-1d — definir dp[i] = 1 si arr[i] == objetivo y construir un rastreador de coincidencias acumulado" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "A sorted array and an exact-value search is the textbook binary-search scenario: the monotone property (elements increase left to right) lets each comparison eliminate half the search space, giving O(log n). Option A (sliding window) finds subarrays satisfying a constraint, not a specific value. Option B (prefix-sum) answers range-sum queries and has no mechanism for value lookups. Sliding window is the most tempting near-miss because it also uses two pointers on an array, but it does not exploit sorted order to skip half the data.",
+    "es": "Un arreglo ordenado y una búsqueda de valor exacto es el escenario de búsqueda binaria de libro de texto: la propiedad monótona (los elementos aumentan de izquierda a derecha) permite que cada comparación elimine la mitad del espacio de búsqueda, dando O(log n). La opción A (ventana deslizante) encuentra subarreglos que satisfacen una restricción, no un valor específico. La opción B (prefix-sum) responde consultas de suma de rango y no tiene mecanismo para búsquedas de valor. La ventana deslizante es el distractor más cercano tentador porque también usa dos punteros en un arreglo, pero no aprovecha el orden de clasificación para saltar la mitad de los datos."
+  }
+}

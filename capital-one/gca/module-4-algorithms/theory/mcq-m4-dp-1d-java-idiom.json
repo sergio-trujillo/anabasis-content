@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-dp-1d-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "dp-1d: Java space-optimized idiom",
+    "es": "dp-1d: idioma optimizado en espacio en Java"
+  },
+  "prompt": {
+    "en": "Which Java snippet correctly implements the space-optimized house-robber DP (max non-adjacent sum) using O(1) space?",
+    "es": "¿Qué fragmento de Java implementa correctamente el DP del ladrón de casas optimizado en espacio (suma máxima no adyacente) usando O(1) espacio?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "int prev=0, curr=0; for(int x: nums){ int next=Math.max(curr, prev+x); prev=curr; curr=next; } return curr;", "es": "int prev=0, curr=0; for(int x: nums){ int next=Math.max(curr, prev+x); prev=curr; curr=next; } return curr;" } },
+    { "id": "b", "label": { "en": "int[] dp=new int[n]; dp[0]=nums[0]; dp[1]=Math.max(nums[0],nums[1]); for(int i=2;i<n;i++) dp[i]=Math.max(dp[i-1],dp[i-2]+nums[i]); return dp[n-1];", "es": "int[] dp=new int[n]; dp[0]=nums[0]; dp[1]=Math.max(nums[0],nums[1]); for(int i=2;i<n;i++) dp[i]=Math.max(dp[i-1],dp[i-2]+nums[i]); return dp[n-1];" } },
+    { "id": "c", "label": { "en": "int sum=0; for(int i=0;i<n;i+=2) sum+=nums[i]; return sum;", "es": "int sum=0; for(int i=0;i<n;i+=2) sum+=nums[i]; return sum;" } },
+    { "id": "d", "label": { "en": "int max=0; for(int x: nums) if(x>0) max+=x; return max;", "es": "int max=0; for(int x: nums) if(x>0) max+=x; return max;" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is the canonical O(1) space solution: `prev` holds dp[i-2], `curr` holds dp[i-1], and `next = max(curr, prev + x)` computes dp[i]. After the loop, `curr` is the answer. Option B is correct but O(n) space — it stores the full dp array. Option C sums only even-indexed elements, which is wrong (e.g., [2, 1, 1, 2] → picks indices 0 and 2 giving 3, but optimum is 2+2=4 using indices 0 and 3). Option D adds all positive numbers regardless of adjacency.",
+    "es": "La opción A es la solución canónica de O(1) espacio: `prev` contiene dp[i-2], `curr` contiene dp[i-1], y `next = max(curr, prev + x)` calcula dp[i]. Después del bucle, `curr` es la respuesta. La opción B es correcta pero O(n) espacio — almacena el arreglo dp completo. La opción C suma solo los elementos de índice par, lo cual es incorrecto (ej., [2, 1, 1, 2] → elige índices 0 y 2 dando 3, pero el óptimo es 2+2=4 usando índices 0 y 3). La opción D agrega todos los números positivos sin importar la adyacencia."
+  }
+}

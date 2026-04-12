@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-subarray-sum-k-negatives",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: count subarrays with sum = K (array may have negatives)",
+    "es": "cross-canonical: contar subarreglos con suma = K (arreglo puede tener negativos)"
+  },
+  "prompt": {
+    "en": "Count the number of contiguous subarrays whose sum equals K. The array may contain negative numbers. Which canonical pattern applies?",
+    "es": "Cuenta el número de subarreglos contiguos cuya suma sea igual a K. El arreglo puede contener números negativos. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sliding-window — maintain a running sum and shrink from left when sum > K", "es": "sliding-window — mantener una suma acumulada y contraer desde la izquierda cuando suma > K" } },
+    { "id": "b", "label": { "en": "prefix-sum with HashMap — for each index, check how many prior prefix sums equal (currentSum - K)", "es": "prefix-sum con HashMap — para cada índice, verificar cuántas sumas de prefijo anteriores son iguales a (sumaActual - K)" } },
+    { "id": "c", "label": { "en": "binary-search — sort the prefix sums and binary-search for (currentSum - K) at each step", "es": "binary-search — ordenar las sumas de prefijo y buscar binariamente (sumaActual - K) en cada paso" } },
+    { "id": "d", "label": { "en": "dp-1d — dp[i] = number of subarrays ending at i with sum K; extend from dp[i-1] if arr[i] == K", "es": "dp-1d — dp[i] = número de subarreglos que terminan en i con suma K; extender desde dp[i-1] si arr[i] == K" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When the array contains negatives, the window sum is not monotone, so sliding window (Option A) fails silently — shrinking the left side does not reliably decrease the sum. The correct approach is prefix-sum with a HashMap: maintain a running prefix sum and count how many previous prefix sums equal (currentSum - K). Each such pair (i, j) defines a subarray with sum exactly K. Time: O(n), Space: O(n). Option C (binary-search on prefix sums) breaks because sorting destroys the order needed to define subarrays.",
+    "es": "Cuando el arreglo contiene negativos, la suma de la ventana no es monótona, por lo que la ventana deslizante (opción A) falla silenciosamente — contraer el lado izquierdo no disminuye de forma confiable la suma. El enfoque correcto es prefix-sum con HashMap: mantener una suma de prefijo acumulada y contar cuántas sumas de prefijo anteriores son iguales a (sumaActual - K). Cada par (i, j) define un subarreglo con suma exactamente K. Tiempo: O(n), Espacio: O(n). La opción C (búsqueda binaria en sumas de prefijos) falla porque ordenar destruye el orden necesario para definir subarreglos."
+  }
+}

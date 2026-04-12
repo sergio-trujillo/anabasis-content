@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-binary-search-variants-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "binary-search-variants: pattern identification",
+    "es": "binary-search-variants: identificación del patrón"
+  },
+  "prompt": {
+    "en": "Which structural property of the input is the essential prerequisite for applying binary search?",
+    "es": "¿Qué propiedad estructural del input es el prerrequisito esencial para aplicar búsqueda binaria?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The input must be stored in a hash map for O(1) random access", "es": "El input debe estar en un mapa hash para acceso aleatorio O(1)" } },
+    { "id": "b", "label": { "en": "The input values must all be distinct (no duplicates)", "es": "Los valores del input deben ser todos distintos (sin duplicados)" } },
+    { "id": "c", "label": { "en": "The search space must be monotone — a boolean predicate transitions from false to true exactly once", "es": "El espacio de búsqueda debe ser monótono — un predicado booleano transita de falso a verdadero exactamente una vez" } },
+    { "id": "d", "label": { "en": "The input must fit entirely in CPU cache to avoid memory latency", "es": "El input debe caber completamente en caché de CPU para evitar latencia de memoria" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Binary search works whenever the search space is monotone: once a condition becomes true it stays true (or vice versa), so each comparison safely discards half the space. This applies to sorted arrays, answer-space searches, and rotated variants. Option B (no duplicates) is a common misconception — binary search handles duplicates; only the exact return semantics change. Option A confuses the data structure with the algorithm's precondition.",
+    "es": "La búsqueda binaria funciona siempre que el espacio de búsqueda sea monótono: una vez que una condición se vuelve verdadera permanece verdadera (o viceversa), por lo que cada comparación descarta con seguridad la mitad del espacio. Esto aplica a arreglos ordenados, búsquedas en espacio de respuesta y variantes rotadas. La opción B (sin duplicados) es un malentendido común — la búsqueda binaria maneja duplicados; solo cambia la semántica exacta del retorno. La opción A confunde la estructura de datos con la precondición del algoritmo."
+  }
+}

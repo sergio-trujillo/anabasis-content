@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-dp-1d-edge-case",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "dp-1d: edge case — single element",
+    "es": "dp-1d: caso límite — elemento único"
+  },
+  "prompt": {
+    "en": "A 1D DP problem (e.g., climbing stairs) is called with n = 1. The recurrence is dp[i] = dp[i-1] + dp[i-2] with base cases dp[1] = 1, dp[2] = 2. What should the code return?",
+    "es": "Un problema DP 1D (ej., subir escaleras) se llama con n = 1. La recurrencia es dp[i] = dp[i-1] + dp[i-2] con casos base dp[1] = 1, dp[2] = 2. ¿Qué debe retornar el código?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "0 — no steps can be taken from an empty staircase", "es": "0 — no se pueden tomar pasos desde una escalera vacía" } },
+    { "id": "b", "label": { "en": "2 — dp[2] is always the starting answer since dp[1] and dp[2] seed the recurrence", "es": "2 — dp[2] es siempre la respuesta inicial ya que dp[1] y dp[2] siembran la recurrencia" } },
+    { "id": "c", "label": { "en": "1 — n = 1 matches the base case dp[1] = 1 and the loop body is never entered", "es": "1 — n = 1 coincide con el caso base dp[1] = 1 y el cuerpo del bucle nunca se ejecuta" } },
+    { "id": "d", "label": { "en": "The code throws ArrayIndexOutOfBoundsException because the recurrence accesses dp[i-2] = dp[-1]", "es": "El código lanza ArrayIndexOutOfBoundsException porque la recurrencia accede a dp[i-2] = dp[-1]" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "With n = 1, the code should directly return the base case dp[1] = 1 — there is exactly one way to climb one step (take one step of size 1). The loop starting at i = 3 is never entered. Option D describes a real bug if the code naively tries to access dp[-1]; the fix is to guard with the base cases before the loop. Option B is wrong: dp[2] = 2 is the answer for n = 2, not n = 1. A well-written DP always handles base cases explicitly before running the recurrence.",
+    "es": "Con n = 1, el código debe devolver directamente el caso base dp[1] = 1 — hay exactamente una forma de subir un escalón (dar un paso de tamaño 1). El bucle que comienza en i = 3 nunca se ejecuta. La opción D describe un error real si el código ingenuamente intenta acceder a dp[-1]; la corrección es proteger con los casos base antes del bucle. La opción B es incorrecta: dp[2] = 2 es la respuesta para n = 2, no n = 1. Un DP bien escrito siempre maneja los casos base explícitamente antes de ejecutar la recurrencia."
+  }
+}

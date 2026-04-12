@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-binary-search-variants-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "binary-search-variants: vs. linear search",
+    "es": "binary-search-variants: vs. búsqueda lineal"
+  },
+  "prompt": {
+    "en": "You need to find a target value in a collection. When is linear search preferable to binary search?",
+    "es": "Necesitas encontrar un valor objetivo en una colección. ¿Cuándo es preferible la búsqueda lineal sobre la búsqueda binaria?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "When n > 1 000 000, because binary search's recursion stack overflows for large inputs", "es": "Cuando n > 1 000 000, porque la pila de recursión de la búsqueda binaria desborda con entradas grandes" } },
+    { "id": "b", "label": { "en": "When the collection is unsorted and sorting it first would cost more than a single O(n) scan", "es": "Cuando la colección está desordenada y ordenarla primero costaría más que un solo recorrido O(n)" } },
+    { "id": "c", "label": { "en": "When the target is always in the first half of the array, making binary search redundant", "es": "Cuando el objetivo siempre está en la primera mitad del arreglo, haciendo redundante la búsqueda binaria" } },
+    { "id": "d", "label": { "en": "When you need to return all indices where the target appears, not just one", "es": "Cuando necesitas devolver todos los índices donde aparece el objetivo, no solo uno" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Binary search requires a sorted (or monotone) search space. If the array is unsorted and you only need to search once, sorting costs O(n log n) while a single linear scan is O(n) — so linear search wins for one-shot queries on unsorted data. Option A is false: iterative binary search uses O(1) stack space. Option D is wrong: you can find all occurrences with binary search using left/right boundary variants, still in O(log n + k) where k is the count.",
+    "es": "La búsqueda binaria requiere un espacio de búsqueda ordenado (o monótono). Si el arreglo está desordenado y solo necesitas buscar una vez, ordenar cuesta O(n log n) mientras que un recorrido lineal es O(n) — por lo que la búsqueda lineal gana para consultas únicas en datos desordenados. La opción A es falsa: la búsqueda binaria iterativa usa O(1) espacio de pila. La opción D es incorrecta: se pueden encontrar todas las ocurrencias con búsqueda binaria usando variantes de límite izquierdo/derecho, aún en O(log n + k) donde k es el conteo."
+  }
+}

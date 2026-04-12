@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-greedy-interval-scheduling-edge-case",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "greedy-interval-scheduling: edge case — touching intervals",
+    "es": "greedy-interval-scheduling: caso límite — intervalos que se tocan"
+  },
+  "prompt": {
+    "en": "Two intervals [1, 3] and [3, 5] share the endpoint 3. In the greedy interval scheduling algorithm, are they considered overlapping?",
+    "es": "Dos intervalos [1, 3] y [3, 5] comparten el extremo 3. En el algoritmo greedy de programación de intervalos, ¿se consideran superpuestos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Yes — they share a time point, so they cannot both be scheduled", "es": "Sí — comparten un punto de tiempo, por lo que no pueden programarse ambos" } },
+    { "id": "b", "label": { "en": "It depends on whether the problem uses open or closed interval semantics (half-open [start, end) typically allows back-to-back)", "es": "Depende de si el problema usa semántica de intervalos abiertos o cerrados (semiabierto [start, end) típicamente permite back-to-back)" } },
+    { "id": "c", "label": { "en": "No — sharing only an endpoint is not an overlap; the greedy condition is `nextStart >= lastEnd`", "es": "No — compartir solo un extremo no es una superposición; la condición greedy es `nextStart >= lastEnd`" } },
+    { "id": "d", "label": { "en": "The algorithm cannot handle this case and requires a deduplication step first", "es": "El algoritmo no puede manejar este caso y requiere un paso de deduplicación primero" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Whether touching intervals overlap depends entirely on the problem's interval semantics. For closed intervals [start, end], a meeting that ends at 3 and one that starts at 3 overlap (both occupy time point 3), so the condition is `nextStart > lastEnd`. For half-open intervals [start, end), the end is exclusive and back-to-back scheduling is allowed: `nextStart >= lastEnd`. Always clarify or infer from the problem statement. Option C is partially correct for half-open semantics but presents only one side of the ambiguity, which is the distractor to name explicitly.",
+    "es": "Si los intervalos que se tocan se superponen depende completamente de la semántica de intervalos del problema. Para intervalos cerrados [start, end], una reunión que termina en 3 y una que comienza en 3 se superponen (ambas ocupan el punto de tiempo 3), por lo que la condición es `nextStart > lastEnd`. Para intervalos semiabiertos [start, end), el fin es exclusivo y la programación back-to-back está permitida: `nextStart >= lastEnd`. Siempre aclara o infiere del enunciado del problema. La opción C es parcialmente correcta para semántica semiabierta pero presenta solo un lado de la ambigüedad, que es el distractor a nombrar explícitamente."
+  }
+}

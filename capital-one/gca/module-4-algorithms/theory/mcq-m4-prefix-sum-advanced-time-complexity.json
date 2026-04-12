@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-prefix-sum-advanced-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "prefix-sum-advanced: time complexity",
+    "es": "prefix-sum-advanced: complejidad temporal"
+  },
+  "prompt": {
+    "en": "After building a prefix-sum array from an input of n elements (O(n) preprocessing), what is the time complexity of answering a single range-sum query [l, r]?",
+    "es": "Después de construir un arreglo de suma de prefijos a partir de una entrada de n elementos (preprocesamiento O(n)), ¿cuál es la complejidad temporal de responder una sola consulta de suma de rango [l, r]?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) — you must re-scan the subarray from l to r", "es": "O(n) — debes volver a escanear el subarreglo de l a r" } },
+    { "id": "b", "label": { "en": "O(log n) — a binary search locates l and r in the prefix array", "es": "O(log n) — una búsqueda binaria localiza l y r en el arreglo de prefijos" } },
+    { "id": "c", "label": { "en": "O(1) — compute prefix[r] - prefix[l - 1] using the precomputed array", "es": "O(1) — calcular prefix[r] - prefix[l - 1] usando el arreglo precomputado" } },
+    { "id": "d", "label": { "en": "O(r - l) — proportional to the width of the query window", "es": "O(r - l) — proporcional al ancho de la ventana de consulta" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The prefix-sum array stores prefix[i] = sum of all elements from index 0 to i. The range sum from l to r is simply prefix[r] - prefix[l - 1], a single subtraction — O(1). This is the entire point of the preprocessing trade-off: O(n) build time buys O(1) per query. Option A (O(n)) describes re-scanning without prefix sums. Option D (O(r - l)) is the un-optimized approach, not the prefix-sum approach.",
+    "es": "El arreglo de suma de prefijos almacena prefix[i] = suma de todos los elementos desde el índice 0 hasta i. La suma del rango de l a r es simplemente prefix[r] - prefix[l - 1], una sola resta — O(1). Este es el punto central del intercambio de preprocesamiento: O(n) de tiempo de construcción compra O(1) por consulta. La opción A (O(n)) describe volver a escanear sin sumas de prefijos. La opción D (O(r - l)) es el enfoque no optimizado, no el enfoque de suma de prefijos."
+  }
+}

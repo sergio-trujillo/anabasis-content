@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-sliding-window-standalone-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "sliding-window-standalone: pattern identification",
+    "es": "sliding-window-standalone: identificación del patrón"
+  },
+  "prompt": {
+    "en": "A problem asks for the longest contiguous subarray satisfying a constraint that can be checked in O(1) as elements enter or leave. Which canonical pattern applies?",
+    "es": "Un problema pide el subarreglo contiguo más largo que satisface una restricción que puede verificarse en O(1) cuando los elementos entran o salen. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "prefix-sum — precompute a running sum and query range differences in O(1)", "es": "prefix-sum — precomputar una suma acumulada y consultar diferencias de rango en O(1)" } },
+    { "id": "b", "label": { "en": "sliding-window — maintain a [left, right] window, expand right and shrink left to track the constraint", "es": "sliding-window — mantener una ventana [left, right], expandir derecha y contraer izquierda para rastrear la restricción" } },
+    { "id": "c", "label": { "en": "binary-search — find the maximum valid window length using answer-space bisection", "es": "binary-search — encontrar la longitud máxima de ventana válida usando bisección en el espacio de respuesta" } },
+    { "id": "d", "label": { "en": "dp-1d — define dp[i] as the longest valid subarray ending at i and extend from dp[i-1]", "es": "dp-1d — definir dp[i] como el subarreglo válido más largo que termina en i y extender desde dp[i-1]" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Sliding window is the canonical choice when the problem involves the longest (or shortest) contiguous subarray and the validity of the window can be maintained incrementally as elements enter from the right and leave from the left. Option A (prefix-sum) handles range-sum queries but does not directly optimize window length. Option C (binary-search on answer space) is a valid meta-approach but requires the subproblem of checking a fixed window size, which is O(n) per check — sliding window does it in one pass.",
+    "es": "La ventana deslizante es la elección canónica cuando el problema involucra el subarreglo contiguo más largo (o más corto) y la validez de la ventana puede mantenerse incrementalmente a medida que los elementos entran por la derecha y salen por la izquierda. La opción A (prefix-sum) maneja consultas de suma de rango pero no optimiza directamente la longitud de la ventana. La opción C (búsqueda binaria en espacio de respuesta) es un meta-enfoque válido pero requiere el subproblema de verificar un tamaño de ventana fijo, que es O(n) por verificación — la ventana deslizante lo hace en un solo recorrido."
+  }
+}

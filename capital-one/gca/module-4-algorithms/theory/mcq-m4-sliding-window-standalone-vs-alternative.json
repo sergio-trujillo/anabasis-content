@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-sliding-window-standalone-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "sliding-window-standalone: vs. two-pointer",
+    "es": "sliding-window-standalone: vs. dos punteros"
+  },
+  "prompt": {
+    "en": "What distinguishes a sliding window from a plain two-pointer approach?",
+    "es": "¿Qué distingue a una ventana deslizante de un enfoque simple de dos punteros?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Two-pointer always starts both pointers at opposite ends; sliding window always starts both at the left", "es": "Dos punteros siempre inicia ambos en extremos opuestos; ventana deslizante siempre inicia ambos a la izquierda" } },
+    { "id": "b", "label": { "en": "Sliding window can only be applied to strings; two-pointer works on any array type", "es": "La ventana deslizante solo se puede aplicar a cadenas; dos punteros funciona en cualquier tipo de arreglo" } },
+    { "id": "c", "label": { "en": "Sliding window maintains a contiguous subarray state between the pointers; two-pointer typically compares/merges values at both ends without tracking interior state", "es": "La ventana deslizante mantiene un estado de subarreglo contiguo entre los punteros; dos punteros típicamente compara/fusiona valores en ambos extremos sin rastrear el estado interior" } },
+    { "id": "d", "label": { "en": "Two-pointer requires O(n) extra space to store the partial result; sliding window is always O(1) space", "es": "Dos punteros requiere espacio extra O(n) para almacenar el resultado parcial; ventana deslizante es siempre O(1) espacio" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The canonical distinction is intent and state: sliding window keeps track of what is inside the window (count, sum, frequency map) as a contiguous subarray grows and shrinks. Classic two-pointer (e.g., two-sum on a sorted array, or palindrome check) moves pointers from both ends toward the middle, comparing endpoint values without accumulating interior state. Option A is partially true for some two-pointer problems but not universally — both patterns have same-direction variants.",
+    "es": "La distinción canónica es intención y estado: la ventana deslizante rastrea qué hay dentro de la ventana (conteo, suma, mapa de frecuencias) mientras un subarreglo contiguo crece y se contrae. El dos punteros clásico (ej., two-sum en arreglo ordenado, o verificación de palíndromo) mueve los punteros desde ambos extremos hacia el centro, comparando valores de los extremos sin acumular estado interior. La opción A es parcialmente verdadera para algunos problemas de dos punteros pero no universalmente — ambos patrones tienen variantes en la misma dirección."
+  }
+}

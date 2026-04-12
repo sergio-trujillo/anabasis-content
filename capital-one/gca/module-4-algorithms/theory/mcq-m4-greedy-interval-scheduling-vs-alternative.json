@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-greedy-interval-scheduling-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "greedy-interval-scheduling: vs. dp weighted interval",
+    "es": "greedy-interval-scheduling: vs. dp de intervalos ponderados"
+  },
+  "prompt": {
+    "en": "Each interval now has a profit value. You want to maximize total profit (not count). Which approach is correct?",
+    "es": "Ahora cada intervalo tiene un valor de ganancia. Quieres maximizar la ganancia total (no el conteo). ¿Qué enfoque es correcto?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Greedy by end time still works — picking the shortest compatible interval always leaves room for the most profitable ones", "es": "El greedy por tiempo de fin sigue funcionando — elegir el intervalo compatible más corto siempre deja espacio para los más rentables" } },
+    { "id": "b", "label": { "en": "Greedy by profit-per-unit-time works — pick the densest interval first", "es": "El greedy por ganancia-por-unidad-de-tiempo funciona — elige primero el intervalo más denso" } },
+    { "id": "c", "label": { "en": "Dynamic programming (weighted job scheduling) — sort by end, binary-search for the last compatible job, build dp[i] = max(dp[i-1], profit[i] + dp[j]) where j is the last non-overlapping job", "es": "Programación dinámica (planificación de trabajos ponderados) — ordenar por fin, buscar binariamente el último trabajo compatible, construir dp[i] = max(dp[i-1], profit[i] + dp[j]) donde j es el último trabajo no superpuesto" } },
+    { "id": "d", "label": { "en": "BFS/Dijkstra on an interval graph — model each interval as a node and find the highest-weight path", "es": "BFS/Dijkstra en un grafo de intervalos — modelar cada intervalo como nodo y encontrar el camino de mayor peso" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Once intervals carry profit weights, the greedy-by-end approach fails — it maximizes count, not profit. The correct solution is weighted job scheduling via DP: sort by end time, then for each interval i, decide whether to include it (profit[i] + best solution ending before i starts) or skip it (best solution using only intervals 1..i-1). Binary search on sorted end times finds the last compatible interval in O(log n), giving an O(n log n) overall solution. Option A is a classic greedy-failure counterexample: a long high-profit interval can dominate many short ones.",
+    "es": "Una vez que los intervalos tienen pesos de ganancia, el enfoque greedy-por-fin falla — maximiza el conteo, no la ganancia. La solución correcta es la programación de trabajos ponderados via DP: ordenar por tiempo de fin, luego para cada intervalo i, decidir si incluirlo (profit[i] + mejor solución que termina antes de que i comience) u omitirlo (mejor solución usando solo intervalos 1..i-1). La búsqueda binaria sobre tiempos de fin ordenados encuentra el último intervalo compatible en O(log n), dando una solución O(n log n) total. La opción A es un contraejemplo clásico de falla greedy: un intervalo largo de alta ganancia puede dominar a muchos cortos."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-min-conference-rooms",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: minimum conference rooms for a meeting schedule",
+    "es": "cross-canonical: mínimo de salas de conferencias para un horario de reuniones"
+  },
+  "prompt": {
+    "en": "Given a list of meetings with start and end times, find the minimum number of conference rooms required so all meetings can run simultaneously without conflict. Which canonical pattern applies?",
+    "es": "Dada una lista de reuniones con horas de inicio y fin, encuentra el número mínimo de salas de conferencias necesarias para que todas las reuniones puedan ejecutarse simultáneamente sin conflicto. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "greedy-interval-scheduling — sort by end time and assign each meeting to the room that frees earliest", "es": "greedy-interval-scheduling — ordenar por tiempo de fin y asignar cada reunión a la sala que se libera más temprano" } },
+    { "id": "b", "label": { "en": "sliding-window — maintain a window of currently active meetings; the maximum window size is the answer", "es": "sliding-window — mantener una ventana de reuniones actualmente activas; el tamaño máximo de la ventana es la respuesta" } },
+    { "id": "c", "label": { "en": "binary-search — binary-search the minimum room count; for each candidate, simulate whether all meetings fit", "es": "binary-search — buscar binariamente el conteo mínimo de salas; para cada candidato, simular si todas las reuniones caben" } },
+    { "id": "d", "label": { "en": "dp-1d — dp[i] = rooms needed for first i meetings; extend greedily when meetings overlap", "es": "dp-1d — dp[i] = salas necesarias para las primeras i reuniones; extender codiciosamente cuando las reuniones se superponen" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Minimum conference rooms is a greedy-interval problem solved by a min-heap: sort by start time, process each meeting, and either reuse the room that freed earliest (heap.peek().end ≤ current.start) or allocate a new room. The heap size at any point equals the active room count; the maximum is the answer. This is a classic interval-scheduling variant that requires greedy allocation, not maximizing selection count. Option B (sliding window) is a near-miss: the concept of 'active meetings at a time point' is related, but without sorted event processing and the heap, you cannot determine overlap correctly.",
+    "es": "El mínimo de salas de conferencias es un problema greedy-interval resuelto con un min-heap: ordenar por tiempo de inicio, procesar cada reunión, y reutilizar la sala que se liberó más temprano (heap.peek().end ≤ current.start) o asignar una nueva sala. El tamaño del heap en cualquier punto equivale al conteo de salas activas; el máximo es la respuesta. Esta es una variante clásica de programación de intervalos que requiere asignación greedy, no maximizar el conteo de selección. La opción B (ventana deslizante) es un distractor cercano: el concepto de 'reuniones activas en un punto de tiempo' está relacionado, pero sin el procesamiento de eventos ordenados y el heap, no puedes determinar la superposición correctamente."
+  }
+}

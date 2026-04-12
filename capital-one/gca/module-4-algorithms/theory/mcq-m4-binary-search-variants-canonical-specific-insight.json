@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-binary-search-variants-canonical-specific-insight",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "binary-search-variants: overflow-safe midpoint",
+    "es": "binary-search-variants: punto medio sin desbordamiento"
+  },
+  "prompt": {
+    "en": "Why is `mid = lo + (hi - lo) / 2` preferred over `mid = (lo + hi) / 2` in Java binary search implementations?",
+    "es": "¿Por qué se prefiere `mid = lo + (hi - lo) / 2` sobre `mid = (lo + hi) / 2` en implementaciones de búsqueda binaria en Java?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The subtraction form avoids integer division rounding toward zero, giving a more accurate midpoint", "es": "La forma de resta evita el redondeo de la división entera hacia cero, dando un punto medio más preciso" } },
+    { "id": "b", "label": { "en": "(lo + hi) can overflow int when both are large positive values; lo + (hi - lo) / 2 stays within int range", "es": "(lo + hi) puede desbordarse int cuando ambos son valores positivos grandes; lo + (hi - lo) / 2 permanece dentro del rango int" } },
+    { "id": "c", "label": { "en": "The subtraction form is faster because it avoids one addition instruction on most CPUs", "es": "La forma de resta es más rápida porque evita una instrucción de suma en la mayoría de CPUs" } },
+    { "id": "d", "label": { "en": "Java requires it; (lo + hi) / 2 is a compile-time error when lo and hi are int", "es": "Java lo requiere; (lo + hi) / 2 es un error de compilación cuando lo y hi son int" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Java's int is a signed 32-bit integer with a maximum of ~2.1 billion. If lo and hi are both near Integer.MAX_VALUE, their sum overflows to a negative number, producing a wrong (negative) midpoint. The expression `lo + (hi - lo) / 2` computes the offset first, which is always non-negative and within int range, then adds it to lo. This bug was famously documented in the JDK's own Arrays.binarySearch fix (Java bug 5045127). Options A and C describe non-issues: both forms round the same way, and the CPU cost difference is negligible.",
+    "es": "El tipo int de Java es un entero con signo de 32 bits con un máximo de ~2.1 mil millones. Si lo y hi están ambos cerca de Integer.MAX_VALUE, su suma desborda a un número negativo, produciendo un punto medio incorrecto (negativo). La expresión `lo + (hi - lo) / 2` calcula primero el desplazamiento, que siempre es no-negativo y está dentro del rango int, luego lo suma a lo. Este error fue documentado en la propia corrección de Arrays.binarySearch del JDK (bug de Java 5045127). Las opciones A y C describen no-problemas: ambas formas redondean igual y la diferencia de costo en CPU es insignificante."
+  }
+}

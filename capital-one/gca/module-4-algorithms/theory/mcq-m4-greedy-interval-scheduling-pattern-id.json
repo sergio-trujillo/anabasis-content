@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-greedy-interval-scheduling-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "greedy-interval-scheduling: pattern identification",
+    "es": "greedy-interval-scheduling: identificación del patrón"
+  },
+  "prompt": {
+    "en": "A problem asks you to select the maximum number of non-overlapping meetings from a list, each with a start and end time. Which canonical pattern applies?",
+    "es": "Un problema te pide seleccionar el número máximo de reuniones no superpuestas de una lista, cada una con hora de inicio y fin. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "dp-1d — define dp[i] = max meetings using first i meetings; extend with compatibility check", "es": "dp-1d — definir dp[i] = máximo de reuniones usando las primeras i reuniones; extender con verificación de compatibilidad" } },
+    { "id": "b", "label": { "en": "greedy-interval-scheduling — sort by end time, greedily pick each meeting that starts after the last chosen ends", "es": "greedy-interval-scheduling — ordenar por tiempo de fin, seleccionar codiciosamente cada reunión que comienza después de que termina la última elegida" } },
+    { "id": "c", "label": { "en": "binary-search — binary-search for the latest non-overlapping meeting for each candidate", "es": "binary-search — buscar binariamente la última reunión no superpuesta para cada candidato" } },
+    { "id": "d", "label": { "en": "sliding-window — maintain a window of currently active meetings and shrink when overlap is detected", "es": "sliding-window — mantener una ventana de reuniones actualmente activas y contraer cuando se detecta superposición" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Maximizing the number of non-overlapping intervals is the textbook activity-selection problem, solved optimally by a greedy algorithm: sort by end time and always pick the interval that ends earliest (giving subsequent intervals the most room). Option A (dp-1d) can solve a weighted variant (maximize total profit) but is O(n log n) with additional complexity; for unweighted count, greedy is cleaner and equally optimal. Option C (binary search) is used to accelerate the DP variant, not the pure greedy approach.",
+    "es": "Maximizar el número de intervalos no superpuestos es el problema canónico de selección de actividades, resuelto de forma óptima por un algoritmo greedy: ordenar por tiempo de fin y siempre elegir el intervalo que termina más temprano (dando más espacio a los intervalos siguientes). La opción A (dp-1d) puede resolver una variante ponderada (maximizar beneficio total) pero es O(n log n) con complejidad adicional; para el conteo no ponderado, el greedy es más limpio e igualmente óptimo. La opción C (búsqueda binaria) se usa para acelerar la variante DP, no el enfoque puramente greedy."
+  }
+}

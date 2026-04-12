@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-greedy-interval-scheduling-canonical-specific-insight",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "greedy-interval-scheduling: why sort-by-end is globally optimal",
+    "es": "greedy-interval-scheduling: por qué ordenar por fin es globalmente óptimo"
+  },
+  "prompt": {
+    "en": "Why does sorting intervals by end time and picking greedily produce a globally optimal solution for maximizing the number of non-overlapping activities?",
+    "es": "¿Por qué ordenar los intervalos por tiempo de fin y elegir codiciosamente produce una solución globalmente óptima para maximizar el número de actividades no superpuestas?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "It is a heuristic that works well in practice but has known counterexamples for large inputs", "es": "Es una heurística que funciona bien en la práctica pero tiene contraejemplos conocidos para entradas grandes" } },
+    { "id": "b", "label": { "en": "By the exchange argument: any solution that replaces the earliest-ending compatible interval with a later-ending one cannot improve the count, because the later choice blocks at least as many future intervals", "es": "Por el argumento de intercambio: cualquier solución que reemplace el intervalo compatible de fin más temprano con uno de fin más tardío no puede mejorar el conteo, porque la elección posterior bloquea al menos tantos intervalos futuros" } },
+    { "id": "c", "label": { "en": "It minimizes the total span of selected intervals, leaving a maximum gap for subsequent picks", "es": "Minimiza el span total de los intervalos seleccionados, dejando la máxima brecha para las selecciones subsiguientes" } },
+    { "id": "d", "label": { "en": "Sort-by-end is a special case of Dijkstra's algorithm applied to an interval graph with unit weights", "es": "Ordenar por fin es un caso especial del algoritmo de Dijkstra aplicado a un grafo de intervalos con pesos unitarios" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The activity-selection theorem is proved by an exchange argument (also called 'greedy stays ahead'): suppose an optimal solution OPT does not start with the earliest-ending interval A. Replace OPT's first interval with A — since A ends no later than the replaced interval, all subsequent choices in OPT remain compatible. So the modified solution is still optimal and includes A. By induction, the greedy solution matches OPT in size. Option C is a misstatement: greedy-by-end does not minimize total span; it maximizes count by maximizing remaining opportunity.",
+    "es": "El teorema de selección de actividades se prueba por un argumento de intercambio (también llamado 'el greedy se mantiene adelante'): supón que una solución óptima OPT no comienza con el intervalo de fin más temprano A. Reemplaza el primer intervalo de OPT por A — como A termina no más tarde que el intervalo reemplazado, todas las elecciones subsiguientes en OPT siguen siendo compatibles. Entonces la solución modificada sigue siendo óptima e incluye A. Por inducción, la solución greedy coincide con OPT en tamaño. La opción C es una afirmación incorrecta: greedy-por-fin no minimiza el span total; maximiza el conteo maximizando la oportunidad restante."
+  }
+}

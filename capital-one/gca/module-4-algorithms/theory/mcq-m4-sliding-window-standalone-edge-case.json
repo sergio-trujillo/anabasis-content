@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-sliding-window-standalone-edge-case",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "sliding-window-standalone: edge case — all elements invalid",
+    "es": "sliding-window-standalone: caso límite — todos los elementos inválidos"
+  },
+  "prompt": {
+    "en": "A sliding-window solution searches for the longest subarray satisfying a constraint, but no element individually satisfies it. What should the answer be?",
+    "es": "Una solución de ventana deslizante busca el subarreglo más largo que satisface una restricción, pero ningún elemento individualmente la satisface. ¿Cuál debería ser la respuesta?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The algorithm throws an exception because left overtakes right when every element is shrunk away", "es": "El algoritmo lanza una excepción porque left supera a right cuando cada elemento es eliminado de la ventana" } },
+    { "id": "b", "label": { "en": "0 — the valid window length is zero because no single element satisfies the constraint", "es": "0 — la longitud de ventana válida es cero porque ningún elemento satisface la restricción" } },
+    { "id": "c", "label": { "en": "1 — the algorithm always counts the current element as a window of size 1 before shrinking", "es": "1 — el algoritmo siempre cuenta el elemento actual como una ventana de tamaño 1 antes de contraer" } },
+    { "id": "d", "label": { "en": "-1 by convention, signaling no valid window was found", "es": "-1 por convención, indicando que no se encontró ninguna ventana válida" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When no element satisfies the constraint, every time the right pointer adds an element the inner shrink loop removes it immediately, keeping the window empty (right - left = 0 after shrink, so size = 0 or left = right + 1). The maximum recorded is 0. The answer is 0 — no valid subarray exists. Option A is wrong: left overtaking right is not an error in a correctly implemented while loop; the condition simply never updates `ans`. Option D (-1) is a valid sentinel for problems that distinguish 'not found' from 'empty', but the canonical variable-window answer for 'no valid subarray' is 0.",
+    "es": "Cuando ningún elemento satisface la restricción, cada vez que el puntero derecho agrega un elemento el bucle de contracción interno lo elimina de inmediato, manteniendo la ventana vacía (right - left = 0 tras la contracción, por lo que el tamaño = 0 o left = right + 1). El máximo registrado es 0. La respuesta es 0 — no existe ningún subarreglo válido. La opción A es incorrecta: que left supere a right no es un error en un bucle while correctamente implementado; la condición simplemente nunca actualiza `ans`. La opción D (-1) es un centinela válido para problemas que distinguen 'no encontrado' de 'vacío', pero la respuesta canónica de ventana variable para 'ningún subarreglo válido' es 0."
+  }
+}

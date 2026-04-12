@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-sliding-window-standalone-canonical-specific-insight",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "sliding-window-standalone: why it fails on negative numbers",
+    "es": "sliding-window-standalone: por qué falla con números negativos"
+  },
+  "prompt": {
+    "en": "A sliding-window solution for 'longest subarray with sum ≤ k' silently gives wrong answers when the array contains negative numbers. Why?",
+    "es": "Una solución de ventana deslizante para 'subarreglo más largo con suma ≤ k' da respuestas incorrectas silenciosamente cuando el arreglo contiene números negativos. ¿Por qué?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Negative numbers cause integer underflow in the running sum variable", "es": "Los números negativos causan desbordamiento inferior de enteros en la variable de suma acumulada" } },
+    { "id": "b", "label": { "en": "The window sum is not monotone with window size when negatives are present — adding an element can decrease the sum, so shrinking the left side cannot reliably restore a violated constraint", "es": "La suma de la ventana no es monótona con el tamaño de la ventana cuando hay negativos — agregar un elemento puede disminuir la suma, por lo que contraer el lado izquierdo no puede restaurar de forma confiable una restricción violada" } },
+    { "id": "c", "label": { "en": "The left pointer can become negative when elements are removed, causing an ArrayIndexOutOfBoundsException", "es": "El puntero izquierdo puede volverse negativo cuando se eliminan elementos, causando ArrayIndexOutOfBoundsException" } },
+    { "id": "d", "label": { "en": "Negative numbers must be sorted to the front before sliding window is applied", "es": "Los números negativos deben ordenarse al frente antes de aplicar la ventana deslizante" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Sliding window's correctness relies on monotonicity: in an all-positive array, adding elements to the right strictly increases the sum, so when the sum exceeds k, shrinking from the left is guaranteed to decrease it. With negatives, adding a new element can decrease the window sum, meaning a previously over-budget window might become valid again without shrinking — the invariant breaks and the algorithm misses valid windows. The correct pattern for arrays with negatives is prefix-sum + HashMap. Option A is a Java myth: arithmetic on int or long does not throw on overflow.",
+    "es": "La corrección de la ventana deslizante se basa en la monotonicidad: en un arreglo todo-positivo, agregar elementos a la derecha incrementa estrictamente la suma, por lo que cuando la suma supera k, contraer desde la izquierda garantiza disminuirla. Con negativos, agregar un nuevo elemento puede disminuir la suma de la ventana, lo que significa que una ventana previamente sobre el presupuesto podría volverse válida de nuevo sin contraer — el invariante se rompe y el algoritmo pierde ventanas válidas. El patrón correcto para arreglos con negativos es prefix-sum + HashMap. La opción A es un mito de Java: la aritmética en int o long no lanza excepción por desbordamiento."
+  }
+}

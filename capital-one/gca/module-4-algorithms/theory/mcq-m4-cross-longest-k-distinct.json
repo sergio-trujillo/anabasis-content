@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-longest-k-distinct",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: longest substring with at most K distinct characters",
+    "es": "cross-canonical: subcadena más larga con a lo sumo K caracteres distintos"
+  },
+  "prompt": {
+    "en": "Find the length of the longest substring containing at most K distinct characters. Which canonical pattern applies?",
+    "es": "Encuentra la longitud de la subcadena más larga que contiene a lo sumo K caracteres distintos. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "binary-search — binary-search the answer length; for each candidate length, scan for a window of that size with ≤ K distinct chars", "es": "binary-search — buscar binariamente la longitud de respuesta; para cada longitud candidata, escanear una ventana de ese tamaño con ≤ K caracteres distintos" } },
+    { "id": "b", "label": { "en": "prefix-sum — precompute character frequency prefix arrays and query each substring's distinct-count in O(1)", "es": "prefix-sum — precomputar arreglos de prefijos de frecuencia de caracteres y consultar el conteo de distintos de cada subcadena en O(1)" } },
+    { "id": "c", "label": { "en": "sliding-window — maintain a frequency map inside [left, right]; shrink left when distinct count exceeds K", "es": "sliding-window — mantener un mapa de frecuencias dentro de [left, right]; contraer izquierda cuando el conteo de distintos supera K" } },
+    { "id": "d", "label": { "en": "dp-1d — dp[i] = length of longest valid substring ending at i; extend from dp[i-1] if distinct count stays ≤ K", "es": "dp-1d — dp[i] = longitud de la subcadena válida más larga que termina en i; extender desde dp[i-1] si el conteo de distintos permanece ≤ K" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Longest substring with a character-count constraint is the canonical sliding-window problem: expand the window by advancing right, maintain a HashMap of character frequencies, and shrink from the left whenever distinct count exceeds K. Window state is maintained in O(1) per step. Option A (binary search on length) is valid but suboptimal — it uses O(n) per check and does not improve the O(n) of sliding window. Option D (dp-1d) is a near-miss: dp[i] alone cannot track the distinct-count state for the window without rescanning, so the DP would require O(n) per state — equivalent to O(n²) overall.",
+    "es": "La subcadena más larga con una restricción de conteo de caracteres es el problema canónico de ventana deslizante: expande la ventana avanzando a la derecha, mantiene un HashMap de frecuencias de caracteres y contrae desde la izquierda cuando el conteo de distintos supera K. El estado de la ventana se mantiene en O(1) por paso. La opción A (búsqueda binaria en longitud) es válida pero subóptima — usa O(n) por verificación y no mejora el O(n) de la ventana deslizante. La opción D (dp-1d) es un distractor cercano: dp[i] solo no puede rastrear el estado de conteo distinto para la ventana sin volver a escanear, por lo que el DP requeriría O(n) por estado — equivalente a O(n²) en total."
+  }
+}

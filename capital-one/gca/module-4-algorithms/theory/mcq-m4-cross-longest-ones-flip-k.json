@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-longest-ones-flip-k",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: longest subarray of 1s after flipping at most K zeros",
+    "es": "cross-canonical: subarreglo más largo de unos tras voltear a lo sumo K ceros"
+  },
+  "prompt": {
+    "en": "Given a binary array, find the maximum length subarray containing only 1s if you may flip at most K zeros to ones. Which canonical pattern applies?",
+    "es": "Dado un arreglo binario, encuentra el subarreglo de longitud máxima que contiene solo unos si puedes voltear a lo sumo K ceros a unos. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "prefix-sum — precompute zeros counts per prefix, then for each right endpoint binary-search the leftmost index where zeros ≤ K", "es": "prefix-sum — precomputar conteos de ceros por prefijo, luego para cada extremo derecho buscar binariamente el índice más a la izquierda donde ceros ≤ K" } },
+    { "id": "b", "label": { "en": "greedy-interval-scheduling — greedily expand runs of ones and insert flips when runs end", "es": "greedy-interval-scheduling — expandir codiciosamente rachas de unos e insertar volteos cuando las rachas terminan" } },
+    { "id": "c", "label": { "en": "sliding-window — maintain a count of zeros in [left, right]; shrink left when the zero count exceeds K", "es": "sliding-window — mantener un conteo de ceros en [left, right]; contraer izquierda cuando el conteo de ceros supera K" } },
+    { "id": "d", "label": { "en": "dp-1d — dp[i] = length of longest valid subarray ending at i with at most K flips used", "es": "dp-1d — dp[i] = longitud del subarreglo válido más largo que termina en i con a lo sumo K volteos usados" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "This is a direct sliding-window application: the constraint (at most K zeros in the window) can be maintained incrementally. As the right pointer advances, increment a zero-count if arr[right] == 0. If zero-count > K, shrink from the left until zero-count ≤ K. The window size at each step is a candidate answer. Option A (prefix-sum + binary-search) also works in O(n log n) but is more complex and slower — prefix-sum is optimal for immutable range queries, not for this type of window expansion. Option D (dp-1d) would need to encode remaining flips as a state dimension, leading to O(n × K) — not 1D DP.",
+    "es": "Esta es una aplicación directa de ventana deslizante: la restricción (a lo sumo K ceros en la ventana) puede mantenerse incrementalmente. A medida que el puntero derecho avanza, incrementa un conteo de ceros si arr[right] == 0. Si conteo-de-ceros > K, contrae desde la izquierda hasta que conteo-de-ceros ≤ K. El tamaño de la ventana en cada paso es una respuesta candidata. La opción A (prefix-sum + búsqueda binaria) también funciona en O(n log n) pero es más compleja y lenta — prefix-sum es óptimo para consultas de rango inmutables, no para este tipo de expansión de ventana. La opción D (dp-1d) necesitaría codificar los volteos restantes como una dimensión de estado, llevando a O(n × K) — no es DP 1D."
+  }
+}

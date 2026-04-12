@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-graph-shortest-path-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "graph-shortest-path: time complexity of Dijkstra",
+    "es": "graph-shortest-path: complejidad temporal de Dijkstra"
+  },
+  "prompt": {
+    "en": "Dijkstra's algorithm on a graph with V vertices and E edges, using a binary min-heap (PriorityQueue in Java), has what time complexity?",
+    "es": "El algoritmo de Dijkstra en un grafo con V vértices y E aristas, usando un min-heap binario (PriorityQueue en Java), tiene ¿qué complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(V²) — each vertex relaxes all other vertices in the worst case", "es": "O(V²) — cada vértice relaja todos los demás vértices en el peor caso" } },
+    { "id": "b", "label": { "en": "O(V + E) — BFS-equivalent traversal with extra distance tracking", "es": "O(V + E) — recorrido equivalente a BFS con seguimiento extra de distancias" } },
+    { "id": "c", "label": { "en": "O((V + E) log V) — each edge relaxation may trigger a heap operation costing O(log V)", "es": "O((V + E) log V) — cada relajación de arista puede desencadenar una operación de heap que cuesta O(log V)" } },
+    { "id": "d", "label": { "en": "O(V × E) — Dijkstra must check every edge for every vertex", "es": "O(V × E) — Dijkstra debe verificar cada arista para cada vértice" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "With a binary min-heap, each vertex is extracted once (V extractions × O(log V) = O(V log V)), and each edge relaxation may insert a new distance into the heap (E insertions × O(log V) = O(E log V)). Combined: O((V + E) log V). Option A (O(V²)) is the complexity with an array-based priority queue (no heap), which is better for dense graphs. Option B (O(V + E)) is standard BFS on an unweighted graph — Dijkstra cannot achieve this with a heap because heap operations cost O(log V).",
+    "es": "Con un min-heap binario, cada vértice se extrae una vez (V extracciones × O(log V) = O(V log V)), y cada relajación de arista puede insertar una nueva distancia en el heap (E inserciones × O(log V) = O(E log V)). Combinado: O((V + E) log V). La opción A (O(V²)) es la complejidad con una cola de prioridad basada en arreglo (sin heap), que es mejor para grafos densos. La opción B (O(V + E)) es el BFS estándar en un grafo sin peso — Dijkstra no puede lograr esto con un heap porque las operaciones de heap cuestan O(log V)."
+  }
+}

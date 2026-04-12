@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-sliding-window-standalone-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "sliding-window-standalone: time complexity",
+    "es": "sliding-window-standalone: complejidad temporal"
+  },
+  "prompt": {
+    "en": "A variable-size sliding window scans an array of n elements. Each element is added to the window at most once (right pointer advances) and removed at most once (left pointer advances). What is the time complexity?",
+    "es": "Una ventana deslizante de tamaño variable recorre un arreglo de n elementos. Cada elemento se agrega a la ventana como máximo una vez (puntero derecho avanza) y se elimina como máximo una vez (puntero izquierdo avanza). ¿Cuál es la complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n²) — the inner shrink loop can iterate up to n times per outer step", "es": "O(n²) — el bucle interno de contracción puede iterar hasta n veces por cada paso externo" } },
+    { "id": "b", "label": { "en": "O(n log n) — the window size adjustment requires a sorted inner structure", "es": "O(n log n) — el ajuste del tamaño de la ventana requiere una estructura interna ordenada" } },
+    { "id": "c", "label": { "en": "O(n) amortized — each pointer moves at most n times, giving 2n total operations", "es": "O(n) amortizado — cada puntero se mueve como máximo n veces, dando 2n operaciones totales" } },
+    { "id": "d", "label": { "en": "O(n × k) where k is the maximum window size", "es": "O(n × k) donde k es el tamaño máximo de la ventana" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The left pointer and the right pointer each traverse the array at most once (n moves each), giving at most 2n operations total — O(n) amortized. Option A (O(n²)) is the trap: the inner shrink loop looks quadratic, but amortized analysis shows each element enters and leaves the window exactly once across all iterations. Option D conflates the window size with the traversal cost, but the total shrink operations across the entire run are bounded by n, not n×k.",
+    "es": "El puntero izquierdo y el puntero derecho cada uno recorre el arreglo como máximo una vez (n movimientos cada uno), dando como máximo 2n operaciones totales — O(n) amortizado. La opción A (O(n²)) es la trampa: el bucle de contracción interno parece cuadrático, pero el análisis amortizado muestra que cada elemento entra y sale de la ventana exactamente una vez en todas las iteraciones. La opción D confunde el tamaño de la ventana con el costo de recorrido, pero las operaciones de contracción totales en toda la ejecución están acotadas por n, no por n×k."
+  }
+}

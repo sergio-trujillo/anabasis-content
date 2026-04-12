@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-binary-search-variants-edge-case",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "binary-search-variants: edge case — single element",
+    "es": "binary-search-variants: caso límite — elemento único"
+  },
+  "prompt": {
+    "en": "Binary search is called on a sorted array containing exactly one element. What happens?",
+    "es": "Se llama a la búsqueda binaria en un arreglo ordenado que contiene exactamente un elemento. ¿Qué ocurre?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "It throws an ArrayIndexOutOfBoundsException because mid = (0 + 0) / 2 = 0 underflows the range", "es": "Lanza ArrayIndexOutOfBoundsException porque mid = (0 + 0) / 2 = 0 desborda el rango por abajo" } },
+    { "id": "b", "label": { "en": "It enters an infinite loop because lo and hi never converge", "es": "Entra en un bucle infinito porque lo y hi nunca convergen" } },
+    { "id": "c", "label": { "en": "It works correctly: lo = hi = 0, mid = 0, the single element is compared, and the search terminates in one step", "es": "Funciona correctamente: lo = hi = 0, mid = 0, se compara el único elemento y la búsqueda termina en un paso" } },
+    { "id": "d", "label": { "en": "It requires a special-case guard (if arr.length == 1) to avoid undefined behavior", "es": "Requiere una guarda de caso especial (if arr.length == 1) para evitar comportamiento indefinido" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "With a single-element array, lo = 0 and hi = 0. mid = 0 + (0 - 0) / 2 = 0, which is valid. The comparison checks arr[0] against the target and either returns 0 or reports not-found; the loop exits after one iteration because lo > hi after the update. No special guard is needed. Option D is a common defensive-coding myth — the general algorithm handles this base case naturally.",
+    "es": "Con un arreglo de un solo elemento, lo = 0 y hi = 0. mid = 0 + (0 - 0) / 2 = 0, lo cual es válido. La comparación verifica arr[0] contra el objetivo y retorna 0 o reporta no encontrado; el bucle termina tras una iteración porque lo > hi después de la actualización. No se necesita ninguna guarda especial. La opción D es un mito común de programación defensiva — el algoritmo general maneja este caso base de forma natural."
+  }
+}

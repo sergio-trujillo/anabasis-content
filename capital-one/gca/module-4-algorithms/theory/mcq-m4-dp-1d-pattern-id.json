@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-dp-1d-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "dp-1d: pattern identification",
+    "es": "dp-1d: identificación del patrón"
+  },
+  "prompt": {
+    "en": "A problem asks for the maximum sum of a non-contiguous subsequence (no two adjacent elements picked) in an array. Which canonical pattern applies?",
+    "es": "Un problema pide la suma máxima de una subsecuencia no contigua (no se eligen dos elementos adyacentes) en un arreglo. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sliding-window — maintain a window of the last two elements and track the running max", "es": "sliding-window — mantener una ventana de los últimos dos elementos y rastrear el máximo acumulado" } },
+    { "id": "b", "label": { "en": "greedy-interval-scheduling — model each element as an interval and pick non-overlapping ones by end position", "es": "greedy-interval-scheduling — modelar cada elemento como un intervalo y elegir los no superpuestos por posición final" } },
+    { "id": "c", "label": { "en": "dp-1d — dp[i] = max(dp[i-1], dp[i-2] + arr[i]); the decision at each index is include-or-skip with an optimal substructure", "es": "dp-1d — dp[i] = max(dp[i-1], dp[i-2] + arr[i]); la decisión en cada índice es incluir-o-saltar con subestructura óptima" } },
+    { "id": "d", "label": { "en": "prefix-sum — compute the sum of all elements, then subtract adjacent element pairs that violate the constraint", "es": "prefix-sum — calcular la suma de todos los elementos, luego restar los pares de elementos adyacentes que violan la restricción" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The non-adjacent maximum sum (house robber problem) has optimal substructure: the best solution at index i is either skip i and keep the best from i-1, or take arr[i] plus the best from i-2. This is a textbook 1D DP recurrence. Sliding window (Option A) cannot express the skip-or-include decision across non-contiguous positions. Prefix-sum (Option D) computes total sums but has no mechanism for the adjacency constraint. Greedy (Option B) models intervals, not individual elements with a skip constraint.",
+    "es": "La suma máxima no adyacente (problema del ladrón de casas) tiene subestructura óptima: la mejor solución en el índice i es omitir i y conservar lo mejor de i-1, o tomar arr[i] más lo mejor de i-2. Esta es una recurrencia DP 1D de libro de texto. La ventana deslizante (opción A) no puede expresar la decisión de omitir-o-incluir a través de posiciones no contiguas. Prefix-sum (opción D) calcula sumas totales pero no tiene mecanismo para la restricción de adyacencia. El greedy (opción B) modela intervalos, no elementos individuales con una restricción de salto."
+  }
+}

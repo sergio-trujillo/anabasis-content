@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-cross-range-sum-immutable",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "cross-canonical: range sums on an immutable array",
+    "es": "cross-canonical: sumas de rango en un arreglo inmutable"
+  },
+  "prompt": {
+    "en": "You are given an immutable integer array and must answer thousands of range-sum queries sumRange(l, r) efficiently. Which canonical pattern applies?",
+    "es": "Se te da un arreglo entero inmutable y debes responder miles de consultas de suma de rango sumRange(l, r) eficientemente. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sliding-window — maintain a window that repositions to [l, r] for each query", "es": "sliding-window — mantener una ventana que se reposiciona a [l, r] para cada consulta" } },
+    { "id": "b", "label": { "en": "binary-search — binary-search both endpoints l and r in the sorted array to compute the range sum", "es": "binary-search — buscar binariamente ambos extremos l y r en el arreglo ordenado para calcular la suma del rango" } },
+    { "id": "c", "label": { "en": "prefix-sum — precompute prefix[i] once; answer each query as prefix[r+1] - prefix[l] in O(1)", "es": "prefix-sum — precomputar prefix[i] una vez; responder cada consulta como prefix[r+1] - prefix[l] en O(1)" } },
+    { "id": "d", "label": { "en": "graph-shortest-path — model elements as graph nodes with weighted edges and find the minimum-cost path from l to r", "es": "graph-shortest-path — modelar los elementos como nodos de grafo con aristas ponderadas y encontrar el camino de costo mínimo de l a r" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "For an immutable array with many range-sum queries, prefix-sum is the optimal canonical: O(n) preprocessing builds prefix[i], and each query is answered in O(1) with a single subtraction. Option A (sliding window) would need O(r - l) per query to reposition — identical to brute-force scanning. Option B (binary search) is for finding values in sorted arrays, not for range sums. The key discriminator here is immutability + repeated sum queries, which is precisely the prefix-sum contract.",
+    "es": "Para un arreglo inmutable con muchas consultas de suma de rango, prefix-sum es el canónico óptimo: O(n) de preprocesamiento construye prefix[i], y cada consulta se responde en O(1) con una sola resta. La opción A (ventana deslizante) necesitaría O(r - l) por consulta para reposicionarse — idéntico al escaneo de fuerza bruta. La opción B (búsqueda binaria) es para encontrar valores en arreglos ordenados, no para sumas de rangos. El discriminador clave aquí es inmutabilidad + consultas de suma repetidas, que es precisamente el contrato de prefix-sum."
+  }
+}

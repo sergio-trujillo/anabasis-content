@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-dp-1d-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "dp-1d: vs. greedy for coin change",
+    "es": "dp-1d: vs. greedy para cambio de monedas"
+  },
+  "prompt": {
+    "en": "You need to make change for amount n using coins of denominations {1, 5, 10, 25}. Greedy (always pick the largest coin ≤ remaining) gives the optimal answer for US coins. Does greedy always work for arbitrary coin sets?",
+    "es": "Necesitas dar cambio por la cantidad n usando monedas de denominaciones {1, 5, 10, 25}. El greedy (siempre elige la moneda más grande ≤ restante) da la respuesta óptima para monedas de EE.UU. ¿Funciona el greedy siempre para conjuntos arbitrarios de monedas?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Yes — greedy is always optimal for any canonical coin system used in any country", "es": "Sí — el greedy es siempre óptimo para cualquier sistema de monedas canónico usado en cualquier país" } },
+    { "id": "b", "label": { "en": "No — for coins {1, 3, 4} and amount 6, greedy picks 4+1+1=3 coins, but optimal is 3+3=2 coins; DP is required for arbitrary denominations", "es": "No — para monedas {1, 3, 4} y cantidad 6, el greedy elige 4+1+1=3 monedas, pero el óptimo es 3+3=2 monedas; DP es necesario para denominaciones arbitrarias" } },
+    { "id": "c", "label": { "en": "No — greedy fails even for US coins when the amount exceeds 100", "es": "No — el greedy falla incluso para monedas de EE.UU. cuando la cantidad supera 100" } },
+    { "id": "d", "label": { "en": "Yes — any problem solvable with DP can also be solved with greedy given the right sorting order", "es": "Sí — cualquier problema resoluble con DP también se puede resolver con greedy dado el orden de ordenamiento correcto" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Greedy fails on arbitrary coin sets. The canonical counterexample: coins = {1, 3, 4}, amount = 6. Greedy picks 4 first (remaining 2), then 1+1 — 3 coins total. The optimal is 3+3 — 2 coins. DP solves this correctly: dp[i] = min coins to make amount i = 1 + min(dp[i - c] for each coin c ≤ i). The key insight is that greedy works only for coin systems with the 'canonical' property (each denomination divides the next); US coins happen to satisfy this. Option D is false: DP and greedy solve fundamentally different problem classes.",
+    "es": "El greedy falla en conjuntos arbitrarios de monedas. El contraejemplo canónico: monedas = {1, 3, 4}, cantidad = 6. El greedy elige primero 4 (restante 2), luego 1+1 — 3 monedas en total. El óptimo es 3+3 — 2 monedas. DP lo resuelve correctamente: dp[i] = mínimo de monedas para hacer la cantidad i = 1 + min(dp[i - c] para cada moneda c ≤ i). El insight clave es que el greedy funciona solo para sistemas de monedas con la propiedad 'canónica' (cada denominación divide a la siguiente); las monedas de EE.UU. resultan satisfacer esto. La opción D es falsa: DP y greedy resuelven clases de problemas fundamentalmente diferentes."
+  }
+}

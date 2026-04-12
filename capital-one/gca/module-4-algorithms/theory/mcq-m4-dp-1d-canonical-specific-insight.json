@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-dp-1d-canonical-specific-insight",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "dp-1d: O(1) space optimization — when it applies",
+    "es": "dp-1d: optimización de espacio O(1) — cuándo aplica"
+  },
+  "prompt": {
+    "en": "When can a 1D DP array be replaced with a fixed number of scalar variables (O(1) space)?",
+    "es": "¿Cuándo se puede reemplazar un arreglo DP 1D con un número fijo de variables escalares (espacio O(1))?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Always — every 1D DP table can be compressed to O(1) by re-deriving old values on demand", "es": "Siempre — toda tabla DP 1D se puede comprimir a O(1) derivando de nuevo los valores anteriores bajo demanda" } },
+    { "id": "b", "label": { "en": "Only when n ≤ 1000, because larger inputs require the full array to avoid floating-point drift", "es": "Solo cuando n ≤ 1000, porque las entradas más grandes requieren el arreglo completo para evitar deriva de punto flotante" } },
+    { "id": "c", "label": { "en": "When dp[i] depends only on a constant number of preceding states (e.g., dp[i-1] and dp[i-2]), not on dp[0..i-1] arbitrarily", "es": "Cuando dp[i] depende solo de un número constante de estados precedentes (ej., dp[i-1] y dp[i-2]), no de dp[0..i-1] arbitrariamente" } },
+    { "id": "d", "label": { "en": "When the recurrence is linear (no multiplication or division of dp terms), regardless of how many prior states are accessed", "es": "Cuando la recurrencia es lineal (sin multiplicación o división de términos dp), sin importar cuántos estados anteriores se acceden" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Space optimization is possible when the recurrence looks back only a fixed (constant) number of positions. If dp[i] uses only dp[i-1] and dp[i-2], you need only two variables. If dp[i] uses dp[i-1] through dp[i-k] for a fixed k, you need k variables (a rolling window). But if dp[i] depends on dp[j] for arbitrary j < i (e.g., longest palindromic subsequence where you need the entire previous row), you cannot reduce to O(1) — you need the full O(n) array. Option D is a red herring: linearity of the formula is irrelevant; what matters is the span of the dependency.",
+    "es": "La optimización de espacio es posible cuando la recurrencia mira hacia atrás solo un número fijo (constante) de posiciones. Si dp[i] usa solo dp[i-1] y dp[i-2], solo necesitas dos variables. Si dp[i] usa dp[i-1] hasta dp[i-k] para un k fijo, necesitas k variables (una ventana rotativa). Pero si dp[i] depende de dp[j] para j < i arbitrario (ej., subsecuencia palíndroma más larga donde necesitas la fila anterior completa), no puedes reducir a O(1) — necesitas el arreglo O(n) completo. La opción D es una distracción: la linealidad de la fórmula es irrelevante; lo que importa es el span de la dependencia."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-greedy-interval-scheduling-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "greedy-interval-scheduling: Java sort idiom",
+    "es": "greedy-interval-scheduling: idioma de ordenamiento en Java"
+  },
+  "prompt": {
+    "en": "Given int[][] intervals where intervals[i] = {start, end}, which Java one-liner sorts them by end time for greedy interval scheduling?",
+    "es": "Dado int[][] intervals donde intervals[i] = {start, end}, ¿qué línea en Java los ordena por tiempo de fin para la programación greedy de intervalos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Arrays.sort(intervals, (a, b) -> a[0] - b[0]);", "es": "Arrays.sort(intervals, (a, b) -> a[0] - b[0]);" } },
+    { "id": "b", "label": { "en": "Arrays.sort(intervals, (a, b) -> a[1] - b[1]);", "es": "Arrays.sort(intervals, (a, b) -> a[1] - b[1]);" } },
+    { "id": "c", "label": { "en": "Arrays.sort(intervals, (a, b) -> (a[1] - a[0]) - (b[1] - b[0]));", "es": "Arrays.sort(intervals, (a, b) -> (a[1] - a[0]) - (b[1] - b[0]));" } },
+    { "id": "d", "label": { "en": "Collections.sort(intervals, Comparator.comparingInt(a -> a[1] + a[0]));", "es": "Collections.sort(intervals, Comparator.comparingInt(a -> a[1] + a[0]));" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Greedy interval scheduling requires sorting by end time (index 1). Option B compares `a[1] - b[1]`, which sorts ascending by end time. Option A sorts by start time (index 0) — a common mistake that does not produce the globally optimal solution for activity selection. Option C sorts by interval duration (end - start), which is also wrong: a short interval that ends late leaves less room than a longer interval that ends early. Arithmetic subtraction as a comparator is safe here because the values are non-negative interview-problem constraints (no overflow risk).",
+    "es": "La programación greedy de intervalos requiere ordenar por tiempo de fin (índice 1). La opción B compara `a[1] - b[1]`, que ordena ascendentemente por tiempo de fin. La opción A ordena por tiempo de inicio (índice 0) — un error común que no produce la solución globalmente óptima para la selección de actividades. La opción C ordena por duración del intervalo (fin - inicio), que también es incorrecto: un intervalo corto que termina tarde deja menos espacio que un intervalo más largo que termina temprano. La resta aritmética como comparador es segura aquí porque los valores son restricciones de problema de entrevista no negativas (sin riesgo de desbordamiento)."
+  }
+}

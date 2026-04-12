@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-dp-1d-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "dp-1d: time and space complexity",
+    "es": "dp-1d: complejidad temporal y espacial"
+  },
+  "prompt": {
+    "en": "A 1D DP solution fills an array dp[0..n] where each dp[i] depends only on dp[i-1] and dp[i-2]. What are the time and space complexities?",
+    "es": "Una solución DP 1D llena un arreglo dp[0..n] donde cada dp[i] depende solo de dp[i-1] y dp[i-2]. ¿Cuáles son las complejidades temporal y espacial?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) time, O(n) space — the full array is required to compute each value", "es": "O(n) tiempo, O(n) espacio — el arreglo completo es necesario para calcular cada valor" } },
+    { "id": "b", "label": { "en": "O(n²) time, O(n) space — each cell depends on all previous cells", "es": "O(n²) tiempo, O(n) espacio — cada celda depende de todas las celdas anteriores" } },
+    { "id": "c", "label": { "en": "O(n) time, O(1) space — only two variables are needed since each step depends on the previous two", "es": "O(n) tiempo, O(1) espacio — solo se necesitan dos variables ya que cada paso depende de los dos anteriores" } },
+    { "id": "d", "label": { "en": "O(log n) time, O(log n) space — the recurrence halves the problem at each step", "es": "O(log n) tiempo, O(log n) espacio — la recurrencia divide el problema a la mitad en cada paso" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "When dp[i] depends only on dp[i-1] and dp[i-2], you only need to track two rolling variables — call them prev2 and prev1. As you iterate from left to right, you compute curr = f(prev1, prev2), then shift: prev2 = prev1, prev1 = curr. This gives O(n) time and O(1) space. Option A (O(n) space) is correct for time but unnecessarily allocates the full array — valid but not space-optimal. Option D confuses this with divide-and-conquer or binary-search recurrences; the Fibonacci-style recurrence is linear, not logarithmic.",
+    "es": "Cuando dp[i] depende solo de dp[i-1] y dp[i-2], solo necesitas rastrear dos variables rotativas — llámalas prev2 y prev1. Al iterar de izquierda a derecha, calculas curr = f(prev1, prev2), luego desplazas: prev2 = prev1, prev1 = curr. Esto da O(n) tiempo y O(1) espacio. La opción A (O(n) espacio) es correcta en tiempo pero asigna innecesariamente el arreglo completo — válido pero no óptimo en espacio. La opción D confunde esto con recurrencias de divide y vencerás o búsqueda binaria; la recurrencia estilo Fibonacci es lineal, no logarítmica."
+  }
+}

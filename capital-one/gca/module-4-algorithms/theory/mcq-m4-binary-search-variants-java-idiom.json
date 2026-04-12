@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-binary-search-variants-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "binary-search-variants: Java loop idiom",
+    "es": "binary-search-variants: idioma de bucle en Java"
+  },
+  "prompt": {
+    "en": "Which Java loop skeleton correctly implements iterative binary search on a sorted int[] arr for target t?",
+    "es": "¿Qué esqueleto de bucle en Java implementa correctamente la búsqueda binaria iterativa en int[] arr ordenado para el objetivo t?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "int lo=0, hi=arr.length; while(lo<hi){ int mid=lo+(hi-lo)/2; if(arr[mid]<t) lo=mid+1; else hi=mid; }", "es": "int lo=0, hi=arr.length; while(lo<hi){ int mid=lo+(hi-lo)/2; if(arr[mid]<t) lo=mid+1; else hi=mid; }" } },
+    { "id": "b", "label": { "en": "int lo=0, hi=arr.length-1; while(lo<=hi){ int mid=(lo+hi)/2; if(arr[mid]==t) return mid; else if(arr[mid]<t) lo=mid+1; else hi=mid-1; }", "es": "int lo=0, hi=arr.length-1; while(lo<=hi){ int mid=(lo+hi)/2; if(arr[mid]==t) return mid; else if(arr[mid]<t) lo=mid+1; else hi=mid-1; }" } },
+    { "id": "c", "label": { "en": "int lo=0, hi=arr.length-1; while(lo<hi){ int mid=(lo+hi+1)/2; if(arr[mid]>t) hi=mid-1; else lo=mid; }", "es": "int lo=0, hi=arr.length-1; while(lo<hi){ int mid=(lo+hi+1)/2; if(arr[mid]>t) hi=mid-1; else lo=mid; }" } },
+    { "id": "d", "label": { "en": "for(int i=0; i<arr.length; i+=2){ if(arr[i]==t || (i+1<arr.length && arr[i+1]==t)) return i; }", "es": "for(int i=0; i<arr.length; i+=2){ if(arr[i]==t || (i+1<arr.length && arr[i+1]==t)) return i; }" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the canonical exact-match binary search: `hi = arr.length - 1`, the loop runs while `lo <= hi`, and both bounds move past `mid` (`lo = mid + 1`, `hi = mid - 1`) to guarantee termination. Option A is a left-bisect template (finds insertion point, not exact match). Option D skips every other element and is O(n), not O(log n). Option C is a right-bisect pattern with a biased midpoint to avoid infinite loops when `lo + 1 == hi` — valid for some variants but not exact match.",
+    "es": "La opción B es la búsqueda binaria de coincidencia exacta canónica: `hi = arr.length - 1`, el bucle corre mientras `lo <= hi`, y ambos límites se mueven más allá de `mid` (`lo = mid + 1`, `hi = mid - 1`) para garantizar terminación. La opción A es la plantilla de bisección izquierda (encuentra el punto de inserción, no coincidencia exacta). La opción D salta cada dos elementos y es O(n), no O(log n). La opción C es un patrón de bisección derecha con punto medio sesgado para evitar bucles infinitos cuando `lo + 1 == hi` — válido para algunas variantes pero no para coincidencia exacta."
+  }
+}

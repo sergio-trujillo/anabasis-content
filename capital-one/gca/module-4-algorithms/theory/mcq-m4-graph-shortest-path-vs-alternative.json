@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-graph-shortest-path-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "graph-shortest-path: BFS vs. Dijkstra vs. Bellman-Ford selection",
+    "es": "graph-shortest-path: selección BFS vs. Dijkstra vs. Bellman-Ford"
+  },
+  "prompt": {
+    "en": "Match the graph weight profile to the correct shortest-path algorithm: (1) all edges weight = 1, (2) all edges weight ≥ 0, (3) some edges negative, no negative cycle.",
+    "es": "Empareja el perfil de pesos del grafo con el algoritmo de camino más corto correcto: (1) todas las aristas peso = 1, (2) todas las aristas peso ≥ 0, (3) algunas aristas negativas, sin ciclo negativo."
+  },
+  "options": [
+    { "id": "a", "label": { "en": "(1) Dijkstra, (2) Bellman-Ford, (3) BFS", "es": "(1) Dijkstra, (2) Bellman-Ford, (3) BFS" } },
+    { "id": "b", "label": { "en": "(1) BFS, (2) BFS, (3) Dijkstra", "es": "(1) BFS, (2) BFS, (3) Dijkstra" } },
+    { "id": "c", "label": { "en": "(1) BFS, (2) Dijkstra, (3) Bellman-Ford", "es": "(1) BFS, (2) Dijkstra, (3) Bellman-Ford" } },
+    { "id": "d", "label": { "en": "(1) Dijkstra, (2) Dijkstra, (3) Bellman-Ford", "es": "(1) Dijkstra, (2) Dijkstra, (3) Bellman-Ford" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The decision tree: (1) Unit weights → BFS is O(V + E) and finds shortest paths exactly; Dijkstra also works but is slower at O((V + E) log V). (2) Non-negative weights → Dijkstra is optimal. (3) Negative weights with no negative cycle → Bellman-Ford is required; Dijkstra gives incorrect results because it assumes finalized distances are non-decreasing. Option D is tempting because Dijkstra works on unit weights, but BFS is strictly faster (no heap overhead) — always prefer the tightest-fitting tool.",
+    "es": "El árbol de decisión: (1) Pesos unitarios → BFS es O(V + E) y encuentra caminos más cortos exactamente; Dijkstra también funciona pero es más lento a O((V + E) log V). (2) Pesos no negativos → Dijkstra es óptimo. (3) Pesos negativos sin ciclo negativo → Bellman-Ford es requerido; Dijkstra da resultados incorrectos porque asume que las distancias finalizadas son no decrecientes. La opción D es tentadora porque Dijkstra funciona con pesos unitarios, pero BFS es estrictamente más rápido (sin sobrecarga de heap) — siempre prefiere la herramienta más ajustada."
+  }
+}

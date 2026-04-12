@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-greedy-interval-scheduling-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "greedy-interval-scheduling: time complexity",
+    "es": "greedy-interval-scheduling: complejidad temporal"
+  },
+  "prompt": {
+    "en": "The activity-selection greedy algorithm sorts n intervals by end time, then scans once to greedily select non-overlapping intervals. What is the overall time complexity?",
+    "es": "El algoritmo greedy de selección de actividades ordena n intervalos por tiempo de fin, luego escanea una vez para seleccionar codiciosamente intervalos no superpuestos. ¿Cuál es la complejidad temporal total?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) — the greedy scan dominates and sorting is a constant-time setup", "es": "O(n) — el escaneo greedy domina y el ordenamiento es una configuración de tiempo constante" } },
+    { "id": "b", "label": { "en": "O(n log n) — sorting by end time costs O(n log n); the greedy scan is O(n)", "es": "O(n log n) — ordenar por tiempo de fin cuesta O(n log n); el escaneo greedy es O(n)" } },
+    { "id": "c", "label": { "en": "O(n²) — each interval must be compared against all selected intervals", "es": "O(n²) — cada intervalo debe compararse contra todos los intervalos seleccionados" } },
+    { "id": "d", "label": { "en": "O(n log n) for sorting plus O(n log n) for the greedy scan using a priority queue, totalling O(n log² n)", "es": "O(n log n) por ordenar más O(n log n) por el escaneo greedy usando una cola de prioridad, totalizando O(n log² n)" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The algorithm has two phases: (1) sort by end time in O(n log n), and (2) a single linear scan keeping track of the last selected interval's end time — O(n). The overall complexity is dominated by the sort: O(n log n). Option C (O(n²)) would apply to a naive approach that checks each candidate against all previously chosen intervals. Option D incorrectly suggests the greedy scan needs a priority queue — after sorting, a simple linear scan with a single variable suffices.",
+    "es": "El algoritmo tiene dos fases: (1) ordenar por tiempo de fin en O(n log n), y (2) un único escaneo lineal manteniendo el seguimiento del tiempo de fin del último intervalo seleccionado — O(n). La complejidad general está dominada por el ordenamiento: O(n log n). La opción C (O(n²)) aplicaría a un enfoque ingenuo que verifica cada candidato contra todos los intervalos previamente elegidos. La opción D sugiere incorrectamente que el escaneo greedy necesita una cola de prioridad — después de ordenar, un simple escaneo lineal con una sola variable es suficiente."
+  }
+}

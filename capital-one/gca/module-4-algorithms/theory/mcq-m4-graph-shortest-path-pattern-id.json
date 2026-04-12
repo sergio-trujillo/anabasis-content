@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-graph-shortest-path-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "graph-shortest-path: pattern identification",
+    "es": "graph-shortest-path: identificación del patrón"
+  },
+  "prompt": {
+    "en": "A problem gives a directed graph and asks for the shortest path from a source to all other nodes. The edge weights are all positive. Which algorithm is the canonical first choice?",
+    "es": "Un problema da un grafo dirigido y pide el camino más corto desde una fuente a todos los demás nodos. Los pesos de las aristas son todos positivos. ¿Qué algoritmo es la primera elección canónica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Bellman-Ford — handles all weight profiles and is always safe to apply", "es": "Bellman-Ford — maneja todos los perfiles de peso y siempre es seguro de aplicar" } },
+    { "id": "b", "label": { "en": "BFS — unit-cost BFS finds shortest paths in O(V + E)", "es": "BFS — BFS de costo unitario encuentra caminos más cortos en O(V + E)" } },
+    { "id": "c", "label": { "en": "Dijkstra — greedy shortest-path on non-negative weights, O((V + E) log V) with a binary heap", "es": "Dijkstra — camino más corto greedy para pesos no negativos, O((V + E) log V) con un heap binario" } },
+    { "id": "d", "label": { "en": "Floyd-Warshall — computes all-pairs shortest paths in O(V³), covering the single-source case as a subset", "es": "Floyd-Warshall — calcula caminos más cortos de todos los pares en O(V³), cubriendo el caso de fuente única como subconjunto" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "When all edge weights are positive (non-negative), Dijkstra is the canonical choice: it is correct, efficient at O((V + E) log V), and directly solves single-source shortest paths. Option A (Bellman-Ford) is correct but unnecessarily slow — O(V × E) — when there are no negative edges. Option B (BFS) only gives shortest paths when all edges have equal (unit) weight. Option D (Floyd-Warshall) is overkill for single-source and costs O(V³).",
+    "es": "Cuando todos los pesos de las aristas son positivos (no negativos), Dijkstra es la elección canónica: es correcto, eficiente a O((V + E) log V), y resuelve directamente los caminos más cortos de fuente única. La opción A (Bellman-Ford) es correcta pero innecesariamente lenta — O(V × E) — cuando no hay aristas negativas. La opción B (BFS) solo da caminos más cortos cuando todas las aristas tienen peso igual (unitario). La opción D (Floyd-Warshall) es excesivo para fuente única y cuesta O(V³)."
+  }
+}

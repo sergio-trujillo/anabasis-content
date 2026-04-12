@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-prefix-sum-advanced-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "prefix-sum-advanced: Java build idiom",
+    "es": "prefix-sum-advanced: idioma de construcción en Java"
+  },
+  "prompt": {
+    "en": "Which Java snippet correctly builds a 1-indexed prefix-sum array (prefix[0] = 0, prefix[i] = sum of arr[0..i-1])?",
+    "es": "¿Qué fragmento de Java construye correctamente un arreglo de suma de prefijos indexado en 1 (prefix[0] = 0, prefix[i] = suma de arr[0..i-1])?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "int[] prefix = new int[n]; prefix[0] = arr[0]; for(int i=1; i<n; i++) prefix[i] = prefix[i-1] + arr[i];", "es": "int[] prefix = new int[n]; prefix[0] = arr[0]; for(int i=1; i<n; i++) prefix[i] = prefix[i-1] + arr[i];" } },
+    { "id": "b", "label": { "en": "int[] prefix = new int[n+1]; for(int i=1; i<=n; i++) prefix[i] = prefix[i-1] + arr[i-1];", "es": "int[] prefix = new int[n+1]; for(int i=1; i<=n; i++) prefix[i] = prefix[i-1] + arr[i-1];" } },
+    { "id": "c", "label": { "en": "int[] prefix = new int[n]; for(int i=0; i<n; i++) prefix[i] = (i==0) ? 0 : prefix[i-1] + arr[i];", "es": "int[] prefix = new int[n]; for(int i=0; i<n; i++) prefix[i] = (i==0) ? 0 : prefix[i-1] + arr[i];" } },
+    { "id": "d", "label": { "en": "int[] prefix = new int[n]; Arrays.sort(prefix); for(int i=0; i<n; i++) prefix[i] += arr[i];", "es": "int[] prefix = new int[n]; Arrays.sort(prefix); for(int i=0; i<n; i++) prefix[i] += arr[i];" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B allocates n+1 elements (size n+1), sets prefix[0] = 0 (Java zero-initializes int arrays), then fills prefix[i] = prefix[i-1] + arr[i-1] for i from 1 to n. This allows the query formula `prefix[r+1] - prefix[l]` (0-indexed arr) or `prefix[r] - prefix[l-1]` (1-indexed) to work without bounds checks. Option A uses a 0-indexed prefix array starting at arr[0], which complicates the query formula and cannot represent an empty-range prefix. Option C initializes prefix[0] to 0 but then incorrectly adds arr[i] (skipping arr[0] in the accumulation).",
+    "es": "La opción B asigna n+1 elementos, establece prefix[0] = 0 (Java inicializa arreglos int a cero), luego llena prefix[i] = prefix[i-1] + arr[i-1] para i de 1 a n. Esto permite que la fórmula de consulta `prefix[r+1] - prefix[l]` (arr indexado en 0) o `prefix[r] - prefix[l-1]` (indexado en 1) funcione sin verificaciones de límites. La opción A usa un arreglo de prefijos indexado en 0 comenzando en arr[0], lo que complica la fórmula de consulta y no puede representar un prefijo de rango vacío. La opción C inicializa prefix[0] a 0 pero luego agrega incorrectamente arr[i] (saltando arr[0] en la acumulación)."
+  }
+}

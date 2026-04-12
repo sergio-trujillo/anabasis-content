@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m4-prefix-sum-advanced-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-4-algorithms",
+  "title": {
+    "en": "prefix-sum-advanced: vs. segment tree",
+    "es": "prefix-sum-advanced: vs. árbol de segmentos"
+  },
+  "prompt": {
+    "en": "When should you upgrade from a simple prefix-sum array to a segment tree for range queries?",
+    "es": "¿Cuándo deberías actualizar de un arreglo de suma de prefijos simple a un árbol de segmentos para consultas de rango?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "When the array has more than 10 000 elements, because prefix-sum lookup becomes O(n) at that scale", "es": "Cuando el arreglo tiene más de 10 000 elementos, porque la búsqueda de suma de prefijos se vuelve O(n) a esa escala" } },
+    { "id": "b", "label": { "en": "When the array is mutable (point or range updates occur) and you still need O(log n) query time", "es": "Cuando el arreglo es mutable (ocurren actualizaciones de punto o rango) y aún necesitas O(log n) de tiempo de consulta" } },
+    { "id": "c", "label": { "en": "When the query involves the maximum element in a range, because prefix-sum can only handle sums", "es": "Cuando la consulta involucra el elemento máximo en un rango, porque prefix-sum solo puede manejar sumas" } },
+    { "id": "d", "label": { "en": "Both B and C — updates and non-sum aggregate queries are both reasons to use a segment tree", "es": "Tanto B como C — las actualizaciones y las consultas de agregados no-suma son ambas razones para usar un árbol de segmentos" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "A prefix-sum array is optimal for immutable arrays with sum queries (O(n) build, O(1) query). It breaks down in two scenarios: (1) when elements are updated, because rebuilding takes O(n) per update; (2) when the aggregate is not a simple sum (e.g., range max, range min, range GCD) — prefix differences don't generalize to non-invertible operations. A segment tree handles both: O(log n) update and O(log n) query for arbitrary associative aggregates. Choosing D over just B (or just C) recognizes both failure modes of plain prefix-sum.",
+    "es": "Un arreglo de suma de prefijos es óptimo para arreglos inmutables con consultas de suma (O(n) construcción, O(1) consulta). Falla en dos escenarios: (1) cuando los elementos se actualizan, porque reconstruir toma O(n) por actualización; (2) cuando el agregado no es una suma simple (ej., máximo de rango, mínimo de rango, MCD de rango) — las diferencias de prefijos no se generalizan a operaciones no invertibles. Un árbol de segmentos maneja ambos: O(log n) actualización y O(log n) consulta para agregados asociativos arbitrarios. Elegir D sobre solo B (o solo C) reconoce ambos modos de falla de la suma de prefijos simple."
+  }
+}
