@@ -5,8 +5,9 @@
   <img alt="Bilingual" src="https://img.shields.io/badge/Bilingual-en%20%2B%20es-informational" />
   <img alt="Company" src="https://img.shields.io/badge/v1-Capital%20One-004977" />
   <img alt="Target" src="https://img.shields.io/badge/Target-~1%2C440%20exercises-blueviolet" />
-  <img alt="Phase" src="https://img.shields.io/badge/Phase-F1%20scaffolding-yellow" />
+  <img alt="Phase" src="https://img.shields.io/badge/Phase-F3-yellow" />
   <img alt="Part of" src="https://img.shields.io/badge/Part%20of-Anabasis-black" />
+  <img alt="License" src="https://img.shields.io/badge/License-Proprietary-red" />
 </p>
 
 > Filesystem-driven content repository for **Anabasis**. Bilingual markdown lessons, JSON exercise definitions, Java starter code + JUnit tests, rubric blocks for LLM-judged exercises. Hot-reloaded by the server in dev via `chokidar`.
@@ -129,4 +130,4 @@ Do not flip any other company to `active` without shipping its matching `loop.js
 
 ## License
 
-TBD. See parent workspace `README.md`.
+**Proprietary.** Single-author personal project, not open-sourced. No public `LICENSE` file. See the workspace `STATUS.md` decision D19.
