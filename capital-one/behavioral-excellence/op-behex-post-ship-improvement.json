@@ -1,0 +1,29 @@
+{
+  "id": "op-behex-post-ship-improvement",
+  "type": "open-prompt",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Post-ship iteration driven by production data",
+    "es": "Iteración post-lanzamiento impulsada por datos de producción"
+  },
+  "question": {
+    "en": "Tell me about a project where you shipped, then went back and made it measurably better based on production data. What did the data reveal that pre-ship testing missed?",
+    "es": "Cuéntame sobre un proyecto en el que lanzaste y luego regresaste y lo mejoraste de forma medible basándote en datos de producción. ¿Qué reveló la información que las pruebas previas al lanzamiento no detectaron?"
+  },
+  "rubric": {
+    "must_include": [
+      "what was shipped and what the pre-ship assumptions were about its behavior",
+      "the specific production signal or metric the candidate monitored — not just 'I watched the dashboards'",
+      "the gap between expected behavior and observed production behavior, described with numbers",
+      "the improvement the candidate drove based on that production signal",
+      "a before-and-after measurement showing the improvement was real and attributable"
+    ],
+    "must_avoid": [
+      "stories where the post-ship improvement was mandated by an incident or a customer complaint rather than proactive monitoring",
+      "conflating shipping a bug fix with iterative improvement — the story should be about raising quality, not fixing broken functionality",
+      "claiming the improvement without owning the decision to go back ('the team decided we should iterate')"
+    ],
+    "value_alignment": "Excellence",
+    "min_words": 200
+  }
+}

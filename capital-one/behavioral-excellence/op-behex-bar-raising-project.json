@@ -1,0 +1,29 @@
+{
+  "id": "op-behex-bar-raising-project",
+  "type": "open-prompt",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Bar-raising beyond the original ask",
+    "es": "Elevar el estándar más allá de la solicitud original"
+  },
+  "question": {
+    "en": "Tell me about a time you delivered something significantly better than what was asked. What made you raise the bar, and how did you know it was better?",
+    "es": "Cuéntame sobre una ocasión en la que entregaste algo significativamente mejor de lo que se te pidió. ¿Qué te llevó a elevar el estándar y cómo supiste que era mejor?"
+  },
+  "rubric": {
+    "must_include": [
+      "the original scope or ask, stated specifically — what the ticket, manager, or team requested",
+      "the candidate's personal observation or decision that triggered raising the bar (not a manager suggestion)",
+      "a concrete description of what additional work was done beyond the original ask",
+      "a measurable or verifiable indicator showing the improved version was objectively better",
+      "acknowledgment that the extra scope was the candidate's own initiative, not assigned or expected"
+    ],
+    "must_avoid": [
+      "attributing the decision to raise the bar to the team or manager ('we decided to go further', 'my manager suggested we improve it')",
+      "vague quality claims without numbers or artifacts ('it was much better quality', 'everyone loved it')",
+      "conflating working extra hours with raising the bar — effort ≠ Excellence"
+    ],
+    "value_alignment": "Excellence",
+    "min_words": 200
+  }
+}

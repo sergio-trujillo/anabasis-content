@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behex-excellence-bar-raising",
+  "type": "mcq",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Excellence: bar-raising beyond what was asked",
+    "es": "Excelencia: elevar el estándar más allá de lo solicitado"
+  },
+  "prompt": {
+    "en": "Capital One's Excellence value rewards 'raising the bar' — delivering beyond the original ask. Which story best demonstrates this signal?",
+    "es": "El valor de Excelencia de Capital One recompensa 'elevar el estándar' — entregar más allá de la solicitud original. ¿Qué historia demuestra mejor esta señal?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"I completed the feature two days early so I used the extra time to write documentation for the team.\"",
+        "es": "\"Terminé la funcionalidad dos días antes, así que usé el tiempo extra para escribir documentación para el equipo.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"I was asked to add input validation to one form. While doing it, I noticed three other forms in the same flow had the same vulnerability. I fixed all four, wrote a shared validation library the whole team could use, and added a lint rule that would flag missing validation in future PRs — none of which was in the ticket.\"",
+        "es": "\"Me pidieron agregar validación de entrada a un formulario. Al hacerlo, noté que otros tres formularios en el mismo flujo tenían la misma vulnerabilidad. Los corregí todos, escribí una librería de validación compartida que todo el equipo podría usar y agregué una regla de lint que marcaría la validación faltante en PRs futuros — nada de esto estaba en el ticket.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"I always try to exceed expectations. On this project, I worked extra hours to make sure we hit the deadline and the quality was high.\"",
+        "es": "\"Siempre trato de superar las expectativas. En este proyecto, trabajé horas extra para asegurarme de que cumpliéramos el plazo y la calidad fuera alta.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"My manager mentioned it would be nice to have a dashboard, so I built one over the weekend.\"",
+        "es": "\"Mi gerente mencionó que estaría bien tener un dashboard, así que construí uno durante el fin de semana.\""
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is a textbook bar-raising story: the candidate noticed a broader pattern (not just the assigned scope), acted on it without being asked, and permanently raised the system's quality floor by adding a shared library and a lint rule. That last step — the lint rule — converts a one-time fix into a structural improvement, which is the hallmark of Capital One's 'raise the bar' Excellence signal. Option A (wrote docs with spare time) is helpful but reactive to idle time, not proactively driven. Option C is a character assertion with no specifics — 'worked extra hours' is effort, not excellence. Option D is closer but the critical difference is that the manager suggested it first, making it execution of someone else's idea rather than the candidate's own initiative.",
+    "es": "La opción B es una historia ejemplar de bar-raising: el candidato notó un patrón más amplio (no solo el alcance asignado), actuó sin que se lo pidieran y elevó permanentemente el nivel de calidad del sistema agregando una librería compartida y una regla de lint. Ese último paso — la regla de lint — convierte una corrección única en una mejora estructural, que es la característica distintiva de la señal de Excelencia 'elevar el estándar' de Capital One. La opción A (escribió documentación con tiempo libre) es útil pero reactiva al tiempo inactivo, no impulsada proactivamente. La opción C es una afirmación de carácter sin especificaciones — 'trabajé horas extra' es esfuerzo, no excelencia. La opción D es más cercana pero la diferencia crítica es que el gerente lo sugirió primero, convirtiéndolo en ejecución de la idea de otra persona en lugar de iniciativa propia del candidato."
+  }
+}

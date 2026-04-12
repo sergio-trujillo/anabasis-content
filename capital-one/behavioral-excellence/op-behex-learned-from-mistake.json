@@ -1,0 +1,29 @@
+{
+  "id": "op-behex-learned-from-mistake",
+  "type": "open-prompt",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "A mistake that changed how you work",
+    "es": "Un error que cambió cómo trabajas"
+  },
+  "question": {
+    "en": "Describe a mistake you made that changed how you approach your work. Be specific about what the mistake cost and what you do differently now.",
+    "es": "Describe un error que cometiste que cambió cómo abordas tu trabajo. Sé específico sobre lo que costó el error y qué haces diferente ahora."
+  },
+  "rubric": {
+    "must_include": [
+      "a specific, named mistake — not 'I made an error in judgment' but the actual thing that went wrong and what it broke or cost",
+      "the real cost of the mistake: customer impact, downtime duration, dollar amount, deadline slip, or trust lost — stated with honest specifics",
+      "the candidate's personal accountability — they were the decision-maker or the last line of defense, not just a bystander",
+      "a concrete behavioral change the candidate made post-mistake — a new process, a checklist, a design habit, a communication pattern",
+      "evidence that the change stuck: a situation where the new behavior prevented a similar mistake"
+    ],
+    "must_avoid": [
+      "picking a 'safe' mistake that was trivially small or easily reframed as a positive ('my mistake was caring too much about quality')",
+      "describing the cost in vague terms after being specific about everything else — the cost is the most important part",
+      "attributing the learning to a senior person who told them what to do differently — the lesson must be self-derived"
+    ],
+    "value_alignment": "Excellence",
+    "min_words": 150
+  }
+}

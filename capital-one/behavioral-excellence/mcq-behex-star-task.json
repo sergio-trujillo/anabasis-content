@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behex-star-task",
+  "type": "mcq",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "STAR: identifying the candidate's personal Task",
+    "es": "STAR: identificar la Tarea personal del candidato"
+  },
+  "prompt": {
+    "en": "After establishing a Situation, a candidate describes their Task. Which option correctly defines the candidate's PERSONAL responsibility — distinct from what the team or manager was responsible for?",
+    "es": "Después de establecer una Situación, un candidato describe su Tarea. ¿Cuál opción define correctamente la responsabilidad PERSONAL del candidato — distinta de la del equipo o gerente?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"Our team needed to migrate the legacy auth service before the security review deadline.\"",
+        "es": "\"Nuestro equipo necesitaba migrar el servicio de autenticación heredado antes de la fecha límite de revisión de seguridad.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"The manager asked us to look into the issue and come up with a plan.\"",
+        "es": "\"El gerente nos pidió investigar el problema y elaborar un plan.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"My specific responsibility was to own the data migration strategy — I had to design the rollback plan, get sign-off from the security team, and ensure zero data loss across 4M customer records.\"",
+        "es": "\"Mi responsabilidad específica era gestionar la estrategia de migración de datos — tenía que diseñar el plan de rollback, obtener la aprobación del equipo de seguridad y garantizar cero pérdida de datos en 4M de registros de clientes.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"We were all working toward the same goal of shipping the migration on time.\"",
+        "es": "\"Todos trabajábamos hacia el mismo objetivo de entregar la migración a tiempo.\""
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C clearly delineates what THIS candidate was personally accountable for: the migration strategy, the rollback design, security sign-off, and the specific constraint of 4M records with zero data loss. A strong Task statement answers 'what was YOUR job within this situation?' Options A and D both use 'we/our team' — they describe a shared goal, not a personal mandate. Option B is even weaker: it's passive ('the manager asked') and still collective ('us'), signaling the candidate did not personally own anything specific.",
+    "es": "La opción C delimita claramente de qué era personalmente responsable ESTE candidato: la estrategia de migración, el diseño del rollback, la aprobación de seguridad y la restricción específica de 4M registros sin pérdida de datos. Una buena declaración de Tarea responde '¿cuál era TU trabajo dentro de esta situación?' Las opciones A y D usan 'nosotros/nuestro equipo' — describen un objetivo compartido, no un mandato personal. La opción B es aún más débil: es pasiva ('el gerente pidió') y colectiva ('nos'), lo que indica que el candidato no era responsable personal de nada específico."
+  }
+}

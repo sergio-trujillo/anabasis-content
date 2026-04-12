@@ -1,0 +1,29 @@
+{
+  "id": "op-behex-disagreement-with-data",
+  "type": "open-prompt",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Changing a team decision by bringing data",
+    "es": "Cambiar una decisión del equipo presentando datos"
+  },
+  "question": {
+    "en": "Tell me about a time you changed a team decision by bringing new data to a disagreement. What data did you produce or surface, and what was the outcome?",
+    "es": "Cuéntame sobre una ocasión en la que cambiaste una decisión del equipo presentando datos nuevos a un desacuerdo. ¿Qué datos produjiste o presentaste y cuál fue el resultado?"
+  },
+  "rubric": {
+    "must_include": [
+      "the original team decision or prevailing opinion the candidate disagreed with — stated specifically, not just 'there was a disagreement'",
+      "the data the candidate personally produced or surfaced — not data that already existed but was obvious, but data the candidate went out and gathered",
+      "how the candidate presented the data to change the conversation — in a meeting, a doc, a prototype, a benchmark",
+      "the specific outcome: whether the team changed course, and by how much",
+      "the candidate's read on why the data was persuasive — what it revealed that intuition or experience had missed"
+    ],
+    "must_avoid": [
+      "stories where the 'data' was an anecdote, a competitor example, or a peer's opinion — data must be empirical (measurements, logs, user research, benchmarks)",
+      "claiming the outcome as a personal win over the team rather than a collaborative course correction ('I proved them wrong')",
+      "omitting the original disagreement and jumping straight to 'I brought data and we improved things' — the tension is necessary context"
+    ],
+    "value_alignment": "Excellence",
+    "min_words": 150
+  }
+}

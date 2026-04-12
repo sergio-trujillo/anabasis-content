@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behex-weak-story-smell",
+  "type": "mcq",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Weak story: identifying the red flag",
+    "es": "Historia débil: identificar la señal de alerta"
+  },
+  "prompt": {
+    "en": "Read this candidate story: 'We had a critical outage on a Friday night. Our team rallied together, identified the issue, and worked through the night to restore service. By Saturday morning we were back online. Management praised the whole team for the fast response.' Which single red flag MOST undermines this as an Excellence signal?",
+    "es": "Lee esta historia de candidato: 'Tuvimos una interrupción crítica un viernes por la noche. Nuestro equipo se unió, identificó el problema y trabajó toda la noche para restaurar el servicio. El sábado por la mañana estábamos de nuevo en línea. La gerencia elogió a todo el equipo por la respuesta rápida.' ¿Cuál señal de alerta ÚNICA socava más esto como señal de Excelencia?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "The outage happened on a Friday night — not a business-hours incident, so it was probably unavoidable.",
+        "es": "La interrupción ocurrió un viernes por la noche — no fue en horario laboral, por lo que probablemente era inevitable."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "The story takes team credit for every action ('we rallied,' 'we identified,' 'we worked') without isolating what the candidate personally did, decided, or noticed.",
+        "es": "La historia atribuye crédito al equipo en cada acción ('nos unimos', 'identificamos', 'trabajamos') sin aislar lo que el candidato hizo, decidió o notó personalmente."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "The candidate doesn't mention the root cause of the outage, which makes it hard to assess technical depth.",
+        "es": "El candidato no menciona la causa raíz de la interrupción, lo que dificulta evaluar la profundidad técnica."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Management's praise was directed at the whole team, not specifically at the candidate.",
+        "es": "El elogio de la gerencia fue dirigido a todo el equipo, no específicamente al candidato."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the most damaging flaw: the story is told entirely in 'we,' which means the interviewer cannot evaluate the candidate's individual contribution. In a behavioral interview, the team's heroics are irrelevant — what matters is what THIS person specifically did, decided, or noticed. An interviewer will immediately follow up with 'what did YOU specifically do?' and if the answer is just a narrower version of the same 'we' story, the Excellence signal collapses. Option C (no root cause) is a real weakness but secondary — some interviewers probe it as a follow-up. Option D (manager praised the team) is not a flaw at all; team recognition is normal. Option A is not a flaw — incident timing is outside the candidate's control.",
+    "es": "La opción B es el fallo más dañino: la historia se cuenta completamente en 'nosotros', lo que significa que el entrevistador no puede evaluar la contribución individual del candidato. En una entrevista conductual, las hazañas del equipo son irrelevantes — lo que importa es lo que ESTA persona específicamente hizo, decidió o notó. Un entrevistador inmediatamente preguntará '¿qué hiciste TÚ específicamente?' y si la respuesta es solo una versión más acotada de la misma historia de 'nosotros', la señal de Excelencia se derrumba. La opción C (sin causa raíz) es una debilidad real pero secundaria — algunos entrevistadores la sondean como seguimiento. La opción D (la gerencia elogió al equipo) no es un fallo en absoluto; el reconocimiento del equipo es normal. La opción A no es un fallo — el momento del incidente está fuera del control del candidato."
+  }
+}

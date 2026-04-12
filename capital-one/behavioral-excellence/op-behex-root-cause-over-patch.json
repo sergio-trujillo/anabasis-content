@@ -1,0 +1,29 @@
+{
+  "id": "op-behex-root-cause-over-patch",
+  "type": "open-prompt",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Choosing root cause over the quick patch",
+    "es": "Elegir la causa raíz sobre el parche rápido"
+  },
+  "question": {
+    "en": "Describe a time you chose to fix the root cause of a problem rather than patch the symptom, knowing the root-cause fix would take longer. What trade-off did you navigate, and what was the outcome?",
+    "es": "Describe una ocasión en la que elegiste corregir la causa raíz de un problema en lugar de parchear el síntoma, sabiendo que la corrección de la causa raíz llevaría más tiempo. ¿Qué concesión navegaste y cuál fue el resultado?"
+  },
+  "rubric": {
+    "must_include": [
+      "a clear description of the symptom and what the 'patch' option would have looked like",
+      "the candidate's personal investigation process that revealed the actual root cause",
+      "the trade-off the candidate consciously navigated — time cost, schedule pressure, or stakeholder pushback",
+      "the root-cause fix itself, described concretely (code change, architecture change, process change)",
+      "evidence that the root-cause fix prevented recurrence — zero repeat incidents, a test added, a constraint enforced"
+    ],
+    "must_avoid": [
+      "stories where the root-cause investigation was assigned or directed by someone else ('my manager told me to dig deeper')",
+      "skipping the trade-off — presenting root-cause as obviously correct without acknowledging the real cost",
+      "using vague technical language that obscures whether the candidate understands what they fixed ('I refactored the code to be cleaner')"
+    ],
+    "value_alignment": "Excellence",
+    "min_words": 200
+  }
+}

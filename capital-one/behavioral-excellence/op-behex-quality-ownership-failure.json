@@ -1,0 +1,29 @@
+{
+  "id": "op-behex-quality-ownership-failure",
+  "type": "open-prompt",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Owning a failure that wasn't strictly your fault",
+    "es": "Asumir la responsabilidad de un fallo que no fue estrictamente tu culpa"
+  },
+  "question": {
+    "en": "Describe a failure you owned that wasn't strictly your fault but that you took responsibility for improving. What did you do, and what did you learn?",
+    "es": "Describe un fallo que asumiste como tuyo que no fue estrictamente tu culpa, pero del que tomaste la responsabilidad de mejorar. ¿Qué hiciste y qué aprendiste?"
+  },
+  "rubric": {
+    "must_include": [
+      "a concrete failure with a specific impact — not a vague setback, but a named consequence (downtime, data loss, missed deadline, customer impact)",
+      "clarity on why the candidate was not the primary cause — acknowledging the context without using it as an excuse",
+      "the candidate's personal decision to own the failure improvement rather than waiting for someone else to fix it",
+      "a specific systemic change the candidate made — not just apologizing or monitoring more, but changing a process, tool, or guardrail",
+      "the lesson carried forward — a behavior or decision heuristic the candidate adopted as a result"
+    ],
+    "must_avoid": [
+      "framing that subtly blames the original fault owner ('I had to clean up after my teammate's mistake')",
+      "stopping at acknowledgment without showing what was changed — 'I owned it and communicated clearly' is insufficient",
+      "fabricating total blame ownership when the actual story was shared — interviewers detect when candidates overclaim ownership"
+    ],
+    "value_alignment": "Excellence",
+    "min_words": 150
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behex-star-result",
+  "type": "mcq",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "STAR: measurable vs. hand-wavy Result",
+    "es": "STAR: Resultado medible vs. impreciso"
+  },
+  "prompt": {
+    "en": "Which Result statement is strongest — measurable, causally connected to the candidate's actions, and honest about scope?",
+    "es": "¿Cuál declaración de Resultado es la más fuerte — medible, causalmente conectada a las acciones del candidato y honesta sobre el alcance?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"The project was a success and everyone was happy with the outcome.\"",
+        "es": "\"El proyecto fue un éxito y todos estaban felices con el resultado.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"We shipped on time and the product was well-received by stakeholders.\"",
+        "es": "\"Entregamos a tiempo y el producto fue bien recibido por los interesados.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"The schema constraint I added eliminated the duplicate-record class of bugs entirely. Over the next six months, zero incidents of that type were filed. The migration itself completed 3 days ahead of the security review, and the auditor specifically flagged our data integrity controls as 'best practice' in the written report.\"",
+        "es": "\"La restricción de esquema que agregué eliminó completamente la clase de errores de registros duplicados. Durante los siguientes seis meses, no se reportó ningún incidente de ese tipo. La migración en sí se completó 3 días antes de la revisión de seguridad, y el auditor específicamente destacó nuestros controles de integridad de datos como 'mejor práctica' en el informe escrito.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"My changes significantly improved reliability and reduced the number of support tickets we were getting.\"",
+        "es": "\"Mis cambios mejoraron significativamente la confiabilidad y redujeron la cantidad de tickets de soporte que recibíamos.\""
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C gives three concrete, verifiable outcomes: a zero-recurrence rate over a defined time window, a schedule delta (3 days early), and third-party validation (auditor's written report). Crucially, each outcome is traceable to the candidate's specific action. Option A ('everyone was happy') is entirely unverifiable and says nothing about impact. Option B is marginally better ('shipped on time') but still collective and vague. Option D uses the word 'significantly' — the single most common hand-wavy qualifier in behavioral answers. If you can't attach a number to 'significant,' cut the word and find the number.",
+    "es": "La opción C da tres resultados concretos y verificables: una tasa de recurrencia cero durante un período de tiempo definido, un delta de cronograma (3 días antes) y validación de terceros (informe escrito del auditor). Crucialmente, cada resultado es rastreable a la acción específica del candidato. La opción A ('todos estaban felices') es completamente inverificable y no dice nada sobre el impacto. La opción B es marginalmente mejor ('entregamos a tiempo') pero sigue siendo colectiva y vaga. La opción D usa la palabra 'significativamente' — el calificador impreciso más común en las respuestas conductuales. Si no puedes adjuntar un número a 'significativo', elimina la palabra y encuentra el número."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behex-excellence-data-driven",
+  "type": "mcq",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "Excellence: data-driven judgment vs. opinion",
+    "es": "Excelencia: juicio basado en datos vs. opinión"
+  },
+  "prompt": {
+    "en": "Capital One's Excellence value holds that 'opinions are cheap; decisions are grounded in numbers and observation.' Which response best reflects data-driven judgment in a technical decision?",
+    "es": "El valor de Excelencia de Capital One sostiene que 'las opiniones son baratas; las decisiones se fundamentan en números y observación.' ¿Qué respuesta refleja mejor el juicio basado en datos en una decisión técnica?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"I felt the current approach had too much technical debt, so I convinced the team to do a full rewrite. Everyone agreed it was the right call.\"",
+        "es": "\"Sentía que el enfoque actual tenía demasiada deuda técnica, así que convencí al equipo de hacer una reescritura completa. Todos acordaron que era la decisión correcta.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"I wanted to switch to a new caching layer. I ran load tests at 1x, 5x, and 10x traffic. The new layer reduced p95 latency from 420ms to 55ms at 10x load, while the old layer began dropping 3% of requests. I presented those numbers to the team and we made the switch.\"",
+        "es": "\"Quería cambiar a una nueva capa de caché. Ejecuté pruebas de carga a 1x, 5x y 10x de tráfico. La nueva capa redujo la latencia p95 de 420ms a 55ms a 10x de carga, mientras que la capa antigua comenzó a descartar el 3% de las solicitudes. Presenté esos números al equipo y realizamos el cambio.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"The industry is moving toward microservices, so I proposed we decompose our monolith. I researched several case studies from Netflix and Amazon to support the argument.\"",
+        "es": "\"La industria se está moviendo hacia los microservicios, así que propuse que descompusiéramos nuestro monolito. Investigué varios estudios de caso de Netflix y Amazon para apoyar el argumento.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"Based on my experience with similar systems, I recommended we increase the cache TTL. The team trusted my judgment and it worked out well.\"",
+        "es": "\"Basándome en mi experiencia con sistemas similares, recomendé que aumentáramos el TTL del caché. El equipo confió en mi juicio y resultó bien.\""
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B earns the data-driven label on three dimensions: it generates original data (load tests at three distinct scales), the data is specific and directly comparable (latency numbers + drop rate), and the decision follows the evidence rather than precedes it. Option A is pure opinion dressed up as consensus — 'felt' and 'everyone agreed' are the two biggest red flags. Option C leans on industry analogy (external case studies) rather than evidence about THIS system under THIS load — a classic argument from authority. Option D ('my experience') is also opinion-based; experience is a prior, not data. At Capital One, trusted judgment without supporting numbers is still an opinion.",
+    "es": "La opción B merece la etiqueta de basado en datos en tres dimensiones: genera datos originales (pruebas de carga a tres escalas distintas), los datos son específicos y directamente comparables (números de latencia + tasa de descarte) y la decisión sigue a la evidencia en lugar de precederla. La opción A es pura opinión disfrazada de consenso — 'sentía' y 'todos acordaron' son las dos señales de alerta más grandes. La opción C se apoya en analogías de la industria (estudios de caso externos) en lugar de evidencia sobre ESTE sistema bajo ESTA carga — un argumento clásico de autoridad. La opción D ('mi experiencia') también se basa en opinión; la experiencia es una creencia previa, no datos. En Capital One, el juicio confiable sin números de respaldo sigue siendo una opinión."
+  }
+}

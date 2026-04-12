@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behex-star-action",
+  "type": "mcq",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "STAR: strong vs. weak Action",
+    "es": "STAR: Acción fuerte vs. débil"
+  },
+  "prompt": {
+    "en": "Which of the following Action statements is strongest — specific, personally owned by the candidate, and showing initiative rather than execution of someone else's plan?",
+    "es": "¿Cuál de las siguientes declaraciones de Acción es la más fuerte — específica, de propiedad personal del candidato y que muestra iniciativa en lugar de ejecutar el plan de otra persona?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"We worked together as a team to address all the issues and eventually resolved them.\"",
+        "es": "\"Trabajamos juntos como equipo para abordar todos los problemas y eventualmente los resolvimos.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"I followed the runbook and escalated to my manager when something was unclear.\"",
+        "es": "\"Seguí el manual de procedimientos y escaloné con mi gerente cuando algo no estaba claro.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"I proactively wrote a new query that identified 14 duplicate transaction records nobody had noticed. I then built a one-time reconciliation script, ran it in a staging clone first, and proposed a schema constraint to prevent the pattern from recurring — all before my manager knew there was a broader data integrity problem.\"",
+        "es": "\"Proactivamente escribí una consulta nueva que identificó 14 registros de transacciones duplicados que nadie había notado. Luego construí un script de reconciliación de una sola vez, lo ejecuté primero en un clon de staging y propuse una restricción de esquema para evitar que el patrón se repitiera — todo esto antes de que mi gerente supiera que había un problema más amplio de integridad de datos.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"The team decided to refactor the module and I was assigned to handle the database part of that work.\"",
+        "es": "\"El equipo decidió refactorizar el módulo y a mí me asignaron la parte de base de datos de ese trabajo.\""
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C demonstrates three hallmarks of a strong Action: it is personally initiated ('I proactively'), it is specific (14 duplicate records, staging clone, schema constraint), and it shows the candidate running ahead of instruction rather than reacting to assigned work. Option A dissolves ownership into the team — the classic Excellence anti-pattern. Option B is compliant execution, not initiative: following a runbook and escalating is the floor, not the ceiling. Option D is the 'assigned work' trap — the candidate is executing someone else's decision, which is exactly what Capital One's bar-raising Excellence signal is designed to distinguish from.",
+    "es": "La opción C demuestra tres características de una Acción fuerte: es iniciada personalmente ('proactivamente'), es específica (14 registros duplicados, clon de staging, restricción de esquema) y muestra al candidato avanzando por delante de las instrucciones en lugar de reaccionar al trabajo asignado. La opción A disuelve la propiedad en el equipo — el antipatrón clásico de Excelencia. La opción B es ejecución conforme, no iniciativa: seguir un manual y escalonar es el mínimo, no el máximo. La opción D es la trampa del 'trabajo asignado' — el candidato ejecuta la decisión de otra persona, que es exactamente lo que la señal de bar-raising de Excelencia de Capital One está diseñada para distinguir."
+  }
+}

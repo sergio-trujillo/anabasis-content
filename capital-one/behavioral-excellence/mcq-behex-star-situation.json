@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behex-star-situation",
+  "type": "mcq",
+  "section": "behavioral-excellence",
+  "title": {
+    "en": "STAR: identifying a proper Situation",
+    "es": "STAR: identificar una Situación adecuada"
+  },
+  "prompt": {
+    "en": "A candidate is answering a behavioral question. Which of the following best qualifies as a proper STAR 'Situation' — one that establishes specific context and real stakes?",
+    "es": "Un candidato está respondiendo una pregunta conductual. ¿Cuál de las siguientes opciones califica mejor como una 'Situación' STAR adecuada — una que establece contexto específico y consecuencias reales?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"I was working on a project and things weren't going well, so I had to step in and fix them.\"",
+        "es": "\"Estaba trabajando en un proyecto y las cosas no iban bien, así que tuve que intervenir y arreglarlo.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"In Q3 2023, I was the tech lead on a payment reconciliation service that processed $12M/day. Two weeks before the quarterly close, our error rate spiked from 0.01% to 1.8%, putting two pending audits at risk.\"",
+        "es": "\"En el Q3 de 2023, era el tech lead de un servicio de reconciliación de pagos que procesaba $12M/día. Dos semanas antes del cierre trimestral, nuestra tasa de error subió del 0.01% al 1.8%, poniendo en riesgo dos auditorías pendientes.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"My team had a tough quarter and we were asked to improve our reliability metrics across the board.\"",
+        "es": "\"Mi equipo tuvo un trimestre difícil y se nos pidió mejorar nuestras métricas de confiabilidad en general.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"I've always cared deeply about quality, so when I saw a problem I knew I had to do something about it.\"",
+        "es": "\"Siempre me ha importado mucho la calidad, así que cuando vi un problema supe que tenía que hacer algo al respecto.\""
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B anchors the story with a specific time period (Q3 2023), a concrete system ($12M/day payment reconciliation), a measurable delta (0.01% → 1.8% error rate), and real business stakes (two audits at risk). These four ingredients — time, system, metric, consequence — define a proper Situation. Option A is the most common failure: vague, no numbers, no stakes. Option C attributes the problem to the whole team without naming the system or consequence. Option D is a character statement, not a Situation — it belongs in a cover letter, not a STAR story.",
+    "es": "La opción B ancla la historia con un período de tiempo específico (Q3 2023), un sistema concreto (reconciliación de pagos de $12M/día), un delta medible (tasa de error del 0.01% al 1.8%) y consecuencias de negocio reales (dos auditorías en riesgo). Estos cuatro ingredientes — tiempo, sistema, métrica, consecuencia — definen una Situación adecuada. La opción A es el fallo más común: vaga, sin números, sin consecuencias. La opción C atribuye el problema al equipo entero sin nombrar el sistema ni la consecuencia. La opción D es una declaración de carácter, no una Situación — pertenece a una carta de presentación, no a una historia STAR."
+  }
+}
