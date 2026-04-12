@@ -8,7 +8,7 @@
   },
   "question": {
     "en": "Tell me about a time you disagreed with a senior engineer on a technical decision. How did you handle it, and what was the outcome?",
-    "es": "Cuéntame sobre una vez en la que estuviste en desacuerdo con un ingeniero senior sobre una decisión técnica. ¿Cómo lo manejaste y cuál fue el resultado?"
+    "es": "Cuéntame de una ocasión en la que estuviste en desacuerdo con un ingeniero senior sobre una decisión técnica. ¿Cómo lo manejaste y cuál fue el resultado?"
   },
   "rubric": {
     "must_include": [

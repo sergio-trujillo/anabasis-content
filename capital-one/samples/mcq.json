@@ -8,7 +8,7 @@
   },
   "prompt": {
     "en": "You have 70 minutes for 4 problems in the Capital One CodeSignal GCA. Problems are weighted 100/200/300/400. Which time allocation gives you the best expected score under mild uncertainty?",
-    "es": "Tienes 70 minutos para 4 problemas en el GCA de CodeSignal de Capital One. Los problemas pesan 100/200/300/400. ¿Qué asignación de tiempo da el mejor puntaje esperado bajo incertidumbre moderada?"
+    "es": "Tienes 70 minutos para 4 problemas en el GCA de Capital One en CodeSignal. Los problemas pesan 100/200/300/400. ¿Qué distribución de tiempo te da el mejor puntaje esperado bajo incertidumbre moderada?"
   },
   "options": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "id": "c",
-      "label": { "en": "8 / 12 / 22 / 28 min with 5-min buffer", "es": "8 / 12 / 22 / 28 min con 5 min de buffer" }
+      "label": { "en": "8 / 12 / 22 / 28 min with 5-min buffer", "es": "8 / 12 / 22 / 28 min con 5 min de colchón" }
     },
     {
       "id": "d",
@@ -31,6 +31,6 @@
   "correctOptionId": "c",
   "explanation": {
     "en": "Equal time ignores that P4 is worth 4× P1. Weighted-hard risks getting stuck and losing easy points. The balanced allocation with a buffer protects against a single problem devouring your time.",
-    "es": "Tiempo igual ignora que P4 vale 4× P1. La asignación pesada al difícil arriesga quedarte atorado y perder los puntos fáciles. La asignación balanceada con buffer protege contra que un solo problema se coma tu tiempo."
+    "es": "Repartir igual ignora que P4 vale 4× lo que P1. Apostar todo al difícil arriesga quedarte atorado y perder los puntos fáciles. La distribución balanceada con colchón te protege contra que un solo problema se coma tu tiempo."
   }
 }
