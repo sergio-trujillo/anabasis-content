@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-simulate-until-stable-fixpoint-detection",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "simulate-until-stable: fixpoint detection insight",
+    "es": "simulate-until-stable: insight de detección de punto fijo"
+  },
+  "prompt": {
+    "en": "When checking for fixpoint convergence on an int[][] grid in Java, why is `Arrays.deepEquals(prev, next)` preferred over `prev == next`?",
+    "es": "Al comprobar la convergencia al punto fijo en una cuadrícula int[][] en Java, ¿por qué se prefiere `Arrays.deepEquals(prev, next)` sobre `prev == next`?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "`prev == next` is syntactically invalid for array types in Java", "es": "`prev == next` es sintácticamente inválido para tipos de arreglo en Java" } },
+    { "id": "b", "label": { "en": "`prev == next` checks reference identity (same object in memory), not value equality; two distinct arrays with identical contents will not be equal by ==", "es": "`prev == next` comprueba identidad de referencia (mismo objeto en memoria), no igualdad de valor; dos arreglos distintos con contenido idéntico no serán iguales con ==" } },
+    { "id": "c", "label": { "en": "`Arrays.deepEquals` is faster than == for large arrays because it uses SIMD instructions", "es": "`Arrays.deepEquals` es más rápido que == para arreglos grandes porque usa instrucciones SIMD" } },
+    { "id": "d", "label": { "en": "`prev == next` would always return false because each call to step() allocates a new array", "es": "`prev == next` siempre retornaría false porque cada llamada a step() asigna un nuevo arreglo" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "`prev == next` for arrays in Java is syntactically valid but tests reference identity — whether `prev` and `next` point to the same array object. Since `step()` always allocates a new array, `prev == next` will always be false even when the contents are identical, making the loop never terminate. `Arrays.deepEquals(prev, next)` performs element-wise deep comparison of multi-dimensional arrays, which is the correct fixpoint check. Option D is partially correct in its observation but incorrectly states '== always returns false' — if you assign `grid = next` and then compare `grid == next`, it would be true, which is why the correct pattern compares the PREVIOUS state to the NEXT, not the current reference.",
+    "es": "`prev == next` para arreglos en Java es sintácticamente válido pero prueba identidad de referencia — si `prev` y `next` apuntan al mismo objeto de arreglo. Como `step()` siempre asigna un nuevo arreglo, `prev == next` siempre será false incluso cuando los contenidos sean idénticos, haciendo que el bucle nunca termine. `Arrays.deepEquals(prev, next)` realiza una comparación profunda elemento a elemento de arreglos multidimensionales, que es la comprobación correcta de punto fijo. La opción D es parcialmente correcta en su observación pero afirma incorrectamente que '== siempre retorna false' — si asignas `grid = next` y luego comparas `grid == next`, sería true, lo que explica por qué el patrón correcto compara el estado ANTERIOR con el SIGUIENTE, no la referencia actual."
+  }
+}

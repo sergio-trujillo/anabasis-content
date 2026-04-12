@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-matrix-traversal-direction-vector",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "matrix-traversal: direction-vector idiom insight",
+    "es": "matrix-traversal: insight del idiom de vector de dirección"
+  },
+  "prompt": {
+    "en": "Given `int[][] DIRS = {{0,1},{1,0},{0,-1},{-1,0}}`, what is the correct guard before applying a step to cell (r, c) in an m×n matrix?",
+    "es": "Dado `int[][] DIRS = {{0,1},{1,0},{0,-1},{-1,0}}`, ¿cuál es la guarda correcta antes de aplicar un paso a la celda (r, c) en una matriz m×n?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "`if (nr >= 0 && nc >= 0)` — only lower bounds needed because Java arrays throw on negative indices", "es": "`if (nr >= 0 && nc >= 0)` — solo se necesitan límites inferiores porque Java lanza excepción en índices negativos" } },
+    { "id": "b", "label": { "en": "`if (nr >= 0 && nr < m && nc >= 0 && nc < n)` — all four bounds must be checked", "es": "`if (nr >= 0 && nr < m && nc >= 0 && nc < n)` — se deben comprobar los cuatro límites" } },
+    { "id": "c", "label": { "en": "`if (nr != r || nc != c)` — only check that the step is not a self-loop", "es": "`if (nr != r || nc != c)` — solo comprobar que el paso no es un auto-bucle" } },
+    { "id": "d", "label": { "en": "`try { matrix[nr][nc]; } catch (ArrayIndexOutOfBoundsException e) { continue; }` — catch is idiomatic Java", "es": "`try { matrix[nr][nc]; } catch (ArrayIndexOutOfBoundsException e) { continue; }` — catch es el idiom Java" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "All four bounds — `nr >= 0`, `nr < m`, `nc >= 0`, `nc < n` — must be checked before accessing `matrix[nr][nc]`. Option A is incomplete: negative row/column indices won't throw immediately but will produce a wrong `ArrayIndexOutOfBoundsException` message and skip the upper-bound check. Option D (exception-based control flow) is an antipattern in Java: it is slow and obscures intent. Option C only guards against in-place no-ops and ignores all boundary violations.",
+    "es": "Los cuatro límites — `nr >= 0`, `nr < m`, `nc >= 0`, `nc < n` — deben comprobarse antes de acceder a `matrix[nr][nc]`. La opción A está incompleta: los índices negativos de fila/columna no lanzarán inmediatamente pero producirán un mensaje de `ArrayIndexOutOfBoundsException` incorrecto y omitirán la comprobación del límite superior. La opción D (flujo de control basado en excepciones) es un antipatrón en Java: es lento y oscurece la intención. La opción C solo guarda contra no-ops in situ e ignora todas las violaciones de límites."
+  }
+}

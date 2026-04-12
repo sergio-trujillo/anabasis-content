@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-encoding-decoding-invertibility",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "encoding-decoding: invertibility insight",
+    "es": "encoding-decoding: insight de invertibilidad"
+  },
+  "prompt": {
+    "en": "The property `decode(encode(x)) == x` is called round-trip invertibility. Which statement is true about this property for common encoding schemes?",
+    "es": "La propiedad `decode(encode(x)) == x` se llama invertibilidad de ida y vuelta. ¿Qué afirmación es verdadera sobre esta propiedad para esquemas de codificación comunes?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "All well-defined encodings are invertible — if encode is correct, decode always exists", "es": "Todas las codificaciones bien definidas son invertibles — si encode es correcto, decode siempre existe" } },
+    { "id": "b", "label": { "en": "Invertibility requires that encode be injective (no two inputs map to the same output); lossy transforms like hashing are not invertible", "es": "La invertibilidad requiere que encode sea inyectiva (ningún par de entradas mapea a la misma salida); las transformaciones con pérdida como el hashing no son invertibles" } },
+    { "id": "c", "label": { "en": "Invertibility is only relevant for encryption, not for encoding problems in coding assessments", "es": "La invertibilidad solo es relevante para cifrado, no para problemas de codificación en evaluaciones de programación" } },
+    { "id": "d", "label": { "en": "decode(encode(x)) == x is always a useful test, but encode(decode(y)) == y is never required", "es": "decode(encode(x)) == x siempre es una prueba útil, pero encode(decode(y)) == y nunca se requiere" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Invertibility requires the encoder to be injective (one-to-one): if two distinct inputs can produce the same encoded output, no decoder can distinguish them and round-trip recovery is impossible. Cryptographic hashes are the canonical non-invertible transform. For coding-assessment encoding problems (base conversion, run-length encoding, Luhn), the encoding is always injective and a correct decoder must satisfy both decode(encode(x)) == x AND encode(decode(y)) == y. Option A is wrong because lossy/non-injective encodings exist. Option D is wrong — both directions are required for a complete round-trip test.",
+    "es": "La invertibilidad requiere que el codificador sea inyectivo (biyectivo en su imagen): si dos entradas distintas pueden producir la misma salida codificada, ningún decodificador puede distinguirlas y la recuperación de ida y vuelta es imposible. Los hashes criptográficos son la transformación no invertible canónica. Para los problemas de codificación en evaluaciones (conversión de base, run-length encoding, Luhn), la codificación siempre es inyectiva y un decodificador correcto debe satisfacer tanto decode(encode(x)) == x COMO encode(decode(y)) == y. La opción A es incorrecta porque existen codificaciones con pérdida/no inyectivas. La opción D es incorrecta — ambas direcciones son necesarias para una prueba de ida y vuelta completa."
+  }
+}

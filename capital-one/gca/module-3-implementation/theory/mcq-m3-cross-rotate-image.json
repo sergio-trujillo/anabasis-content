@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-rotate-image",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: rotate n×n image 90° clockwise in-place",
+    "es": "cross-canonical: rotar imagen n×n 90° en sentido horario in situ"
+  },
+  "prompt": {
+    "en": "Given an n×n integer matrix representing an image, rotate it 90° clockwise in-place (no extra matrix). Which canonical applies?",
+    "es": "Dada una matriz de enteros n×n que representa una imagen, rótala 90° en sentido horario in situ (sin matriz extra). ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "matrix-traversal — in-place index-arithmetic transform: transpose then reverse each row", "es": "matrix-traversal — transformación in situ de aritmética de índices: transponer y luego revertir cada fila" } },
+    { "id": "b", "label": { "en": "grid-bfs-dfs — start BFS from each corner cell and rotate values along reachable paths", "es": "grid-bfs-dfs — iniciar BFS desde cada celda esquina y rotar valores a lo largo de los caminos alcanzables" } },
+    { "id": "c", "label": { "en": "simulate-until-stable — apply the rotation step repeatedly until the grid stops changing", "es": "simulate-until-stable — aplicar el paso de rotación repetidamente hasta que la cuadrícula deje de cambiar" } },
+    { "id": "d", "label": { "en": "encoding-decoding — encode each cell's (row, col) coordinates and decode them into their rotated position", "es": "encoding-decoding — codificar las coordenadas (fila, col) de cada celda y decodificarlas en su posición rotada" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Rotating an image in-place is the canonical matrix-traversal problem: the standard algorithm is (1) transpose the matrix (swap matrix[i][j] with matrix[j][i]) and (2) reverse each row — both steps are pure index-arithmetic passes requiring no auxiliary graph structures. Option B (grid-bfs-dfs) is wrong because there is no connectivity or reachability involved — every cell is touched deterministically. Option C (simulate-until-stable) is wrong because the rotation converges after exactly one step, not an unbounded fixpoint loop.",
+    "es": "Rotar una imagen in situ es el problema canónico de matrix-traversal: el algoritmo estándar es (1) transponer la matriz (intercambiar matrix[i][j] con matrix[j][i]) y (2) revertir cada fila — ambos pasos son recorridos de aritmética de índices puros que no requieren estructuras de grafo auxiliares. La opción B (grid-bfs-dfs) es incorrecta porque no hay conectividad ni alcanzabilidad — cada celda se toca de forma determinista. La opción C (simulate-until-stable) es incorrecta porque la rotación converge después de exactamente un paso, no un bucle de punto fijo no acotado."
+  }
+}

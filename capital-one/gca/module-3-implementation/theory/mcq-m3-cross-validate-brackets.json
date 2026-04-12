@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-validate-brackets",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: validate nested parentheses, brackets, and braces",
+    "es": "cross-canonical: validar paréntesis, corchetes y llaves anidados"
+  },
+  "prompt": {
+    "en": "Given a string containing only '(', ')', '{', '}', '[', ']', return true if all brackets are correctly nested and balanced. Which canonical applies?",
+    "es": "Dada una cadena que contiene solo '(', ')', '{', '}', '[', ']', retorna true si todos los paréntesis están correctamente anidados y balanceados. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "encoding-decoding — encode each bracket as an integer and verify the sum equals zero", "es": "encoding-decoding — codificar cada paréntesis como un entero y verificar que la suma sea cero" } },
+    { "id": "b", "label": { "en": "event-replay — fold the character stream into a running count of unmatched opens", "es": "event-replay — plegar el flujo de caracteres en un conteo acumulado de aperturas sin cerrar" } },
+    { "id": "c", "label": { "en": "state-machine-simulation — maintain a stack to track open brackets; transition to INVALID on mismatched close or stack underflow", "es": "state-machine-simulation — mantener una pila para rastrear aperturas; transicionar a INVÁLIDO en cierre incorrecto o underflow de pila" } },
+    { "id": "d", "label": { "en": "matrix-traversal — represent the string as a 1D matrix and scan it with boundary shrink", "es": "matrix-traversal — representar la cadena como una matriz 1D y escanearla con contracción de límites" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Bracket validation requires a stack-based state machine: push opens onto the stack, and on each close verify it matches the top. The machine has qualitative states (VALID, INVALID) with transitions driven by each character — classic state-machine-simulation. Option B (event-replay) is the near-miss: a simple counter fold works for a single bracket type but fails for multi-type interleaving like '([)]' where the count is balanced but the nesting is wrong. Option A (encoding-decoding) is wrong because sum-zero cannot detect mismatched types.",
+    "es": "La validación de paréntesis requiere una máquina de estados basada en pila: empujar aperturas a la pila, y en cada cierre verificar que coincida con el tope. La máquina tiene estados cualitativos (VÁLIDO, INVÁLIDO) con transiciones impulsadas por cada carácter — state-machine-simulation clásica. La opción B (event-replay) es el distractor más cercano: un simple contador funciona para un único tipo de paréntesis pero falla con entrelazado multi-tipo como '([)]' donde el conteo está balanceado pero el anidamiento es incorrecto. La opción A (encoding-decoding) es incorrecta porque suma-cero no puede detectar tipos no coincidentes."
+  }
+}

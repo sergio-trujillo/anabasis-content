@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-encoding-decoding-edge-case",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "encoding-decoding: edge case",
+    "es": "encoding-decoding: caso borde"
+  },
+  "prompt": {
+    "en": "You implement base-k encoding for non-negative integers. Which input requires the most careful special handling?",
+    "es": "Implementas codificación en base k para enteros no negativos. ¿Qué entrada requiere el manejo especial más cuidadoso?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "n = 1 — single digit that may or may not equal the base", "es": "n = 1 — dígito único que puede o no ser igual a la base" } },
+    { "id": "b", "label": { "en": "n = 0 — the division loop never executes, leaving an empty string instead of \"0\"", "es": "n = 0 — el bucle de división nunca se ejecuta, dejando una cadena vacía en lugar de \"0\"" } },
+    { "id": "c", "label": { "en": "n = k — a two-digit number whose leading digit is exactly 1", "es": "n = k — número de dos dígitos cuyo dígito líder es exactamente 1" } },
+    { "id": "d", "label": { "en": "n = Integer.MAX_VALUE — potential overflow in the division step", "es": "n = Integer.MAX_VALUE — posible desbordamiento en el paso de división" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When n = 0, the `while (n > 0)` loop body never executes, so without an explicit `if (n == 0) return \"0\"` guard the function returns an empty string — a silent, hard-to-spot bug. Option D (overflow) is a real concern in some implementations but is usually addressed by the problem constraints (non-negative int). Options A and C (n=1, n=k) are handled correctly by the standard loop with no special cases.",
+    "es": "Cuando n = 0, el cuerpo del bucle `while (n > 0)` nunca se ejecuta, por lo que sin una guarda explícita `if (n == 0) return \"0\"` la función retorna una cadena vacía — un bug silencioso y difícil de detectar. La opción D (desbordamiento) es una preocupación real en algunas implementaciones pero generalmente está cubierta por las restricciones del problema (int no negativo). Las opciones A y C (n=1, n=k) se manejan correctamente por el bucle estándar sin casos especiales."
+  }
+}

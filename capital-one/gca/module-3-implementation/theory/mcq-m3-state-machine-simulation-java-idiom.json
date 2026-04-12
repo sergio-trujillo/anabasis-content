@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-state-machine-simulation-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "state-machine-simulation: Java idiom",
+    "es": "state-machine-simulation: idiom Java"
+  },
+  "prompt": {
+    "en": "What is the idiomatic Java structure for dispatching state transitions in a state-machine parser with 4–8 states?",
+    "es": "¿Cuál es la estructura idiomática en Java para despachar transiciones de estado en un parser de máquina de estados con 4–8 estados?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "A chain of if-else if blocks, one per state, each reading the next token", "es": "Una cadena de bloques if-else if, uno por estado, cada uno leyendo el siguiente token" } },
+    { "id": "b", "label": { "en": "switch(state) with one case per state enum value, updating state and output inside each case", "es": "switch(state) con un case por valor del enum de estado, actualizando estado y salida dentro de cada case" } },
+    { "id": "c", "label": { "en": "Recursion where each state is a separate method calling the next state's method", "es": "Recursión donde cada estado es un método separado que llama al método del siguiente estado" } },
+    { "id": "d", "label": { "en": "A Map<State, Map<Token, State>> transition table looked up on every token", "es": "Una tabla de transición Map<State, Map<Token, State>> consultada en cada token" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "`switch(state)` with an enum is the canonical Java idiom: it is clear, exhaustive (the compiler warns on missing cases when using a full enum switch), O(1) dispatch, and maps directly to the formal state-machine model. Option A (if-else chain) works but is error-prone to extend and doesn't benefit from compiler completeness checks. Option C (recursive descent) is natural for grammar parsers but adds call-stack overhead without benefit for flat finite automata. Option D (nested Map) is over-engineered for 4–8 states and adds indirection cost.",
+    "es": "`switch(state)` con un enum es el idiom canónico en Java: es claro, exhaustivo (el compilador advierte sobre casos faltantes en un switch enum completo), despacho O(1) y se mapea directamente al modelo formal de máquina de estados. La opción A (cadena if-else) funciona pero es propensa a errores al extender y no se beneficia de las comprobaciones de exhaustividad del compilador. La opción C (descenso recursivo) es natural para parsers de gramáticas pero agrega sobrecarga de pila de llamadas sin beneficio para autómatas finitos planos. La opción D (Map anidado) es sobrediseño para 4–8 estados y agrega costo de indirección."
+  }
+}

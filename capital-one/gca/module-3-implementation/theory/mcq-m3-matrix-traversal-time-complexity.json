@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-matrix-traversal-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "matrix-traversal: time complexity",
+    "es": "matrix-traversal: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You traverse an m×n matrix visiting every cell exactly once (e.g., row-major scan, spiral, or diagonal). What is the time complexity?",
+    "es": "Recorres una matriz m×n visitando cada celda exactamente una vez (p. ej., recorrido por filas, espiral o diagonal). ¿Cuál es la complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(m + n) — one pass over rows plus one pass over columns", "es": "O(m + n) — un recorrido sobre filas más uno sobre columnas" } },
+    { "id": "b", "label": { "en": "O(m × n) — every cell is visited exactly once", "es": "O(m × n) — cada celda se visita exactamente una vez" } },
+    { "id": "c", "label": { "en": "O(m × n × 4) — four directional checks per cell", "es": "O(m × n × 4) — cuatro comprobaciones direccionales por celda" } },
+    { "id": "d", "label": { "en": "O(m² × n²) — nested loops over rows and columns each squared", "es": "O(m² × n²) — bucles anidados sobre filas y columnas al cuadrado" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Any full-matrix traversal (row-major, spiral, diagonal) visits each of the m×n cells exactly once, giving O(m×n). Option A (O(m+n)) is wrong because it only accounts for a single row and a single column, not the full grid. Option C conflates the constant factor of 4 directional checks (used in flood-fill) with an asymptotic change — constant factors are dropped in Big-O notation, so the complexity remains O(m×n).",
+    "es": "Cualquier recorrido completo de la matriz (por filas, espiral, diagonal) visita cada una de las m×n celdas exactamente una vez, dando O(m×n). La opción A (O(m+n)) es incorrecta porque solo considera una fila y una columna, no la cuadrícula completa. La opción C confunde el factor constante de 4 comprobaciones direccionales (usado en flood-fill) con un cambio asintótico: los factores constantes se eliminan en notación Big-O, por lo que la complejidad sigue siendo O(m×n)."
+  }
+}

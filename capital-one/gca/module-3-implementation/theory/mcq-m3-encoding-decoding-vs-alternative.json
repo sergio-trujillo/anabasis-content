@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-encoding-decoding-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "encoding-decoding: vs state-machine-simulation",
+    "es": "encoding-decoding: vs state-machine-simulation"
+  },
+  "prompt": {
+    "en": "Problem A: Convert each character in a string to its Caesar-cipher equivalent (shift by 3). Problem B: Parse a Roman numeral string into an integer (IV = 4, IX = 9 with look-ahead). Which canonical applies to each?",
+    "es": "Problema A: Convierte cada carácter de una cadena a su equivalente en cifrado César (desplazamiento de 3). Problema B: Convierte una cadena de número romano a entero (IV = 4, IX = 9 con vista anticipada). ¿Qué canónico aplica a cada uno?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Both are encoding-decoding — both apply a character transformation rule", "es": "Ambos son encoding-decoding — ambos aplican una regla de transformación de caracteres" } },
+    { "id": "b", "label": { "en": "A is encoding-decoding (stateless per-character mapping); B is state-machine-simulation (requires look-ahead state to handle subtractive pairs)", "es": "A es encoding-decoding (mapeo por carácter sin estado); B es state-machine-simulation (requiere estado de vista anticipada para manejar pares sustractivos)" } },
+    { "id": "c", "label": { "en": "Both are state-machine-simulation — both parse characters from a string", "es": "Ambos son state-machine-simulation — ambos analizan caracteres de una cadena" } },
+    { "id": "d", "label": { "en": "A is state-machine-simulation; B is encoding-decoding", "es": "A es state-machine-simulation; B es encoding-decoding" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Caesar cipher (A) is a pure stateless encoding: each character is mapped independently via `(c - 'a' + 3) % 26 + 'a'` with no inter-character state. Roman numeral parsing (B) requires look-ahead state — when I precedes V or X, it is subtractive — which is an inter-character dependency best modeled as a state machine. Option A is wrong because Roman numeral parsing cannot be done with a simple per-character lookup. Option C is wrong because Caesar cipher needs no state at all.",
+    "es": "El cifrado César (A) es una codificación puramente sin estado: cada carácter se mapea independientemente mediante `(c - 'a' + 3) % 26 + 'a'` sin estado entre caracteres. El análisis de números romanos (B) requiere estado de vista anticipada — cuando I precede a V o X es sustractivo — lo que es una dependencia entre caracteres mejor modelada como máquina de estados. La opción A es incorrecta porque el análisis de números romanos no puede hacerse con una simple búsqueda por carácter. La opción C es incorrecta porque el cifrado César no necesita ningún estado."
+  }
+}

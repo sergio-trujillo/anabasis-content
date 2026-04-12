@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-matrix-traversal-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "matrix-traversal: Java idiom",
+    "es": "matrix-traversal: idiom Java"
+  },
+  "prompt": {
+    "en": "When implementing multi-directional matrix traversal (e.g., flood-fill or spiral), the standard Java idiom for encoding the four cardinal directions is:",
+    "es": "Al implementar recorridos matriciales multidireccionales (p. ej., flood-fill o espiral), el idiom estándar en Java para codificar las cuatro direcciones cardinales es:"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Four separate if-statements checking each boundary independently", "es": "Cuatro sentencias if independientes que comprueban cada límite por separado" } },
+    { "id": "b", "label": { "en": "A switch statement on a direction enum (UP, DOWN, LEFT, RIGHT)", "es": "Una sentencia switch sobre un enum de dirección (UP, DOWN, LEFT, RIGHT)" } },
+    { "id": "c", "label": { "en": "int[][] DIRS = {{0,1},{1,0},{0,-1},{-1,0}}; then loop over DIRS applying row+DIRS[i][0], col+DIRS[i][1]", "es": "int[][] DIRS = {{0,1},{1,0},{0,-1},{-1,0}}; luego iterar sobre DIRS aplicando row+DIRS[i][0], col+DIRS[i][1]" } },
+    { "id": "d", "label": { "en": "Store neighbors in a List<int[]> built dynamically for each cell at runtime", "es": "Almacenar vecinos en un List<int[]> construido dinámicamente para cada celda en tiempo de ejecución" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The canonical Java idiom is a static `int[][] DIRS` constant encoding the four {Δrow, Δcol} offsets, then a for-loop over the 4 entries — this keeps direction logic data-driven and makes it trivial to extend to 8-directional traversal by adding diagonal pairs. Option A (four independent ifs) is verbose and error-prone to extend. Option B (switch on enum) couples direction logic to control flow instead of data. Option D (dynamic List per cell) allocates unnecessary garbage on every cell visit.",
+    "es": "El idiom canónico en Java es una constante estática `int[][] DIRS` que codifica los cuatro desplazamientos {Δfila, Δcol}, luego un bucle for sobre las 4 entradas; esto mantiene la lógica de dirección impulsada por datos y hace trivial extender a 8 direcciones añadiendo pares diagonales. La opción A (cuatro ifs independientes) es verbosa y propensa a errores al extender. La opción B (switch en enum) acopla la lógica de dirección al flujo de control en lugar de a los datos. La opción D (List dinámico por celda) genera basura innecesaria en cada visita."
+  }
+}

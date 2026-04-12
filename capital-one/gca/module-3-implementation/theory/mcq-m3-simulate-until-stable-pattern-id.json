@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-simulate-until-stable-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "simulate-until-stable: pattern identification",
+    "es": "simulate-until-stable: identificación de patrón"
+  },
+  "prompt": {
+    "en": "Which fingerprint best identifies the simulate-until-stable canonical?",
+    "es": "¿Qué huella identifica mejor el canónico simulate-until-stable?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Process exactly n events in order, accumulating a numeric result", "es": "Procesar exactamente n eventos en orden, acumulando un resultado numérico" } },
+    { "id": "b", "label": { "en": "Apply a transform step globally to a state structure and repeat until the output equals the input (fixpoint) or a maximum step count is reached", "es": "Aplicar un paso de transformación globalmente a una estructura de estado y repetir hasta que la salida sea igual a la entrada (punto fijo) o se alcance un conteo máximo de pasos" } },
+    { "id": "c", "label": { "en": "Traverse every cell of a 2D structure exactly once in a deterministic order", "es": "Recorrer cada celda de una estructura 2D exactamente una vez en un orden determinista" } },
+    { "id": "d", "label": { "en": "Use BFS/DFS to discover reachable nodes from a starting point in a graph", "es": "Usar BFS/DFS para descubrir nodos alcanzables desde un punto de inicio en un grafo" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Simulate-until-stable is defined by the fixpoint loop: apply a transform, compare the new state to the old state (e.g., `Arrays.deepEquals`), and stop if they are equal or if a safety cap is reached. The number of iterations is not known in advance. Option A describes event-replay, where the iteration count is exactly n (bounded). Option C describes matrix-traversal (single structural pass). Option D describes grid-bfs-dfs (connectivity exploration).",
+    "es": "Simulate-until-stable se define por el bucle de punto fijo: aplicar una transformación, comparar el nuevo estado con el viejo (p. ej., `Arrays.deepEquals`), y detenerse si son iguales o si se alcanza un límite de seguridad. El número de iteraciones no se conoce de antemano. La opción A describe event-replay, donde el conteo de iteraciones es exactamente n (acotado). La opción C describe matrix-traversal (un único recorrido estructural). La opción D describe grid-bfs-dfs (exploración de conectividad)."
+  }
+}

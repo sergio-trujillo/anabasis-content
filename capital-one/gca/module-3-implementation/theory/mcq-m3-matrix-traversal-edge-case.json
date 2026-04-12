@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-matrix-traversal-edge-case",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "matrix-traversal: edge case",
+    "es": "matrix-traversal: caso borde"
+  },
+  "prompt": {
+    "en": "You are rotating an n×n matrix 90° clockwise in-place. Which input is the most critical edge case to test?",
+    "es": "Estás rotando una matriz n×n 90° en sentido horario in situ. ¿Cuál es el caso borde más crítico para probar?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "n = 0 (empty matrix)", "es": "n = 0 (matriz vacía)" } },
+    { "id": "b", "label": { "en": "n = 1 (single cell — rotation is a no-op)", "es": "n = 1 (celda única — la rotación no cambia nada)" } },
+    { "id": "c", "label": { "en": "n = 2 (smallest matrix requiring actual swaps)", "es": "n = 2 (la matriz más pequeña que requiere intercambios reales)" } },
+    { "id": "d", "label": { "en": "n even vs n odd — the transpose+reverse approach behaves differently", "es": "n par vs n impar — el enfoque transponer+revertir se comporta de forma diferente" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "The standard in-place 90° rotation (transpose then reverse each row) works correctly for both even and odd n, but the parity of n is the key distinction to verify: for odd n the center cell never moves, while for even n every cell participates in a 4-way swap cycle. Testing only n=1 (option B) catches trivial no-ops but misses the n=2 swap structure. Option C (n=2) is a useful test but does not surface the odd-n center-cell invariant. Both even and odd cases must be validated.",
+    "es": "La rotación estándar in situ de 90° (transponer y luego revertir cada fila) funciona correctamente para n par e impar, pero la paridad de n es la distinción clave a verificar: para n impar la celda central nunca se mueve, mientras que para n par cada celda participa en un ciclo de intercambio de 4. Probar solo n=1 (opción B) detecta no-ops triviales pero omite la estructura de intercambio n=2. La opción C (n=2) es una prueba útil pero no expone el invariante de la celda central para n impar. Deben validarse ambos casos."
+  }
+}

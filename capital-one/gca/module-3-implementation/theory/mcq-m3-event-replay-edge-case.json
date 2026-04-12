@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-event-replay-edge-case",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "event-replay: edge case",
+    "es": "event-replay: caso borde"
+  },
+  "prompt": {
+    "en": "You process DEPOSIT/WITHDRAW events and return the final balance. Which edge case is most likely to cause a silent wrong answer?",
+    "es": "Procesas eventos DEPOSIT/WITHDRAW y retornas el balance final. ¿Cuál es el caso borde más probable de causar una respuesta incorrecta silenciosa?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Empty event list — the fold never runs, returning the initial value", "es": "Lista de eventos vacía — el pliegue nunca se ejecuta, retornando el valor inicial" } },
+    { "id": "b", "label": { "en": "A WITHDRAW that makes the balance go negative — if the spec allows overdrafts, this is valid; if not, it requires a guard", "es": "Un WITHDRAW que deja el balance en negativo — si la especificación permite sobregiros, es válido; si no, requiere una guarda" } },
+    { "id": "c", "label": { "en": "Events with decimal amounts (e.g., 10.5) — floating-point rounding accumulates silently over many operations", "es": "Eventos con montos decimales (p. ej., 10.5) — el redondeo de punto flotante se acumula silenciosamente en muchas operaciones" } },
+    { "id": "d", "label": { "en": "Events arriving in reverse chronological order — replay in wrong order gives wrong balance", "es": "Eventos que llegan en orden cronológico inverso — reproducir en orden incorrecto da balance incorrecto" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Floating-point accumulation is the most dangerous because the error is silent: `double balance += 10.5` repeated many times introduces rounding error that can cause off-by-one failures in comparisons. The fix is to use `int` or `long` cents, or `BigDecimal`. Option B (negative balance) causes a detectable functional failure, not a silent wrong answer. Option D (wrong order) is a data-preparation issue, not an algorithmic one — the problem statement guarantees chronological order. Option A (empty list) returns 0.0 (the initial balance), which is likely correct per spec.",
+    "es": "La acumulación de punto flotante es la más peligrosa porque el error es silencioso: `double balance += 10.5` repetido muchas veces introduce error de redondeo que puede causar fallos de diferencia de uno en comparaciones. La solución es usar céntimos en `int` o `long`, o `BigDecimal`. La opción B (balance negativo) causa un fallo funcional detectable, no una respuesta incorrecta silenciosa. La opción D (orden incorrecto) es un problema de preparación de datos, no algorítmico — el enunciado garantiza orden cronológico. La opción A (lista vacía) retorna 0.0 (el balance inicial), que probablemente es correcto según la especificación."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-event-replay-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "event-replay: time complexity",
+    "es": "event-replay: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You fold a chronological list of n events into a final state (e.g., account balance, document string) by processing each event exactly once. What is the time complexity?",
+    "es": "Pliegas una lista cronológica de n eventos en un estado final (p. ej., balance de cuenta, cadena de documento) procesando cada evento exactamente una vez. ¿Cuál es la complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n log n) — events must be sorted by timestamp before replay", "es": "O(n log n) — los eventos deben ordenarse por marca de tiempo antes de reproducirlos" } },
+    { "id": "b", "label": { "en": "O(n) — single left-to-right fold; each event is processed in O(1) (or amortized O(1))", "es": "O(n) — un único pliegue de izquierda a derecha; cada evento se procesa en O(1) (o O(1) amortizado)" } },
+    { "id": "c", "label": { "en": "O(n²) — each new event may require reprocessing all prior events", "es": "O(n²) — cada nuevo evento puede requerir reprocesar todos los eventos anteriores" } },
+    { "id": "d", "label": { "en": "O(n × k) where k is the number of distinct event types", "es": "O(n × k) donde k es el número de tipos de eventos distintos" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Event-replay is a sequential fold: each event is processed once in arrival order, updating the accumulated state in O(1) or amortized O(1) per event (e.g., adding to a balance, appending to a StringBuilder). Total complexity is O(n). Option A (O(n log n)) applies only if the events arrive out of order and need sorting first — the canonical assumes chronological order. Option D (O(n×k)) incorrectly multiplies by event types; each event is dispatched to one handler in O(1) via a switch or HashMap.",
+    "es": "Event-replay es un pliegue secuencial: cada evento se procesa una vez en orden de llegada, actualizando el estado acumulado en O(1) o O(1) amortizado por evento (p. ej., agregar a un balance, agregar a un StringBuilder). La complejidad total es O(n). La opción A (O(n log n)) aplica solo si los eventos llegan desordenados y hay que ordenarlos primero — el canónico asume orden cronológico. La opción D (O(n×k)) multiplica incorrectamente por tipos de evento; cada evento se despacha a un manejador en O(1) mediante switch o HashMap."
+  }
+}

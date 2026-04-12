@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-encoding-decoding-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "encoding-decoding: time complexity",
+    "es": "encoding-decoding: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You encode an integer n into its base-k string representation using repeated division by k. What is the time complexity in terms of n?",
+    "es": "Codificas un entero n en su representación de cadena en base k usando divisiones sucesivas por k. ¿Cuál es la complejidad temporal en términos de n?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) — you loop from 0 to n extracting digits one at a time", "es": "O(n) — iteras de 0 a n extrayendo dígitos uno a la vez" } },
+    { "id": "b", "label": { "en": "O(log_k n) — each division reduces n by a factor of k, producing one digit per step", "es": "O(log_k n) — cada división reduce n por un factor de k, produciendo un dígito por paso" } },
+    { "id": "c", "label": { "en": "O(n / k) — you divide n by k and then iterate over the quotient", "es": "O(n / k) — divides n entre k y luego iteras sobre el cociente" } },
+    { "id": "d", "label": { "en": "O(k) — you build a lookup table of size k before encoding", "es": "O(k) — construyes una tabla de búsqueda de tamaño k antes de codificar" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Base conversion by repeated division produces one digit per step; each step divides n by k, so after d steps the remaining value is n / k^d. The loop terminates when n = 0, which takes exactly floor(log_k n) + 1 steps — O(log_k n). Option A (O(n)) confuses iterating over the value of n with iterating over the number of digits. Option D (O(k)) is the complexity of initializing a lookup table, not of the encoding loop itself.",
+    "es": "La conversión de base por división sucesiva produce un dígito por paso; cada paso divide n entre k, por lo que después de d pasos el valor restante es n / k^d. El bucle termina cuando n = 0, lo que toma exactamente floor(log_k n) + 1 pasos — O(log_k n). La opción A (O(n)) confunde iterar sobre el valor de n con iterar sobre el número de dígitos. La opción D (O(k)) es la complejidad de inicializar una tabla de búsqueda, no del bucle de codificación en sí."
+  }
+}

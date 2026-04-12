@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-count-land-regions",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: count connected land regions in a 2D grid",
+    "es": "cross-canonical: contar regiones conectadas de tierra en una cuadrícula 2D"
+  },
+  "prompt": {
+    "en": "Given an m×n binary grid where 1 = land and 0 = water, return the number of connected land regions (4-directional connectivity). Which canonical applies?",
+    "es": "Dada una cuadrícula binaria m×n donde 1 = tierra y 0 = agua, retorna el número de regiones conectadas de tierra (conectividad en 4 direcciones). ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "matrix-traversal — scan every cell in row-major order and count transitions from 0 to 1", "es": "matrix-traversal — escanear cada celda en orden por filas y contar transiciones de 0 a 1" } },
+    { "id": "b", "label": { "en": "event-replay — fold each cell value into a running region counter", "es": "event-replay — plegar cada valor de celda en un contador de regiones acumulado" } },
+    { "id": "c", "label": { "en": "grid-bfs-dfs — for each unvisited land cell, launch BFS/DFS to mark the entire connected component, incrementing region count once per launch", "es": "grid-bfs-dfs — para cada celda de tierra no visitada, lanzar BFS/DFS para marcar todo el componente conectado, incrementando el conteo de regiones una vez por lanzamiento" } },
+    { "id": "d", "label": { "en": "simulate-until-stable — repeatedly flood-fill until no more land cells change state", "es": "simulate-until-stable — inundar repetidamente hasta que ninguna celda de tierra cambie de estado" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Counting connected regions requires discovering connectivity — which cells are reachable from which — making this a canonical grid-bfs-dfs problem. The outer loop scans all cells; whenever an unvisited land cell is found, a BFS/DFS explores and marks its entire connected component, and the region counter increments by 1. Option A (matrix-traversal) is the near-miss: a row-major scan is part of the outer loop, but counting 0→1 transitions alone cannot distinguish separate disconnected islands from a single winding region.",
+    "es": "Contar regiones conectadas requiere descubrir conectividad — qué celdas son alcanzables desde cuáles — lo que convierte esto en un problema canónico de grid-bfs-dfs. El bucle exterior escanea todas las celdas; cuando se encuentra una celda de tierra no visitada, un BFS/DFS explora y marca todo su componente conectado, y el contador de regiones se incrementa en 1. La opción A (matrix-traversal) es el distractor más cercano: un escaneo por filas es parte del bucle exterior, pero contar transiciones 0→1 por sí solo no puede distinguir islas separadas desconectadas de una única región serpentina."
+  }
+}

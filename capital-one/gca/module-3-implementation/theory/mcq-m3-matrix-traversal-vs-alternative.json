@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-matrix-traversal-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "matrix-traversal: vs grid-bfs-dfs",
+    "es": "matrix-traversal: vs grid-bfs-dfs"
+  },
+  "prompt": {
+    "en": "A problem asks you to print every element of a 2D grid in spiral order. Why is matrix-traversal preferred over grid-bfs-dfs here?",
+    "es": "Un problema te pide imprimir cada elemento de una cuadrícula 2D en orden espiral. ¿Por qué se prefiere matrix-traversal sobre grid-bfs-dfs aquí?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Matrix-traversal is always faster asymptotically than BFS/DFS", "es": "Matrix-traversal siempre es más rápido asintóticamente que BFS/DFS" } },
+    { "id": "b", "label": { "en": "Spiral order is a deterministic index-arithmetic pattern; no connectivity or reachability is involved, so a queue/visited set would be dead weight", "es": "El orden espiral es un patrón determinista de aritmética de índices; no hay conectividad ni alcanzabilidad, por lo que una cola/conjunto de visitados sería peso muerto" } },
+    { "id": "c", "label": { "en": "BFS/DFS cannot visit cells in a user-defined order", "es": "BFS/DFS no puede visitar celdas en un orden definido por el usuario" } },
+    { "id": "d", "label": { "en": "Matrix-traversal avoids recursion, which BFS/DFS always requires", "es": "Matrix-traversal evita la recursión, que BFS/DFS siempre requiere" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Spiral traversal is a purely structural problem: the visit order is fully determined by layer-shrinking boundary indices, requiring no connectivity data structures. Bringing in a queue and visited array (grid-bfs-dfs) would be unnecessary complexity. Option A is false — asymptotically both are O(m×n); matrix-traversal wins on constant factors and code simplicity here. Option C is wrong because BFS can be adapted to many orders, but it is the wrong tool when there is no graph connectivity involved.",
+    "es": "El recorrido espiral es un problema puramente estructural: el orden de visita está completamente determinado por índices de límites que se reducen por capa, sin necesidad de estructuras de datos de conectividad. Usar una cola y un arreglo visitado (grid-bfs-dfs) sería complejidad innecesaria. La opción A es falsa: asintóticamente ambos son O(m×n); matrix-traversal gana en factores constantes y simplicidad de código. La opción C es incorrecta porque BFS puede adaptarse a muchos órdenes, pero es la herramienta equivocada cuando no hay conectividad de grafo involucrada."
+  }
+}

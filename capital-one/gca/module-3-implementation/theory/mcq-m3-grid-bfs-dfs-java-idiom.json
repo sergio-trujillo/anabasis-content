@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-grid-bfs-dfs-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "grid-bfs-dfs: Java idiom",
+    "es": "grid-bfs-dfs: idiom Java"
+  },
+  "prompt": {
+    "en": "What is the idiomatic Java data structure for the BFS frontier queue in a grid exploration, and how are cells encoded?",
+    "es": "¿Cuál es la estructura de datos idiomática en Java para la cola de frontera BFS en una exploración de cuadrícula y cómo se codifican las celdas?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Stack<int[]> with int[]{row, col} entries — BFS uses a stack, not a queue", "es": "Stack<int[]> con entradas int[]{row, col} — BFS usa una pila, no una cola" } },
+    { "id": "b", "label": { "en": "Queue<int[]> (ArrayDeque) with int[]{row, col} entries; mark visited before enqueue to avoid duplicate entries", "es": "Queue<int[]> (ArrayDeque) con entradas int[]{row, col}; marcar como visitado antes de encolar para evitar entradas duplicadas" } },
+    { "id": "c", "label": { "en": "PriorityQueue<int[]> ordered by Manhattan distance to target — guarantees shortest path", "es": "PriorityQueue<int[]> ordenada por distancia Manhattan al objetivo — garantiza el camino más corto" } },
+    { "id": "d", "label": { "en": "List<int[]> with index pointer; cells are encoded as row * n + col to save space", "es": "List<int[]> con puntero de índice; las celdas se codifican como row * n + col para ahorrar espacio" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Idiomatic Java BFS uses `Queue<int[]> q = new ArrayDeque<>()` with `int[]{row, col}` entries. Crucially, cells must be marked visited BEFORE enqueuing (not after dequeuing) to prevent the same cell from being added to the queue multiple times by different neighbors — a common performance bug that can degrade O(m×n) to O(m²×n²) in dense grids. Option A is wrong: a stack gives DFS, not BFS. Option C describes Dijkstra's algorithm, needed for weighted graphs, not unweighted 0/1 grids.",
+    "es": "El BFS idiomático en Java usa `Queue<int[]> q = new ArrayDeque<>()` con entradas `int[]{row, col}`. Crucialmente, las celdas deben marcarse como visitadas ANTES de encolar (no después de desencolar) para evitar que la misma celda sea agregada a la cola múltiples veces por diferentes vecinos — un bug de rendimiento común que puede degradar O(m×n) a O(m²×n²) en cuadrículas densas. La opción A es incorrecta: una pila da DFS, no BFS. La opción C describe el algoritmo de Dijkstra, necesario para grafos con pesos, no para cuadrículas sin pesos 0/1."
+  }
+}

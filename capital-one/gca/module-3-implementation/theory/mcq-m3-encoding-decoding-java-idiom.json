@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-encoding-decoding-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "encoding-decoding: Java idiom",
+    "es": "encoding-decoding: idiom Java"
+  },
+  "prompt": {
+    "en": "When implementing base-k encoding in Java using repeated division, why do you append digits to a StringBuilder and then reverse it at the end?",
+    "es": "Al implementar codificación en base k en Java usando divisiones sucesivas, ¿por qué agregas dígitos a un StringBuilder y luego lo inviertes al final?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Because StringBuilder.append is faster than String concatenation and reversal fixes the endian order of digits produced by repeated remainder extraction", "es": "Porque StringBuilder.append es más rápido que la concatenación de String y la inversión corrige el orden endian de los dígitos producidos por la extracción sucesiva de restos" } },
+    { "id": "b", "label": { "en": "Because Java's modulo operator returns the digits in most-significant-first order", "es": "Porque el operador módulo de Java retorna los dígitos en orden de más significativo primero" } },
+    { "id": "c", "label": { "en": "Because reversal is needed only for even bases; odd bases produce digits in correct order", "es": "Porque la inversión solo es necesaria para bases pares; las bases impares producen dígitos en orden correcto" } },
+    { "id": "d", "label": { "en": "Because String.charAt is O(n) in Java and StringBuilder avoids this overhead", "es": "Porque String.charAt es O(n) en Java y StringBuilder evita esta sobrecarga" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Repeated division `n % k` extracts the least-significant digit first. So each remainder must be appended and the whole result reversed at the end to produce the correct most-significant-first representation. Using StringBuilder for intermediate appends avoids O(n²) string concatenation cost in the loop. Option B is wrong — `%` always gives the least-significant digit first, regardless of base. Option C is wrong — the endian reversal requirement is independent of whether the base is odd or even.",
+    "es": "La división sucesiva `n % k` extrae el dígito menos significativo primero. Por tanto, cada resto debe agregarse y todo el resultado invertirse al final para producir la representación correcta en orden de más significativo primero. Usar StringBuilder para los appends intermedios evita el costo O(n²) de concatenación de cadenas en el bucle. La opción B es incorrecta — `%` siempre da el dígito menos significativo primero, independientemente de la base. La opción C es incorrecta — el requisito de inversión endian es independiente de si la base es par o impar."
+  }
+}

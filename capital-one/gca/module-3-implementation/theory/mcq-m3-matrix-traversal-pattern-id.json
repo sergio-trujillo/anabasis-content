@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-matrix-traversal-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "matrix-traversal: pattern identification",
+    "es": "matrix-traversal: identificación de patrón"
+  },
+  "prompt": {
+    "en": "Which fingerprint best identifies the matrix-traversal canonical?",
+    "es": "¿Qué huella identifica mejor el canónico matrix-traversal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Treat cells as graph nodes; propagate state through edges using BFS or DFS", "es": "Tratar celdas como nodos de grafo; propagar estado a través de aristas usando BFS o DFS" } },
+    { "id": "b", "label": { "en": "Structural iteration over a 2D array using index arithmetic to define visit order or in-place transformation", "es": "Iteración estructural sobre un arreglo 2D usando aritmética de índices para definir el orden de visita o transformación in situ" } },
+    { "id": "c", "label": { "en": "Maintain a queue or stack to explore reachable cells while tracking visited state", "es": "Mantener una cola o pila para explorar celdas alcanzables mientras se rastrea el estado visitado" } },
+    { "id": "d", "label": { "en": "Fold each row into a scalar using a running accumulator", "es": "Plegar cada fila en un escalar usando un acumulador acumulativo" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Matrix-traversal is defined by structural iteration: the visit order (row-major, spiral, diagonal) or the transformation (transpose, rotate) is expressed purely through index arithmetic — no auxiliary data structures needed. Options A and C describe grid-bfs-dfs, which uses a queue/stack and visited set to explore connectivity. Option D describes event-replay or a reduce fold, not positional 2D iteration.",
+    "es": "Matrix-traversal se define por la iteración estructural: el orden de visita (por filas, espiral, diagonal) o la transformación (transponer, rotar) se expresa puramente mediante aritmética de índices, sin estructuras de datos auxiliares. Las opciones A y C describen grid-bfs-dfs, que usa una cola/pila y un conjunto de visitados para explorar conectividad. La opción D describe event-replay o un reduce fold, no iteración 2D posicional."
+  }
+}

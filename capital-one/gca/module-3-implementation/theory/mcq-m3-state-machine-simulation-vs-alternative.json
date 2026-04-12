@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-state-machine-simulation-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "state-machine-simulation: vs event-replay",
+    "es": "state-machine-simulation: vs event-replay"
+  },
+  "prompt": {
+    "en": "Two problems: (A) validate a sequence of 'PUSH x' and 'POP' operations, returning false if POP is called on an empty stack. (B) process 'DEPOSIT x' and 'WITHDRAW x' events, returning the final balance. Which canonical applies to each?",
+    "es": "Dos problemas: (A) validar una secuencia de operaciones 'PUSH x' y 'POP', retornando false si POP se llama sobre una pila vacía. (B) procesar eventos 'DEPOSIT x' y 'WITHDRAW x', retornando el balance final. ¿Qué canónico aplica a cada uno?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Both are state-machine-simulation — both process event sequences", "es": "Ambos son state-machine-simulation — ambos procesan secuencias de eventos" } },
+    { "id": "b", "label": { "en": "Both are event-replay — both fold an event stream into a final answer", "es": "Ambos son event-replay — ambos pliegan un flujo de eventos en una respuesta final" } },
+    { "id": "c", "label": { "en": "A is state-machine-simulation (qualitative validity state); B is event-replay (quantitative balance accumulation)", "es": "A es state-machine-simulation (estado cualitativo de validez); B es event-replay (acumulación cuantitativa de balance)" } },
+    { "id": "d", "label": { "en": "A is event-replay; B is state-machine-simulation", "es": "A es event-replay; B es state-machine-simulation" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The key distinction is qualitative vs. quantitative state. Problem A has a qualitative state (VALID / INVALID / EMPTY) that determines a boolean result — this is state-machine-simulation. Problem B accumulates a numeric quantity (balance += deposit, balance -= withdraw) with no qualitative mode transitions — this is event-replay. Option A incorrectly classifies B as state-machine-simulation; option B incorrectly classifies A as event-replay.",
+    "es": "La distinción clave es estado cualitativo vs. cuantitativo. El problema A tiene un estado cualitativo (VÁLIDO / INVÁLIDO / VACÍO) que determina un resultado booleano — esto es state-machine-simulation. El problema B acumula una cantidad numérica (balance += depósito, balance -= retiro) sin transiciones de modo cualitativas — esto es event-replay. La opción A clasifica incorrectamente B como state-machine-simulation; la opción B clasifica incorrectamente A como event-replay."
+  }
+}

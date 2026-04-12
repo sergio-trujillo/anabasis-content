@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-append-undo-document",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: final document string from APPEND/UNDO events",
+    "es": "cross-canonical: cadena de documento final a partir de eventos APPEND/UNDO"
+  },
+  "prompt": {
+    "en": "Given a list of editing events [\"APPEND hello\", \"APPEND world\", \"UNDO\", \"APPEND !\"], return the final document string. UNDO removes the last APPEND. Which canonical applies?",
+    "es": "Dada una lista de eventos de edición [\"APPEND hello\", \"APPEND world\", \"UNDO\", \"APPEND !\"], retorna la cadena de documento final. UNDO elimina el último APPEND. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "state-machine-simulation — maintain APPEND_MODE and UNDO_MODE states and dispatch accordingly", "es": "state-machine-simulation — mantener estados APPEND_MODE y UNDO_MODE y despachar en consecuencia" } },
+    { "id": "b", "label": { "en": "simulate-until-stable — apply all events repeatedly until the document string converges", "es": "simulate-until-stable — aplicar todos los eventos repetidamente hasta que la cadena de documento converja" } },
+    { "id": "c", "label": { "en": "encoding-decoding — encode APPEND as push and UNDO as pop, then decode the stack into the final string", "es": "encoding-decoding — codificar APPEND como push y UNDO como pop, luego decodificar la pila en la cadena final" } },
+    { "id": "d", "label": { "en": "event-replay — fold the event stream into a Deque<String> accumulator; APPEND pushes, UNDO pops the top, final result is the joined stack", "es": "event-replay — plegar el flujo de eventos en un acumulador Deque<String>; APPEND agrega, UNDO elimina el tope, el resultado final es la pila unida" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "This is event-replay: fold the sequence of events into a quantitative accumulator (a Deque or List of appended strings). Each APPEND pushes to the accumulator; each UNDO pops the last entry. After all events, join the remaining entries as the document. The state (the list of strings) is quantitative — it directly IS the answer. Option A (state-machine-simulation) is the near-miss: APPEND/UNDO look like state names, but neither is a qualitative mode that changes how subsequent events are interpreted; every event is dispatched the same way regardless of history. Option C (encoding-decoding) is misleading — the stack structure is the accumulator, not an encoding/decoding step.",
+    "es": "Esto es event-replay: plegar la secuencia de eventos en un acumulador cuantitativo (un Deque o List de cadenas añadidas). Cada APPEND agrega al acumulador; cada UNDO elimina la última entrada. Después de todos los eventos, unir las entradas restantes como el documento. El estado (la lista de cadenas) es cuantitativo — directamente ES la respuesta. La opción A (state-machine-simulation) es el distractor más cercano: APPEND/UNDO parecen nombres de estado, pero ninguno es un modo cualitativo que cambie cómo se interpretan los eventos subsecuentes; cada evento se despacha de la misma manera independientemente del historial. La opción C (encoding-decoding) es engañosa — la estructura de pila es el acumulador, no un paso de codificación/decodificación."
+  }
+}

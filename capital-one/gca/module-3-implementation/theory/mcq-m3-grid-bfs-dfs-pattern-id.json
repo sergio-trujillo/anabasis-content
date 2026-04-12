@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-grid-bfs-dfs-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "grid-bfs-dfs: pattern identification",
+    "es": "grid-bfs-dfs: identificación de patrón"
+  },
+  "prompt": {
+    "en": "Which fingerprint best identifies the grid-bfs-dfs canonical?",
+    "es": "¿Qué huella identifica mejor el canónico grid-bfs-dfs?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Iterate over every cell in a fixed geometric order (row, column, layer) using index arithmetic", "es": "Iterar sobre cada celda en un orden geométrico fijo (fila, columna, capa) usando aritmética de índices" } },
+    { "id": "b", "label": { "en": "Treat the 2D grid as an implicit graph; use BFS or DFS with a visited set to discover reachable cells or measure connected components", "es": "Tratar la cuadrícula 2D como un grafo implícito; usar BFS o DFS con un conjunto de visitados para descubrir celdas alcanzables o medir componentes conectados" } },
+    { "id": "c", "label": { "en": "Apply a lookup-table mapping to each cell value independently without propagating state across cells", "es": "Aplicar un mapeo de tabla de búsqueda a cada valor de celda de forma independiente sin propagar estado entre celdas" } },
+    { "id": "d", "label": { "en": "Repeatedly apply a global transformation to the grid until no cell changes value", "es": "Aplicar repetidamente una transformación global a la cuadrícula hasta que ninguna celda cambie de valor" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Grid-bfs-dfs is defined by treating the 2D grid as an implicit graph: cells are nodes, adjacency is 4-directional (or 8-directional) edges, and BFS/DFS with a visited array discovers reachable cells from a starting point. Option A describes matrix-traversal, where no connectivity or reachability is involved — just positional ordering. Option D describes simulate-until-stable, which repeatedly applies a transform until fixpoint. Option C describes encoding-decoding applied cell-by-cell without propagation.",
+    "es": "Grid-bfs-dfs se define por tratar la cuadrícula 2D como un grafo implícito: las celdas son nodos, la adyacencia son aristas en 4 direcciones (u 8), y BFS/DFS con un arreglo de visitados descubre celdas alcanzables desde un punto de inicio. La opción A describe matrix-traversal, donde no hay conectividad ni alcanzabilidad — solo ordenamiento posicional. La opción D describe simulate-until-stable, que aplica repetidamente una transformación hasta un punto fijo. La opción C describe encoding-decoding aplicado celda por celda sin propagación."
+  }
+}

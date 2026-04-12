@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-state-machine-simulation-edge-case",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "state-machine-simulation: edge case",
+    "es": "state-machine-simulation: caso borde"
+  },
+  "prompt": {
+    "en": "A bracket-validator state machine returns true only when all brackets are balanced. Which input is the most dangerous edge case?",
+    "es": "Una máquina de estados validadora de paréntesis retorna true solo cuando todos los paréntesis están balanceados. ¿Cuál es el caso borde más peligroso?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Empty string \"\" — the machine never reads any token", "es": "Cadena vacía \"\" — la máquina nunca lee ningún token" } },
+    { "id": "b", "label": { "en": "\")\" — a close bracket with no matching open bracket", "es": "\")\" — un paréntesis de cierre sin paréntesis de apertura correspondiente" } },
+    { "id": "c", "label": { "en": "\"((\" — open brackets with no closes; the stack is non-empty at end", "es": "\"((\" — paréntesis de apertura sin cierres; la pila no está vacía al final" } },
+    { "id": "d", "label": { "en": "\"([)]\" — mismatched interleaving of different bracket types", "es": "\"([)]\" — intercalado incorrecto de distintos tipos de paréntesis" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "\"([)]\" is the most dangerous edge case because a naive counter-based validator (which only tracks open vs. close counts) incorrectly accepts it as balanced, while a proper stack-based machine correctly rejects it. Options B and C are easy to catch: option B causes an underflow or immediate INVALID transition; option C is caught by a non-empty stack at end-of-input. Option A (empty string) is trivially valid — the machine starts and ends in the VALID state without any transitions.",
+    "es": "\"([)]\" es el caso borde más peligroso porque un validador ingenuo basado en contadores (que solo rastrea conteos de apertura vs cierre) lo acepta incorrectamente como balanceado, mientras que una máquina correcta basada en pila lo rechaza. Las opciones B y C son fáciles de detectar: la opción B causa un underflow o una transición inmediata a INVÁLIDO; la opción C se detecta por una pila no vacía al final de la entrada. La opción A (cadena vacía) es trivialmente válida — la máquina comienza y termina en el estado VÁLIDO sin transiciones."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-integer-to-octal",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: convert non-negative integer to base-8 string",
+    "es": "cross-canonical: convertir entero no negativo a cadena en base 8"
+  },
+  "prompt": {
+    "en": "Given a non-negative integer n, return its base-8 (octal) string representation without using built-in base-conversion methods. Which canonical applies?",
+    "es": "Dado un entero no negativo n, retorna su representación de cadena en base 8 (octal) sin usar métodos integrados de conversión de base. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "event-replay — fold 8 subtraction events into a running remainder", "es": "event-replay — plegar 8 eventos de sustracción en un resto acumulado" } },
+    { "id": "b", "label": { "en": "state-machine-simulation — transition between digit states as you process the octal string left to right", "es": "state-machine-simulation — transicionar entre estados de dígito al procesar la cadena octal de izquierda a derecha" } },
+    { "id": "c", "label": { "en": "encoding-decoding — apply repeated division by 8, collecting remainders, then reverse the digit sequence", "es": "encoding-decoding — aplicar divisiones sucesivas por 8, recolectando restos, luego invertir la secuencia de dígitos" } },
+    { "id": "d", "label": { "en": "simulate-until-stable — divide by 8 until n reaches 0, treating each step as a convergence check", "es": "simulate-until-stable — dividir por 8 hasta que n llegue a 0, tratando cada paso como una comprobación de convergencia" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Base-8 conversion is a pure encoding-decoding problem: apply the well-defined arithmetic rule `n % 8` (remainder = next digit), `n /= 8` (reduce), repeat until n = 0, then reverse the collected digits. This is stateless per-step with a clear invertible mapping. Option D (simulate-until-stable) is the near-miss — the loop does terminate when n = 0, but this is a fixed arithmetic stop condition, not a fixpoint comparison between two states. Simulate-until-stable requires comparing the current state to the previous state, which is not what happens here.",
+    "es": "La conversión a base 8 es un problema puro de encoding-decoding: aplicar la regla aritmética bien definida `n % 8` (resto = siguiente dígito), `n /= 8` (reducir), repetir hasta que n = 0, luego invertir los dígitos recolectados. Esto es sin estado por paso con un mapeo invertible claro. La opción D (simulate-until-stable) es el distractor más cercano — el bucle sí termina cuando n = 0, pero esta es una condición de parada aritmética fija, no una comparación de punto fijo entre dos estados. Simulate-until-stable requiere comparar el estado actual con el anterior, lo que no ocurre aquí."
+  }
+}

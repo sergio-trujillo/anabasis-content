@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-spiral-order",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: return matrix elements in clockwise spiral order",
+    "es": "cross-canonical: retornar elementos de la matriz en orden espiral en sentido horario"
+  },
+  "prompt": {
+    "en": "Given an m×n integer matrix, return all elements in clockwise spiral order. Which canonical applies?",
+    "es": "Dada una matriz de enteros m×n, retorna todos los elementos en orden espiral en sentido horario. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "grid-bfs-dfs — BFS from the top-left corner visiting cells in the correct spiral sequence", "es": "grid-bfs-dfs — BFS desde la esquina superior izquierda visitando celdas en la secuencia espiral correcta" } },
+    { "id": "b", "label": { "en": "matrix-traversal — shrink four boundary pointers (top, bottom, left, right) layer by layer using index arithmetic", "es": "matrix-traversal — contraer cuatro punteros de límite (arriba, abajo, izquierda, derecha) capa por capa usando aritmética de índices" } },
+    { "id": "c", "label": { "en": "simulate-until-stable — simulate a virtual cursor moving in spiral direction until all cells are visited", "es": "simulate-until-stable — simular un cursor virtual moviéndose en dirección espiral hasta que todas las celdas sean visitadas" } },
+    { "id": "d", "label": { "en": "state-machine-simulation — use a direction state (RIGHT, DOWN, LEFT, UP) that transitions when hitting a boundary", "es": "state-machine-simulation — usar un estado de dirección (RIGHT, DOWN, LEFT, UP) que transiciona al alcanzar un límite" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Spiral traversal is a matrix-traversal problem: maintain four boundary variables (top, bottom, left, right) and peel off one layer per outer loop iteration using index arithmetic, appending cells in right → down → left → up order. Option D (state-machine-simulation) is the near-miss distractor — a direction variable does transition through 4 states, but the core structure is layer-shrinking index arithmetic, not qualitative state driving a parser. The spiral problem does not involve connectivity or reachability, ruling out option A.",
+    "es": "El recorrido espiral es un problema de matrix-traversal: mantener cuatro variables de límite (arriba, abajo, izquierda, derecha) y pelar una capa por iteración del bucle exterior usando aritmética de índices, añadiendo celdas en orden derecha → abajo → izquierda → arriba. La opción D (state-machine-simulation) es el distractor más cercano — una variable de dirección sí transiciona a través de 4 estados, pero la estructura central es aritmética de índices que contrae capas, no un estado cualitativo que dirige un parser. El problema espiral no involucra conectividad ni alcanzabilidad, descartando la opción A."
+  }
+}

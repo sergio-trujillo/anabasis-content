@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-simulate-until-stable-edge-case",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "simulate-until-stable: edge case",
+    "es": "simulate-until-stable: caso borde"
+  },
+  "prompt": {
+    "en": "You implement simulate-until-stable with a fixpoint check. Which scenario can cause the simulation to loop forever without a max-iteration cap?",
+    "es": "Implementas simulate-until-stable con una comprobación de punto fijo. ¿Qué escenario puede causar que la simulación se ejecute indefinidamente sin un límite máximo de iteraciones?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The grid is initialized to all zeros — step() returns the same grid immediately", "es": "La cuadrícula se inicializa a todos ceros — step() retorna la misma cuadrícula inmediatamente" } },
+    { "id": "b", "label": { "en": "The transform has a cycle: state A → state B → state A → … oscillates without ever reaching a fixpoint", "es": "La transformación tiene un ciclo: estado A → estado B → estado A → … oscila sin alcanzar nunca un punto fijo" } },
+    { "id": "c", "label": { "en": "The grid is very large (1000×1000) — deepEquals takes too long to run each iteration", "es": "La cuadrícula es muy grande (1000×1000) — deepEquals tarda demasiado en ejecutarse en cada iteración" } },
+    { "id": "d", "label": { "en": "The initial state is already stable — step() is called once unnecessarily before the loop exits", "es": "El estado inicial ya es estable — step() se llama una vez innecesariamente antes de que el bucle salga" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "A transform with a cycle (e.g., Conway's \"blinker\" oscillator) will flip between two states indefinitely — neither ever equals the other, so `Arrays.deepEquals` never returns true and the loop runs forever. The fix is a max-iteration cap (e.g., `while (steps++ < MAX && !stable)`). Option A is the trivially-stable case — step() returns the same grid and the loop exits on the first check. Option D is a minor correctness issue (one wasted step() call), not an infinite loop.",
+    "es": "Una transformación con un ciclo (p. ej., el oscilador 'blinker' de Conway) alternará entre dos estados indefinidamente — ninguno iguala al otro, por lo que `Arrays.deepEquals` nunca retorna true y el bucle se ejecuta para siempre. La solución es un límite máximo de iteraciones (p. ej., `while (steps++ < MAX && !stable)`). La opción A es el caso trivialmente estable — step() retorna la misma cuadrícula y el bucle sale en la primera comprobación. La opción D es un problema menor de corrección (una llamada innecesaria a step()), no un bucle infinito."
+  }
+}

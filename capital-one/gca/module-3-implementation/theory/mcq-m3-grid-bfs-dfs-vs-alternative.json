@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-grid-bfs-dfs-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "grid-bfs-dfs: BFS vs DFS choice",
+    "es": "grid-bfs-dfs: elección BFS vs DFS"
+  },
+  "prompt": {
+    "en": "For grid problems, when should you prefer BFS over DFS, and vice versa?",
+    "es": "Para problemas de cuadrícula, ¿cuándo deberías preferir BFS sobre DFS y viceversa?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Always use BFS — it is strictly faster than DFS on grids", "es": "Usar siempre BFS — es estrictamente más rápido que DFS en cuadrículas" } },
+    { "id": "b", "label": { "en": "BFS for shortest-path problems (guarantees minimum hops); DFS for region-size or reachability problems (simpler recursive implementation)", "es": "BFS para problemas de camino más corto (garantiza mínimo de saltos); DFS para problemas de tamaño de región o alcanzabilidad (implementación recursiva más simple)" } },
+    { "id": "c", "label": { "en": "DFS always finds the shortest path because it explores deeply before backtracking", "es": "DFS siempre encuentra el camino más corto porque explora profundamente antes de hacer backtracking" } },
+    { "id": "d", "label": { "en": "BFS counts regions correctly; DFS cannot count disjoint connected components", "es": "BFS cuenta regiones correctamente; DFS no puede contar componentes conectados disjuntos" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "BFS explores cells level-by-level (distance from source), so the first time it reaches a target cell it has used the fewest possible steps — this guarantees shortest-path in an unweighted grid. DFS explores as deep as possible first, which does NOT guarantee shortest paths. For region-counting or flood-fill, both BFS and DFS work correctly with the same O(m×n) complexity; DFS is often preferred for its simpler recursive implementation. Option C is a classic DFS misconception. Option D is wrong — DFS can count connected components equally well.",
+    "es": "BFS explora celdas nivel por nivel (distancia desde el origen), por lo que la primera vez que llega a una celda objetivo ha usado el mínimo de pasos posible — esto garantiza el camino más corto en una cuadrícula sin pesos. DFS explora lo más profundo posible primero, lo que NO garantiza caminos más cortos. Para contar regiones o flood-fill, tanto BFS como DFS funcionan correctamente con la misma complejidad O(m×n); DFS a menudo se prefiere por su implementación recursiva más simple. La opción C es una concepción errónea clásica de DFS. La opción D es incorrecta — DFS puede contar componentes conectados igualmente bien."
+  }
+}

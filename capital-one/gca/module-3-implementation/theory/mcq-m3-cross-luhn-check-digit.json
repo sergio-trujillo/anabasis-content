@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-luhn-check-digit",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: compute Luhn check digit",
+    "es": "cross-canonical: calcular dígito de verificación Luhn"
+  },
+  "prompt": {
+    "en": "Given a partial card number (without the last digit), compute the Luhn check digit: double every second digit from the right, subtract 9 if > 9, sum all digits, and the check digit is (10 - sum % 10) % 10. Which canonical applies?",
+    "es": "Dado un número de tarjeta parcial (sin el último dígito), calcula el dígito de verificación Luhn: duplica cada segundo dígito de derecha a izquierda, resta 9 si > 9, suma todos los dígitos, y el dígito de verificación es (10 - suma % 10) % 10. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "state-machine-simulation — maintain EVEN/ODD positional state while scanning digits from right to left", "es": "state-machine-simulation — mantener estado posicional PAR/IMPAR mientras se escanean dígitos de derecha a izquierda" } },
+    { "id": "b", "label": { "en": "encoding-decoding — apply the defined positional arithmetic rule to each digit and combine results to produce the check digit", "es": "encoding-decoding — aplicar la regla aritmética posicional definida a cada dígito y combinar resultados para producir el dígito de verificación" } },
+    { "id": "c", "label": { "en": "event-replay — treat each digit as a CREDIT or DEBIT event depending on its position", "es": "event-replay — tratar cada dígito como un evento CRÉDITO o DÉBITO según su posición" } },
+    { "id": "d", "label": { "en": "grid-bfs-dfs — traverse a 1D array of digits as a linear graph and accumulate the Luhn sum", "es": "grid-bfs-dfs — recorrer un arreglo 1D de dígitos como un grafo lineal y acumular la suma Luhn" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The Luhn algorithm applies a well-specified positional transformation rule: double alternate digits (position-dependent arithmetic), then sum all transformed digits. This is encoding-decoding — a defined arithmetic scheme applied to transform the input into a derived value, with the check digit serving as the encoding output. Option A (state-machine-simulation) is the near-miss: position parity (even/odd index) could be modeled as a binary state, but the core work is arithmetic transformation of each digit value, not qualitative state-driven parsing. The positional alternation is a loop index modulo check, not a meaningful qualitative state.",
+    "es": "El algoritmo Luhn aplica una regla de transformación posicional bien especificada: duplicar dígitos alternos (aritmética dependiente de posición), luego sumar todos los dígitos transformados. Esto es encoding-decoding — un esquema aritmético definido aplicado para transformar la entrada en un valor derivado, con el dígito de verificación como salida de la codificación. La opción A (state-machine-simulation) es el distractor más cercano: la paridad de posición (índice par/impar) podría modelarse como un estado binario, pero el trabajo central es la transformación aritmética de cada valor de dígito, no el parsing dirigido por estado cualitativo. La alternancia posicional es una comprobación de módulo de índice de bucle, no un estado cualitativo significativo."
+  }
+}

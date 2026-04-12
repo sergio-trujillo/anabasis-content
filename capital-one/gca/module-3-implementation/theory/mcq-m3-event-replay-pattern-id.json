@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-event-replay-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "event-replay: pattern identification",
+    "es": "event-replay: identificación de patrón"
+  },
+  "prompt": {
+    "en": "Which fingerprint best identifies the event-replay canonical?",
+    "es": "¿Qué huella identifica mejor el canónico event-replay?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Explicit qualitative state variable (enum) transitions triggered by input tokens, with the final state determining a boolean or categorical result", "es": "Transiciones de variable de estado cualitativo explícito (enum) disparadas por tokens de entrada, con el estado final determinando un resultado booleano o categórico" } },
+    { "id": "b", "label": { "en": "A chronological event stream is folded into quantitative state (number, list, map) using a running accumulator; the answer is the accumulated value after all events", "es": "Un flujo de eventos cronológicos se pliega en estado cuantitativo (número, lista, mapa) usando un acumulador; la respuesta es el valor acumulado después de todos los eventos" } },
+    { "id": "c", "label": { "en": "Apply a defined per-element transformation (lookup, arithmetic, bitwise) independently to each input item", "es": "Aplicar una transformación definida por elemento (búsqueda, aritmética, bit a bit) de forma independiente a cada elemento de entrada" } },
+    { "id": "d", "label": { "en": "Iterate a global transformation step until the output equals the input (fixpoint convergence)", "es": "Iterar un paso de transformación global hasta que la salida sea igual a la entrada (convergencia al punto fijo)" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Event-replay is characterized by quantitative accumulation: the state is a number, list, or map that grows or mutates with each event, and the final answer is the accumulated value itself. Option A describes state-machine-simulation, where the state is qualitative (an enum mode) and the answer is determined by which state is reached, not a numeric total. Option C describes encoding-decoding (stateless per-element). Option D describes simulate-until-stable (fixpoint iteration).",
+    "es": "Event-replay se caracteriza por la acumulación cuantitativa: el estado es un número, lista o mapa que crece o muta con cada evento, y la respuesta final es el valor acumulado en sí. La opción A describe state-machine-simulation, donde el estado es cualitativo (un modo enum) y la respuesta viene determinada por qué estado se alcanza, no por un total numérico. La opción C describe encoding-decoding (sin estado por elemento). La opción D describe simulate-until-stable (iteración hasta punto fijo)."
+  }
+}

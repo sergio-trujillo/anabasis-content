@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-account-balance",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: final account balance from DEPOSIT/WITHDRAW events",
+    "es": "cross-canonical: balance final de cuenta a partir de eventos DEPOSIT/WITHDRAW"
+  },
+  "prompt": {
+    "en": "Given a list of events in the form [\"DEPOSIT 200\", \"WITHDRAW 50\", \"DEPOSIT 100\", ...], return the final account balance. Which canonical applies?",
+    "es": "Dada una lista de eventos de la forma [\"DEPOSIT 200\", \"WITHDRAW 50\", \"DEPOSIT 100\", ...], retorna el balance final de la cuenta. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "state-machine-simulation — maintain CREDIT and DEBIT states and transition on each event type", "es": "state-machine-simulation — mantener estados CRÉDITO y DÉBITO y transicionar en cada tipo de evento" } },
+    { "id": "b", "label": { "en": "simulate-until-stable — apply balance updates repeatedly until the balance stops changing", "es": "simulate-until-stable — aplicar actualizaciones de balance repetidamente hasta que el balance deje de cambiar" } },
+    { "id": "c", "label": { "en": "event-replay — fold the event stream into a running numeric balance accumulator", "es": "event-replay — plegar el flujo de eventos en un acumulador de balance numérico acumulado" } },
+    { "id": "d", "label": { "en": "encoding-decoding — decode each event string into a signed integer and sum all values", "es": "encoding-decoding — decodificar cada cadena de evento en un entero con signo y sumar todos los valores" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "This is a canonical event-replay problem: process each event once in order, updating `balance += amount` for DEPOSIT and `balance -= amount` for WITHDRAW. The answer is the numeric accumulated state after all events — quintessential quantitative folding. Option A (state-machine-simulation) is the near-miss: CREDIT/DEBIT could be framed as two states, but the state does not determine the answer — the numeric balance does. State-machine-simulation is about qualitative mode transitions, not numeric accumulation. Option D partially overlaps but encoding-decoding focuses on the per-string parse, not the accumulation logic.",
+    "es": "Este es un problema canónico de event-replay: procesar cada evento una vez en orden, actualizando `balance += monto` para DEPOSIT y `balance -= monto` para WITHDRAW. La respuesta es el estado numérico acumulado después de todos los eventos — pliegue cuantitativo quintaesencial. La opción A (state-machine-simulation) es el distractor más cercano: CRÉDITO/DÉBITO podría enmarcarse como dos estados, pero el estado no determina la respuesta — el balance numérico sí lo hace. State-machine-simulation trata de transiciones de modo cualitativo, no de acumulación numérica. La opción D se superpone parcialmente pero encoding-decoding se centra en el parse por cadena, no en la lógica de acumulación."
+  }
+}

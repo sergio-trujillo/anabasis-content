@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-state-machine-simulation-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "state-machine-simulation: pattern identification",
+    "es": "state-machine-simulation: identificación de patrón"
+  },
+  "prompt": {
+    "en": "Which fingerprint best identifies the state-machine-simulation canonical?",
+    "es": "¿Qué huella identifica mejor el canónico state-machine-simulation?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Fold an event stream into a numeric quantity using a running accumulator", "es": "Plegar un flujo de eventos en una cantidad numérica usando un acumulador acumulativo" } },
+    { "id": "b", "label": { "en": "Explicit qualitative state variable transitions on each input token; final state or side-effects determine the answer", "es": "Transiciones explícitas de variable de estado cualitativo por cada token de entrada; el estado final o los efectos secundarios determinan la respuesta" } },
+    { "id": "c", "label": { "en": "Iterate until a fixpoint using deepEquals to detect convergence", "es": "Iterar hasta un punto fijo usando deepEquals para detectar convergencia" } },
+    { "id": "d", "label": { "en": "Apply a defined encoding table to each character in isolation without inter-character state", "es": "Aplicar una tabla de codificación definida a cada carácter de forma aislada sin estado entre caracteres" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "State-machine-simulation is defined by an explicit qualitative state variable (an enum or small integer) that transitions deterministically on each input token — the answer is derived from the final state or from side-effects accumulated during transitions. Option A describes event-replay, whose state is quantitative (balance, count, list). Option C describes simulate-until-stable, which focuses on fixpoint detection. Option D describes encoding-decoding applied character-by-character without inter-token state.",
+    "es": "State-machine-simulation se define por una variable de estado cualitativo explícita (un enum o entero pequeño) que transiciona determinísticamente con cada token de entrada — la respuesta se deriva del estado final o de los efectos secundarios acumulados durante las transiciones. La opción A describe event-replay, cuyo estado es cuantitativo (balance, conteo, lista). La opción C describe simulate-until-stable, que se enfoca en la detección de punto fijo. La opción D describe encoding-decoding aplicado carácter por carácter sin estado entre tokens."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-conways-life",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: Conway's Game of Life until grid stops changing",
+    "es": "cross-canonical: Juego de la Vida de Conway hasta que la cuadrícula deje de cambiar"
+  },
+  "prompt": {
+    "en": "Given an initial m×n binary grid, apply Conway's Life rules repeatedly until the grid stops changing (or after MAX_STEPS iterations). Return the stable grid. Which canonical applies?",
+    "es": "Dada una cuadrícula binaria m×n inicial, aplica las reglas del Juego de la Vida de Conway repetidamente hasta que la cuadrícula deje de cambiar (o después de MAX_STEPS iteraciones). Retorna la cuadrícula estable. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "grid-bfs-dfs — BFS expands the live cells outward until no new cells are reached", "es": "grid-bfs-dfs — BFS expande las celdas vivas hacia afuera hasta que no se alcancen nuevas celdas" } },
+    { "id": "b", "label": { "en": "matrix-traversal — traverse the grid in row-major order applying the Life rule to each cell once", "es": "matrix-traversal — recorrer la cuadrícula en orden por filas aplicando la regla de Life a cada celda una vez" } },
+    { "id": "c", "label": { "en": "simulate-until-stable — repeatedly apply the Life rule globally (composing matrix-traversal per step) until Arrays.deepEquals(prev, next) or MAX_STEPS is reached", "es": "simulate-until-stable — aplicar la regla de Life globalmente de forma repetida (componiendo matrix-traversal por paso) hasta que Arrays.deepEquals(prev, next) o se alcance MAX_STEPS" } },
+    { "id": "d", "label": { "en": "event-replay — treat each generation as an event and fold it into the running grid state", "es": "event-replay — tratar cada generación como un evento y plegarla en el estado de cuadrícula acumulado" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Conway's Life 'until stable' is the capstone simulate-until-stable problem: each outer iteration applies the Life rule globally (itself a matrix-traversal inner step), then checks `Arrays.deepEquals(prev, next)` to detect fixpoint. The iteration count is not known in advance — it terminates on convergence or the MAX_STEPS cap. Option B (matrix-traversal) is the near-miss: a single Life step IS a matrix-traversal, but the problem asks for repeated application until stability, which elevates it to simulate-until-stable. Option D (event-replay) is wrong — the generations are not pre-existing events in an input list; they are computed steps in a convergence loop.",
+    "es": "El Juego de la Vida de Conway 'hasta estabilidad' es el problema capstone de simulate-until-stable: cada iteración exterior aplica la regla de Life globalmente (siendo en sí misma un paso interno de matrix-traversal), luego comprueba `Arrays.deepEquals(prev, next)` para detectar el punto fijo. El conteo de iteraciones no se conoce de antemano — termina por convergencia o por el límite MAX_STEPS. La opción B (matrix-traversal) es el distractor más cercano: un único paso de Life SÍ es un matrix-traversal, pero el problema pide aplicación repetida hasta estabilidad, lo que lo eleva a simulate-until-stable. La opción D (event-replay) es incorrecta — las generaciones no son eventos preexistentes en una lista de entrada; son pasos calculados en un bucle de convergencia."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-state-machine-simulation-switch-vs-map",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "state-machine-simulation: switch vs transition Map insight",
+    "es": "state-machine-simulation: insight switch vs Map de transición"
+  },
+  "prompt": {
+    "en": "When should you prefer an explicit `Map<State, Map<Token, State>>` transition table over a `switch(state)` statement?",
+    "es": "¿Cuándo deberías preferir una tabla de transición explícita `Map<State, Map<Token, State>>` sobre una sentencia `switch(state)`?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Always — a Map is more readable and avoids Java's verbose switch syntax", "es": "Siempre — un Map es más legible y evita la sintaxis verbosa de switch en Java" } },
+    { "id": "b", "label": { "en": "When the state machine is loaded from external data (config file, database) or must be constructed dynamically at runtime", "es": "Cuando la máquina de estados se carga desde datos externos (archivo de configuración, base de datos) o debe construirse dinámicamente en tiempo de ejecución" } },
+    { "id": "c", "label": { "en": "When the number of states exceeds 10 — switch becomes too long to read", "es": "Cuando el número de estados supera 10 — switch se vuelve demasiado largo para leer" } },
+    { "id": "d", "label": { "en": "When the input tokens are characters — switch on char is not valid Java", "es": "Cuando los tokens de entrada son caracteres — switch sobre char no es Java válido" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "A transition Map (or table) is preferred when the state machine definition is data-driven — loaded from a config file, database, or user input — because you cannot write a hard-coded switch for an unknown structure. For a fixed, compile-time-known machine with 4–8 states, `switch(state)` is cleaner, gets compiler exhaustiveness checks, and has zero Map overhead. Option C is a style preference, not a correctness rule. Option D is wrong: `switch(char c)` is perfectly valid in Java.",
+    "es": "Un Map de transición (o tabla) se prefiere cuando la definición de la máquina de estados es impulsada por datos — cargada desde un archivo de configuración, base de datos o entrada del usuario — porque no puedes escribir un switch hardcodeado para una estructura desconocida. Para una máquina fija y conocida en tiempo de compilación con 4–8 estados, `switch(state)` es más limpio, obtiene comprobaciones de exhaustividad del compilador y tiene cero sobrecarga de Map. La opción C es una preferencia de estilo, no una regla de corrección. La opción D es incorrecta: `switch(char c)` es perfectamente válido en Java."
+  }
+}

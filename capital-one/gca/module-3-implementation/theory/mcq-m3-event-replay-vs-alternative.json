@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-event-replay-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "event-replay: vs simulate-until-stable",
+    "es": "event-replay: vs simulate-until-stable"
+  },
+  "prompt": {
+    "en": "Problem A: Apply n banking events (DEPOSIT/WITHDRAW) and return the final balance. Problem B: Repeatedly equalize the two highest and two lowest balances in a bank portfolio until all balances are within a $1 tolerance. Which canonical applies to each?",
+    "es": "Problema A: Aplica n eventos bancarios (DEPOSIT/WITHDRAW) y retorna el balance final. Problema B: Iguala repetidamente los dos balances más altos y más bajos de un portafolio hasta que todos los balances estén dentro de una tolerancia de $1. ¿Qué canónico aplica a cada uno?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Both are event-replay — both process sequences that affect balances", "es": "Ambos son event-replay — ambos procesan secuencias que afectan balances" } },
+    { "id": "b", "label": { "en": "Both are simulate-until-stable — both require iterating until convergence", "es": "Ambos son simulate-until-stable — ambos requieren iterar hasta la convergencia" } },
+    { "id": "c", "label": { "en": "A is event-replay (bounded, sequential fold); B is simulate-until-stable (unbounded iteration until fixpoint)", "es": "A es event-replay (pliegue secuencial acotado); B es simulate-until-stable (iteración no acotada hasta punto fijo)" } },
+    { "id": "d", "label": { "en": "A is simulate-until-stable; B is event-replay", "es": "A es simulate-until-stable; B es event-replay" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Problem A has a fixed, known number of events — the fold terminates after exactly n steps. This is event-replay: a bounded sequential accumulation. Problem B has no fixed iteration count — you keep applying the equalization step until a convergence condition (tolerance) is met, which is the defining property of simulate-until-stable. Option A is wrong because problem B's iteration count is not bounded by the input size in a simple way. Option D reverses the assignment incorrectly.",
+    "es": "El problema A tiene un número fijo y conocido de eventos — el pliegue termina después de exactamente n pasos. Esto es event-replay: una acumulación secuencial acotada. El problema B no tiene un número fijo de iteraciones — sigues aplicando el paso de equalización hasta que se cumple una condición de convergencia (tolerancia), que es la propiedad definitoria de simulate-until-stable. La opción A es incorrecta porque el conteo de iteraciones del problema B no está acotado por el tamaño de la entrada de forma simple. La opción D invierte la asignación incorrectamente."
+  }
+}

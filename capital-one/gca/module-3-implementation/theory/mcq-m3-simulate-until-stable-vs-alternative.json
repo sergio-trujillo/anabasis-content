@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-simulate-until-stable-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "simulate-until-stable: vs event-replay",
+    "es": "simulate-until-stable: vs event-replay"
+  },
+  "prompt": {
+    "en": "Problem A: Repeatedly redistribute wealth between the richest and poorest accounts until all balances are within $5 of each other. Problem B: Apply 100 rounds of interest accrual (each balance × 1.02) and return the final portfolio. Which canonical applies to each?",
+    "es": "Problema A: Redistribuye riqueza repetidamente entre las cuentas más rica y más pobre hasta que todos los balances estén dentro de $5 entre sí. Problema B: Aplica 100 rondas de acumulación de intereses (cada balance × 1.02) y retorna el portafolio final. ¿Qué canónico aplica a cada uno?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Both are simulate-until-stable — both iterate over balances multiple times", "es": "Ambos son simulate-until-stable — ambos iteran sobre balances múltiples veces" } },
+    { "id": "b", "label": { "en": "A is simulate-until-stable (unbounded convergence condition); B is event-replay (exactly 100 bounded steps)", "es": "A es simulate-until-stable (condición de convergencia no acotada); B es event-replay (exactamente 100 pasos acotados)" } },
+    { "id": "c", "label": { "en": "A is event-replay; B is simulate-until-stable", "es": "A es event-replay; B es simulate-until-stable" } },
+    { "id": "d", "label": { "en": "Both are event-replay — both apply a fixed operation to each element", "es": "Ambos son event-replay — ambos aplican una operación fija a cada elemento" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Problem A has an unbounded iteration count determined by a convergence condition (all within $5), which is the hallmark of simulate-until-stable. Problem B applies exactly 100 steps — a fixed, known iteration count applied uniformly to all elements — this matches the event-replay fold pattern (100 interest-accrual events). Option A is wrong because B's bounded 100 steps make it event-replay, not simulate-until-stable. Option D is wrong because A's termination is driven by convergence, not a fixed count.",
+    "es": "El problema A tiene un conteo de iteraciones no acotado determinado por una condición de convergencia (todos dentro de $5), que es la característica definitoria de simulate-until-stable. El problema B aplica exactamente 100 pasos — un conteo de iteraciones fijo y conocido aplicado uniformemente a todos los elementos — esto coincide con el patrón de pliegue event-replay (100 eventos de acumulación de intereses). La opción A es incorrecta porque los 100 pasos acotados de B lo convierten en event-replay, no en simulate-until-stable. La opción D es incorrecta porque la terminación de A es impulsada por convergencia, no por un conteo fijo."
+  }
+}

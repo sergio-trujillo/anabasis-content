@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-state-machine-simulation-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "state-machine-simulation: time complexity",
+    "es": "state-machine-simulation: complejidad temporal"
+  },
+  "prompt": {
+    "en": "A state-machine parser processes a string of n tokens, transitioning between states on each token in O(1). What is the overall time complexity?",
+    "es": "Un parser de máquina de estados procesa una cadena de n tokens, transitando entre estados por cada token en O(1). ¿Cuál es la complejidad temporal global?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n²) — transitions may cause the machine to revisit earlier tokens", "es": "O(n²) — las transiciones pueden hacer que la máquina revisite tokens anteriores" } },
+    { "id": "b", "label": { "en": "O(n × S) where S is the number of states — each token is processed once per state", "es": "O(n × S) donde S es el número de estados — cada token se procesa una vez por estado" } },
+    { "id": "c", "label": { "en": "O(n) — each token is consumed exactly once; transitions are O(1) lookups", "es": "O(n) — cada token se consume exactamente una vez; las transiciones son búsquedas O(1)" } },
+    { "id": "d", "label": { "en": "O(n log n) — transition tables are stored in sorted maps requiring logarithmic lookup", "es": "O(n log n) — las tablas de transición se almacenan en mapas ordenados que requieren búsqueda logarítmica" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "A canonical state-machine parser makes a single left-to-right pass over the n tokens; each token triggers one O(1) transition (via a switch statement or HashMap lookup), so total time is O(n). Option B (O(n×S)) incorrectly assumes each token is evaluated in every state — the machine is in exactly one state per token. Option D (O(n log n)) would apply only if the transition table used a TreeMap instead of a HashMap or switch, which is not idiomatic.",
+    "es": "Un parser canónico de máquina de estados hace un único recorrido de izquierda a derecha sobre los n tokens; cada token dispara una transición O(1) (mediante switch o búsqueda en HashMap), por lo que el tiempo total es O(n). La opción B (O(n×S)) asume incorrectamente que cada token se evalúa en cada estado — la máquina está en exactamente un estado por token. La opción D (O(n log n)) solo aplicaría si la tabla de transición usara un TreeMap en lugar de HashMap o switch, lo cual no es idiomático."
+  }
+}

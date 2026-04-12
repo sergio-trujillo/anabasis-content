@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-grid-bfs-dfs-visited-tracking",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "grid-bfs-dfs: visited tracking insight",
+    "es": "grid-bfs-dfs: insight de rastreo de visitados"
+  },
+  "prompt": {
+    "en": "When should you mark a cell as visited in a BFS grid traversal — before enqueuing it or after dequeuing it?",
+    "es": "¿Cuándo debes marcar una celda como visitada en un recorrido BFS de cuadrícula — antes de encolarla o después de desencolarla?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "After dequeuing — so the cell can be re-added by multiple neighbors before it is processed", "es": "Después de desencolar — para que la celda pueda ser re-agregada por múltiples vecinos antes de procesarse" } },
+    { "id": "b", "label": { "en": "Before enqueuing — to prevent the same cell from being added to the queue multiple times by different neighbors", "es": "Antes de encolar — para evitar que la misma celda sea agregada a la cola múltiples veces por diferentes vecinos" } },
+    { "id": "c", "label": { "en": "It does not matter — BFS deduplicates the queue automatically", "es": "No importa — BFS deduplica la cola automáticamente" } },
+    { "id": "d", "label": { "en": "After dequeuing — this is the Java convention and matches the API contract of ArrayDeque", "es": "Después de desencolar — esta es la convención de Java y coincide con el contrato de API de ArrayDeque" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Marking visited BEFORE enqueue is critical: if cell (r,c) is discovered by two different neighbors before it is dequeued, a mark-after-dequeue strategy would enqueue it twice, potentially causing it to be processed twice and corrupting region-count or shortest-distance results. Marking before enqueue ensures each cell enters the queue at most once. Option A (after dequeue) is a common beginner mistake that can degrade correctness and performance. Option C is wrong — Java's ArrayDeque has no deduplication logic.",
+    "es": "Marcar visitado ANTES de encolar es crítico: si la celda (r,c) es descubierta por dos vecinos diferentes antes de ser desencolada, una estrategia de marcar-después-de-desencolar la encolaría dos veces, pudiendo procesarla dos veces y corromper el conteo de regiones o las distancias más cortas. Marcar antes de encolar garantiza que cada celda entre a la cola como máximo una vez. La opción A (después de desencolar) es un error común de principiantes que puede degradar la corrección y el rendimiento. La opción C es incorrecta — ArrayDeque de Java no tiene lógica de deduplicación."
+  }
+}

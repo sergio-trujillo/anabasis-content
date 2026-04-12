@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-grid-bfs-dfs-edge-case",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "grid-bfs-dfs: edge case",
+    "es": "grid-bfs-dfs: caso borde"
+  },
+  "prompt": {
+    "en": "You are counting the number of connected land regions (1s) in a grid. Which input is the most dangerous edge case?",
+    "es": "Estás contando el número de regiones conectadas de tierra (1s) en una cuadrícula. ¿Cuál es el caso borde más peligroso?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "An empty grid (0 rows or 0 columns) — dereferencing grid[0].length throws NullPointerException", "es": "Una cuadrícula vacía (0 filas o 0 columnas) — desreferenciar grid[0].length lanza NullPointerException" } },
+    { "id": "b", "label": { "en": "A grid that is entirely 0s — BFS/DFS is never started", "es": "Una cuadrícula de todos 0s — BFS/DFS nunca se inicia" } },
+    { "id": "c", "label": { "en": "A 1×1 grid containing a single 1 — the single region must be counted without neighbors", "es": "Una cuadrícula 1×1 que contiene un único 1 — la única región debe contarse sin vecinos" } },
+    { "id": "d", "label": { "en": "A grid where every cell is 1 (one large connected region) — DFS may overflow the call stack due to recursion depth m×n", "es": "Una cuadrícula donde cada celda es 1 (una gran región conectada) — DFS puede desbordar la pila de llamadas por profundidad de recursión m×n" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "When every cell is 1, a recursive DFS from the top-left corner reaches depth m×n before backtracking. For a 1000×1000 grid that is 1,000,000 recursive calls — almost certainly a StackOverflowError in Java's default thread stack. The fix is to use iterative BFS (or iterative DFS with an explicit stack). Options A, B, and C are easy to handle: A is guarded by checking `grid.length == 0`, B returns 0 without entering any BFS/DFS, and C is handled correctly by the standard algorithm.",
+    "es": "Cuando cada celda es 1, un DFS recursivo desde la esquina superior izquierda alcanza una profundidad m×n antes de hacer backtracking. Para una cuadrícula 1000×1000 eso son 1,000,000 llamadas recursivas — casi con certeza un StackOverflowError con la pila de hilo predeterminada de Java. La solución es usar BFS iterativo (o DFS iterativo con pila explícita). Las opciones A, B y C son fáciles de manejar: A se guarda comprobando `grid.length == 0`, B retorna 0 sin entrar en ningún BFS/DFS, y C se maneja correctamente por el algoritmo estándar."
+  }
+}

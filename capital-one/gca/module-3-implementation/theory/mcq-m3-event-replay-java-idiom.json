@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-event-replay-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "event-replay: Java idiom",
+    "es": "event-replay: idiom Java"
+  },
+  "prompt": {
+    "en": "Which Java Stream idiom most directly expresses an event-replay fold over a list of events?",
+    "es": "¿Qué idiom de Java Stream expresa más directamente un pliegue event-replay sobre una lista de eventos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "events.stream().map(e -> apply(e)).collect(Collectors.toList())", "es": "events.stream().map(e -> apply(e)).collect(Collectors.toList())" } },
+    { "id": "b", "label": { "en": "events.stream().filter(e -> e.isValid()).forEach(e -> state.update(e))", "es": "events.stream().filter(e -> e.isValid()).forEach(e -> state.update(e))" } },
+    { "id": "c", "label": { "en": "events.stream().reduce(initialState, (s, e) -> apply(s, e))", "es": "events.stream().reduce(initialState, (s, e) -> apply(s, e))" } },
+    { "id": "d", "label": { "en": "IntStream.range(0, events.size()).mapToObj(i -> events.get(i)).sorted().findFirst()", "es": "IntStream.range(0, events.size()).mapToObj(i -> events.get(i)).sorted().findFirst()" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "`stream().reduce(initialState, (s, e) -> apply(s, e))` is the functional fold idiom: it starts from `initialState` and combines each event `e` with the current accumulated state `s` using the binary function `apply`. This directly models the event-replay pattern as an immutable left fold. Option A (map + collect) transforms each event independently without accumulating state across events. Option B (forEach with mutation) works imperatively but is not the idiomatic functional expression. Option D is a sorting/filtering pipeline, unrelated to folding.",
+    "es": "`stream().reduce(initialState, (s, e) -> apply(s, e))` es el idiom de pliegue funcional: comienza desde `initialState` y combina cada evento `e` con el estado acumulado actual `s` usando la función binaria `apply`. Esto modela directamente el patrón event-replay como un pliegue izquierdo inmutable. La opción A (map + collect) transforma cada evento independientemente sin acumular estado entre eventos. La opción B (forEach con mutación) funciona de forma imperativa pero no es la expresión funcional idiomática. La opción D es una pipeline de ordenamiento/filtrado, no relacionada con el pliegue."
+  }
+}

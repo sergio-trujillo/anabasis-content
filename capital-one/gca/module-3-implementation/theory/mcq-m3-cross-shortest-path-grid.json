@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-shortest-path-grid",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: shortest path from top-left to bottom-right in a passable grid",
+    "es": "cross-canonical: camino más corto de esquina superior-izquierda a inferior-derecha en cuadrícula pasable"
+  },
+  "prompt": {
+    "en": "Given an m×n binary grid (0 = passable, 1 = blocked), find the minimum number of steps from (0,0) to (m-1,n-1), or -1 if unreachable. Which canonical applies?",
+    "es": "Dada una cuadrícula binaria m×n (0 = pasable, 1 = bloqueada), encuentra el número mínimo de pasos de (0,0) a (m-1,n-1), o -1 si no es alcanzable. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "matrix-traversal — scan the grid in row-major order tracking the minimum-distance path", "es": "matrix-traversal — escanear la cuadrícula en orden por filas rastreando el camino de distancia mínima" } },
+    { "id": "b", "label": { "en": "simulate-until-stable — repeatedly expand a frontier until it reaches the target or stabilizes", "es": "simulate-until-stable — expandir repetidamente una frontera hasta que alcance el objetivo o se estabilice" } },
+    { "id": "c", "label": { "en": "event-replay — fold each step event into a running path-cost accumulator", "es": "event-replay — plegar cada evento de paso en un acumulador de costo de camino acumulado" } },
+    { "id": "d", "label": { "en": "grid-bfs-dfs — BFS from (0,0) with level-by-level expansion guarantees the first arrival at (m-1,n-1) is the shortest path", "es": "grid-bfs-dfs — BFS desde (0,0) con expansión nivel por nivel garantiza que la primera llegada a (m-1,n-1) es el camino más corto" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "Shortest-path on an unweighted grid is the textbook application of BFS: level-by-level expansion guarantees the first time the target cell is dequeued, the distance is minimal. DFS would find a path but not necessarily the shortest one. Option B (simulate-until-stable) is the near-miss — BFS frontier expansion does superficially resemble repeated layer spreading, but simulate-until-stable requires a fixpoint comparison (`prev == next`), not a target-reached termination. Option A (matrix-traversal) cannot find shortest paths because row-major order ignores graph connectivity.",
+    "es": "El camino más corto en una cuadrícula sin pesos es la aplicación de libro de texto de BFS: la expansión nivel por nivel garantiza que la primera vez que la celda objetivo se desencola, la distancia es mínima. DFS encontraría un camino pero no necesariamente el más corto. La opción B (simulate-until-stable) es el distractor más cercano — la expansión de frontera BFS sí se parece superficialmente a la propagación repetida por capas, pero simulate-until-stable requiere una comparación de punto fijo (`prev == next`), no una terminación por objetivo alcanzado. La opción A (matrix-traversal) no puede encontrar caminos más cortos porque el orden por filas ignora la conectividad del grafo."
+  }
+}

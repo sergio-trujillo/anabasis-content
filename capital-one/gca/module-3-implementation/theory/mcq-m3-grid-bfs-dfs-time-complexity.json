@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-grid-bfs-dfs-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "grid-bfs-dfs: time complexity",
+    "es": "grid-bfs-dfs: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You run BFS on an m×n grid to find connected regions, marking each visited cell. What is the time and space complexity?",
+    "es": "Ejecutas BFS en una cuadrícula m×n para encontrar regiones conectadas, marcando cada celda visitada. ¿Cuál es la complejidad temporal y espacial?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Time O(m×n), Space O(1) — visited is tracked in-place by mutating the grid", "es": "Tiempo O(m×n), Espacio O(1) — visited se rastrea in situ mutando la cuadrícula" } },
+    { "id": "b", "label": { "en": "Time O(m×n × 4), Space O(m×n) — four neighbors checked per cell plus a visited array", "es": "Tiempo O(m×n × 4), Espacio O(m×n) — cuatro vecinos comprobados por celda más un arreglo visitado" } },
+    { "id": "c", "label": { "en": "Time O(m×n), Space O(m×n) — each cell is enqueued at most once; the queue holds at most m×n cells", "es": "Tiempo O(m×n), Espacio O(m×n) — cada celda se encola como máximo una vez; la cola contiene como máximo m×n celdas" } },
+    { "id": "d", "label": { "en": "Time O((m×n)²) — BFS revisits cells when multiple regions overlap", "es": "Tiempo O((m×n)²) — BFS revisita celdas cuando múltiples regiones se superponen" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "With proper visited tracking, each of the m×n cells is enqueued and dequeued exactly once, giving O(m×n) time. The queue holds at most O(m×n) cells in the worst case (e.g., a single large region), so space is also O(m×n). Option B is technically correct in its time bound — O(m×n×4) = O(m×n) — but misleadingly includes the constant factor 4. Option A's O(1) space claim is only valid when mutating the grid in-place (e.g., marking visited cells as 0), which is not always permissible. Option D is wrong: visited tracking ensures each cell is processed at most once.",
+    "es": "Con el rastreo de visitados adecuado, cada una de las m×n celdas se encola y desencola exactamente una vez, dando tiempo O(m×n). La cola contiene como máximo O(m×n) celdas en el peor caso (p. ej., una sola región grande), por lo que el espacio también es O(m×n). La opción B es técnicamente correcta en su límite de tiempo — O(m×n×4) = O(m×n) — pero incluye engañosamente el factor constante 4. El espacio O(1) de la opción A solo es válido cuando se muta la cuadrícula in situ (p. ej., marcando celdas visitadas como 0), lo que no siempre está permitido. La opción D es incorrecta: el rastreo de visitados garantiza que cada celda se procese como máximo una vez."
+  }
+}

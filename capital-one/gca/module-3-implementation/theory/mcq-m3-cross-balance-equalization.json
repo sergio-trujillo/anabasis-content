@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-balance-equalization",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: equalize balances until all within threshold",
+    "es": "cross-canonical: igualar balances hasta que todos estén dentro del umbral"
+  },
+  "prompt": {
+    "en": "Given int[] balances, repeatedly transfer money from the maximum-balance account to the minimum-balance account until all balances are within a given threshold of each other. Return the number of transfers. Which canonical applies?",
+    "es": "Dado int[] balances, transfiere dinero repetidamente de la cuenta con balance máximo a la cuenta con balance mínimo hasta que todos los balances estén dentro de un umbral dado entre sí. Retorna el número de transferencias. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "event-replay — treat each transfer as a DEBIT/CREDIT pair and fold the list into a final balance array", "es": "event-replay — tratar cada transferencia como un par DÉBITO/CRÉDITO y plegar la lista en un arreglo de balances final" } },
+    { "id": "b", "label": { "en": "state-machine-simulation — maintain a BALANCED/UNBALANCED state and transition after each transfer", "es": "state-machine-simulation — mantener un estado BALANCEADO/DESBALANCEADO y transicionar después de cada transferencia" } },
+    { "id": "c", "label": { "en": "simulate-until-stable — apply the max-to-min transfer step repeatedly until the convergence condition (max - min <= threshold) is met", "es": "simulate-until-stable — aplicar el paso de transferencia máximo-a-mínimo repetidamente hasta que se cumpla la condición de convergencia (max - min <= umbral)" } },
+    { "id": "d", "label": { "en": "grid-bfs-dfs — model accounts as nodes and transfer paths as edges; BFS finds the minimum-cost equalization path", "es": "grid-bfs-dfs — modelar las cuentas como nodos y los caminos de transferencia como aristas; BFS encuentra el camino de equalización de costo mínimo" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "This is simulate-until-stable: the transform step (transfer from max to min) is applied repeatedly, and the loop terminates when the convergence condition `max(balances) - min(balances) <= threshold` is satisfied — an unknown number of steps in advance. Option A (event-replay) is the near-miss: if the transfers were a pre-given list of events, it would be event-replay. But here the transfers are computed steps in a convergence loop, with no fixed input list of n events. Option B (state-machine-simulation) is wrong because BALANCED/UNBALANCED is a stop condition, not a qualitative mode that changes how the transform is applied.",
+    "es": "Esto es simulate-until-stable: el paso de transformación (transferir del máximo al mínimo) se aplica repetidamente, y el bucle termina cuando se cumple la condición de convergencia `max(balances) - min(balances) <= umbral` — un número de pasos desconocido de antemano. La opción A (event-replay) es el distractor más cercano: si las transferencias fueran una lista pre-dada de eventos, sería event-replay. Pero aquí las transferencias son pasos calculados en un bucle de convergencia, sin una lista fija de entrada de n eventos. La opción B (state-machine-simulation) es incorrecta porque BALANCEADO/DESBALANCEADO es una condición de parada, no un modo cualitativo que cambia cómo se aplica la transformación."
+  }
+}

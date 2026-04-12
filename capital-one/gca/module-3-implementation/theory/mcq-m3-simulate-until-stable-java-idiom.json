@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-simulate-until-stable-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "simulate-until-stable: Java idiom",
+    "es": "simulate-until-stable: idiom Java"
+  },
+  "prompt": {
+    "en": "What is the idiomatic Java loop structure for simulate-until-stable on a 2D int[][] grid?",
+    "es": "¿Cuál es la estructura de bucle idiomática en Java para simulate-until-stable sobre una cuadrícula 2D int[][]?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "`for (int i = 0; i < grid.length; i++)` — iterate over rows until all are stable", "es": "`for (int i = 0; i < grid.length; i++)` — iterar sobre filas hasta que todas sean estables" } },
+    { "id": "b", "label": { "en": "`while (true) { next = step(grid); if (Arrays.deepEquals(grid, next)) break; grid = next; }`  with an optional max-iteration cap", "es": "`while (true) { next = step(grid); if (Arrays.deepEquals(grid, next)) break; grid = next; }` con un límite máximo de iteraciones opcional" } },
+    { "id": "c", "label": { "en": "`do { grid = step(grid); } while (!isStable(grid));` — always execute at least one step before checking", "es": "`do { grid = step(grid); } while (!isStable(grid));` — siempre ejecutar al menos un paso antes de comprobar" } },
+    { "id": "d", "label": { "en": "`for (int step = 0; step < MAX; step++) { grid = step(grid); }` — always run exactly MAX steps regardless of stability", "es": "`for (int step = 0; step < MAX; step++) { grid = step(grid); }` — siempre ejecutar exactamente MAX pasos independientemente de la estabilidad" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The idiomatic simulate-until-stable loop computes `next = step(grid)`, compares it to the current state with `Arrays.deepEquals(grid, next)`, and breaks when they are equal (fixpoint). An optional `steps < MAX` guard in the while condition prevents infinite loops for non-converging simulations. Option C (do-while) is semantically equivalent but loses the ability to detect an already-stable initial state without an extra check. Option D runs exactly MAX steps without early termination, which is wrong when the grid converges early.",
+    "es": "El bucle idiomático simulate-until-stable calcula `next = step(grid)`, lo compara con el estado actual usando `Arrays.deepEquals(grid, next)` y se detiene cuando son iguales (punto fijo). Un guardia opcional `steps < MAX` en la condición del while previene bucles infinitos para simulaciones no convergentes. La opción C (do-while) es semánticamente equivalente pero pierde la capacidad de detectar un estado inicial ya estable sin una comprobación adicional. La opción D ejecuta exactamente MAX pasos sin terminación anticipada, lo cual es incorrecto cuando la cuadrícula converge antes."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-simulate-until-stable-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "simulate-until-stable: time complexity",
+    "es": "simulate-until-stable: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You simulate Conway's Game of Life on an m×n grid until the grid stops changing, capped at K max iterations. Each step applies a rule to all m×n cells. What is the worst-case time complexity?",
+    "es": "Simulas el Juego de la Vida de Conway en una cuadrícula m×n hasta que la cuadrícula deja de cambiar, limitado a K iteraciones máximas. Cada paso aplica una regla a las m×n celdas. ¿Cuál es la complejidad temporal en el peor caso?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(m×n) — only one pass over the grid is needed", "es": "O(m×n) — solo se necesita un recorrido sobre la cuadrícula" } },
+    { "id": "b", "label": { "en": "O(K × m×n) — up to K steps, each scanning all m×n cells", "es": "O(K × m×n) — hasta K pasos, cada uno recorriendo las m×n celdas" } },
+    { "id": "c", "label": { "en": "O(m×n × log K) — binary search over the number of steps", "es": "O(m×n × log K) — búsqueda binaria sobre el número de pasos" } },
+    { "id": "d", "label": { "en": "O(K²) — each step takes time proportional to the current step index", "es": "O(K²) — cada paso toma tiempo proporcional al índice de paso actual" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "In the worst case (no fixpoint before K steps), simulate-until-stable runs exactly K iterations, each scanning all m×n cells to compute the next state — O(K × m×n) total. Option A (O(m×n)) only applies if the grid stabilizes after the very first step. Option C (O(m×n × log K)) is incorrect because there is no binary search structure in fixpoint iteration — you cannot skip steps. Option D (O(K²)) would apply only if each step's cost grew with the iteration count, which it does not.",
+    "es": "En el peor caso (sin punto fijo antes de K pasos), simulate-until-stable ejecuta exactamente K iteraciones, cada una recorriendo las m×n celdas para calcular el siguiente estado — O(K × m×n) en total. La opción A (O(m×n)) solo aplica si la cuadrícula se estabiliza después del primer paso. La opción C (O(m×n × log K)) es incorrecta porque no hay estructura de búsqueda binaria en la iteración hasta punto fijo — no puedes saltarte pasos. La opción D (O(K²)) solo aplicaría si el costo de cada paso creciera con el índice de iteración, lo cual no ocurre."
+  }
+}

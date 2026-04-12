@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-event-replay-folding-idiom",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "event-replay: folding idiom insight",
+    "es": "event-replay: insight del idiom de pliegue"
+  },
+  "prompt": {
+    "en": "You implement event-replay for APPEND and UNDO editing events over a document. After processing n events, you return the final string. Which implementation detail is most important to get right?",
+    "es": "Implementas event-replay para eventos de edición APPEND y UNDO sobre un documento. Después de procesar n eventos, retornas la cadena final. ¿Cuál es el detalle de implementación más importante de acertar?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Using StringBuilder instead of String concatenation to avoid O(n²) string-copy cost", "es": "Usar StringBuilder en lugar de concatenación de String para evitar el costo O(n²) de copia de cadena" } },
+    { "id": "b", "label": { "en": "Sorting events by type (all APPENDs before all UNDOs) before replay", "es": "Ordenar los eventos por tipo (todos los APPENDs antes de todos los UNDOs) antes de reproducirlos" } },
+    { "id": "c", "label": { "en": "Caching the intermediate state after every 10 events to allow fast random access", "es": "Almacenar en caché el estado intermedio después de cada 10 eventos para permitir acceso aleatorio rápido" } },
+    { "id": "d", "label": { "en": "Processing UNDO events in reverse order to correctly reconstruct the document", "es": "Procesar los eventos UNDO en orden inverso para reconstruir correctamente el documento" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Each APPEND operation with raw String concatenation (`doc = doc + text`) copies the entire existing string — O(current length) per append — leading to O(n²) total time for n events. Using a StringBuilder makes each append O(amortized 1), keeping the fold O(n). Option B is wrong: sorting events by type destroys chronological order, which is essential for correct replay (an UNDO applies to the most recent append, not to all appends at once). Option D is wrong for the same reason — UNDO must be processed in original chronological order.",
+    "es": "Cada operación APPEND con concatenación de String cruda (`doc = doc + text`) copia la cadena existente entera — O(longitud actual) por append — llevando a tiempo total O(n²) para n eventos. Usar un StringBuilder hace cada append O(1 amortizado), manteniendo el pliegue en O(n). La opción B es incorrecta: ordenar eventos por tipo destruye el orden cronológico, que es esencial para una reproducción correcta (un UNDO aplica al append más reciente, no a todos los appends a la vez). La opción D es incorrecta por la misma razón — UNDO debe procesarse en el orden cronológico original."
+  }
+}

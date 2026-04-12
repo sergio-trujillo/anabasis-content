@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-cross-parse-csv-quoted",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "cross-canonical: parse a CSV line with quoted fields",
+    "es": "cross-canonical: parsear una línea CSV con campos entrecomillados"
+  },
+  "prompt": {
+    "en": "Parse a single CSV line where fields may be quoted with double-quotes, and commas inside quotes are literal (not field separators). Which canonical applies?",
+    "es": "Parsea una única línea CSV donde los campos pueden estar entrecomillados con comillas dobles, y las comas dentro de comillas son literales (no separadores de campo). ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "encoding-decoding — apply a quote-removal decode pass followed by a comma-split encode pass", "es": "encoding-decoding — aplicar un paso de decodificación para quitar comillas seguido de un paso de codificación de división por comas" } },
+    { "id": "b", "label": { "en": "event-replay — fold each character into a running list of fields using a StringBuilder accumulator", "es": "event-replay — plegar cada carácter en una lista acumulada de campos usando un acumulador StringBuilder" } },
+    { "id": "c", "label": { "en": "state-machine-simulation — toggle between INSIDE_QUOTE and OUTSIDE_QUOTE states as \" characters are encountered", "es": "state-machine-simulation — alternar entre estados INSIDE_QUOTE y OUTSIDE_QUOTE a medida que se encuentran caracteres \"" } },
+    { "id": "d", "label": { "en": "matrix-traversal — represent the CSV line as a 1D array of characters and apply boundary-shrink to find field extents", "es": "matrix-traversal — representar la línea CSV como un arreglo 1D de caracteres y aplicar contracción de límites para encontrar los límites de los campos" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "CSV parsing with quoted fields is a textbook state-machine-simulation: the parser maintains an OUTSIDE_QUOTE / INSIDE_QUOTE state, toggling on '\"' characters; commas outside quotes start a new field, commas inside quotes are ignored as separators. Option B (event-replay) is the near-miss — you could describe it as folding characters, but the key mechanism is the qualitative mode toggle (inside vs. outside quotes), which is the defining property of state-machine-simulation. Option A (encoding-decoding) is wrong because the mapping rule depends on inter-character state (the quote context), not a stateless per-character transform.",
+    "es": "El parsing CSV con campos entrecomillados es un state-machine-simulation de libro de texto: el parser mantiene un estado OUTSIDE_QUOTE / INSIDE_QUOTE, alternando con caracteres '\"'; las comas fuera de comillas inician un nuevo campo, las comas dentro de comillas se ignoran como separadores. La opción B (event-replay) es el distractor más cercano — podrías describir el proceso como pliegue de caracteres, pero el mecanismo clave es la alternancia de modo cualitativo (dentro vs. fuera de comillas), que es la propiedad definitoria de state-machine-simulation. La opción A (encoding-decoding) es incorrecta porque la regla de mapeo depende del estado entre caracteres (el contexto de comillas), no de una transformación sin estado por carácter."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m3-encoding-decoding-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "encoding-decoding: pattern identification",
+    "es": "encoding-decoding: identificación de patrón"
+  },
+  "prompt": {
+    "en": "Which fingerprint best identifies the encoding-decoding canonical?",
+    "es": "¿Qué huella identifica mejor el canónico encoding-decoding?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Fold each element of a sequence into a running accumulator using a fixed arithmetic rule", "es": "Plegar cada elemento de una secuencia en un acumulador acumulativo usando una regla aritmética fija" } },
+    { "id": "b", "label": { "en": "Apply a defined mapping (lookup table, arithmetic rule, or bitwise operation) to transform data from one representation to another, with invertibility as a key property", "es": "Aplicar un mapeo definido (tabla de búsqueda, regla aritmética u operación bit a bit) para transformar datos de una representación a otra, con la invertibilidad como propiedad clave" } },
+    { "id": "c", "label": { "en": "Maintain explicit state transitions and produce side-effects on each input character", "es": "Mantener transiciones de estado explícitas y producir efectos secundarios en cada carácter de entrada" } },
+    { "id": "d", "label": { "en": "Explore a 2D structure using BFS/DFS to discover connected regions", "es": "Explorar una estructura 2D usando BFS/DFS para descubrir regiones conectadas" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Encoding-decoding is defined by a well-specified mapping rule — lookup table, arithmetic (e.g., modular arithmetic, base conversion), or bitwise packing — applied to transform data, with the critical property that a valid encoder/decoder pair satisfies decode(encode(x)) == x. Option A describes event-replay or a reduce fold. Option C describes state-machine-simulation, which also processes tokens but maintains qualitative state. Option D describes grid-bfs-dfs.",
+    "es": "Encoding-decoding se define por una regla de mapeo bien especificada — tabla de búsqueda, aritmética (p. ej., aritmética modular, conversión de base) u empaquetamiento bit a bit — aplicada para transformar datos, con la propiedad crítica de que un par válido encoder/decoder satisface decode(encode(x)) == x. La opción A describe event-replay o un reduce fold. La opción C describe state-machine-simulation, que también procesa tokens pero mantiene estado cualitativo. La opción D describe grid-bfs-dfs."
+  }
+}
