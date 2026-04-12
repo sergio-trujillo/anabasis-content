@@ -1,0 +1,17 @@
+{
+  "id": "code-histbucket-counting-sort-in-range",
+  "type": "code",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "Counting sort in range",
+    "es": "Ordenamiento por conteo en rango"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an `int[]` array `nums` whose values are all in the inclusive range `[minVal, maxVal]`, return a **new** `int[]` with the same elements sorted in ascending order.\n\nYou **must** implement this with a bucket array of size `maxVal - minVal + 1` — do NOT call `Arrays.sort` or use any `Comparator`. The counts are intermediate working data: you fill them while scanning the input, then reconstruct the sorted output by iterating the bucket array in index order.\n\nExamples:\n- `[3, 1, 2, 1, 3, 2]` minVal=1 maxVal=3 → `[1, 1, 2, 2, 3, 3]`\n- `[5]` minVal=5 maxVal=5 → `[5]`\n- `[]` minVal=0 maxVal=9 → `[]`\n\nSignature: `public int[] countingSort(int[] nums, int minVal, int maxVal)`",
+    "es": "Dado un arreglo `int[]` llamado `nums` cuyos valores están todos en el rango inclusivo `[minVal, maxVal]`, devuelve un **nuevo** `int[]` con los mismos elementos ordenados de forma ascendente.\n\nDebes implementarlo con un arreglo de cubetas (`bucket`) de tamaño `maxVal - minVal + 1` — NO llames a `Arrays.sort` ni uses ningún `Comparator`. Los conteos son datos de trabajo intermedios: los llenas al recorrer la entrada y luego reconstruyes la salida ordenada iterando el arreglo de cubetas en orden de índice.\n\nEjemplos:\n- `[3, 1, 2, 1, 3, 2]` minVal=1 maxVal=3 → `[1, 1, 2, 2, 3, 3]`\n- `[5]` minVal=5 maxVal=5 → `[5]`\n- `[]` minVal=0 maxVal=9 → `[]`\n\nFirma: `public int[] countingSort(int[] nums, int minVal, int maxVal)`"
+  },
+  "starterCode": "class Solution {\n    public int[] countingSort(int[] nums, int minVal, int maxVal) {\n        // TODO\n        return new int[]{};\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void classic() {\n        int[] result = new Solution().countingSort(new int[]{3, 1, 2, 1, 3, 2}, 1, 3);\n        assertArrayEquals(new int[]{1, 1, 2, 2, 3, 3}, result);\n    }\n\n    @Test\n    void singleElement() {\n        // minVal == maxVal: only one bucket\n        int[] result = new Solution().countingSort(new int[]{5}, 5, 5);\n        assertArrayEquals(new int[]{5}, result);\n    }\n\n    @Test\n    void empty() {\n        int[] result = new Solution().countingSort(new int[]{}, 0, 9);\n        assertArrayEquals(new int[]{}, result);\n    }\n\n    @Test\n    void allSameValue() {\n        // all elements map to the same bucket\n        int[] result = new Solution().countingSort(new int[]{4, 4, 4, 4}, 2, 6);\n        assertArrayEquals(new int[]{4, 4, 4, 4}, result);\n    }\n\n    @Test\n    void alreadySorted() {\n        int[] result = new Solution().countingSort(new int[]{1, 2, 3, 4, 5}, 1, 5);\n        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, result);\n    }\n\n    @Test\n    void reverseSorted() {\n        int[] result = new Solution().countingSort(new int[]{9, 7, 5, 3, 1}, 1, 9);\n        assertArrayEquals(new int[]{1, 3, 5, 7, 9}, result);\n    }\n\n    @Test\n    void largeDuplicatesSpread() {\n        // values at the extremes of the range\n        int[] result = new Solution().countingSort(new int[]{0, 100, 0, 100, 50}, 0, 100);\n        assertArrayEquals(new int[]{0, 0, 50, 100, 100}, result);\n    }\n}\n"
+}

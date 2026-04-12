@@ -1,0 +1,17 @@
+{
+  "id": "code-histbucket-dutch-flag-partition",
+  "type": "code",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "Dutch flag partition (sort colors)",
+    "es": "Partición bandera holandesa (ordenar colores)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an `int[]` array `nums` containing **only** the values `0`, `1`, and `2`, rearrange it **in-place** so that all `0`s come first, followed by all `1`s, then all `2`s.\n\nUse the **counting-based histogram approach**: allocate a `counts` array of size 3, tally each value, then write back the counts in order. Do NOT use a library sort.\n\nExamples:\n- `[2, 0, 1, 2, 1, 0]` → `[0, 0, 1, 1, 2, 2]`\n- `[2, 2, 0]` → `[0, 2, 2]`\n- `[1]` → `[1]`\n- `[]` → no change (no-op)\n\nSignature: `public void sortColors(int[] nums)`",
+    "es": "Dado un arreglo `int[]` llamado `nums` que contiene **únicamente** los valores `0`, `1` y `2`, reorganízalo **en el lugar** para que todos los `0`s queden primero, luego todos los `1`s y finalmente todos los `2`s.\n\nUsa el **enfoque de histograma por conteo**: asigna un arreglo `counts` de tamaño 3, cuenta cada valor y luego escribe los conteos en orden. NO uses un sort de biblioteca.\n\nEjemplos:\n- `[2, 0, 1, 2, 1, 0]` → `[0, 0, 1, 1, 2, 2]`\n- `[2, 2, 0]` → `[0, 2, 2]`\n- `[1]` → `[1]`\n- `[]` → sin cambio (no-op)\n\nFirma: `public void sortColors(int[] nums)`"
+  },
+  "starterCode": "class Solution {\n    public void sortColors(int[] nums) {\n        // TODO\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void classic() {\n        int[] nums = {2, 0, 1, 2, 1, 0};\n        new Solution().sortColors(nums);\n        assertArrayEquals(new int[]{0, 0, 1, 1, 2, 2}, nums);\n    }\n\n    @Test\n    void empty() {\n        int[] nums = {};\n        new Solution().sortColors(nums);\n        assertArrayEquals(new int[]{}, nums);\n    }\n\n    @Test\n    void singleElement() {\n        int[] nums = {1};\n        new Solution().sortColors(nums);\n        assertArrayEquals(new int[]{1}, nums);\n    }\n\n    @Test\n    void allZeros() {\n        int[] nums = {0, 0, 0};\n        new Solution().sortColors(nums);\n        assertArrayEquals(new int[]{0, 0, 0}, nums);\n    }\n\n    @Test\n    void allTwos() {\n        int[] nums = {2, 2, 2};\n        new Solution().sortColors(nums);\n        assertArrayEquals(new int[]{2, 2, 2}, nums);\n    }\n\n    @Test\n    void alreadySorted() {\n        int[] nums = {0, 0, 1, 2, 2};\n        new Solution().sortColors(nums);\n        assertArrayEquals(new int[]{0, 0, 1, 2, 2}, nums);\n    }\n\n    @Test\n    void onlyZerosAndTwos() {\n        // no 1s — bucket[1] == 0; write-back must skip it cleanly\n        int[] nums = {2, 0, 2, 0};\n        new Solution().sortColors(nums);\n        assertArrayEquals(new int[]{0, 0, 2, 2}, nums);\n    }\n}\n"
+}

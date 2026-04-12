@@ -1,0 +1,17 @@
+{
+  "id": "code-histbucket-h-index",
+  "type": "code",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "H-index via citation buckets",
+    "es": "Índice h mediante cubetas de citas"
+  },
+  "difficulty": "medium",
+  "language": "java",
+  "statement": {
+    "en": "Given an `int[]` array `citations` where `citations[i]` is the number of citations for paper `i` (non-negative), return the **h-index**: the largest integer `h` such that at least `h` papers have at least `h` citations.\n\nUse the **histogram-bucketing approach**: build a `bucket[]` of size `n + 1` where `bucket[i]` = number of papers with exactly `i` citations (papers with `>= n` citations count in `bucket[n]`). Then scan from high to low, accumulating a running total; the first index `i` where the cumulative count is `>= i` is the answer. This achieves O(n) time and O(n) space — no sorting required.\n\nExamples:\n- `[3, 0, 6, 1, 5]` → `3` (papers with ≥3 cites: indices 0, 2, 4)\n- `[1, 3, 1]` → `1`\n- `[100]` → `1`\n- `[0]` → `0`\n- `[]` → `0`\n\nSignature: `public int hIndex(int[] citations)`",
+    "es": "Dado un arreglo `int[]` llamado `citations` donde `citations[i]` es el número de citas del artículo `i` (no negativo), devuelve el **índice h**: el mayor entero `h` tal que al menos `h` artículos tienen al menos `h` citas.\n\nUsa el **enfoque de cubetas de histograma**: construye un arreglo `bucket[]` de tamaño `n + 1` donde `bucket[i]` = número de artículos con exactamente `i` citas (los artículos con `>= n` citas cuentan en `bucket[n]`). Luego recorre de mayor a menor acumulando un total; el primer índice `i` donde el acumulado es `>= i` es la respuesta. Esto logra O(n) en tiempo y O(n) en espacio — sin ordenar.\n\nEjemplos:\n- `[3, 0, 6, 1, 5]` → `3` (artículos con ≥3 citas: índices 0, 2, 4)\n- `[1, 3, 1]` → `1`\n- `[100]` → `1`\n- `[0]` → `0`\n- `[]` → `0`\n\nFirma: `public int hIndex(int[] citations)`"
+  },
+  "starterCode": "class Solution {\n    public int hIndex(int[] citations) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void classic() {\n        // 3 papers have >=3 cites: [3,6,5]\n        assertEquals(3, new Solution().hIndex(new int[]{3, 0, 6, 1, 5}));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(0, new Solution().hIndex(new int[]{}));\n    }\n\n    @Test\n    void singleZero() {\n        assertEquals(0, new Solution().hIndex(new int[]{0}));\n    }\n\n    @Test\n    void singleLarge() {\n        // only 1 paper exists, so h can be at most 1\n        assertEquals(1, new Solution().hIndex(new int[]{100}));\n    }\n\n    @Test\n    void allZeros() {\n        // no paper qualifies for h>=1\n        assertEquals(0, new Solution().hIndex(new int[]{0, 0, 0}));\n    }\n\n    @Test\n    void uniformCitations() {\n        // 4 papers each with 4 citations -> h=4\n        assertEquals(4, new Solution().hIndex(new int[]{4, 4, 4, 4}));\n    }\n\n    @Test\n    void tieBreakAtBoundary() {\n        // [1,3,1]: 1 paper has >=3, 2 have >=2 (only [3,3] would work but we only have [3]),\n        // 3 papers have >=1 -> h=1 is largest where >=h papers have >=h cites\n        assertEquals(1, new Solution().hIndex(new int[]{1, 3, 1}));\n    }\n}\n"
+}

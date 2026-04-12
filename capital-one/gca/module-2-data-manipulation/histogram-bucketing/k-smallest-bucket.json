@@ -1,0 +1,17 @@
+{
+  "id": "code-histbucket-k-smallest-bucket",
+  "type": "code",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "K smallest values via bucket scan",
+    "es": "K valores menores mediante escaneo de cubetas"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an `int[]` array `prices` with values in `[0, 100]` (inclusive) and an integer `k`, return a new `int[]` containing the `k` smallest values in **ascending order**.\n\nYou **must** use a `int[101]` bucket array — do NOT use a heap, `Arrays.sort`, or `TreeMap`. Scan the buckets from index 0 upward, collecting values until you have `k` of them.\n\nIf `k >= prices.length`, return all values from `prices` sorted ascending (use the same bucket scan, just collect everything).\n\nExamples:\n- `[50, 10, 30, 10, 50]` k=3 → `[10, 10, 30]`\n- `[20, 5, 80]` k=1 → `[5]`\n- `[20, 5, 80]` k=5 → `[5, 20, 80]` (k > length, return all sorted)\n- `[]` k=3 → `[]`\n\nSignature: `public int[] kSmallest(int[] prices, int k)`",
+    "es": "Dado un arreglo `int[]` llamado `prices` con valores en `[0, 100]` (inclusive) y un entero `k`, devuelve un nuevo `int[]` con los `k` valores más pequeños en **orden ascendente**.\n\nDebes usar un arreglo de cubetas `int[101]` — NO uses un heap, `Arrays.sort` ni `TreeMap`. Recorre las cubetas desde el índice 0 hacia arriba, recopilando valores hasta tener `k` de ellos.\n\nSi `k >= prices.length`, devuelve todos los valores de `prices` ordenados de forma ascendente (usa el mismo escaneo de cubetas, solo recopila todo).\n\nEjemplos:\n- `[50, 10, 30, 10, 50]` k=3 → `[10, 10, 30]`\n- `[20, 5, 80]` k=1 → `[5]`\n- `[20, 5, 80]` k=5 → `[5, 20, 80]` (k > longitud, devuelve todos ordenados)\n- `[]` k=3 → `[]`\n\nFirma: `public int[] kSmallest(int[] prices, int k)`"
+  },
+  "starterCode": "class Solution {\n    public int[] kSmallest(int[] prices, int k) {\n        // TODO\n        return new int[]{};\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void classic() {\n        int[] result = new Solution().kSmallest(new int[]{50, 10, 30, 10, 50}, 3);\n        assertArrayEquals(new int[]{10, 10, 30}, result);\n    }\n\n    @Test\n    void kEqualsOne() {\n        int[] result = new Solution().kSmallest(new int[]{20, 5, 80}, 1);\n        assertArrayEquals(new int[]{5}, result);\n    }\n\n    @Test\n    void kGreaterThanLength() {\n        // collect all; sorted ascending\n        int[] result = new Solution().kSmallest(new int[]{20, 5, 80}, 5);\n        assertArrayEquals(new int[]{5, 20, 80}, result);\n    }\n\n    @Test\n    void empty() {\n        int[] result = new Solution().kSmallest(new int[]{}, 3);\n        assertArrayEquals(new int[]{}, result);\n    }\n\n    @Test\n    void boundarValues() {\n        // values at bucket extremes: 0 and 100\n        int[] result = new Solution().kSmallest(new int[]{100, 0, 100, 0, 50}, 3);\n        assertArrayEquals(new int[]{0, 0, 50}, result);\n    }\n\n    @Test\n    void allSameValue() {\n        // all in one bucket; take k of them\n        int[] result = new Solution().kSmallest(new int[]{7, 7, 7, 7, 7}, 3);\n        assertArrayEquals(new int[]{7, 7, 7}, result);\n    }\n\n    @Test\n    void kEqualsLength() {\n        // exact fit: return all sorted\n        int[] result = new Solution().kSmallest(new int[]{3, 1, 2}, 3);\n        assertArrayEquals(new int[]{1, 2, 3}, result);\n    }\n}\n"
+}
