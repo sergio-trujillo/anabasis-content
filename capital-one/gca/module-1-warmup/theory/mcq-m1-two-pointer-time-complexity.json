@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-two-pointer-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "two-pointer: time complexity",
+    "es": "two-pointer: complejidad temporal"
+  },
+  "prompt": {
+    "en": "What is the worst-case time complexity of the two-pointer pattern when applied to an array of n elements?",
+    "es": "¿Cuál es la complejidad temporal en el peor caso del patrón two-pointer aplicado a un arreglo de n elementos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(1)", "es": "O(1)" } },
+    { "id": "b", "label": { "en": "O(n)", "es": "O(n)" } },
+    { "id": "c", "label": { "en": "O(n log n)", "es": "O(n log n)" } },
+    { "id": "d", "label": { "en": "O(n²) because the pattern uses two pointers, one for each loop", "es": "O(n²) porque el patrón utiliza dos punteros, uno por cada bucle" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Both sub-patterns — slow/fast (in-place mutation) and convergent (from both ends) — advance their pointers monotonically: each pointer only moves forward (or inward) and never revisits an index, so the total work across both pointers is O(n). Option D is the classic misconception: two pointers do not mean two nested loops. In a nested loop, the inner pointer resets for every outer step, giving O(n²); in two-pointer, both pointers together traverse the array at most once.",
+    "es": "Ambos subpatrones — slow/fast (mutación in-place) y convergente (desde ambos extremos) — avanzan sus punteros de forma monótona: cada puntero solo avanza hacia adelante (o hacia adentro) y nunca revisita un índice, por lo que el trabajo total entre ambos punteros es O(n). La opción D es el error conceptual clásico: dos punteros no implican dos bucles anidados. En un bucle anidado, el puntero interior se reinicia en cada paso exterior, dando O(n²); en two-pointer, ambos punteros juntos recorren el arreglo como máximo una vez."
+  }
+}

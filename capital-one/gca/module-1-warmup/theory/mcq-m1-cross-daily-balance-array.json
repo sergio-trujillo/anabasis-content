@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-daily-balance-array",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: running daily-balance array",
+    "es": "cross-canonical: arreglo de saldo diario acumulado"
+  },
+  "prompt": {
+    "en": "Given an int[] dailyDeltas representing each day's net change to a bank account (positive = deposit, negative = withdrawal), return an int[] where each element is the running balance after that day, starting from a balance of 0. Which canonical pattern applies?",
+    "es": "Dado un int[] dailyDeltas que representa el cambio neto diario de una cuenta bancaria (positivo = depósito, negativo = retiro), retorna un int[] donde cada elemento es el saldo acumulado después de ese día, comenzando desde un saldo de 0. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — map each delta to its cumulative total using a HashMap", "es": "hashmap-complement — mapea cada delta a su total acumulado usando un HashMap" } },
+    { "id": "b", "label": { "en": "frequency-count — count positive and negative deltas separately, then combine", "es": "frequency-count — cuenta los deltas positivos y negativos por separado, luego combínalos" } },
+    { "id": "c", "label": { "en": "array-accumulator — maintain a running sum; write it to the output array at each step", "es": "array-accumulator — mantén una suma acumulada; escríbela en el arreglo de salida en cada paso" } },
+    { "id": "d", "label": { "en": "two-pointer — use a left pointer for deposits and a right pointer for withdrawals", "es": "two-pointer — usa un puntero izquierdo para depósitos y uno derecho para retiros" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "This is the textbook array-accumulator: a single pass with one running variable (the current balance) that is written to the result at every index. The fingerprint is output[i] = output[i-1] + input[i] — a prefix sum. Option A (hashmap-complement) allocates O(n) auxiliary space and is designed for pair lookups, not running totals — there is no complement to look up here. Option D (two-pointer) makes no sense structurally: deposits and withdrawals are not at opposite ends; they are interleaved throughout the array in time order.",
+    "es": "Este es el array-accumulator de manual: un recorrido único con una variable acumuladora (el saldo actual) que se escribe en el resultado en cada índice. La firma es output[i] = output[i-1] + input[i] — una suma de prefijo. La opción A (hashmap-complement) asigna espacio auxiliar O(n) y está diseñada para búsqueda de pares, no para totales acumulados — no hay complemento que buscar aquí. La opción D (two-pointer) no tiene sentido estructural: depósitos y retiros no están en extremos opuestos; están intercalados a lo largo del arreglo en orden temporal."
+  }
+}

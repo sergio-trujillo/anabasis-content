@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-rotate-card-tokens",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: rotate a string of card-number tokens left by k positions",
+    "es": "cross-canonical: rotar una cadena de tokens de número de tarjeta k posiciones a la izquierda"
+  },
+  "prompt": {
+    "en": "A masked card number is stored as a String of space-separated tokens (e.g. \"**** **** **** 1234\"). Rotate this string of characters left by k positions and return the resulting String. Which canonical pattern applies?",
+    "es": "Un número de tarjeta enmascarado se almacena como una String de tokens separados por espacios (p. ej. \"**** **** **** 1234\"). Rota esta cadena de caracteres k posiciones a la izquierda y retorna la String resultante. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "two-pointer — swap characters from front and back using convergent pointers to achieve the rotation in-place", "es": "two-pointer — intercambia caracteres del frente y del fondo usando punteros convergentes para lograr la rotación in-place" } },
+    { "id": "b", "label": { "en": "palindrome-check — use convergent pointers to verify the rotated string is symmetric", "es": "palindrome-check — usa punteros convergentes para verificar que la cadena rotada es simétrica" } },
+    { "id": "c", "label": { "en": "array-accumulator — accumulate a StringBuilder with the tail (s[k..n-1]) followed by the head (s[0..k-1])", "es": "array-accumulator — acumula un StringBuilder con el sufijo (s[k..n-1]) seguido del prefijo (s[0..k-1])" } },
+    { "id": "d", "label": { "en": "string-manipulation — concatenate the substring from k to end with the substring from 0 to k-1", "es": "string-manipulation — concatena la subcadena desde k hasta el final con la subcadena desde 0 hasta k-1" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "Left-rotating a string by k is a pure single-pass character-level transformation: the result is s.substring(k) + s.substring(0, k). This is exactly string-manipulation — computing a new string from the input's characters using index-based slicing. No pair-lookup, no symmetry check, no running sum. Option A (two-pointer) can also rotate a string in-place via the classic three-reverse technique, but that involves no pair-sum or convergence logic — it is three successive string-manipulation passes; the canonical label for what the algorithm does is still string-manipulation, not two-pointer (which is reserved for sorted-array mutation or in-place filtering by condition).",
+    "es": "Rotar una cadena k posiciones a la izquierda es una transformación pura carácter por carácter en un solo recorrido: el resultado es s.substring(k) + s.substring(0, k). Esto es exactamente string-manipulation — calcular una nueva cadena a partir de los caracteres de la entrada usando slicing basado en índices. Sin búsqueda de pares, sin comprobación de simetría, sin suma acumulada. La opción A (two-pointer) también puede rotar una cadena in-place mediante la técnica clásica de tres inversiones, pero eso no implica lógica de suma de pares ni convergencia — son tres pasadas sucesivas de string-manipulation; la etiqueta canónica para lo que hace el algoritmo sigue siendo string-manipulation, no two-pointer (que se reserva para mutación de arreglos ordenados o filtrado in-place por condición)."
+  }
+}

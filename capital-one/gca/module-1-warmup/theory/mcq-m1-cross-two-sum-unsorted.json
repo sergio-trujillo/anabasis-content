@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-two-sum-unsorted",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: two-sum on unsorted array",
+    "es": "cross-canonical: two-sum en arreglo no ordenado"
+  },
+  "prompt": {
+    "en": "Given an unsorted int[] amounts and a target int, return the indices of the two amounts that sum to the target. Each input has exactly one solution. Which canonical pattern applies?",
+    "es": "Dado un int[] amounts no ordenado y un entero target, retorna los índices de los dos montos que suman el objetivo. Cada entrada tiene exactamente una solución. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — store each value's index as you scan; look up target - current", "es": "hashmap-complement — almacena el índice de cada valor al escanear; busca target - current" } },
+    { "id": "b", "label": { "en": "two-pointer — use convergent pointers on the unsorted array", "es": "two-pointer — usa punteros convergentes en el arreglo no ordenado" } },
+    { "id": "c", "label": { "en": "array-accumulator — build a prefix sum to locate the pair", "es": "array-accumulator — construye una suma de prefijo para localizar el par" } },
+    { "id": "d", "label": { "en": "frequency-count — count occurrences, then scan for a pair", "es": "frequency-count — cuenta ocurrencias, luego busca un par" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "hashmap-complement is the canonical fit: one pass stores (value → index) in a HashMap; for each new element, look up (target - value) in O(1). The array being unsorted is the decisive clue — two-pointer (convergent) requires a sorted array because its correctness depends on knowing that moving a pointer inward changes the sum in a predictable direction. Sorting first would add O(n log n) and also lose the original indices, making it harder to return them.",
+    "es": "hashmap-complement es el encaje canónico: un recorrido almacena (valor → índice) en un HashMap; por cada nuevo elemento, busca (target - valor) en O(1). Que el arreglo esté desordenado es la pista decisiva — two-pointer (convergente) requiere un arreglo ordenado porque su corrección depende de saber que mover un puntero hacia adentro cambia la suma de forma predecible. Ordenar primero añadiría O(n log n) y también haría perder los índices originales, complicando su retorno."
+  }
+}

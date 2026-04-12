@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-two-pointer-merge-direction-insight",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "two-pointer: merge direction in merge-sorted-in-place",
+    "es": "two-pointer: dirección de mezcla en merge-sorted-in-place"
+  },
+  "prompt": {
+    "en": "In the merge-sorted-in-place problem, nums1 has capacity m+n (first m elements filled, last n slots zeroed) and nums2 has n elements. Why must you fill nums1 from the back (index m+n-1 downward) rather than from the front?",
+    "es": "En el problema merge-sorted-in-place, nums1 tiene capacidad m+n (primeros m elementos ocupados, últimos n en cero) y nums2 tiene n elementos. ¿Por qué debes llenar nums1 desde el final (índice m+n-1 hacia abajo) en lugar de desde el frente?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Filling from the back is faster because writing to higher memory addresses is cache-friendly", "es": "Llenar desde el final es más rápido porque escribir en direcciones de memoria más altas es amigable con la caché" } },
+    { "id": "b", "label": { "en": "Filling from the back preserves sort stability — it keeps equal elements in their original relative order", "es": "Llenar desde el final preserva la estabilidad de la ordenación — mantiene los elementos iguales en su orden relativo original" } },
+    { "id": "c", "label": { "en": "Filling from the back avoids overwriting unread elements of nums1[0..m-1] before they are compared", "es": "Llenar desde el final evita sobreescribir elementos no leídos de nums1[0..m-1] antes de que sean comparados" } },
+    { "id": "d", "label": { "en": "It is a convention adopted by all JVM implementations; either direction produces a correct result", "es": "Es una convención adoptada por todas las implementaciones de la JVM; cualquier dirección produce un resultado correcto" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "When merging forward, the write pointer starts at index 0 — the same region where nums1's live data lives. Writing a merged element to nums1[0] destroys the original nums1[0] before it has been compared, corrupting the merge. Filling from the back is safe because the write pointer can only land in the zeroed tail (indices m to m+n-1), never ahead of the read pointers. Option B (stability) is a desirable property but is not the reason for the direction choice — correctness, not stability, is at stake. Option A (cache friendliness) is false; descending writes are not inherently cache-friendlier.",
+    "es": "Al fusionar hacia adelante, el puntero de escritura comienza en el índice 0 — la misma región donde viven los datos activos de nums1. Escribir un elemento fusionado en nums1[0] destruye el nums1[0] original antes de que haya sido comparado, corrompiendo la mezcla. Llenar desde el final es seguro porque el puntero de escritura solo puede aterrizar en la cola de ceros (índices m a m+n-1), nunca por delante de los punteros de lectura. La opción B (estabilidad) es una propiedad deseable pero no es la razón de la dirección — lo que está en juego es la corrección, no la estabilidad. La opción A (amigabilidad con la caché) es falsa; las escrituras descendentes no son inherentemente más amigables con la caché."
+  }
+}

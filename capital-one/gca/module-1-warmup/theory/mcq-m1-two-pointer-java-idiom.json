@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-two-pointer-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "two-pointer: idiomatic in-place swap in Java",
+    "es": "two-pointer: intercambio in-place idiomático en Java"
+  },
+  "prompt": {
+    "en": "When implementing a two-pointer algorithm that requires swapping two elements in an int[] at indices i and j, which approach is idiomatic and correct in a coding interview?",
+    "es": "Al implementar un algoritmo two-pointer que requiere intercambiar dos elementos en un int[] en los índices i y j, ¿cuál es el enfoque idiomático y correcto en una entrevista de programación?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "int t = a[i]; a[i] = a[j]; a[j] = t;", "es": "int t = a[i]; a[i] = a[j]; a[j] = t;" } },
+    { "id": "b", "label": { "en": "a[i] ^= a[j]; a[j] ^= a[i]; a[i] ^= a[j];", "es": "a[i] ^= a[j]; a[j] ^= a[i]; a[i] ^= a[j];" } },
+    { "id": "c", "label": { "en": "Collections.swap(a, i, j);", "es": "Collections.swap(a, i, j);" } },
+    { "id": "d", "label": { "en": "int[] copy = Arrays.copyOf(a, a.length); a[i] = copy[j]; a[j] = copy[i];", "es": "int[] copy = Arrays.copyOf(a, a.length); a[i] = copy[j]; a[j] = copy[i];" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "The three-variable temp swap (option A) is the universally accepted idiom for primitive arrays in Java: one line to save, one to overwrite, one to restore — clear, zero-boxing, O(1) space. Option B (XOR swap) is a legacy trick that requires i != j to avoid zeroing the element; it obscures intent and is not expected in interviews. Option C (`Collections.swap`) only works on `List<T>`, not `int[]` — using it on a primitive array causes a compile error. Option D allocates an O(n) copy array, directly violating the O(1) space constraint that two-pointer is meant to satisfy.",
+    "es": "El intercambio con variable temporal de tres pasos (opción A) es el idioma universalmente aceptado para arreglos primitivos en Java: una línea para guardar, una para sobreescribir, una para restaurar — claro, sin boxing, espacio O(1). La opción B (XOR swap) es un truco heredado que requiere i != j para evitar poner el elemento a cero; oscurece la intención y no se espera en entrevistas. La opción C (`Collections.swap`) solo funciona con `List<T>`, no con `int[]` — usarla en un arreglo primitivo produce un error de compilación. La opción D asigna un arreglo copia O(n), violando directamente la restricción de espacio O(1) que two-pointer pretende satisfacer."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-dedup-sorted-timestamps",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: remove duplicate timestamps from a sorted array in-place",
+    "es": "cross-canonical: eliminar timestamps duplicados de un arreglo ordenado in-place"
+  },
+  "prompt": {
+    "en": "A sorted long[] txTimestamps may contain duplicate millisecond timestamps for approved transactions. Remove duplicates in-place (O(1) extra space) and return the count of unique timestamps. Which canonical pattern applies?",
+    "es": "Un long[] txTimestamps ordenado puede contener timestamps en milisegundos duplicados de transacciones aprobadas. Elimina los duplicados in-place (espacio extra O(1)) y retorna el conteo de timestamps únicos. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — use a HashSet to track seen timestamps, then rebuild the array", "es": "hashmap-complement — usa un HashSet para rastrear timestamps vistos, luego reconstruye el arreglo" } },
+    { "id": "b", "label": { "en": "frequency-count — count each timestamp's frequency; retain those with count == 1", "es": "frequency-count — cuenta la frecuencia de cada timestamp; conserva los que tienen conteo == 1" } },
+    { "id": "c", "label": { "en": "array-accumulator — accumulate distinct timestamps into a prefix window", "es": "array-accumulator — acumula timestamps distintos en una ventana de prefijo" } },
+    { "id": "d", "label": { "en": "two-pointer — slow pointer marks the write position; fast pointer skips duplicates of the last written value", "es": "two-pointer — el puntero lento marca la posición de escritura; el rápido omite duplicados del último valor escrito" } }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "The O(1) space requirement eliminates any solution that allocates auxiliary storage (HashSet, frequency map, new array). two-pointer (slow/fast) is canonical: slow j marks the end of the deduplicated prefix; fast i scans the array and writes txTimestamps[i] to position j+1 only when txTimestamps[i] != txTimestamps[j]. The sorted order guarantees all duplicates are adjacent, so fast never needs to look backward. Option A (hashmap-complement / HashSet) would work logically but uses O(n) space, violating the constraint.",
+    "es": "El requisito de espacio O(1) elimina cualquier solución que asigne almacenamiento auxiliar (HashSet, mapa de frecuencias, nuevo arreglo). two-pointer (slow/fast) es canónico: slow j marca el final del prefijo deduplicado; fast i escanea el arreglo y escribe txTimestamps[i] en la posición j+1 solo cuando txTimestamps[i] != txTimestamps[j]. El orden ordenado garantiza que todos los duplicados son adyacentes, por lo que fast nunca necesita mirar hacia atrás. La opción A (hashmap-complement / HashSet) funcionaría lógicamente pero usa espacio O(n), violando la restricción."
+  }
+}

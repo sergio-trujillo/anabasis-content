@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-customer-name-palindrome",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: check if a customer name reads the same forwards and backwards",
+    "es": "cross-canonical: comprobar si un nombre de cliente se lee igual de adelante hacia atrás"
+  },
+  "prompt": {
+    "en": "Given a String name containing only lowercase letters and spaces, return true if the name (ignoring spaces) reads the same forwards and backwards. Which canonical pattern applies?",
+    "es": "Dada una String name que contiene solo letras minúsculas y espacios, retorna true si el nombre (ignorando espacios) se lee igual de adelante hacia atrás que de atrás hacia adelante. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "string-manipulation — strip spaces with a StringBuilder, then reverse and compare", "es": "string-manipulation — elimina espacios con un StringBuilder, luego invierte y compara" } },
+    { "id": "b", "label": { "en": "palindrome-check — two convergent pointers skip spaces and compare characters from both ends", "es": "palindrome-check — dos punteros convergentes omiten espacios y comparan caracteres desde ambos extremos" } },
+    { "id": "c", "label": { "en": "frequency-count — count letter frequencies; palindrome requires at most one odd-count letter", "es": "frequency-count — cuenta frecuencias de letras; el palíndromo requiere como máximo una letra con conteo impar" } },
+    { "id": "d", "label": { "en": "two-pointer — slow pointer tracks valid characters, fast pointer scans ahead to build the cleaned string", "es": "two-pointer — el puntero lento rastrea caracteres válidos, el rápido escanea hacia adelante para construir la cadena limpia" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The task is symmetry verification — comparing characters from both ends toward the center — which is the palindrome-check fingerprint. Two convergent pointers skip spaces in-flight without allocating an auxiliary string: when either pointer lands on a space, advance it before comparing. Option A (string-manipulation) would work as a two-step approach (strip then compare), but it allocates an O(n) StringBuilder and the essential operation on the cleaned string remains a symmetry check, making palindrome-check the more precise canonical. Option C (frequency-count) cannot detect positional asymmetry — \"abba\" and \"aabb\" have identical letter frequencies, but only the first is a palindrome.",
+    "es": "La tarea es verificación de simetría — comparar caracteres desde ambos extremos hacia el centro — que es la firma de palindrome-check. Dos punteros convergentes omiten espacios al vuelo sin asignar una cadena auxiliar: cuando cualquiera de los punteros cae en un espacio, lo avanza antes de comparar. La opción A (string-manipulation) funcionaría como un enfoque de dos pasos (limpiar y luego comparar), pero asigna un StringBuilder O(n) y la operación esencial sobre la cadena limpia sigue siendo una comprobación de simetría, haciendo de palindrome-check el canónico más preciso. La opción C (frequency-count) no puede detectar asimetría posicional — \"abba\" y \"aabb\" tienen frecuencias de letras idénticas, pero solo la primera es un palíndromo."
+  }
+}

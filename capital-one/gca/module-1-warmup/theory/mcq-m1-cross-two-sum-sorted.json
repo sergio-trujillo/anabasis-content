@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-two-sum-sorted",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: two-sum on a sorted array",
+    "es": "cross-canonical: two-sum en un arreglo ordenado"
+  },
+  "prompt": {
+    "en": "Given a sorted int[] amounts (ascending) and a target int, return whether any two distinct elements sum to the target. Space must be O(1). Which canonical pattern applies?",
+    "es": "Dado un int[] amounts ordenado (ascendente) y un entero target, retorna si existe algún par de elementos distintos cuya suma sea igual al objetivo. El espacio debe ser O(1). ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — one pass, store seen values, look up target - current", "es": "hashmap-complement — un recorrido, almacena valores vistos, busca target - current" } },
+    { "id": "b", "label": { "en": "two-pointer — left starts at 0, right at n-1; move inward based on whether the sum is too low or too high", "es": "two-pointer — left comienza en 0, right en n-1; mueve hacia adentro según si la suma es demasiado baja o alta" } },
+    { "id": "c", "label": { "en": "frequency-count — count each value; a pair exists if any value appears twice or target/2 is present", "es": "frequency-count — cuenta cada valor; un par existe si algún valor aparece dos veces o si target/2 está presente" } },
+    { "id": "d", "label": { "en": "array-accumulator — build a prefix sum array; scan for any two prefix values whose difference equals the target", "es": "array-accumulator — construye un arreglo de sumas de prefijo; busca dos valores de prefijo cuya diferencia sea igual al objetivo" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The O(1) space constraint rules out hashmap-complement (which needs O(n) for the HashMap) even though it would also solve this in O(n) time. two-pointer (convergent) exploits the sorted order: if amounts[left] + amounts[right] < target, increment left to increase the sum; if it exceeds target, decrement right; if it equals target, return true. This gives O(n) time and O(1) space. Option A (hashmap-complement) is a near-miss — it solves the problem correctly but at O(n) space, so it is inferior here. Recognizing that sorted input enables the space-optimal solution is the core insight.",
+    "es": "La restricción de espacio O(1) descarta hashmap-complement (que necesita O(n) para el HashMap) aunque también resolvería esto en tiempo O(n). two-pointer (convergente) aprovecha el orden: si amounts[left] + amounts[right] < target, incrementa left para aumentar la suma; si supera el objetivo, decrementa right; si es igual, retorna true. Esto da tiempo O(n) y espacio O(1). La opción A (hashmap-complement) es un caso cercano — resuelve el problema correctamente pero con espacio O(n), por lo que es inferior aquí. Reconocer que la entrada ordenada habilita la solución óptima en espacio es el insight central."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-fraud-threshold-unsorted",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: detect if any two transaction amounts hit a fraud threshold (unsorted)",
+    "es": "cross-canonical: detectar si dos montos de transacción alcanzan un umbral de fraude (no ordenado)"
+  },
+  "prompt": {
+    "en": "Given an unsorted double[] txAmounts and a double fraudThreshold, return true if any two distinct transactions sum exactly to fraudThreshold. The array can be large; you need O(n) time. Which canonical pattern applies?",
+    "es": "Dado un double[] txAmounts no ordenado y un double fraudThreshold, retorna true si algún par de transacciones distintas suma exactamente fraudThreshold. El arreglo puede ser grande; necesitas tiempo O(n). ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "two-pointer — sort the array first, then use convergent pointers", "es": "two-pointer — ordena el arreglo primero, luego usa punteros convergentes" } },
+    { "id": "b", "label": { "en": "array-accumulator — compute prefix sums and scan for a pair whose difference equals fraudThreshold", "es": "array-accumulator — calcula sumas de prefijo y busca un par cuya diferencia sea igual a fraudThreshold" } },
+    { "id": "c", "label": { "en": "hashmap-complement — store each amount in a HashSet; for each new amount, check if (fraudThreshold - amount) is already stored", "es": "hashmap-complement — almacena cada monto en un HashSet; por cada nuevo monto, comprueba si (fraudThreshold - amount) ya está almacenado" } },
+    { "id": "d", "label": { "en": "frequency-count — count how many times each amount appears; check if any amount and its complement both have count ≥ 1", "es": "frequency-count — cuenta cuántas veces aparece cada monto; comprueba si algún monto y su complemento tienen conteo ≥ 1" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "hashmap-complement is the canonical fit for unsorted pair-sum lookup: one pass, store each amount in a HashSet, and for each new element check whether (fraudThreshold - amount) is already present — O(n) time, O(n) space. Option A (two-pointer after sorting) would give O(n log n) time due to the sort step, not O(n) as required. Option D (frequency-count) looks plausible but is not quite right: frequency-count counts occurrences and typically uses an int array indexed by value — it doesn't naturally handle floating-point amounts or arbitrary value ranges, and the HashSet of hashmap-complement is the simpler, more direct tool.",
+    "es": "hashmap-complement es el encaje canónico para búsqueda de pares suma en arreglos no ordenados: un recorrido, almacena cada monto en un HashSet, y por cada nuevo elemento comprueba si (fraudThreshold - amount) ya está presente — tiempo O(n), espacio O(n). La opción A (two-pointer tras ordenar) daría tiempo O(n log n) debido al paso de ordenación, no O(n) como se requiere. La opción D (frequency-count) parece plausible pero no es del todo correcta: frequency-count cuenta ocurrencias y típicamente usa un arreglo int indexado por valor — no maneja naturalmente montos en coma flotante ni rangos de valores arbitrarios, y el HashSet de hashmap-complement es la herramienta más simple y directa."
+  }
+}

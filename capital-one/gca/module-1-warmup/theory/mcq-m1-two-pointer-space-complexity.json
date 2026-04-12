@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-two-pointer-space-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "two-pointer: space complexity advantage over hashmap-complement",
+    "es": "two-pointer: ventaja de complejidad espacial frente a hashmap-complement"
+  },
+  "prompt": {
+    "en": "A sorted int[] is guaranteed to contain a pair that sums to a target. Both hashmap-complement and two-pointer (convergent) can solve it in O(n) time. Which should you prefer, and why?",
+    "es": "Un int[] ordenado tiene garantizado un par que suma un objetivo. Tanto hashmap-complement como two-pointer (convergente) pueden resolverlo en tiempo O(n). ¿Cuál deberías preferir, y por qué?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — it is always faster because HashMap lookups are O(1)", "es": "hashmap-complement — siempre es más rápido porque las búsquedas en HashMap son O(1)" } },
+    { "id": "b", "label": { "en": "two-pointer — it uses O(1) extra space vs. O(n) for the HashMap", "es": "two-pointer — usa espacio extra O(1) frente a O(n) del HashMap" } },
+    { "id": "c", "label": { "en": "hashmap-complement — it works on unsorted arrays, so it is strictly more general", "es": "hashmap-complement — funciona en arreglos no ordenados, por lo que es estrictamente más general" } },
+    { "id": "d", "label": { "en": "two-pointer — it has O(log n) time complexity on a sorted array due to binary search", "es": "two-pointer — tiene complejidad temporal O(log n) en un arreglo ordenado gracias a la búsqueda binaria" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Both patterns give O(n) time here, so the deciding factor is space: two-pointer holds only two integer indices at any moment — O(1) extra space — while hashmap-complement stores up to n entries in a HashMap — O(n) extra space. Option A is misleading: HashMap O(1) lookup is correct in isolation, but both algorithms still scan up to n elements, so time is the same. Option C is true but irrelevant — the problem states the array is sorted, so generality is not the criterion; we should exploit the sort property.",
+    "es": "Ambos patrones dan tiempo O(n) aquí, por lo que el factor decisivo es el espacio: two-pointer mantiene solo dos índices enteros en cualquier momento — espacio extra O(1) — mientras que hashmap-complement almacena hasta n entradas en un HashMap — espacio extra O(n). La opción A es engañosa: la búsqueda O(1) en HashMap es correcta de forma aislada, pero ambos algoritmos aún escanean hasta n elementos, por lo que el tiempo es el mismo. La opción C es verdadera pero irrelevante — el problema establece que el arreglo está ordenado, así que la generalidad no es el criterio; debemos aprovechar la propiedad de orden."
+  }
+}

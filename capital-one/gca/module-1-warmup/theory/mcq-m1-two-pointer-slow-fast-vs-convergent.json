@@ -1,0 +1,48 @@
+{
+  "id": "mcq-m1-two-pointer-slow-fast-vs-convergent",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "two-pointer: slow/fast vs. convergent sub-patterns",
+    "es": "two-pointer: subpatrones slow/fast vs. convergente"
+  },
+  "prompt": {
+    "en": "Which of the following correctly classifies four problems by two-pointer sub-pattern? (slow/fast = both pointers start at the left and advance at different rates; convergent = one pointer starts at each end and they move toward each other)",
+    "es": "¿Cuál de las siguientes opciones clasifica correctamente cuatro problemas según el subpatrón de two-pointer? (slow/fast = ambos punteros comienzan a la izquierda y avanzan a distinto ritmo; convergente = un puntero en cada extremo, se acercan entre sí)"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "move-zeros → slow/fast; remove-val-in-place → slow/fast; two-sum-sorted → convergent; palindrome-check → convergent",
+        "es": "move-zeros → slow/fast; remove-val-in-place → slow/fast; two-sum-sorted → convergent; palindrome-check → convergent"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "move-zeros → convergent; remove-val-in-place → convergent; two-sum-sorted → slow/fast; palindrome-check → slow/fast",
+        "es": "move-zeros → convergent; remove-val-in-place → convergent; two-sum-sorted → slow/fast; palindrome-check → slow/fast"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "move-zeros → slow/fast; remove-val-in-place → convergent; two-sum-sorted → convergent; palindrome-check → slow/fast",
+        "es": "move-zeros → slow/fast; remove-val-in-place → convergent; two-sum-sorted → convergent; palindrome-check → slow/fast"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "All four use the convergent sub-pattern because all require scanning from both directions",
+        "es": "Los cuatro usan el subpatrón convergente porque todos requieren escanear desde ambas direcciones"
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "move-zeros and remove-val-in-place both use slow/fast: a slow pointer tracks the write position and a fast pointer scans ahead, copying valid elements forward — both pointers start at index 0. two-sum-sorted and palindrome-check both use convergent: left starts at index 0, right at n-1, and they meet in the middle. Option C is a common mix-up — remove-val-in-place is not convergent; you never need to scan from the right because all valid elements are simply written to the front.",
+    "es": "move-zeros y remove-val-in-place usan slow/fast: el puntero lento rastrea la posición de escritura y el rápido escanea hacia adelante copiando elementos válidos — ambos comienzan en el índice 0. two-sum-sorted y palindrome-check usan convergente: left comienza en el índice 0, right en n-1, y se encuentran en el centro. La opción C es una confusión común — remove-val-in-place no es convergente; nunca necesitas escanear desde la derecha porque todos los elementos válidos simplemente se escriben al frente."
+  }
+}

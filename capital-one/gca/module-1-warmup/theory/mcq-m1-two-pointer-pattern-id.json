@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-two-pointer-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "two-pointer: pattern identification",
+    "es": "two-pointer: identificación del patrón"
+  },
+  "prompt": {
+    "en": "Given a sorted int[] nums and a value val, remove all occurrences of val in-place and return the new length. Extra space must be O(1). Which canonical pattern applies?",
+    "es": "Dado un int[] nums ordenado y un valor val, elimina todas las ocurrencias de val en el lugar y retorna la nueva longitud. El espacio extra debe ser O(1). ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "frequency-count — tally occurrences of val, then compute new length", "es": "frequency-count — contabiliza ocurrencias de val, luego calcula la nueva longitud" } },
+    { "id": "b", "label": { "en": "hashmap-complement — store seen values and skip matches", "es": "hashmap-complement — almacena valores vistos y omite coincidencias" } },
+    { "id": "c", "label": { "en": "two-pointer — slow pointer tracks write position, fast pointer scans ahead skipping val", "es": "two-pointer — el puntero lento rastrea la posición de escritura, el rápido escanea omitiendo val" } },
+    { "id": "d", "label": { "en": "array-accumulator — accumulate a prefix sum to determine valid element positions", "es": "array-accumulator — acumula una suma de prefijo para determinar las posiciones de los elementos válidos" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The O(1) space constraint rules out any pattern that allocates auxiliary storage. two-pointer (slow/fast) is exact: the slow pointer j marks where the next valid (non-val) element should go; the fast pointer i scans every element and writes nums[i] to nums[j] whenever nums[i] != val. frequency-count (option A) would work for counting but cannot remove in-place without O(n) auxiliary storage — it doesn't know where each valid element should land. hashmap-complement (option B) is designed for pair-sum lookup, not in-place filtering.",
+    "es": "La restricción de espacio O(1) descarta cualquier patrón que asigne almacenamiento auxiliar. two-pointer (slow/fast) es exacto: el puntero lento j marca dónde debe ir el próximo elemento válido (distinto de val); el rápido i escanea cada elemento y escribe nums[i] en nums[j] cuando nums[i] != val. frequency-count (opción A) serviría para contar pero no puede eliminar in-place sin almacenamiento auxiliar O(n) — no sabe dónde debe ubicarse cada elemento válido. hashmap-complement (opción B) está diseñado para búsqueda de pares suma, no para filtrado in-place."
+  }
+}

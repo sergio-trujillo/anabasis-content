@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-max-k-day-window",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: maximum subarray sum over exactly k consecutive days",
+    "es": "cross-canonical: suma máxima de subarray en exactamente k días consecutivos"
+  },
+  "prompt": {
+    "en": "Given an int[] dailySpend of length n and an integer k, return the maximum total spending over any window of exactly k consecutive days. Which canonical pattern applies?",
+    "es": "Dado un int[] dailySpend de longitud n y un entero k, retorna el gasto total máximo en cualquier ventana de exactamente k días consecutivos. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "two-pointer — left and right pointers define the window; shrink when window exceeds k", "es": "two-pointer — los punteros left y right definen la ventana; reduce cuando la ventana supera k" } },
+    { "id": "b", "label": { "en": "hashmap-complement — store prefix sums in a HashMap; look up the complement at distance k", "es": "hashmap-complement — almacena sumas de prefijo en un HashMap; busca el complemento a distancia k" } },
+    { "id": "c", "label": { "en": "array-accumulator — compute the first k-element sum, then slide the window by adding the incoming element and subtracting the outgoing one", "es": "array-accumulator — calcula la suma de los primeros k elementos, luego desliza la ventana sumando el elemento entrante y restando el saliente" } },
+    { "id": "d", "label": { "en": "frequency-count — count how many times each spending value appears within each window", "es": "frequency-count — cuenta cuántas veces aparece cada valor de gasto dentro de cada ventana" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Fixed-size sliding window is the prefix-sum / array-accumulator pattern: compute the sum of days 0..k-1, then slide right — add dailySpend[i], subtract dailySpend[i-k], track the maximum. This gives O(n) time and O(1) extra space. Option A (two-pointer) can implement a variable-size window, but a fixed k window does not need pointer logic at all — the window boundaries are fully determined by the loop index, so there is no decision about when to shrink. Option B (hashmap-complement with prefix sums) is a valid approach for variable-k or exact-sum-equals-target problems, but it is unnecessary complexity here where k is a fixed size.",
+    "es": "La ventana deslizante de tamaño fijo es el patrón de suma de prefijo / array-accumulator: calcula la suma de los días 0..k-1, luego desliza hacia la derecha — suma dailySpend[i], resta dailySpend[i-k], rastrea el máximo. Esto da tiempo O(n) y espacio extra O(1). La opción A (two-pointer) puede implementar una ventana de tamaño variable, pero una ventana de k fijo no necesita lógica de punteros en absoluto — los límites de la ventana están completamente determinados por el índice del bucle, por lo que no hay decisión sobre cuándo contraer. La opción B (hashmap-complement con sumas de prefijo) es un enfoque válido para problemas de k variable o suma-exacta-igual-a-objetivo, pero es complejidad innecesaria aquí donde k es un tamaño fijo."
+  }
+}

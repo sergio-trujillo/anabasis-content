@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-transaction-id-palindrome",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: transaction ID palindrome ignoring dashes",
+    "es": "cross-canonical: palíndromo de ID de transacción ignorando guiones"
+  },
+  "prompt": {
+    "en": "Given a transaction ID string that may contain digits and dashes (e.g. \"1-221-1\"), determine whether it reads the same forwards and backwards when dashes are ignored. Which canonical pattern applies?",
+    "es": "Dada una cadena de ID de transacción que puede contener dígitos y guiones (p. ej. \"1-221-1\"), determina si se lee igual de adelante hacia atrás que de atrás hacia adelante ignorando los guiones. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "string-manipulation — strip dashes, then transform the string character by character", "es": "string-manipulation — elimina guiones, luego transforma la cadena carácter por carácter" } },
+    { "id": "b", "label": { "en": "palindrome-check — two convergent pointers, skip dashes, compare remaining characters", "es": "palindrome-check — dos punteros convergentes, omite guiones, compara los caracteres restantes" } },
+    { "id": "c", "label": { "en": "frequency-count — count digit frequencies; a palindrome requires at most one odd-count digit", "es": "frequency-count — cuenta frecuencias de dígitos; un palíndromo requiere como máximo un dígito con cuenta impar" } },
+    { "id": "d", "label": { "en": "hashmap-complement — map each character to its mirror position", "es": "hashmap-complement — mapea cada carácter a su posición espejo" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The core operation is symmetry checking — comparing positions from both ends toward the center — which is the definition of palindrome-check. Two convergent pointers skip over dashes in-flight without ever building an auxiliary string. Option A (string-manipulation) would work if you stripped dashes first, but the essential operation on the cleaned string is still a symmetry check, not a character transform — so palindrome-check is the correct canonical label. Option C (frequency-count) can tell you whether a palindrome is possible (odd-count analysis) but cannot confirm positional symmetry, so it would give wrong answers on strings like \"1221\" vs \"1212\" (same frequencies, different palindrome status).",
+    "es": "La operación central es la comprobación de simetría — comparar posiciones desde ambos extremos hacia el centro — que es la definición de palindrome-check. Dos punteros convergentes omiten guiones al vuelo sin construir nunca una cadena auxiliar. La opción A (string-manipulation) funcionaría si se eliminaran los guiones primero, pero la operación esencial sobre la cadena limpia sigue siendo una comprobación de simetría, no una transformación de carácter — así que palindrome-check es la etiqueta canónica correcta. La opción C (frequency-count) puede decirte si un palíndromo es posible (análisis de cuenta impar) pero no puede confirmar la simetría posicional, por lo que daría respuestas incorrectas en cadenas como \"1221\" vs \"1212\" (mismas frecuencias, distinto estado como palíndromo)."
+  }
+}

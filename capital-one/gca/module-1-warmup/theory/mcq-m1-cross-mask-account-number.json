@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-mask-account-number",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: mask all but last 4 digits of an account number",
+    "es": "cross-canonical: enmascarar todos los dígitos salvo los últimos 4 de un número de cuenta"
+  },
+  "prompt": {
+    "en": "Given a String accountNumber containing only digits, return a new String where every character except the last four is replaced with '*'. For example, \"12345678\" → \"****5678\". Which canonical pattern applies?",
+    "es": "Dada una String accountNumber que contiene solo dígitos, retorna una nueva String donde cada carácter excepto los últimos cuatro se reemplaza por '*'. Por ejemplo, \"12345678\" → \"****5678\". ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "palindrome-check — compare characters from both ends to locate the unmasked suffix", "es": "palindrome-check — compara caracteres desde ambos extremos para localizar el sufijo sin enmascarar" } },
+    { "id": "b", "label": { "en": "two-pointer — use a slow pointer for '*' positions and a fast pointer for the visible suffix", "es": "two-pointer — usa un puntero lento para las posiciones de '*' y uno rápido para el sufijo visible" } },
+    { "id": "c", "label": { "en": "string-manipulation — single-pass character-level transform based on index position", "es": "string-manipulation — transformación carácter por carácter en un solo recorrido basada en la posición del índice" } },
+    { "id": "d", "label": { "en": "frequency-count — count the number of digits to determine how many to mask", "es": "frequency-count — cuenta el número de dígitos para determinar cuántos enmascarar" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "This is a textbook string-manipulation: iterate over the input string once, emit '*' for every index i < n-4, and copy the original character for i >= n-4 — one pass, one StringBuilder, O(n) time and space. The decision at each position depends only on that character's index, which is the hallmark of single-pass character-level transform. Option B (two-pointer) would not simplify this problem — there is no pair to find, no in-place swap needed, and no convergent logic; every element's output is determined by its own index, not by comparing two elements.",
+    "es": "Este es un string-manipulation de manual: itera sobre la cadena de entrada una vez, emite '*' para todo índice i < n-4, y copia el carácter original para i >= n-4 — un recorrido, un StringBuilder, tiempo y espacio O(n). La decisión en cada posición depende solo del índice de ese carácter, que es la característica distintiva de la transformación carácter por carácter en un solo recorrido. La opción B (two-pointer) no simplificaría este problema — no hay ningún par que encontrar, no se necesita ningún intercambio in-place, ni lógica convergente; la salida de cada elemento está determinada por su propio índice, no por comparar dos elementos."
+  }
+}

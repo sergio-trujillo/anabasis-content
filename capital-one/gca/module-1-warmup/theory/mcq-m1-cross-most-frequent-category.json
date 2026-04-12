@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-most-frequent-category",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: most frequent transaction category",
+    "es": "cross-canonical: categoría de transacción más frecuente"
+  },
+  "prompt": {
+    "en": "Given a String[] categories where each element is a merchant category (e.g. \"dining\", \"travel\", \"grocery\"), return the category that appears most often. If there is a tie, return any one of them. Which canonical pattern applies?",
+    "es": "Dado un String[] categories donde cada elemento es una categoría de comercio (p. ej. \"dining\", \"travel\", \"grocery\"), retorna la categoría que aparece con más frecuencia. Si hay empate, retorna cualquiera. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — store each category and look up its complement", "es": "hashmap-complement — almacena cada categoría y busca su complemento" } },
+    { "id": "b", "label": { "en": "frequency-count — build a count map; scan for the maximum count", "es": "frequency-count — construye un mapa de conteo; escanea para encontrar el conteo máximo" } },
+    { "id": "c", "label": { "en": "array-accumulator — accumulate a running total and track the leader", "es": "array-accumulator — acumula un total acumulado y rastrea al líder" } },
+    { "id": "d", "label": { "en": "string-manipulation — sort the array alphabetically, then scan for the longest run", "es": "string-manipulation — ordena el arreglo alfabéticamente, luego escanea para encontrar la racha más larga" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "frequency-count is the exact match: build a HashMap<String, Integer> of (category → count) in one pass, then scan the map for the entry with the highest count — O(n) time, O(k) space where k is the number of distinct categories. Option A (hashmap-complement) also uses a HashMap, but its purpose is pair-sum lookup via a complement, not counting — applying it here would work mechanically but is not the intended pattern. Option D (sorting) would achieve O(n log n) time, strictly worse than the O(n) frequency-count approach and doesn't fit the string-manipulation canonical (which is about character-level transforms, not sorting).",
+    "es": "frequency-count es el encaje exacto: construye un HashMap<String, Integer> de (categoría → conteo) en un recorrido, luego escanea el mapa para encontrar la entrada con el conteo más alto — tiempo O(n), espacio O(k) donde k es el número de categorías distintas. La opción A (hashmap-complement) también usa un HashMap, pero su propósito es la búsqueda de pares suma mediante un complemento, no el conteo — aplicarlo aquí funcionaría mecánicamente pero no es el patrón correcto. La opción D (ordenar) daría tiempo O(n log n), estrictamente peor que el enfoque O(n) de frequency-count, y no encaja en el canónico string-manipulation (que trata de transformaciones a nivel de carácter, no de ordenación)."
+  }
+}

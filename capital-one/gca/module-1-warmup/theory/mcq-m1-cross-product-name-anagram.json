@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-cross-product-name-anagram",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "cross-canonical: check if two product names are anagrams",
+    "es": "cross-canonical: comprobar si dos nombres de producto son anagramas"
+  },
+  "prompt": {
+    "en": "Given two String product names of equal length containing only lowercase letters, determine whether one is an anagram of the other (same characters, possibly different order). Which canonical pattern applies?",
+    "es": "Dadas dos String con nombres de producto de igual longitud que contienen solo letras minúsculas, determina si una es un anagrama de la otra (mismos caracteres, posiblemente en distinto orden). ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "string-manipulation — transform one string (e.g. reverse or sort) and compare to the other", "es": "string-manipulation — transforma una cadena (p. ej. invierte u ordena) y compara con la otra" } },
+    { "id": "b", "label": { "en": "palindrome-check — use two convergent pointers, one per string, comparing characters", "es": "palindrome-check — usa dos punteros convergentes, uno por cadena, comparando caracteres" } },
+    { "id": "c", "label": { "en": "frequency-count — count characters in the first string; decrement for the second; all zeros means anagram", "es": "frequency-count — cuenta los caracteres de la primera cadena; decrementa para la segunda; todos en cero significa anagrama" } },
+    { "id": "d", "label": { "en": "hashmap-complement — store each character of the first string and look it up in the second", "es": "hashmap-complement — almacena cada carácter de la primera cadena y búscalo en la segunda" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Anagram detection is the canonical use case for frequency-count: increment a count for each character in the first string, decrement for each in the second — if every count is 0 at the end, they are anagrams. With only lowercase letters, an `int[26]` array replaces the HashMap for O(1) space. Option A (string-manipulation) technically works if you sort both strings and compare, but sorting takes O(n log n) and is not the idiomatic approach — the core operation here is counting, not transforming. Option D (hashmap-complement) looks similar but its logic is structurally wrong: it would only check that each character in string 1 appears in string 2, not that their frequencies match.",
+    "es": "La detección de anagramas es el caso de uso canónico para frequency-count: incrementa un conteo por cada carácter de la primera cadena, decrementa para cada carácter de la segunda — si todos los conteos son 0 al final, son anagramas. Con solo letras minúsculas, un arreglo `int[26]` reemplaza al HashMap con espacio O(1). La opción A (string-manipulation) funciona técnicamente si ordenas ambas cadenas y comparas, pero la ordenación toma O(n log n) y no es el enfoque idiomático — la operación central aquí es contar, no transformar. La opción D (hashmap-complement) parece similar pero su lógica es estructuralmente incorrecta: solo verificaría que cada carácter en la cadena 1 aparece en la cadena 2, no que sus frecuencias coincidan."
+  }
+}
