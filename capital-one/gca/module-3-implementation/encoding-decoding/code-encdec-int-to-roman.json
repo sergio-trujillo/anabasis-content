@@ -1,0 +1,17 @@
+{
+  "id": "code-encdec-int-to-roman",
+  "type": "code",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "Convert integer to Roman numeral",
+    "es": "Convertir entero a número romano"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an integer `num` in the range `[1, 3999]`, return its **Roman numeral** representation as a `String`.\n\nSignature: `public String intToRoman(int num)`\n\n**Encoding scheme — greedy subtraction with a lookup table:**\nDefine the mapping from largest to smallest value using the 13 canonical pairs (including subtractive pairs):\n\n| Value | Symbol |\n|-------|--------|\n| 1000  | `M`    |\n| 900   | `CM`   |\n| 500   | `D`    |\n| 400   | `CD`   |\n| 100   | `C`    |\n| 90    | `XC`   |\n| 50    | `L`    |\n| 40    | `XL`   |\n| 10    | `X`    |\n| 9     | `IX`   |\n| 5     | `V`    |\n| 4     | `IV`   |\n| 1     | `I`    |\n\nGreedy algorithm: for each entry in order, while `num >= value`, append the symbol and subtract the value from `num`.\n\nInput constraint: `1 <= num <= 3999`. Values outside this range are not valid Roman numerals in standard convention and are not part of the input domain.\n\nExamples:\n- `3` → `\"III\"`\n- `4` → `\"IV\"`\n- `9` → `\"IX\"`\n- `58` → `\"LVIII\"`\n- `1994` → `\"MCMXCIV\"`\n- `3999` → `\"MMMCMXCIX\"`",
+    "es": "Dado un entero `num` en el rango `[1, 3999]`, devuelve su representación como **número romano** en una `String`.\n\nFirma: `public String intToRoman(int num)`\n\n**Esquema de codificación — sustracción codiciosa con tabla de mapeo:**\nDefine el mapeo de mayor a menor usando los 13 pares canónicos (incluidos los pares sustractivos):\n\n| Valor | Símbolo |\n|-------|---------|\n| 1000  | `M`     |\n| 900   | `CM`    |\n| 500   | `D`     |\n| 400   | `CD`    |\n| 100   | `C`     |\n| 90    | `XC`    |\n| 50    | `L`     |\n| 40    | `XL`    |\n| 10    | `X`     |\n| 9     | `IX`    |\n| 5     | `V`     |\n| 4     | `IV`    |\n| 1     | `I`     |\n\nAlgoritmo codicioso: para cada entrada en orden, mientras `num >= valor`, agrega el símbolo y resta el valor de `num`.\n\nRestricciones de entrada: `1 <= num <= 3999`. Los valores fuera de este rango no son números romanos válidos en la convención estándar y no forman parte del dominio de entrada.\n\nEjemplos:\n- `3` → `\"III\"`\n- `4` → `\"IV\"`\n- `9` → `\"IX\"`\n- `58` → `\"LVIII\"`\n- `1994` → `\"MCMXCIV\"`\n- `3999` → `\"MMMCMXCIX\"`"
+  },
+  "starterCode": "import java.util.*;\n\nclass Solution {\n    public String intToRoman(int num) {\n        // TODO\n        return \"\";\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void smallAdditive() {\n        assertEquals(\"III\", new Solution().intToRoman(3));\n    }\n\n    @Test\n    void subtractiveIV() {\n        assertEquals(\"IV\", new Solution().intToRoman(4));\n    }\n\n    @Test\n    void subtractiveIX() {\n        assertEquals(\"IX\", new Solution().intToRoman(9));\n    }\n\n    @Test\n    void mixed() {\n        assertEquals(\"LVIII\", new Solution().intToRoman(58));\n    }\n\n    @Test\n    void complexSubtractive() {\n        assertEquals(\"MCMXCIV\", new Solution().intToRoman(1994));\n    }\n\n    @Test\n    void rangeMinimum() {\n        assertEquals(\"I\", new Solution().intToRoman(1));\n    }\n\n    @Test\n    void rangeMaximum() {\n        assertEquals(\"MMMCMXCIX\", new Solution().intToRoman(3999));\n    }\n}\n"
+}

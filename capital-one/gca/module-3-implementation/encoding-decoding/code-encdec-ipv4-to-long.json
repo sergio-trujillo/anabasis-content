@@ -1,0 +1,17 @@
+{
+  "id": "code-encdec-ipv4-to-long",
+  "type": "code",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "Encode an IPv4 address to its 32-bit unsigned integer",
+    "es": "Codificar una dirección IPv4 a su entero sin signo de 32 bits"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a valid IPv4 address as a `String ip` (e.g., `\"192.168.1.1\"`), return its canonical 32-bit unsigned representation as a `long`.\n\nSignature: `public long ipToLong(String ip)`\n\n**Encoding scheme — bitwise octet packing:**\nSplit the string on `\".\"` to get four octets `o1`, `o2`, `o3`, `o4` (each in `[0, 255]`). Combine them with bit shifts:\n\n```\nresult = ((long) o1 << 24) | ((long) o2 << 16) | ((long) o3 << 8) | (long) o4\n```\n\nUse `long` (not `int`) to avoid sign-extension issues — the maximum value `4294967295` exceeds `Integer.MAX_VALUE`.\n\nInput constraints: the input is always a valid IPv4 address — exactly three dots, each octet an integer in `[0, 255]`.\n\nBoundary values:\n- `\"0.0.0.0\"` → `0L` (minimum)\n- `\"255.255.255.255\"` → `4294967295L` (maximum — all 32 bits set)\n\nExamples:\n- `\"0.0.0.0\"` → `0L`\n- `\"127.0.0.1\"` → `2130706433L`\n- `\"192.168.1.1\"` → `3232235777L`\n- `\"255.255.255.255\"` → `4294967295L`",
+    "es": "Dada una dirección IPv4 válida como `String ip` (ej., `\"192.168.1.1\"`), devuelve su representación canónica de 32 bits sin signo como un `long`.\n\nFirma: `public long ipToLong(String ip)`\n\n**Esquema de codificación — empaquetado de octetos con desplazamiento de bits:**\nDivide la cadena por `\".\"` para obtener cuatro octetos `o1`, `o2`, `o3`, `o4` (cada uno en `[0, 255]`). Combínalos con desplazamientos:\n\n```\nresult = ((long) o1 << 24) | ((long) o2 << 16) | ((long) o3 << 8) | (long) o4\n```\n\nUsa `long` (no `int`) para evitar problemas de extensión de signo — el valor máximo `4294967295` excede `Integer.MAX_VALUE`.\n\nRestricciones de entrada: la entrada siempre es una dirección IPv4 válida — exactamente tres puntos, cada octeto un entero en `[0, 255]`.\n\nValores límite:\n- `\"0.0.0.0\"` → `0L` (mínimo)\n- `\"255.255.255.255\"` → `4294967295L` (máximo — los 32 bits en 1)\n\nEjemplos:\n- `\"0.0.0.0\"` → `0L`\n- `\"127.0.0.1\"` → `2130706433L`\n- `\"192.168.1.1\"` → `3232235777L`\n- `\"255.255.255.255\"` → `4294967295L`"
+  },
+  "starterCode": "import java.util.*;\n\nclass Solution {\n    public long ipToLong(String ip) {\n        // TODO\n        return 0L;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void allZeros() {\n        assertEquals(0L, new Solution().ipToLong(\"0.0.0.0\"));\n    }\n\n    @Test\n    void loopback() {\n        assertEquals(2130706433L, new Solution().ipToLong(\"127.0.0.1\"));\n    }\n\n    @Test\n    void privateRange() {\n        assertEquals(3232235777L, new Solution().ipToLong(\"192.168.1.1\"));\n    }\n\n    @Test\n    void allOnes() {\n        // Maximum IPv4 — all 32 bits set; must not overflow (requires long, not int)\n        assertEquals(4294967295L, new Solution().ipToLong(\"255.255.255.255\"));\n    }\n\n    @Test\n    void broadcastSingleOctetMax() {\n        // 0.0.0.255 — only last octet non-zero\n        assertEquals(255L, new Solution().ipToLong(\"0.0.0.255\"));\n    }\n\n    @Test\n    void firstOctetOnly() {\n        // 1.0.0.0 = 1 << 24\n        assertEquals(16777216L, new Solution().ipToLong(\"1.0.0.0\"));\n    }\n}\n"
+}

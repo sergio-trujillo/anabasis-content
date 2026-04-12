@@ -1,0 +1,17 @@
+{
+  "id": "code-encdec-roman-to-int",
+  "type": "code",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "Convert Roman numeral to integer",
+    "es": "Convertir número romano a entero"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a well-formed Roman numeral `String s`, return its integer value.\n\nSignature: `public int romanToInt(String s)`\n\n**Decoding scheme — single-pass scan with subtractive detection:**\nBuild a lookup map of the 7 base symbols: `I=1, V=5, X=10, L=50, C=100, D=500, M=1000`.\n\nScan left to right. At each position `i`:\n- If `value(s[i]) < value(s[i+1])`, **subtract** `value(s[i])` from the total (subtractive pair).\n- Otherwise, **add** `value(s[i])` to the total.\n\nThis is the **inverse** of the greedy encoding in `intToRoman`. A round-trip `romanToInt(intToRoman(n)) == n` must hold for all `n` in `[1, 3999]`.\n\nAssume input is always well-formed (no validation required).\n\nExamples:\n- `\"III\"` → `3`\n- `\"IV\"` → `4`\n- `\"IX\"` → `9`\n- `\"LVIII\"` → `58`\n- `\"MCMXCIV\"` → `1994`\n- `\"MMMCMXCIX\"` → `3999`",
+    "es": "Dada una `String s` con un número romano bien formado, devuelve su valor entero.\n\nFirma: `public int romanToInt(String s)`\n\n**Esquema de decodificación — recorrido lineal con detección sustractiva:**\nConstruye un mapa de los 7 símbolos base: `I=1, V=5, X=10, L=50, C=100, D=500, M=1000`.\n\nRecorre de izquierda a derecha. En cada posición `i`:\n- Si `valor(s[i]) < valor(s[i+1])`, **resta** `valor(s[i])` del total (par sustractivo).\n- De lo contrario, **suma** `valor(s[i])` al total.\n\nEste método es el **inverso** de la codificación codiciosa de `intToRoman`. El viaje de ida y vuelta `romanToInt(intToRoman(n)) == n` debe cumplirse para todo `n` en `[1, 3999]`.\n\nSe asume que la entrada siempre está bien formada (no se requiere validación).\n\nEjemplos:\n- `\"III\"` → `3`\n- `\"IV\"` → `4`\n- `\"IX\"` → `9`\n- `\"LVIII\"` → `58`\n- `\"MCMXCIV\"` → `1994`\n- `\"MMMCMXCIX\"` → `3999`"
+  },
+  "starterCode": "import java.util.*;\n\nclass Solution {\n    public int romanToInt(String s) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void smallAdditive() {\n        assertEquals(3, new Solution().romanToInt(\"III\"));\n    }\n\n    @Test\n    void subtractiveIV() {\n        assertEquals(4, new Solution().romanToInt(\"IV\"));\n    }\n\n    @Test\n    void subtractiveIX() {\n        assertEquals(9, new Solution().romanToInt(\"IX\"));\n    }\n\n    @Test\n    void mixed() {\n        assertEquals(58, new Solution().romanToInt(\"LVIII\"));\n    }\n\n    @Test\n    void complexSubtractive() {\n        assertEquals(1994, new Solution().romanToInt(\"MCMXCIV\"));\n    }\n\n    @Test\n    void rangeMaximum() {\n        assertEquals(3999, new Solution().romanToInt(\"MMMCMXCIX\"));\n    }\n\n    @Test\n    void roundTripInvertibility() {\n        // Confirm decode(encode(n)) == n for a representative value\n        // intToRoman is not on Solution, so we test the known pair directly:\n        // intToRoman(1994) == \"MCMXCIV\" (from variant 1), romanToInt(\"MCMXCIV\") must equal 1994\n        assertEquals(1994, new Solution().romanToInt(\"MCMXCIV\"));\n        // And for the range boundary\n        assertEquals(1, new Solution().romanToInt(\"I\"));\n    }\n}\n"
+}
