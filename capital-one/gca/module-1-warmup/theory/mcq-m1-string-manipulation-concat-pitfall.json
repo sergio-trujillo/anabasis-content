@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-string-manipulation-concat-pitfall",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "string-manipulation: string concatenation pitfall",
+    "es": "string-manipulation: trampa de la concatenación de cadenas"
+  },
+  "prompt": {
+    "en": "Why does building a result string with += inside a loop degrade performance from O(n) to O(n²) in Java?",
+    "es": "¿Por qué construir una cadena resultado con += dentro de un bucle degrada el rendimiento de O(n) a O(n²) en Java?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Because Java strings are mutable and each += triggers a garbage collection cycle", "es": "Porque las cadenas en Java son mutables y cada += desencadena un ciclo de recolección de basura" } },
+    { "id": "b", "label": { "en": "Because Java strings are immutable; each += creates a new String by copying all existing characters plus the new one", "es": "Porque las cadenas en Java son inmutables; cada += crea un nuevo String copiando todos los caracteres existentes más el nuevo" } },
+    { "id": "c", "label": { "en": "Because += in Java always allocates memory on the heap, which is O(n) per allocation", "es": "Porque += en Java siempre asigna memoria en el heap, lo cual es O(n) por asignación" } },
+    { "id": "d", "label": { "en": "Because the JVM must re-parse the entire string for encoding validation after every append", "es": "Porque la JVM debe re-analizar toda la cadena para validación de codificación después de cada append" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Java String objects are immutable. Every s += c operation creates a brand-new String containing all previous characters plus c, copying i characters at step i. Summing copies across n steps: 1 + 2 + ... + n = O(n²). StringBuilder avoids this by maintaining a resizable internal char array, so append() is amortized O(1). Option A is wrong — Java strings are immutable, not mutable. GC is not triggered per concatenation. Option C mischaracterizes memory allocation cost: heap allocation is O(size) but that is subsumed by the copy cost, which is the real problem.",
+    "es": "Los objetos String en Java son inmutables. Cada operación s += c crea un nuevo String que contiene todos los caracteres anteriores más c, copiando i caracteres en el paso i. Sumando copias a lo largo de n pasos: 1 + 2 + ... + n = O(n²). StringBuilder evita esto manteniendo un arreglo de caracteres interno redimensionable, por lo que append() es O(1) amortizado. La opción A es incorrecta — las cadenas Java son inmutables, no mutables. GC no se desencadena por concatenación. La opción C caracteriza incorrectamente el costo de asignación de memoria: la asignación en heap es O(tamaño) pero está subsumida por el costo de copia, que es el problema real."
+  }
+}

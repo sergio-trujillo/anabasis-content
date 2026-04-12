@@ -1,0 +1,17 @@
+{
+  "id": "code-stringmanip-rotate-string-left",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Left-rotate a string by k positions",
+    "es": "Rotar una cadena a la izquierda k posiciones"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a string `s` and a non-negative integer `k`, return a new string that is `s` rotated left by `k` positions. Characters that fall off the left end wrap around to the right. If `k` is greater than `s.length()`, use the effective shift `k % s.length()`. An empty string returns `\"\"`.",
+    "es": "Dada una cadena `s` y un entero no negativo `k`, devuelve una nueva cadena que es `s` rotada a la izquierda `k` posiciones. Los caracteres que salen por la izquierda se reinsertan por la derecha. Si `k` es mayor que `s.length()`, usa el desplazamiento efectivo `k % s.length()`. Una cadena vacía devuelve `\"\"`."
+  },
+  "starterCode": "class Solution {\n    public String rotateStringLeft(String s, int k) {\n        // TODO\n        return \"\";\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basic() {\n        assertEquals(\"cdeab\", new Solution().rotateStringLeft(\"abcde\", 2));\n    }\n\n    @Test\n    void kZero() {\n        assertEquals(\"abcde\", new Solution().rotateStringLeft(\"abcde\", 0));\n    }\n\n    @Test\n    void kEqualsLength() {\n        // full rotation — same as original\n        assertEquals(\"abcde\", new Solution().rotateStringLeft(\"abcde\", 5));\n    }\n\n    @Test\n    void kGreaterThanLength() {\n        // k=7 on length-5 → effective k=2 → same as basic\n        assertEquals(\"cdeab\", new Solution().rotateStringLeft(\"abcde\", 7));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(\"\", new Solution().rotateStringLeft(\"\", 3));\n    }\n\n    @Test\n    void singleChar() {\n        assertEquals(\"a\", new Solution().rotateStringLeft(\"a\", 4));\n    }\n\n    @Test\n    void kOne() {\n        assertEquals(\"bcda\", new Solution().rotateStringLeft(\"abcd\", 1));\n    }\n}\n"
+}

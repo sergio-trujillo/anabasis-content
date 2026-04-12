@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-palindrome-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "palindrome-check: pattern recognition",
+    "es": "palindrome-check: reconocimiento de patrón"
+  },
+  "prompt": {
+    "en": "Given: \"Return true if the string reads the same forwards and backwards, ignoring spaces and punctuation.\" Which canonical fingerprint fits best?",
+    "es": "Dado: \"Retorna true si la cadena se lee igual de izquierda a derecha y de derecha a izquierda, ignorando espacios y puntuación.\" ¿Qué fingerprint canónico encaja mejor?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — look up each character's mirror in a map", "es": "hashmap-complement — buscar el espejo de cada carácter en un mapa" } },
+    { "id": "b", "label": { "en": "frequency-count — count characters and verify all counts are even", "es": "frequency-count — contar caracteres y verificar que todos los conteos sean pares" } },
+    { "id": "c", "label": { "en": "palindrome-check — two pointers from both ends, skipping non-alphanumeric", "es": "palindrome-check — dos punteros desde ambos extremos, omitiendo no alfanuméricos" } },
+    { "id": "d", "label": { "en": "array-accumulator — accumulate a hash of each character and compare prefix hashes", "es": "array-accumulator — acumular un hash de cada carácter y comparar hashes de prefijo" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The defining signal is symmetry between the beginning and end of the sequence — that is the two-pointer palindrome fingerprint. Option B (all even counts) is a condition for whether a string *can* form a palindrome (anagram of a palindrome), not for checking whether an existing string is one. Option A incorrectly frames symmetry as a map lookup problem. Option D (rolling hash) is an advanced technique but not the canonical simple approach and adds unnecessary complexity.",
+    "es": "La señal definitoria es la simetría entre el principio y el final de la secuencia — ese es el fingerprint de palindrome-check con dos punteros. La opción B (todos los conteos pares) es una condición para saber si una cadena *puede* formar un palíndromo (anagrama de palíndromo), no para verificar si una cadena existente ya lo es. La opción A enmarca incorrectamente la simetría como un problema de búsqueda en mapa. La opción D (hash rodante) es una técnica avanzada pero no el enfoque canónico simple y agrega complejidad innecesaria."
+  }
+}

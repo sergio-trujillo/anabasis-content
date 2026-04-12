@@ -1,0 +1,17 @@
+{
+  "id": "code-stringmanip-remove-duplicates-string",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Remove duplicate characters (keep first occurrence)",
+    "es": "Eliminar caracteres duplicados (conservar la primera aparición)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a string `s` of lowercase letters, return a new string that keeps only the **first** occurrence of each character, preserving the original order. For example, `\"banana\"` → `\"ban\"`. An empty string returns `\"\"`.",
+    "es": "Dada una cadena `s` de letras minúsculas, devuelve una nueva cadena que conserva únicamente la **primera** aparición de cada carácter, respetando el orden original. Por ejemplo, `\"banana\"` → `\"ban\"`. Una cadena vacía devuelve `\"\"`."
+  },
+  "starterCode": "class Solution {\n    public String removeDuplicates(String s) {\n        // TODO\n        return \"\";\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void banana() {\n        assertEquals(\"ban\", new Solution().removeDuplicates(\"banana\"));\n    }\n\n    @Test\n    void repeatingPairs() {\n        // each char appears exactly twice, keep first of each\n        assertEquals(\"abc\", new Solution().removeDuplicates(\"aabbcc\"));\n    }\n\n    @Test\n    void alreadyUnique() {\n        assertEquals(\"abc\", new Solution().removeDuplicates(\"abc\"));\n    }\n\n    @Test\n    void palindromeLike() {\n        // \"abba\" — first occurrence of 'a' is index 0, 'b' is index 1\n        assertEquals(\"ab\", new Solution().removeDuplicates(\"abba\"));\n    }\n\n    @Test\n    void allSame() {\n        assertEquals(\"a\", new Solution().removeDuplicates(\"aaaa\"));\n    }\n\n    @Test\n    void single() {\n        assertEquals(\"z\", new Solution().removeDuplicates(\"z\"));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(\"\", new Solution().removeDuplicates(\"\"));\n    }\n}\n"
+}

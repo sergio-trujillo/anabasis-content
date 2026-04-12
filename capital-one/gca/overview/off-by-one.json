@@ -1,0 +1,48 @@
+{
+  "id": "mcq-gca-off-by-one",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Most costly bug class on array and string problems",
+    "es": "Clase de bug más costosa en problemas de arreglos y cadenas"
+  },
+  "prompt": {
+    "en": "In GCA array and string problems, which class of bug is most likely to drop partial credit by silently failing multiple hidden test cases?",
+    "es": "En los problemas de arreglos y cadenas del GCA, ¿qué clase de bug tiene más probabilidad de reducir el crédito parcial al fallar silenciosamente múltiples pruebas ocultas?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Using the wrong variable name in deeply nested loops",
+        "es": "Usar el nombre de variable incorrecto en bucles muy anidados"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Off-by-one and boundary errors — wrong last index, missing empty-array case, k = 0, k = length",
+        "es": "Errores por desplazamiento unitario y de frontera — índice final incorrecto, caso de arreglo vacío omitido, k = 0, k = longitud"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Integer overflow when inputs exceed 32-bit range",
+        "es": "Desbordamiento de enteros cuando las entradas superan el rango de 32 bits"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Forgetting to sort the input before applying a greedy approach",
+        "es": "Olvidar ordenar la entrada antes de aplicar un enfoque greedy"
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Off-by-one and boundary errors are the single most prevalent silent killer in GCA array/string problems. They compile fine, pass the visible example (which is usually a happy-path mid-sized case), and then fail on: the empty input, the single-element input, the case where k equals 0 or equals the full length, and the last-index-inclusive vs exclusive edge. Each of those is a separate hidden test, so one boundary bug can cost you 3–5 test cases at once. Before submitting, mentally trace your loop bounds on an array of size 0 and size 1.",
+    "es": "Los errores por desplazamiento unitario y de frontera son el asesino silencioso más prevalente en los problemas de arreglos y cadenas del GCA. Compilan bien, pasan el ejemplo visible (que suele ser un caso feliz de tamaño medio), y luego fallan en: la entrada vacía, la entrada de un solo elemento, el caso donde k es 0 o igual a la longitud completa, y el límite inclusivo vs. exclusivo del último índice. Cada uno de esos es una prueba oculta separada, por lo que un bug de frontera puede costarte 3–5 casos a la vez. Antes de enviar, recorre mentalmente los límites de tu bucle con un arreglo de tamaño 0 y tamaño 1."
+  }
+}

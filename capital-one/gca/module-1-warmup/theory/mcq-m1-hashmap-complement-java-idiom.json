@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-hashmap-complement-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "hashmap-complement: Java idiom for seen-set",
+    "es": "hashmap-complement: idioma Java para el conjunto visitado"
+  },
+  "prompt": {
+    "en": "In Java, when hashmap-complement only needs to track which values have been seen (not their indices), which data structure is most idiomatic?",
+    "es": "En Java, cuando hashmap-complement solo necesita rastrear qué valores han sido vistos (no sus índices), ¿qué estructura de datos es más idiomática?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "HashMap<Integer, Integer> mapping value → index", "es": "HashMap<Integer, Integer> que mapea valor → índice" } },
+    { "id": "b", "label": { "en": "HashSet<Integer> for O(1) contains() checks", "es": "HashSet<Integer> para verificaciones contains() en O(1)" } },
+    { "id": "c", "label": { "en": "int[] sorted array with binary search", "es": "int[] arreglo ordenado con búsqueda binaria" } },
+    { "id": "d", "label": { "en": "LinkedList<Integer> with contains()", "es": "LinkedList<Integer> con contains()" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When you only need existence checks ('have I seen this value before?'), a HashSet<Integer> is the right tool: O(1) add and contains, minimal overhead, expressive intent. A HashMap<Integer, Integer> is correct when you need to recover the index of the seen value (e.g., returning the pair of indices), but using it when the index isn't needed wastes memory and is less readable. A sorted array + binary search gives O(log n) per lookup and requires mutating or copying the input. LinkedList.contains() is O(n) — far worse.",
+    "es": "Cuando solo necesitas verificar existencia ('¿he visto este valor antes?'), HashSet<Integer> es la herramienta correcta: O(1) para add y contains, sobrecarga mínima, intención expresiva. HashMap<Integer, Integer> es correcto cuando necesitas recuperar el índice del valor visto (por ejemplo, retornar el par de índices), pero usarlo cuando el índice no se necesita desperdicia memoria y es menos legible. Un arreglo ordenado + búsqueda binaria da O(log n) por búsqueda y requiere mutar o copiar la entrada. LinkedList.contains() es O(n) — mucho peor."
+  }
+}

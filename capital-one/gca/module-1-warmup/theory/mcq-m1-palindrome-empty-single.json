@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-palindrome-empty-single",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "palindrome-check: empty and single-char edge cases",
+    "es": "palindrome-check: casos borde con cadena vacía y un solo carácter"
+  },
+  "prompt": {
+    "en": "What should isPalindrome return for an empty string \"\" and for a single-character string \"x\"?",
+    "es": "¿Qué debe retornar isPalindrome para una cadena vacía \"\" y para una cadena de un solo carácter \"x\"?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "false for \"\", true for \"x\"", "es": "false para \"\", true para \"x\"" } },
+    { "id": "b", "label": { "en": "true for \"\", true for \"x\"", "es": "true para \"\", true para \"x\"" } },
+    { "id": "c", "label": { "en": "false for \"\", false for \"x\"", "es": "false para \"\", false para \"x\"" } },
+    { "id": "d", "label": { "en": "Throw an exception for both — undefined input", "es": "Lanzar una excepción para ambas — entrada no definida" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Both empty strings and single-character strings are vacuously (or trivially) palindromes: there are no character pairs to violate the symmetry condition. The two-pointer algorithm handles this naturally — the loop body never executes when left >= right, returning true without any special-casing. Returning false for \"\" (option A) would be a correctness bug. Throwing an exception (option D) is wrong because these are valid inputs, not errors.",
+    "es": "Tanto las cadenas vacías como las de un solo carácter son palíndromos de forma vacua (o trivial): no hay pares de caracteres que violen la condición de simetría. El algoritmo de dos punteros maneja esto de forma natural — el cuerpo del bucle nunca se ejecuta cuando left >= right, retornando true sin ningún caso especial. Retornar false para \"\" (opción A) sería un error de corrección. Lanzar una excepción (opción D) es incorrecto porque estas son entradas válidas, no errores."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-string-manipulation-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "string-manipulation: Java idiom for building output",
+    "es": "string-manipulation: idioma Java para construir la salida"
+  },
+  "prompt": {
+    "en": "Which Java construct is the idiomatic choice for incrementally building a transformed string character by character?",
+    "es": "¿Qué construcción Java es la elección idiomática para construir incrementalmente una cadena transformada carácter por carácter?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "String result = \"\"; then result += transformedChar inside the loop", "es": "String result = \"\"; luego result += transformedChar dentro del bucle" } },
+    { "id": "b", "label": { "en": "StringBuilder sb = new StringBuilder(); sb.append(transformedChar); return sb.toString()", "es": "StringBuilder sb = new StringBuilder(); sb.append(transformedChar); return sb.toString()" } },
+    { "id": "c", "label": { "en": "char[] result = new char[n]; result[i] = transformedChar; return new String(result)", "es": "char[] result = new char[n]; result[i] = transformedChar; return new String(result)" } },
+    { "id": "d", "label": { "en": "StringBuffer sb = new StringBuffer(); sb.append(transformedChar); return sb.toString()", "es": "StringBuffer sb = new StringBuffer(); sb.append(transformedChar); return sb.toString()" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "StringBuilder is the idiomatic Java choice for building a string incrementally in a single-threaded context: amortized O(1) append, no synchronization overhead, and the most commonly expected pattern in interviews. Option A (+=) is the O(n²) anti-pattern due to string immutability. Option C (char array) is correct and also O(n), but only works when the output length equals the input length — StringBuilder is more general and preferred. Option D (StringBuffer) is thread-safe but adds unnecessary synchronization overhead in single-threaded code — StringBuilder is always preferred over StringBuffer in non-concurrent contexts.",
+    "es": "StringBuilder es la elección idiomática en Java para construir una cadena incrementalmente en un contexto de hilo único: append O(1) amortizado, sin sobrecarga de sincronización y el patrón más esperado en entrevistas. La opción A (+=) es el antipatrón O(n²) debido a la inmutabilidad de las cadenas. La opción C (arreglo de char) es correcta y también O(n), pero solo funciona cuando la longitud de salida es igual a la longitud de entrada — StringBuilder es más general y preferido. La opción D (StringBuffer) es segura para hilos pero añade sobrecarga de sincronización innecesaria en código de un solo hilo — StringBuilder siempre es preferido sobre StringBuffer en contextos no concurrentes."
+  }
+}

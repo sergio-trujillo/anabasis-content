@@ -1,0 +1,17 @@
+{
+  "id": "code-stringmanip-longest-substring-no-repeat",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Longest substring without repeating characters",
+    "es": "Subcadena más larga sin caracteres repetidos"
+  },
+  "difficulty": "medium",
+  "language": "java",
+  "statement": {
+    "en": "Given a string `s`, return the **length** of the longest substring that contains no repeated characters. An empty string returns `0`.",
+    "es": "Dada una cadena `s`, devuelve la **longitud** de la subcadena más larga que no contenga caracteres repetidos. Una cadena vacía devuelve `0`."
+  },
+  "starterCode": "class Solution {\n    public int lengthOfLongestSubstring(String s) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void classic() {\n        // \"abc\" is the longest window before a repeat\n        assertEquals(3, new Solution().lengthOfLongestSubstring(\"abcabcbb\"));\n    }\n\n    @Test\n    void allSame() {\n        assertEquals(1, new Solution().lengthOfLongestSubstring(\"bbbbb\"));\n    }\n\n    @Test\n    void mixedWindow() {\n        // \"wke\" is the longest window\n        assertEquals(3, new Solution().lengthOfLongestSubstring(\"pwwkew\"));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(0, new Solution().lengthOfLongestSubstring(\"\"));\n    }\n\n    @Test\n    void singleChar() {\n        assertEquals(1, new Solution().lengthOfLongestSubstring(\"a\"));\n    }\n\n    @Test\n    void allUnique() {\n        assertEquals(6, new Solution().lengthOfLongestSubstring(\"abcdef\"));\n    }\n\n    @Test\n    void repeatAtEnd() {\n        // \"abcde\" then repeat — longest is 5\n        assertEquals(5, new Solution().lengthOfLongestSubstring(\"abcdeabcde\"));\n    }\n}\n"
+}

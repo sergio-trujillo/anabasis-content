@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-palindrome-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "palindrome-check: Java idiom for alphanumeric filter",
+    "es": "palindrome-check: idioma Java para filtrar caracteres alfanuméricos"
+  },
+  "prompt": {
+    "en": "When implementing palindrome-check that ignores non-alphanumeric characters, which Java idiom is most idiomatic for testing whether a character qualifies?",
+    "es": "Al implementar palindrome-check que ignora caracteres no alfanuméricos, ¿qué idioma Java es más idiomático para verificar si un carácter califica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "c >= 'a' && c <= 'z' — manual ASCII range check", "es": "c >= 'a' && c <= 'z' — verificación manual del rango ASCII" } },
+    { "id": "b", "label": { "en": "Character.isLetterOrDigit(c) — standard library method", "es": "Character.isLetterOrDigit(c) — método de la biblioteca estándar" } },
+    { "id": "c", "label": { "en": "String.valueOf(c).matches(\"[a-z0-9]\") — regex on each character", "es": "String.valueOf(c).matches(\"[a-z0-9]\") — regex en cada carácter" } },
+    { "id": "d", "label": { "en": "Arrays.asList('a','b',...,'z','0',...,'9').contains(c) — whitelist lookup", "es": "Arrays.asList('a','b',...,'z','0',...,'9').contains(c) — búsqueda en lista blanca" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Character.isLetterOrDigit(c) is the idiomatic, readable, and correct Java approach. It also handles Unicode letters beyond ASCII, which matters in real-world applications. The manual ASCII range check (option A) is fragile: it misses uppercase letters and digits unless you add more conditions. Option C allocates a new String and compiles a regex pattern per character — O(1) in theory but far too expensive and verbose in practice. Option D is both verbose and O(k) per check where k = 36.",
+    "es": "Character.isLetterOrDigit(c) es el enfoque idiomático, legible y correcto en Java. También maneja letras Unicode más allá de ASCII, lo cual importa en aplicaciones reales. La verificación manual del rango ASCII (opción A) es frágil: omite letras mayúsculas y dígitos a menos que se añadan más condiciones. La opción C asigna un nuevo String y compila un patrón regex por carácter — O(1) en teoría pero demasiado costoso y verboso en la práctica. La opción D es tanto verbosa como O(k) por verificación donde k = 36."
+  }
+}

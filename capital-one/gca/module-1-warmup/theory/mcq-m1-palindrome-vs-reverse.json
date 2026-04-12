@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-palindrome-vs-reverse",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "palindrome-check: two-pointer vs reverse-and-compare",
+    "es": "palindrome-check: dos punteros vs invertir y comparar"
+  },
+  "prompt": {
+    "en": "Compared to reversing the string and comparing to the original, what is the key advantage of the two-pointer approach for palindrome checking?",
+    "es": "Comparado con invertir la cadena y compararla con el original, ¿cuál es la ventaja clave del enfoque de dos punteros para verificar palíndromos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "It is faster — O(log n) vs O(n)", "es": "Es más rápido — O(log n) vs O(n)" } },
+    { "id": "b", "label": { "en": "It uses O(1) extra space instead of O(n) for the reversed copy", "es": "Usa O(1) de espacio adicional en lugar de O(n) para la copia invertida" } },
+    { "id": "c", "label": { "en": "It can handle Unicode characters while reverse-and-compare cannot", "es": "Puede manejar caracteres Unicode mientras que invertir y comparar no puede" } },
+    { "id": "d", "label": { "en": "It avoids the need to index into the string, which is O(n) in Java", "es": "Evita la necesidad de indexar la cadena, lo cual es O(n) en Java" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Both approaches are O(n) in time. The two-pointer method's advantage is space: it compares in-place using only two index variables (O(1) extra space), while reverse-and-compare allocates a full O(n) copy of the string. Option A is wrong — both are O(n). Option C is a red herring; both approaches handle Unicode equally since Java strings are UTF-16. Option D is false; Java's charAt() and String indexing are O(1).",
+    "es": "Ambos enfoques son O(n) en tiempo. La ventaja del método de dos punteros es el espacio: compara en el lugar usando solo dos variables de índice (O(1) de espacio adicional), mientras que invertir y comparar asigna una copia completa O(n) de la cadena. La opción A es incorrecta — ambos son O(n). La opción C es un distractor; ambos enfoques manejan Unicode por igual ya que las cadenas en Java son UTF-16. La opción D es falsa; charAt() e indexación de cadenas en Java son O(1)."
+  }
+}

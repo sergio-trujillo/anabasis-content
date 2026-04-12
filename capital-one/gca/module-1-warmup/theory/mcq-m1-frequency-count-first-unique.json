@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-frequency-count-first-unique",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "frequency-count: first-unique-char pattern",
+    "es": "frequency-count: patrón del primer carácter único"
+  },
+  "prompt": {
+    "en": "To find the first character in a string that appears exactly once, which approach gives O(n) time with two passes?",
+    "es": "Para encontrar el primer carácter en una cadena que aparece exactamente una vez, ¿qué enfoque da O(n) tiempo con dos recorridos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "For each character, scan the rest of the string to check for duplicates — return the first with no duplicate", "es": "Para cada carácter, escanear el resto de la cadena para verificar duplicados — retornar el primero sin duplicado" } },
+    { "id": "b", "label": { "en": "Sort the string, then scan for a character not equal to its neighbours", "es": "Ordenar la cadena, luego escanear en busca de un carácter que no sea igual a sus vecinos" } },
+    { "id": "c", "label": { "en": "First pass: build a frequency map. Second pass: return the first character whose count is 1", "es": "Primer recorrido: construir un mapa de frecuencias. Segundo recorrido: retornar el primer carácter cuyo conteo es 1" } },
+    { "id": "d", "label": { "en": "Use a LinkedHashSet to insert characters; the set retains only non-duplicate entries in insertion order", "es": "Usar un LinkedHashSet para insertar caracteres; el conjunto retiene solo las entradas no duplicadas en orden de inserción" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Two passes are the canonical approach: pass 1 fills a frequency map in O(n), pass 2 walks the original string again in order and returns the first character whose frequency is 1 — O(n) total. Option A is O(n²) — the inner scan per character makes it quadratic. Option B is O(n log n) from sorting and also destroys insertion order, making it impossible to answer 'first unique' correctly. Option D is wrong: a LinkedHashSet removes duplicates but if a character appears twice, the second insertion fails silently — it doesn't track which elements appeared more than once.",
+    "es": "Dos recorridos es el enfoque canónico: el recorrido 1 llena un mapa de frecuencias en O(n), el recorrido 2 recorre la cadena original en orden y retorna el primer carácter cuya frecuencia es 1 — O(n) total. La opción A es O(n²) — el escaneo interno por carácter lo hace cuadrático. La opción B es O(n log n) por el ordenamiento y también destruye el orden de inserción, haciendo imposible responder 'primer único' correctamente. La opción D es incorrecta: un LinkedHashSet elimina duplicados pero si un carácter aparece dos veces, la segunda inserción falla silenciosamente — no rastrea qué elementos aparecieron más de una vez."
+  }
+}

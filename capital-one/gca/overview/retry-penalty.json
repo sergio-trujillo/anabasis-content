@@ -1,0 +1,48 @@
+{
+  "id": "mcq-gca-retry-penalty",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Penalty for multiple submissions",
+    "es": "Penalización por múltiples envíos"
+  },
+  "prompt": {
+    "en": "You submit a solution on CodeSignal's GCA and it passes only 6 of 15 hidden tests. You fix a bug and want to resubmit. What happens?",
+    "es": "Envías una solución en el GCA de CodeSignal y pasa solo 6 de 15 pruebas ocultas. Corriges un bug y quieres reenviar. ¿Qué sucede?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Each resubmission deducts a fixed point penalty from your score for that problem",
+        "es": "Cada reenvío deduce una penalización fija de puntos de tu puntaje en ese problema"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "You are locked out of resubmitting once you submit a non-perfect solution",
+        "es": "Quedas bloqueado para reenviar una vez que envías una solución imperfecta"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "There is no explicit score penalty, but each submission run consumes real clock time from your 70-minute window",
+        "es": "No hay penalización explícita de puntaje, pero cada ejecución consume tiempo real de tu ventana de 70 minutos"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "CodeSignal averages all your submission scores and uses the average as your final score",
+        "es": "CodeSignal promedia todos tus puntajes de envíos y usa ese promedio como puntaje final"
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "CodeSignal's GCA records your best score per problem — there is no explicit per-resubmission penalty. However, time is the real currency. Each compile-and-run cycle, reading test output, editing, and resubmitting can eat 30–120 seconds per attempt. On a 70-minute exam with 4 problems, burning 5 minutes on retry cycles for Problem 2 can mean you never reach Problem 4. The strategic lesson: think before you submit the first time (trace your edge cases mentally), but once you have something correct, don't hesitate — time left is points left.",
+    "es": "El GCA de CodeSignal registra tu mejor puntaje por problema — no hay penalización explícita por reenvío. Sin embargo, el tiempo es la moneda real. Cada ciclo de compilar, ejecutar, leer la salida, editar y reenviar puede consumir entre 30 y 120 segundos por intento. En un examen de 70 minutos con 4 problemas, desperdiciar 5 minutos en ciclos de reintento en el problema 2 puede significar que nunca llegues al problema 4. La lección estratégica: piensa antes de enviar por primera vez (recorre tus casos extremos mentalmente), pero una vez que tienes algo correcto, no dudes — el tiempo restante son puntos restantes."
+  }
+}

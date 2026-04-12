@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-hashmap-complement-cross-arrays",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "hashmap-complement: cross-array variant recognition",
+    "es": "hashmap-complement: reconocimiento de variante entre arreglos"
+  },
+  "prompt": {
+    "en": "Given: \"Return true if there exists one element from array A and one element from array B that sum to target.\" Which canonical fingerprint best handles this?",
+    "es": "Dado: \"Retorna true si existe un elemento del arreglo A y uno del arreglo B que sumen el objetivo.\" ¿Qué fingerprint canónico maneja mejor este caso?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "palindrome-check — compare elements symmetrically across the two arrays", "es": "palindrome-check — comparar elementos simétricamente entre los dos arreglos" } },
+    { "id": "b", "label": { "en": "array-accumulator — compute prefix sums for both arrays then intersect", "es": "array-accumulator — calcular sumas prefijas para ambos arreglos y luego intersectarlas" } },
+    { "id": "c", "label": { "en": "hashmap-complement — load all of A into a HashSet, then scan B for (target - b)", "es": "hashmap-complement — cargar todo A en un HashSet, luego recorrer B buscando (objetivo - b)" } },
+    { "id": "d", "label": { "en": "frequency-count — count values in both arrays and check if counts overlap at the target", "es": "frequency-count — contar valores en ambos arreglos y verificar si las frecuencias se superponen en el objetivo" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The cross-array variant is still a complement lookup: load all values from A into a HashSet in one pass, then iterate B checking whether (target - b) is in that set — O(n + m) total. Option B confuses prefix sums (which accumulate values, not look up complements) with the complement pattern. Option D describes frequency counting, which tracks how often each value appears, not whether a cross-pair sums to target. Option A has no algorithmic basis for this problem.",
+    "es": "La variante entre arreglos sigue siendo una búsqueda de complementos: carga todos los valores de A en un HashSet en un recorrido, luego itera B verificando si (objetivo - b) está en ese conjunto — O(n + m) en total. La opción B confunde sumas prefijas (que acumulan valores, no buscan complementos) con el patrón de complemento. La opción D describe el conteo de frecuencias, que rastrea cuántas veces aparece cada valor, no si un par cruzado suma al objetivo. La opción A no tiene base algorítmica para este problema."
+  }
+}

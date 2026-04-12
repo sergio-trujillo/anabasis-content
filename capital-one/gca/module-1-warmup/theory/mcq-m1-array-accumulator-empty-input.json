@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-array-accumulator-empty-input",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "array-accumulator: empty array edge case",
+    "es": "array-accumulator: caso borde con arreglo vacío"
+  },
+  "prompt": {
+    "en": "A running-sum function returns the prefix sum array for each position. What should it return when the input array is empty?",
+    "es": "Una función de suma acumulada retorna el arreglo de sumas prefijas para cada posición. ¿Qué debe retornar cuando el arreglo de entrada está vacío?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "new int[]{0} — return a single zero representing the empty sum", "es": "new int[]{0} — retornar un cero que representa la suma vacía" } },
+    { "id": "b", "label": { "en": "Throw IllegalArgumentException — empty input is invalid", "es": "Lanzar IllegalArgumentException — la entrada vacía es inválida" } },
+    { "id": "c", "label": { "en": "new int[]{} — return an empty array matching the input length", "es": "new int[]{} — retornar un arreglo vacío que coincida con la longitud de entrada" } },
+    { "id": "d", "label": { "en": "null — no prefix sums exist", "es": "null — no existen sumas prefijas" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The prefix sum of an empty array is an empty array — there are no positions, so there are no prefix values to compute. Returning new int[]{} preserves the invariant that output.length == input.length and allows callers to iterate without special-casing. Returning {0} (option A) adds a phantom element that doesn't correspond to any input position and would break index correspondence. Returning null (option D) forces every caller to null-check. Throwing an exception (option B) is incorrect because an empty array is a valid, if trivial, input.",
+    "es": "La suma prefija de un arreglo vacío es un arreglo vacío — no hay posiciones, por lo que no hay valores prefijos que calcular. Retornar new int[]{} preserva el invariante output.length == input.length y permite que los llamadores iteren sin casos especiales. Retornar {0} (opción A) agrega un elemento fantasma que no corresponde a ninguna posición de entrada y rompería la correspondencia de índices. Retornar null (opción D) obliga a cada llamador a verificar nulos. Lanzar una excepción (opción B) es incorrecto porque un arreglo vacío es una entrada válida, aunque trivial."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-frequency-count-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "frequency-count: pattern recognition",
+    "es": "frequency-count: reconocimiento de patrón"
+  },
+  "prompt": {
+    "en": "Given: \"Return the character that appears more than n/2 times in the array (guaranteed to exist).\" Which canonical fingerprint fits best?",
+    "es": "Dado: \"Retorna el carácter que aparece más de n/2 veces en el arreglo (se garantiza que existe).\" ¿Qué fingerprint canónico encaja mejor?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — find the element whose complement satisfies the majority condition", "es": "hashmap-complement — encontrar el elemento cuyo complemento satisface la condición de mayoría" } },
+    { "id": "b", "label": { "en": "array-accumulator — accumulate a running sum and check when it exceeds n/2", "es": "array-accumulator — acumular una suma acumulada y verificar cuándo supera n/2" } },
+    { "id": "c", "label": { "en": "frequency-count — count occurrences per element, return whichever count > n/2", "es": "frequency-count — contar ocurrencias por elemento, retornar el que tenga conteo > n/2" } },
+    { "id": "d", "label": { "en": "palindrome-check — compare frequency from both ends to find the dominant element", "es": "palindrome-check — comparar frecuencia desde ambos extremos para encontrar el elemento dominante" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The defining signal is counting occurrences — how often each value appears — which is the frequency-count fingerprint. One HashMap pass counts every element; a second scan (or a check during the first pass) finds the count exceeding n/2. hashmap-complement is about looking up pairs that satisfy a sum condition — there's no summation here. array-accumulator builds totals over positions, not counts per value. palindrome-check checks symmetry — irrelevant here.",
+    "es": "La señal definitoria es contar ocurrencias — cuántas veces aparece cada valor — que es el fingerprint de frequency-count. Un recorrido por HashMap cuenta cada elemento; un segundo escaneo (o una verificación durante el primero) encuentra el conteo que supera n/2. hashmap-complement busca pares que satisfacen una condición de suma — aquí no hay suma. array-accumulator construye totales sobre posiciones, no conteos por valor. palindrome-check verifica simetría — irrelevante aquí."
+  }
+}

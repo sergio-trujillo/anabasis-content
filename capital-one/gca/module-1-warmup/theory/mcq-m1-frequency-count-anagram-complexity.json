@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-frequency-count-anagram-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "frequency-count: anagram check complexity vs sort-and-compare",
+    "es": "frequency-count: complejidad de verificación de anagrama vs ordenar y comparar"
+  },
+  "prompt": {
+    "en": "Checking whether two strings are anagrams by sorting both and comparing runs in O(n log n). What does the frequency-count approach reduce this to?",
+    "es": "Verificar si dos cadenas son anagramas ordenando ambas y comparando corre en O(n log n). ¿A qué reduce esto el enfoque de frequency-count?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n²) — because two maps must be compared entry by entry", "es": "O(n²) — porque dos mapas deben compararse entrada por entrada" } },
+    { "id": "b", "label": { "en": "O(n log n) — same asymptotic cost since HashMap has log-factor overhead", "es": "O(n log n) — mismo costo asintótico ya que HashMap tiene sobrecarga logarítmica" } },
+    { "id": "c", "label": { "en": "O(n) — one pass to build the count, one pass to verify it", "es": "O(n) — un recorrido para construir el conteo, un recorrido para verificarlo" } },
+    { "id": "d", "label": { "en": "O(1) — only the difference in lengths needs to be checked", "es": "O(1) — solo es necesario verificar la diferencia en longitudes" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Frequency-count anagram: increment counts for each char in s, decrement for each char in t (or build two maps and compare), all in O(n). HashMap operations are O(1) average — not O(log n). That makes option B wrong. Option A is wrong because comparing two HashMaps is O(k) where k is the alphabet size, not O(n²). Option D is wrong: equal lengths are necessary but not sufficient — 'ab' and 'cc' have equal length but are not anagrams.",
+    "es": "Anagrama con frequency-count: incrementa los conteos por cada carácter en s, decrementa por cada carácter en t (o construye dos mapas y compara), todo en O(n). Las operaciones de HashMap son O(1) promedio — no O(log n). Eso hace que la opción B sea incorrecta. La opción A es incorrecta porque comparar dos HashMaps es O(k) donde k es el tamaño del alfabeto, no O(n²). La opción D es incorrecta: longitudes iguales son necesarias pero no suficientes — 'ab' y 'cc' tienen igual longitud pero no son anagramas."
+  }
+}

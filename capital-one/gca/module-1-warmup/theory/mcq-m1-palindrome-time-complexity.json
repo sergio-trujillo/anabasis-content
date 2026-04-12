@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-palindrome-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "palindrome-check: time and space complexity",
+    "es": "palindrome-check: complejidad temporal y espacial"
+  },
+  "prompt": {
+    "en": "What are the time and space complexities of the two-pointer palindrome check on a string of length n?",
+    "es": "¿Cuáles son las complejidades temporal y espacial de la verificación de palíndromo con dos punteros en una cadena de longitud n?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) time, O(n) space", "es": "O(n) tiempo, O(n) espacio" } },
+    { "id": "b", "label": { "en": "O(n log n) time, O(1) space", "es": "O(n log n) tiempo, O(1) espacio" } },
+    { "id": "c", "label": { "en": "O(n) time, O(1) space", "es": "O(n) tiempo, O(1) espacio" } },
+    { "id": "d", "label": { "en": "O(n²) time, O(1) space", "es": "O(n²) tiempo, O(1) espacio" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Two pointers start at opposite ends and move inward, examining each character at most once — O(n) time. No extra data structures are needed; only two index variables are maintained — O(1) space. Option A is the complexity of approaches that reverse the string into a new buffer before comparing. O(n log n) has no natural basis for this problem. O(n²) would arise from a naive substring comparison approach.",
+    "es": "Los dos punteros comienzan en los extremos opuestos y se mueven hacia adentro, examinando cada carácter a lo sumo una vez — O(n) tiempo. No se necesitan estructuras de datos adicionales; solo se mantienen dos variables de índice — O(1) espacio. La opción A es la complejidad de enfoques que invierten la cadena en un nuevo búfer antes de comparar. O(n log n) no tiene base natural para este problema. O(n²) surgiría de un enfoque de comparación de subcadenas ingenuo."
+  }
+}

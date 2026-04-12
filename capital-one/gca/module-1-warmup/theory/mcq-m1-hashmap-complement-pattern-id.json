@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-hashmap-complement-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "hashmap-complement: pattern recognition",
+    "es": "hashmap-complement: reconocimiento de patrón"
+  },
+  "prompt": {
+    "en": "Given: \"Return true if any two distinct elements in the array sum to the target value.\" Which canonical fingerprint fits this problem best?",
+    "es": "Dado: \"Retorna true si algún par de elementos distintos del arreglo suma el valor objetivo.\" ¿Qué fingerprint canónico encaja mejor con este problema?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "array-accumulator (running sum)", "es": "array-accumulator (suma acumulada)" } },
+    { "id": "b", "label": { "en": "frequency-count (count-by-hash)", "es": "frequency-count (contar con HashMap)" } },
+    { "id": "c", "label": { "en": "hashmap-complement (seen-set lookup)", "es": "hashmap-complement (búsqueda en conjunto visitado)" } },
+    { "id": "d", "label": { "en": "palindrome-check (two pointers)", "es": "palindrome-check (dos punteros)" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The defining signal is 'two elements that satisfy a relationship (sum = target)' — you store each element and look up whether its partner already exists. That is the hashmap-complement fingerprint. frequency-count counts how many times each value appears but never checks pair relationships. array-accumulator builds a running total, not a pair lookup. palindrome-check compares positions from both ends of a sequence.",
+    "es": "La señal definitoria es 'dos elementos que satisfacen una relación (suma = objetivo)' — guardas cada elemento y buscas si su pareja ya existe. Ese es el fingerprint de hashmap-complement. frequency-count cuenta cuántas veces aparece cada valor pero no verifica relaciones entre pares. array-accumulator construye un total acumulado, no una búsqueda de pares. palindrome-check compara posiciones desde ambos extremos de una secuencia."
+  }
+}

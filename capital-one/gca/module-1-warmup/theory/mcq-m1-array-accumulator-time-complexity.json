@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-array-accumulator-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "array-accumulator: time and space complexity",
+    "es": "array-accumulator: complejidad temporal y espacial"
+  },
+  "prompt": {
+    "en": "What are the time and space complexities of computing the prefix sum array for an input of length n?",
+    "es": "¿Cuáles son las complejidades temporal y espacial de calcular el arreglo de sumas prefijas para una entrada de longitud n?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) time, O(1) space", "es": "O(n) tiempo, O(1) espacio" } },
+    { "id": "b", "label": { "en": "O(n) time, O(n) space", "es": "O(n) tiempo, O(n) espacio" } },
+    { "id": "c", "label": { "en": "O(n log n) time, O(n) space", "es": "O(n log n) tiempo, O(n) espacio" } },
+    { "id": "d", "label": { "en": "O(n²) time, O(n) space", "es": "O(n²) tiempo, O(n) espacio" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Building a prefix sum array requires a single pass over the input — O(n) time. The output array has n elements, so O(n) extra space is required. Option A (O(1) space) applies only when you maintain a single running total without storing all prefix values, which is the simpler 'running sum' variant. If the problem asks you to answer range-sum queries after construction, the O(n) prefix array is necessary. O(n log n) and O(n²) have no basis here.",
+    "es": "Construir un arreglo de sumas prefijas requiere un único recorrido sobre la entrada — O(n) tiempo. El arreglo de salida tiene n elementos, por lo que se necesita O(n) de espacio adicional. La opción A (O(1) espacio) aplica solo cuando mantienes un único total acumulado sin almacenar todos los valores prefijos, que es la variante más simple de 'suma acumulada'. Si el problema pide responder consultas de suma en rangos tras la construcción, el arreglo O(n) de prefijos es necesario. O(n log n) y O(n²) no tienen base aquí."
+  }
+}

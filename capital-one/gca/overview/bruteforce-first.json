@@ -1,0 +1,48 @@
+{
+  "id": "mcq-gca-bruteforce-first",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Brute force before optimal solution",
+    "es": "Fuerza bruta antes que la solución óptima"
+  },
+  "prompt": {
+    "en": "You immediately recognize Problem 3's optimal solution requires a non-trivial sliding window. You could also write a correct O(n²) brute force in 3 minutes. What should you do first?",
+    "es": "Identificas de inmediato que la solución óptima del problema 3 requiere una ventana deslizante no trivial. También podrías escribir una fuerza bruta O(n²) correcta en 3 minutos. ¿Qué debes hacer primero?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Go straight for the optimal solution — a slow solution might time out on hidden tests anyway",
+        "es": "Ir directo a la solución óptima — una solución lenta puede hacer timeout en las pruebas ocultas de todos modos"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Write and submit the brute force first for partial credit, then optimize if time remains",
+        "es": "Escribir y enviar la fuerza bruta primero para crédito parcial, luego optimizar si queda tiempo"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Skip Problem 3 and come back after solving Problem 4",
+        "es": "Saltarte el problema 3 y regresar después de resolver el problema 4"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Think for 10 more minutes until the optimal approach becomes clear before writing any code",
+        "es": "Pensar 10 minutos más hasta que el enfoque óptimo quede claro antes de escribir cualquier código"
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "In the GCA, partial credit is earned per hidden test case passed — not per solution elegance. A correct brute force that passes, say, 7 of 15 hidden tests on a 300-point problem earns you 140 points now. Spending that time chasing the optimal and never submitting earns you 0. Get the brute force on the board first, then — and only if time allows — revisit with the optimized approach. Option (a) is a trap: you might spend 20 minutes on the optimal and still not finish, netting less than a quick brute force would have.",
+    "es": "En el GCA, el crédito parcial se gana por prueba oculta aprobada, no por elegancia de la solución. Una fuerza bruta correcta que pase, digamos, 7 de 15 pruebas ocultas en un problema de 300 puntos te da 140 puntos ahora. Gastar ese tiempo buscando la óptima y nunca enviar te da 0. Pon la fuerza bruta en juego primero y, solo si queda tiempo, regresa con el enfoque optimizado. La opción (a) es una trampa: podrías pasar 20 minutos en la solución óptima y aun así no terminarla, obteniendo menos de lo que una fuerza bruta rápida habría dado."
+  }
+}

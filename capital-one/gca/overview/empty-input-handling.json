@@ -1,0 +1,48 @@
+{
+  "id": "mcq-gca-empty-input-handling",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Handling empty inputs in GCA problems",
+    "es": "Manejo de entradas vacías en problemas del GCA"
+  },
+  "prompt": {
+    "en": "A GCA problem asks you to process an array of integers. The problem statement says the array length is between 0 and 10⁵. What is the safest behavior when the input array is empty?",
+    "es": "Un problema del GCA te pide procesar un arreglo de enteros. El enunciado dice que la longitud del arreglo está entre 0 y 10⁵. ¿Cuál es el comportamiento más seguro cuando el arreglo de entrada está vacío?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Throw an exception — an empty array is invalid input",
+        "es": "Lanzar una excepción — un arreglo vacío es entrada inválida"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Return the identity element for the operation (e.g., 0 for sum, empty array for filter) without special-casing",
+        "es": "Retornar el elemento identidad de la operación (p. ej., 0 para suma, arreglo vacío para filtro) sin lógica especial"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Print a warning message and return null",
+        "es": "Imprimir un mensaje de advertencia y retornar null"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Guard with an early return of -1 to signal the error condition",
+        "es": "Proteger con un return anticipado de -1 para señalar la condición de error"
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When a constraint says the length can be 0, CodeSignal's hidden tests will absolutely test the empty case. Throwing an exception (a) will fail those tests outright. Returning null or -1 (c, d) are sentinel values the judge doesn't expect unless the problem explicitly asks for them. The cleanest approach is to let your algorithm return the natural identity element — 0 for sum, an empty list for a filtered result, etc. — so that the zero-length case falls out of your general logic with no extra branch needed.",
+    "es": "Cuando una restricción indica que la longitud puede ser 0, las pruebas ocultas de CodeSignal definitivamente probarán el caso vacío. Lanzar una excepción (a) fallará esas pruebas de inmediato. Retornar null o -1 (c, d) son valores centinela que el juez no espera salvo que el problema lo pida explícitamente. El enfoque más limpio es dejar que tu algoritmo retorne el elemento identidad natural — 0 para suma, lista vacía para resultado filtrado, etc. — de modo que el caso de longitud cero salga de tu lógica general sin necesidad de una rama extra."
+  }
+}

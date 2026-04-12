@@ -1,0 +1,17 @@
+{
+  "id": "code-stringmanip-reverse-string",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Reverse a string in place",
+    "es": "Invertir una cadena en su lugar"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a `char[]` `s`, reverse it **in place** — do not allocate a new array. A single-character or empty array must be left unchanged. The method returns nothing.",
+    "es": "Dado un arreglo de caracteres `s`, inviértelo **en su lugar** — no reserves un nuevo arreglo. Un arreglo de un solo carácter o vacío debe quedar sin cambios. El método no devuelve nada."
+  },
+  "starterCode": "class Solution {\n    public void reverseString(char[] s) {\n        // TODO\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basic() {\n        char[] s = {'h', 'e', 'l', 'l', 'o'};\n        new Solution().reverseString(s);\n        assertArrayEquals(new char[]{'o', 'l', 'l', 'e', 'h'}, s);\n    }\n\n    @Test\n    void evenLength() {\n        char[] s = {'a', 'b', 'c', 'd'};\n        new Solution().reverseString(s);\n        assertArrayEquals(new char[]{'d', 'c', 'b', 'a'}, s);\n    }\n\n    @Test\n    void single() {\n        char[] s = {'z'};\n        new Solution().reverseString(s);\n        assertArrayEquals(new char[]{'z'}, s);\n    }\n\n    @Test\n    void empty() {\n        char[] s = {};\n        new Solution().reverseString(s);\n        assertArrayEquals(new char[]{}, s);\n    }\n\n    @Test\n    void palindrome() {\n        // reversing a palindrome leaves it unchanged\n        char[] s = {'r', 'a', 'c', 'e', 'c', 'a', 'r'};\n        new Solution().reverseString(s);\n        assertArrayEquals(new char[]{'r', 'a', 'c', 'e', 'c', 'a', 'r'}, s);\n    }\n\n    @Test\n    void twoChars() {\n        char[] s = {'x', 'y'};\n        new Solution().reverseString(s);\n        assertArrayEquals(new char[]{'y', 'x'}, s);\n    }\n}\n"
+}

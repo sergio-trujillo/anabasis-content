@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-frequency-count-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "frequency-count: time and space complexity",
+    "es": "frequency-count: complejidad temporal y espacial"
+  },
+  "prompt": {
+    "en": "What are the time and space complexities of the frequency-count algorithm on a string of length n with k distinct characters?",
+    "es": "¿Cuáles son las complejidades temporal y espacial del algoritmo frequency-count en una cadena de longitud n con k caracteres distintos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n log n) time, O(k) space", "es": "O(n log n) tiempo, O(k) espacio" } },
+    { "id": "b", "label": { "en": "O(n) time, O(n) space", "es": "O(n) tiempo, O(n) espacio" } },
+    { "id": "c", "label": { "en": "O(n) time, O(k) space", "es": "O(n) tiempo, O(k) espacio" } },
+    { "id": "d", "label": { "en": "O(n²) time, O(k) space", "es": "O(n²) tiempo, O(k) espacio" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "A single pass through the input increments a counter per character — O(n) time. The HashMap (or fixed array) stores at most k distinct keys, so space is O(k). When the alphabet is fixed (e.g., 26 lowercase letters), k is a constant and space is O(1). Option B overstates space: k <= n but they are equal only when all characters are distinct, and the variable is k not n. Option A (O(n log n)) would arise from sorting, which is unnecessary here.",
+    "es": "Un único recorrido por la entrada incrementa un contador por carácter — O(n) tiempo. El HashMap (o arreglo fijo) almacena como máximo k llaves distintas, por lo que el espacio es O(k). Cuando el alfabeto es fijo (por ejemplo, 26 letras minúsculas), k es una constante y el espacio es O(1). La opción B sobreestima el espacio: k <= n pero son iguales solo cuando todos los caracteres son distintos, y la variable es k no n. La opción A (O(n log n)) surgiría de ordenar, lo cual es innecesario aquí."
+  }
+}

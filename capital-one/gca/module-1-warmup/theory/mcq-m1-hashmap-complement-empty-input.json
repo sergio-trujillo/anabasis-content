@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-hashmap-complement-empty-input",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "hashmap-complement: empty array edge case",
+    "es": "hashmap-complement: caso borde con arreglo vacío"
+  },
+  "prompt": {
+    "en": "What should hashmap-complement return when the input array is empty?",
+    "es": "¿Qué debe retornar hashmap-complement cuando el arreglo de entrada está vacío?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "null", "es": "null" } },
+    { "id": "b", "label": { "en": "Throw IllegalArgumentException", "es": "Lanzar IllegalArgumentException" } },
+    { "id": "c", "label": { "en": "An empty array or null pair, indicating no pair was found", "es": "Un arreglo vacío o par nulo, indicando que no se encontró ningún par" } },
+    { "id": "d", "label": { "en": "Return {0, 0} as a default sentinel", "es": "Retornar {0, 0} como centinela por defecto" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "An empty array contains no elements, so no pair can exist — the algorithm should signal 'not found' cleanly. The canonical way is to return null (for an int[] result type) or an empty int[]{} depending on the contract, never {0, 0} (which could be a valid answer for an array with two zeros summing to target). Throwing an exception is incorrect because an empty array is a valid input, not a programming error.",
+    "es": "Un arreglo vacío no contiene elementos, por lo que no puede existir ningún par — el algoritmo debe señalar 'no encontrado' de forma limpia. La forma canónica es retornar null (para un resultado de tipo int[]) o un int[]{} vacío según el contrato, nunca {0, 0} (que podría ser una respuesta válida para un arreglo con dos ceros que suman el objetivo). Lanzar una excepción es incorrecto porque un arreglo vacío es una entrada válida, no un error de programación."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-hashmap-complement-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "hashmap-complement: time complexity",
+    "es": "hashmap-complement: complejidad temporal"
+  },
+  "prompt": {
+    "en": "What is the worst-case time complexity of the hashmap-complement algorithm that returns the first pair of indices whose values sum to a target?",
+    "es": "¿Cuál es la complejidad temporal en el peor caso del algoritmo hashmap-complement que retorna el primer par de índices cuyos valores suman un objetivo?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(1)", "es": "O(1)" } },
+    { "id": "b", "label": { "en": "O(log n)", "es": "O(log n)" } },
+    { "id": "c", "label": { "en": "O(n)", "es": "O(n)" } },
+    { "id": "d", "label": { "en": "O(n²)", "es": "O(n²)" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The hashmap-complement algorithm makes a single pass through the array, performing O(1) HashMap lookups and insertions at each step — giving O(n) overall. O(n²) is the complexity of the naive double-loop approach that this pattern is specifically designed to replace. O(log n) would require a sorted structure like a binary search tree, which is neither used here nor faster in this context.",
+    "es": "El algoritmo hashmap-complement recorre el arreglo una sola vez, realizando operaciones O(1) de búsqueda e inserción en el HashMap en cada paso — lo que da O(n) en total. O(n²) es la complejidad del enfoque ingenuo con doble bucle que este patrón está diseñado específicamente para reemplazar. O(log n) requeriría una estructura ordenada como un árbol binario de búsqueda, que no se utiliza aquí."
+  }
+}

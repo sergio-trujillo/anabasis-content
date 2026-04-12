@@ -1,0 +1,48 @@
+{
+  "id": "mcq-gca-time-budget",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Allocating 70 minutes across 4 problems",
+    "es": "Distribuir 70 minutos entre 4 problemas"
+  },
+  "prompt": {
+    "en": "The Capital One GCA gives you 70 minutes for 4 problems worth 100 / 200 / 300 / 400 points. Which time-allocation strategy maximizes your expected score?",
+    "es": "El GCA de Capital One te da 70 minutos para 4 problemas con valor de 100 / 200 / 300 / 400 puntos. ¿Qué estrategia de distribución de tiempo maximiza tu puntaje esperado?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Split evenly — 17–18 minutes per problem regardless of weight",
+        "es": "Dividir por igual — 17–18 minutos por problema sin importar el peso"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Invest the most time in Problem 4 from the start — it's worth the most",
+        "es": "Invertir la mayor parte del tiempo en el problema 4 desde el inicio — vale más"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Target ~10 min for P1, ~15 min for P2, ~20 min for P3, and reserve the remaining ~25 min for P4",
+        "es": "Apuntar a ~10 min en P1, ~15 min en P2, ~20 min en P3, y reservar los ~25 min restantes para P4"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Spend all 70 minutes on Problems 3 and 4 only — skip P1 and P2 entirely",
+        "es": "Dedicar los 70 minutos completos solo a los problemas 3 y 4 — ignorar P1 y P2"
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Front-loading the easier problems (P1 and P2) quickly banks guaranteed points and preserves a substantial block for P4, which alone is worth 40% of the total score. Equal splits (a) ignore point value asymmetry. Jumping straight to P4 (b) risks spending 40 minutes on a hard problem and returning to P1 flustered with no time left. Skipping P1/P2 entirely (d) surrenders 300 guaranteed points — a massive self-own given how approachable those problems usually are.",
+    "es": "Resolver los problemas más fáciles (P1 y P2) rápido acumula puntos garantizados y preserva un bloque sólido para P4, que por sí solo vale el 40% del puntaje total. Dividir por igual (a) ignora la asimetría de puntos. Ir directo a P4 (b) arriesga perder 40 minutos en un problema difícil y regresar a P1 agobiado sin tiempo. Saltarse P1/P2 (d) regala 300 puntos — un error enorme dado lo accesibles que suelen ser esos problemas."
+  }
+}

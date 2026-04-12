@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-string-manipulation-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "string-manipulation: single-pass transform complexity",
+    "es": "string-manipulation: complejidad de transformación en un solo recorrido"
+  },
+  "prompt": {
+    "en": "What is the time complexity of a single-pass string transform that applies a per-character rule (e.g., reverse, capitalize, replace) and writes output to a StringBuilder?",
+    "es": "¿Cuál es la complejidad temporal de una transformación de cadena en un solo recorrido que aplica una regla por carácter (por ejemplo, invertir, capitalizar, reemplazar) y escribe la salida en un StringBuilder?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(1)", "es": "O(1)" } },
+    { "id": "b", "label": { "en": "O(log n)", "es": "O(log n)" } },
+    { "id": "c", "label": { "en": "O(n)", "es": "O(n)" } },
+    { "id": "d", "label": { "en": "O(n²)", "es": "O(n²)" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Each character is visited exactly once and the per-character operation (a conditional check or mapping) is O(1) — giving O(n) total. StringBuilder.append() is amortized O(1), so the output construction doesn't add asymptotic cost. O(n²) would occur if you used string concatenation with += inside the loop, because each concatenation copies the growing string — but that is the anti-pattern, not the idiomatic approach. O(log n) has no basis for full-string traversal.",
+    "es": "Cada carácter se visita exactamente una vez y la operación por carácter (una verificación condicional o mapeo) es O(1) — dando O(n) total. StringBuilder.append() es O(1) amortizado, por lo que la construcción de salida no añade costo asintótico. O(n²) ocurriría si usaras concatenación de cadenas con += dentro del bucle, porque cada concatenación copia la cadena creciente — pero ese es el antipatrón, no el enfoque idiomático. O(log n) no tiene base para un recorrido de cadena completa."
+  }
+}

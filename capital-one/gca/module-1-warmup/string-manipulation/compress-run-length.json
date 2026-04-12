@@ -1,0 +1,17 @@
+{
+  "id": "code-stringmanip-compress-run-length",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Run-length encoding",
+    "es": "Codificación por longitud de secuencia"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a string `s` of lowercase letters, return its **run-length encoding**: replace each consecutive run of the same character with the character followed by its count. For example, `\"aabbbc\"` → `\"a2b3c1\"`. A single character always gets a count of `1`. An empty string returns `\"\"`.",
+    "es": "Dada una cadena `s` de letras minúsculas, devuelve su **codificación por longitud de secuencia**: reemplaza cada racha consecutiva del mismo carácter por el carácter seguido de su conteo. Por ejemplo, `\"aabbbc\"` → `\"a2b3c1\"`. Un carácter individual siempre obtiene un conteo de `1`. Una cadena vacía devuelve `\"\"`."
+  },
+  "starterCode": "class Solution {\n    public String compressRunLength(String s) {\n        // TODO\n        return \"\";\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basic() {\n        assertEquals(\"a2b3c1\", new Solution().compressRunLength(\"aabbbc\"));\n    }\n\n    @Test\n    void allUnique() {\n        // every char appears once\n        assertEquals(\"a1b1c1d1\", new Solution().compressRunLength(\"abcd\"));\n    }\n\n    @Test\n    void allSame() {\n        assertEquals(\"a4\", new Solution().compressRunLength(\"aaaa\"));\n    }\n\n    @Test\n    void alternating() {\n        // runs restart each time the character changes\n        assertEquals(\"a2b2a2b2\", new Solution().compressRunLength(\"aabbaabb\"));\n    }\n\n    @Test\n    void singleChar() {\n        assertEquals(\"a1\", new Solution().compressRunLength(\"a\"));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(\"\", new Solution().compressRunLength(\"\"));\n    }\n\n    @Test\n    void longerRun() {\n        assertEquals(\"x1y5z2\", new Solution().compressRunLength(\"xyyyyyzz\"));\n    }\n}\n"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "mcq-gca-test-case-visibility",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Visible vs. hidden test cases",
+    "es": "Pruebas visibles vs. pruebas ocultas"
+  },
+  "prompt": {
+    "en": "In a typical Capital One GCA problem on CodeSignal, what is the relationship between the sample (visible) test cases and the full hidden test suite?",
+    "es": "En un problema típico del GCA de Capital One en CodeSignal, ¿cuál es la relación entre los casos de prueba de muestra (visibles) y el conjunto completo de pruebas ocultas?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "The visible examples cover all edge cases; hidden tests only recheck them with different variable names",
+        "es": "Los ejemplos visibles cubren todos los casos extremos; las pruebas ocultas solo los vuelven a verificar con nombres de variables distintos"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "There are no hidden tests — all test cases are visible so you can debug locally",
+        "es": "No hay pruebas ocultas — todos los casos son visibles para que puedas depurar localmente"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Visible examples are illustrative happy-path cases; hidden tests include adversarial edges like max-size inputs, duplicates, negatives, and boundary values",
+        "es": "Los ejemplos visibles son casos felices ilustrativos; las pruebas ocultas incluyen casos adversariales como entradas de tamaño máximo, duplicados, negativos y valores de frontera"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Hidden tests are the same as visible tests run five times to check for randomness",
+        "es": "Las pruebas ocultas son las mismas que las visibles ejecutadas cinco veces para verificar aleatoriedad"
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Visible sample cases exist to confirm you understand the problem, not to tell you your solution is correct. The hidden test suite — which drives your actual partial-credit score — is deliberately broader: it includes large inputs at the constraint ceiling, empty arrays, single-element arrays, all-duplicate inputs, negative numbers if the constraints allow them, and other adversarial edges. A solution that passes all visible examples and nothing else is dangerously undertested. Always ask yourself what edge case the visible examples are NOT showing you.",
+    "es": "Los casos de muestra visibles existen para confirmar que entendiste el problema, no para decirte que tu solución es correcta. El conjunto de pruebas ocultas — que determina tu puntaje de crédito parcial real — es deliberadamente más amplio: incluye entradas grandes en el techo de las restricciones, arreglos vacíos, arreglos de un solo elemento, entradas con todos duplicados, números negativos si las restricciones lo permiten y otros casos adversariales. Una solución que pasa todos los ejemplos visibles y nada más está peligrosamente poco probada. Siempre pregúntate qué caso extremo los ejemplos visibles NO te están mostrando."
+  }
+}

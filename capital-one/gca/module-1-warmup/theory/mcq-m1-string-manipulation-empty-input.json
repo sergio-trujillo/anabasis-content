@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-string-manipulation-empty-input",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "string-manipulation: empty string edge case",
+    "es": "string-manipulation: caso borde con cadena vacía"
+  },
+  "prompt": {
+    "en": "A single-pass string transform function receives an empty string \"\". What is the correct return value?",
+    "es": "Una función de transformación de cadena en un solo recorrido recibe una cadena vacía \"\". ¿Cuál es el valor de retorno correcto?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "null — no transformation is possible", "es": "null — no es posible ninguna transformación" } },
+    { "id": "b", "label": { "en": "Throw IllegalArgumentException — the input is invalid", "es": "Lanzar IllegalArgumentException — la entrada es inválida" } },
+    { "id": "c", "label": { "en": "\"\" — the empty string (the loop body never executes)", "es": "\"\" — la cadena vacía (el cuerpo del bucle nunca se ejecuta)" } },
+    { "id": "d", "label": { "en": "\" \" — a single space as a neutral placeholder", "es": "\" \" — un espacio único como marcador de posición neutral" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "A single-pass transform iterates over characters — if there are no characters, the loop never runs and the StringBuilder remains empty, so the result is \"\". This is the correct, consistent behavior: no special-casing needed. Returning null (option A) forces every caller to null-check for a trivially valid input. Throwing an exception (option B) is wrong because an empty string is a valid string. Returning \" \" (option D) is incorrect; the transform contract does not introduce new characters.",
+    "es": "Una transformación de paso único itera sobre los caracteres — si no hay caracteres, el bucle nunca se ejecuta y el StringBuilder permanece vacío, por lo que el resultado es \"\". Este es el comportamiento correcto y consistente: no se necesitan casos especiales. Retornar null (opción A) obliga a cada llamador a verificar nulos para una entrada trivialmente válida. Lanzar una excepción (opción B) es incorrecto porque una cadena vacía es una cadena válida. Retornar \" \" (opción D) es incorrecto; el contrato de transformación no introduce nuevos caracteres."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-frequency-count-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "frequency-count: int[26] vs HashMap for lowercase letters",
+    "es": "frequency-count: int[26] vs HashMap para letras minúsculas"
+  },
+  "prompt": {
+    "en": "For counting occurrences of lowercase English letters only, which Java structure is most idiomatic?",
+    "es": "Para contar ocurrencias de letras minúsculas en inglés únicamente, ¿qué estructura Java es más idiomática?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "HashMap<Character, Integer> — flexible and handles any character set", "es": "HashMap<Character, Integer> — flexible y maneja cualquier conjunto de caracteres" } },
+    { "id": "b", "label": { "en": "int[26] indexed by (c - 'a') — fixed-size, zero boxing, O(1) access", "es": "int[26] indexado por (c - 'a') — tamaño fijo, sin boxing, acceso O(1)" } },
+    { "id": "c", "label": { "en": "TreeMap<Character, Integer> — keeps letters in sorted order for easy comparison", "es": "TreeMap<Character, Integer> — mantiene las letras en orden para facilitar la comparación" } },
+    { "id": "d", "label": { "en": "int[128] — covers the full ASCII table and avoids special-casing", "es": "int[128] — cubre toda la tabla ASCII y evita casos especiales" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When the alphabet is exactly the 26 lowercase English letters, int[26] with index = (c - 'a') is the idiomatic Java choice: no boxing overhead, direct array access, and the intent is explicit. HashMap<Character, Integer> (option A) is correct when the alphabet is unknown or large (e.g., Unicode input), but it boxes every char to Character and every count to Integer — wasteful when int[26] suffices. TreeMap (option C) adds O(log 26) = O(1) overhead per operation and sorts keys, which is unnecessary for counting. int[128] (option D) works but wastes 102 unused slots and is less communicative about the problem's constraints.",
+    "es": "Cuando el alfabeto son exactamente las 26 letras minúsculas del inglés, int[26] con índice = (c - 'a') es la elección idiomática en Java: sin sobrecarga de boxing, acceso directo al arreglo y la intención es explícita. HashMap<Character, Integer> (opción A) es correcto cuando el alfabeto es desconocido o grande (por ejemplo, entrada Unicode), pero hace boxing de cada char a Character y cada conteo a Integer — innecesario cuando int[26] es suficiente. TreeMap (opción C) agrega O(log 26) = O(1) de sobrecarga por operación y ordena las llaves, lo cual es innecesario para contar. int[128] (opción D) funciona pero desperdicia 102 ranuras no utilizadas y comunica menos sobre las restricciones del problema."
+  }
+}

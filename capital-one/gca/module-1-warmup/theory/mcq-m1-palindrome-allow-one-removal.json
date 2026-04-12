@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-palindrome-allow-one-removal",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "palindrome-check: allow-one-removal variant",
+    "es": "palindrome-check: variante con una eliminación permitida"
+  },
+  "prompt": {
+    "en": "In the 'valid palindrome with at most one deletion' variant, when the two pointers find a mismatch at positions left and right, what is the correct next step?",
+    "es": "En la variante 'palíndromo válido con a lo sumo una eliminación', cuando los dos punteros encuentran una discrepancia en las posiciones izquierda y derecha, ¿cuál es el siguiente paso correcto?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Immediately return false — a mismatch means the string cannot be a palindrome", "es": "Retornar false inmediatamente — una discrepancia significa que la cadena no puede ser palíndromo" } },
+    { "id": "b", "label": { "en": "Skip both characters and continue with left+1 and right-1", "es": "Omitir ambos caracteres y continuar con left+1 y right-1" } },
+    { "id": "c", "label": { "en": "Check isPalindrome(left+1, right) OR isPalindrome(left, right-1); return true if either holds", "es": "Verificar isPalindrome(left+1, right) O isPalindrome(left, right-1); retornar true si alguno se cumple" } },
+    { "id": "d", "label": { "en": "Delete the character at the midpoint and restart the two-pointer check", "es": "Eliminar el carácter en el punto medio y reiniciar la verificación con dos punteros" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "When a mismatch is found, you have used your one allowed deletion — either skip the left character (check [left+1..right]) or skip the right character (check [left..right-1]). If either sub-range is a palindrome, the original string qualifies. Option A is wrong because the deletion is exactly the feature of this variant. Option B skips both characters simultaneously, which would silently accept strings that require two deletions. Option D restarting from the midpoint is not a valid algorithm and misidentifies where to apply the deletion.",
+    "es": "Cuando se encuentra una discrepancia, has usado tu única eliminación permitida — omite el carácter izquierdo (verifica [left+1..right]) o el carácter derecho (verifica [left..right-1]). Si alguno de los dos sub-rangos es un palíndromo, la cadena original califica. La opción A es incorrecta porque la eliminación es exactamente la característica de esta variante. La opción B omite ambos caracteres simultáneamente, lo que aceptaría silenciosamente cadenas que requieren dos eliminaciones. La opción D de reiniciar desde el punto medio no es un algoritmo válido e identifica incorrectamente dónde aplicar la eliminación."
+  }
+}

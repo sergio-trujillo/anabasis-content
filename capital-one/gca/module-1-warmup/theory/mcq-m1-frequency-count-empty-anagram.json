@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-frequency-count-empty-anagram",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "frequency-count: anagram with empty strings edge case",
+    "es": "frequency-count: caso borde de anagrama con cadenas vacías"
+  },
+  "prompt": {
+    "en": "What should isAnagram(\"\", \"\") return?",
+    "es": "¿Qué debe retornar isAnagram(\"\", \"\")?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "false — two empty strings cannot be anagrams of each other", "es": "false — dos cadenas vacías no pueden ser anagramas entre sí" } },
+    { "id": "b", "label": { "en": "Throw IllegalArgumentException — empty strings are invalid input", "es": "Lanzar IllegalArgumentException — las cadenas vacías son entrada inválida" } },
+    { "id": "c", "label": { "en": "true — two empty strings are vacuously anagrams", "es": "true — dos cadenas vacías son anagramas de forma vacua" } },
+    { "id": "d", "label": { "en": "null — the result is undefined for empty input", "es": "null — el resultado es indefinido para entradas vacías" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "An anagram requires both strings to have the same characters with the same frequencies. Two empty strings have the same (empty) character frequency maps — vacuously equal — so they are anagrams of each other. The frequency-count algorithm handles this naturally: both maps are empty, all counts match, return true. Returning false (option A) would be a special-case bug that contradicts the general definition. Empty strings are valid inputs, not errors, so throwing (option B) is wrong.",
+    "es": "Un anagrama requiere que ambas cadenas tengan los mismos caracteres con las mismas frecuencias. Dos cadenas vacías tienen los mismos mapas de frecuencias de caracteres (vacíos) — vacuamente iguales — por lo que son anagramas entre sí. El algoritmo frequency-count maneja esto de forma natural: ambos mapas están vacíos, todos los conteos coinciden, retorna true. Retornar false (opción A) sería un error en caso especial que contradice la definición general. Las cadenas vacías son entradas válidas, no errores, por lo que lanzar una excepción (opción B) es incorrecto."
+  }
+}

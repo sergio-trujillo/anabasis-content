@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-array-accumulator-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "array-accumulator: Java idiom for running sum",
+    "es": "array-accumulator: idioma Java para suma acumulada"
+  },
+  "prompt": {
+    "en": "Which Java snippet most idiomatically computes the running sum into a result array without allocating unnecessary objects?",
+    "es": "¿Qué fragmento Java calcula de forma más idiomática la suma acumulada en un arreglo resultado sin asignar objetos innecesarios?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "List<Integer> result = new ArrayList<>(); then result.add(result.isEmpty() ? a[0] : result.get(result.size()-1) + a[i]);", "es": "List<Integer> result = new ArrayList<>(); luego result.add(result.isEmpty() ? a[0] : result.get(result.size()-1) + a[i]);" } },
+    { "id": "b", "label": { "en": "int[] pre = new int[n]; pre[0] = a[0]; for (int i=1; i<n; i++) pre[i] = pre[i-1] + a[i];", "es": "int[] pre = new int[n]; pre[0] = a[0]; for (int i=1; i<n; i++) pre[i] = pre[i-1] + a[i];" } },
+    { "id": "c", "label": { "en": "IntStream.of(a).boxed().collect(Collectors.toList()) then a reduce() accumulation", "es": "IntStream.of(a).boxed().collect(Collectors.toList()) luego una acumulación con reduce()" } },
+    { "id": "d", "label": { "en": "Arrays.sort(a); then compute cumulative sum on sorted order", "es": "Arrays.sort(a); luego calcular la suma acumulada en orden ordenado" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Allocating a plain int[] of size n and filling it in a single loop is the idiomatic Java approach: zero boxing overhead, direct index access, O(n) time and space. Option A uses ArrayList<Integer> which boxes every int — worse memory and slower. Option C chains several stream operations including boxing, which is verbose and slower for a trivial accumulation task. Option D sorts the array, destroying the original order — prefix sums on a sorted array are a different (and usually wrong) computation.",
+    "es": "Asignar un int[] simple de tamaño n y llenarlo en un único bucle es el enfoque idiomático en Java: sin sobrecarga de boxing, acceso directo por índice, O(n) tiempo y espacio. La opción A usa ArrayList<Integer> que hace boxing de cada int — peor uso de memoria y más lento. La opción C encadena varias operaciones de stream incluyendo boxing, lo cual es verboso y más lento para una acumulación trivial. La opción D ordena el arreglo, destruyendo el orden original — las sumas prefijas sobre un arreglo ordenado son un cómputo diferente (y generalmente incorrecto)."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-string-manipulation-reverse-words",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "string-manipulation: reverse-words variant recognition",
+    "es": "string-manipulation: reconocimiento de la variante de inversión de palabras"
+  },
+  "prompt": {
+    "en": "\"Given a sentence, return it with the words in reversed order\" (e.g., 'hello world' → 'world hello'). Which approach gives O(n) time?",
+    "es": "\"Dada una oración, retornarla con las palabras en orden inverso\" (por ejemplo, 'hola mundo' → 'mundo hola'). ¿Qué enfoque da O(n) tiempo?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Sort the words alphabetically and then join — O(k log k) where k is word count", "es": "Ordenar las palabras alfabéticamente y luego unirlas — O(k log k) donde k es el número de palabras" } },
+    { "id": "b", "label": { "en": "Split the string into a String[], reverse the array, then join with spaces", "es": "Dividir la cadena en un String[], invertir el arreglo, luego unir con espacios" } },
+    { "id": "c", "label": { "en": "Use a two-pointer swap on the original characters in-place, then reverse each word", "es": "Usar intercambio de dos punteros en los caracteres originales in situ, luego invertir cada palabra" } },
+    { "id": "d", "label": { "en": "Stack each word as you scan left-to-right, then pop all words into the result", "es": "Apilar cada palabra mientras escaneas de izquierda a derecha, luego desapilar todas las palabras en el resultado" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "split() is O(n), reversing a k-element array is O(k) where k <= n, and String.join() is O(n) — giving O(n) total. This is the straightforward, idiomatic approach. Option D (stack) is also O(n) and correct, but split+reverse+join is more readable and directly expresses the intent. Option A sorts alphabetically, which is a different transformation. Option C is the in-place technique used in interview hard problems; it is also O(n) but requires modifying a char array — more complex than necessary when split+join is available.",
+    "es": "split() es O(n), invertir un arreglo de k elementos es O(k) donde k <= n, y String.join() es O(n) — dando O(n) total. Este es el enfoque directo e idiomático. La opción D (pila) también es O(n) y correcta, pero split+reverse+join es más legible y expresa la intención directamente. La opción A ordena alfabéticamente, que es una transformación diferente. La opción C es la técnica in situ usada en problemas difíciles de entrevista; también es O(n) pero requiere modificar un arreglo de char — más complejo de lo necesario cuando split+join está disponible."
+  }
+}

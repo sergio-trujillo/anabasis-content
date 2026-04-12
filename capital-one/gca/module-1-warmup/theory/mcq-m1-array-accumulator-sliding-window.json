@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-array-accumulator-sliding-window",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "array-accumulator: sliding window max-sum variant",
+    "es": "array-accumulator: variante de suma máxima con ventana deslizante"
+  },
+  "prompt": {
+    "en": "Given: \"Find the maximum sum of any contiguous subarray of exactly k elements.\" Which approach gives O(n) time **and O(1) extra space**?",
+    "es": "Dado: \"Encuentra la suma máxima de cualquier subarreglo contiguo de exactamente k elementos.\" ¿Qué enfoque da O(n) tiempo **y O(1) espacio extra**?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Try all n² subarrays, track the max sum", "es": "Probar todos los n² subarreglos, rastrear la suma máxima" } },
+    { "id": "b", "label": { "en": "Sort the array descending and sum the first k elements", "es": "Ordenar el arreglo de forma descendente y sumar los primeros k elementos" } },
+    { "id": "c", "label": { "en": "Compute the first window sum, then slide: add the next element, subtract the element leaving the window", "es": "Calcular la suma de la primera ventana, luego deslizar: agregar el siguiente elemento, restar el elemento que sale de la ventana" } },
+    { "id": "d", "label": { "en": "Build a full prefix sum array, then check all O(n) windows using O(1) range queries", "es": "Construir un arreglo completo de sumas prefijas, luego verificar todas las O(n) ventanas con consultas O(1) de rango" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The sliding window computes the initial k-element sum once, then updates it in O(1) per step by adding the incoming element and subtracting the outgoing one — O(n) time, O(1) extra space. Option D runs in O(n) time but needs O(n) extra space for the prefix array, so it fails the space constraint. Option A is O(n²). Option B is O(n log n) from sorting and produces the wrong answer — the k largest individual elements may not form a contiguous subarray.",
+    "es": "La ventana deslizante calcula la suma inicial de k elementos una vez, luego la actualiza en O(1) por paso sumando el elemento entrante y restando el saliente — O(n) tiempo, O(1) espacio extra. La opción D corre en O(n) tiempo pero necesita O(n) espacio extra para el arreglo de prefijos, así que no cumple la restricción de espacio. La opción A es O(n²). La opción B es O(n log n) por ordenamiento y produce la respuesta incorrecta — los k elementos individuales más grandes pueden no formar un subarreglo contiguo."
+  }
+}

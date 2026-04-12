@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-hashmap-complement-vs-naive",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "hashmap-complement: improvement over naive approach",
+    "es": "hashmap-complement: mejora sobre el enfoque ingenuo"
+  },
+  "prompt": {
+    "en": "Which change transforms the naive two-sum double-loop from O(n²) to O(n)?",
+    "es": "¿Qué cambio transforma el doble bucle ingenuo de two-sum de O(n²) a O(n)?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Sort the array first, then use two pointers", "es": "Ordenar el arreglo primero, luego usar dos punteros" } },
+    { "id": "b", "label": { "en": "Store each visited value in a HashMap and look up its complement in the same pass", "es": "Guardar cada valor visitado en un HashMap y buscar su complemento en el mismo recorrido" } },
+    { "id": "c", "label": { "en": "Use binary search on the unsorted array to find the complement", "es": "Usar búsqueda binaria en el arreglo sin ordenar para encontrar el complemento" } },
+    { "id": "d", "label": { "en": "Count occurrences first, then check if any two keys sum to target", "es": "Contar ocurrencias primero, luego verificar si algún par de llaves suma el objetivo" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Storing visited values in a HashMap allows each element's complement (target - current) to be looked up in O(1), collapsing the inner loop entirely into a single pass — O(n) total. Option A (sort + two pointers) also achieves O(n) for the scan but requires O(n log n) for sorting, making the overall complexity O(n log n). Option C is wrong because binary search requires a sorted array. Option D is a frequency-count approach and does not directly find a pair summing to target.",
+    "es": "Guardar los valores visitados en un HashMap permite buscar el complemento de cada elemento (objetivo - actual) en O(1), eliminando el bucle interno y reduciendo el recorrido a O(n) en total. La opción A (ordenar + dos punteros) también logra O(n) para el escaneo, pero requiere O(n log n) para ordenar, por lo que la complejidad total es O(n log n). La opción C es incorrecta porque la búsqueda binaria requiere un arreglo ordenado. La opción D es el patrón frequency-count y no encuentra directamente un par que sume al objetivo."
+  }
+}

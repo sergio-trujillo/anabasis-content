@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-array-accumulator-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "array-accumulator: pattern recognition",
+    "es": "array-accumulator: reconocimiento de patrón"
+  },
+  "prompt": {
+    "en": "Given: \"Return the index where the sum of all elements to its left equals the sum of all elements to its right.\" Which canonical fingerprint fits best?",
+    "es": "Dado: \"Retorna el índice donde la suma de todos los elementos a su izquierda es igual a la suma de todos los elementos a su derecha.\" ¿Qué fingerprint canónico encaja mejor?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "hashmap-complement — look up whether the right sum is stored for a given left sum", "es": "hashmap-complement — buscar si la suma derecha está almacenada para una suma izquierda dada" } },
+    { "id": "b", "label": { "en": "array-accumulator — track left running sum and derive right sum from total", "es": "array-accumulator — rastrear la suma acumulada izquierda y derivar la suma derecha del total" } },
+    { "id": "c", "label": { "en": "frequency-count — count how often each sum value appears", "es": "frequency-count — contar cuántas veces aparece cada valor de suma" } },
+    { "id": "d", "label": { "en": "palindrome-check — compare sums from both ends symmetrically", "es": "palindrome-check — comparar sumas desde ambos extremos simétricamente" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "This is the classic 'pivot index' problem. The key insight is: as you scan left to right, maintain a running left sum. At each position, rightSum = totalSum - leftSum - current. If leftSum == rightSum, return the index. That is precisely the array-accumulator pattern. Option A is a tempting distractor because you are 'looking up' a relationship — but there is no pair to find; you are tracking a single running total and deriving the other side arithmetically.",
+    "es": "Este es el clásico problema del 'índice pivote'. La idea clave es: al escanear de izquierda a derecha, mantén una suma acumulada izquierda. En cada posición, sumaDerecaha = sumaTotal - sumaIzquierda - actual. Si sumaIzquierda == sumaDerecha, retorna el índice. Ese es precisamente el patrón array-accumulator. La opción A es un distractor tentador porque estás 'buscando' una relación — pero no hay un par que encontrar; estás rastreando un total acumulado único y derivando el otro lado aritméticamente."
+  }
+}

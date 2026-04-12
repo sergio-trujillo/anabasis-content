@@ -1,0 +1,17 @@
+{
+  "id": "code-stringmanip-account-number-mask",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Mask an account number",
+    "es": "Enmascarar un número de cuenta"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "At Capital One, customer-facing screens must never display a full account number. Given a string `accountNumber` containing only digit characters, return a new string where **all digits except the last four** are replaced with `'*'`. If the account number has 4 or fewer digits, return it unchanged. An empty string returns `\"\"`.",
+    "es": "En Capital One, las pantallas orientadas al cliente nunca deben mostrar un número de cuenta completo. Dada una cadena `accountNumber` compuesta únicamente de dígitos, devuelve una nueva cadena donde **todos los dígitos excepto los últimos cuatro** se reemplazan por `'*'`. Si el número de cuenta tiene 4 dígitos o menos, devuélvelo sin cambios. Una cadena vacía devuelve `\"\"`."
+  },
+  "starterCode": "class Solution {\n    public String maskAccountNumber(String accountNumber) {\n        // TODO\n        return \"\";\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void tenDigits() {\n        assertEquals(\"******7890\", new Solution().maskAccountNumber(\"1234567890\"));\n    }\n\n    @Test\n    void exactlyFour() {\n        // length == 4: return unchanged\n        assertEquals(\"1234\", new Solution().maskAccountNumber(\"1234\"));\n    }\n\n    @Test\n    void fiveDigits() {\n        // only the first digit is masked\n        assertEquals(\"*2345\", new Solution().maskAccountNumber(\"12345\"));\n    }\n\n    @Test\n    void eightDigits() {\n        assertEquals(\"****5678\", new Solution().maskAccountNumber(\"12345678\"));\n    }\n\n    @Test\n    void threeDigits() {\n        // length < 4: return unchanged\n        assertEquals(\"123\", new Solution().maskAccountNumber(\"123\"));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(\"\", new Solution().maskAccountNumber(\"\"));\n    }\n\n    @Test\n    void sixteenDigits() {\n        // typical credit card length\n        assertEquals(\"************3456\", new Solution().maskAccountNumber(\"1234567890123456\"));\n    }\n}\n"
+}

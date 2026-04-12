@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-array-accumulator-range-query",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "array-accumulator: range-sum query after prefix build",
+    "es": "array-accumulator: consulta de suma en rango tras construir el prefijo"
+  },
+  "prompt": {
+    "en": "Given a prefix sum array `pre[]` where `pre[i]` = sum of input[0..i], what is the time complexity of answering the query 'sum of input[left..right]' after pre[] is built?",
+    "es": "Dado un arreglo de sumas prefijas `pre[]` donde `pre[i]` = suma de input[0..i], ¿cuál es la complejidad temporal de responder la consulta 'suma de input[left..right]' después de construir pre[]?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) — re-scan the subarray each time", "es": "O(n) — reescanear el subarreglo cada vez" } },
+    { "id": "b", "label": { "en": "O(log n) — binary search over pre[]", "es": "O(log n) — búsqueda binaria sobre pre[]" } },
+    { "id": "c", "label": { "en": "O(1) — compute pre[right] - pre[left-1]", "es": "O(1) — calcular pre[right] - pre[left-1]" } },
+    { "id": "d", "label": { "en": "O(n log n) — merge-sort style decomposition", "es": "O(n log n) — descomposición estilo merge-sort" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Once pre[] is built, any range sum [left..right] is answered in O(1): the sum equals pre[right] - pre[left-1] (with pre[-1] = 0 as the base case for left = 0). This is the primary reason to build a prefix array — you pay O(n) once and then answer every query in constant time. Re-scanning the subarray (option A) is O(n) per query and defeats the purpose of prefix sums. Binary search (option B) is used in different prefix-sum problems (e.g., finding a target prefix), not for direct range queries.",
+    "es": "Una vez construido pre[], cualquier suma en el rango [left..right] se responde en O(1): la suma es igual a pre[right] - pre[left-1] (con pre[-1] = 0 como caso base cuando left = 0). Esta es la razón principal para construir un arreglo de prefijos — pagas O(n) una vez y luego respondes cada consulta en tiempo constante. Reescanear el subarreglo (opción A) es O(n) por consulta y anula el propósito de las sumas prefijas. La búsqueda binaria (opción B) se usa en otros problemas de sumas prefijas (por ejemplo, encontrar un prefijo objetivo), no para consultas de rango directas."
+  }
+}

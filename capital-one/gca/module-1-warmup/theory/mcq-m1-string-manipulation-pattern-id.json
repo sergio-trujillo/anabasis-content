@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m1-string-manipulation-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "string-manipulation: pattern recognition",
+    "es": "string-manipulation: reconocimiento de patrón"
+  },
+  "prompt": {
+    "en": "Given: \"Given a string, return a new string where every vowel is replaced with its uppercase form and every consonant is replaced with '*'.\" Which canonical fingerprint fits best?",
+    "es": "Dado: \"Dada una cadena, retornar una nueva cadena donde cada vocal es reemplazada con su forma mayúscula y cada consonante con '*'.\" ¿Qué fingerprint canónico encaja mejor?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "frequency-count — count vowels and consonants, then reconstruct", "es": "frequency-count — contar vocales y consonantes, luego reconstruir" } },
+    { "id": "b", "label": { "en": "palindrome-check — compare characters from both ends and transform", "es": "palindrome-check — comparar caracteres desde ambos extremos y transformar" } },
+    { "id": "c", "label": { "en": "string-manipulation — single-pass transform applying a per-character rule", "es": "string-manipulation — transformación en un solo recorrido aplicando una regla por carácter" } },
+    { "id": "d", "label": { "en": "array-accumulator — accumulate transformed characters into a running sum", "es": "array-accumulator — acumular caracteres transformados en una suma acumulada" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The defining signal is a per-character transformation rule applied in a single left-to-right scan, writing output to a StringBuilder. No counting, no pair matching, no symmetry check — just a decision per character. frequency-count (option A) counts occurrences; it cannot reconstruct order. palindrome-check (option B) uses two pointers and symmetry, which is irrelevant here. array-accumulator (option D) builds running numeric totals — the result here is a string, not a number.",
+    "es": "La señal definitoria es una regla de transformación por carácter aplicada en un único recorrido de izquierda a derecha, escribiendo la salida en un StringBuilder. Sin conteo, sin emparejamiento, sin verificación de simetría — solo una decisión por carácter. frequency-count (opción A) cuenta ocurrencias; no puede reconstruir el orden. palindrome-check (opción B) usa dos punteros y simetría, lo cual es irrelevante aquí. array-accumulator (opción D) construye totales numéricos acumulados — el resultado aquí es una cadena, no un número."
+  }
+}
