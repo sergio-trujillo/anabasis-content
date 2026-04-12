@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-customer-protection",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Customer protection: framing that informs vs. framing that exploits",
+    "es": "Protección al cliente: encuadre que informa vs. encuadre que explota"
+  },
+  "prompt": {
+    "en": "A product team is designing the opt-in flow for a new balance-transfer offer. The offer has a 0% APR for 12 months, but a 5% balance-transfer fee that is charged immediately. Which design choice best reflects the 'Do the Right Thing' principle for customer protection?",
+    "es": "Un equipo de producto está diseñando el flujo de opt-in para una nueva oferta de transferencia de saldo. La oferta tiene una APR del 0% por 12 meses, pero una tarifa de transferencia de saldo del 5% que se cobra inmediatamente. ¿Cuál elección de diseño refleja mejor el principio de 'Hacer lo Correcto' para la protección al cliente?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Show '0% APR for 12 months!' prominently on the first screen and include the 5% fee in the fine print on the confirmation screen — the fee is disclosed, which satisfies regulatory requirements.",
+        "es": "Mostrar '¡APR 0% por 12 meses!' de manera prominente en la primera pantalla e incluir la tarifa del 5% en la letra pequeña de la pantalla de confirmación — la tarifa está divulgada, lo que satisface los requisitos regulatorios."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Opt customers in by default and allow them to opt out — the offer is genuinely beneficial for most customers and an opt-out default increases adoption, which is good for the business.",
+        "es": "Inscribir a los clientes por defecto y permitirles excluirse — la oferta es genuinamente beneficiosa para la mayoría de los clientes y un predeterminado de exclusión aumenta la adopción, lo que es bueno para el negocio."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Present the 5% fee and the 0% APR in equal visual weight on the same screen, with a concrete example ('On a $1,000 transfer, you pay $50 today and $0 in interest for 12 months'), so the customer can evaluate the real cost before confirming.",
+        "es": "Presentar la tarifa del 5% y la APR del 0% con el mismo peso visual en la misma pantalla, con un ejemplo concreto ('En una transferencia de $1,000, pagas $50 hoy y $0 en intereses por 12 meses'), para que el cliente pueda evaluar el costo real antes de confirmar."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Run an A/B test comparing the fine-print disclosure against the prominent disclosure and ship whichever version shows a higher conversion rate — data should drive product decisions.",
+        "es": "Ejecutar una prueba A/B comparando la divulgación en letra pequeña con la divulgación prominente y lanzar la versión que muestre una mayor tasa de conversión — los datos deben guiar las decisiones de producto."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C aligns financial disclosure with the customer's actual decision-making process: showing both the cost and the benefit in equal visual weight, with a concrete dollar example, enables informed consent rather than exploiting a comprehension gap. DTRT in banking means the disclosure is designed for the customer to understand, not merely for the company to have a paper trail. Option A is the classic exploitation of a comprehension gap: the prominent '0% APR' headline draws the customer in, while the material cost (the 5% immediate fee) is buried — technically disclosed, but framed to minimize attention. Option B is an opt-out default for a fee-bearing product: exploiting inertia to enroll customers in something that costs them money is a predatory design pattern. Option D is the most cynical distractor: using a data-driven A/B test to optimize for conversion on a disclosure design means optimizing for customer confusion — the higher-converting version of a fee disclosure is, by definition, the less informative one.",
+    "es": "La opción C alinea la divulgación financiera con el proceso de toma de decisiones real del cliente: mostrar tanto el costo como el beneficio con igual peso visual, con un ejemplo concreto en dólares, permite el consentimiento informado en lugar de explotar una brecha de comprensión. Hacer lo Correcto en la banca significa que la divulgación está diseñada para que el cliente entienda, no solo para que la empresa tenga un registro en papel. La opción A es la explotación clásica de una brecha de comprensión: el encabezado prominente de 'APR 0%' atrae al cliente, mientras que el costo material (la tarifa inmediata del 5%) queda enterrado — técnicamente divulgado, pero enmarcado para minimizar la atención. La opción B es un predeterminado de exclusión para un producto con tarifa: explotar la inercia para inscribir a clientes en algo que les cuesta dinero es un patrón de diseño predatorio. La opción D es el distractor más cínico: usar una prueba A/B impulsada por datos para optimizar la conversión en un diseño de divulgación significa optimizar la confusión del cliente — la versión de mayor conversión de una divulgación de tarifa es, por definición, la menos informativa."
+  }
+}

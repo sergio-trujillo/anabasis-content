@@ -1,0 +1,29 @@
+{
+  "id": "op-behdtrt-compliance-tradeoff",
+  "type": "open-prompt",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Pausing or blocking work for a compliance concern",
+    "es": "Pausar o bloquear trabajo por una preocupación de cumplimiento"
+  },
+  "question": {
+    "en": "Tell me about a time you paused or blocked work because of a compliance, legal, or policy concern. How did you handle the tension between speed and correctness?",
+    "es": "Cuéntame sobre una ocasión en la que pausaste o bloqueaste trabajo debido a una preocupación de cumplimiento, legal o de política. ¿Cómo manejaste la tensión entre velocidad y corrección?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific compliance, legal, or policy dimension that triggered the pause — named explicitly (e.g., 'this feature would collect biometric data without explicit opt-in, which triggered BIPA obligations' or 'the vendor contract didn't cover the new data-sharing use case under our data governance policy')",
+      "how the candidate identified the concern — was it noticed during review, flagged by a partner team, surfaced through a process, or the candidate's own reading of a policy or regulation",
+      "the concrete cost of pausing — to the team, timeline, or stakeholders — and how the candidate communicated and owned that cost rather than passing it to the compliance concern as an abstraction",
+      "the distinction between following policy (weak signal: 'the rules say we have to stop') and articulating the underlying reason (strong signal: 'I paused because if we ship without resolving this, we expose customers to X and the company to Y') — which did the candidate use?",
+      "how the candidate balanced the speed-correctness tension in practice — not just that they held for correctness, but the specific steps taken to reduce the delay while not compromising the compliance requirement"
+    ],
+    "must_avoid": [
+      "claiming the compliance concern was obvious or that anyone reasonable would have paused — DTRT requires naming the pressure to keep moving and describing how the candidate held against it",
+      "using the compliance concern as a shield without taking ownership of the impact — 'Legal told us we had to stop' is not DTRT, it is deferring to authority; the candidate must name their own role in raising or holding the concern",
+      "vague 'I flagged the issue' framing with no specifics on what the concern was, how it was escalated, or what resolution looked like"
+    ],
+    "value_alignment": "Do the Right Thing",
+    "min_words": 150
+  }
+}

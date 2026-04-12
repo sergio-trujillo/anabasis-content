@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-transparency-upward",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Transparency upward: responding to a production issue",
+    "es": "Transparencia ascendente: responder a un problema en producción"
+  },
+  "prompt": {
+    "en": "You discover at 2 PM on a Tuesday that a batch job you own has been silently miscalculating late-fee amounts for 48 hours. The error has affected roughly 3,000 customer accounts — some were overcharged, some undercharged. The root cause is a one-line bug you can patch in minutes. Which response best demonstrates the DTRT instinct around transparency?",
+    "es": "Descubres a las 2 PM de un martes que un proceso batch que tú gestionas ha estado calculando incorrectamente los montos de cargos por mora durante 48 horas. El error afectó aproximadamente a 3,000 cuentas de clientes — algunas fueron cobradas de más, otras de menos. La causa raíz es un error de una sola línea que puedes corregir en minutos. ¿Cuál respuesta demuestra mejor el instinto de Hacer lo Correcto respecto a la transparencia?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Patch the bug immediately, run a reconciliation script to correct the affected accounts, and document the fix in the next sprint retrospective so the team can learn from it.",
+        "es": "Corregir el error de inmediato, ejecutar un script de reconciliación para corregir las cuentas afectadas, y documentar la corrección en la próxima retrospectiva del sprint para que el equipo aprenda de ello."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Notify your manager and the relevant stakeholders (Risk, Operations, Customer Service) immediately with the scope of impact, the root cause, and your remediation plan — before you deploy the fix — so they can prepare customer communications and assess reporting obligations.",
+        "es": "Notificar a tu gerente y a las partes interesadas relevantes (Riesgo, Operaciones, Servicio al Cliente) de inmediato con el alcance del impacto, la causa raíz y tu plan de remediación — antes de implementar la corrección — para que puedan preparar comunicaciones a los clientes y evaluar las obligaciones de reporte."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Deploy the patch first to stop the bleeding, then notify your manager once you have full remediation data so you don't raise alarm before you have a complete answer.",
+        "es": "Implementar primero el parche para detener el problema, luego notificar a tu gerente una vez que tengas datos completos de remediación para no generar alarma antes de tener una respuesta completa."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Escalate to your manager but minimize the framing — describe it as a 'minor discrepancy in the fee calculation logic' to avoid triggering a formal incident process that would slow down the fix.",
+        "es": "Escalar a tu gerente pero minimizar el encuadre — describir como una 'discrepancia menor en la lógica de cálculo de tarifas' para evitar activar un proceso formal de incidente que retrasaría la corrección."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B demonstrates DTRT transparency: notifying stakeholders before the fix — not after — so they can act on the information rather than just receive a history lesson. Three thousand customer accounts with incorrect fee charges is a regulated billing error; Compliance, Risk, and Operations need to know immediately to assess whether customer notifications are legally required, prepare remediation communications, and evaluate external reporting obligations. Option A is the 'fix quietly and retrospect later' pattern — technically competent but ethically insufficient for a billing error in a bank. Option C is the most seductive distractor: 'let me have a clean answer before I escalate' sounds professional but is actually transparency delay — management needs to know now, not after you've controlled the narrative. Option D is framing manipulation, which is the opposite of transparency.",
+    "es": "La opción B demuestra la transparencia de Hacer lo Correcto: notificar a las partes interesadas antes de la corrección — no después — para que puedan actuar sobre la información en lugar de simplemente recibir un relato histórico. Tres mil cuentas de clientes con cargos por mora incorrectos es un error de facturación regulado; Cumplimiento, Riesgo y Operaciones deben saberlo de inmediato para evaluar si las notificaciones a los clientes son legalmente requeridas, preparar comunicaciones de remediación y evaluar las obligaciones de reporte externo. La opción A es el patrón de 'corregir en silencio y hacer retrospectiva después' — técnicamente competente pero éticamente insuficiente para un error de facturación en un banco. La opción C es el distractor más seductor: 'déjame tener una respuesta clara antes de escalar' suena profesional pero en realidad es un retraso de transparencia — la gerencia necesita saberlo ahora, no después de que hayas controlado el relato. La opción D es manipulación del encuadre, que es lo opuesto a la transparencia."
+  }
+}

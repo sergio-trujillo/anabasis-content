@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-speaking-up-vs-going-along",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Speaking up vs. going along with team momentum",
+    "es": "Hablar vs. seguir el impulso del equipo"
+  },
+  "prompt": {
+    "en": "A senior engineer on your team is pushing to release a new credit-card statement feature by end of sprint. QA flagged a minor discrepancy in how minimum payment amounts are displayed when a promotional APR is active — the number shown could be lower than the regulatory minimum in edge cases. The PM says the bug affects less than 1% of accounts and the release is already announced. Which response best demonstrates the 'Do the Right Thing' instinct?",
+    "es": "Un ingeniero senior de tu equipo quiere lanzar una nueva función de estados de cuenta de tarjeta de crédito antes de que termine el sprint. QA detectó una discrepancia menor en cómo se muestran los montos de pago mínimo cuando hay una APR promocional activa — el número mostrado podría ser inferior al mínimo regulatorio en casos extremos. El PM dice que el error afecta a menos del 1% de las cuentas y el lanzamiento ya fue anunciado. ¿Cuál respuesta demuestra mejor el instinto de 'Hacer lo Correcto'?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Stay silent — the PM already weighed the risk and decided to proceed, and it's not your call to second-guess product decisions.",
+        "es": "Quedarte callado — el PM ya evaluó el riesgo y decidió proceder, y no es tu lugar cuestionar las decisiones de producto."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Escalate the concern before the release, naming the specific regulatory dimension (minimum payment disclosure) and asking whether Compliance has signed off on the edge-case behavior.",
+        "es": "Escalar la preocupación antes del lanzamiento, nombrando la dimensión regulatoria específica (divulgación del pago mínimo) y preguntando si Cumplimiento aprobó el comportamiento en casos extremos."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Submit an anonymous feedback ticket so the concern is logged but the team isn't delayed and you don't have to be the one to stop the release.",
+        "es": "Enviar un ticket de retroalimentación anónimo para que la preocupación quede registrada pero el equipo no se retrase y tú no tengas que ser quien detenga el lanzamiento."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Wait until after release, document the issue in the retrospective, and propose a fix for the next sprint so the team doesn't miss the current deadline.",
+        "es": "Esperar hasta después del lanzamiento, documentar el problema en la retrospectiva y proponer una corrección para el siguiente sprint para que el equipo no pierda el plazo actual."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the DTRT response: it names the concern specifically (regulatory minimum payment disclosure), routes it to the right party (Compliance), and does so before — not after — the release, when the decision can still be made. Option A is the most common failure: deferring to authority to avoid discomfort. The PM's sign-off on a product schedule does not substitute for Compliance sign-off on a regulated disclosure. Option C is compliance theater — an anonymous log that no one acts on protects no one, and anonymity removes the signal quality that comes from a named engineer raising a specific concern. Option D is post-release ethics: disclosing a possible regulatory violation after you've already shipped it to customers is not DTRT — it is the wrong timing that changes the stakes entirely.",
+    "es": "La opción B es la respuesta de Hacer lo Correcto: nombra la preocupación específicamente (divulgación del pago mínimo regulatorio), la dirige a la parte correcta (Cumplimiento) y lo hace antes — no después — del lanzamiento, cuando aún se puede tomar la decisión. La opción A es el fallo más común: ceder a la autoridad para evitar incomodidad. La aprobación del PM sobre un calendario de producto no sustituye la aprobación de Cumplimiento sobre una divulgación regulada. La opción C es teatro de cumplimiento — un registro anónimo sobre el que nadie actúa no protege a nadie, y el anonimato elimina la calidad de señal que conlleva un ingeniero identificado planteando una preocupación específica. La opción D es ética post-lanzamiento: revelar una posible violación regulatoria después de haberla lanzado ya a los clientes no es Hacer lo Correcto — el momento incorrecto cambia completamente las consecuencias."
+  }
+}

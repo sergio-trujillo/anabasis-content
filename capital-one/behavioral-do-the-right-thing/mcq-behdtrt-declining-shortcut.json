@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-declining-shortcut",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Declining a shortcut: holding the control under pressure",
+    "es": "Rechazar un atajo: mantener el control bajo presión"
+  },
+  "prompt": {
+    "en": "Your team is four days from a hard launch deadline for a new account-opening flow. A manager asks you to bypass the automated identity-verification step 'just for this release' because the third-party API has been flaky in staging and is blocking QA sign-off. She says, 'We'll add a manual review queue as a compensating control and fix the integration in the next sprint.' Which response best holds the bar?",
+    "es": "Tu equipo está a cuatro días de una fecha límite de lanzamiento para un nuevo flujo de apertura de cuentas. Una gerente te pide que omitas el paso de verificación de identidad automatizada 'solo para este lanzamiento' porque la API de un tercero ha sido inestable en staging y está bloqueando la aprobación de QA. Ella dice: 'Agregaremos una cola de revisión manual como control compensatorio y arreglaremos la integración en el siguiente sprint.' ¿Cuál respuesta mantiene mejor el estándar?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Follow the manager's instruction — she is accountable for the release, she has proposed a compensating control, and deferring to a more senior person on a judgment call is the right move.",
+        "es": "Seguir la instrucción de la gerente — ella es responsable del lanzamiento, ha propuesto un control compensatorio, y ceder a una persona de mayor jerarquía en una decisión es lo correcto."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Bypass the step as requested, but write a detailed internal memo documenting that you flagged the risk so your objection is on record if something goes wrong.",
+        "es": "Omitir el paso como se solicita, pero escribir un memorando interno detallado documentando que señalaste el riesgo para que tu objeción quede registrada si algo sale mal."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Decline to bypass the control without a formal risk-acceptance sign-off from Compliance and the CISO's office — a manual review queue is not an equivalent substitute for identity verification in an account-opening flow under Bank Secrecy Act requirements — and offer to schedule that conversation today.",
+        "es": "Negarte a omitir el control sin una aceptación formal de riesgo por parte de Cumplimiento y la oficina del CISO — una cola de revisión manual no es un sustituto equivalente para la verificación de identidad en un flujo de apertura de cuentas bajo los requisitos de la Ley de Secreto Bancario — y ofrecer programar esa conversación hoy."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Implement the bypass but add an aggressive monitoring alert that pages on-call immediately if any newly opened account shows anomalous activity, so the risk is operationally mitigated.",
+        "es": "Implementar la omisión pero agregar una alerta de monitoreo agresiva que page al on-call de inmediato si alguna cuenta recién abierta muestra actividad anómala, para que el riesgo esté operativamente mitigado."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C holds the bar by naming the specific regulatory reason the shortcut cannot be treated as a simple engineering tradeoff: identity verification in account opening is a Bank Secrecy Act (Know Your Customer) requirement, not a best-practice. A manual queue cannot substitute for the control without formal risk acceptance from the parties who own regulatory exposure — Compliance and Information Security. Crucially, Option C also offers to unblock the conversation, not just say no. Option A is the authority-shift failure: a manager's approval is not the same as regulatory sign-off, and 'she's accountable' does not transfer your personal obligation to flag a compliance concern. Option B is compliance theater: documenting your objection in a memo while doing the thing anyway does not hold the bar — it protects your paper trail while the risk materializes. Option D is sophisticated but still wrong: a monitoring alert does not satisfy the Know Your Customer obligation, which is prospective (verify before opening) not reactive (detect fraud after).",
+    "es": "La opción C mantiene el estándar nombrando la razón regulatoria específica por la que el atajo no puede tratarse como un simple intercambio de ingeniería: la verificación de identidad en la apertura de cuentas es un requisito de la Ley de Secreto Bancario (Conoce a Tu Cliente), no una buena práctica. Una cola manual no puede sustituir el control sin una aceptación formal de riesgo de las partes que son dueñas de la exposición regulatoria — Cumplimiento y Seguridad de la Información. Fundamentalmente, la opción C también ofrece desbloquear la conversación, no solo decir que no. La opción A es el fallo de transferencia de autoridad: la aprobación de una gerente no equivale a la aprobación regulatoria, y 'ella es responsable' no transfiere tu obligación personal de señalar una preocupación de cumplimiento. La opción B es teatro de cumplimiento: documentar tu objeción en un memo mientras haces la cosa de todas formas no mantiene el estándar — protege tu rastro en papel mientras el riesgo se materializa. La opción D es sofisticada pero sigue siendo incorrecta: una alerta de monitoreo no satisface la obligación de Conoce a Tu Cliente, que es prospectiva (verificar antes de abrir) no reactiva (detectar fraude después)."
+  }
+}

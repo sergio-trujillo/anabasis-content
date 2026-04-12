@@ -1,0 +1,29 @@
+{
+  "id": "op-behdtrt-spoke-up-at-cost",
+  "type": "open-prompt",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Speaking up when it wasn't going to make you popular",
+    "es": "Hablar cuando no iba a hacerte popular"
+  },
+  "question": {
+    "en": "Tell me about a time you raised a concern that wasn't going to make you popular. What was at stake, what did you say, and what happened after?",
+    "es": "Cuéntame sobre una ocasión en la que planteaste una preocupación que no iba a hacerte popular. ¿Qué estaba en juego, qué dijiste y qué sucedió después?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific concern raised — named precisely, not summarized as 'I had concerns about the approach'",
+      "the concrete language used when speaking up — what the candidate actually said, not paraphrased as 'I expressed my concern' ('I said something like: this feature could mislead customers who…' is the floor)",
+      "the named cost the candidate paid or risked paying for speaking up — a specific relationship, timeline, professional standing, or visibility consequence, not 'it was uncomfortable'",
+      "the immediate reaction from the person or group the concern was raised with — pushback, silence, defensiveness, or even appreciation — as a factual observation, not a validation ('my manager told me I was overcomplicating it')",
+      "an honest account of whether the concern was ultimately addressed — including the possibility that it was dismissed or only partially resolved"
+    ],
+    "must_avoid": [
+      "vague 'I had a conversation' framing with no specifics on what was actually said — the verbal content is the signal, not the act of having spoken",
+      "portraying the decision to speak up as costless or universally applauded — if everyone immediately agreed and nothing was lost, it is not a DTRT story",
+      "retroactive ethics: framing the decision as a principled stand after the fact when the concern was actually low-stakes or the outcome was already clear before the candidate spoke"
+    ],
+    "value_alignment": "Do the Right Thing",
+    "min_words": 200
+  }
+}

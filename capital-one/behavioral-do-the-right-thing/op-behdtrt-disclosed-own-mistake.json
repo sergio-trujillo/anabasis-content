@@ -1,0 +1,29 @@
+{
+  "id": "op-behdtrt-disclosed-own-mistake",
+  "type": "open-prompt",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Disclosing a mistake you could have covered",
+    "es": "Revelar un error que podrías haber ocultado"
+  },
+  "question": {
+    "en": "Tell me about a mistake you disclosed up the chain even when you could have covered it. Walk me through the decision — what made you disclose, and what was the cost?",
+    "es": "Cuéntame sobre un error que revelaste hacia arriba en la cadena incluso cuando podrías haberlo ocultado. Guíame por la decisión — ¿qué te llevó a revelarlo y cuál fue el costo?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific mistake — what went wrong, the scope of impact (customers, systems, data, or financial exposure affected), and the honest assessment of whose fault it was",
+      "the concrete opportunity the candidate had to cover the mistake — specifically what covering it would have required and why it was plausible, not just 'I could have hidden it'",
+      "the decision point: what the candidate weighed and why they chose disclosure over concealment — the underlying principle or obligation, not just 'I knew it was the right thing'",
+      "who the candidate disclosed to, how they framed it, and what they said — including whether they framed it as a personal failure or a system failure",
+      "the named cost of disclosure — a specific consequence to the candidate's reputation, relationship, performance record, or standing — as a fact observed, not just anticipated"
+    ],
+    "must_avoid": [
+      "treating the disclosure as costless or as an obvious choice — 'I just told my manager' with no tension or consequence is not a DTRT story",
+      "portraying the mistake as someone else's fault while claiming DTRT credit for disclosing it — partial ownership that still assigns primary blame elsewhere",
+      "jumping to 'and we fixed it' before fully describing the decision to disclose — the ethical weight is in the disclosure decision, not the remediation"
+    ],
+    "value_alignment": "Do the Right Thing",
+    "min_words": 200
+  }
+}

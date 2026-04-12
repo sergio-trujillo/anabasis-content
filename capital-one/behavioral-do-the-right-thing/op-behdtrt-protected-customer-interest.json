@@ -1,0 +1,29 @@
+{
+  "id": "op-behdtrt-protected-customer-interest",
+  "type": "open-prompt",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Advocating for the customer against internal pressure",
+    "es": "Defender el interés del cliente frente a la presión interna"
+  },
+  "question": {
+    "en": "Describe a decision where you advocated for the customer's interest against internal pressure — a deadline, a revenue goal, or a convenience argument. What was the internal argument, and how did you reframe it?",
+    "es": "Describe una decisión en la que defendiste el interés del cliente frente a la presión interna — un plazo, un objetivo de ingresos o un argumento de conveniencia. ¿Cuál era el argumento interno y cómo lo reformulaste?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific internal pressure — who was making the argument, what the business logic was (revenue, speed, scope), and why it was a plausible position, not a straw man",
+      "the specific customer harm or risk the candidate identified — named precisely in terms of what the customer would experience, lose, or misunderstand if the internal pressure won",
+      "how the candidate reframed the argument — the specific reasoning or evidence used to make the customer interest case to a business audience, not just 'I said we should protect the customer'",
+      "the named cost the candidate absorbed or accepted in advocating for the customer — delayed timeline, reduced revenue projection, scope cut, or strained relationship with stakeholders",
+      "what held the bar: whether the candidate fell back on policy ('the rules require disclosure') or articulated the underlying principle ('customers making decisions based on misleading terms erodes trust in a way that compounds over time') — the latter is the stronger DTRT signal"
+    ],
+    "must_avoid": [
+      "framing the customer protection argument as universally obvious — if the internal pressure was genuinely compelling, say so; DTRT requires that the competing argument was worth taking seriously",
+      "retroactive ethics: describing a decision that turned out to benefit both customers and revenue as a DTRT story — the signal requires that holding for the customer had a real cost to something internal",
+      "blaming the business stakeholders for not caring about customers rather than owning the candidate's role in changing the outcome"
+    ],
+    "value_alignment": "Do the Right Thing",
+    "min_words": 200
+  }
+}

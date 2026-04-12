@@ -1,0 +1,29 @@
+{
+  "id": "op-behdtrt-walked-away-from-wrong",
+  "type": "open-prompt",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Walking away from something that would have worked",
+    "es": "Alejarse de algo que habría funcionado"
+  },
+  "question": {
+    "en": "Describe something you could have done — it would have worked, nobody would have known — but you chose not to because it wasn't right. What was it, and what did you choose instead?",
+    "es": "Describe algo que podrías haber hecho — habría funcionado, nadie lo habría sabido — pero decidiste no hacerlo porque no era correcto. ¿Qué era y qué elegiste en su lugar?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific action the candidate chose not to take — described concretely enough that the ethical dimension is evident, not summarized as 'something that wasn't right'",
+      "an honest account of why the action would have worked — the candidate must demonstrate they understood the appeal of the wrong path, not just dismiss it as obviously bad",
+      "the specific reason the candidate chose not to do it — the principle, obligation, or value, articulated in the candidate's own words rather than borrowed moral vocabulary",
+      "what the candidate chose instead — the concrete alternative taken, including any cost or inconvenience the alternative imposed",
+      "the absence of external enforcement: the answer must confirm that the candidate's reason for not doing the thing was internal (their own standard), not external (they feared getting caught, they were told not to, a process blocked them)"
+    ],
+    "must_avoid": [
+      "stories where the 'nobody would have known' claim doesn't hold — if there was a process, a log, or an obvious audit trail, the ethical credit diminishes significantly",
+      "vague framing that avoids naming the wrong thing clearly — the candidate must be specific enough that the interviewer can evaluate the ethical weight, not just accept the candidate's self-assessment that it 'wasn't right'",
+      "claiming DTRT for a decision that was also the professionally safe choice — the power of this story is that the wrong path was genuinely tempting and the right path had a real cost"
+    ],
+    "value_alignment": "Do the Right Thing",
+    "min_words": 150
+  }
+}

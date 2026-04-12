@@ -1,0 +1,29 @@
+{
+  "id": "op-behdtrt-declined-shortcut",
+  "type": "open-prompt",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Declining a shortcut under pressure",
+    "es": "Rechazar un atajo bajo presión"
+  },
+  "question": {
+    "en": "Describe a time you were pressured to take a shortcut — by a timeline, a manager, or the rest of the team — and chose not to. What did 'not taking it' actually look like in practice?",
+    "es": "Describe una ocasión en la que te presionaron para tomar un atajo — por un plazo, un gerente o el resto del equipo — y decidiste no tomarlo. ¿Cómo se veía en la práctica 'no tomarlo'?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific shortcut proposed — what exactly would have been bypassed or skipped, not just 'a corner was being cut'",
+      "the source and nature of the pressure — who was pushing, why, and what the consequence of not complying was stated to be",
+      "the principle or policy the candidate was holding — named explicitly, not just 'I felt it was wrong' (e.g., 'bypassing identity verification would violate our KYC obligations' or 'shipping without disclosure review exposed customers to misleading terms')",
+      "what 'not taking the shortcut' required the candidate to do differently — the concrete alternative path they proposed or executed, not just the refusal",
+      "the named cost of declining — to the timeline, the relationship with the manager or team, or the candidate's own standing — as a specific fact, not a generic acknowledgment of difficulty"
+    ],
+    "must_avoid": [
+      "framing the shortcut refusal as a technical quality call ('I didn't want to accrue tech debt') rather than an ethical or compliance obligation — that is an Excellence story, not a DTRT story",
+      "claiming the shortcut was never that tempting — DTRT stories require genuine temptation, because the bar only matters when there is pressure to lower it",
+      "blaming the manager or team for proposing the shortcut without naming the candidate's own role in the response — 'I pushed back' with no description of how is insufficient"
+    ],
+    "value_alignment": "Do the Right Thing",
+    "min_words": 200
+  }
+}

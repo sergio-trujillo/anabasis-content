@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-dtrt-vs-excellence",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "DTRT vs. Excellence: identifying the correct signal",
+    "es": "Hacer lo Correcto vs. Excelencia: identificar la señal correcta"
+  },
+  "prompt": {
+    "en": "Read this candidate story and identify which Capital One value it most accurately demonstrates: 'We were two weeks from launch on a card rewards dashboard. My manager asked me to finalize the implementation and told me we didn't need to pull the updated reward-redemption terms from Legal — the old copy would be fine for v1 since we were planning to update the UI in the next quarter anyway. I told him I wasn't comfortable shipping UI that referenced outdated terms, specifically because the redemption rates had changed and customers could rely on the old language to their detriment. He pushed back twice. I offered to handle the Legal copy request myself so it didn't delay the team. The updated terms came back in two days, we shipped on time, and the dashboard launched with accurate redemption language.'",
+    "es": "Lee esta historia de candidato e identifica cuál valor de Capital One demuestra con mayor precisión: 'Estábamos a dos semanas del lanzamiento de un panel de recompensas de tarjeta. Mi gerente me pidió que finalizara la implementación y me dijo que no necesitábamos obtener los términos actualizados de redención de recompensas de Legal — la copia antigua estaría bien para v1 ya que planeábamos actualizar la UI el próximo trimestre de todas formas. Le dije que no me sentía cómodo lanzando una UI que hacía referencia a términos desactualizados, específicamente porque las tasas de redención habían cambiado y los clientes podían basarse en el lenguaje antiguo en su perjuicio. Él rechazó mi propuesta dos veces. Ofrecí gestionar yo mismo la solicitud de copia a Legal para que no retrasara al equipo. Los términos actualizados llegaron en dos días, lanzamos a tiempo y el panel se publicó con el lenguaje de redención correcto.'"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Excellence — the candidate raised the quality bar by ensuring accurate copy, delivered the feature on time, and went beyond their assigned scope by taking ownership of the Legal request.",
+        "es": "Excelencia — el candidato elevó el estándar de calidad asegurando una copia precisa, entregó la función a tiempo y fue más allá de su alcance asignado al asumir la responsabilidad de la solicitud a Legal."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Do the Right Thing — the candidate held the bar against a manager's explicit instruction to lower it because shipping outdated financial terms could harm customers who rely on them, and absorbed the cost of fixing it personally rather than letting the shortcut stand.",
+        "es": "Hacer lo Correcto — el candidato mantuvo el estándar ante la instrucción explícita de un gerente de bajarlo porque lanzar términos financieros desactualizados podría perjudicar a los clientes que dependen de ellos, y absorbió personalmente el costo de corregirlo en lugar de permitir que el atajo prevaleciera."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Succeed Together — the candidate resolved a disagreement with their manager and found a path that served the team's shared goal (shipping on time with good quality).",
+        "es": "Tener Éxito Juntos — el candidato resolvió un desacuerdo con su gerente y encontró un camino que sirvió al objetivo compartido del equipo (lanzar a tiempo con buena calidad)."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Excellence and DTRT equally — the candidate both raised the bar (accurate copy) and did the right thing (pushed back on the manager), so there is no meaningful distinction in this story.",
+        "es": "Excelencia y Hacer lo Correcto por igual — el candidato tanto elevó el estándar (copia precisa) como hizo lo correcto (rechazó al gerente), por lo que no hay una distinción significativa en esta historia."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is correct. The defining DTRT signal is not that accurate copy is better — it is that the candidate held the bar when a manager explicitly instructed them not to, and the specific reason was customer harm (customers relying on outdated redemption terms to their detriment). That is the ethical tension: the manager had the authority to ship the shortcut, it would probably have gone unnoticed, and the candidate still said no. Option A is the key distractor and the most instructive wrong answer: the story does contain Excellence surface features (on-time delivery, going beyond scope), but the core signal is not 'I raised quality unprompted' — it is 'I declined a manager's shortcut because it could harm customers.' A story is DTRT when the action was required by an ethical obligation, not just by a desire for better output. Option C (Succeed Together) misreads the story — the collaboration detail is incidental, not the center. Option D is the 'both values' trap: these are not equally present. If anything, the Excellence reading erases the ethical cost the candidate absorbed, which is the signal that makes this DTRT and not Excellence.",
+    "es": "La opción B es correcta. La señal definitoria de Hacer lo Correcto no es que una copia precisa sea mejor — es que el candidato mantuvo el estándar cuando un gerente le instruyó explícitamente que no lo hiciera, y la razón específica fue el daño al cliente (clientes que dependen de términos de redención desactualizados en su perjuicio). Esa es la tensión ética: el gerente tenía la autoridad para lanzar el atajo, probablemente habría pasado desapercibido, y el candidato de todas formas dijo que no. La opción A es el distractor clave y la respuesta incorrecta más instructiva: la historia sí contiene características superficiales de Excelencia (entrega a tiempo, ir más allá del alcance), pero la señal central no es 'elevé la calidad sin que me lo pidieran' — es 'rechacé el atajo de un gerente porque podía perjudicar a los clientes.' Una historia es de Hacer lo Correcto cuando la acción fue requerida por una obligación ética, no solo por el deseo de mejor resultado. La opción C (Tener Éxito Juntos) malinterpreta la historia — el detalle de colaboración es incidental, no el centro. La opción D es la trampa de 'ambos valores': no están igualmente presentes. Si acaso, la lectura de Excelencia borra el costo ético que absorbió el candidato, que es la señal que hace que esto sea Hacer lo Correcto y no Excelencia."
+  }
+}

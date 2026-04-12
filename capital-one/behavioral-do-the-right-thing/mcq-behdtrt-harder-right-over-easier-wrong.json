@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-harder-right-over-easier-wrong",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Harder right vs. easier wrong: recognizing the subtle case",
+    "es": "Lo más difícil pero correcto vs. lo más fácil pero incorrecto: reconocer el caso sutil"
+  },
+  "prompt": {
+    "en": "Your team discovers that a model used to pre-approve customers for a secured credit card has been silently producing lower approval rates for applicants in certain zip codes — not because of income or credit score, but because of a proxy feature correlated with geography. The model is live and generating revenue. A data scientist says, 'We can retrain the model to remove the proxy feature, but approval volume will drop 8% for two quarters while we recalibrate.' Which action is the 'harder right'?",
+    "es": "Tu equipo descubre que un modelo usado para pre-aprobar a clientes para una tarjeta de crédito asegurada ha estado produciendo silenciosamente tasas de aprobación más bajas para solicitantes en ciertos códigos postales — no por ingresos ni puntaje de crédito, sino por una característica proxy correlacionada con la geografía. El modelo está en producción y generando ingresos. Un científico de datos dice: 'Podemos reentrenar el modelo para eliminar la característica proxy, pero el volumen de aprobaciones caerá un 8% durante dos trimestres mientras recalibramos.' ¿Cuál acción es 'lo más difícil pero correcto'?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Keep the current model live while a team investigates whether the disparity is statistically significant enough to trigger formal Fair Lending obligations — no need to act until the legal threshold is confirmed.",
+        "es": "Mantener el modelo actual en producción mientras un equipo investiga si la disparidad es estadísticamente significativa como para activar obligaciones formales de Préstamo Justo — no hay necesidad de actuar hasta que se confirme el umbral legal."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Accept the 8% volume drop, retrain the model to remove the proxy feature, and proactively disclose the disparity and the remediation timeline to Compliance and the relevant business stakeholders — including the revenue impact — without waiting to be asked.",
+        "es": "Aceptar la caída del 8% en volumen, reentrenar el modelo para eliminar la característica proxy y divulgar de manera proactiva la disparidad y el cronograma de remediación a Cumplimiento y las partes interesadas de negocio relevantes — incluyendo el impacto en ingresos — sin esperar a que te lo pidan."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Retrain the model privately and deploy the fix without disclosing the historical disparity — you're making it right going forward, which is what matters, and surfacing past issues creates unnecessary legal exposure.",
+        "es": "Reentrenar el modelo en privado e implementar la corrección sin divulgar la disparidad histórica — estás corrigiendo el problema de aquí en adelante, que es lo que importa, y sacar a la luz problemas pasados crea exposición legal innecesaria."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Raise the finding in the next team retrospective so it is documented and the team can decide together how to respond — collective decision-making reduces individual risk.",
+        "es": "Plantear el hallazgo en la próxima retrospectiva del equipo para que quede documentado y el equipo pueda decidir juntos cómo responder — la toma de decisiones colectiva reduce el riesgo individual."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the harder right: it accepts the short-term revenue cost (8% volume drop), fixes the technical problem (retraining), AND proactively discloses the historical disparity — including its revenue impact — to the right stakeholders without waiting to be asked. The Fair Lending / Equal Credit Opportunity Act dimension means this is not an internal quality improvement; it is a potential regulatory issue that Compliance must be aware of, regardless of whether the legal threshold has been formally crossed. The disclosure is hard because it names a revenue number going down and a historical issue, not just a forward-looking fix. Option A is the 'wait for the legal threshold' pattern — plausibly defensible, but it is the easier wrong: it keeps the biased model live while investigations proceed, which continues potential harm. Option C is ethically incoherent: quietly fixing a Fair Lending issue without disclosing the historical period is not 'making it right' — it is burying evidence of a potential violation. Option D uses collective process to dilute individual accountability, which is not DTRT — it is responsibility avoidance.",
+    "es": "La opción B es lo más difícil pero correcto: acepta el costo de ingresos a corto plazo (caída del 8% en volumen), corrige el problema técnico (reentrenamiento) Y divulga de manera proactiva la disparidad histórica — incluyendo su impacto en ingresos — a las partes interesadas correctas sin esperar a que se lo pidan. La dimensión de Préstamo Justo / Ley de Igualdad de Oportunidades de Crédito significa que esto no es una mejora de calidad interna; es un posible problema regulatorio del que Cumplimiento debe estar al tanto, independientemente de si el umbral legal ha sido formalmente cruzado. La divulgación es difícil porque nombra un número de ingresos que baja y un problema histórico, no solo una corrección prospectiva. La opción A es el patrón de 'esperar el umbral legal' — plausiblemente defendible, pero es lo más fácil pero incorrecto: mantiene el modelo sesgado en producción mientras avanzan las investigaciones, lo que continúa el daño potencial. La opción C es éticamente incoherente: corregir silenciosamente un problema de Préstamo Justo sin divulgar el período histórico no es 'corregir las cosas' — es enterrar evidencia de una posible violación. La opción D usa el proceso colectivo para diluir la responsabilidad individual, que no es Hacer lo Correcto — es evasión de responsabilidad."
+  }
+}

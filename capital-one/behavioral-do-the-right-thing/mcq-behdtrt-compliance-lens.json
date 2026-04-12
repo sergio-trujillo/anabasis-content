@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-compliance-lens",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "The compliance lens: what question must you ask first?",
+    "es": "El enfoque de cumplimiento: ¿qué pregunta debes hacer primero?"
+  },
+  "prompt": {
+    "en": "Your team is about to ship a new feature that uses customers' transaction history to surface personalized credit-limit increase offers inside the mobile app. The feature is fully built, tested, and ready to deploy. Which question is the MOST critical to verify before the team ships — specifically because this is a Capital One banking context?",
+    "es": "Tu equipo está a punto de lanzar una nueva función que usa el historial de transacciones de los clientes para mostrar ofertas personalizadas de aumento de límite de crédito en la app móvil. La función está completamente construida, probada y lista para implementar. ¿Cuál pregunta es la MÁS crítica para verificar antes de que el equipo lance — específicamente porque este es un contexto bancario de Capital One?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Did we write unit tests for the offer-eligibility calculation logic and achieve above 80% branch coverage?",
+        "es": "¿Escribimos pruebas unitarias para la lógica de cálculo de elegibilidad de oferta y logramos más del 80% de cobertura de ramas?"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Has the product manager formally signed off that this feature is in scope for the current quarter's roadmap?",
+        "es": "¿El gerente de producto ha aprobado formalmente que esta función está dentro del alcance del roadmap del trimestre actual?"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Have Compliance and Legal confirmed that using transaction history for unsolicited credit-limit offers complies with FCRA opt-in requirements and that the in-app disclosure language has been approved?",
+        "es": "¿Han confirmado Cumplimiento y Legal que el uso del historial de transacciones para ofertas no solicitadas de aumento de límite de crédito cumple con los requisitos de opt-in del FCRA y que el lenguaje de divulgación dentro de la app fue aprobado?"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Did we run a performance test to confirm p99 latency is under 200 ms so the offer loads fast enough for a good UX?",
+        "es": "¿Realizamos una prueba de rendimiento para confirmar que la latencia p99 está por debajo de 200 ms para que la oferta cargue lo suficientemente rápido para una buena UX?"
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C is the only one that addresses the banking-specific regulatory obligation. Using transaction data to generate unsolicited credit offers touches the Fair Credit Reporting Act (FCRA), which governs how consumer credit data may be used for marketing, and requires specific disclosure and opt-out rights. In a bank, 'is this legal and is the disclosure language approved?' is not a nice-to-have — it is a pre-ship requirement. Option A (unit test coverage) is an Excellence signal — it is about quality, not ethics or compliance. Option B (PM sign-off) is authority-shifting: a manager's roadmap approval does not constitute regulatory clearance. Option D (latency) is purely an engineering quality concern with no compliance dimension.",
+    "es": "La opción C es la única que aborda la obligación regulatoria específica de la banca. Usar datos de transacciones para generar ofertas de crédito no solicitadas toca la Ley de Informes de Crédito Justo (FCRA), que rige cómo se pueden usar los datos de crédito al consumidor para marketing, y requiere derechos específicos de divulgación y exclusión voluntaria. En un banco, '¿es esto legal y está aprobado el lenguaje de divulgación?' no es algo opcional — es un requisito previo al lanzamiento. La opción A (cobertura de pruebas unitarias) es una señal de Excelencia — trata sobre la calidad, no sobre la ética o el cumplimiento. La opción B (aprobación del PM) es transferencia de autoridad: la aprobación del roadmap de un gerente no constituye autorización regulatoria. La opción D (latencia) es puramente una preocupación de calidad de ingeniería sin dimensión de cumplimiento."
+  }
+}

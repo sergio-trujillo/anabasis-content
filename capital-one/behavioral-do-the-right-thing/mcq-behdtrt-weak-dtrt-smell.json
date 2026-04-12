@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behdtrt-weak-dtrt-smell",
+  "type": "mcq",
+  "section": "behavioral-do-the-right-thing",
+  "title": {
+    "en": "Weak DTRT story: identifying the red flag",
+    "es": "Historia débil de Hacer lo Correcto: identificar la señal de alerta"
+  },
+  "prompt": {
+    "en": "Read this candidate DTRT story: 'I was on a project where we were about to ship a feature that I had some concerns about from a data privacy perspective. I raised my concerns with the team and we had some productive conversations. In the end, everyone agreed that my concerns were valid and we adjusted the design, and the project launched successfully with full stakeholder support. Looking back, I'm proud that I spoke up.' Which single element MOST undermines this as a Do the Right Thing signal?",
+    "es": "Lee esta historia de Hacer lo Correcto de un candidato: 'Estaba en un proyecto donde estábamos a punto de lanzar una función de la que tenía algunas preocupaciones desde una perspectiva de privacidad de datos. Planteé mis preocupaciones con el equipo y tuvimos algunas conversaciones productivas. Al final, todos acordaron que mis preocupaciones eran válidas y ajustamos el diseño, y el proyecto se lanzó exitosamente con el apoyo completo de las partes interesadas. En retrospectiva, estoy orgulloso de haber hablado.' ¿Cuál elemento ÚNICO socava más esto como señal de Hacer lo Correcto?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "The candidate doesn't name which data privacy regulation or principle was at risk — 'data privacy perspective' is too vague to assess real compliance knowledge.",
+        "es": "El candidato no nombra qué regulación o principio de privacidad de datos estaba en riesgo — 'perspectiva de privacidad de datos' es demasiado vago para evaluar el conocimiento real de cumplimiento."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "The story ends with 'everyone agreed' and 'full stakeholder support' — a universally applauded outcome where speaking up cost the candidate nothing is a retroactive ethics signal, not a DTRT signal. DTRT costs something.",
+        "es": "La historia termina con 'todos acordaron' y 'apoyo completo de las partes interesadas' — un resultado universalmente aplaudido donde hablar no le costó nada al candidato es una señal de ética retroactiva, no una señal de Hacer lo Correcto. Hacer lo Correcto cuesta algo."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "The candidate uses 'I' and 'we' inconsistently — 'I raised' but 'we adjusted' — which makes it unclear who actually made the change.",
+        "es": "El candidato usa 'yo' y 'nosotros' de manera inconsistente — 'yo planteé' pero 'nosotros ajustamos' — lo que hace poco claro quién realmente hizo el cambio."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "The candidate says 'I'm proud' at the end, which sounds self-congratulatory and may signal that they are more focused on how they appeared than on what they protected.",
+        "es": "El candidato dice 'estoy orgulloso' al final, lo que suena autoelogioso y puede indicar que estaban más enfocados en cómo se veían que en lo que protegieron."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B identifies the core structural flaw: a DTRT story that ends with everyone celebrating and no cost to the candidate is almost certainly retroactive ethics — claiming credit for a 'difficult' decision that was, in hindsight, easy because it turned out to be the popular choice. The test of DTRT is not whether you spoke up when it worked out well; it is whether you would speak up — and whether you did speak up — when the outcome was uncertain and the personal cost was real. 'Everyone agreed' erases the tension that makes DTRT meaningful. The strongest DTRT stories acknowledge pushback, social cost, delay, or professional friction — not consensus and applause. Option A (vague privacy reference) is a legitimate weakness but secondary: specificity about the regulation matters, but the structural absence of cost is the deeper problem. Option C (pronoun inconsistency) is a stylistic observation with no bearing on the ethical signal. Option D (self-congratulation) is a minor tone issue, not a structural flaw — every candidate can be coached to reframe 'I'm proud' as 'I think it set the right precedent.'",
+    "es": "La opción B identifica el fallo estructural central: una historia de Hacer lo Correcto que termina con todos celebrando y sin costo para el candidato es casi con certeza ética retroactiva — reclamar crédito por una decisión 'difícil' que, en retrospectiva, fue fácil porque resultó ser la elección popular. La prueba de Hacer lo Correcto no es si hablaste cuando todo salió bien; es si hablarías — y si hablaste — cuando el resultado era incierto y el costo personal era real. 'Todos acordaron' elimina la tensión que hace significativo el Hacer lo Correcto. Las historias más fuertes de Hacer lo Correcto reconocen el rechazo, el costo social, el retraso o la fricción profesional — no el consenso y los aplausos. La opción A (referencia vaga a la privacidad) es una debilidad legítima pero secundaria: la especificidad sobre la regulación importa, pero la ausencia estructural de costo es el problema más profundo. La opción C (inconsistencia de pronombres) es una observación estilística sin relación con la señal ética. La opción D (autoelogio) es un problema menor de tono, no un fallo estructural — cualquier candidato puede ser orientado para reformular 'estoy orgulloso' como 'creo que estableció el precedente correcto'."
+  }
+}
