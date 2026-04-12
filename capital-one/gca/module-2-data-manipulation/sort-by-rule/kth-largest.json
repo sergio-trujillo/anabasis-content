@@ -1,0 +1,17 @@
+{
+  "id": "code-sortrule-kth-largest",
+  "type": "code",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "Kth largest element (min-heap)",
+    "es": "K-ésimo elemento más grande (min-heap)"
+  },
+  "difficulty": "medium",
+  "language": "java",
+  "statement": {
+    "en": "Given an `int[]` array `nums` and an integer `k`, return the **kth-largest** element in the array. Note: kth-largest means the kth position when the array is sorted in descending order, counting duplicates separately.\n\nYou must use a **min-heap of size k** (a `PriorityQueue<Integer>` with its natural min ordering). This gives O(n log k) time instead of O(n log n) for a full sort.\n\nExamples:\n- `[3,2,1,5,6,4]` with `k=2` → `5`\n- `[3,2,3,1,2,4,5,5,6]` with `k=4` → `4`\n\nYou may assume `1 <= k <= nums.length`.\n\n**Key idiom:** maintain a `PriorityQueue<Integer>` (min-heap). For each element, offer it. If the heap exceeds size `k`, poll (remove the smallest). After processing all elements, the heap's top (`peek()`) is the kth-largest.",
+    "es": "Dado un arreglo `int[]` llamado `nums` y un entero `k`, devuelve el **k-ésimo elemento más grande** del arreglo. Nota: k-ésimo más grande significa la k-ésima posición cuando el arreglo se ordena de forma descendente, contando duplicados por separado.\n\nDebes usar un **min-heap de tamaño k** (`PriorityQueue<Integer>` con su ordenamiento natural mínimo). Esto da tiempo O(n log k) en lugar de O(n log n) para un ordenamiento completo.\n\nEjemplos:\n- `[3,2,1,5,6,4]` con `k=2` → `5`\n- `[3,2,3,1,2,4,5,5,6]` con `k=4` → `4`\n\nPuedes asumir `1 <= k <= nums.length`.\n\n**Idioma clave:** mantén un `PriorityQueue<Integer>` (min-heap). Por cada elemento, insértalo. Si el heap supera el tamaño `k`, extrae el mínimo (`poll`). Después de procesar todos los elementos, el tope del heap (`peek()`) es el k-ésimo más grande."
+  },
+  "starterCode": "import java.util.*;\n\nclass Solution {\n    public int kthLargest(int[] nums, int k) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\nimport java.util.*;\n\npublic class SolutionTest {\n\n    @Test\n    void classic() {\n        // sorted desc: 6,5,4,3,2,1 => 2nd largest = 5\n        assertEquals(5, new Solution().kthLargest(new int[]{3,2,1,5,6,4}, 2));\n    }\n\n    @Test\n    void longerArray() {\n        // sorted desc: 6,5,5,4,3,3,2,2,1 => 4th largest = 4\n        assertEquals(4, new Solution().kthLargest(new int[]{3,2,3,1,2,4,5,5,6}, 4));\n    }\n\n    @Test\n    void kEqualsOne() {\n        // largest element\n        assertEquals(20, new Solution().kthLargest(new int[]{7,10,4,3,20,15}, 1));\n    }\n\n    @Test\n    void kEqualsLength() {\n        // smallest element (kth = last in desc order)\n        assertEquals(1, new Solution().kthLargest(new int[]{2,1}, 2));\n    }\n\n    @Test\n    void singleElement() {\n        assertEquals(42, new Solution().kthLargest(new int[]{42}, 1));\n    }\n\n    @Test\n    void allDuplicates() {\n        // all same value — every kth-largest is the same value\n        assertEquals(5, new Solution().kthLargest(new int[]{5,5,5,5}, 2));\n    }\n\n    @Test\n    void thirdLargest() {\n        // sorted desc: 20,15,10,7,4,3 => 3rd = 10\n        assertEquals(10, new Solution().kthLargest(new int[]{7,10,4,3,20,15}, 3));\n    }\n}\n"
+}
