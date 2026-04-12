@@ -1,0 +1,17 @@
+{
+  "id": "code-accumulator-min-starting-balance",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Minimum starting balance (banking)",
+    "es": "Saldo inicial mínimo (banca)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Capital One's fraud rules block any account whose balance ever goes negative. Given an array `transactions` of signed amounts applied in order, return the smallest non-negative starting balance such that the running balance stays ≥ 0 after every transaction. For an empty array return `0`.",
+    "es": "Las reglas antifraude de Capital One bloquean cualquier cuenta cuyo saldo quede en negativo en algún momento. Dado un arreglo `transactions` de montos con signo aplicados en orden, devuelve el saldo inicial no negativo más pequeño tal que el saldo acumulado nunca quede por debajo de `0` tras cada transacción. Para un arreglo vacío devuelve `0`."
+  },
+  "starterCode": "class Solution {\n    public int minStartingBalance(int[] transactions) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void needsToOffsetInitialDip() {\n        // prefix sums: -5, 5, -3. min=-5. starting balance must be 5.\n        // Verify: 5 + (-5) = 0 ≥ 0, 0 + 10 = 10, 10 + (-8) = 2. ✓\n        assertEquals(5, new Solution().minStartingBalance(new int[]{-5, 10, -8}));\n    }\n\n    @Test\n    void dipAfterCreditBurst() {\n        // prefix: 10, 15, -5. min=-5. start=5.\n        assertEquals(5, new Solution().minStartingBalance(new int[]{10, 5, -20}));\n    }\n\n    @Test\n    void allCredits() {\n        // prefix: 5, 15, 35. min=5 (positive). start=0.\n        assertEquals(0, new Solution().minStartingBalance(new int[]{5, 10, 20}));\n    }\n\n    @Test\n    void singleHugeDebit() {\n        assertEquals(100, new Solution().minStartingBalance(new int[]{-100}));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(0, new Solution().minStartingBalance(new int[]{}));\n    }\n}\n"
+}

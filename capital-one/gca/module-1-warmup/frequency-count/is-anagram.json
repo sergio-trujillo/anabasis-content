@@ -1,0 +1,17 @@
+{
+  "id": "code-frequency-is-anagram",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Valid anagram",
+    "es": "Anagrama válido"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given two strings `a` and `b` of lowercase English letters, return `true` if `b` is an anagram of `a` (same letters, same counts). Two empty strings are anagrams of each other.",
+    "es": "Dadas dos cadenas `a` y `b` de letras minúsculas inglesas, devuelve `true` si `b` es un anagrama de `a` (mismas letras, mismos conteos). Dos cadenas vacías son anagramas entre sí."
+  },
+  "starterCode": "class Solution {\n    public boolean isAnagram(String a, String b) {\n        // TODO\n        return false;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void classic() {\n        assertTrue(new Solution().isAnagram(\"listen\", \"silent\"));\n    }\n\n    @Test\n    void notAnagram() {\n        assertFalse(new Solution().isAnagram(\"hello\", \"world\"));\n    }\n\n    @Test\n    void differentLengths() {\n        assertFalse(new Solution().isAnagram(\"abc\", \"abcd\"));\n    }\n\n    @Test\n    void bothEmpty() {\n        assertTrue(new Solution().isAnagram(\"\", \"\"));\n    }\n\n    @Test\n    void sameChars() {\n        assertTrue(new Solution().isAnagram(\"a\", \"a\"));\n    }\n\n    @Test\n    void differentCounts() {\n        // both have a, b, c — but counts differ: \"aabc\" has a×2, \"abbc\" has b×2\n        assertFalse(new Solution().isAnagram(\"aabc\", \"abbc\"));\n    }\n}\n"
+}

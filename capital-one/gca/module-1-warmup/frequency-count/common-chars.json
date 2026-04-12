@@ -1,0 +1,17 @@
+{
+  "id": "code-frequency-common-chars",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Characters common to all words",
+    "es": "Caracteres comunes a todas las palabras"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an array `words` of lowercase English strings, return the sorted string of distinct characters that appear in every word. An empty input array returns an empty string.",
+    "es": "Dado un arreglo `words` de cadenas en minúsculas, devuelve la cadena ordenada de caracteres distintos que aparecen en todas las palabras. Un arreglo vacío devuelve una cadena vacía."
+  },
+  "starterCode": "class Solution {\n    public String commonChars(String[] words) {\n        // TODO\n        return \"\";\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void twoChars() {\n        // bella has b,e,l,a · label has l,a,b,e · roller has r,o,l,e\n        // common: e, l\n        assertEquals(\"el\", new Solution().commonChars(new String[]{\"bella\", \"label\", \"roller\"}));\n    }\n\n    @Test\n    void cAndO() {\n        assertEquals(\"co\", new Solution().commonChars(new String[]{\"cool\", \"lock\", \"cook\"}));\n    }\n\n    @Test\n    void singleWord() {\n        // distinct chars of \"banana\" sorted: a, b, n\n        assertEquals(\"abn\", new Solution().commonChars(new String[]{\"banana\"}));\n    }\n\n    @Test\n    void noCommonChars() {\n        assertEquals(\"\", new Solution().commonChars(new String[]{\"abc\", \"def\"}));\n    }\n\n    @Test\n    void emptyArray() {\n        assertEquals(\"\", new Solution().commonChars(new String[]{}));\n    }\n}\n"
+}

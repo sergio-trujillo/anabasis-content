@@ -1,0 +1,17 @@
+{
+  "id": "code-frequency-most-frequent-brand",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Most frequent card brand (banking)",
+    "es": "Marca de tarjeta más frecuente (banca)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "A Capital One report aggregates customers by their most-used card brand. Given an array `brands` of card-brand strings (e.g., `\"visa\"`, `\"mastercard\"`, `\"amex\"`), return the brand that appears the most times. If two or more brands tie, return the one that appears first in the array. The input array is non-empty.",
+    "es": "Un reporte de Capital One agrupa clientes por su marca de tarjeta más usada. Dado un arreglo `brands` de cadenas de marcas (p. ej. `\"visa\"`, `\"mastercard\"`, `\"amex\"`), devuelve la marca que aparece más veces. Si dos o más marcas empatan, devuelve la que aparece primero en el arreglo. El arreglo de entrada no está vacío."
+  },
+  "starterCode": "class Solution {\n    public String mostFrequentCardBrand(String[] brands) {\n        // TODO\n        return \"\";\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void clearWinner() {\n        assertEquals(\"visa\", new Solution().mostFrequentCardBrand(\n            new String[]{\"visa\", \"visa\", \"mastercard\"}));\n    }\n\n    @Test\n    void tieFirstWins() {\n        // mastercard ×2, visa ×2. mastercard first → wins.\n        assertEquals(\"mastercard\", new Solution().mostFrequentCardBrand(\n            new String[]{\"mastercard\", \"visa\", \"mastercard\", \"visa\"}));\n    }\n\n    @Test\n    void single() {\n        assertEquals(\"amex\", new Solution().mostFrequentCardBrand(new String[]{\"amex\"}));\n    }\n\n    @Test\n    void threeWayWinner() {\n        // a×2, b×3 → b\n        assertEquals(\"b\", new Solution().mostFrequentCardBrand(\n            new String[]{\"a\", \"b\", \"a\", \"b\", \"b\"}));\n    }\n}\n"
+}

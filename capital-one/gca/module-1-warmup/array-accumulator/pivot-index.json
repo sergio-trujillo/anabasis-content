@@ -1,0 +1,17 @@
+{
+  "id": "code-accumulator-pivot-index",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Pivot index (left sum equals right sum)",
+    "es": "Índice pivote (suma izquierda igual a suma derecha)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an integer array `nums`, return the smallest index `i` such that the sum of all elements to the left of `i` equals the sum of all elements to the right of `i`. If no such index exists, return `-1`. A single-element array pivots at index `0` (both sides are empty). An empty array returns `-1`.",
+    "es": "Dado un arreglo de enteros `nums`, devuelve el índice más pequeño `i` tal que la suma de los elementos a la izquierda de `i` sea igual a la suma de los elementos a la derecha de `i`. Si no existe tal índice, devuelve `-1`. Un arreglo de un elemento pivota en el índice `0` (ambos lados vacíos). Un arreglo vacío devuelve `-1`."
+  },
+  "starterCode": "class Solution {\n    public int pivotIndex(int[] nums) {\n        // TODO\n        return -1;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void middlePivot() {\n        // left of i=3: 1+7+3=11. Right of i=3: 5+6=11.\n        assertEquals(3, new Solution().pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));\n    }\n\n    @Test\n    void noPivot() {\n        assertEquals(-1, new Solution().pivotIndex(new int[]{1, 2, 3}));\n    }\n\n    @Test\n    void leftEdgePivot() {\n        // left of i=0 = 0, right of i=0 = 1 + (-1) = 0\n        assertEquals(0, new Solution().pivotIndex(new int[]{2, 1, -1}));\n    }\n\n    @Test\n    void single() {\n        assertEquals(0, new Solution().pivotIndex(new int[]{5}));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(-1, new Solution().pivotIndex(new int[]{}));\n    }\n}\n"
+}

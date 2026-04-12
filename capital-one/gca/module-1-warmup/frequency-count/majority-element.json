@@ -1,0 +1,17 @@
+{
+  "id": "code-frequency-majority-element",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Majority element",
+    "es": "Elemento mayoritario"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an integer array `nums`, return the element that appears more than `n / 2` times (where `n = nums.length`). You may assume that such an element always exists.",
+    "es": "Dado un arreglo de enteros `nums`, devuelve el elemento que aparece más de `n / 2` veces (donde `n = nums.length`). Puedes asumir que tal elemento siempre existe."
+  },
+  "starterCode": "class Solution {\n    public int majorityElement(int[] nums) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void simple() {\n        // 3 appears 2 > 1.5\n        assertEquals(3, new Solution().majorityElement(new int[]{3, 2, 3}));\n    }\n\n    @Test\n    void longerWithTies() {\n        // 2 appears 4 > 3.5\n        assertEquals(2, new Solution().majorityElement(new int[]{2, 2, 1, 1, 1, 2, 2}));\n    }\n\n    @Test\n    void single() {\n        assertEquals(5, new Solution().majorityElement(new int[]{5}));\n    }\n\n    @Test\n    void negativeMajority() {\n        assertEquals(-1, new Solution().majorityElement(new int[]{-1, -1, 2}));\n    }\n\n    @Test\n    void allSame() {\n        assertEquals(7, new Solution().majorityElement(new int[]{7, 7, 7, 7}));\n    }\n}\n"
+}

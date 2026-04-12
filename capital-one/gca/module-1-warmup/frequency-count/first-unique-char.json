@@ -1,0 +1,17 @@
+{
+  "id": "code-frequency-first-unique-char",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "First non-repeating character",
+    "es": "Primer carácter sin repetición"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a string `s` of lowercase English letters, return the index of the first character that appears exactly once. If every character repeats, return `-1`. For an empty string return `-1`.",
+    "es": "Dada una cadena `s` de letras minúsculas inglesas, devuelve el índice del primer carácter que aparece exactamente una vez. Si cada carácter se repite, devuelve `-1`. Para una cadena vacía devuelve `-1`."
+  },
+  "starterCode": "class Solution {\n    public int firstUniqueChar(String s) {\n        // TODO\n        return -1;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void firstIsUnique() {\n        // l appears once → index 0\n        assertEquals(0, new Solution().firstUniqueChar(\"leetcode\"));\n    }\n\n    @Test\n    void skipRepeats() {\n        // l@0 (×2), o@1 (×2), v@2 (unique) → index 2\n        assertEquals(2, new Solution().firstUniqueChar(\"loveleetcode\"));\n    }\n\n    @Test\n    void allRepeat() {\n        assertEquals(-1, new Solution().firstUniqueChar(\"aabb\"));\n    }\n\n    @Test\n    void single() {\n        assertEquals(0, new Solution().firstUniqueChar(\"z\"));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(-1, new Solution().firstUniqueChar(\"\"));\n    }\n}\n"
+}

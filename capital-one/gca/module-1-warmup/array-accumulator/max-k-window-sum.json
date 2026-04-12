@@ -1,0 +1,17 @@
+{
+  "id": "code-accumulator-max-k-window",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Max sum of a fixed-size window",
+    "es": "Suma máxima de una ventana de tamaño fijo"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an integer array `nums` and an integer `k` (1 ≤ k ≤ nums.length), return the maximum sum of any contiguous subarray of length exactly `k`.",
+    "es": "Dado un arreglo de enteros `nums` y un entero `k` (1 ≤ k ≤ nums.length), devuelve la suma máxima de cualquier subarreglo contiguo de longitud exactamente `k`."
+  },
+  "starterCode": "class Solution {\n    public int maxKWindowSum(int[] nums, int k) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void classicWindow() {\n        // windows: [1,4,2,10]=17, [4,2,10,2]=18, [2,10,2,3]=17,\n        // [10,2,3,1]=16, [2,3,1,0]=6, [3,1,0,20]=24\n        assertEquals(24, new Solution().maxKWindowSum(new int[]{1, 4, 2, 10, 2, 3, 1, 0, 20}, 4));\n    }\n\n    @Test\n    void smallWindow() {\n        assertEquals(500, new Solution().maxKWindowSum(new int[]{100, 200, 300}, 2));\n    }\n\n    @Test\n    void wholeArray() {\n        assertEquals(10, new Solution().maxKWindowSum(new int[]{1, 2, 3, 4}, 4));\n    }\n\n    @Test\n    void kEqualsOne() {\n        assertEquals(7, new Solution().maxKWindowSum(new int[]{3, 7, 2}, 1));\n    }\n\n    @Test\n    void allNegatives() {\n        // windows of 2: [-1,-2]=-3, [-2,-3]=-5. Max=-3.\n        assertEquals(-3, new Solution().maxKWindowSum(new int[]{-1, -2, -3}, 2));\n    }\n}\n"
+}

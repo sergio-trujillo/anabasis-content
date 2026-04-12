@@ -1,0 +1,17 @@
+{
+  "id": "code-accumulator-max-running-balance",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Max running balance (banking)",
+    "es": "Balance máximo acumulado (banca)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "A Capital One account starts with a balance of `0`. Given an array `transactions` of signed amounts (positive credits, negative debits) applied in order, return the maximum balance reached at any point. For an empty array return `0` (the starting balance).",
+    "es": "Una cuenta de Capital One comienza con un saldo de `0`. Dado un arreglo `transactions` de montos con signo (positivos son créditos, negativos son débitos) aplicados en orden, devuelve el saldo máximo alcanzado en cualquier punto. Para un arreglo vacío devuelve `0` (el saldo inicial)."
+  },
+  "starterCode": "class Solution {\n    public int maxRunningBalance(int[] transactions) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void mixedTransactions() {\n        // balances: 100, 50, 250, -50, 0 → max=250\n        assertEquals(250, new Solution().maxRunningBalance(new int[]{100, -50, 200, -300, 50}));\n    }\n\n    @Test\n    void allDebits() {\n        // balances: -10, -30, -60 → max=-10\n        assertEquals(-10, new Solution().maxRunningBalance(new int[]{-10, -20, -30}));\n    }\n\n    @Test\n    void zeroMove() {\n        // balances: 0 → max=0\n        assertEquals(0, new Solution().maxRunningBalance(new int[]{0}));\n    }\n\n    @Test\n    void empty() {\n        assertEquals(0, new Solution().maxRunningBalance(new int[]{}));\n    }\n\n    @Test\n    void allCredits() {\n        // balances: 5, 15, 30 → max=30\n        assertEquals(30, new Solution().maxRunningBalance(new int[]{5, 10, 15}));\n    }\n}\n"
+}

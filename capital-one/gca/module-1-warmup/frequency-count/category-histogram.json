@@ -1,0 +1,17 @@
+{
+  "id": "code-frequency-category-histogram",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Transaction category histogram (banking)",
+    "es": "Histograma de categorías de transacciones (banca)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Capital One groups transactions by category strings like `\"groceries\"`, `\"dining\"`, `\"fuel\"`. Given an array `categories` of transaction category strings and a `query` array, return an integer array `result` where `result[i]` is the number of times `query[i]` appears in `categories`.",
+    "es": "Capital One agrupa transacciones por cadenas de categoría como `\"groceries\"`, `\"dining\"`, `\"fuel\"`. Dado un arreglo `categories` de cadenas de categoría de transacciones y un arreglo `query`, devuelve un arreglo de enteros `result` donde `result[i]` es el número de veces que `query[i]` aparece en `categories`."
+  },
+  "starterCode": "class Solution {\n    public int[] categoryHistogram(String[] categories, String[] query) {\n        // TODO\n        return new int[]{};\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void mixedHistogram() {\n        int[] result = new Solution().categoryHistogram(\n            new String[]{\"dining\", \"groceries\", \"dining\", \"fuel\"},\n            new String[]{\"dining\", \"fuel\", \"travel\"}\n        );\n        assertArrayEquals(new int[]{2, 1, 0}, result);\n    }\n\n    @Test\n    void emptyCategories() {\n        int[] result = new Solution().categoryHistogram(\n            new String[]{},\n            new String[]{\"anything\"}\n        );\n        assertArrayEquals(new int[]{0}, result);\n    }\n\n    @Test\n    void singleCategoryTwoQueries() {\n        int[] result = new Solution().categoryHistogram(\n            new String[]{\"a\"},\n            new String[]{\"a\", \"b\"}\n        );\n        assertArrayEquals(new int[]{1, 0}, result);\n    }\n\n    @Test\n    void emptyQuery() {\n        int[] result = new Solution().categoryHistogram(\n            new String[]{\"a\", \"b\"},\n            new String[]{}\n        );\n        assertArrayEquals(new int[]{}, result);\n    }\n}\n"
+}
