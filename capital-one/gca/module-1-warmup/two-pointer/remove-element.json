@@ -1,0 +1,17 @@
+{
+  "id": "code-twopointer-remove-element",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Remove all occurrences of a value",
+    "es": "Eliminar todas las ocurrencias de un valor"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an integer array `nums` and an integer `val`, remove all occurrences of `val` **in-place** and return the new length `k`. The relative order of the remaining elements **does not need to be preserved**. Elements beyond index `k - 1` do not matter. Use O(1) extra space.\n\nExample: `nums = [3, 2, 2, 3]`, `val = 3` → returns `2`; `nums[0..1]` contains `[2, 2]` in any order. An empty array returns `0`.",
+    "es": "Dado un arreglo de enteros `nums` y un entero `val`, elimina todas las ocurrencias de `val` **en su lugar** y devuelve la nueva longitud `k`. El orden relativo de los elementos restantes **no necesita preservarse**. Los elementos a partir del índice `k - 1` no importan. Usa espacio adicional O(1).\n\nEjemplo: `nums = [3, 2, 2, 3]`, `val = 3` → devuelve `2`; `nums[0..1]` contiene `[2, 2]` en cualquier orden. Un arreglo vacío devuelve `0`."
+  },
+  "starterCode": "class Solution {\n    public int removeElement(int[] nums, int val) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport java.util.Arrays;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basic() {\n        int[] nums = {3, 2, 2, 3};\n        int k = new Solution().removeElement(nums, 3);\n        assertEquals(2, k);\n        int[] kept = Arrays.copyOfRange(nums, 0, k);\n        Arrays.sort(kept);\n        assertArrayEquals(new int[]{2, 2}, kept);\n    }\n\n    @Test\n    void noMatchingElements() {\n        int[] nums = {1, 2, 3, 4};\n        int k = new Solution().removeElement(nums, 7);\n        assertEquals(4, k);\n        int[] kept = Arrays.copyOfRange(nums, 0, k);\n        Arrays.sort(kept);\n        assertArrayEquals(new int[]{1, 2, 3, 4}, kept);\n    }\n\n    @Test\n    void allMatch() {\n        int[] nums = {5, 5, 5};\n        int k = new Solution().removeElement(nums, 5);\n        assertEquals(0, k);\n    }\n\n    @Test\n    void single_match() {\n        int[] nums = {9};\n        int k = new Solution().removeElement(nums, 9);\n        assertEquals(0, k);\n    }\n\n    @Test\n    void single_no_match() {\n        int[] nums = {9};\n        int k = new Solution().removeElement(nums, 1);\n        assertEquals(1, k);\n        int[] kept = Arrays.copyOfRange(nums, 0, k);\n        assertArrayEquals(new int[]{9}, kept);\n    }\n\n    @Test\n    void empty() {\n        int[] nums = {};\n        int k = new Solution().removeElement(nums, 0);\n        assertEquals(0, k);\n    }\n\n    @Test\n    void mixedValues() {\n        // adversarial: val interspersed, multiple distinct remaining values\n        int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};\n        int k = new Solution().removeElement(nums, 2);\n        assertEquals(5, k);\n        int[] kept = Arrays.copyOfRange(nums, 0, k);\n        Arrays.sort(kept);\n        assertArrayEquals(new int[]{0, 0, 1, 3, 4}, kept);\n    }\n}\n"
+}

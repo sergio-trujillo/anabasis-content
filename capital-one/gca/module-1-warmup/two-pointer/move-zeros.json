@@ -1,0 +1,17 @@
+{
+  "id": "code-twopointer-move-zeros",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Move zeros to the end",
+    "es": "Mover ceros al final"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an integer array `nums`, move all `0`s to the end of the array **in-place** while preserving the relative order of the non-zero elements. You must not use extra space proportional to the input size. An empty array or one with no zeros is a no-op.\n\nExample: `[0, 1, 0, 3, 12]` → `[1, 3, 12, 0, 0]`.",
+    "es": "Dado un arreglo de enteros `nums`, mueve todos los `0`s al final del arreglo **en su lugar** conservando el orden relativo de los elementos distintos de cero. No debes usar espacio adicional proporcional al tamaño de la entrada. Un arreglo vacío o sin ceros no requiere ninguna acción.\n\nEjemplo: `[0, 1, 0, 3, 12]` → `[1, 3, 12, 0, 0]`."
+  },
+  "starterCode": "class Solution {\n    public void moveZeros(int[] nums) {\n        // TODO\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basic() {\n        int[] nums = {0, 1, 0, 3, 12};\n        new Solution().moveZeros(nums);\n        assertArrayEquals(new int[]{1, 3, 12, 0, 0}, nums);\n    }\n\n    @Test\n    void noZeros() {\n        int[] nums = {1, 2, 3};\n        new Solution().moveZeros(nums);\n        assertArrayEquals(new int[]{1, 2, 3}, nums);\n    }\n\n    @Test\n    void allZeros() {\n        int[] nums = {0, 0, 0};\n        new Solution().moveZeros(nums);\n        assertArrayEquals(new int[]{0, 0, 0}, nums);\n    }\n\n    @Test\n    void single() {\n        int[] nums = {0};\n        new Solution().moveZeros(nums);\n        assertArrayEquals(new int[]{0}, nums);\n    }\n\n    @Test\n    void empty() {\n        int[] nums = {};\n        new Solution().moveZeros(nums);\n        assertArrayEquals(new int[]{}, nums);\n    }\n\n    @Test\n    void leadingNonZero() {\n        // zeros interspersed, first element is non-zero\n        int[] nums = {1, 0, 2, 0, 3, 0};\n        new Solution().moveZeros(nums);\n        assertArrayEquals(new int[]{1, 2, 3, 0, 0, 0}, nums);\n    }\n\n    @Test\n    void alternatingStartZero() {\n        // adversarial: strictly alternating, starts with zero\n        int[] nums = {0, 1, 0, 1, 0, 1};\n        new Solution().moveZeros(nums);\n        assertArrayEquals(new int[]{1, 1, 1, 0, 0, 0}, nums);\n    }\n}\n"
+}

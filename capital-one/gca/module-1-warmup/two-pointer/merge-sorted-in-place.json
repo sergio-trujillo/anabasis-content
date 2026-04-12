@@ -1,0 +1,17 @@
+{
+  "id": "code-twopointer-merge-sorted-in-place",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Merge two sorted arrays in-place",
+    "es": "Fusionar dos arreglos ordenados en su lugar"
+  },
+  "difficulty": "medium",
+  "language": "java",
+  "statement": {
+    "en": "You are given two sorted integer arrays. `nums1` has length `m + n`: its first `m` elements are the valid values and its last `n` slots are `0` (placeholders). `nums2` has exactly `n` elements. Merge `nums2` into `nums1` **in-place** so that `nums1` becomes a single sorted array. Use two pointers starting from the **back** of each valid region to avoid overwriting live data. No return value — mutate `nums1` directly.\n\nExample: `nums1 = [1, 2, 3, 0, 0, 0]`, `m = 3`, `nums2 = [2, 5, 6]`, `n = 3` → `nums1 = [1, 2, 2, 3, 5, 6]`.",
+    "es": "Se te dan dos arreglos de enteros ordenados. `nums1` tiene longitud `m + n`: sus primeros `m` elementos son los valores válidos y sus últimas `n` posiciones son `0` (marcadores de posición). `nums2` tiene exactamente `n` elementos. Fusiona `nums2` en `nums1` **en su lugar** de modo que `nums1` quede como un único arreglo ordenado. Usa dos punteros que comiencen desde el **final** de cada región válida para evitar sobreescribir datos activos. No hay valor de retorno — muta `nums1` directamente.\n\nEjemplo: `nums1 = [1, 2, 3, 0, 0, 0]`, `m = 3`, `nums2 = [2, 5, 6]`, `n = 3` → `nums1 = [1, 2, 2, 3, 5, 6]`."
+  },
+  "starterCode": "class Solution {\n    public void merge(int[] nums1, int m, int[] nums2, int n) {\n        // TODO\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basic() {\n        int[] nums1 = {1, 2, 3, 0, 0, 0};\n        new Solution().merge(nums1, 3, new int[]{2, 5, 6}, 3);\n        assertArrayEquals(new int[]{1, 2, 2, 3, 5, 6}, nums1);\n    }\n\n    @Test\n    void nums2AllLarger() {\n        int[] nums1 = {1, 2, 3, 0, 0, 0};\n        new Solution().merge(nums1, 3, new int[]{4, 5, 6}, 3);\n        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, nums1);\n    }\n\n    @Test\n    void nums2AllSmaller() {\n        int[] nums1 = {4, 5, 6, 0, 0, 0};\n        new Solution().merge(nums1, 3, new int[]{1, 2, 3}, 3);\n        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, nums1);\n    }\n\n    @Test\n    void nums2Empty() {\n        // n = 0: nums1 is already the answer\n        int[] nums1 = {1, 2, 3};\n        new Solution().merge(nums1, 3, new int[]{}, 0);\n        assertArrayEquals(new int[]{1, 2, 3}, nums1);\n    }\n\n    @Test\n    void nums1Empty() {\n        // m = 0: entire result comes from nums2\n        int[] nums1 = {0, 0, 0};\n        new Solution().merge(nums1, 0, new int[]{1, 2, 3}, 3);\n        assertArrayEquals(new int[]{1, 2, 3}, nums1);\n    }\n\n    @Test\n    void singleEach() {\n        int[] nums1 = {2, 0};\n        new Solution().merge(nums1, 1, new int[]{1}, 1);\n        assertArrayEquals(new int[]{1, 2}, nums1);\n    }\n\n    @Test\n    void withDuplicatesAcrossArrays() {\n        // adversarial: duplicate values that span both arrays\n        int[] nums1 = {1, 3, 5, 0, 0, 0, 0};\n        new Solution().merge(nums1, 3, new int[]{1, 3, 5, 7}, 4);\n        assertArrayEquals(new int[]{1, 1, 3, 3, 5, 5, 7}, nums1);\n    }\n}\n"
+}

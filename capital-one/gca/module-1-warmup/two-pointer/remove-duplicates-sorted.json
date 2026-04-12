@@ -1,0 +1,17 @@
+{
+  "id": "code-twopointer-remove-duplicates-sorted",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Remove duplicates from a sorted array",
+    "es": "Eliminar duplicados de un arreglo ordenado"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a **sorted** integer array `nums`, remove duplicates **in-place** so that each element appears at most once, and return the new length `k`. Elements beyond index `k - 1` do not matter. Use O(1) extra space.\n\nExample: `[1, 1, 2, 3, 3]` → returns `3` with `nums[0..2] == [1, 2, 3]`. An empty array returns `0`.",
+    "es": "Dado un arreglo de enteros **ordenado** `nums`, elimina los duplicados **en su lugar** de modo que cada elemento aparezca como máximo una vez, y devuelve la nueva longitud `k`. Los elementos a partir del índice `k - 1` no importan. Usa espacio adicional O(1).\n\nEjemplo: `[1, 1, 2, 3, 3]` → devuelve `3` con `nums[0..2] == [1, 2, 3]`. Un arreglo vacío devuelve `0`."
+  },
+  "starterCode": "class Solution {\n    public int removeDuplicates(int[] nums) {\n        // TODO\n        return 0;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport java.util.Arrays;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basic() {\n        int[] nums = {1, 1, 2, 3, 3};\n        int k = new Solution().removeDuplicates(nums);\n        assertEquals(3, k);\n        assertArrayEquals(new int[]{1, 2, 3}, Arrays.copyOfRange(nums, 0, k));\n    }\n\n    @Test\n    void noDuplicates() {\n        int[] nums = {1, 2, 3, 4, 5};\n        int k = new Solution().removeDuplicates(nums);\n        assertEquals(5, k);\n        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, Arrays.copyOfRange(nums, 0, k));\n    }\n\n    @Test\n    void allSame() {\n        int[] nums = {7, 7, 7, 7};\n        int k = new Solution().removeDuplicates(nums);\n        assertEquals(1, k);\n        assertArrayEquals(new int[]{7}, Arrays.copyOfRange(nums, 0, k));\n    }\n\n    @Test\n    void single() {\n        int[] nums = {42};\n        int k = new Solution().removeDuplicates(nums);\n        assertEquals(1, k);\n        assertArrayEquals(new int[]{42}, Arrays.copyOfRange(nums, 0, k));\n    }\n\n    @Test\n    void empty() {\n        int[] nums = {};\n        int k = new Solution().removeDuplicates(nums);\n        assertEquals(0, k);\n    }\n\n    @Test\n    void negativeValues() {\n        int[] nums = {-3, -3, -1, 0, 0, 2};\n        int k = new Solution().removeDuplicates(nums);\n        assertEquals(4, k);\n        assertArrayEquals(new int[]{-3, -1, 0, 2}, Arrays.copyOfRange(nums, 0, k));\n    }\n\n    @Test\n    void twoPairs() {\n        // adversarial: every element is duplicated exactly once\n        int[] nums = {1, 1, 2, 2, 3, 3, 4, 4};\n        int k = new Solution().removeDuplicates(nums);\n        assertEquals(4, k);\n        assertArrayEquals(new int[]{1, 2, 3, 4}, Arrays.copyOfRange(nums, 0, k));\n    }\n}\n"
+}

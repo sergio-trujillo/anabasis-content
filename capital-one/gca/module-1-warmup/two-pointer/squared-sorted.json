@@ -1,0 +1,17 @@
+{
+  "id": "code-twopointer-squared-sorted",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Squares of a sorted array",
+    "es": "Cuadrados de un arreglo ordenado"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a sorted integer array `nums` (which may contain negative numbers), return a new array of each element squared, **also sorted in ascending order**. The key insight is that the largest squared values live at both ends of the input (most-negative and most-positive). Use two pointers starting at the left and right ends, filling the result array **from back to front**. Do not sort the output array after squaring.\n\nExample: `[-4, -1, 0, 3, 10]` → `[0, 1, 9, 16, 100]`. An empty input returns an empty array.",
+    "es": "Dado un arreglo de enteros ordenado `nums` (que puede contener números negativos), devuelve un nuevo arreglo con el cuadrado de cada elemento, **también ordenado de forma ascendente**. La clave es que los cuadrados más grandes se encuentran en ambos extremos de la entrada (el más negativo y el más positivo). Usa dos punteros que comiencen en los extremos izquierdo y derecho, llenando el arreglo resultado **de atrás hacia adelante**. No ordenes el arreglo de salida después de calcular los cuadrados.\n\nEjemplo: `[-4, -1, 0, 3, 10]` → `[0, 1, 9, 16, 100]`. Una entrada vacía devuelve un arreglo vacío."
+  },
+  "starterCode": "class Solution {\n    public int[] sortedSquares(int[] nums) {\n        // TODO\n        return new int[]{};\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void basicMixed() {\n        assertArrayEquals(\n            new int[]{0, 1, 9, 16, 100},\n            new Solution().sortedSquares(new int[]{-4, -1, 0, 3, 10})\n        );\n    }\n\n    @Test\n    void allNegative() {\n        assertArrayEquals(\n            new int[]{1, 4, 9, 16},\n            new Solution().sortedSquares(new int[]{-4, -3, -2, -1})\n        );\n    }\n\n    @Test\n    void allPositive() {\n        assertArrayEquals(\n            new int[]{1, 4, 9, 16, 25},\n            new Solution().sortedSquares(new int[]{1, 2, 3, 4, 5})\n        );\n    }\n\n    @Test\n    void single() {\n        assertArrayEquals(\n            new int[]{9},\n            new Solution().sortedSquares(new int[]{-3})\n        );\n    }\n\n    @Test\n    void empty() {\n        assertArrayEquals(\n            new int[]{},\n            new Solution().sortedSquares(new int[]{})\n        );\n    }\n\n    @Test\n    void symmetricAroundZero() {\n        // adversarial: both ends have equal absolute value\n        assertArrayEquals(\n            new int[]{0, 1, 1, 4, 4, 9, 9},\n            new Solution().sortedSquares(new int[]{-3, -2, -1, 0, 1, 2, 3})\n        );\n    }\n\n    @Test\n    void containsZero() {\n        assertArrayEquals(\n            new int[]{0, 1, 25},\n            new Solution().sortedSquares(new int[]{-5, 0, 1})\n        );\n    }\n}\n"
+}
