@@ -1,0 +1,17 @@
+{
+  "id": "code-statemach-validate-brackets",
+  "type": "code",
+  "section": "gca-module-3-implementation",
+  "title": {
+    "en": "Validate bracket sequences with a stack",
+    "es": "Validar secuencias de corchetes con una pila"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a `String s` containing only the characters `(`, `)`, `{`, `}`, `[`, `]`, return `true` if the bracket sequence is **valid** — every opening bracket has exactly one matching closing bracket in the correct nested order — and `false` otherwise.\n\nSignature: `public boolean isValid(String s)`\n\n**Key idiom — explicit stack state machine:**\nThe machine has one implicit state: the stack of unmatched openers. On each character the transition rule is:\n- **Opener** (`(`, `{`, `[`) → push onto stack.\n- **Closer** (`)`, `}`, `]`) → if the stack is empty OR the top does not match this closer, return `false`; otherwise pop.\n\nAfter the full pass, the sequence is valid if and only if the stack is empty.\n\nExamples:\n- `\"()[]{}\"` → `true`\n- `\"({[]})\"` → `true`\n- `\"([)]\"` → `false` (wrong nesting order)\n- `\"(\"` → `false` (unclosed opener)\n- `\"\"` → `true` (empty string is trivially valid)",
+    "es": "Dada una `String s` que contiene únicamente los caracteres `(`, `)`, `{`, `}`, `[`, `]`, devuelve `true` si la secuencia de corchetes es **válida** — cada corchete de apertura tiene exactamente un corchete de cierre correspondiente en el orden de anidamiento correcto — y `false` en caso contrario.\n\nFirma: `public boolean isValid(String s)`\n\n**Idioma clave — máquina de estados con pila explícita:**\nLa máquina tiene un estado implícito: la pila de aperturas sin cerrar. La regla de transición en cada carácter es:\n- **Apertura** (`(`, `{`, `[`) → apilar en la pila.\n- **Cierre** (`)`, `}`, `]`) → si la pila está vacía O el tope no coincide con este cierre, retornar `false`; de lo contrario, desapilar.\n\nTras el recorrido completo, la secuencia es válida si y solo si la pila está vacía.\n\nEjemplos:\n- `\"()[]{}\"` → `true`\n- `\"({[]})\"` → `true`\n- `\"([)]\"` → `false` (orden de anidamiento incorrecto)\n- `\"(\"` → `false` (apertura sin cerrar)\n- `\"\"` → `true` (la cadena vacía es trivialmente válida)"
+  },
+  "starterCode": "import java.util.*;\n\nclass Solution {\n    public boolean isValid(String s) {\n        // TODO\n        return false;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n\n    @Test\n    void mixedValid() {\n        assertTrue(new Solution().isValid(\"()[]{}\"));\n    }\n\n    @Test\n    void nestedValid() {\n        assertTrue(new Solution().isValid(\"({[]})\"));\n    }\n\n    @Test\n    void wrongNestingOrder() {\n        assertFalse(new Solution().isValid(\"([)]\"));\n    }\n\n    @Test\n    void unclosedOpener() {\n        assertFalse(new Solution().isValid(\"(\"));\n    }\n\n    @Test\n    void unopenedCloser() {\n        assertFalse(new Solution().isValid(\"}\"));\n    }\n\n    @Test\n    void emptyString() {\n        assertTrue(new Solution().isValid(\"\"));\n    }\n\n    @Test\n    void singlePair() {\n        assertTrue(new Solution().isValid(\"[]\"));\n    }\n}\n"
+}
