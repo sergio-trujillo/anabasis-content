@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-range-partition-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "range-partition: time complexity",
+    "es": "range-partition: complejidad temporal"
+  },
+  "prompt": {
+    "en": "Quickselect (range-partition to find the kth smallest element) has what expected time complexity on random input?",
+    "es": "Quickselect (range-partition para encontrar el k-ésimo elemento más pequeño) tiene ¿cuál complejidad temporal esperada con entrada aleatoria?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n log n) — it must sort all elements to determine rank", "es": "O(n log n) — debe ordenar todos los elementos para determinar el rango" } },
+    { "id": "b", "label": { "en": "O(n) average, O(n²) worst case — each partition recurses only on one side; worst case on a sorted array with bad pivot", "es": "O(n) promedio, O(n²) peor caso — cada partición recursa solo en un lado; peor caso con arreglo ordenado y pivote malo" } },
+    { "id": "c", "label": { "en": "O(log n) — binary search-like halving reduces the problem each step", "es": "O(log n) — la reducción por mitades similar a búsqueda binaria reduce el problema en cada paso" } },
+    { "id": "d", "label": { "en": "O(n log k) — the heap size is k and k operations per element", "es": "O(n log k) — el tamaño del heap es k y k operaciones por elemento" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Quickselect partitions around a pivot and recurses only on the side containing rank k, discarding the other half. With a random pivot the expected work is n + n/2 + n/4 + ... = O(n). However, if the pivot always lands at an extreme (e.g., sorted input with first-element pivot), every partition eliminates only one element — O(n²) worst case. Using median-of-three or random pivot selection reduces worst-case probability dramatically. Option A (O(n log n)) applies to full sorting (sort-by-rule). Option D (O(n log k)) applies to the PriorityQueue-based topk approach.",
+    "es": "Quickselect particiona alrededor de un pivote y recursa solo en el lado que contiene el rango k, descartando la otra mitad. Con un pivote aleatorio el trabajo esperado es n + n/2 + n/4 + ... = O(n). Sin embargo, si el pivote siempre cae en un extremo (p.ej., entrada ordenada con pivote en el primer elemento), cada partición elimina solo un elemento — O(n²) peor caso. Usar mediana de tres o selección de pivote aleatorio reduce drásticamente la probabilidad del peor caso. La opción A (O(n log n)) aplica a la ordenación completa (sort-by-rule). La opción D (O(n log k)) aplica al enfoque de PriorityQueue para topk."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-top3-merchants-by-avg",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: top-3 merchants by average transaction, tiebreak by name",
+    "es": "cross-canonical: top-3 comercios por transacción promedio, desempate por nombre"
+  },
+  "prompt": {
+    "en": "Given a list of Transaction objects, return the names of the 3 merchants with the highest average transaction amount. In case of a tie in average, the merchant whose name comes first alphabetically wins. Which canonical applies?",
+    "es": "Dada una lista de objetos Transaction, retorna los nombres de los 3 comercios con el mayor monto promedio de transacción. En caso de empate en el promedio, gana el comercio cuyo nombre aparece primero alfabéticamente. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "groupby-key — bucket transactions by merchant, compute averages, return the three largest buckets", "es": "groupby-key — agrupa transacciones por comercio, calcula promedios, retorna los tres cubetas más grandes" } },
+    { "id": "b", "label": { "en": "topk-frequent — count transactions per merchant and return the 3 most frequent", "es": "topk-frequent — cuenta transacciones por comercio y retorna los 3 más frecuentes" } },
+    { "id": "c", "label": { "en": "sort-by-rule — after computing per-merchant averages, sort with a compound comparator (average descending, name ascending) and take the first 3", "es": "sort-by-rule — después de calcular los promedios por comercio, ordena con un comparador compuesto (promedio descendente, nombre ascendente) y toma los 3 primeros" } },
+    { "id": "d", "label": { "en": "range-partition — partition merchants around the median average and recurse on the high side to find the top 3", "es": "range-partition — particiona comercios alrededor del promedio mediano y recursa en el lado alto para encontrar los 3 principales" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The tiebreaker rule (average descending, then name ascending) is the definitive fingerprint of sort-by-rule with a compound comparator: Comparator.comparingDouble(Merchant::getAvg).reversed().thenComparing(Merchant::getName). After sorting, take the first 3 entries. Option B (topk-frequent) ranks by occurrence count, not by average amount — these are different metrics. Option D (range-partition) finds the kth rank via quickselect but does not sort the top-3 group by the tiebreaker — it cannot deterministically order among equals. The preliminary groupby-key step to compute averages is a sub-step, not the canonical for this problem.",
+    "es": "La regla de desempate (promedio descendente, luego nombre ascendente) es la huella definitiva de sort-by-rule con un comparador compuesto: Comparator.comparingDouble(Merchant::getAvg).reversed().thenComparing(Merchant::getName). Después de ordenar, toma las primeras 3 entradas. La opción B (topk-frequent) clasifica por conteo de ocurrencias, no por monto promedio — son métricas diferentes. La opción D (range-partition) encuentra el k-ésimo rango mediante quickselect pero no ordena el grupo top-3 por el desempate — no puede ordenar determinísticamente entre iguales. El paso preliminar de groupby-key para calcular promedios es un sub-paso, no el canónico para este problema."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-range-partition-edge-case",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "range-partition: edge case — all elements equal",
+    "es": "range-partition: caso borde — todos los elementos iguales"
+  },
+  "prompt": {
+    "en": "Your quickselect implementation always chooses the last element as pivot. The input is int[] {5, 5, 5, 5, 5}. What happens?",
+    "es": "Tu implementación de quickselect siempre elige el último elemento como pivote. La entrada es int[] {5, 5, 5, 5, 5}. ¿Qué ocurre?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The algorithm returns immediately because all elements equal the pivot", "es": "El algoritmo retorna inmediatamente porque todos los elementos son iguales al pivote" } },
+    { "id": "b", "label": { "en": "With Lomuto partition: pivot lands at index 0 on every recursive call, giving O(n²) behavior on this input", "es": "Con partición Lomuto: el pivote cae en el índice 0 en cada llamada recursiva, dando comportamiento O(n²) en esta entrada" } },
+    { "id": "c", "label": { "en": "The algorithm enters an infinite loop because no elements are ever swapped", "es": "El algoritmo entra en un bucle infinito porque nunca se intercambia ningún elemento" } },
+    { "id": "d", "label": { "en": "Arrays with all equal elements are invalid input for quickselect", "es": "Los arreglos con todos los elementos iguales son entrada inválida para quickselect" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "With Lomuto partition and all equal elements, the partition condition (arr[i] < pivot) is never true, so storeIndex stays at low. The pivot swaps to position low — the smallest possible pivot position — leaving a subarray of size n-1 to recurse on. This repeats n times: O(n²). The fix is three-way (Dutch National Flag) partition, which handles equal elements in O(n) by creating an equal-to-pivot middle zone. Option A is incorrect — the standard Lomuto code does not short-circuit on equal elements. Option C is also incorrect — the algorithm terminates but slowly. Option D is false — equal arrays are valid.",
+    "es": "Con partición Lomuto y todos los elementos iguales, la condición de partición (arr[i] < pivote) nunca es verdadera, por lo que storeIndex permanece en low. El pivote se intercambia a la posición low — la posición de pivote más pequeña posible — dejando un subarreglo de tamaño n-1 para recursar. Esto se repite n veces: O(n²). La solución es la partición de tres vías (Bandera Nacional Holandesa), que maneja elementos iguales en O(n) creando una zona media igual al pivote. La opción A es incorrecta — el código Lomuto estándar no hace cortocircuito en elementos iguales. La opción C también es incorrecta — el algoritmo termina pero lentamente. La opción D es falsa — los arreglos iguales son válidos."
+  }
+}

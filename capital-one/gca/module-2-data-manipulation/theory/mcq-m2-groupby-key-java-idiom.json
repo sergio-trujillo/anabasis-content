@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-groupby-key-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "groupby-key: idiomatic Java construct",
+    "es": "groupby-key: construcción idiomática en Java"
+  },
+  "prompt": {
+    "en": "Which Java idiom is the most idiomatic and concise way to add a value to the list for its key while creating the list if the key is absent?",
+    "es": "¿Qué idioma de Java es la forma más idiomática y concisa de agregar un valor a la lista de su clave mientras crea la lista si la clave está ausente?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "map.getOrDefault(key, new ArrayList<>()).add(value) — retrieve or create list, then add", "es": "map.getOrDefault(key, new ArrayList<>()).add(value) — recupera o crea la lista, luego agrega" } },
+    { "id": "b", "label": { "en": "if (!map.containsKey(key)) map.put(key, new ArrayList<>()); map.get(key).add(value) — explicit null check", "es": "if (!map.containsKey(key)) map.put(key, new ArrayList<>()); map.get(key).add(value) — verificación explícita de nulo" } },
+    { "id": "c", "label": { "en": "map.computeIfAbsent(key, k -> new ArrayList<>()).add(value) — returns existing or new list, then adds in one call", "es": "map.computeIfAbsent(key, k -> new ArrayList<>()).add(value) — retorna la lista existente o nueva, luego agrega en una sola llamada" } },
+    { "id": "d", "label": { "en": "map.merge(key, List.of(value), (a, b) -> { a.addAll(b); return a; }) — merge with a combiner", "es": "map.merge(key, List.of(value), (a, b) -> { a.addAll(b); return a; }) — combina con un combinador" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "computeIfAbsent(key, k -> new ArrayList<>()).add(value) is the canonical idiom: it inserts a new list only when absent, returns the (existing or new) list, and the chained add is done in one expression — O(1) amortized. Option A (getOrDefault) has a critical bug: it returns the new list but never puts it in the map, so the new list is immediately discarded. Option B is correct but verbose — two map lookups instead of one. Option D (merge) is designed for single-value accumulation, not list building, and the lambda allocation is unnecessary overhead.",
+    "es": "computeIfAbsent(key, k -> new ArrayList<>()).add(value) es el idioma canónico: inserta una lista nueva solo cuando está ausente, retorna la lista (existente o nueva), y el add encadenado se hace en una expresión — O(1) amortizado. La opción A (getOrDefault) tiene un error crítico: retorna la lista nueva pero nunca la pone en el mapa, por lo que la lista nueva se descarta inmediatamente. La opción B es correcta pero verbosa — dos búsquedas en el mapa en lugar de una. La opción D (merge) está diseñada para acumulación de un solo valor, no para construir listas, y la asignación del lambda es innecesaria."
+  }
+}

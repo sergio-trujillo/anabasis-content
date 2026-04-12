@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-group-transactions-by-letter",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: group transaction IDs by first letter",
+    "es": "cross-canonical: agrupar IDs de transacción por primera letra"
+  },
+  "prompt": {
+    "en": "Given a list of String transaction IDs, group them into buckets by their first character — return a Map<Character, List<String>>. Which Module 2 canonical applies?",
+    "es": "Dada una lista de IDs de transacción String, agrúpalos en cubetas por su primer carácter — retorna un Map<Character, List<String>>. ¿Qué canónico del Módulo 2 aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "histogram-bucketing — allocate a char[26] array and use the first character as an index", "es": "histogram-bucketing — asigna un arreglo char[26] y usa el primer carácter como índice" } },
+    { "id": "b", "label": { "en": "groupby-key — one pass with computeIfAbsent keyed on txId.charAt(0)", "es": "groupby-key — un recorrido con computeIfAbsent con clave txId.charAt(0)" } },
+    { "id": "c", "label": { "en": "sort-by-rule — sort IDs lexicographically, then collect adjacent IDs with the same first character", "es": "sort-by-rule — ordena IDs lexicográficamente, luego agrupa IDs adyacentes con el mismo primer carácter" } },
+    { "id": "d", "label": { "en": "topk-frequent — count first-character frequencies and return the most common groups", "es": "topk-frequent — cuenta las frecuencias del primer carácter y retorna los grupos más comunes" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The problem asks to collect full String objects into groups keyed by a derived attribute — the classic groupby-key fingerprint. computeIfAbsent(txId.charAt(0), k -> new ArrayList<>()).add(txId) handles it in one O(n) pass. Option A (histogram-bucketing) would count how many IDs start with each letter — but the problem requires the actual IDs, not counts, so histogram-bucketing discards the objects. Option C (sort-by-rule) also groups but at O(n log n) and requires a second pass to collect adjacent equal keys.",
+    "es": "El problema pide recopilar objetos String completos en grupos con clave en un atributo derivado — la huella clásica de groupby-key. computeIfAbsent(txId.charAt(0), k -> new ArrayList<>()).add(txId) lo maneja en un recorrido O(n). La opción A (histogram-bucketing) contaría cuántos IDs comienzan con cada letra — pero el problema requiere los IDs reales, no conteos, por lo que histogram-bucketing descarta los objetos. La opción C (sort-by-rule) también agrupa pero en O(n log n) y requiere un segundo recorrido para recoger claves adyacentes iguales."
+  }
+}

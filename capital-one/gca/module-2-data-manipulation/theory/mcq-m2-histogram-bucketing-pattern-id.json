@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-histogram-bucketing-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "histogram-bucketing: pattern identification",
+    "es": "histogram-bucketing: identificación del patrón"
+  },
+  "prompt": {
+    "en": "Given int[] scores where every score is in [0, 100], sort the array in O(n) time without using any comparison-based sort. Which canonical pattern applies?",
+    "es": "Dado int[] scores donde cada puntuación está en [0, 100], ordena el arreglo en tiempo O(n) sin usar ninguna ordenación por comparación. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — use a comparator on the integer values", "es": "sort-by-rule — usa un comparador sobre los valores enteros" } },
+    { "id": "b", "label": { "en": "groupby-key — bucket scores into a Map<Integer, Integer> counting occurrences", "es": "groupby-key — agrupa las puntuaciones en un Map<Integer, Integer> contando ocurrencias" } },
+    { "id": "c", "label": { "en": "histogram-bucketing — allocate int[101], count each score, then reconstruct the sorted array in one pass over the bucket array", "es": "histogram-bucketing — asigna int[101], cuenta cada puntuación, luego reconstruye el arreglo ordenado en un recorrido sobre el arreglo de cubetas" } },
+    { "id": "d", "label": { "en": "frequency-count — count occurrences only; do not reconstruct the array", "es": "frequency-count — solo cuenta ocurrencias; no reconstruye el arreglo" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The bounded integer range [0, 100] and the O(n) time requirement are the two fingerprints of histogram-bucketing. You allocate int[101], increment counts in one pass, then write scores back in a second pass — O(n + k) = O(n + 101) = O(n). Option A (sort-by-rule) uses comparison sort — O(n log n) — violating the O(n) constraint. Option B (groupby-key) uses a HashMap, which works but is O(n) with higher constant factors and does not leverage array indexing. Option D (frequency-count) is the intermediate step inside histogram-bucketing — it counts but never reconstructs, so it doesn't solve the sorting problem.",
+    "es": "El rango de enteros acotado [0, 100] y el requisito de tiempo O(n) son las dos huellas de histogram-bucketing. Asignas int[101], incrementas conteos en un recorrido, luego escribes las puntuaciones de vuelta en un segundo recorrido — O(n + k) = O(n + 101) = O(n). La opción A (sort-by-rule) usa ordenación por comparación — O(n log n) — violando la restricción O(n). La opción B (groupby-key) usa un HashMap, que funciona pero con constantes más altas y no aprovecha la indexación de arreglo. La opción D (frequency-count) es el paso intermedio dentro de histogram-bucketing — cuenta pero nunca reconstruye, por lo que no resuelve el problema de ordenación."
+  }
+}

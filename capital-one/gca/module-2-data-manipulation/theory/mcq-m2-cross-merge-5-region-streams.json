@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-merge-5-region-streams",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: merge 5 sorted per-region transaction streams",
+    "es": "cross-canonical: combinar 5 flujos de transacciones por región ordenados"
+  },
+  "prompt": {
+    "en": "You have 5 sorted streams of transactions (one per region), each potentially millions of rows. Produce a single globally sorted list without loading all data at once. Which canonical applies?",
+    "es": "Tienes 5 flujos de transacciones ordenados (uno por región), cada uno con potencialmente millones de filas. Produce una única lista ordenada globalmente sin cargar todos los datos a la vez. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — buffer all 5 streams into memory, concatenate, sort with a comparator", "es": "sort-by-rule — almacena en memoria todos los 5 flujos, concatena, ordena con un comparador" } },
+    { "id": "b", "label": { "en": "groupby-key — bucket transactions by region, then flatten each bucket in sorted order", "es": "groupby-key — agrupa transacciones por región, luego aplana cada cubeta en orden ordenado" } },
+    { "id": "c", "label": { "en": "merge-k-sorted — maintain a min-heap of 5 cursors (one per stream); always poll the minimum and advance that stream's cursor", "es": "merge-k-sorted — mantiene un min-heap de 5 cursores (uno por flujo); siempre extrae el mínimo y avanza el cursor de ese flujo" } },
+    { "id": "d", "label": { "en": "topk-frequent — use a bounded heap of size 5 to extract the most frequent transactions", "es": "topk-frequent — usa un heap acotado de tamaño 5 para extraer las transacciones más frecuentes" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Five pre-sorted sources and a streaming (non-materialized) global merge are the exact fingerprint of merge-k-sorted. A min-heap of 5 cursors holds at most 5 elements at any time — O(N log 5) = O(N) effectively. Option A requires loading all data at once — the problem explicitly prohibits this and wastes the sorted structure. Option B groups by region but does not merge across regions — flattening each bucket still results in unsorted global output unless you then sort the whole thing. Option D extracts the k most frequent items — a completely different problem.",
+    "es": "Cinco fuentes pre-ordenadas y una combinación global en streaming (sin materializar) son la huella exacta de merge-k-sorted. Un min-heap de 5 cursores contiene como máximo 5 elementos en cualquier momento — O(N log 5) = O(N) efectivamente. La opción A requiere cargar todos los datos a la vez — el problema lo prohíbe explícitamente y desperdicia la estructura ordenada. La opción B agrupa por región pero no combina entre regiones — aplanar cada cubeta aún resulta en salida global desordenada a menos que luego ordenes todo. La opción D extrae los k elementos más frecuentes — un problema completamente diferente."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-merge-k-sorted-edge-case",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "merge-k-sorted: edge case with empty source lists",
+    "es": "merge-k-sorted: caso borde con listas fuente vacías"
+  },
+  "prompt": {
+    "en": "In your merge-k-sorted implementation, one of the k source lists is empty. How should the algorithm handle it?",
+    "es": "En tu implementación de merge-k-sorted, una de las k listas fuente está vacía. ¿Cómo debe manejarlo el algoritmo?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Insert a sentinel value of Integer.MAX_VALUE for the empty list's cursor so it never wins a comparison", "es": "Inserta un valor centinela de Integer.MAX_VALUE para el cursor de la lista vacía para que nunca gane una comparación" } },
+    { "id": "b", "label": { "en": "Skip the empty list during initial heap population — never enqueue a cursor for it", "es": "Omite la lista vacía durante la población inicial del heap — nunca encola un cursor para ella" } },
+    { "id": "c", "label": { "en": "Throw an IllegalArgumentException since merge-k-sorted requires all lists to be non-empty", "es": "Lanza IllegalArgumentException ya que merge-k-sorted requiere que todas las listas sean no vacías" } },
+    { "id": "d", "label": { "en": "Insert a null entry for the empty list; add a null check inside the comparator", "es": "Inserta una entrada null para la lista vacía; agrega una verificación de null dentro del comparador" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The cleanest approach is to skip empty lists during initialization — simply don't enqueue a cursor for them. The heap starts with at most k non-empty cursors and the algorithm proceeds normally. Option A (sentinel MAX_VALUE) wastes a heap slot and requires extra logic to avoid enqueuing next elements for the exhausted list — it works but is more complex. Option C is wrong: empty lists are a valid input and should produce no contribution to the output, not an exception. Option D introduces nullable heap entries, making the comparator unsafe and error-prone.",
+    "es": "El enfoque más limpio es omitir las listas vacías durante la inicialización — simplemente no encolar un cursor para ellas. El heap comienza con como máximo k cursores no vacíos y el algoritmo procede normalmente. La opción A (centinela MAX_VALUE) desperdicia un slot del heap y requiere lógica adicional para evitar encolar el siguiente elemento de la lista agotada — funciona pero es más complejo. La opción C es incorrecta: las listas vacías son una entrada válida y deben producir ninguna contribución a la salida, no una excepción. La opción D introduce entradas nulables en el heap, haciendo el comparador inseguro y propenso a errores."
+  }
+}

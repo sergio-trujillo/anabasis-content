@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-sort-bounded-int-array",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: sort int[] with values in [0, 100]",
+    "es": "cross-canonical: ordenar int[] con valores en [0, 100]"
+  },
+  "prompt": {
+    "en": "You must sort int[] ratings where every value is guaranteed to be in [0, 100]. An O(n) solution is required. Which Module 2 canonical applies?",
+    "es": "Debes ordenar int[] ratings donde se garantiza que cada valor está en [0, 100]. Se requiere una solución O(n). ¿Qué canónico del Módulo 2 aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — use Arrays.sort with a natural-order comparator", "es": "sort-by-rule — usa Arrays.sort con un comparador de orden natural" } },
+    { "id": "b", "label": { "en": "groupby-key — bucket each rating into a Map<Integer, List<Integer>> then flatten in key order", "es": "groupby-key — agrupa cada rating en un Map<Integer, List<Integer>> luego aplana en orden de clave" } },
+    { "id": "c", "label": { "en": "histogram-bucketing — allocate int[101], count each value, then reconstruct the sorted array", "es": "histogram-bucketing — asigna int[101], cuenta cada valor, luego reconstruye el arreglo ordenado" } },
+    { "id": "d", "label": { "en": "range-partition — quickselect in-place to find each rank from 0 to n-1", "es": "range-partition — quickselect in-place para encontrar cada rango de 0 a n-1" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The bounded integer domain [0, 100] and the O(n) requirement point unambiguously to histogram-bucketing (counting sort). Allocate int[101], increment buckets[v] for each value, then reconstruct the sorted output. Total O(n + 101) = O(n). Option A (sort-by-rule / Arrays.sort) is O(n log n) — violates the constraint. Option B (groupby-key) with a HashMap achieves O(n) time but with higher constant factors and O(n) space; more importantly, flattening in key order requires iterating the map's key set in sorted order, which is not guaranteed unless a TreeMap is used. Option D (range-partition) applied n times would be O(n²) — not O(n).",
+    "es": "El dominio de enteros acotado [0, 100] y el requisito O(n) apuntan inequívocamente a histogram-bucketing (counting sort). Asigna int[101], incrementa buckets[v] por cada valor, luego reconstruye la salida ordenada. Total O(n + 101) = O(n). La opción A (sort-by-rule / Arrays.sort) es O(n log n) — viola la restricción. La opción B (groupby-key) con un HashMap logra O(n) tiempo pero con constantes más altas; más importante, aplanar en orden de clave requiere iterar el conjunto de claves del mapa en orden ordenado, lo cual no está garantizado a menos que se use un TreeMap. La opción D (range-partition) aplicada n veces sería O(n²) — no O(n)."
+  }
+}

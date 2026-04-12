@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-histogram-bucketing-edge-case",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "histogram-bucketing: bucket array size matters",
+    "es": "histogram-bucketing: el tamaño del arreglo de cubetas importa"
+  },
+  "prompt": {
+    "en": "Your histogram-bucketing solution allocates int[100] for values claimed to be in [0, 100]. A value of 100 arrives. What happens?",
+    "es": "Tu solución histogram-bucketing asigna int[100] para valores que se dice están en [0, 100]. Llega un valor de 100. ¿Qué ocurre?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The value 100 is silently ignored because it equals the array length", "es": "El valor 100 se ignora silenciosamente porque es igual a la longitud del arreglo" } },
+    { "id": "b", "label": { "en": "An ArrayIndexOutOfBoundsException is thrown — the valid indices are [0, 99]", "es": "Se lanza ArrayIndexOutOfBoundsException — los índices válidos son [0, 99]" } },
+    { "id": "c", "label": { "en": "buckets[100] wraps around to buckets[0] in Java due to integer overflow", "es": "buckets[100] hace wrap-around a buckets[0] en Java por desbordamiento de entero" } },
+    { "id": "d", "label": { "en": "Java automatically expands the array to int[101] at runtime", "es": "Java expande automáticamente el arreglo a int[101] en tiempo de ejecución" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Java arrays are fixed-size and bounds-checked: accessing int[100][100] (index == length) throws ArrayIndexOutOfBoundsException at runtime. The correct allocation for a range [0, MAX] inclusive is new int[MAX + 1]. This off-by-one is the most common histogram-bucketing bug in interviews: forgetting to include the maximum value itself. Options C and D describe behaviors that do not exist in Java — arrays never wrap or auto-resize. Option A is also wrong: Java does not silently ignore out-of-bounds access.",
+    "es": "Los arreglos de Java son de tamaño fijo y se comprueban los límites: acceder a int[100][100] (índice == longitud) lanza ArrayIndexOutOfBoundsException en tiempo de ejecución. La asignación correcta para un rango [0, MAX] inclusivo es new int[MAX + 1]. Este error de uno en uno es el bug más común de histogram-bucketing en entrevistas: olvidar incluir el valor máximo mismo. Las opciones C y D describen comportamientos que no existen en Java — los arreglos nunca hacen wrap-around ni se redimensionan automáticamente. La opción A también es incorrecta: Java no ignora silenciosamente el acceso fuera de límites."
+  }
+}

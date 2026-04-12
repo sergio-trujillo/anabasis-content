@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-sort-by-rule-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "sort-by-rule: time complexity",
+    "es": "sort-by-rule: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You sort an array of n objects using a custom Comparator with Arrays.sort. What is the time complexity?",
+    "es": "Ordenas un arreglo de n objetos usando un Comparator personalizado con Arrays.sort. ¿Cuál es la complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) — the comparator evaluates each element once", "es": "O(n) — el comparador evalúa cada elemento una vez" } },
+    { "id": "b", "label": { "en": "O(n log n) — TimSort performs at most n·log n comparisons", "es": "O(n log n) — TimSort realiza como máximo n·log n comparaciones" } },
+    { "id": "c", "label": { "en": "O(n + k) — where k is the number of distinct sort keys", "es": "O(n + k) — donde k es el número de claves de ordenación distintas" } },
+    { "id": "d", "label": { "en": "O(n log k) — where k is the number of distinct keys in the sort rule", "es": "O(n log k) — donde k es el número de claves distintas en la regla de ordenación" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Arrays.sort on objects uses TimSort, a comparison-based sort with O(n log n) worst-case and best-case O(n) for already-sorted input. The custom Comparator is invoked O(n log n) times total but each invocation is O(1) if the comparison logic is constant, so the total remains O(n log n). Option A (O(n)) confuses sort-by-rule with a single-pass algorithm like groupby-key or frequency-count. Option D (O(n log k)) is the complexity of a bounded-heap approach (e.g., PriorityQueue of size k) used in topk-frequent — not a full sort.",
+    "es": "Arrays.sort en objetos usa TimSort, un ordenamiento por comparación con peor caso O(n log n) y mejor caso O(n) para entrada ya ordenada. El Comparator personalizado se invoca O(n log n) veces en total, pero cada invocación es O(1) si la lógica de comparación es constante, por lo que el total sigue siendo O(n log n). La opción A (O(n)) confunde sort-by-rule con un algoritmo de un solo recorrido como groupby-key o frequency-count. La opción D (O(n log k)) es la complejidad del enfoque de heap acotado (p.ej., PriorityQueue de tamaño k) usado en topk-frequent — no una ordenación completa."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-groupby-key-compute-if-absent",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "groupby-key: computeIfAbsent vs getOrDefault+put",
+    "es": "groupby-key: computeIfAbsent vs getOrDefault+put"
+  },
+  "prompt": {
+    "en": "Consider these two snippets for building a Map<String, List<Integer>>:\n  A: map.getOrDefault(key, new ArrayList<>()).add(value);\n  B: map.computeIfAbsent(key, k -> new ArrayList<>()).add(value);\nWhy does snippet A silently fail to accumulate values under an unseen key?",
+    "es": "Considera estos dos fragmentos para construir un Map<String, List<Integer>>:\n  A: map.getOrDefault(key, new ArrayList<>()).add(value);\n  B: map.computeIfAbsent(key, k -> new ArrayList<>()).add(value);\n¿Por qué el fragmento A falla silenciosamente al acumular valores bajo una clave no vista?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "getOrDefault throws a NullPointerException when the key is absent", "es": "getOrDefault lanza NullPointerException cuando la clave está ausente" } },
+    { "id": "b", "label": { "en": "getOrDefault returns a new ArrayList but does not insert it into the map, so the add is lost", "es": "getOrDefault retorna un nuevo ArrayList pero no lo inserta en el mapa, por lo que el add se pierde" } },
+    { "id": "c", "label": { "en": "getOrDefault inserts the new list but returns null, causing a NullPointerException on add", "es": "getOrDefault inserta la nueva lista pero retorna null, causando NullPointerException en add" } },
+    { "id": "d", "label": { "en": "Both snippets are equivalent; the difference is only stylistic", "es": "Ambos fragmentos son equivalentes; la diferencia es solo estilística" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Map.getOrDefault returns the default value but does NOT put it into the map. For an unseen key, snippet A adds value to a transient ArrayList that immediately becomes unreachable — the map is never updated. computeIfAbsent inserts the newly created list into the map and returns it, so the chained add persists. This is a classic interview trap: the code compiles and runs without error but silently discards data for new keys. Option D is false — the two snippets produce different results whenever a key is encountered for the first time.",
+    "es": "Map.getOrDefault retorna el valor por defecto pero NO lo inserta en el mapa. Para una clave no vista, el fragmento A agrega value a un ArrayList transitorio que inmediatamente se vuelve inalcanzable — el mapa nunca se actualiza. computeIfAbsent inserta la lista recién creada en el mapa y la retorna, por lo que el add encadenado persiste. Esta es una trampa clásica de entrevistas: el código compila y ejecuta sin error pero descarta silenciosamente datos para claves nuevas. La opción D es falsa — los dos fragmentos producen resultados diferentes cuando se encuentra una clave por primera vez."
+  }
+}

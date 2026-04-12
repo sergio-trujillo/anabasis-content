@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-h-index",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: h-index from citation counts",
+    "es": "cross-canonical: h-index a partir de conteos de citas"
+  },
+  "prompt": {
+    "en": "Given int[] citations (arbitrarily large values), return the h-index: the largest h such that at least h papers have >= h citations. A **worst-case** O(n) solution is required (not just average-case). Which canonical applies?",
+    "es": "Dado int[] citations (valores arbitrariamente grandes), retorna el h-index: el mayor h tal que al menos h artículos tienen >= h citas. Se requiere una solución con complejidad **de peor caso** O(n) (no solo promedio). ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — sort citations descending; scan until citations[i] < i+1", "es": "sort-by-rule — ordena citas de forma descendente; escanea hasta que citations[i] < i+1" } },
+    { "id": "b", "label": { "en": "topk-frequent — count citation frequencies and return the top-h most common", "es": "topk-frequent — cuenta frecuencias de citas y retorna las h más comunes" } },
+    { "id": "c", "label": { "en": "histogram-bucketing — allocate int[n+1], cap citation counts at n, fill buckets, scan from index n downward accumulating count until the sum >= current index", "es": "histogram-bucketing — asigna int[n+1], recorta los conteos de citas en n, llena cubetas, escanea desde el índice n hacia abajo acumulando conteo hasta que la suma >= índice actual" } },
+    { "id": "d", "label": { "en": "range-partition — quickselect to find the largest h in O(n) average time", "es": "range-partition — quickselect para encontrar el mayor h en tiempo promedio O(n)" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The worst-case O(n) h-index solution uses histogram-bucketing: allocate int[n+1], cap each citation at n (since h ≤ n), scan from index n downward accumulating a running count. The first index i where the running count >= i is the h-index. This matches the histogram-bucketing fingerprint: the count array is intermediate infrastructure, not the final answer. Option A (sort-by-rule) is O(n log n), fails the worst-case O(n) constraint. Option D (range-partition/quickselect) is O(n) AVERAGE only — worst case is O(n²), so it also fails the constraint. Histogram-bucketing is the only O(n) worst-case option here.",
+    "es": "La solución O(n) de peor caso para el h-index usa histogram-bucketing: asigna int[n+1], recorta cada cita en n (ya que h ≤ n), escanea desde el índice n hacia abajo acumulando un conteo acumulado. El primer índice i donde el conteo acumulado >= i es el h-index. Esto coincide con la huella de histogram-bucketing: el arreglo de conteo es infraestructura intermedia, no la respuesta final. La opción A (sort-by-rule) es O(n log n), no cumple la restricción O(n) peor caso. La opción D (range-partition/quickselect) es O(n) PROMEDIO únicamente — peor caso es O(n²), así que tampoco cumple. Histogram-bucketing es la única opción O(n) peor caso."
+  }
+}

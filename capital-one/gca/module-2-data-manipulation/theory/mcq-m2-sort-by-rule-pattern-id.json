@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-sort-by-rule-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "sort-by-rule: pattern identification",
+    "es": "sort-by-rule: identificación del patrón"
+  },
+  "prompt": {
+    "en": "Given a list of Employee objects, return them sorted by department ascending, then by salary descending within each department, then by last name ascending as a final tiebreaker. Which canonical pattern applies?",
+    "es": "Dado una lista de objetos Employee, retórnalos ordenados por departamento ascendente, luego por salario descendente dentro de cada departamento, luego por apellido ascendente como desempate final. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "groupby-key — bucket by department, then sort each bucket by salary", "es": "groupby-key — agrupa por departamento, luego ordena cada cubeta por salario" } },
+    { "id": "b", "label": { "en": "sort-by-rule — define a compound Comparator encoding all three criteria in priority order", "es": "sort-by-rule — define un Comparator compuesto que codifica los tres criterios en orden de prioridad" } },
+    { "id": "c", "label": { "en": "topk-frequent — rank by the most common salary bracket within each department", "es": "topk-frequent — clasifica por el rango salarial más frecuente dentro de cada departamento" } },
+    { "id": "d", "label": { "en": "range-partition — partition around the median salary to separate high earners from low", "es": "range-partition — particiona alrededor de la mediana salarial para separar altos de bajos ingresos" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Multiple ordered criteria — primary, secondary, tertiary — are the definitive signal for sort-by-rule. The comparator chains Comparator.comparing(Employee::getDepartment).thenComparing(Comparator.comparingDouble(Employee::getSalary).reversed()).thenComparing(Employee::getLastName), applied in a single Arrays.sort call. Option A (groupby-key) would require multiple passes and secondary sorts per bucket, producing the same result but at higher code complexity and without preserving the interleaved global order. Option C and D are unrelated to multi-key ordering.",
+    "es": "Múltiples criterios ordenados — primario, secundario, terciario — son la señal definitiva de sort-by-rule. El comparador encadena Comparator.comparing(Employee::getDepartment).thenComparing(Comparator.comparingDouble(Employee::getSalary).reversed()).thenComparing(Employee::getLastName), aplicado en una sola llamada a Arrays.sort. La opción A (groupby-key) requeriría múltiples recorridos y ordenaciones secundarias por cubeta, produciendo el mismo resultado pero con mayor complejidad de código y sin preservar el orden global intercalado. Las opciones C y D son irrelevantes para la ordenación por múltiples claves."
+  }
+}

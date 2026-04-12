@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-top5-frequent-merchants",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: top-5 most frequent merchants",
+    "es": "cross-canonical: los 5 comercios más frecuentes"
+  },
+  "prompt": {
+    "en": "Given a list of transaction records each containing a String merchantName, return the 5 merchants that appear most often. No specific time constraint beyond reasonable efficiency. Which canonical applies?",
+    "es": "Dada una lista de registros de transacción cada uno con un String merchantName, retorna los 5 comercios que aparecen con más frecuencia. Sin restricción de tiempo específica más allá de eficiencia razonable. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "groupby-key — group transactions by merchant, then find the 5 groups with the most entries", "es": "groupby-key — agrupa transacciones por comercio, luego encuentra los 5 grupos con más entradas" } },
+    { "id": "b", "label": { "en": "topk-frequent — count merchant frequencies with a HashMap, then extract the top 5 with a min-heap of size 5", "es": "topk-frequent — cuenta frecuencias de comercios con un HashMap, luego extrae los 5 principales con un min-heap de tamaño 5" } },
+    { "id": "c", "label": { "en": "sort-by-rule — sort merchants by occurrence count descending, return the first 5", "es": "sort-by-rule — ordena comercios por conteo de ocurrencias descendente, retorna los 5 primeros" } },
+    { "id": "d", "label": { "en": "range-partition — partition merchants by frequency around the median count", "es": "range-partition — particiona comercios por frecuencia alrededor del conteo mediano" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "'Return the k most frequent items from a collection' is the textbook topk-frequent fingerprint. Step 1: HashMap frequency count O(n). Step 2: min-heap of size 5 to extract top candidates O(n log 5) = O(n). Option A (groupby-key) stores full transaction objects per bucket, which is wasteful — you need counts, not lists. Worse, comparing bucket sizes still requires a top-5 extraction step. Option C (sort-by-rule) is a valid but O(n log n) alternative; it is correct but uses a full sort when only partial order (top 5) is needed. Option D (range-partition) finds a rank boundary but not the ordered top-5.",
+    "es": "'Retornar los k elementos más frecuentes de una colección' es la huella de texto de topk-frequent. Paso 1: conteo de frecuencias con HashMap O(n). Paso 2: min-heap de tamaño 5 para extraer candidatos principales O(n log 5) = O(n). La opción A (groupby-key) almacena objetos de transacción completos por cubeta, lo cual es ineficiente — necesitas conteos, no listas. Peor aún, comparar tamaños de cubetas aún requiere un paso de extracción top-5. La opción C (sort-by-rule) es una alternativa válida pero O(n log n); es correcta pero usa una ordenación completa cuando solo se necesita orden parcial (top 5). La opción D (range-partition) encuentra un límite de rango pero no los top-5 ordenados."
+  }
+}

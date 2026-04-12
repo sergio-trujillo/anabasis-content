@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-merge-k-sorted-heap-size",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "merge-k-sorted: why the heap size is k, not n",
+    "es": "merge-k-sorted: por qué el tamaño del heap es k, no n"
+  },
+  "prompt": {
+    "en": "In merge-k-sorted the PriorityQueue holds at most k elements at any given time, even though the total input is N elements. Why?",
+    "es": "En merge-k-sorted la PriorityQueue contiene como máximo k elementos en cualquier momento, aunque la entrada total sea N elementos. ¿Por qué?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The heap is limited to k for memory efficiency; elements beyond k are dropped", "es": "El heap está limitado a k por eficiencia de memoria; los elementos más allá de k se descartan" } },
+    { "id": "b", "label": { "en": "Each heap entry represents the current frontier of one source list; only one element per source is ever needed in the heap at once", "es": "Cada entrada del heap representa la frontera actual de una lista fuente; solo se necesita un elemento por fuente en el heap a la vez" } },
+    { "id": "c", "label": { "en": "The heap stores one element per output position, and there are k output positions filled per round", "es": "El heap almacena un elemento por posición de salida, y se llenan k posiciones de salida por ronda" } },
+    { "id": "d", "label": { "en": "k is a PriorityQueue constructor parameter that caps its internal capacity", "es": "k es un parámetro del constructor de PriorityQueue que limita su capacidad interna" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The invariant is one cursor per source: the heap always holds the current minimum candidate from each of the k non-exhausted lists — exactly k entries (or fewer if some lists are exhausted). When you poll the minimum, you push the next element from that same source list. This keeps the heap at constant size k throughout the algorithm, giving O(log k) per operation instead of O(log N). Option A is wrong — no elements are dropped. Option C misunderstands the structure: you emit one element per step, not k. Option D is also wrong: PriorityQueue's initial capacity is a hint, not a hard cap.",
+    "es": "El invariante es un cursor por fuente: el heap siempre mantiene el candidato mínimo actual de cada una de las k listas no agotadas — exactamente k entradas (o menos si algunas listas se agotan). Cuando extraes el mínimo, empujas el siguiente elemento de esa misma lista fuente. Esto mantiene el heap en tamaño constante k durante todo el algoritmo, dando O(log k) por operación en lugar de O(log N). La opción A es incorrecta — no se descartan elementos. La opción C malentiende la estructura: emites un elemento por paso, no k. La opción D también es incorrecta: la capacidad inicial de PriorityQueue es una sugerencia, no un límite estricto."
+  }
+}

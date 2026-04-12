@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-topk-frequent-composition",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "topk-frequent: recognizing canonical composition",
+    "es": "topk-frequent: reconocer la composición canónica"
+  },
+  "prompt": {
+    "en": "A colleague says: 'topk-frequent is just frequency-count plus sort-by-rule.' Another says: 'It's frequency-count plus a bounded heap.' Which statement is most accurate about how topk-frequent composes canonicals?",
+    "es": "Un compañero dice: 'topk-frequent es simplemente frequency-count más sort-by-rule.' Otro dice: 'Es frequency-count más un heap acotado.' ¿Cuál afirmación es más precisa sobre cómo topk-frequent compone canónicos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Both are wrong — topk-frequent is a standalone canonical that shares no structure with others", "es": "Ambos están equivocados — topk-frequent es un canónico independiente que no comparte estructura con otros" } },
+    { "id": "b", "label": { "en": "Both are valid compositions — topk-frequent can be implemented as (frequency-count + sort-by-rule) at O(n log n) or as (frequency-count + bounded heap) at O(n log k), or as (frequency-count + histogram-bucketing) at O(n)", "es": "Ambas son composiciones válidas — topk-frequent puede implementarse como (frequency-count + sort-by-rule) en O(n log n) o como (frequency-count + heap acotado) en O(n log k), o como (frequency-count + histogram-bucketing) en O(n)" } },
+    { "id": "c", "label": { "en": "Only frequency-count + sort-by-rule is correct — the heap approach does not count frequencies first", "es": "Solo frequency-count + sort-by-rule es correcto — el enfoque de heap no cuenta frecuencias primero" } },
+    { "id": "d", "label": { "en": "Only frequency-count + bounded heap is correct — sort-by-rule produces the wrong order for top-k", "es": "Solo frequency-count + heap acotado es correcto — sort-by-rule produce el orden incorrecto para top-k" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "topk-frequent is the meta-skill of the module: it is fundamentally a composition that always starts with frequency-count, then applies one of three second steps depending on constraints. (frequency-count + sort-by-rule): count, sort all entries by frequency, take first k — O(n log n), simplest to write. (frequency-count + bounded min-heap): count, maintain heap of size k — O(n log k), optimal for large n. (frequency-count + histogram-bucketing): count, bucket by frequency, scan from high — O(n), optimal but uses O(n) extra space. Option A is wrong: topk-frequent is explicitly a composition. Options C and D each dismiss a valid implementation.",
+    "es": "topk-frequent es la meta-habilidad del módulo: es fundamentalmente una composición que siempre comienza con frequency-count, luego aplica uno de tres segundos pasos según las restricciones. (frequency-count + sort-by-rule): cuenta, ordena todas las entradas por frecuencia, toma los primeros k — O(n log n), más simple de escribir. (frequency-count + heap mínimo acotado): cuenta, mantiene heap de tamaño k — O(n log k), óptimo para n grande. (frequency-count + histogram-bucketing): cuenta, agrupa por frecuencia, escanea desde arriba — O(n), óptimo pero usa O(n) espacio extra. La opción A es incorrecta: topk-frequent es explícitamente una composición. Las opciones C y D desestiman respectivamente una implementación válida."
+  }
+}

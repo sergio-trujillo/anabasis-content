@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-histogram-bucketing-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "histogram-bucketing: time complexity",
+    "es": "histogram-bucketing: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You sort n integers all in the range [0, k-1] using a bucket array of size k (counting sort). What is the time complexity?",
+    "es": "Ordenas n enteros todos en el rango [0, k-1] usando un arreglo de cubetas de tamaño k (counting sort). ¿Cuál es la complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n log n) — you still need to sort within each bucket", "es": "O(n log n) — aún necesitas ordenar dentro de cada cubeta" } },
+    { "id": "b", "label": { "en": "O(n) — only one pass over the array is needed", "es": "O(n) — solo se necesita un recorrido sobre el arreglo" } },
+    { "id": "c", "label": { "en": "O(n + k) — one pass to fill buckets plus one pass over k buckets to reconstruct", "es": "O(n + k) — un recorrido para llenar cubetas más un recorrido sobre k cubetas para reconstruir" } },
+    { "id": "d", "label": { "en": "O(k) — the dominant cost is iterating the fixed-size bucket array", "es": "O(k) — el costo dominante es iterar el arreglo de cubetas de tamaño fijo" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "histogram-bucketing (counting sort) makes one pass over n elements to increment bucket counts — O(n) — then one pass over k buckets to write output — O(k) — giving O(n + k) total. Option B (O(n)) omits the necessary pass over k buckets, which can dominate when k >> n. Option A (O(n log n)) applies to comparison-based sorting like sort-by-rule; this is precisely the advantage of histogram-bucketing — it breaks the comparison-sort lower bound by exploiting the bounded integer domain. Option D (O(k)) ignores the first pass.",
+    "es": "histogram-bucketing (counting sort) hace un recorrido sobre n elementos para incrementar los conteos de cubetas — O(n) — luego un recorrido sobre k cubetas para escribir la salida — O(k) — dando O(n + k) en total. La opción B (O(n)) omite el recorrido necesario sobre k cubetas, que puede dominar cuando k >> n. La opción A (O(n log n)) aplica a la ordenación por comparación como sort-by-rule; esta es precisamente la ventaja de histogram-bucketing — rompe la cota inferior de ordenación por comparación al explotar el dominio de enteros acotado. La opción D (O(k)) ignora el primer recorrido."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-top10-smallest-across-batches",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: 10 smallest transactions across 3 sorted daily batches",
+    "es": "cross-canonical: las 10 transacciones más pequeñas en 3 lotes diarios ordenados"
+  },
+  "prompt": {
+    "en": "You have 3 sorted (ascending) daily transaction batches (int arrays). Return the 10 smallest transactions overall; stop processing as soon as you have 10. Which canonical applies?",
+    "es": "Tienes 3 lotes de transacciones diarias (arreglos int) ordenados de forma ascendente. Retorna las 10 transacciones más pequeñas en total; deja de procesar en cuanto tengas 10. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "histogram-bucketing — count all values, scan buckets from smallest to largest, stop after 10 elements", "es": "histogram-bucketing — cuenta todos los valores, escanea cubetas de menor a mayor, detente después de 10 elementos" } },
+    { "id": "b", "label": { "en": "sort-by-rule — merge all 3 arrays, sort, return the first 10 elements", "es": "sort-by-rule — combina los 3 arreglos, ordena, retorna los primeros 10 elementos" } },
+    { "id": "c", "label": { "en": "merge-k-sorted — use a min-heap of 3 cursors; poll 10 times and stop — early termination avoids processing the rest of the batches", "es": "merge-k-sorted — usa un min-heap de 3 cursores; extrae 10 veces y detente — la terminación temprana evita procesar el resto de los lotes" } },
+    { "id": "d", "label": { "en": "range-partition — partition around the 10th smallest value across all batches", "es": "range-partition — particiona alrededor del 10mo valor más pequeño en todos los lotes" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Pre-sorted sources plus early termination (stop after 10 results) is the strongest case for merge-k-sorted. The heap has 3 cursors; you poll exactly 10 times and halt — you never touch the vast majority of the data. O(10 log 3) = O(1) for fixed k and m. Option B (sort-by-rule) loads all data from all 3 batches — violates the early-stop requirement and wastes the sorted structure. Option A (histogram-bucketing) also requires reading all values to fill buckets before scanning. Option D (range-partition) is O(n) average but would need to load all batches and doesn't benefit from the pre-sorted property.",
+    "es": "Fuentes pre-ordenadas más terminación temprana (detener después de 10 resultados) es el caso más fuerte para merge-k-sorted. El heap tiene 3 cursores; extraes exactamente 10 veces y te detienes — nunca tocas la gran mayoría de los datos. O(10 log 3) = O(1) para k y m fijos. La opción B (sort-by-rule) carga todos los datos de los 3 lotes — viola el requisito de parada anticipada y desperdicia la estructura ordenada. La opción A (histogram-bucketing) también requiere leer todos los valores para llenar las cubetas antes de escanear. La opción D (range-partition) es O(n) promedio pero necesitaría cargar todos los lotes y no se beneficia de la propiedad pre-ordenada."
+  }
+}

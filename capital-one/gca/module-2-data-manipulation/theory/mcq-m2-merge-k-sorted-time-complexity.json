@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-merge-k-sorted-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "merge-k-sorted: time complexity",
+    "es": "merge-k-sorted: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You merge k sorted lists with a total of N elements using a min-heap of size k. What is the time complexity?",
+    "es": "Combinas k listas ordenadas con un total de N elementos usando un min-heap de tamaño k. ¿Cuál es la complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(N log N) — every element is compared against every other element", "es": "O(N log N) — cada elemento se compara contra todos los demás" } },
+    { "id": "b", "label": { "en": "O(N log k) — each of N elements is pushed/popped from a heap of size k", "es": "O(N log k) — cada uno de los N elementos se inserta/extrae de un heap de tamaño k" } },
+    { "id": "c", "label": { "en": "O(k log N) — the heap size k dominates the log factor over N", "es": "O(k log N) — el tamaño k del heap domina el factor log sobre N" } },
+    { "id": "d", "label": { "en": "O(N·k) — for each element you scan all k list heads", "es": "O(N·k) — por cada elemento escaneas las k cabezas de lista" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The heap always holds exactly k elements — one cursor per source list. Each of the N total elements is inserted into the heap once and removed once. Each heap operation costs O(log k). Total: N × 2 × O(log k) = O(N log k). Option A (O(N log N)) is the cost of dumping all elements into a single list and sorting it — it works but ignores the sorted structure of the inputs. Option D (O(N·k)) is the naive approach of scanning k heads linearly for each output element. The heap replaces that linear scan with a logarithmic one.",
+    "es": "El heap siempre contiene exactamente k elementos — un cursor por lista fuente. Cada uno de los N elementos totales se inserta en el heap una vez y se elimina una vez. Cada operación de heap cuesta O(log k). Total: N × 2 × O(log k) = O(N log k). La opción A (O(N log N)) es el costo de volcar todos los elementos en una sola lista y ordenarla — funciona pero ignora la estructura ordenada de las entradas. La opción D (O(N·k)) es el enfoque ingenuo de escanear k cabezas linealmente por cada elemento de salida. El heap reemplaza ese escaneo lineal por uno logarítmico."
+  }
+}

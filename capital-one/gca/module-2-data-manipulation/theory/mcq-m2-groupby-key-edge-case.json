@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-groupby-key-edge-case",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "groupby-key: edge case handling",
+    "es": "groupby-key: manejo de casos borde"
+  },
+  "prompt": {
+    "en": "Your groupby-key solution receives an empty list. What does the correct implementation return?",
+    "es": "Tu solución groupby-key recibe una lista vacía. ¿Qué retorna la implementación correcta?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "null — no groups were formed", "es": "null — no se formaron grupos" } },
+    { "id": "b", "label": { "en": "An empty Map — the loop body never executes, so computeIfAbsent is never called", "es": "Un Map vacío — el cuerpo del bucle nunca se ejecuta, por lo que computeIfAbsent nunca se llama" } },
+    { "id": "c", "label": { "en": "A Map with one entry: the empty string key mapping to an empty list", "es": "Un Map con una entrada: la clave cadena vacía mapeando a una lista vacía" } },
+    { "id": "d", "label": { "en": "An exception — the loop must guard against null input before iterating", "es": "Una excepción — el bucle debe protegerse contra entrada nula antes de iterar" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When the input list is empty the for-each loop executes zero times, leaving the Map in its initial state — an empty HashMap. This is the correct and safe result: no groups exist because no elements were processed. Option A (null) would break callers who always expect a Map. Option C is nonsensical — no empty-string key was ever observed. Option D conflates an empty list (valid, zero-length) with a null reference — the standard guard is a null check before the loop, not inside it, and an empty list does not throw.",
+    "es": "Cuando la lista de entrada está vacía, el bucle for-each se ejecuta cero veces, dejando el Map en su estado inicial — un HashMap vacío. Este es el resultado correcto y seguro: no existen grupos porque no se procesó ningún elemento. La opción A (null) rompería a los llamadores que siempre esperan un Map. La opción C es absurda — nunca se observó ninguna clave de cadena vacía. La opción D confunde una lista vacía (válida, de longitud cero) con una referencia nula — la guarda estándar es una verificación de null antes del bucle, no dentro, y una lista vacía no lanza excepción."
+  }
+}

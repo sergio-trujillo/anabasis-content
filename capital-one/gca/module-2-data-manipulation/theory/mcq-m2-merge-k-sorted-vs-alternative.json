@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-merge-k-sorted-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "merge-k-sorted: when to prefer over sort-by-rule",
+    "es": "merge-k-sorted: cuándo preferirlo sobre sort-by-rule"
+  },
+  "prompt": {
+    "en": "You have 4 sorted lists (total 10,000 elements). A colleague suggests simply concatenating all lists and calling Arrays.sort. Under what condition is merge-k-sorted strictly better?",
+    "es": "Tienes 4 listas ordenadas (total 10,000 elementos). Un colega sugiere simplemente concatenar todas las listas y llamar a Arrays.sort. ¿Bajo qué condición es merge-k-sorted estrictamente mejor?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "merge-k-sorted is always better — it is never appropriate to sort a concatenated list", "es": "merge-k-sorted siempre es mejor — nunca es apropiado ordenar una lista concatenada" } },
+    { "id": "b", "label": { "en": "When you only need the first m elements of the merged output (early termination) — merge-k-sorted stops after m pops while sort must finish", "es": "Cuando solo necesitas los primeros m elementos de la salida combinada (terminación temprana) — merge-k-sorted se detiene después de m extracciones mientras que sort debe terminar" } },
+    { "id": "c", "label": { "en": "When k > log N — only then does the heap give a speedup over comparison sort", "es": "Cuando k > log N — solo entonces el heap da una ventaja sobre la ordenación por comparación" } },
+    { "id": "d", "label": { "en": "When all k lists have equal length n/k — otherwise merge-k-sorted degrades to O(N log N)", "es": "Cuando todas las k listas tienen longitud igual n/k — de lo contrario merge-k-sorted degrada a O(N log N)" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The most important practical advantage of merge-k-sorted over a naive concat-then-sort is early termination: if you only need the first m results (e.g., 'top 10 transactions across 4 batches'), you stop after m heap pops — O(m log k) total instead of O(N log N). When you need all N elements, concat-then-sort (O(N log N)) and merge-k-sorted (O(N log k)) have the same asymptotic form with k usually small. Option A overstates the case. Option C is incorrect — the heap speedup depends on k being small relative to N, not k > log N. Option D is false — unequal list lengths don't change the O(N log k) bound.",
+    "es": "La ventaja práctica más importante de merge-k-sorted sobre concat-then-sort es la terminación temprana: si solo necesitas los primeros m resultados (p.ej., 'las 10 transacciones principales en 4 lotes'), te detienes después de m extracciones del heap — O(m log k) total en lugar de O(N log N). Cuando necesitas todos los N elementos, concat-then-sort (O(N log N)) y merge-k-sorted (O(N log k)) tienen la misma forma asintótica con k usualmente pequeño. La opción A exagera. La opción C es incorrecta — la ventaja del heap depende de que k sea pequeño relativo a N, no de k > log N. La opción D es falsa — las longitudes de lista desiguales no cambian la cota O(N log k)."
+  }
+}

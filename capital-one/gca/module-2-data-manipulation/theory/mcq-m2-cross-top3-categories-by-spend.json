@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-top3-categories-by-spend",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: top-3 categories by total spend",
+    "es": "cross-canonical: top-3 categorías por gasto total"
+  },
+  "prompt": {
+    "en": "Given a transaction log (list of Transaction with String category and double amount), return the 3 categories with the highest total spend. Which canonical applies?",
+    "es": "Dado un registro de transacciones (lista de Transaction con String category y double amount), retorna las 3 categorías con el mayor gasto total. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "groupby-key — bucket transactions by category, sum amounts per bucket, return the top 3 sums", "es": "groupby-key — agrupa transacciones por categoría, suma montos por cubeta, retorna las 3 sumas principales" } },
+    { "id": "b", "label": { "en": "topk-frequent — this is a composition: accumulate total spend per category (like frequency-count but summing), then extract the top-3 with a min-heap of size 3", "es": "topk-frequent — esta es una composición: acumula el gasto total por categoría (como frequency-count pero sumando), luego extrae el top-3 con un min-heap de tamaño 3" } },
+    { "id": "c", "label": { "en": "histogram-bucketing — allocate a bucket per category indexed by spend range", "es": "histogram-bucketing — asigna una cubeta por categoría indexada por rango de gasto" } },
+    { "id": "d", "label": { "en": "merge-k-sorted — sort each category's transaction list and merge the top entries", "es": "merge-k-sorted — ordena la lista de transacciones de cada categoría y combina las entradas principales" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "This problem is a topk-frequent composition variant: instead of counting occurrences, you accumulate a running total (HashMap<String, Double> spendMap; spendMap.merge(tx.getCategory(), tx.getAmount(), Double::sum)). Then a min-heap of size 3 extracts the top-3 total-spend categories — O(n log 3) = O(n). The pattern is 'accumulate a metric per key, then extract top-k' — precisely topk-frequent generalized beyond pure frequency. Option A (groupby-key) is the first sub-step but not the complete canonical; after grouping you still need a top-3 extraction which is the heap step from topk. Option C and D are unrelated to this accumulate-then-rank structure.",
+    "es": "Este problema es una variante de composición de topk-frequent: en lugar de contar ocurrencias, acumulas un total acumulado (HashMap<String, Double> spendMap; spendMap.merge(tx.getCategory(), tx.getAmount(), Double::sum)). Luego un min-heap de tamaño 3 extrae las 3 categorías de mayor gasto total — O(n log 3) = O(n). El patrón es 'acumular una métrica por clave, luego extraer top-k' — precisamente topk-frequent generalizado más allá de la frecuencia pura. La opción A (groupby-key) es el primer sub-paso pero no el canónico completo; después de agrupar aún necesitas una extracción top-3 que es el paso de heap de topk. Las opciones C y D son irrelevantes para esta estructura acumular-luego-clasificar."
+  }
+}

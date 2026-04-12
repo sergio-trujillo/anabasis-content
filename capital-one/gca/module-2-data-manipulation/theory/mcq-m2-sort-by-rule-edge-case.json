@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-sort-by-rule-edge-case",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "sort-by-rule: edge case with null values",
+    "es": "sort-by-rule: caso borde con valores nulos"
+  },
+  "prompt": {
+    "en": "Your sort-by-rule comparator sorts Transaction objects by merchant name ascending. Some transactions have a null merchant field. What happens when Arrays.sort reaches a null merchant?",
+    "es": "Tu comparador sort-by-rule ordena objetos Transaction por nombre de comercio ascendente. Algunas transacciones tienen el campo merchant nulo. ¿Qué ocurre cuando Arrays.sort llega a un merchant nulo?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "null is treated as an empty string and sorted to the front", "es": "null se trata como cadena vacía y se ordena al frente" } },
+    { "id": "b", "label": { "en": "Arrays.sort skips null entries and leaves them in their original positions", "es": "Arrays.sort omite las entradas nulas y las deja en sus posiciones originales" } },
+    { "id": "c", "label": { "en": "Comparator.comparing(Transaction::getMerchant) throws a NullPointerException when merchant is null", "es": "Comparator.comparing(Transaction::getMerchant) lanza NullPointerException cuando merchant es nulo" } },
+    { "id": "d", "label": { "en": "TimSort catches the NPE internally and places null entries at the end", "es": "TimSort captura internamente el NPE y coloca las entradas nulas al final" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Comparator.comparing(Transaction::getMerchant) extracts the key and then calls String's natural compareTo, which throws NullPointerException when merchant is null. TimSort does not catch this — the exception propagates to the caller. The fix is Comparator.comparing(Transaction::getMerchant, Comparator.nullsFirst(Comparator.naturalOrder())) or a manual null guard in the lambda. Options A and B describe no Java sort behavior. Option D is false — TimSort never swallows exceptions from the comparator.",
+    "es": "Comparator.comparing(Transaction::getMerchant) extrae la clave y luego llama al compareTo natural de String, que lanza NullPointerException cuando merchant es nulo. TimSort no captura esto — la excepción se propaga al llamador. La solución es Comparator.comparing(Transaction::getMerchant, Comparator.nullsFirst(Comparator.naturalOrder())) o una guarda manual de null en el lambda. Las opciones A y B no describen ningún comportamiento de sort en Java. La opción D es falsa — TimSort nunca suprime excepciones del comparador."
+  }
+}

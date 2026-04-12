@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-range-partition-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "range-partition: idiomatic Java partition loop",
+    "es": "range-partition: bucle de partición idiomático en Java"
+  },
+  "prompt": {
+    "en": "In a quickselect implementation, after choosing a pivot and moving it to the last position, how does the standard Lomuto partition scheme determine the final pivot index?",
+    "es": "En una implementación de quickselect, después de elegir un pivote y moverlo a la última posición, ¿cómo determina el esquema de partición Lomuto estándar el índice final del pivote?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Scan left-to-right; swap each element < pivot with arr[storeIndex], increment storeIndex; swap pivot from last to storeIndex", "es": "Escanea de izquierda a derecha; intercambia cada elemento < pivote con arr[storeIndex], incrementa storeIndex; intercambia pivote del último a storeIndex" } },
+    { "id": "b", "label": { "en": "Use two pointers converging from both ends; swap when left >= pivot and right < pivot; return where they cross", "es": "Usa dos punteros convergentes desde ambos extremos; intercambia cuando left >= pivote y right < pivote; retorna donde se crucen" } },
+    { "id": "c", "label": { "en": "Sort the subarray with Arrays.sort and return the index of the pivot value", "es": "Ordena el subarreglo con Arrays.sort y retorna el índice del valor pivote" } },
+    { "id": "d", "label": { "en": "Count all elements smaller than the pivot; the pivot's final index is count - 1", "es": "Cuenta todos los elementos menores que el pivote; el índice final del pivote es count - 1" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Lomuto partition: move pivot to arr[high], initialize storeIndex = low, scan from low to high-1. For each arr[i] < pivot, swap arr[i] with arr[storeIndex] and increment storeIndex. After the loop, swap arr[storeIndex] with the pivot at arr[high] — the pivot is now at its sorted position. Option B describes Hoare partition (two-pointer convergent), which is also valid but returns a different index convention — the correct answer is specifically the Lomuto scheme. Option C defeats the purpose — sorting is O(n log n). Option D omits the swap, so the pivot never moves to its correct position.",
+    "es": "Partición Lomuto: mueve el pivote a arr[high], inicializa storeIndex = low, escanea de low a high-1. Por cada arr[i] < pivote, intercambia arr[i] con arr[storeIndex] e incrementa storeIndex. Después del bucle, intercambia arr[storeIndex] con el pivote en arr[high] — el pivote está ahora en su posición ordenada. La opción B describe la partición Hoare (dos punteros convergentes), que también es válida pero retorna una convención de índice diferente — la respuesta correcta es específicamente el esquema Lomuto. La opción C derrota el propósito — ordenar es O(n log n). La opción D omite el intercambio, por lo que el pivote nunca se mueve a su posición correcta."
+  }
+}

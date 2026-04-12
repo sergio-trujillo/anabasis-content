@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-histogram-bucketing-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "histogram-bucketing: idiomatic Java construct",
+    "es": "histogram-bucketing: construcción idiomática en Java"
+  },
+  "prompt": {
+    "en": "You are implementing histogram-bucketing for values in [0, MAX]. Which Java construct is the correct substrate for the bucket array?",
+    "es": "Estás implementando histogram-bucketing para valores en [0, MAX]. ¿Qué construcción de Java es el sustrato correcto para el arreglo de cubetas?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "int[] buckets = new int[MAX + 1]; — direct array indexing by value, initialized to 0 by default", "es": "int[] buckets = new int[MAX + 1]; — indexación directa por valor, inicializada en 0 por defecto" } },
+    { "id": "b", "label": { "en": "Map<Integer, Integer> buckets = new HashMap<>(); — flexible, handles sparse ranges", "es": "Map<Integer, Integer> buckets = new HashMap<>(); — flexible, maneja rangos dispersos" } },
+    { "id": "c", "label": { "en": "List<Integer> buckets = new ArrayList<>(MAX + 1); — resizable and easy to iterate", "es": "List<Integer> buckets = new ArrayList<>(MAX + 1); — redimensionable y fácil de iterar" } },
+    { "id": "d", "label": { "en": "int[] buckets = new int[n]; — size should match the number of input elements, not the value range", "es": "int[] buckets = new int[n]; — el tamaño debe coincidir con el número de elementos de entrada, no con el rango de valores" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "The defining idiom of histogram-bucketing is a primitive int[] of size (MAX + 1), where the value itself is the index: buckets[value]++. Java initializes int arrays to 0, so no explicit reset is needed. Option B (HashMap) works but adds boxing overhead and loses the O(1) random-access guarantee that makes the second pass O(k). Option C (ArrayList) requires explicit initialization of MAX+1 zeros — it does not auto-size to MAX+1, and Integer boxing adds unnecessary cost. Option D (int[n]) is wrong: the bucket array must span the value range [0, MAX], not the element count n.",
+    "es": "El idioma definitorio de histogram-bucketing es un int[] primitivo de tamaño (MAX + 1), donde el valor mismo es el índice: buckets[value]++. Java inicializa arreglos int en 0, por lo que no se necesita reinicio explícito. La opción B (HashMap) funciona pero agrega sobrecarga de boxing y pierde la garantía de acceso aleatorio O(1) que hace el segundo recorrido O(k). La opción C (ArrayList) requiere inicialización explícita de MAX+1 ceros — no se redimensiona automáticamente a MAX+1, y el boxing de Integer agrega costo innecesario. La opción D (int[n]) es incorrecta: el arreglo de cubetas debe abarcar el rango de valores [0, MAX], no el conteo de elementos n."
+  }
+}

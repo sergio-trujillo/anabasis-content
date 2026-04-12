@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-sort-intervals-merge",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: sort intervals by start, then merge overlapping",
+    "es": "cross-canonical: ordenar intervalos por inicio, luego fusionar solapados"
+  },
+  "prompt": {
+    "en": "Given an array of int[2] intervals (each representing [start, end]), sort them by start time, then merge all overlapping intervals into a minimal list. Which canonical best describes the first step?",
+    "es": "Dado un arreglo de intervalos int[2] (cada uno representando [inicio, fin]), ordénalos por tiempo de inicio, luego fusiona todos los intervalos solapados en una lista mínima. ¿Qué canónico describe mejor el primer paso?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "groupby-key — group intervals by start time, then merge within each group", "es": "groupby-key — agrupa intervalos por tiempo de inicio, luego fusiona dentro de cada grupo" } },
+    { "id": "b", "label": { "en": "sort-by-rule — sort with Comparator.comparingInt(iv -> iv[0]) to bring all intervals into start-time order before the linear merge sweep", "es": "sort-by-rule — ordena con Comparator.comparingInt(iv -> iv[0]) para llevar todos los intervalos al orden por tiempo de inicio antes del barrido lineal de fusión" } },
+    { "id": "c", "label": { "en": "merge-k-sorted — treat each group of overlapping intervals as a sorted stream and merge them", "es": "merge-k-sorted — trata cada grupo de intervalos solapados como un flujo ordenado y fusiónalos" } },
+    { "id": "d", "label": { "en": "range-partition — partition intervals around a pivot start time so all overlapping intervals are contiguous", "es": "range-partition — particiona intervalos alrededor de un tiempo de inicio pivote para que todos los intervalos solapados sean contiguos" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Merging overlapping intervals requires the array to be sorted by start time first — a textbook sort-by-rule application. Once sorted, a single linear sweep merges adjacent overlapping intervals by extending the current window's end. Option A (groupby-key) cannot group intervals that overlap different start times; overlaps span across start values, not within them. Option C (merge-k-sorted) applies when you have k pre-sorted streams — not applicable here. Option D (range-partition) produces two partitions but does not guarantee adjacency of overlapping intervals.",
+    "es": "Fusionar intervalos solapados requiere ordenar el arreglo por tiempo de inicio primero — una aplicación de libro de texto de sort-by-rule. Una vez ordenados, un único barrido lineal fusiona intervalos adyacentes solapados extendiendo el final de la ventana actual. La opción A (groupby-key) no puede agrupar intervalos que solapan diferentes tiempos de inicio; los solapamientos abarcan valores de inicio distintos, no dentro de ellos. La opción C (merge-k-sorted) aplica cuando tienes k flujos pre-ordenados — no aplica aquí. La opción D (range-partition) produce dos particiones pero no garantiza la adyacencia de los intervalos solapados."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-sort-by-rule-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "sort-by-rule: idiomatic Java Comparator",
+    "es": "sort-by-rule: Comparator idiomático en Java"
+  },
+  "prompt": {
+    "en": "You need to sort Transaction objects by amount descending. Which expression is the most idiomatic Java 8+ way to express this comparator?",
+    "es": "Necesitas ordenar objetos Transaction por amount descendente. ¿Cuál expresión es la forma más idiomática en Java 8+ de expresar este comparador?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Comparator.comparingDouble(Transaction::getAmount).reversed()", "es": "Comparator.comparingDouble(Transaction::getAmount).reversed()" } },
+    { "id": "b", "label": { "en": "(a, b) -> (int)(b.getAmount() - a.getAmount())", "es": "(a, b) -> (int)(b.getAmount() - a.getAmount())" } },
+    { "id": "c", "label": { "en": "Collections.reverseOrder()", "es": "Collections.reverseOrder()" } },
+    { "id": "d", "label": { "en": "(a, b) -> b.getAmount() > a.getAmount() ? 1 : -1", "es": "(a, b) -> b.getAmount() > a.getAmount() ? 1 : -1" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Comparator.comparingDouble(Transaction::getAmount).reversed() is type-safe, handles NaN and infinity correctly via Double.compare, and composes cleanly with thenComparing for tiebreakers. Option B has an integer overflow bug: casting the difference of two doubles to int can produce the wrong sign when the difference is between -1 and 0 or exceeds Integer.MAX_VALUE. Option C only reverses natural order (Comparable), not a custom key extractor. Option D silently mishandles equal amounts by returning -1 instead of 0, which can destabilize TimSort.",
+    "es": "Comparator.comparingDouble(Transaction::getAmount).reversed() es type-safe, maneja NaN e infinito correctamente mediante Double.compare, y se compone limpiamente con thenComparing para desempates. La opción B tiene un error de desbordamiento de entero: convertir la diferencia de dos doubles a int puede producir el signo incorrecto cuando la diferencia está entre -1 y 0 o supera Integer.MAX_VALUE. La opción C solo invierte el orden natural (Comparable), no un extractor de clave personalizado. La opción D maneja silenciosamente mal los montos iguales retornando -1 en lugar de 0, lo que puede desestabilizar TimSort."
+  }
+}

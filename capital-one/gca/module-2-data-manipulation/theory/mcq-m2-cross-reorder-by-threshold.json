@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-reorder-by-threshold",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: reorder balances in-place by threshold",
+    "es": "cross-canonical: reordenar saldos in-place por umbral"
+  },
+  "prompt": {
+    "en": "Given int[] balances, rearrange them in-place so all values < threshold T come before all values >= T. Relative order within each group does not matter. O(n) time, O(1) space required. Which canonical applies?",
+    "es": "Dado int[] balances, reordénalo in-place para que todos los valores < umbral T aparezcan antes que todos los valores >= T. El orden relativo dentro de cada grupo no importa. Se requiere O(n) tiempo, O(1) espacio. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — sort by (balance < T) ? 0 : 1 comparator", "es": "sort-by-rule — ordena con comparador (balance < T) ? 0 : 1" } },
+    { "id": "b", "label": { "en": "groupby-key — bucket into two lists (below, above), concatenate back into the array", "es": "groupby-key — agrupa en dos listas (por debajo, por encima), concatena de vuelta al arreglo" } },
+    { "id": "c", "label": { "en": "range-partition — two-pointer in-place split: scan from left for first value >= T, scan from right for first value < T, swap, repeat until pointers cross", "es": "range-partition — división in-place de dos punteros: escanea desde la izquierda el primer valor >= T, desde la derecha el primer valor < T, intercambia, repite hasta que los punteros se crucen" } },
+    { "id": "d", "label": { "en": "histogram-bucketing — count values below and above T, then overwrite the array in two passes", "es": "histogram-bucketing — cuenta valores por debajo y por encima de T, luego sobreescribe el arreglo en dos recorridos" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "In-place, O(1) space, and a binary split around a threshold are the unambiguous fingerprints of range-partition. The two-pointer approach scans from both ends, swapping misplaced elements until the pointers meet — O(n) time, O(1) space. Option A (sort-by-rule) is O(n log n) and not in-place for object arrays. Option B (groupby-key) requires O(n) extra space for the two lists and does not modify the original array in-place. Option D (histogram-bucketing) counts correctly but overwrites the array with counts, discarding the actual integer values — it cannot reconstruct the original elements.",
+    "es": "In-place, espacio O(1), y una división binaria alrededor de un umbral son las huellas inequívocas de range-partition. El enfoque de dos punteros escanea desde ambos extremos, intercambiando elementos mal ubicados hasta que los punteros se encuentran — O(n) tiempo, O(1) espacio. La opción A (sort-by-rule) es O(n log n) y no es in-place para arreglos de objetos. La opción B (groupby-key) requiere O(n) espacio extra para las dos listas y no modifica el arreglo original in-place. La opción D (histogram-bucketing) cuenta correctamente pero sobreescribe el arreglo con conteos, descartando los valores enteros reales — no puede reconstruir los elementos originales."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-groupby-key-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "groupby-key: time complexity",
+    "es": "groupby-key: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You bucket n items into a Map<K, List<V>> in a single pass. What is the worst-case time complexity?",
+    "es": "Agrupas n elementos en un Map<K, List<V>> en un único recorrido. ¿Cuál es la complejidad temporal en el peor caso?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n log n) — each insertion into the map requires a comparison", "es": "O(n log n) — cada inserción en el mapa requiere una comparación" } },
+    { "id": "b", "label": { "en": "O(n) — one pass, O(1) amortized HashMap operations per element", "es": "O(n) — un recorrido, operaciones O(1) amortizadas en el HashMap por elemento" } },
+    { "id": "c", "label": { "en": "O(n + k) — one pass plus a second pass over k buckets", "es": "O(n + k) — un recorrido más un segundo recorrido sobre k cubetas" } },
+    { "id": "d", "label": { "en": "O(n²) — inserting into each bucket list is O(n) worst case", "es": "O(n²) — insertar en cada lista de cubeta es O(n) en el peor caso" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "groupby-key is a single-pass bucketing algorithm: for each element you call computeIfAbsent (O(1) amortized) and add to an ArrayList (O(1) amortized), so the total is O(n). Option A (O(n log n)) describes sort-by-rule, a common confusion because sorting also produces groups. Option C (O(n + k)) is the complexity of histogram-bucketing, where a second pass over k fixed buckets is required — groupby-key uses a HashMap and never iterates empty buckets.",
+    "es": "groupby-key es un algoritmo de agrupación en un único recorrido: por cada elemento se llama a computeIfAbsent (O(1) amortizado) y se agrega a un ArrayList (O(1) amortizado), por lo que el total es O(n). La opción A (O(n log n)) describe sort-by-rule, confusión frecuente porque ordenar también produce grupos. La opción C (O(n + k)) es la complejidad de histogram-bucketing, donde se requiere un segundo recorrido sobre k cubetas fijas — groupby-key usa un HashMap y nunca itera cubetas vacías."
+  }
+}

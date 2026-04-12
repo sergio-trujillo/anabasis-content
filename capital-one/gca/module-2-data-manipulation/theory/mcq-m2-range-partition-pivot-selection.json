@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-range-partition-pivot-selection",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "range-partition: pivot selection strategies",
+    "es": "range-partition: estrategias de selección de pivote"
+  },
+  "prompt": {
+    "en": "Which pivot selection strategy most reliably avoids O(n²) worst-case behavior in quickselect when the input may be nearly sorted?",
+    "es": "¿Qué estrategia de selección de pivote evita más confiablemente el comportamiento O(n²) en el peor caso en quickselect cuando la entrada puede estar casi ordenada?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Always choose the first element — simple and predictable", "es": "Siempre elige el primer elemento — simple y predecible" } },
+    { "id": "b", "label": { "en": "Always choose the last element — avoids the first-element bias on ascending input", "es": "Siempre elige el último elemento — evita el sesgo del primer elemento en entradas ascendentes" } },
+    { "id": "c", "label": { "en": "Random pivot or median-of-three — random pivot makes O(n²) astronomically unlikely; median-of-three improves practical performance on sorted/partially-sorted input", "es": "Pivote aleatorio o mediana de tres — el pivote aleatorio hace O(n²) astronómicamente improbable; la mediana de tres mejora el rendimiento práctico en entradas ordenadas/parcialmente ordenadas" } },
+    { "id": "d", "label": { "en": "Always choose the middle element — guarantees O(n log n) worst case", "es": "Siempre elige el elemento medio — garantiza O(n log n) en el peor caso" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Random pivot selection: the probability of consistently choosing a bad pivot decreases exponentially, making O(n²) probability exponentially small. Median-of-three (pivot = median of arr[low], arr[mid], arr[high]) guards against the most common adversarial inputs (sorted, reverse-sorted, equal). Option A (first element) degrades to O(n²) on sorted or reverse-sorted input — the most common real-world case. Option B (last element) has the same problem on descending input. Option D is wrong: always choosing the middle element does NOT guarantee O(n log n) worst case; if all middle elements are the minimum each time (e.g., a carefully crafted input), it still degrades.",
+    "es": "Selección de pivote aleatorio: la probabilidad de elegir consistentemente un pivote malo decrece exponencialmente, haciendo la probabilidad O(n²) exponencialmente pequeña. Mediana de tres (pivote = mediana de arr[low], arr[mid], arr[high]) protege contra las entradas adversariales más comunes (ordenada, inversa, iguales). La opción A (primer elemento) degrada a O(n²) en entradas ordenadas o inversas — el caso más común en el mundo real. La opción B (último elemento) tiene el mismo problema con entrada descendente. La opción D es incorrecta: elegir siempre el elemento medio NO garantiza O(n log n) en el peor caso; si todos los elementos medios son el mínimo cada vez (p.ej., una entrada cuidadosamente construida), aún degrada."
+  }
+}

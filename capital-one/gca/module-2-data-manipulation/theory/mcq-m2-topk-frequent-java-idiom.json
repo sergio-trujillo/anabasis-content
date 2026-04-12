@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-topk-frequent-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "topk-frequent: idiomatic Java min-heap usage",
+    "es": "topk-frequent: uso idiomático del min-heap en Java"
+  },
+  "prompt": {
+    "en": "You maintain a min-heap of size k to find the top-k most frequent elements. After processing all frequency entries, how do you extract the results in descending frequency order?",
+    "es": "Mantienes un min-heap de tamaño k para encontrar los k elementos más frecuentes. Después de procesar todas las entradas de frecuencia, ¿cómo extraes los resultados en orden de frecuencia descendente?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Poll all k elements from the PriorityQueue — they emerge in ascending frequency order; reverse the result list", "es": "Extrae todos los k elementos de la PriorityQueue — emergen en orden de frecuencia ascendente; invierte la lista de resultados" } },
+    { "id": "b", "label": { "en": "The PriorityQueue already stores elements in descending order because Java's default is max-heap", "es": "La PriorityQueue ya almacena elementos en orden descendente porque el valor predeterminado de Java es max-heap" } },
+    { "id": "c", "label": { "en": "Sort the PriorityQueue with Collections.sort before extracting — it does not support ordered iteration natively", "es": "Ordena la PriorityQueue con Collections.sort antes de extraer — no admite iteración ordenada de forma nativa" } },
+    { "id": "d", "label": { "en": "Call pq.toArray() — the array is automatically sorted in descending order", "es": "Llama a pq.toArray() — el arreglo está automáticamente ordenado en orden descendente" } }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Java's PriorityQueue is a min-heap by default: poll() returns the smallest element first. After the top-k selection phase, polling all k entries gives them in ascending frequency order. To get descending order, add them to a list and call Collections.reverse, or add them to the front of a deque. Option B is wrong — Java's PriorityQueue is a min-heap, not max-heap; to use a max-heap you must pass Comparator.reverseOrder(). Option C is wrong — Collections.sort works on Lists, not PriorityQueues, and PriorityQueue.iterator() does not return elements in heap order. Option D is wrong — toArray() returns elements in internal heap order, which is NOT sorted.",
+    "es": "La PriorityQueue de Java es un min-heap por defecto: poll() retorna el elemento más pequeño primero. Después de la fase de selección top-k, extraer todos los k elementos los da en orden de frecuencia ascendente. Para obtener orden descendente, agrégalos a una lista y llama a Collections.reverse, o agrégalos al frente de una deque. La opción B es incorrecta — la PriorityQueue de Java es un min-heap, no max-heap; para usar un max-heap debes pasar Comparator.reverseOrder(). La opción C es incorrecta — Collections.sort funciona sobre Lists, no PriorityQueues, y PriorityQueue.iterator() no retorna elementos en orden de heap. La opción D es incorrecta — toArray() retorna elementos en orden interno del heap, que NO está ordenado."
+  }
+}

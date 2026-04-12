@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-topk-frequent-edge-case",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "topk-frequent: edge case when k >= number of distinct elements",
+    "es": "topk-frequent: caso borde cuando k >= número de elementos distintos"
+  },
+  "prompt": {
+    "en": "Your topk-frequent solution is asked for the top-10 most frequent merchants, but the input only contains 6 distinct merchants. What should the correct implementation return?",
+    "es": "Tu solución topk-frequent recibe una solicitud de los 10 comercios más frecuentes, pero la entrada solo contiene 6 comercios distintos. ¿Qué debe retornar la implementación correcta?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Throw an IllegalArgumentException since k exceeds the number of distinct elements", "es": "Lanzar IllegalArgumentException ya que k supera el número de elementos distintos" } },
+    { "id": "b", "label": { "en": "Return all 6 distinct merchants — you cannot return more distinct elements than exist", "es": "Retornar los 6 comercios distintos — no puedes retornar más elementos distintos de los que existen" } },
+    { "id": "c", "label": { "en": "Pad the result with empty string entries until the list has exactly 10 elements", "es": "Rellenar el resultado con entradas de cadena vacía hasta que la lista tenga exactamente 10 elementos" } },
+    { "id": "d", "label": { "en": "Return the same merchant repeated until the list reaches size 10", "es": "Retornar el mismo comercio repetido hasta que la lista alcance tamaño 10" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When k >= the number of distinct elements, the correct behavior is to return all distinct elements (all 6 merchants), since there are no more unique elements to include. The min-heap approach handles this naturally: after processing all distinct entries, the heap simply contains fewer than k elements, and you return all of them. Option A is wrong — this is a valid edge case, not an error. Options C and D would corrupt the output with fabricated entries that were never in the input. Guard in the implementation: Math.min(k, freqMap.size()) entries are returned.",
+    "es": "Cuando k >= el número de elementos distintos, el comportamiento correcto es retornar todos los elementos distintos (los 6 comercios), ya que no hay más elementos únicos que incluir. El enfoque de min-heap maneja esto naturalmente: después de procesar todas las entradas distintas, el heap simplemente contiene menos de k elementos, y retornas todos ellos. La opción A es incorrecta — este es un caso borde válido, no un error. Las opciones C y D corromperían la salida con entradas fabricadas que nunca estuvieron en la entrada. Guarda en la implementación: se retornan Math.min(k, freqMap.size()) entradas."
+  }
+}

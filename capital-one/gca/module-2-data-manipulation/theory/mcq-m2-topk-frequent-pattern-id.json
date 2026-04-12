@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-topk-frequent-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "topk-frequent: pattern identification",
+    "es": "topk-frequent: identificación del patrón"
+  },
+  "prompt": {
+    "en": "Given a list of String merchant names from a transaction log, return the 5 merchants that appear most often. Which canonical pattern applies?",
+    "es": "Dada una lista de nombres de comercios String de un registro de transacciones, retorna los 5 comercios que aparecen con más frecuencia. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "groupby-key — bucket all transactions by merchant, then compare list sizes to find the top 5", "es": "groupby-key — agrupa todas las transacciones por comercio, luego compara tamaños de listas para encontrar los 5 principales" } },
+    { "id": "b", "label": { "en": "topk-frequent — frequency-count all merchants, then extract the top-5 with a min-heap of size 5", "es": "topk-frequent — cuenta frecuencias de todos los comercios, luego extrae los 5 principales con un min-heap de tamaño 5" } },
+    { "id": "c", "label": { "en": "sort-by-rule — count merchant occurrences, sort all entries by count descending, return the first 5", "es": "sort-by-rule — cuenta ocurrencias de comercios, ordena todas las entradas por conteo descendente, retorna los 5 primeros" } },
+    { "id": "d", "label": { "en": "merge-k-sorted — treat each merchant's transaction list as a sorted stream and merge until 5 are found", "es": "merge-k-sorted — trata la lista de transacciones de cada comercio como un flujo ordenado y combina hasta encontrar 5" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The signal is 'k most frequent from a set of n items' — the canonical topk-frequent fingerprint. Step 1: count each merchant with a HashMap in O(n). Step 2: maintain a min-heap of size 5; for each entry, if its count exceeds the heap minimum, push and pop. Final heap contains the 5 highest-frequency merchants. O(n log 5) = O(n). Option A (groupby-key) would work but produces full lists, not counts — then still needs a top-5 extraction step. Option C (sort-by-rule) is the sort-then-slice alternative at O(n log n) — correct but suboptimal. Option D (merge-k-sorted) is unrelated: there is no pre-sorted source to merge.",
+    "es": "La señal es 'k más frecuentes de un conjunto de n elementos' — la huella canónica de topk-frequent. Paso 1: cuenta cada comercio con un HashMap en O(n). Paso 2: mantén un min-heap de tamaño 5; por cada entrada, si su conteo supera el mínimo del heap, empuja y extrae. El heap final contiene los 5 comercios de mayor frecuencia. O(n log 5) = O(n). La opción A (groupby-key) funcionaría pero produce listas completas, no conteos — luego aún necesita un paso de extracción top-5. La opción C (sort-by-rule) es la alternativa sort-then-slice en O(n log n) — correcta pero subóptima. La opción D (merge-k-sorted) es irrelevante: no hay fuente pre-ordenada que combinar."
+  }
+}

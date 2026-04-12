@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-topk-frequent-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "topk-frequent: when bucket sort beats heap",
+    "es": "topk-frequent: cuándo el bucket sort supera al heap"
+  },
+  "prompt": {
+    "en": "You need the top-k frequent elements from n integers. When is histogram-bucketing strictly better than a min-heap of size k?",
+    "es": "Necesitas los k elementos más frecuentes de n enteros. ¿Cuándo es histogram-bucketing estrictamente mejor que un min-heap de tamaño k?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Always — histogram-bucketing is always faster than heap-based topk", "es": "Siempre — histogram-bucketing siempre es más rápido que topk basado en heap" } },
+    { "id": "b", "label": { "en": "When you need a strict O(n) guarantee: bucket frequencies by count (bucket[i] = list of elements with frequency i), then scan from bucket[n] down to collect k elements — no log factor", "es": "Cuando necesitas una garantía estricta O(n): agrupa frecuencias por conteo (bucket[i] = lista de elementos con frecuencia i), luego escanea desde bucket[n] hacia abajo para recolectar k elementos — sin factor log" } },
+    { "id": "c", "label": { "en": "When k is very large — the heap overhead grows with k", "es": "Cuando k es muy grande — la sobrecarga del heap crece con k" } },
+    { "id": "d", "label": { "en": "When the number of distinct values is small — the bucket array stays compact", "es": "Cuando el número de valores distintos es pequeño — el arreglo de cubetas permanece compacto" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The frequency-bucketing approach achieves O(n) (strictly, not just expected): after counting frequencies (O(n)), allocate an array of lists of size n+1 where index i holds all elements that appeared exactly i times, then scan from index n downward collecting elements until k are found — O(n). No heap, no log factor. Option A is too absolute: for small k the heap (O(n log k)) can be faster in practice due to cache effects. Option C is partially true (heap does grow as O(log k)) but describes a heuristic, not the strict O(n) argument. Option D also helps bucket sort but is a secondary consideration — the defining trigger is needing O(n) worst-case.",
+    "es": "El enfoque de frequency-bucketing logra O(n) (estrictamente, no solo esperado): después de contar frecuencias (O(n)), asigna un arreglo de listas de tamaño n+1 donde el índice i contiene todos los elementos que aparecieron exactamente i veces, luego escanea desde el índice n hacia abajo recolectando elementos hasta tener k — O(n). Sin heap, sin factor log. La opción A es demasiado absoluta: para k pequeño el heap (O(n log k)) puede ser más rápido en la práctica por efectos de caché. La opción C es parcialmente verdadera (el heap crece como O(log k)) pero describe una heurística, no el argumento estricto O(n). La opción D también ayuda al bucket sort pero es una consideración secundaria — el disparador definitorio es necesitar O(n) en el peor caso."
+  }
+}

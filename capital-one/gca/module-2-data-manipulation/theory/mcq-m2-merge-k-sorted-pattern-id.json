@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-merge-k-sorted-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "merge-k-sorted: pattern identification",
+    "es": "merge-k-sorted: identificación del patrón"
+  },
+  "prompt": {
+    "en": "You have k sorted arrays of integers (total N elements) and must produce a single sorted output array. Each source array can be very large, so loading all into memory at once is undesirable. Which canonical pattern applies?",
+    "es": "Tienes k arreglos de enteros ordenados (total N elementos) y debes producir un único arreglo de salida ordenado. Cada arreglo fuente puede ser muy grande, por lo que cargar todo en memoria a la vez es indeseable. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — concatenate all arrays and sort with a comparator", "es": "sort-by-rule — concatena todos los arreglos y ordénalos con un comparador" } },
+    { "id": "b", "label": { "en": "topk-frequent — use a bounded heap of size k to extract the top-N elements", "es": "topk-frequent — usa un heap acotado de tamaño k para extraer los N elementos superiores" } },
+    { "id": "c", "label": { "en": "merge-k-sorted — maintain a min-heap of k cursor tuples {value, srcIdx, pos}; always pop the minimum and advance that cursor", "es": "merge-k-sorted — mantiene un min-heap de k tuplas cursor {value, srcIdx, pos}; siempre extrae el mínimo y avanza ese cursor" } },
+    { "id": "d", "label": { "en": "range-partition — pivot around the median value to split elements between low and high halves", "es": "range-partition — pivotea alrededor del valor mediano para dividir elementos entre mitades bajas y altas" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "merge-k-sorted is the exact pattern for producing a globally sorted output from k sorted sources without materializing all elements. The heap holds one cursor per source; on each step the minimum element is emitted and the cursor for that source advances. Option A (sort-by-rule) would require loading all N elements first — the problem states this is undesirable, and it wastes the sorted structure. Option B (topk-frequent) extracts a bounded number of top elements, not all N in sorted order. Option D (range-partition) is unordered and destructive — it partitions but does not merge.",
+    "es": "merge-k-sorted es el patrón exacto para producir una salida ordenada globalmente desde k fuentes ordenadas sin materializar todos los elementos. El heap mantiene un cursor por fuente; en cada paso se emite el elemento mínimo y el cursor de esa fuente avanza. La opción A (sort-by-rule) requeriría cargar todos los N elementos primero — el problema indica que esto es indeseable, y desperdicia la estructura ordenada. La opción B (topk-frequent) extrae un número acotado de elementos superiores, no todos los N en orden. La opción D (range-partition) es desordenada y destructiva — particiona pero no combina."
+  }
+}

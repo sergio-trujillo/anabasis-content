@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-histogram-bucketing-bucket-size",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "histogram-bucketing: why bucket array size matters",
+    "es": "histogram-bucketing: por qué el tamaño del arreglo de cubetas importa"
+  },
+  "prompt": {
+    "en": "You are solving the h-index problem: given an int[] citations, return the largest h such that at least h papers have >= h citations. Citations can be arbitrarily large. Why must the bucket array be of size n+1 rather than max(citations)+1?",
+    "es": "Estás resolviendo el problema del h-index: dado un int[] citations, retorna el mayor h tal que al menos h artículos tienen >= h citas. Las citas pueden ser arbitrariamente grandes. ¿Por qué el arreglo de cubetas debe ser de tamaño n+1 en lugar de max(citations)+1?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "n+1 is always larger than max(citations)+1, so it avoids ArrayIndexOutOfBoundsException", "es": "n+1 siempre es mayor que max(citations)+1, por lo que evita ArrayIndexOutOfBoundsException" } },
+    { "id": "b", "label": { "en": "The h-index is bounded by n (you can't have more papers than you have), so any citation count > n is treated as n, capping the bucket array at size n+1", "es": "El h-index está acotado por n (no puedes tener más artículos de los que tienes), por lo que cualquier conteo de citas > n se trata como n, acotando el arreglo de cubetas al tamaño n+1" } },
+    { "id": "c", "label": { "en": "Java limits array allocation to n+1 for integer arrays by default", "es": "Java limita la asignación de arreglos a n+1 para arreglos de enteros por defecto" } },
+    { "id": "d", "label": { "en": "The bucket array must always match the input array length exactly for the counting sort to be stable", "es": "El arreglo de cubetas debe coincidir exactamente con la longitud del arreglo de entrada para que el counting sort sea estable" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The key insight is that h is bounded by n — you cannot have an h-index greater than the number of papers. So any citation count above n can be clamped to n (it only contributes to the 'at least n citations' bucket). This lets you allocate int[n+1] regardless of how large individual citation counts are, keeping the algorithm O(n) space. Option A is wrong: n+1 is NOT always larger than max(citations)+1; if a single paper has 10,000 citations and n=5, max+1 > n+1. Options C and D are false — Java has no such default, and stability requires preserving relative order, not matching sizes.",
+    "es": "El insight clave es que h está acotado por n — no puedes tener un h-index mayor que el número de artículos. Así, cualquier conteo de citas por encima de n puede recortarse a n (solo contribuye a la cubeta 'al menos n citas'). Esto permite asignar int[n+1] independientemente de cuán grandes sean los conteos individuales, manteniendo el algoritmo en espacio O(n). La opción A es incorrecta: n+1 NO es siempre mayor que max(citations)+1; si un artículo tiene 10,000 citas y n=5, max+1 > n+1. Las opciones C y D son falsas — Java no tiene tal valor predeterminado, y la estabilidad requiere preservar el orden relativo, no igualar tamaños."
+  }
+}

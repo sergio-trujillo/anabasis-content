@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-groupby-key-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "groupby-key: pattern identification",
+    "es": "groupby-key: identificación del patrón"
+  },
+  "prompt": {
+    "en": "Given a list of Transaction objects each with a String category field, you need to return a Map where each key is a category and the value is the list of all transactions in that category. Which canonical pattern applies?",
+    "es": "Dado una lista de objetos Transaction, cada uno con un campo String category, debes retornar un Map donde cada clave es una categoría y el valor es la lista de todas las transacciones en esa categoría. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "frequency-count — count how many transactions belong to each category", "es": "frequency-count — cuenta cuántas transacciones pertenecen a cada categoría" } },
+    { "id": "b", "label": { "en": "sort-by-rule — sort transactions by category field, then collect adjacent equal keys", "es": "sort-by-rule — ordena transacciones por el campo category, luego agrupa claves adyacentes iguales" } },
+    { "id": "c", "label": { "en": "groupby-key — one-pass bucketing into Map<String, List<Transaction>> keyed on category", "es": "groupby-key — agrupación en un recorrido en Map<String, List<Transaction>> con clave category" } },
+    { "id": "d", "label": { "en": "histogram-bucketing — allocate a fixed-size array of category slots and fill each slot", "es": "histogram-bucketing — asigna un arreglo de tamaño fijo de slots de categoría y llena cada slot" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "When the goal is to collect the full objects (not just counts) into groups keyed by a field value, groupby-key is the canonical choice — one pass with computeIfAbsent. Option A (frequency-count) produces Integer counts, discarding the objects themselves, so it cannot answer this problem. Option B (sort-by-rule) also groups, but at O(n log n) and by mutating order, whereas groupby-key preserves insertion order in O(n). Option D requires knowing the full domain of categories in advance, which is not given.",
+    "es": "Cuando el objetivo es reunir los objetos completos (no solo conteos) en grupos con clave en un valor de campo, groupby-key es la elección canónica — un recorrido con computeIfAbsent. La opción A (frequency-count) produce conteos Integer, descartando los objetos, por lo que no puede responder este problema. La opción B (sort-by-rule) también agrupa, pero en O(n log n) y mutando el orden, mientras que groupby-key preserva el orden de inserción en O(n). La opción D requiere conocer el dominio completo de categorías de antemano, lo cual no se proporciona."
+  }
+}

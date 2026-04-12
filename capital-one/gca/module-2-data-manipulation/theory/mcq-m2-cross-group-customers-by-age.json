@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-group-customers-by-age",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: group customers by age decade",
+    "es": "cross-canonical: agrupar clientes por década de edad"
+  },
+  "prompt": {
+    "en": "Given a list of Customer objects each with an int age field, group them into buckets by decade (20s, 30s, 40s, etc.) and return a Map<Integer, List<Customer>> where the key is the decade (2 for ages 20–29, 3 for 30–39, etc.). Which canonical applies?",
+    "es": "Dada una lista de objetos Customer cada uno con un campo int age, agrúpalos en cubetas por década (20s, 30s, 40s, etc.) y retorna un Map<Integer, List<Customer>> donde la clave es la década (2 para edades 20–29, 3 para 30–39, etc.). ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "histogram-bucketing — allocate int[12] for age decades 0–11 and count customers per bucket", "es": "histogram-bucketing — asigna int[12] para décadas de edad 0–11 y cuenta clientes por cubeta" } },
+    { "id": "b", "label": { "en": "sort-by-rule — sort customers by age/10, then group adjacent elements with the same decade key", "es": "sort-by-rule — ordena clientes por age/10, luego agrupa elementos adyacentes con la misma clave de década" } },
+    { "id": "c", "label": { "en": "groupby-key — one pass with computeIfAbsent keyed on customer.getAge() / 10", "es": "groupby-key — un recorrido con computeIfAbsent con clave customer.getAge() / 10" } },
+    { "id": "d", "label": { "en": "range-partition — partition customers around age 40 to split young and old groups", "es": "range-partition — particiona clientes alrededor de la edad 40 para separar grupos jóvenes y mayores" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The goal is to collect full Customer objects into groups with a computed key (age/10) — groupby-key in one O(n) pass. computeIfAbsent(customer.getAge() / 10, k -> new ArrayList<>()).add(customer) does it directly. Option A (histogram-bucketing) produces counts, not lists of Customer objects — it loses the objects themselves. Option B (sort-by-rule) works but is O(n log n) and does not preserve insertion order within each decade. Option D (range-partition) only creates two partitions, not the multi-decade grouping required.",
+    "es": "El objetivo es recopilar objetos Customer completos en grupos con una clave calculada (age/10) — groupby-key en un recorrido O(n). computeIfAbsent(customer.getAge() / 10, k -> new ArrayList<>()).add(customer) lo hace directamente. La opción A (histogram-bucketing) produce conteos, no listas de objetos Customer — pierde los objetos mismos. La opción B (sort-by-rule) funciona pero es O(n log n) y no preserva el orden de inserción dentro de cada década. La opción D (range-partition) solo crea dos particiones, no la agrupación por múltiples décadas requerida."
+  }
+}

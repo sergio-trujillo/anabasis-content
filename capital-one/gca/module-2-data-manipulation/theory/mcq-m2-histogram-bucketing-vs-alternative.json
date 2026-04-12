@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-histogram-bucketing-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "histogram-bucketing: when to prefer over frequency-count",
+    "es": "histogram-bucketing: cuándo preferirlo sobre frequency-count"
+  },
+  "prompt": {
+    "en": "Both histogram-bucketing and frequency-count build an array of counts. What is the key distinction that determines which pattern applies?",
+    "es": "Tanto histogram-bucketing como frequency-count construyen un arreglo de conteos. ¿Cuál es la distinción clave que determina qué patrón aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "frequency-count uses a HashMap while histogram-bucketing always uses an int[] array", "es": "frequency-count usa un HashMap mientras que histogram-bucketing siempre usa un arreglo int[]" } },
+    { "id": "b", "label": { "en": "histogram-bucketing uses the count array as an intermediate structure to sort, partition, or scan — the counts are a means to an end; frequency-count returns counts as the final answer", "es": "histogram-bucketing usa el arreglo de conteos como estructura intermedia para ordenar, particionar o escanear — los conteos son un medio para un fin; frequency-count retorna los conteos como respuesta final" } },
+    { "id": "c", "label": { "en": "histogram-bucketing applies only when k < n; frequency-count applies when k >= n", "es": "histogram-bucketing aplica solo cuando k < n; frequency-count aplica cuando k >= n" } },
+    { "id": "d", "label": { "en": "frequency-count is always O(n) while histogram-bucketing is always O(n + k)", "es": "frequency-count siempre es O(n) mientras que histogram-bucketing siempre es O(n + k)" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The canonical distinction is intent: in frequency-count the counts ARE the answer (e.g., 'how many times does each value appear?'), while in histogram-bucketing the counts are an intermediate substrate used to reconstruct a sorted array, compute an h-index, or scan for a partition boundary. Both can use either int[] or HashMap for the count structure — option A is false. Option C is a heuristic at best, not the defining criterion. Option D is partially wrong: frequency-count with a HashMap is also O(n), but histogram-bucketing's second pass is O(k), not O(n), making O(n + k) accurate only for histogram-bucketing.",
+    "es": "La distinción canónica es la intención: en frequency-count los conteos SON la respuesta (p.ej., '¿cuántas veces aparece cada valor?'), mientras que en histogram-bucketing los conteos son un sustrato intermedio utilizado para reconstruir un arreglo ordenado, calcular un h-index o escanear un límite de partición. Ambos pueden usar int[] o HashMap para la estructura de conteo — la opción A es falsa. La opción C es una heurística en el mejor caso, no el criterio definitorio. La opción D es parcialmente incorrecta: frequency-count con HashMap también es O(n), pero el segundo recorrido de histogram-bucketing es O(k), no O(n), haciendo O(n + k) preciso solo para histogram-bucketing."
+  }
+}

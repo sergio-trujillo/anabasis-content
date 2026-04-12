@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-cross-kth-smallest-transaction",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "cross-canonical: kth smallest transaction in unsorted array",
+    "es": "cross-canonical: k-ésima transacción más pequeña en arreglo desordenado"
+  },
+  "prompt": {
+    "en": "Given an unsorted int[] of transaction amounts and a rank k, return the kth smallest amount in average O(n) time without fully sorting the array. Which canonical applies?",
+    "es": "Dado un int[] desordenado de montos de transacción y un rango k, retorna el k-ésimo monto más pequeño en tiempo promedio O(n) sin ordenar completamente el arreglo. ¿Qué canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — sort the array and return amounts[k-1]", "es": "sort-by-rule — ordena el arreglo y retorna amounts[k-1]" } },
+    { "id": "b", "label": { "en": "topk-frequent — maintain a max-heap of size k; the heap's top is the kth smallest", "es": "topk-frequent — mantiene un max-heap de tamaño k; la cima del heap es el k-ésimo más pequeño" } },
+    { "id": "c", "label": { "en": "range-partition — quickselect: partition around a pivot; if pivot lands at k-1, return it; otherwise recurse on the relevant half", "es": "range-partition — quickselect: particiona alrededor de un pivote; si el pivote cae en k-1, retórnalo; de lo contrario recursa en la mitad relevante" } },
+    { "id": "d", "label": { "en": "merge-k-sorted — treat the unsorted array as k=1 sorted source; extract k times", "es": "merge-k-sorted — trata el arreglo desordenado como k=1 fuente ordenada; extrae k veces" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Quickselect (range-partition) is the canonical O(n) average-time kth-element algorithm for unsorted arrays. Each partition call places the pivot at its final sorted position; you recurse only on the half containing rank k — discarding the other half. Option A (sort-by-rule) is O(n log n) — correct but violates the O(n) constraint. Option B (max-heap of size k) runs in O(n log k) and O(k) extra space — also violates O(n) for large k. Option D is nonsensical: an unsorted array is not a sorted stream, and extracting from it k times does not yield rank-ordered results.",
+    "es": "Quickselect (range-partition) es el algoritmo canónico de tiempo promedio O(n) para encontrar el k-ésimo elemento en arreglos desordenados. Cada llamada de partición coloca el pivote en su posición final ordenada; recurses solo en la mitad que contiene el rango k — descartando la otra mitad. La opción A (sort-by-rule) es O(n log n) — correcta pero viola la restricción O(n). La opción B (max-heap de tamaño k) se ejecuta en O(n log k) y O(k) espacio extra — también viola O(n) para k grande. La opción D es absurda: un arreglo desordenado no es un flujo ordenado, y extraer de él k veces no produce resultados en orden de rango."
+  }
+}

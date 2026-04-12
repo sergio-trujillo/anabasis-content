@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-topk-frequent-time-complexity",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "topk-frequent: time complexity",
+    "es": "topk-frequent: complejidad temporal"
+  },
+  "prompt": {
+    "en": "You find the top-k most frequent elements from n elements using a min-heap of size k to track candidates. What is the time complexity?",
+    "es": "Encuentras los k elementos más frecuentes de n elementos usando un min-heap de tamaño k para rastrear candidatos. ¿Cuál es la complejidad temporal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "O(n) — frequency counting is one pass and the heap is constant size", "es": "O(n) — el conteo de frecuencias es un recorrido y el heap tiene tamaño constante" } },
+    { "id": "b", "label": { "en": "O(n log n) — sorting all frequencies is the dominant step", "es": "O(n log n) — ordenar todas las frecuencias es el paso dominante" } },
+    { "id": "c", "label": { "en": "O(n log k) — frequency count is O(n), then processing n frequency entries each with O(log k) heap operation", "es": "O(n log k) — el conteo de frecuencias es O(n), luego procesar n entradas de frecuencia con operación O(log k) en el heap" } },
+    { "id": "d", "label": { "en": "O(k log n) — you insert k elements and each costs O(log n)", "es": "O(k log n) — insertas k elementos y cada uno cuesta O(log n)" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "topk-frequent composes two steps: (1) frequency count in O(n) and (2) processing all distinct frequency entries (up to n) against a size-k min-heap. Each of the n entries either stays out (O(1) peek) or triggers a push+pop on a heap of size k — O(log k). Total: O(n) + O(n log k) = O(n log k). Option A (O(n)) is wrong: the heap operations over n entries add a log k factor. Option B (O(n log n)) applies to the sort-then-take approach, which replaces the heap with a full sort. Option D (O(k log n)) confuses the traversal count (n entries processed) with k.",
+    "es": "topk-frequent compone dos pasos: (1) conteo de frecuencias en O(n) y (2) procesar todas las entradas de frecuencias distintas (hasta n) contra un min-heap de tamaño k. Cada una de las n entradas o queda fuera (O(1) peek) o desencadena un push+pop en un heap de tamaño k — O(log k). Total: O(n) + O(n log k) = O(n log k). La opción A (O(n)) es incorrecta: las operaciones de heap sobre n entradas agregan un factor log k. La opción B (O(n log n)) aplica al enfoque sort-then-take, que reemplaza el heap con una ordenación completa. La opción D (O(k log n)) confunde el conteo de recorrido (n entradas procesadas) con k."
+  }
+}

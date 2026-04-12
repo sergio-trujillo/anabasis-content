@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-sort-by-rule-tiebreaker",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "sort-by-rule: compound comparator tiebreaker mechanics",
+    "es": "sort-by-rule: mecánica del desempate en comparador compuesto"
+  },
+  "prompt": {
+    "en": "You write: Comparator<Transaction> cmp = Comparator.comparingDouble(Transaction::getAmount).reversed().thenComparing(Transaction::getMerchant). What happens when two transactions have the same amount?",
+    "es": "Escribes: Comparator<Transaction> cmp = Comparator.comparingDouble(Transaction::getAmount).reversed().thenComparing(Transaction::getMerchant). ¿Qué ocurre cuando dos transacciones tienen el mismo amount?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "The first comparator returns 0, so thenComparing is never called — both are treated as equal", "es": "El primer comparador retorna 0, por lo que thenComparing nunca se llama — ambos se tratan como iguales" } },
+    { "id": "b", "label": { "en": "thenComparing is called only when the primary comparator returns 0, breaking the tie by merchant name ascending", "es": "thenComparing se llama solo cuando el comparador primario retorna 0, resolviendo el empate por nombre de comercio ascendente" } },
+    { "id": "c", "label": { "en": "reversed() inverts the thenComparing criterion too, so merchant is sorted descending", "es": "reversed() también invierte el criterio de thenComparing, por lo que merchant se ordena descendente" } },
+    { "id": "d", "label": { "en": "thenComparing is always evaluated regardless of the primary result, for performance reasons", "es": "thenComparing siempre se evalúa sin importar el resultado primario, por razones de rendimiento" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "thenComparing is applied only when the primary comparator returns exactly 0 — the Java contract for Comparator chaining. So when amounts are equal, the secondary criterion (merchant name ascending) decides the order. Option A is wrong: thenComparing IS called when the primary returns 0, not skipped. Option C is a common misconception: reversed() wraps only the preceding comparator in the chain, not the ones added after with thenComparing. Option D is false — short-circuit evaluation means the secondary comparator is only consulted on ties.",
+    "es": "thenComparing se aplica solo cuando el comparador primario retorna exactamente 0 — el contrato de Java para el encadenamiento de Comparator. Así que cuando los montos son iguales, el criterio secundario (nombre de comercio ascendente) decide el orden. La opción A está equivocada: thenComparing SÍ se llama cuando el primario retorna 0, no se omite. La opción C es una confusión frecuente: reversed() envuelve solo el comparador precedente en la cadena, no los que se agregan después con thenComparing. La opción D es falsa — la evaluación en cortocircuito significa que el comparador secundario solo se consulta en empates."
+  }
+}

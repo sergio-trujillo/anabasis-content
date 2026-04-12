@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-range-partition-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "range-partition: when to prefer over topk-frequent",
+    "es": "range-partition: cuándo preferirlo sobre topk-frequent"
+  },
+  "prompt": {
+    "en": "You need the kth smallest value in an unsorted int[] in average O(n) time and O(1) space. A colleague proposes using a max-heap of size k. Which is the better approach and why?",
+    "es": "Necesitas el k-ésimo valor más pequeño en un int[] desordenado en tiempo promedio O(n) y espacio O(1). Un colega propone usar un max-heap de tamaño k. ¿Cuál es el mejor enfoque y por qué?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Max-heap of size k — it runs in O(n log k), which is better than O(n)", "es": "Max-heap de tamaño k — se ejecuta en O(n log k), que es mejor que O(n)" } },
+    { "id": "b", "label": { "en": "quickselect (range-partition) — average O(n) time and O(1)/O(log n) space, meeting both constraints; the heap uses O(k) extra space", "es": "quickselect (range-partition) — tiempo promedio O(n) y espacio O(1)/O(log n), cumpliendo ambas restricciones; el heap usa O(k) espacio extra" } },
+    { "id": "c", "label": { "en": "They are equivalent — both run in O(n) and use O(1) space", "es": "Son equivalentes — ambos se ejecutan en O(n) y usan espacio O(1)" } },
+    { "id": "d", "label": { "en": "Max-heap is better because it can also return the top-k list, not just the kth element", "es": "Max-heap es mejor porque también puede retornar la lista top-k, no solo el k-ésimo elemento" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The problem specifies O(n) time and O(1) space. Quickselect satisfies both: average O(n) time (expected from random pivots) and O(1) extra space (in-place, recursive stack is O(log n) average). The max-heap approach is O(n log k) time and O(k) extra space — it fails the O(1) space constraint whenever k is non-trivial. Option A is wrong: O(n log k) is NOT better than O(n) — it is strictly worse. Option C is wrong: the heap is O(n log k) time and O(k) space, not O(n)/O(1). Option D is a valid use case for the heap but irrelevant when the problem only asks for the single kth element.",
+    "es": "El problema especifica tiempo O(n) y espacio O(1). Quickselect satisface ambos: tiempo promedio O(n) (esperado de pivotes aleatorios) y espacio extra O(1) (in-place, la pila recursiva es O(log n) promedio). El enfoque de max-heap es O(n log k) tiempo y O(k) espacio extra — falla la restricción de espacio O(1) siempre que k no sea trivial. La opción A es incorrecta: O(n log k) NO es mejor que O(n) — es estrictamente peor. La opción C es incorrecta: el heap es O(n log k) tiempo y O(k) espacio, no O(n)/O(1). La opción D es un caso de uso válido para el heap pero irrelevante cuando el problema solo pide el único k-ésimo elemento."
+  }
+}

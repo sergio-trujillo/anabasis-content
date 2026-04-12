@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-sort-by-rule-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "sort-by-rule: when to prefer over topk-frequent",
+    "es": "sort-by-rule: cuándo preferirlo sobre topk-frequent"
+  },
+  "prompt": {
+    "en": "You need to return ALL transactions sorted by amount descending (not just the top k). Should you use sort-by-rule or the bounded-heap approach from topk-frequent?",
+    "es": "Necesitas retornar TODAS las transacciones ordenadas por amount descendente (no solo las k superiores). ¿Deberías usar sort-by-rule o el enfoque de heap acotado de topk-frequent?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Bounded heap (PriorityQueue size n) — it generalizes to any k including k = n", "es": "Heap acotado (PriorityQueue tamaño n) — generaliza a cualquier k incluyendo k = n" } },
+    { "id": "b", "label": { "en": "sort-by-rule — when k = n a full sort is simpler and has the same O(n log n) complexity without PriorityQueue overhead", "es": "sort-by-rule — cuando k = n una ordenación completa es más simple y tiene la misma complejidad O(n log n) sin la sobrecarga de PriorityQueue" } },
+    { "id": "c", "label": { "en": "histogram-bucketing — build a bucket per amount value, then output elements bucket by bucket in descending key order", "es": "histogram-bucketing — construye una cubeta por valor de amount, luego emite elementos cubeta por cubeta en orden descendente de clave" } },
+    { "id": "d", "label": { "en": "groupby-key — bucket by amount, then flatten buckets in descending key order", "es": "groupby-key — agrupa por amount, luego aplana las cubetas en orden descendente de clave" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "When you need all n elements in sorted order, sort-by-rule (Arrays.sort with Comparator) is the right choice: O(n log n) time, O(log n) stack space, and straightforward code. Using a PriorityQueue of size n to produce a full sort is also O(n log n) but requires O(n) extra heap space for the queue and n poll() calls — strictly more overhead for no benefit. Option C (histogram-bucketing) works only when amounts are integers in a small bounded range; it doesn't generalize. Option D has the same limitation and adds unnecessary object creation.",
+    "es": "Cuando necesitas los n elementos en orden, sort-by-rule (Arrays.sort con Comparator) es la elección correcta: O(n log n) tiempo, O(log n) espacio de pila y código sencillo. Usar una PriorityQueue de tamaño n para producir una ordenación completa también es O(n log n) pero requiere O(n) espacio de heap adicional para la cola y n llamadas a poll() — estrictamente más sobrecarga sin beneficio. La opción C (histogram-bucketing) solo funciona cuando los montos son enteros en un rango acotado pequeño; no generaliza. La opción D tiene la misma limitación y agrega creación de objetos innecesaria."
+  }
+}

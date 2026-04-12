@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-range-partition-pattern-id",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "range-partition: pattern identification",
+    "es": "range-partition: identificación del patrón"
+  },
+  "prompt": {
+    "en": "Given int[] balances, rearrange it in-place so that all balances strictly below a threshold T appear before all balances >= T. The relative order within each group does not matter. Which canonical pattern applies?",
+    "es": "Dado int[] balances, reordénalo en su lugar para que todos los saldos estrictamente menores que un umbral T aparezcan antes que todos los saldos >= T. El orden relativo dentro de cada grupo no importa. ¿Qué patrón canónico aplica?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "sort-by-rule — sort by (balance < T) first, then (balance >= T)", "es": "sort-by-rule — ordena primero por (balance < T), luego por (balance >= T)" } },
+    { "id": "b", "label": { "en": "groupby-key — bucket balances into two lists: below and above, then concatenate", "es": "groupby-key — agrupa saldos en dos listas: por debajo y por encima, luego concatena" } },
+    { "id": "c", "label": { "en": "range-partition — use a two-pointer partition in-place: left pointer scans for elements >= T, right scans for elements < T, swap until they cross", "es": "range-partition — usa una partición de dos punteros en lugar: el puntero izquierdo busca elementos >= T, el derecho busca elementos < T, intercambia hasta que se crucen" } },
+    { "id": "d", "label": { "en": "histogram-bucketing — allocate a bucket array of size 2 (below-threshold and above-threshold)", "es": "histogram-bucketing — asigna un arreglo de cubetas de tamaño 2 (por debajo del umbral y por encima del umbral)" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The in-place constraint and threshold-based split are the fingerprints of range-partition. The Dutch National Flag variant (two pointers or three-way) partitions around the pivot value T in O(n) time and O(1) space. Option A (sort-by-rule) achieves a similar split but uses O(n log n) time and does not sort in-place without extra space for custom comparators on primitives. Option B (groupby-key) uses O(n) extra space for the two lists. Option D (histogram-bucketing) requires knowing and writing counts, not the original elements, and cannot reconstruct the original objects in-place.",
+    "es": "La restricción in-place y la división basada en umbral son las huellas de range-partition. La variante de Bandera Nacional Holandesa (dos punteros o partición de tres vías) particiona alrededor del valor pivote T en O(n) tiempo y O(1) espacio. La opción A (sort-by-rule) logra una división similar pero usa O(n log n) tiempo y no ordena in-place sin espacio extra para comparadores personalizados en primitivos. La opción B (groupby-key) usa O(n) espacio extra para las dos listas. La opción D (histogram-bucketing) requiere conocer y escribir conteos, no los elementos originales, y no puede reconstruir los objetos originales in-place."
+  }
+}

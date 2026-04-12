@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-merge-k-sorted-java-idiom",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "merge-k-sorted: idiomatic Java construct",
+    "es": "merge-k-sorted: construcción idiomática en Java"
+  },
+  "prompt": {
+    "en": "In a merge-k-sorted implementation, what should each entry stored in the PriorityQueue contain?",
+    "es": "En una implementación de merge-k-sorted, ¿qué debe contener cada entrada almacenada en la PriorityQueue?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Only the current value — poll and compare values to decide which source to advance", "es": "Solo el valor actual — extrae y compara valores para decidir qué fuente avanzar" } },
+    { "id": "b", "label": { "en": "A cursor tuple {value, srcIdx, pos} — so after polling you know which source and position to advance next", "es": "Una tupla cursor {value, srcIdx, pos} — para que después de extraer sepas qué fuente y posición avanzar" } },
+    { "id": "c", "label": { "en": "A reference to the entire source list — so you can re-sort after each extraction", "es": "Una referencia a la lista fuente completa — para que puedas reordenar después de cada extracción" } },
+    { "id": "d", "label": { "en": "Only the source index srcIdx — compare all current heads via random access without storing the value", "es": "Solo el índice fuente srcIdx — compara todas las cabezas actuales mediante acceso aleatorio sin almacenar el valor" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Each PriorityQueue entry must carry at minimum: the current value (for comparison/ordering), the source list index (to advance the right list), and the position within that list (to fetch the next element). Without srcIdx you cannot advance the right cursor after polling. Without pos you don't know the next element to enqueue. Option A stores only the value — after polling you have no way to find where to fetch the next element. Option C is prohibitively expensive (re-sorting on each extraction turns O(N log k) into O(N·k log k)). Option D requires scanning all source heads per extraction — O(k) per element, totaling O(N·k).",
+    "es": "Cada entrada de la PriorityQueue debe llevar como mínimo: el valor actual (para comparación/ordenación), el índice de la lista fuente (para avanzar la lista correcta), y la posición dentro de esa lista (para obtener el siguiente elemento). Sin srcIdx no puedes avanzar el cursor correcto después de extraer. Sin pos no sabes el próximo elemento a encolar. La opción A almacena solo el valor — después de extraer no hay forma de saber de dónde obtener el siguiente elemento. La opción C es prohibitivamente costosa (reordenar en cada extracción convierte O(N log k) en O(N·k log k)). La opción D requiere escanear todas las cabezas fuente por extracción — O(k) por elemento, totalizando O(N·k)."
+  }
+}

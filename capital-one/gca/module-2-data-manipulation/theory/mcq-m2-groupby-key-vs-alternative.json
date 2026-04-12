@@ -1,0 +1,24 @@
+{
+  "id": "mcq-m2-groupby-key-vs-alternative",
+  "type": "mcq",
+  "section": "gca-module-2-data-manipulation",
+  "title": {
+    "en": "groupby-key: when to prefer over sort-by-rule",
+    "es": "groupby-key: cuándo preferirlo sobre sort-by-rule"
+  },
+  "prompt": {
+    "en": "You need to group a large list of transactions by merchant name. A teammate suggests sorting by merchant name first and then collecting adjacent equal keys. When should you prefer groupby-key instead?",
+    "es": "Necesitas agrupar una lista grande de transacciones por nombre de comercio. Un compañero sugiere ordenar primero por nombre de comercio y luego agrupar claves adyacentes iguales. ¿Cuándo deberías preferir groupby-key en su lugar?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Always — groupby-key is always faster than sorting", "es": "Siempre — groupby-key siempre es más rápido que ordenar" } },
+    { "id": "b", "label": { "en": "When you need the resulting lists to be sorted by merchant name", "es": "Cuando necesitas que las listas resultantes estén ordenadas por nombre de comercio" } },
+    { "id": "c", "label": { "en": "When O(n) time and O(n) space are acceptable and preserving insertion order within each group matters", "es": "Cuando O(n) tiempo y O(n) espacio son aceptables y preservar el orden de inserción dentro de cada grupo importa" } },
+    { "id": "d", "label": { "en": "When the number of distinct merchants k is known in advance", "es": "Cuando el número de comercios distintos k se conoce de antemano" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "groupby-key runs in O(n) time vs. O(n log n) for sort-by-rule, and preserves insertion order within each bucket — both advantages when you only need grouping, not sorted order. Option A overstates the case: sort-by-rule is preferred when downstream logic requires groups in sorted order, because it avoids a second sorting step. Option B describes the scenario where sort-by-rule is actually better, not groupby-key. Option D describes histogram-bucketing, which uses a fixed-size array only when k is bounded and known.",
+    "es": "groupby-key se ejecuta en O(n) frente a O(n log n) de sort-by-rule, y preserva el orden de inserción dentro de cada cubeta — ambas ventajas cuando solo necesitas agrupación, no orden. La opción A exagera: sort-by-rule es preferible cuando la lógica posterior requiere grupos en orden, porque evita un segundo paso de ordenación. La opción B describe el escenario donde sort-by-rule es mejor, no groupby-key. La opción D describe histogram-bucketing, que usa un arreglo de tamaño fijo solo cuando k está acotado y es conocido."
+  }
+}
