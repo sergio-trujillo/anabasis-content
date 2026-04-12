@@ -1,0 +1,24 @@
+{
+  "id": "mcq-gca-partial-credit",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Partial credit in the GCA",
+    "es": "Crédito parcial en el GCA"
+  },
+  "prompt": {
+    "en": "How does partial credit work on the CodeSignal GCA?",
+    "es": "¿Cómo funciona el crédito parcial en el GCA de CodeSignal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "No partial credit — each problem is all-or-nothing", "es": "Sin crédito parcial — cada problema es todo o nada" } },
+    { "id": "b", "label": { "en": "You get points proportional to the fraction of hidden test cases that pass", "es": "Obtienes puntos proporcionales a la fracción de pruebas ocultas que pasan" } },
+    { "id": "c", "label": { "en": "Partial credit is awarded only on Problems 3 and 4", "es": "Solo se otorga crédito parcial en los problemas 3 y 4" } },
+    { "id": "d", "label": { "en": "You get half credit for a compile-but-wrong submission", "es": "Obtienes medio crédito por una entrega que compila pero es incorrecta" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "CodeSignal awards partial credit proportional to the fraction of hidden test cases your solution passes. This is load-bearing on test strategy: a working O(n²) solution that passes small cases but times out on large ones still earns points. Don't leave problems blank — a half-working answer beats nothing.",
+    "es": "CodeSignal otorga crédito parcial proporcional a la fracción de pruebas ocultas que tu solución pasa. Esto es clave para la estrategia: una solución O(n²) que funciona en casos pequeños pero hace timeout en grandes todavía gana puntos. No dejes problemas en blanco — una respuesta a medias supera a cero."
+  }
+}

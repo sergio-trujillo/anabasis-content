@@ -1,0 +1,17 @@
+{
+  "id": "code-palindrome-valid",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Valid palindrome (ignore case + non-alphanumeric)",
+    "es": "Palíndromo válido (ignorando mayúsculas y no-alfanuméricos)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "A phrase is a valid palindrome if, after converting all uppercase letters to lowercase and removing all non-alphanumeric characters, it reads the same forward and backward. Given a string `s`, return `true` if it is a valid palindrome, otherwise `false`. An empty string is considered a palindrome.",
+    "es": "Una frase es un palíndromo válido si, tras convertir todas las mayúsculas a minúsculas y eliminar todos los caracteres no alfanuméricos, se lee igual hacia adelante que hacia atrás. Dada una cadena `s`, devuelve `true` si es un palíndromo válido, de lo contrario `false`. Una cadena vacía se considera palíndromo."
+  },
+  "starterCode": "class Solution {\n    public boolean isValidPalindrome(String s) {\n        // TODO\n        return false;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void classicPhrase() {\n        assertTrue(new Solution().isValidPalindrome(\"A man, a plan, a canal: Panama\"));\n    }\n\n    @Test\n    void notPalindrome() {\n        assertFalse(new Solution().isValidPalindrome(\"race a car\"));\n    }\n\n    @Test\n    void emptyString() {\n        assertTrue(new Solution().isValidPalindrome(\"\"));\n    }\n\n    @Test\n    void onlyPunctuation() {\n        assertTrue(new Solution().isValidPalindrome(\".,;:!?\"));\n    }\n\n    @Test\n    void mixedAlphanumeric() {\n        assertTrue(new Solution().isValidPalindrome(\"0P0\"));\n    }\n\n    @Test\n    void singleChar() {\n        assertTrue(new Solution().isValidPalindrome(\"a\"));\n    }\n}\n"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "code-palindrome-account-number",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Palindromic account number (ignore separators)",
+    "es": "Número de cuenta palindrómico (ignorar separadores)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Capital One customer support flags account numbers that are palindromes because they're disproportionately targeted by scammers pretending to remember a 'memorable number'. Given a formatted account number `accountNumber` (digits and uppercase letters, possibly separated by dashes or spaces), return `true` if the stripped, uppercased version reads the same forward and backward. An empty or single-character stripped result returns `true`.",
+    "es": "El soporte de Capital One marca números de cuenta palindrómicos porque suelen ser blanco de estafadores que fingen recordar un 'número memorable'. Dado un número de cuenta formateado `accountNumber` (dígitos y letras mayúsculas, posiblemente con guiones o espacios), devuelve `true` si la versión sin separadores y en mayúsculas se lee igual hacia adelante que hacia atrás. Un resultado vacío o de un solo carácter devuelve `true`."
+  },
+  "starterCode": "class Solution {\n    public boolean isPalindromicAccountNumber(String accountNumber) {\n        // TODO\n        return false;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void dashesStripped() {\n        assertTrue(new Solution().isPalindromicAccountNumber(\"40-04\"));\n    }\n\n    @Test\n    void spacesStripped() {\n        assertTrue(new Solution().isPalindromicAccountNumber(\"1 2 3 2 1\"));\n    }\n\n    @Test\n    void mixedSeparators() {\n        // \"12-3-21\" strips to \"12321\" → palindrome\n        assertTrue(new Solution().isPalindromicAccountNumber(\"12-3-21\"));\n    }\n\n    @Test\n    void alphanumericIgnoreCase() {\n        assertTrue(new Solution().isPalindromicAccountNumber(\"A1-1-A\"));\n    }\n\n    @Test\n    void notPalindrome() {\n        assertFalse(new Solution().isPalindromicAccountNumber(\"1234-5678\"));\n    }\n\n    @Test\n    void emptyAllSeparators() {\n        assertTrue(new Solution().isPalindromicAccountNumber(\"---\"));\n    }\n\n    @Test\n    void caseFolding() {\n        assertTrue(new Solution().isPalindromicAccountNumber(\"ab-BA\"));\n    }\n}\n"
+}

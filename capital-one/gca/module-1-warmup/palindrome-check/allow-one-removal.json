@@ -1,0 +1,17 @@
+{
+  "id": "code-palindrome-one-removal",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Palindrome after removing at most one character",
+    "es": "Palíndromo tras eliminar a lo más un carácter"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a string `s` of lowercase letters, return `true` if you can make it a palindrome by removing at most one character (zero removals allowed — already palindromes count). Otherwise return `false`. An empty string or single character returns `true`.",
+    "es": "Dada una cadena `s` de letras minúsculas, devuelve `true` si puedes volverla palíndromo eliminando a lo más un carácter (cero eliminaciones está permitido — las que ya son palíndromo cuentan). En caso contrario devuelve `false`. Una cadena vacía o de un solo carácter devuelve `true`."
+  },
+  "starterCode": "class Solution {\n    public boolean canBePalindromeRemovingOne(String s) {\n        // TODO\n        return false;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void alreadyPalindrome() {\n        assertTrue(new Solution().canBePalindromeRemovingOne(\"aba\"));\n    }\n\n    @Test\n    void removeOneFromMiddleish() {\n        // \"abca\" → remove 'b' → \"aca\" palindrome\n        assertTrue(new Solution().canBePalindromeRemovingOne(\"abca\"));\n    }\n\n    @Test\n    void removeOneFromEnd() {\n        // \"deeee\" → remove 'd' → \"eeee\" palindrome\n        assertTrue(new Solution().canBePalindromeRemovingOne(\"deeee\"));\n    }\n\n    @Test\n    void requireTwoRemovals() {\n        assertFalse(new Solution().canBePalindromeRemovingOne(\"abc\"));\n    }\n\n    @Test\n    void requireTwoRemovalsLonger() {\n        assertFalse(new Solution().canBePalindromeRemovingOne(\"abcdef\"));\n    }\n\n    @Test\n    void emptyString() {\n        assertTrue(new Solution().canBePalindromeRemovingOne(\"\"));\n    }\n\n    @Test\n    void singleChar() {\n        assertTrue(new Solution().canBePalindromeRemovingOne(\"x\"));\n    }\n\n    @Test\n    void twoChars() {\n        assertTrue(new Solution().canBePalindromeRemovingOne(\"ab\"));\n    }\n}\n"
+}

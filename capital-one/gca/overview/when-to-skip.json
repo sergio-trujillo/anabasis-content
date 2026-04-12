@@ -1,0 +1,24 @@
+{
+  "id": "mcq-gca-when-to-skip",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "When to skip a problem",
+    "es": "Cuándo saltarse un problema"
+  },
+  "prompt": {
+    "en": "You're 20 minutes into Problem 2 and have a brute-force that passes the visible examples but you can't see how to optimize. You've used 40% of your total time. What's the right move?",
+    "es": "Llevas 20 minutos en el problema 2 y tienes una fuerza bruta que pasa los ejemplos visibles pero no ves cómo optimizar. Has usado 40% de tu tiempo total. ¿Qué haces?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Keep iterating on Problem 2 — sunk cost; you're close", "es": "Sigue iterando en el problema 2 — costo hundido; estás cerca" } },
+    { "id": "b", "label": { "en": "Submit the brute force, move on to Problem 3, return to Problem 2 if time permits", "es": "Envía la fuerza bruta, pasa al problema 3, regresa al problema 2 si hay tiempo" } },
+    { "id": "c", "label": { "en": "Skip Problem 2 entirely without submitting — it might fail", "es": "Sáltate el problema 2 por completo sin enviar — puede fallar" } },
+    { "id": "d", "label": { "en": "Rewrite from scratch with a different approach — the current code is cursed", "es": "Reescribe desde cero con un enfoque distinto — el código actual está maldito" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Submit the brute force and move on. Partial credit from hidden-test-pass rate is real points — a brute force that passes 40% of hidden cases on Problem 2 (80 points) is far better than 0 points from skipping. Never hand in a blank answer. Rewriting from scratch (d) is rarely faster than debugging unless the approach is fundamentally wrong.",
+    "es": "Envía la fuerza bruta y sigue. El crédito parcial por tasa de pruebas ocultas pasadas son puntos reales — una fuerza bruta que pase 40% de pruebas ocultas en el problema 2 (80 puntos) es muchísimo mejor que 0 por saltárselo. Nunca entregues vacío. Reescribir desde cero (d) rara vez es más rápido que depurar, a menos que el enfoque esté fundamentalmente mal."
+  }
+}

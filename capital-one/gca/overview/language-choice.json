@@ -1,0 +1,24 @@
+{
+  "id": "mcq-gca-language-choice",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Which language to pick",
+    "es": "Qué lenguaje elegir"
+  },
+  "prompt": {
+    "en": "You have equal fluency in Java, Python, and C++. Which factor matters MOST for picking the language on the CodeSignal GCA?",
+    "es": "Tienes la misma fluidez en Java, Python y C++. ¿Qué factor importa MÁS para elegir el lenguaje en el GCA de CodeSignal?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Which language has the fewest keystrokes for typical loops", "es": "Qué lenguaje tiene menos teclas para los bucles típicos" } },
+    { "id": "b", "label": { "en": "Which language Capital One uses internally (they'll see the code if you pass)", "es": "Qué lenguaje usa Capital One internamente (verán el código si pasas)" } },
+    { "id": "c", "label": { "en": "Which language you type fastest in under pressure with good stdlib recall", "es": "En qué lenguaje tecleas más rápido bajo presión con buen recuerdo de la stdlib" } },
+    { "id": "d", "label": { "en": "Which language has the strictest type system to catch bugs early", "es": "Qué lenguaje tiene el sistema de tipos más estricto para atrapar bugs temprano" } }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "On a 70-minute timed test, raw typing speed + stdlib fluency dominates. Type systems help in real production code; under time pressure they just slow you down if you're fighting the compiler. Capital One doesn't care which language passes the GCA — the only person reading your code is the autograder.",
+    "es": "En una prueba cronometrada de 70 minutos, la velocidad de tipeo + fluidez con la stdlib dominan. Los sistemas de tipos ayudan en código de producción; bajo presión de tiempo solo te ralentizan si peleas con el compilador. A Capital One no le importa qué lenguaje usaste para pasar el GCA — el único que leerá tu código es el autograder."
+  }
+}

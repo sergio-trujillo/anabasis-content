@@ -1,0 +1,17 @@
+{
+  "id": "code-palindrome-strict",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Strict palindrome (exact character match)",
+    "es": "Palíndromo estricto (coincidencia exacta de caracteres)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given a string `s`, return `true` if it is a palindrome under a strict character-by-character comparison — no case folding, no character filtering. Every character must match its mirror position exactly. An empty string is a palindrome.",
+    "es": "Dada una cadena `s`, devuelve `true` si es palíndromo bajo una comparación estricta carácter por carácter — sin normalizar mayúsculas, sin filtrar caracteres. Cada carácter debe coincidir exactamente con su posición reflejada. Una cadena vacía es palíndromo."
+  },
+  "starterCode": "class Solution {\n    public boolean isStrictPalindrome(String s) {\n        // TODO\n        return false;\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void classicRacecar() {\n        assertTrue(new Solution().isStrictPalindrome(\"racecar\"));\n    }\n\n    @Test\n    void capitalizationMatters() {\n        assertFalse(new Solution().isStrictPalindrome(\"Racecar\"));\n    }\n\n    @Test\n    void oneCharacter() {\n        assertTrue(new Solution().isStrictPalindrome(\"a\"));\n    }\n\n    @Test\n    void emptyString() {\n        assertTrue(new Solution().isStrictPalindrome(\"\"));\n    }\n\n    @Test\n    void twoDifferent() {\n        assertFalse(new Solution().isStrictPalindrome(\"ab\"));\n    }\n\n    @Test\n    void spacesInNonMirroredPosition() {\n        // 'a'==='a', 'b' vs ' ' mismatch → false\n        assertFalse(new Solution().isStrictPalindrome(\"ab c a\"));\n    }\n\n    @Test\n    void spacesMirrored() {\n        // ' ab ba ' reads the same both ways — spaces in mirrored positions\n        assertTrue(new Solution().isStrictPalindrome(\" ab ba \"));\n    }\n\n    @Test\n    void evenLengthPalindrome() {\n        assertTrue(new Solution().isStrictPalindrome(\"abba\"));\n    }\n}\n"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcq-gca-approach-order",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "Approach order for a new problem",
+    "es": "Orden de abordaje para un problema nuevo"
+  },
+  "prompt": {
+    "en": "You just opened Problem 3 of the GCA (300 points). It's an unfamiliar variation of a grid traversal. What's the best first 3 minutes?",
+    "es": "Acabas de abrir el problema 3 del GCA (300 puntos). Es una variante desconocida de recorrido de cuadrícula. ¿Cuál es el mejor primer uso de 3 minutos?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Start coding the first idea that comes to mind — speed matters", "es": "Empieza a codificar la primera idea que se te ocurra — la velocidad importa" } },
+    { "id": "b", "label": { "en": "Read once, write a brute-force approach on paper, then sanity-check against the 2 example inputs before coding", "es": "Lee una vez, anota el enfoque de fuerza bruta en papel, verifícalo con los 2 ejemplos antes de codificar" } },
+    { "id": "c", "label": { "en": "Skip it and come back after Problem 4 — higher-weight problems first", "es": "Sáltalo y regresa después del problema 4 — los problemas de mayor peso primero" } },
+    { "id": "d", "label": { "en": "Copy the statement into a comment and translate it into pseudocode line by line", "es": "Copia el enunciado a un comentario y tradúcelo a pseudocódigo línea por línea" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "The best 3 minutes are: read → brute force on paper → verify against examples. Brute force is a safety net (it earns partial credit if the optimized solution doesn't land) and it clarifies the problem shape. Starting to code immediately (a) usually costs you 5 minutes of rewrite. Skipping to Problem 4 (c) only pays off if P4 is easier, which is rare. Line-by-line translation (d) over-engineers the setup.",
+    "es": "Los mejores 3 minutos son: leer → fuerza bruta en papel → verificar con los ejemplos. La fuerza bruta es red de seguridad (gana crédito parcial si el enfoque optimizado no aterriza) y aclara la forma del problema. Empezar a codificar de inmediato (a) suele costar 5 minutos de reescritura. Saltar al problema 4 (c) solo sirve si el 4 es más fácil, lo cual es raro. La traducción línea por línea (d) sobre-diseña el setup."
+  }
+}

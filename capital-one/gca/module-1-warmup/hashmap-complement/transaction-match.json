@@ -1,0 +1,17 @@
+{
+  "id": "code-hashmap-transaction-match",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Matching transaction pair (fraud alert)",
+    "es": "Par de transacciones coincidente (alerta de fraude)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Capital One's fraud pipeline flags customer accounts when exactly two transactions sum to a watched amount. Given an array `amounts` of signed transaction cents (positive for credits, negative for debits) and a `target` amount, return indices `{i, j}` with `i < j` such that `amounts[i] + amounts[j] == target`. When multiple pairs exist, return the pair with the smallest `j` (the earliest completing transaction). Assume at least one pair exists.",
+    "es": "El pipeline de fraude de Capital One marca cuentas cuando exactamente dos transacciones suman una cantidad vigilada. Dado un arreglo `amounts` de centavos firmados (positivo para créditos, negativo para débitos) y un `target`, devuelve los índices `{i, j}` con `i < j` tales que `amounts[i] + amounts[j] == target`. Si hay múltiples pares, devuelve el que tenga el `j` más pequeño (la transacción que completa el par más temprano). Asume que existe al menos un par."
+  },
+  "starterCode": "class Solution {\n    public int[] findMatchingTransactions(int[] amounts, int target) {\n        // TODO\n        return new int[]{};\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void creditsAndDebits() {\n        int[] result = new Solution().findMatchingTransactions(new int[]{-100, 250, 150, -50}, 200);\n        assertArrayEquals(new int[]{1, 3}, result);\n    }\n\n    @Test\n    void simpleCreditPair() {\n        int[] result = new Solution().findMatchingTransactions(new int[]{100, 200, 300}, 500);\n        assertArrayEquals(new int[]{1, 2}, result);\n    }\n\n    @Test\n    void earliestCompleter() {\n        // Iteration: j=0 (5) miss, j=1 (3) miss, j=2 (1) miss, j=3 (5) finds 5 at i=0.\n        // Returns {0, 3} — the first j where a pair completes.\n        int[] result = new Solution().findMatchingTransactions(new int[]{5, 3, 1, 5}, 10);\n        assertArrayEquals(new int[]{0, 3}, result);\n    }\n\n    @Test\n    void zeroTarget() {\n        int[] result = new Solution().findMatchingTransactions(new int[]{-42, 17, 42}, 0);\n        assertArrayEquals(new int[]{0, 2}, result);\n    }\n}\n"
+}

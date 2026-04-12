@@ -1,0 +1,24 @@
+{
+  "id": "mcq-gca-hidden-tests",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "What to expect from hidden test cases",
+    "es": "Qué esperar de las pruebas ocultas"
+  },
+  "prompt": {
+    "en": "Which of the following is MOST likely to appear in hidden test cases of a GCA problem, beyond the visible examples?",
+    "es": "¿Cuál de los siguientes es MÁS probable que aparezca en las pruebas ocultas de un problema del GCA, más allá de los ejemplos visibles?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "Inputs in a different language (problem statements are translated)", "es": "Entradas en otro idioma (los enunciados están traducidos)" } },
+    { "id": "b", "label": { "en": "Large inputs near the stated constraint limit, empty inputs, single-element inputs, and inputs with duplicates", "es": "Entradas grandes cerca del límite de restricciones, entradas vacías, de un solo elemento y con duplicados" } },
+    { "id": "c", "label": { "en": "Graphical inputs (images as 2D arrays)", "es": "Entradas gráficas (imágenes como arreglos 2D)" } },
+    { "id": "d", "label": { "en": "Trick questions where the expected output is a negative of what the statement says", "es": "Preguntas tramposas donde la salida esperada es lo contrario del enunciado" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Hidden tests hammer the edge cases and the upper bounds of the constraints. They test whether your code actually handles: empty inputs, single-element inputs, inputs near the stated size limit (typically 10⁵ or 10⁶), inputs with duplicates, inputs with negatives if allowed. A brute force that passes small cases but times out on large ones reveals itself here. Write your solution with these cases in mind before hitting submit.",
+    "es": "Las pruebas ocultas martillan los casos extremos y los límites superiores de las restricciones. Verifican si tu código realmente maneja: entradas vacías, de un solo elemento, cercanas al tamaño máximo indicado (típicamente 10⁵ o 10⁶), con duplicados, con negativos si se permite. Una fuerza bruta que pasa casos pequeños pero hace timeout en grandes se delata aquí. Escribe tu solución teniendo estos casos en mente antes de enviar."
+  }
+}

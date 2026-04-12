@@ -1,0 +1,17 @@
+{
+  "id": "code-hashmap-all-pairs",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "All pairs summing to target",
+    "es": "Todos los pares que suman al objetivo"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an integer array `nums` and an integer `target`, return every pair of indices `(i, j)` with `i < j` such that `nums[i] + nums[j] == target`. Return the pairs as a 2D array, sorted by `i` ascending, then by `j` ascending. Return an empty 2D array if there are no pairs.",
+    "es": "Dado un arreglo de enteros `nums` y un entero `target`, devuelve cada par de índices `(i, j)` con `i < j` tal que `nums[i] + nums[j] == target`. Devuelve los pares como un arreglo bidimensional, ordenados por `i` ascendente y luego por `j` ascendente. Devuelve un arreglo vacío si no hay pares."
+  },
+  "starterCode": "class Solution {\n    public int[][] allPairs(int[] nums, int target) {\n        // TODO\n        return new int[][]{};\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class SolutionTest {\n    @Test\n    void singlePair() {\n        int[][] result = new Solution().allPairs(new int[]{2, 7, 11, 15}, 9);\n        assertArrayEquals(new int[][]{{0, 1}}, result);\n    }\n\n    @Test\n    void multiplePairsAllOnes() {\n        int[][] result = new Solution().allPairs(new int[]{1, 1, 1, 1}, 2);\n        assertArrayEquals(new int[][]{{0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}, {2, 3}}, result);\n    }\n\n    @Test\n    void twoSeparatePairs() {\n        int[][] result = new Solution().allPairs(new int[]{1, 5, 3, 7, 2}, 8);\n        assertArrayEquals(new int[][]{{0, 3}, {1, 2}}, result);\n    }\n\n    @Test\n    void noPairs() {\n        int[][] result = new Solution().allPairs(new int[]{1, 2, 3}, 100);\n        assertArrayEquals(new int[][]{}, result);\n    }\n}\n"
+}

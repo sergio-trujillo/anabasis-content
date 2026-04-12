@@ -1,0 +1,24 @@
+{
+  "id": "mcq-gca-scoring-weights",
+  "type": "mcq",
+  "section": "gca-overview",
+  "title": {
+    "en": "GCA problem weights",
+    "es": "Pesos de los problemas en el GCA"
+  },
+  "prompt": {
+    "en": "In the Capital One CodeSignal GCA, how are the 4 problems weighted?",
+    "es": "En el GCA de Capital One en CodeSignal, ¿cómo se ponderan los 4 problemas?"
+  },
+  "options": [
+    { "id": "a", "label": { "en": "All equal (300 points each)", "es": "Todos iguales (300 puntos cada uno)" } },
+    { "id": "b", "label": { "en": "100 / 200 / 300 / 400 ascending", "es": "100 / 200 / 300 / 400 ascendente" } },
+    { "id": "c", "label": { "en": "500 / 300 / 200 / 100 descending", "es": "500 / 300 / 200 / 100 descendente" } },
+    { "id": "d", "label": { "en": "150 / 250 / 300 / 300 with partial credit", "es": "150 / 250 / 300 / 300 con crédito parcial" } }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Capital One's GCA weights problems 100, 200, 300, 400 in ascending order. Problem 4 alone is worth as much as problems 1 and 3 combined — which is why strategy matters: you don't want to get stuck on Problem 2 and never reach Problem 4.",
+    "es": "El GCA de Capital One pondera los problemas 100, 200, 300 y 400 en orden ascendente. El problema 4 por sí solo vale tanto como los problemas 1 y 3 juntos — por eso la estrategia importa: no quieres atorarte en el problema 2 y nunca llegar al 4."
+  }
+}
