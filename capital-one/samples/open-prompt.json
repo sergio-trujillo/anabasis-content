@@ -1,0 +1,29 @@
+{
+  "id": "sample-open-prompt-conflict",
+  "type": "open-prompt",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Disagreement with a senior engineer",
+    "es": "Desacuerdo con un ingeniero senior"
+  },
+  "question": {
+    "en": "Tell me about a time you disagreed with a senior engineer on a technical decision. How did you handle it, and what was the outcome?",
+    "es": "Cuéntame sobre una vez en la que estuviste en desacuerdo con un ingeniero senior sobre una decisión técnica. ¿Cómo lo manejaste y cuál fue el resultado?"
+  },
+  "rubric": {
+    "must_include": [
+      "specific situation and stakes",
+      "personal ownership of the position",
+      "respectful framing of the disagreement",
+      "concrete action taken (data, prototype, meeting)",
+      "measurable or observable outcome"
+    ],
+    "must_avoid": [
+      "blaming the senior engineer",
+      "vague hand-waving with no specifics",
+      "hiding behind team consensus"
+    ],
+    "value_alignment": "Respect for Individuals",
+    "min_words": 150
+  }
+}

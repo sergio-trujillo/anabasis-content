@@ -1,0 +1,8 @@
+# os / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# generated content cache
+.cache/

@@ -1,0 +1,17 @@
+{
+  "id": "sample-code-two-sum",
+  "type": "code",
+  "section": "gca-module-1-warmup",
+  "title": {
+    "en": "Two Sum (classic)",
+    "es": "Two Sum (clásico)"
+  },
+  "difficulty": "easy",
+  "language": "java",
+  "statement": {
+    "en": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`. Assume exactly one solution exists and you may not use the same element twice. Return the indices in any order.",
+    "es": "Dado un arreglo de enteros `nums` y un entero `target`, devuelve los índices de los dos números tales que sumen `target`. Asume que existe exactamente una solución y no puedes usar el mismo elemento dos veces. Devuelve los índices en cualquier orden."
+  },
+  "starterCode": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        // TODO\n        return new int[]{};\n    }\n}\n",
+  "testCode": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\nimport java.util.Arrays;\n\npublic class SolutionTest {\n    @Test\n    void example1() {\n        int[] result = new Solution().twoSum(new int[]{2, 7, 11, 15}, 9);\n        Arrays.sort(result);\n        assertArrayEquals(new int[]{0, 1}, result);\n    }\n\n    @Test\n    void example2() {\n        int[] result = new Solution().twoSum(new int[]{3, 2, 4}, 6);\n        Arrays.sort(result);\n        assertArrayEquals(new int[]{1, 2}, result);\n    }\n\n    @Test\n    void example3() {\n        int[] result = new Solution().twoSum(new int[]{3, 3}, 6);\n        Arrays.sort(result);\n        assertArrayEquals(new int[]{0, 1}, result);\n    }\n}\n"
+}

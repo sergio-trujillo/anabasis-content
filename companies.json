@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "capital-one",
+    "name": "Capital One",
+    "status": "active",
+    "tagline": "Power Day end-to-end",
+    "accentColor": "#004977"
+  },
+  {
+    "slug": "amazon",
+    "name": "Amazon",
+    "status": "coming-soon",
+    "tagline": "Bar raiser + LPs",
+    "accentColor": "#FF9900"
+  },
+  {
+    "slug": "stripe",
+    "name": "Stripe",
+    "status": "coming-soon",
+    "tagline": "Integration day",
+    "accentColor": "#635BFF"
+  },
+  {
+    "slug": "google",
+    "name": "Google",
+    "status": "coming-soon",
+    "tagline": "Googleyness + DSA",
+    "accentColor": "#4285F4"
+  },
+  {
+    "slug": "mercadolibre",
+    "name": "MercadoLibre",
+    "status": "coming-soon",
+    "tagline": "Tech challenge LATAM",
+    "accentColor": "#FFE600"
+  },
+  {
+    "slug": "globant",
+    "name": "Globant",
+    "status": "coming-soon",
+    "tagline": "Pod + studio fit",
+    "accentColor": "#00C853"
+  }
+]
