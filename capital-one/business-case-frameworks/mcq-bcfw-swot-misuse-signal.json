@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-swot-misuse-signal",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework misuse: when SWOT becomes low-signal",
+    "es": "Uso incorrecto de marcos: cuándo SWOT se vuelve de baja señal"
+  },
+  "prompt": {
+    "en": "A peer presents a SWOT analysis of Capital One's credit-card business. The output is four quadrants, each containing 5–6 bullet points. Under what condition is this SWOT analysis most likely to be low-signal?",
+    "es": "Un colega presenta un análisis SWOT del negocio de tarjetas de crédito de Capital One. El resultado son cuatro cuadrantes, cada uno con 5–6 puntos. ¿Bajo qué condición es más probable que este análisis SWOT sea de baja señal?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "The items are a flat list with no prioritization, no estimated magnitude, and no explicit link to a decision or action — every bullet is treated as equally important.",
+        "es": "Los elementos son una lista plana sin priorización, sin magnitud estimada y sin vínculo explícito con una decisión o acción — cada punto se trata como igualmente importante."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "The analysis was done without access to proprietary data — SWOT requires internal financials and competitive intelligence to be valid.",
+        "es": "El análisis se realizó sin acceso a datos propietarios — SWOT requiere información financiera interna e inteligencia competitiva para ser válido."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "SWOT is only appropriate for large-cap public companies; applying it to a single business unit makes the framework structurally invalid.",
+        "es": "SWOT solo es apropiado para grandes empresas públicas; aplicarlo a una sola unidad de negocio hace que el marco sea estructuralmente inválido."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "The analysis was conducted by junior analysts rather than senior leadership, so it lacks the strategic perspective required for SWOT to be meaningful.",
+        "es": "El análisis fue realizado por analistas junior en lugar de liderazgo senior, por lo que carece de la perspectiva estratégica requerida para que SWOT sea significativo."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "SWOT is a framing tool, not an analysis tool — its value comes entirely from what you do with it. A 20-bullet flat list where every strength, weakness, opportunity, and threat sits at the same level of importance produces no decision signal: you cannot distinguish between 'our brand is strong' and 'our fraud detection is 40 basis points better than the industry average.' The fix is prioritization (which 2–3 items are decision-critical?), magnitude (how big is this?), and an explicit action implication (what do we do with this insight?). Without those, SWOT is a brainstorming artifact, not an analytical output. Option B is wrong because SWOT is explicitly a framing tool that reasons from available evidence — requiring proprietary data confuses framing with modeling. Option C is wrong because SWOT applies at any level of business analysis; scope is not the issue. Option D is wrong because senior seniority is not what determines the signal value of a SWOT — the issue is analytical rigor, not hierarchy.",
+    "es": "SWOT es una herramienta de encuadre, no de análisis — su valor proviene enteramente de lo que haces con él. Una lista plana de 20 puntos donde cada fortaleza, debilidad, oportunidad y amenaza está al mismo nivel de importancia no produce señal de decisión: no puedes distinguir entre 'nuestra marca es fuerte' y 'nuestra detección de fraude es 40 puntos básicos mejor que el promedio de la industria.' La solución es priorización (¿cuáles 2–3 elementos son críticos para la decisión?), magnitud (¿qué tan grande es esto?) y una implicación de acción explícita (¿qué hacemos con esta perspectiva?). Sin eso, SWOT es un artefacto de lluvia de ideas, no un resultado analítico. La opción B es incorrecta porque SWOT es explícitamente una herramienta de encuadre que razona a partir de evidencia disponible — requerir datos propietarios confunde encuadre con modelado. La opción C es incorrecta porque SWOT se aplica en cualquier nivel de análisis empresarial; el alcance no es el problema. La opción D es incorrecta porque la antigüedad senior no determina el valor de señal de un SWOT — el problema es el rigor analítico, no la jerarquía."
+  }
+}

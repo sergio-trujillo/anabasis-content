@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-framework-forcing-antipattern",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework misuse: forcing Porter's 5 Forces onto a pricing question",
+    "es": "Uso incorrecto de marcos: forzar las 5 Fuerzas de Porter en una pregunta de precios"
+  },
+  "prompt": {
+    "en": "A candidate is asked: 'Should Capital One raise the annual fee on the Platinum Card from $95 to $145?' The candidate responds: 'Great question. I'd like to structure this using Porter's 5 Forces — let me start by evaluating rivalry among existing competitors.' What does this signal?",
+    "es": "A un candidato se le pregunta: '¿Debería Capital One aumentar la tarifa anual de la tarjeta Platinum de $95 a $145?' El candidato responde: 'Buena pregunta. Me gustaría estructurar esto usando las 5 Fuerzas de Porter — empecemos evaluando la rivalidad entre los competidores existentes.' ¿Qué señala esto?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Framework-forcing — Porter's 5 Forces is an industry-structure tool, not a pricing decision tool; using it here means the candidate is applying a memorized template rather than matching the framework to the specific question.",
+        "es": "Forzamiento de marco — las 5 Fuerzas de Porter es una herramienta de estructura industrial, no una herramienta de decisión de precios; usarla aquí significa que el candidato está aplicando una plantilla memorizada en lugar de hacer coincidir el marco con la pregunta específica."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "A strong analytical instinct — understanding competitive dynamics is always the right starting point for any pricing decision.",
+        "es": "Un instinto analítico sólido — comprender la dinámica competitiva siempre es el punto de partida correcto para cualquier decisión de precios."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "A correct framework choice with a poor first question — the candidate should have opened with buyer power rather than rivalry.",
+        "es": "Una elección de marco correcta con una primera pregunta incorrecta — el candidato debería haber comenzado con el poder del comprador en lugar de la rivalidad."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "A need for more data — before choosing any framework the candidate should have asked for customer churn rates and competitive fee benchmarks.",
+        "es": "Una necesidad de más datos — antes de elegir cualquier marco, el candidato debería haber pedido tasas de abandono de clientes y puntos de referencia de tarifas competitivas."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "A fee-increase decision is a pricing question with a specific structure: you need to assess price elasticity (how much churn does a $50 increase trigger?), the value delivered vs. the cost of competing alternatives, and the NPV trade-off of higher fee revenue against higher attrition. Porter's 5 Forces answers 'is this industry structurally attractive?' — it operates at the level of the entire industry over years, not at the level of a single product's pricing lever. A candidate who reaches for 5 Forces here is pattern-matching on the word 'competitive' rather than diagnosing what the question actually requires. Option B is wrong because competitive dynamics are relevant context, but 5 Forces is not the right instrument — you would glance at competitor fees in one line of your pricing analysis, not build a five-force diagram. Option C is wrong because no resequencing of 5 Forces fixes the underlying mismatch; the framework is wrong for the question regardless of which force you lead with. Option D conflates asking for data (a tactic) with choosing the wrong framework (a structural error).",
+    "es": "Una decisión de aumento de tarifa es una pregunta de precios con una estructura específica: necesitas evaluar la elasticidad de precios (¿cuánto abandono genera un aumento de $50?), el valor entregado vs. el costo de las alternativas competidoras, y el intercambio VPN de mayores ingresos por tarifa contra mayor deserción. Las 5 Fuerzas de Porter responde '¿es esta industria estructuralmente atractiva?' — opera al nivel de toda la industria durante años, no al nivel de la palanca de precios de un solo producto. Un candidato que recurre a las 5 Fuerzas aquí está haciendo coincidir patrones en la palabra 'competitivo' en lugar de diagnosticar lo que la pregunta realmente requiere. La opción B es incorrecta porque la dinámica competitiva es contexto relevante, pero las 5 Fuerzas no es el instrumento correcto — verías las tarifas de los competidores en una línea de tu análisis de precios, no construirías un diagrama de cinco fuerzas. La opción C es incorrecta porque ninguna reordenación de las 5 Fuerzas corrige la incompatibilidad subyacente; el marco es incorrecto para la pregunta independientemente de con qué fuerza empieces. La opción D confunde pedir datos (una táctica) con elegir el marco incorrecto (un error estructural)."
+  }
+}

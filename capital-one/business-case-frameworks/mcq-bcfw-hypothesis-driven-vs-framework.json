@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-hypothesis-driven-vs-framework",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Hypothesis-driven reasoning vs. framework application: the stronger opening move",
+    "es": "Razonamiento basado en hipótesis vs. aplicación de marcos: el movimiento de apertura más sólido"
+  },
+  "prompt": {
+    "en": "You have 30 minutes for a case interview. The question is: 'Capital One's Platinum card customer-satisfaction score has dropped 12 points in two quarters.' Which is the stronger opening move?",
+    "es": "Tienes 30 minutos para una entrevista de caso. La pregunta es: 'La puntuación de satisfacción del cliente de la tarjeta Platinum de Capital One bajó 12 puntos en dos trimestres.' ¿Cuál es el movimiento de apertura más sólido?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Form 2–3 hypotheses about the most likely causes (e.g., service failure, product competitiveness gap, onboarding friction), then select the framework that tests each — structuring work around the hypotheses rather than a generic template.",
+        "es": "Formular 2–3 hipótesis sobre las causas más probables (p. ej., falla de servicio, brecha de competitividad del producto, fricción en el onboarding), luego seleccionar el marco que prueba cada una — estructurando el trabajo en torno a las hipótesis en lugar de una plantilla genérica."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Apply the 3C framework exhaustively — work through every dimension of Company, Customer, and Competitor before drawing any conclusions.",
+        "es": "Aplicar el marco 3C exhaustivamente — recorrer cada dimensión de Empresa, Cliente y Competidor antes de sacar conclusiones."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Gather all available data first — ask the interviewer for the satisfaction survey breakdown, NPS by tenure cohort, and competitive benchmarks before choosing a structure.",
+        "es": "Recopilar primero todos los datos disponibles — pedir al entrevistador el desglose de la encuesta de satisfacción, NPS por cohorte de antigüedad y puntos de referencia competitivos antes de elegir una estructura."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "State all assumptions upfront in a structured list before touching the problem — this demonstrates rigor and prevents the interviewer from catching you with hidden premises.",
+        "es": "Enunciar todos los supuestos por adelantado en una lista estructurada antes de tocar el problema — esto demuestra rigor y evita que el entrevistador te sorprenda con premisas ocultas."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Hypothesis-driven reasoning is the most time-efficient and signal-rich approach in a time-boxed case. By forming hypotheses first — 'I think the score drop is most likely explained by a service failure at high-volume touchpoints or by a competitor launching a materially better rewards program' — you immediately direct analysis toward the most probable causes rather than walking through every possible dimension. The framework you choose is then a test instrument, not a template. Option B (exhaustive 3C) is a time sink: 30 minutes does not allow a complete traversal of all three dimensions at depth; exhaustive application signals inability to prioritize. Option C (gather all data first) is passive — in a structured interview, waiting for data before committing to a structure reads as analysis paralysis. Option D (state all assumptions upfront) is setup, not strategy; a laundry list of assumptions before engaging the problem wastes time and does not substitute for a structured working hypothesis.",
+    "es": "El razonamiento basado en hipótesis es el enfoque más eficiente en tiempo y rico en señales en un caso con límite de tiempo. Al formar hipótesis primero — 'creo que la caída de la puntuación se explica más probablemente por una falla de servicio en puntos de contacto de alto volumen o por un competidor que lanzó un programa de recompensas materialmente mejor' — diriges inmediatamente el análisis hacia las causas más probables en lugar de recorrer cada dimensión posible. El marco que eliges es entonces un instrumento de prueba, no una plantilla. La opción B (3C exhaustivo) es un desperdicio de tiempo: 30 minutos no permiten un recorrido completo de las tres dimensiones en profundidad; la aplicación exhaustiva señala incapacidad para priorizar. La opción C (recopilar todos los datos primero) es pasiva — en una entrevista estructurada, esperar datos antes de comprometerse con una estructura se lee como parálisis de análisis. La opción D (enunciar todos los supuestos por adelantado) es preparación, no estrategia; una larga lista de supuestos antes de abordar el problema desperdicia tiempo y no sustituye a una hipótesis de trabajo estructurada."
+  }
+}

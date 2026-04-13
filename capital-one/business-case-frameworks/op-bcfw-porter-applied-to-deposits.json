@@ -1,0 +1,29 @@
+{
+  "id": "op-bcfw-porter-applied-to-deposits",
+  "type": "open-prompt",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Porter's 5 Forces applied to the US high-yield savings market",
+    "es": "5 Fuerzas de Porter aplicadas al mercado de ahorros de alto rendimiento de EE. UU."
+  },
+  "prompt": {
+    "en": "Apply Porter's 5 Forces to the US high-yield-savings market (Capital One, Marcus by Goldman, Ally, SoFi, plus traditional banks). Which force do you think matters most for setting deposit rates, and why? Identify one force you would weigh less heavily and explain the reasoning.",
+    "es": "Aplica las 5 Fuerzas de Porter al mercado de ahorros de alto rendimiento de EE. UU. (Capital One, Marcus by Goldman, Ally, SoFi, más los bancos tradicionales). ¿Cuál fuerza crees que importa más para fijar las tasas de depósito y por qué? Identifica una fuerza que pesarías menos y explica el razonamiento."
+  },
+  "rubric": {
+    "must_include": [
+      "applies all five forces to the high-yield savings context with at least one concrete observation per force — not generic labels but specific examples (e.g., 'buyer power is high because switching costs are near-zero — a depositor can move $50K online in under 10 minutes with no fee')",
+      "names one force as dominant and provides a specific mechanism — e.g., 'rivalry matters most because all five named players are rate-transparent; depositors compare APYs on NerdWallet or Bankrate in real time, so any player that underprices by 25 bps loses volume within weeks'",
+      "names one force to weigh less and explains why — e.g., 'supplier power is low because deposits are the product; these banks raise funds from depositors themselves, not from upstream suppliers in the traditional sense'",
+      "acknowledges a limitation of applying 5 Forces here — e.g., 'Porter's is a useful structure for industry-level trends, but rate-setting is also heavily influenced by Fed policy and bank balance-sheet needs, which sit outside the five-force model'",
+      "connects the analysis to a concrete implication — e.g., 'given that rivalry and buyer power both point toward rate competition, the sustainable differentiation play is brand trust and UX, not rate alone'"
+    ],
+    "must_avoid": [
+      "listing all five forces at the same level of importance without choosing a dominant force",
+      "applying the framework abstractly — e.g., 'rivalry means competitors compete on price' without naming the specific players and the specific competitive mechanism in high-yield savings",
+      "omitting buyer power, which is a particularly strong force in this market due to near-zero switching costs",
+      "treating the 5 Forces analysis as a complete answer without connecting it to a decision implication",
+      "confusing supplier power (who supplies inputs to the banks?) with competitor power or regulatory power"
+    ]
+  }
+}

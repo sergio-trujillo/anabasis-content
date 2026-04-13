@@ -1,0 +1,29 @@
+{
+  "id": "op-bcfw-hypothesis-driven-opening",
+  "type": "open-prompt",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Hypothesis-driven opening: small-business credit card case",
+    "es": "Apertura basada en hipótesis: caso de tarjeta de crédito para pequeñas empresas"
+  },
+  "prompt": {
+    "en": "You're given 30 minutes for this case: 'Should Capital One launch a credit card for small businesses?' Before choosing a framework, form 2–3 hypotheses. Describe each hypothesis and the framework you would use to test it.",
+    "es": "Tienes 30 minutos para este caso: '¿Debería Capital One lanzar una tarjeta de crédito para pequeñas empresas?' Antes de elegir un marco, formula 2–3 hipótesis. Describe cada hipótesis y el marco que usarías para probarla."
+  },
+  "rubric": {
+    "must_include": [
+      "states 2–3 specific, falsifiable hypotheses — not generic observations; each must have a named claim that could be confirmed or refuted by data (e.g., 'H1: The small-business segment is underserved by Chase Ink and Amex Blue Business Plus — there is a meaningful rewards-rate gap for businesses spending under $100K/year')",
+      "maps each hypothesis to a distinct framework or analytical tool — e.g., 'H1 tests relative positioning → 3C; H2 tests economic viability → Profit Tree / unit economics model; H3 tests market attractiveness and Capital One's ability to win → Market Entry framework'",
+      "explains why each framework was chosen for its hypothesis — the link must be explicit, not assumed",
+      "acknowledges that a hypothesis that turns out false might require re-framing — e.g., 'if H2 fails and unit economics don't work at a competitive rewards rate, the question shifts from whether to launch to whether to serve this segment through a different product'",
+      "identifies which hypothesis is most critical to resolve first — the one whose answer is most likely to determine the overall go/no-go"
+    ],
+    "must_avoid": [
+      "presenting the framework first and then backfilling hypotheses to fit it",
+      "forming hypotheses that are actually just restatements of the question — e.g., 'H1: Capital One should launch a small-business card if the market is attractive' (this is circular, not a falsifiable hypothesis)",
+      "choosing the same framework for all hypotheses — each hypothesis should probe a distinct dimension of the decision",
+      "listing 2–3 frameworks without committing to which tests which hypothesis",
+      "skipping the prioritization step — all 3 hypotheses presented as equally urgent without a stated first move"
+    ]
+  }
+}

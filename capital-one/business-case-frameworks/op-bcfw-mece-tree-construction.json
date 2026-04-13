@@ -1,0 +1,29 @@
+{
+  "id": "op-bcfw-mece-tree-construction",
+  "type": "open-prompt",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "MECE tree: diagnosing a drop in card approval rates for 25–34 year-olds",
+    "es": "Árbol MECE: diagnóstico de una caída en las tasas de aprobación de tarjetas para personas de 25 a 34 años"
+  },
+  "prompt": {
+    "en": "Build an issue tree for: 'Why are Capital One card approval rates dropping in the 25–34 age band?' Show two levels of decomposition and flag which branch you would pursue first and why.",
+    "es": "Construye un árbol de asuntos para: '¿Por qué están cayendo las tasas de aprobación de tarjetas de Capital One en el segmento de 25 a 34 años?' Muestra dos niveles de descomposición e indica qué rama perseguirías primero y por qué."
+  },
+  "rubric": {
+    "must_include": [
+      "first-level split is MECE — a clean binary or exhaustive partition of the approval rate metric, e.g., (1) applicant pool quality changed vs. (2) Capital One's underwriting standards changed; or (1) demand-side vs. (2) supply-side; both halves together fully explain all possible causes",
+      "second level under each first-level branch adds at least 2 concrete sub-drivers specific to the 25–34 context — e.g., under 'applicant pool quality': credit score distribution shift, debt-to-income ratio change driven by student loan burden; under 'underwriting standards': model recalibration, regulatory change tightening cutoffs",
+      "identifies which first-level branch to pursue first and explains the reasoning — e.g., 'I'd start with underwriting standards because a policy or model change would affect all 25–34 applicants uniformly, which is a more testable and faster-to-validate hypothesis than a population-level credit shift'",
+      "acknowledges at least one scenario where this tree structure would need to be rebuilt — e.g., 'if approval rates are dropping only in certain geographies or through certain channels, I'd need to add a channel/geo dimension at level one'",
+      "first-level split passes the MECE test explicitly — candidate should confirm that the two branches are mutually exclusive (a cause cannot sit in both) and collectively exhaustive (all possible causes land in one of the two)"
+    ],
+    "must_avoid": [
+      "first-level split that conflates supply-side and demand-side causes — e.g., listing 'economic conditions, credit model, applicant behavior, regulatory pressure' as four parallel level-one nodes without proving they are MECE",
+      "second-level nodes that repeat the first-level label — e.g., under 'underwriting' listing 'stricter underwriting' as a sub-driver (circular, not decomposed)",
+      "skipping the prioritization step and treating all branches as equally urgent",
+      "a tree that is complete at level one but stops — two levels are explicitly required",
+      "attributing the drop solely to macro conditions without exploring Capital One's internal levers as a parallel hypothesis"
+    ]
+  }
+}

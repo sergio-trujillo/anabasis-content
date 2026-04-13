@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-porters-5-forces-applied",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Porter's 5 Forces: identifying the dominant force in consumer credit cards",
+    "es": "5 Fuerzas de Porter: identificar la fuerza dominante en tarjetas de crédito al consumidor"
+  },
+  "prompt": {
+    "en": "Which of Porter's 5 Forces is most relevant to consumer-credit-card industry profitability today?",
+    "es": "¿Cuál de las 5 Fuerzas de Porter es más relevante para la rentabilidad de la industria de tarjetas de crédito al consumidor hoy?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Rivalry among existing competitors — the market is mature and saturated, so issuers compete intensely on rewards, APR, and acquisition spend, compressing margins across the board.",
+        "es": "Rivalidad entre competidores existentes — el mercado está maduro y saturado, por lo que los emisores compiten intensamente en recompensas, TAE y gasto de adquisición, comprimiendo márgenes en toda la industria."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Threat of substitutes — buy-now-pay-later products (Affirm, Klarna) are rapidly displacing credit cards, especially with younger consumers, and will soon dominate the market.",
+        "es": "Amenaza de sustitutos — los productos de compra ahora, paga después (Affirm, Klarna) están desplazando rápidamente las tarjetas de crédito, especialmente entre consumidores jóvenes, y pronto dominarán el mercado."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Supplier power — banks and card networks (Visa, Mastercard) hold significant leverage over issuers through interchange fee structures, giving them pricing power over profitability.",
+        "es": "Poder de los proveedores — los bancos y redes de tarjetas (Visa, Mastercard) tienen un apalancamiento significativo sobre los emisores a través de las estructuras de tarifas de intercambio, dándoles poder de fijación de precios sobre la rentabilidad."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Threat of new entrants — regulatory barriers are high and capital requirements are steep, making new entry effectively impossible and thus the primary structural protection for incumbents.",
+        "es": "Amenaza de nuevos entrantes — las barreras regulatorias son altas y los requisitos de capital son elevados, haciendo que la nueva entrada sea efectivamente imposible y por tanto la principal protección estructural para los titulares."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "In a mature, saturated market with many scale players — Chase, Citi, Amex, Capital One, Discover — rivalry is the dominant force. Issuers fight for the same wallets with escalating rewards programs, sign-on bonuses, and massive marketing budgets; this arms race directly compresses profitability. Option B (substitutes) overstates the BNPL threat: BNPL competes at point-of-sale for transactors but has not materially displaced revolving credit; it is a real force but not the dominant one today. Option C (supplier power) misidentifies the relationship — issuers earn interchange, not pay it to Visa/Mastercard net; interchange is a cost item but issuers collectively have negotiated leverage through network competition. Option D (new entrants) is real — regulation and capital are barriers — but this force protects incumbents rather than threatening profitability; high entry barriers are a reason the industry is attractive, not the source of margin pressure.",
+    "es": "En un mercado maduro y saturado con muchos actores a escala — Chase, Citi, Amex, Capital One, Discover — la rivalidad es la fuerza dominante. Los emisores luchan por las mismas carteras con programas de recompensas escalantes, bonos de inscripción y enormes presupuestos de marketing; esta carrera armamentista comprime directamente la rentabilidad. La opción B (sustitutos) exagera la amenaza de BNPL: el BNPL compite en el punto de venta para consumidores transaccionales pero no ha desplazado materialmente el crédito revolvente; es una fuerza real pero no la dominante hoy. La opción C (poder de proveedores) identifica mal la relación — los emisores ganan intercambio, no lo pagan a Visa/Mastercard neto; el intercambio es un elemento de costo pero los emisores colectivamente tienen apalancamiento negociado a través de la competencia de redes. La opción D (nuevos entrantes) es real — la regulación y el capital son barreras — pero esta fuerza protege a los titulares en lugar de amenazar la rentabilidad; las altas barreras de entrada son una razón por la que la industria es atractiva, no la fuente de presión sobre los márgenes."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "op-bcfw-framework-selection-diagnose-profit",
+  "type": "open-prompt",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework selection: diagnosing flat revenue with rising costs",
+    "es": "Selección de marco: diagnóstico de ingresos estables con costos crecientes"
+  },
+  "prompt": {
+    "en": "A Capital One business line shows flat revenue but rising costs over 18 months. Which framework would you reach for first, and why? Walk through the first level of decomposition and identify which branch you would prioritize.",
+    "es": "Una línea de negocio de Capital One muestra ingresos estables pero costos crecientes durante 18 meses. ¿A qué marco de trabajo recurrirías primero y por qué? Recorre el primer nivel de descomposición e identifica qué rama priorizarías."
+  },
+  "rubric": {
+    "must_include": [
+      "names the Profit Tree (or equivalent revenue-minus-cost decomposition) as the primary framework with an explicit reason — e.g., 'flat revenue + rising costs = a margin-compression diagnostic, not a competitive-positioning question'",
+      "shows the first-level split concretely: Revenue = Volume × Price (or mix) and Cost = Fixed + Variable (or Cost of Revenue + OpEx), not generic labels",
+      "names at least one scenario where the Profit Tree is the WRONG tool — e.g., 'if the question were why we're losing share to a competitor, I'd lead with 3C instead'",
+      "identifies which branch to prioritize first and explains why — e.g., 'I'd go to the cost side first because the prompt says costs are rising while revenue is flat, so the movement is on the cost branch'",
+      "first-level decomposition is MECE: the two branches together fully account for the business metric"
+    ],
+    "must_avoid": [
+      "naming multiple frameworks without choosing — e.g., 'you could use a Profit Tree, 3C, or SWOT depending on the situation'",
+      "describing the Profit Tree abstractly without applying it to the specific scenario — e.g., 'the Profit Tree breaks revenue and costs into sub-drivers' with no mention of what those sub-drivers are for this business line",
+      "launching into Porter's 5 Forces or SWOT as the primary tool for a cost-diagnosis question",
+      "treating 'flat revenue' and 'rising costs' as symmetric problems requiring equal exploration — the prompt signals the cost side is the likely driver",
+      "skipping the prioritization step — presenting both branches as equally urgent"
+    ]
+  }
+}

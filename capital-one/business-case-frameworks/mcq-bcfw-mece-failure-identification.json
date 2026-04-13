@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-mece-failure-identification",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "MECE failure: identifying a structural flaw in a customer segmentation",
+    "es": "Falla MECE: identificar un defecto estructural en una segmentación de clientes"
+  },
+  "prompt": {
+    "en": "A candidate decomposes Capital One's credit-card customer base into four segments: (a) prime customers, (b) subprime customers, (c) high-income customers, (d) customers with rewards cards. What is the structural problem with this segmentation?",
+    "es": "Un candidato descompone la base de clientes de tarjetas de crédito de Capital One en cuatro segmentos: (a) clientes prime, (b) clientes subprime, (c) clientes de altos ingresos, (d) clientes con tarjetas de recompensas. ¿Cuál es el problema estructural de esta segmentación?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "The segments are not MECE: credit tier (prime/subprime) and income level (high-income) overlap — a high-income customer can be prime or subprime — and rewards-card status cuts across both dimensions, so customers fall into multiple categories.",
+        "es": "Los segmentos no son MECE: el nivel crediticio (prime/subprime) y el nivel de ingresos (altos ingresos) se superponen — un cliente de altos ingresos puede ser prime o subprime — y el estado de tarjeta de recompensas cruza ambas dimensiones, por lo que los clientes caen en múltiples categorías."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "There are not enough categories — the segmentation should include at least eight segments to be analytically useful.",
+        "es": "No hay suficientes categorías — la segmentación debería incluir al menos ocho segmentos para ser analíticamente útil."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "The segmentation is too high-level — the candidate should have broken each segment down one additional level before presenting.",
+        "es": "La segmentación es demasiado general — el candidato debería haber desglosado cada segmento un nivel adicional antes de presentar."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "The segmentation lacks supporting data — without knowing the size of each segment it is impossible to evaluate whether the breakdown is correct.",
+        "es": "La segmentación carece de datos de respaldo — sin conocer el tamaño de cada segmento, es imposible evaluar si el desglose es correcto."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "MECE requires two properties: Mutually Exclusive (no overlap between categories) and Collectively Exhaustive (the categories together cover the full population). This segmentation fails on Mutual Exclusivity: 'prime' and 'subprime' are defined by credit risk tier, while 'high-income' is an income measure — a customer can be high-income AND prime, or high-income AND subprime. 'Rewards card' is a product feature that cuts across all credit tiers and income levels. The result is that individual customers are countable in multiple buckets simultaneously, which breaks any arithmetic built on the tree. Option B (not enough categories) misses the point — the flaw is structural, not numerical. Option C (too high-level) is about depth, not the overlap/gap logic. Option D (no data) conflates the quality of the segmentation structure with the quality of the data attached to it; the segmentation is wrong before you even add numbers.",
+    "es": "MECE requiere dos propiedades: Mutuamente Excluyente (sin superposición entre categorías) y Colectivamente Exhaustivo (las categorías juntas cubren la población completa). Esta segmentación falla en la Exclusividad Mutua: 'prime' y 'subprime' se definen por nivel de riesgo crediticio, mientras que 'altos ingresos' es una medida de ingresos — un cliente puede ser de altos ingresos Y prime, o de altos ingresos Y subprime. 'Tarjeta de recompensas' es una característica del producto que cruza todos los niveles crediticios y de ingresos. El resultado es que los clientes individuales son contables en múltiples categorías simultáneamente, lo que rompe cualquier aritmética construida sobre el árbol. La opción B (no suficientes categorías) pierde el punto — el defecto es estructural, no numérico. La opción C (demasiado general) es sobre profundidad, no sobre la lógica de superposición/brecha. La opción D (sin datos) confunde la calidad de la estructura de segmentación con la calidad de los datos adjuntos; la segmentación es incorrecta incluso antes de agregar números."
+  }
+}

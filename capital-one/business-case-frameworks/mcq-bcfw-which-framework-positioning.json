@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-which-framework-positioning",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework selection: positioning a new small-business credit card",
+    "es": "Selección de marco: posicionamiento de una nueva tarjeta de crédito para pequeñas empresas"
+  },
+  "prompt": {
+    "en": "Capital One is launching a new credit card targeting small-business owners and wants to determine how to position it against Chase Ink. Which framework best structures the positioning question?",
+    "es": "Capital One está lanzando una nueva tarjeta de crédito para dueños de pequeñas empresas y quiere determinar cómo posicionarla frente a Chase Ink. ¿Qué marco de trabajo estructura mejor la pregunta de posicionamiento?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "3C (Company, Customer, Competitor) — map Capital One's strengths, what small-business owners actually need, and where Chase Ink is vulnerable or strong.",
+        "es": "3C (Empresa, Cliente, Competidor) — mapear las fortalezas de Capital One, lo que realmente necesitan los dueños de pequeñas empresas y dónde Chase Ink es vulnerable o fuerte."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Porter's 5 Forces — analyze supplier power, buyer power, new entrants, substitutes, and rivalry across the entire small-business-card industry.",
+        "es": "5 Fuerzas de Porter — analizar el poder de los proveedores, poder de los compradores, nuevos entrantes, sustitutos y rivalidad en toda la industria de tarjetas para pequeñas empresas."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "SWOT — list Capital One's internal strengths and weaknesses and the external opportunities and threats in the market.",
+        "es": "SWOT — listar las fortalezas y debilidades internas de Capital One y las oportunidades y amenazas externas del mercado."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Profit Tree — decompose the card's projected revenue and cost structure to determine whether the product is economically viable.",
+        "es": "Árbol de beneficios — descomponer la estructura de ingresos y costos proyectados de la tarjeta para determinar si el producto es económicamente viable."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Positioning is fundamentally a relative question: where does this product sit relative to alternatives in the customer's mind? 3C directly addresses that — it forces you to map your own capabilities (Company), the specific jobs-to-be-done and pain points of small-business owners (Customer), and exactly where Chase Ink is strong or exposed (Competitor). That triangle reveals a defensible position. Option B (5 Forces) answers a different question: is the industry structurally attractive? It operates at the industry level and cannot tell you how to differentiate a single product against a named competitor. Option C (SWOT) produces a flat list — it lacks the competitive-triangulation mechanism that makes positioning actionable. Option D (Profit Tree) is a viability test, not a positioning tool; it tells you whether to proceed, not how to win.",
+    "es": "El posicionamiento es fundamentalmente una pregunta relativa: ¿dónde se ubica este producto en relación con las alternativas en la mente del cliente? 3C aborda directamente eso: te obliga a mapear tus propias capacidades (Empresa), los trabajos específicos por realizar y los puntos de dolor de los dueños de pequeñas empresas (Cliente) y exactamente dónde Chase Ink es fuerte o está expuesto (Competidor). Ese triángulo revela una posición defendible. La opción B (5 Fuerzas) responde una pregunta diferente: ¿es la industria estructuralmente atractiva? Opera a nivel de industria y no puede decirte cómo diferenciar un solo producto frente a un competidor nombrado. La opción C (SWOT) produce una lista plana — carece del mecanismo de triangulación competitiva que hace que el posicionamiento sea accionable. La opción D (Árbol de beneficios) es una prueba de viabilidad, no una herramienta de posicionamiento; te dice si proceder, no cómo ganar."
+  }
+}

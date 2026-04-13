@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-issue-tree-quality",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Issue tree quality: diagnosing rising customer acquisition cost",
+    "es": "Calidad del árbol de asuntos: diagnóstico del creciente costo de adquisición de clientes"
+  },
+  "prompt": {
+    "en": "A team is building an issue tree to answer: 'Why is Capital One's customer acquisition cost (CAC) rising?' Which first-level decomposition is strongest?",
+    "es": "Un equipo está construyendo un árbol de asuntos para responder: '¿Por qué está aumentando el costo de adquisición de clientes (CAC) de Capital One?' ¿Cuál descomposición de primer nivel es más sólida?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "CAC = Paid acquisition spend + Organic acquisition spend. Within Paid: break by channel (digital, direct mail, partner). Within Organic: break by referral and brand / SEO. Each branch is independently traceable and the two sum to total CAC.",
+        "es": "CAC = Gasto de adquisición pagado + Gasto de adquisición orgánico. Dentro de Pagado: desglosar por canal (digital, correo directo, socio). Dentro de Orgánico: desglosar por referidos y marca / SEO. Cada rama es rastreable de forma independiente y las dos suman el CAC total."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Split CAC by customer segment: prime customers, near-prime customers, and subprime customers — each segment has a distinct cost structure.",
+        "es": "Dividir CAC por segmento de clientes: clientes prime, clientes near-prime y clientes subprime — cada segmento tiene una estructura de costos distinta."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Split CAC by product: cash-back cards, travel cards, and secured cards — each product line drives different acquisition spend levels.",
+        "es": "Dividir CAC por producto: tarjetas de cashback, tarjetas de viaje y tarjetas aseguradas — cada línea de producto impulsa diferentes niveles de gasto de adquisición."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Split CAC by time period: Q1, Q2, Q3, Q4 — identify which quarter the cost started rising and trace backwards to isolate the root cause.",
+        "es": "Dividir CAC por período de tiempo: T1, T2, T3, T4 — identificar en qué trimestre comenzó a aumentar el costo y rastrear hacia atrás para aislar la causa raíz."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "A strong issue tree has MECE structure at each level and is oriented toward testable hypotheses. Option A decomposes CAC into its two cost-origin categories — paid and organic — which are genuinely mutually exclusive (a dollar is either from a paid channel or not) and collectively exhaustive (all acquisition spend falls into one of the two). Each branch then further decomposes into independently measurable sub-channels. This means you can immediately pull spend data per branch, compare to prior periods, and locate the driver. Option B (by segment) tells you which customers are expensive to acquire but not why — it doesn't break down the cost components. Option C (by product) similarly tells you which product's acquisition is costly but does not decompose the cost mechanism. Option D (by time period) is a diagnostic filter, not a causal decomposition — identifying the quarter when cost rose is useful context but does not build a causal tree; once you find the quarter, you still need a tree like Option A to explain why.",
+    "es": "Un árbol de asuntos sólido tiene estructura MECE en cada nivel y está orientado hacia hipótesis verificables. La opción A descompone el CAC en sus dos categorías de origen de costos — pagado y orgánico — que son genuinamente mutuamente excluyentes (un dólar es de un canal pagado o no) y colectivamente exhaustivas (todo el gasto de adquisición cae en una de las dos). Cada rama luego se descompone aún más en subcanales medibles de forma independiente. Esto significa que puedes obtener inmediatamente datos de gasto por rama, comparar con períodos anteriores y localizar el factor impulsor. La opción B (por segmento) te dice qué clientes son costosos de adquirir pero no por qué — no desglosa los componentes de costo. La opción C (por producto) igualmente te dice cuál adquisición de producto es costosa pero no descompone el mecanismo de costo. La opción D (por período de tiempo) es un filtro de diagnóstico, no una descomposición causal — identificar el trimestre en que aumentó el costo es contexto útil pero no construye un árbol causal; una vez que encuentras el trimestre, todavía necesitas un árbol como la opción A para explicar el porqué."
+  }
+}

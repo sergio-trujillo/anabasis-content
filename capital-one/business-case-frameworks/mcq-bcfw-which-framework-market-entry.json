@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-which-framework-market-entry",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework selection: evaluating a new geographic market",
+    "es": "Selección de marco: evaluación de un nuevo mercado geográfico"
+  },
+  "prompt": {
+    "en": "Capital One's strategy team is evaluating whether to enter the UK deposit market. Which framework best structures the go / no-go decision?",
+    "es": "El equipo de estrategia de Capital One está evaluando si entrar al mercado de depósitos del Reino Unido. ¿Qué marco de trabajo estructura mejor la decisión de ir / no ir?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Market Entry framework — assess market size and attractiveness, then Capital One's ability to win (capabilities, regulatory fit), then NPV / return threshold to confirm economic viability.",
+        "es": "Marco de entrada al mercado — evaluar el tamaño y atractivo del mercado, luego la capacidad de Capital One para ganar (capacidades, adecuación regulatoria) y después el VPN / umbral de retorno para confirmar viabilidad económica."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Profit Tree — decompose projected UK deposit revenue and costs to determine whether the business is profitable.",
+        "es": "Árbol de beneficios — descomponer los ingresos y costos proyectados de depósitos en el Reino Unido para determinar si el negocio es rentable."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "BCG Growth-Share Matrix — plot the UK deposit market on a portfolio grid and allocate investment accordingly.",
+        "es": "Matriz de crecimiento-participación BCG — ubicar el mercado de depósitos del Reino Unido en una cuadrícula de portafolio y asignar inversión en consecuencia."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "4P Marketing Mix — design the product features, pricing, distribution, and promotional strategy for the UK launch.",
+        "es": "Marketing Mix 4P — diseñar las características del producto, precio, distribución y estrategia de promoción para el lanzamiento en el Reino Unido."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "A new-market entry decision has a specific logic: before investing, you need to know whether the market is big and growing enough to matter (attractiveness), whether Capital One has or can build the capabilities to compete there (ability to win), and whether the economics work out (NPV / IRR threshold). The Market Entry framework sequences these gating questions in order, so a no at any gate kills the analysis early. Option B (Profit Tree) is useful inside the Market Entry framework — NPV modeling is one gate — but a Profit Tree alone assumes you've already decided to enter; it doesn't answer whether to enter. Option C (BCG Matrix) requires an existing portfolio position and market-share data; Capital One has zero share in the UK today, making the matrix inapplicable. Option D (4P) is a tactical go-to-market tool that only becomes relevant after a go decision has been made — it does not answer the go/no-go itself.",
+    "es": "Una decisión de entrada a nuevo mercado tiene una lógica específica: antes de invertir, necesitas saber si el mercado es lo suficientemente grande y creciente como para importar (atractivo), si Capital One tiene o puede desarrollar las capacidades para competir allí (capacidad de ganar) y si los números funcionan (umbral VPN / TIR). El marco de entrada al mercado secuencia estas preguntas de filtrado en orden, de modo que un 'no' en cualquier filtro detiene el análisis temprano. La opción B (Árbol de beneficios) es útil dentro del marco de entrada al mercado — el modelado VPN es un filtro — pero un Árbol de beneficios por sí solo asume que ya decidiste entrar; no responde si entrar. La opción C (Matriz BCG) requiere una posición de portafolio existente y datos de participación de mercado; Capital One tiene cero participación en el Reino Unido hoy, lo que hace la matriz inaplicable. La opción D (4P) es una herramienta táctica de go-to-market que solo se vuelve relevante después de tomar la decisión de ir — no responde el ir/no ir en sí."
+  }
+}

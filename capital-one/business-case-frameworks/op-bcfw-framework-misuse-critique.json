@@ -1,0 +1,29 @@
+{
+  "id": "op-bcfw-framework-misuse-critique",
+  "type": "open-prompt",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework critique: giving feedback on a low-signal SWOT",
+    "es": "Crítica de marco: dar retroalimentación sobre un SWOT de baja señal"
+  },
+  "prompt": {
+    "en": "A peer presents a SWOT analysis of Capital One's credit-card business. The output is a 20-item list across four quadrants, with no prioritization and no link to any specific decision. What feedback would you give, and what would you suggest instead?",
+    "es": "Un colega presenta un análisis SWOT del negocio de tarjetas de crédito de Capital One. El resultado es una lista de 20 elementos en cuatro cuadrantes, sin priorización y sin vínculo con ninguna decisión específica. ¿Qué retroalimentación darías y qué sugerirías en su lugar?"
+  },
+  "rubric": {
+    "must_include": [
+      "names the specific structural failure: SWOT as a flat list produces no decision signal because all items are treated as equally important, making it impossible to act on the output",
+      "recommends a concrete fix: prioritize to 2–3 items per quadrant that are decision-critical, attach a magnitude estimate to each (e.g., 'our rewards program costs ~$400M annually — that's a material strength to defend'), and link each item explicitly to the decision being made",
+      "suggests an alternative or complementary tool that would be more appropriate for the specific decision at hand — e.g., 'if the question is profitability decline, a Profit Tree would be more actionable; SWOT could inform the hypothesis-formation stage but not the analysis itself'",
+      "acknowledges what SWOT is genuinely good for — e.g., 'SWOT is a useful framing tool for a team kickoff or a board summary, not for root-cause analysis or go/no-go decisions'",
+      "delivers feedback in a constructive, peer-appropriate register — not dismissive, not generic praise"
+    ],
+    "must_avoid": [
+      "dismissing SWOT entirely without acknowledging its legitimate use cases",
+      "suggesting that the fix is simply to add more data or more items to the list",
+      "recommending a replacement framework (e.g., Porter's 5 Forces) without explaining why it fits the specific decision better",
+      "giving only positive feedback or only negative feedback without a concrete improvement suggestion",
+      "treating prioritization as a secondary concern — it is the primary failure in the scenario"
+    ]
+  }
+}

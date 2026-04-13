@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-which-framework-profit-falling",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework selection: diagnosing a revenue decline",
+    "es": "Selección de marco: diagnóstico de una caída de ingresos"
+  },
+  "prompt": {
+    "en": "Capital One's card-transaction revenue is down 8% year-over-year and leadership wants to know why. Which framework should a candidate reach for first?",
+    "es": "Los ingresos por transacciones de tarjetas de Capital One bajaron 8% interanual y el liderazgo quiere saber por qué. ¿A qué marco de trabajo debería recurrir primero un candidato?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Profit Tree — decompose revenue into volume × average transaction value × interchange rate, then isolate which driver declined and by how much.",
+        "es": "Árbol de beneficios — descomponer los ingresos en volumen × valor promedio de transacción × tasa de intercambio, luego aislar qué factor disminuyó y en qué medida."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "3C — examine Capital One's positioning, what customers want from a card, and how competitors are performing.",
+        "es": "3C — examinar el posicionamiento de Capital One, lo que los clientes quieren de una tarjeta y cómo están funcionando los competidores."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "4P Marketing Mix — review whether the product features, pricing, distribution channels, or promotional spend caused the decline.",
+        "es": "Marketing Mix 4P — revisar si las características del producto, precios, canales de distribución o gasto en promoción causaron la caída."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Porter's 5 Forces — assess whether competitive rivalry or buyer power across the card industry intensified and drove revenue down.",
+        "es": "5 Fuerzas de Porter — evaluar si la rivalidad competitiva o el poder del comprador en la industria de tarjetas se intensificó y redujo los ingresos."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "A declining revenue line is a diagnostic question: you need to break down the metric into its constituent drivers to locate the cause. The Profit Tree does exactly that — Revenue = Volume × Average Transaction Value × Rate, and you can further cut each by segment or channel. Once you've isolated the broken branch (e.g., volume is down 12% but rate is flat), you have a specific hypothesis to investigate. Option B (3C) addresses relative positioning and competitive differentiation, which is useful for strategy but not for root-cause diagnosis; knowing Chase is doing well does not tell you why your number is down. Option C (4P) is a marketing-design tool — it helps you construct a go-to-market but cannot locate a specific revenue leak without first knowing which driver fell. Option D (5 Forces) is industry-level structural analysis; it can explain why margins are under pressure over a 5-year horizon but not why this specific metric moved 8% this year.",
+    "es": "Una línea de ingresos en declive es una pregunta de diagnóstico: necesitas descomponer la métrica en sus factores constituyentes para localizar la causa. El Árbol de beneficios hace exactamente eso — Ingresos = Volumen × Valor promedio de transacción × Tasa, y puedes cortar cada uno por segmento o canal. Una vez que hayas aislado la rama rota (p. ej., el volumen bajó 12% pero la tasa está estable), tienes una hipótesis específica para investigar. La opción B (3C) aborda el posicionamiento relativo y la diferenciación competitiva, útil para la estrategia pero no para el diagnóstico de causa raíz; saber que Chase está funcionando bien no te dice por qué tu número bajó. La opción C (4P) es una herramienta de diseño de marketing — ayuda a construir un plan de go-to-market pero no puede localizar una fuga específica de ingresos sin primero saber qué factor cayó. La opción D (5 Fuerzas) es análisis estructural a nivel de industria; puede explicar por qué los márgenes están bajo presión en un horizonte de 5 años, pero no por qué esta métrica específica se movió 8% este año."
+  }
+}

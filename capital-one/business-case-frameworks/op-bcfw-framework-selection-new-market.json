@@ -1,0 +1,29 @@
+{
+  "id": "op-bcfw-framework-selection-new-market",
+  "type": "open-prompt",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework selection: go/no-go for auto-loan refinancing",
+    "es": "Selección de marco: ir/no ir para refinanciamiento de préstamos de auto"
+  },
+  "prompt": {
+    "en": "Capital One is debating entering auto-loan refinancing for used cars. What framework would you use to structure the go/no-go decision, and what are the first three questions that framework generates?",
+    "es": "Capital One está debatiendo entrar al refinanciamiento de préstamos de auto para carros usados. ¿Qué marco de trabajo usarías para estructurar la decisión de ir/no ir, y cuáles son las primeras tres preguntas que genera ese marco?"
+  },
+  "rubric": {
+    "must_include": [
+      "names the Market Entry framework (or equivalent: size × attractiveness × ability-to-win × NPV/return threshold) as the primary tool, with an explicit reason — e.g., 'this is a new-product / new-segment go/no-go, not a diagnostic or positioning question'",
+      "generates at least 3 concrete first questions from the framework — they must be specific to auto-loan refinancing, not generic market-entry questions (e.g., 'what is the addressable balance pool of used-car loans currently above market rate?' not just 'how big is the market?')",
+      "acknowledges at least one scenario where the Market Entry framework is insufficient or inappropriate — e.g., 'once we decide to enter, 4P and a profit model take over; Market Entry doesn't design the product'",
+      "names which of the three questions is the most critical gate — identifies the single question whose answer would most likely flip the decision",
+      "first-level structure is MECE: the questions together probe distinct dimensions of the decision (market attractiveness, competitive position, financial viability) without redundancy"
+    ],
+    "must_avoid": [
+      "listing multiple frameworks without committing — e.g., 'we could use Market Entry, Profit Tree, or 3C'",
+      "applying the Profit Tree as the primary framework — it evaluates unit economics inside an entry decision but does not answer whether to enter",
+      "generating generic questions that don't require knowledge of the auto-loan refinancing context — e.g., 'what is our strategy?' or 'what do customers want?'",
+      "skipping the ability-to-win dimension — whether Capital One can compete (existing auto-loan infrastructure, data on used-car LTV, dealer relationships) is a critical gate",
+      "treating all three questions as equally weighted without identifying a priority gate"
+    ]
+  }
+}

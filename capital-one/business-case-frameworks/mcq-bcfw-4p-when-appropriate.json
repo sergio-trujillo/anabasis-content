@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcfw-4p-when-appropriate",
+  "type": "mcq",
+  "section": "business-case-frameworks",
+  "title": {
+    "en": "Framework selection: when is 4P the right tool?",
+    "es": "Selección de marco: ¿cuándo es 4P la herramienta correcta?"
+  },
+  "prompt": {
+    "en": "A Capital One strategy analyst is handed four different questions. For which scenario is the 4P Marketing Mix (Product, Price, Place, Promotion) the most appropriate primary framework?",
+    "es": "A un analista de estrategia de Capital One se le entregan cuatro preguntas diferentes. ¿Para cuál escenario es el Marketing Mix 4P (Producto, Precio, Plaza, Promoción) el marco primario más apropiado?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Capital One is launching a new cash-back card for millennials and needs to decide on the rewards rate, distribution channels, sign-on bonus, and creative messaging — all at once.",
+        "es": "Capital One está lanzando una nueva tarjeta de cashback para millennials y necesita decidir sobre la tasa de recompensas, canales de distribución, bono de inscripción y mensajes creativos — todo a la vez."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Capital One's auto-loan origination volume fell 15% last quarter and leadership wants to understand why.",
+        "es": "El volumen de originación de préstamos de auto de Capital One cayó 15% el trimestre pasado y el liderazgo quiere entender por qué."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Capital One is evaluating whether to acquire a UK digital bank and needs a go/no-go framework.",
+        "es": "Capital One está evaluando si adquirir un banco digital del Reino Unido y necesita un marco de ir/no ir."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Capital One wants to increase the annual fee on the Venture X card by $50 and needs to know whether customers will accept the increase.",
+        "es": "Capital One quiere aumentar la tarifa anual de la tarjeta Venture X en $50 y necesita saber si los clientes aceptarán el aumento."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "4P is a go-to-market design tool: it helps you simultaneously structure decisions across Product (features, rewards structure), Price (annual fee, APR, sign-on bonus), Place (acquisition channels: direct mail, digital, branch), and Promotion (creative, messaging, spend allocation). When all four levers need to be defined at once for a new launch, 4P provides the organizing logic. Option B (origination decline) is a diagnostic question — reach for the Profit Tree to locate the broken driver, not 4P. Option C (UK acquisition) is a market entry / M&A decision — reach for the Market Entry framework and NPV analysis. Option D (fee increase) is a pricing decision with a churn-sensitivity component — it involves only one P, and the right structure is a price-elasticity or conjoint model, not the full 4P mix.",
+    "es": "4P es una herramienta de diseño de go-to-market: ayuda a estructurar simultáneamente decisiones en Producto (características, estructura de recompensas), Precio (tarifa anual, TAE, bono de inscripción), Plaza (canales de adquisición: correo directo, digital, sucursal) y Promoción (creatividad, mensajes, asignación de gasto). Cuando las cuatro palancas necesitan definirse a la vez para un nuevo lanzamiento, 4P proporciona la lógica organizadora. La opción B (caída en originación) es una pregunta de diagnóstico — recurre al Árbol de beneficios para localizar el factor roto, no a 4P. La opción C (adquisición en el Reino Unido) es una decisión de entrada al mercado/M&A — recurre al marco de entrada al mercado y análisis VPN. La opción D (aumento de tarifa) es una decisión de precios con un componente de sensibilidad a la deserción — involucra solo una P, y la estructura correcta es un modelo de elasticidad de precios o conjoint, no el mix 4P completo."
+  }
+}
