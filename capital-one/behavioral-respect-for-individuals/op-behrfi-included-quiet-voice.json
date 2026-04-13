@@ -1,0 +1,30 @@
+{
+  "id": "op-behrfi-included-quiet-voice",
+  "type": "open-prompt",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Surfacing a quieter person's contribution",
+    "es": "Visibilizar la contribución de una persona más callada"
+  },
+  "question": {
+    "en": "Tell me about a decision where a quieter person had information the group needed. How did you surface their contribution without making it awkward?",
+    "es": "Cuéntame sobre una decisión en la que una persona más callada tenía información que el grupo necesitaba. ¿Cómo hiciste visible su contribución sin que fuera incómodo?"
+  },
+  "rubric": {
+    "must_include": [
+      "why the person was less likely to speak — their position in the room, their seniority relative to others, their communication style, or the meeting dynamic that was suppressing their voice",
+      "how the candidate knew or suspected the person had relevant information — what they noticed that signaled something was being held back",
+      "the specific action the candidate took to surface the contribution — and critically, whether it was done in the room in the moment or set up in advance",
+      "how the candidate handled the person's response — including if the person was initially reluctant, and what the candidate did to make space without creating more pressure",
+      "what happened to the decision because of the surfaced contribution — whether the information changed anything, and whether the quieter person received visible acknowledgment for it"
+    ],
+    "must_avoid": [
+      "framing the quieter person as a passive beneficiary of the candidate's advocacy — RFI stories should show the person as an active contributor whose voice the candidate created conditions for, not someone who needed to be rescued",
+      "generic 'I made sure everyone had a chance to speak' framing without a specific person, moment, or piece of information",
+      "omitting the awkwardness — if the candidate says it wasn't awkward at all, probe whether they actually created real space or just offered a polite opening that could easily be declined",
+      "taking credit for the contribution itself: 'I raised their idea and the team went with it' — the credit belongs to the quieter person, not to the candidate who passed it along"
+    ],
+    "value_alignment": "Respect for Individuals",
+    "min_words": 150
+  }
+}

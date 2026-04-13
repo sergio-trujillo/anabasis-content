@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-listening-changed-mind",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Real listening vs. listening theater",
+    "es": "Escuchar de verdad vs. teatro de escucha"
+  },
+  "prompt": {
+    "en": "Four engineers describe how they handled a situation where a teammate pushed back on their proposed technical approach. Which story shows the clearest evidence of genuine listening?",
+    "es": "Cuatro ingenieros describen cómo manejaron una situación en la que un compañero cuestionó su propuesta técnica. ¿Cuál historia muestra la evidencia más clara de escucha genuina?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"I listened to all of their objections, took notes, and then explained why my original approach was still the right one. They agreed in the end.\"",
+        "es": "\"Escuché todas sus objeciones, tomé notas y luego expliqué por qué mi enfoque original seguía siendo el correcto. Al final estuvieron de acuerdo.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"They pushed back on the caching layer design. I held my position on the cache invalidation strategy, but their point about read latency under contention was right — I changed the read path based on their analysis and documented specifically why.\"",
+        "es": "\"Cuestionaron el diseño de la capa de caché. Mantuve mi posición sobre la estrategia de invalidación de caché, pero su punto sobre la latencia de lectura bajo contención era correcto — cambié el camino de lectura basándome en su análisis y documenté específicamente por qué.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"I made sure to let them finish every sentence before responding. Active listening is important to me, and I always give people the space to be heard.\"",
+        "es": "\"Me aseguré de dejarlos terminar cada oración antes de responder. Escuchar activamente es importante para mí, y siempre doy a las personas el espacio para ser escuchados.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"I acknowledged their concerns, asked clarifying questions, and said I would think about it. Then we moved forward with my original approach because the deadline was too close to redesign.\"",
+        "es": "\"Reconocí sus preocupaciones, hice preguntas de aclaración y dije que lo pensaría. Luego seguimos adelante con mi enfoque original porque la fecha límite estaba demasiado cerca para rediseñar.\""
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the RFI signal: the candidate distinguishes exactly what they changed (the read path) from what they kept (the cache invalidation strategy), names the specific argument that persuaded them (read latency under contention), and documents the reasoning. This is listening that produced a traceable outcome. Option A is listening theater — the candidate listened, took notes, then repeated their original position anyway. The punchline 'they agreed in the end' suggests persuasion rather than genuine exchange. Option C describes behavioral habits ('let them finish', 'I always give people space') without any evidence that input was actually incorporated. Option D uses the deadline as cover to sidestep the pushback entirely — the 'I would think about it' followed by no change is a polite dismissal.",
+    "es": "La opción B es la señal RFI: el candidato distingue exactamente qué cambió (el camino de lectura) de lo que mantuvo (la estrategia de invalidación de caché), nombra el argumento específico que lo convenció (latencia de lectura bajo contención) y documenta el razonamiento. Esta es una escucha que produjo un resultado rastreable. La opción A es teatro de escucha — el candidato escuchó, tomó notas, pero luego repitió su posición original de todas formas. El desenlace 'al final estuvieron de acuerdo' sugiere persuasión más que intercambio genuino. La opción C describe hábitos conductuales ('dejarlos terminar', 'siempre doy espacio') sin ninguna evidencia de que el aporte fue realmente incorporado. La opción D usa la fecha límite como pretexto para eludir el cuestionamiento — el 'lo pensaré' seguido de ningún cambio es un rechazo cortés."
+  }
+}

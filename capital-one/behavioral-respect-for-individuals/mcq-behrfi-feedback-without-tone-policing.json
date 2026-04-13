@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-feedback-without-tone-policing",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Naming behavior vs. characterizing tone",
+    "es": "Nombrar el comportamiento vs. caracterizar el tono"
+  },
+  "prompt": {
+    "en": "A teammate interrupted three other people during a design review and dismissed two suggestions with 'that won't work' before anyone could explain their reasoning. You want to give them feedback. Which response is RFI-appropriate?",
+    "es": "Un compañero interrumpió a tres personas durante una revisión de diseño y descartó dos sugerencias con 'eso no funcionará' antes de que alguien pudiera explicar su razonamiento. Quieres darles retroalimentación. ¿Cuál respuesta es apropiada según RFI?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "'I wanted to flag something from today's review. Three times, someone started to speak and you picked up the thread before they finished. And twice you said 'that won't work' before they'd gotten to the reasoning. I think some ideas got cut off before we could evaluate them.'",
+        "es": "'Quería señalar algo de la revisión de hoy. Tres veces, alguien empezó a hablar y tomaste el hilo antes de que terminaran. Y dos veces dijiste \"eso no funcionará\" antes de que llegaran al razonamiento. Creo que algunas ideas fueron cortadas antes de que pudiéramos evaluarlas.'"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "'I think you came across as a bit aggressive today — people felt shut down and that's not good for the team dynamic.'",
+        "es": "'Creo que hoy pareciste un poco agresivo — la gente se sintió bloqueada y eso no es bueno para la dinámica del equipo.'"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "'You might want to work on your communication style in reviews. You're technically very strong, but sometimes the way you come across can be off-putting to people.'",
+        "es": "'Quizás deberías trabajar en tu estilo de comunicación en las revisiones. Eres técnicamente muy fuerte, pero a veces la forma en que te presentas puede ser desagradable para la gente.'"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "'Have you noticed that some people seem reluctant to share ideas when you're in the room? I just want to make sure everyone feels heard.'",
+        "es": "'¿Has notado que algunas personas parecen reacias a compartir ideas cuando estás en la sala? Solo quiero asegurarme de que todos se sientan escuchados.'"
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is the RFI-appropriate feedback: it names specific observable behaviors (interrupted three times, said 'that won't work' before reasoning was given), quantifies the occurrences, and frames the consequence in terms of what was lost ('ideas got cut off before we could evaluate them'). The feedback is about actions, not character. Option B is tone-policing: 'came across as aggressive' is a characterization of manner rather than a description of specific behavior — the recipient cannot act on it. 'People felt shut down' invokes unnamed others to amplify criticism without giving any evidence. Option C is even vaguer — 'communication style' and 'off-putting' are impressionistic labels that carry judgment without direction. Option D is indirect and leading — it poses as a question while actually delivering a criticism, which is neither honest nor useful feedback.",
+    "es": "La opción A es la retroalimentación apropiada según RFI: nombra comportamientos observables específicos (interrumpió tres veces, dijo 'eso no funcionará' antes de dar el razonamiento), cuantifica las ocurrencias y enmarca la consecuencia en términos de lo que se perdió ('ideas fueron cortadas antes de que pudiéramos evaluarlas'). La retroalimentación es sobre acciones, no sobre carácter. La opción B es policía de tono: 'pareciste agresivo' es una caracterización de la manera en lugar de una descripción de comportamiento específico — el receptor no puede actuar sobre esto. 'La gente se sintió bloqueada' invoca a otros no nombrados para amplificar la crítica sin proporcionar evidencia. La opción C es aún más vaga — 'estilo de comunicación' y 'desagradable' son etiquetas impresionistas que llevan juicio sin dirección. La opción D es indirecta y tendenciosa — se presenta como una pregunta mientras en realidad entrega una crítica, que no es ni retroalimentación honesta ni útil."
+  }
+}

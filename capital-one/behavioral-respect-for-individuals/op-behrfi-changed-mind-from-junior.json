@@ -1,0 +1,30 @@
+{
+  "id": "op-behrfi-changed-mind-from-junior",
+  "type": "open-prompt",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "A more junior person changed your mind",
+    "es": "Una persona más junior cambió tu opinión"
+  },
+  "question": {
+    "en": "Describe a time a more junior person changed your mind on something you were confident about. How did you realize they were right?",
+    "es": "Describe una ocasión en que una persona más junior cambió tu opinión sobre algo en lo que tenías confianza. ¿Cómo te diste cuenta de que tenían razón?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific position the candidate held before the conversation — what they believed and why they were confident in it",
+      "the specific argument or evidence the junior person offered — not 'they had a good point' but what exactly they said or showed",
+      "the moment of realization — what specifically shifted the candidate's view, and whether that happened in the conversation or after reflection",
+      "what the candidate said to the junior person to acknowledge they had changed their position — not just an internal shift, but an external signal",
+      "whether the candidate gave the junior person credit for the change in any public or visible way — e.g., in a team meeting, in a document, in a message to their manager"
+    ],
+    "must_avoid": [
+      "framing the junior person's contribution as minor or as something the candidate would have found eventually ('they just surfaced it a bit earlier than I would have')",
+      "telling the story entirely from the candidate's internal perspective — the junior person should appear as a full actor with a real contribution, not as a catalyst for the candidate's own growth",
+      "vague attribution such as 'the team helped me see it differently' when the story is about one specific junior person",
+      "omitting what the candidate did with the credit — listening and changing internally without public acknowledgment is incomplete RFI"
+    ],
+    "value_alignment": "Respect for Individuals",
+    "min_words": 150
+  }
+}

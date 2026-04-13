@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-assume-good-intent",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Assuming good intent before drawing conclusions",
+    "es": "Asumir buena fe antes de sacar conclusiones"
+  },
+  "prompt": {
+    "en": "A colleague has missed two consecutive sprint commitments, and you notice their PRs are consistently late with incomplete tests. You need a reliable deliverable from them next sprint. Which first move best reflects the RFI principle of assuming good intent?",
+    "es": "Un colega ha incumplido dos compromisos de sprint consecutivos, y notas que sus PRs llegan tarde con pruebas incompletas. Necesitas un entregable confiable de su parte el próximo sprint. ¿Cuál primer movimiento refleja mejor el principio RFI de asumir buena fe?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Flag the pattern to your manager so they can address the performance issue directly — it is not your job to manage a peer's delivery.",
+        "es": "Señalar el patrón a tu manager para que aborde el problema de rendimiento directamente — no es tu trabajo gestionar la entrega de un compañero."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Reduce your dependency on their deliverable — break it into a smaller scope that you can take on yourself, so you don't risk being blocked by their pattern.",
+        "es": "Reducir tu dependencia en su entregable — divídelo en un alcance más pequeño que puedas asumir tú mismo, para no arriesgarte a ser bloqueado por su patrón."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Have a direct conversation with them: 'I've noticed you've had trouble with the last two sprints and I want to understand what's going on before I plan for next sprint. Is there something blocking you that I don't know about?'",
+        "es": "Tener una conversación directa con ellos: 'Noté que tuviste dificultades en los últimos dos sprints y quiero entender qué está pasando antes de planear el próximo sprint. ¿Hay algo que te esté bloqueando que yo no sepa?'"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Send a message to the broader team asking everyone to confirm their sprint commitments early, so you can identify dependencies that might be at risk — without singling anyone out.",
+        "es": "Enviar un mensaje al equipo en general pidiendo a todos que confirmen sus compromisos de sprint con anticipación, para poder identificar dependencias que podrían estar en riesgo — sin señalar a nadie en particular."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C is the RFI first move: it goes directly to the person, names the observation specifically ('I've noticed you've had trouble with the last two sprints'), and asks what the candidate doesn't know rather than concluding incompetence. The question 'is there something blocking you that I don't know about?' is the operational expression of assuming good intent. Option A routes to authority (escalate to manager) before gathering any information — this is judgment first, curiosity second, which inverts the RFI posture. Option B works around the person rather than engaging them, which is a different kind of disrespect: it treats the colleague as an obstacle, not a person with context. Option D is passive — it diffuses the signal through the whole team to avoid the direct conversation, which is neither respectful nor useful.",
+    "es": "La opción C es el primer movimiento RFI: va directamente a la persona, nombra la observación específicamente ('noté que tuviste dificultades en los últimos dos sprints') y pregunta qué el candidato no sabe en lugar de concluir incompetencia. La pregunta '¿hay algo que te esté bloqueando que yo no sepa?' es la expresión operativa de asumir buena fe. La opción A redirige a una autoridad (escalar al manager) antes de recopilar información alguna — esto es juicio primero, curiosidad después, lo que invierte la postura RFI. La opción B trabaja alrededor de la persona en lugar de involucrarse con ella, que es un tipo diferente de falta de respeto: trata al colega como un obstáculo, no como una persona con contexto. La opción D es pasiva — difunde la señal a través de todo el equipo para evitar la conversación directa, que no es ni respetuosa ni útil."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-weak-rfi-smell",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Red flag: 'I convinced them' as a punchline",
+    "es": "Señal de alerta: 'Los convencí' como remate"
+  },
+  "prompt": {
+    "en": "You are evaluating four STAR-format answers to the question: 'Tell me about a time you had a significant disagreement with a colleague and how you handled it.' Which answer has the weakest RFI signal?",
+    "es": "Estás evaluando cuatro respuestas en formato STAR a la pregunta: 'Cuéntame sobre una ocasión en que tuviste un desacuerdo significativo con un colega y cómo lo manejaste.' ¿Cuál respuesta tiene la señal RFI más débil?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "'My colleague thought we should use event sourcing for the audit log; I thought a simple append-only table would serve us better for the next 18 months. I walked them through my read on the team's current operational maturity. They weren't fully persuaded, but we agreed to do the simpler approach with a clear migration path documented. Six months later, they actually flagged that the migration path was poorly designed — they were right about that part, and we fixed it.'",
+        "es": "'Mi colega pensaba que deberíamos usar event sourcing para el registro de auditoría; yo creía que una tabla simple de solo-agregar nos serviría mejor durante los próximos 18 meses. Lo guié a través de mi lectura de la madurez operativa actual del equipo. No quedó completamente convencido, pero acordamos hacer el enfoque más simple con un camino de migración documentado. Seis meses después, señaló que el camino de migración estaba mal diseñado — tenía razón en esa parte, y lo corregimos.'"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "'My PM wanted to ship without accessibility testing. I said: this will create compliance exposure and some of our users will be blocked from the feature. They pushed back on timeline. I held the position and eventually convinced them. We shipped with accessibility, and no issues were filed.'",
+        "es": "'Mi PM quería lanzar sin pruebas de accesibilidad. Dije: esto creará exposición de cumplimiento y algunos de nuestros usuarios no podrán acceder a la función. Pusieron resistencia por el cronograma. Mantuve la posición y finalmente los convencí. Lanzamos con accesibilidad y no se presentaron problemas.'"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "'We disagreed on the rollout strategy. I prepared a written proposal with the tradeoffs laid out, gave it to my colleague two days before our sync, and asked them to add their objections in writing so we could discuss them specifically. We ended up splitting the difference — their approach for the first cohort, mine for the second.'",
+        "es": "'No estábamos de acuerdo en la estrategia de lanzamiento. Preparé una propuesta escrita con los compromisos descritos, se la di a mi colega dos días antes de nuestra sincronización y le pedí que agregara sus objeciones por escrito para que pudiéramos discutirlas específicamente. Terminamos dividiendo la diferencia — su enfoque para el primer cohorte, el mío para el segundo.'"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "'I disagreed with the security review timeline. I asked my colleague to walk me through how they'd estimated the scope, and they pointed out a dependency I had missed entirely. That changed my position — the timeline was actually right, and I had underestimated the work.'",
+        "es": "'No estaba de acuerdo con el cronograma de revisión de seguridad. Le pedí a mi colega que me explicara cómo habían estimado el alcance, y señalaron una dependencia que yo había pasado por alto completamente. Eso cambió mi posición — el cronograma era en realidad correcto, y yo había subestimado el trabajo.'"
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B has the weakest RFI signal, and the tell is the punchline: 'I held the position and eventually convinced them.' This framing describes persistence winning over the other person, not a genuine exchange. The PM's concerns about timeline are acknowledged but never engaged — the candidate restates their position ('I held the position') and the PM yields. There is no evidence of what the PM said, what moved them, or whether they were genuinely persuaded or simply out-maneuvered. The clean outcome ('no issues were filed') reinforces the impression of a story where the candidate was right and the PM was wrong. Option A is the strongest: the colleague retained a different view, the candidate acknowledged a later correction from the colleague, and the story ends with no winner. Option C shows a structured approach to a shared disagreement. Option D demonstrates the candidate changing their own position based on information from the colleague.",
+    "es": "La opción B tiene la señal RFI más débil, y la pista es el remate: 'Mantuve la posición y finalmente los convencí.' Este encuadre describe la persistencia ganando sobre la otra persona, no un intercambio genuino. Las preocupaciones del PM sobre el cronograma se reconocen pero nunca se abordan — el candidato repite su posición ('mantuve la posición') y el PM cede. No hay evidencia de lo que dijo el PM, qué los movió, o si fueron genuinamente persuadidos o simplemente superados. El resultado limpio ('no se presentaron problemas') refuerza la impresión de una historia donde el candidato tenía razón y el PM estaba equivocado. La opción A es la más sólida: el colega mantuvo una visión diferente, el candidato reconoció una corrección posterior del colega, y la historia termina sin un ganador. La opción C muestra un enfoque estructurado a un desacuerdo compartido. La opción D demuestra que el candidato cambió su propia posición basándose en información del colega."
+  }
+}

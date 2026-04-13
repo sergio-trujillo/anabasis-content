@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-inclusion-in-meetings",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Making the room safe for quieter voices",
+    "es": "Crear un espacio seguro para las voces más calladas"
+  },
+  "prompt": {
+    "en": "You are in an architecture review with seven people. A newer engineer on the team has attended three of these sessions but has never spoken. You noticed they looked like they wanted to say something twice today but didn't. Which action most effectively makes the room safer for that voice?",
+    "es": "Estás en una revisión de arquitectura con siete personas. Un ingeniero más nuevo del equipo ha asistido a tres de estas sesiones pero nunca ha hablado. Notaste que dos veces hoy parecía querer decir algo pero no lo hizo. ¿Cuál acción hace el espacio más seguro para esa voz de manera más efectiva?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Before the next meeting, send a team-wide message reminding everyone that all ideas are welcome and that psychological safety is important to you.",
+        "es": "Antes de la siguiente reunión, enviar un mensaje a todo el equipo recordando que todas las ideas son bienvenidas y que la seguridad psicológica es importante para ti."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "During the meeting, pause and say: '[Name], I noticed you had a reaction when we were discussing the API contract — what were you thinking?' Then stop talking and let them answer.",
+        "es": "Durante la reunión, hacer una pausa y decir: '[Nombre], noté que tuviste una reacción cuando estábamos discutiendo el contrato de la API — ¿qué estabas pensando?' Luego dejar de hablar y dejar que respondan."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "After the meeting, tell them privately that they should speak up more — their input is valuable and people want to hear from them.",
+        "es": "Después de la reunión, decirles en privado que deberían participar más — su aporte es valioso y la gente quiere escucharlos."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Ask the room to go around and have everyone give their opinion on the current design proposal before moving forward.",
+        "es": "Pedir al grupo que roten y que todos den su opinión sobre la propuesta de diseño actual antes de avanzar."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the RFI action: it is direct, specific, and happens in the moment when the input is most relevant. Naming the specific point of discussion ('the API contract') makes the invitation substantive rather than generic, and the instruction to stop talking and let them answer is critical — inclusion requires creating actual space, not just opening the door. Option A is an announcement about values, not an action on behalf of a specific person — it does nothing in the moment where inclusion is needed. Option C addresses the symptom (they don't speak up) by telling the person to change their behavior, which places the burden on the quieter person rather than on the room dynamic. Option D uses a round-robin structure that may further stress the quieter person by requiring a public contribution under pressure, without the specificity that makes a real invitation feel safe.",
+    "es": "La opción B es la acción RFI: es directa, específica y ocurre en el momento en que el aporte es más relevante. Nombrar el punto específico de discusión ('el contrato de la API') hace que la invitación sea sustantiva en lugar de genérica, y la instrucción de dejar de hablar y dejar que respondan es crítica — la inclusión requiere crear espacio real, no solo abrir la puerta. La opción A es un anuncio sobre valores, no una acción en nombre de una persona específica — no hace nada en el momento en que se necesita inclusión. La opción C aborda el síntoma (no hablan) diciéndole a la persona que cambie su comportamiento, lo que pone la carga en la persona más callada en lugar de en la dinámica de la sala. La opción D usa una estructura de ronda que puede estresar aún más a la persona más callada al requerir una contribución pública bajo presión, sin la especificidad que hace que una invitación real se sienta segura."
+  }
+}

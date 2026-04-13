@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-rfi-vs-dtrt-vs-excellence",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "RFI vs. DTRT vs. Excellence — 3-way distinction",
+    "es": "RFI vs. DTRT vs. Excellence — distinción de 3 vías"
+  },
+  "prompt": {
+    "en": "An engineer notices their team lead's demo to stakeholders credited the engineer lead with work that was mostly done by a junior engineer. The senior engineer privately tells the junior: 'I'm going to send a follow-up email to the stakeholders clarifying that the core implementation was yours.' They do so the next day. Which Capital One value is most directly demonstrated?",
+    "es": "Un ingeniero nota que la demostración del líder de su equipo ante los stakeholders le atribuyó al líder de ingeniería trabajo que fue realizado principalmente por un ingeniero junior. El ingeniero senior le dice al junior en privado: 'Voy a enviar un correo de seguimiento a los stakeholders aclarando que la implementación central fue tuya.' Lo hacen al día siguiente. ¿Cuál valor de Capital One se demuestra más directamente?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Excellence — the engineer is raising the quality bar by ensuring accurate attribution in stakeholder communications.",
+        "es": "Excellence — el ingeniero está elevando el estándar de calidad al garantizar una atribución precisa en las comunicaciones con los stakeholders."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Do the Right Thing — the engineer corrected a misrepresentation to stakeholders, which is an act of institutional honesty.",
+        "es": "Do the Right Thing — el ingeniero corrigió una tergiversación ante los stakeholders, que es un acto de honestidad institucional."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Respect for Individuals — the engineer ensured that a less-visible contributor received the credit they were owed, specifically and in writing.",
+        "es": "Respect for Individuals — el ingeniero se aseguró de que un colaborador menos visible recibiera el crédito que merecía, específicamente y por escrito."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "This story doesn't clearly demonstrate any single Capital One value — it's a mix of all three equally.",
+        "es": "Esta historia no demuestra claramente ningún valor único de Capital One — es una mezcla de los tres por igual."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Option C is correct: the primary signal is RFI. The defining feature of the action is that the engineer directed credit toward a less-visible contributor (a junior engineer) who could not easily self-advocate in a stakeholder context. The core motive is human dignity — making sure someone's work is seen by the right people. Option B is a plausible distractor: DTRT does cover correcting misrepresentations, but DTRT is about institutional compliance and ethics — correcting a regulatory disclosure, flagging a policy violation. This is about individual recognition, not institutional honesty. Option A (Excellence) is incorrect: Excellence is about the quality of the work, not the accuracy of how it is attributed. Option D avoids choosing — but the distinction between values is not always clean, and the goal is to identify the primary signal. Credit flow to less-visible contributors is distinctly RFI.",
+    "es": "La opción C es correcta: la señal principal es RFI. La característica definitoria de la acción es que el ingeniero dirigió el crédito hacia un colaborador menos visible (un ingeniero junior) que no podía fácilmente auto-abogarse en un contexto de stakeholders. El motivo central es la dignidad humana — asegurarse de que el trabajo de alguien sea visto por las personas correctas. La opción B es un distractor plausible: DTRT sí cubre la corrección de tergiversaciones, pero DTRT trata sobre cumplimiento ético institucional — corregir una divulgación regulatoria, señalar una violación de política. Esto trata sobre reconocimiento individual, no honestidad institucional. La opción A (Excellence) es incorrecta: Excellence trata sobre la calidad del trabajo, no sobre la precisión de cómo se atribuye. La opción D evita elegir — pero la distinción entre valores no siempre es clara, y el objetivo es identificar la señal principal. El flujo de crédito hacia colaboradores menos visibles es distintivamente RFI."
+  }
+}

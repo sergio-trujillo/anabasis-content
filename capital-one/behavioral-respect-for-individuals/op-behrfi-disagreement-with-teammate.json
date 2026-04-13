@@ -1,0 +1,30 @@
+{
+  "id": "op-behrfi-disagreement-with-teammate",
+  "type": "open-prompt",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Disagreement that made the relationship stronger",
+    "es": "Desacuerdo que fortaleció la relación"
+  },
+  "question": {
+    "en": "Tell me about a time you had a significant disagreement with a teammate where the relationship ended up STRONGER because of how you handled it. What did you say, and what did you NOT say?",
+    "es": "Cuéntame sobre una ocasión en que tuviste un desacuerdo significativo con un compañero de equipo en la que la relación terminó siendo MÁS SÓLIDA gracias a cómo lo manejaste. ¿Qué dijiste, y qué fue lo que NO dijiste?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific words the candidate used in the hard part of the conversation — not paraphrased ('I said something like: I think you're right that the API is cleaner, but I'm worried about the migration cost we'd be handing to future teams' is the floor)",
+      "at least one thing the candidate consciously chose NOT to say — the omission is as diagnostic as what was said",
+      "a concrete sign the relationship was stronger after, not just fine — e.g., the other person explicitly sought their opinion later, the dynamic in meetings changed, the two worked differently on the next project",
+      "what the candidate actually conceded or changed their mind on — RFI disagreement stories rarely have a clean winner",
+      "the specific point of disagreement — what was being argued, not just that there was tension"
+    ],
+    "must_avoid": [
+      "'I convinced them' as a punchline — if the story ends with the other person capitulating and the candidate's view prevailing in full, it is likely an overpowering story, not an RFI story",
+      "reducing the other person to a role or type ('the difficult PM', 'the junior dev who didn't get it') without naming them as a full actor with a real position",
+      "vague relationship-repair language without a specific signal ('we ended up having a great working relationship' with no evidence)",
+      "omitting what was actually at stake — both technically and interpersonally"
+    ],
+    "value_alignment": "Respect for Individuals",
+    "min_words": 200
+  }
+}

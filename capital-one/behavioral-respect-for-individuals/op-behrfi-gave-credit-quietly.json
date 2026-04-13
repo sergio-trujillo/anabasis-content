@@ -1,0 +1,30 @@
+{
+  "id": "op-behrfi-gave-credit-quietly",
+  "type": "open-prompt",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Making someone's work seen",
+    "es": "Hacer visible el trabajo de alguien"
+  },
+  "question": {
+    "en": "Tell me about someone whose work you made sure got seen by the right people. What did you do, and what did you NOT claim for yourself?",
+    "es": "Cuéntame sobre alguien cuyo trabajo te aseguraste de que fuera visto por las personas correctas. ¿Qué hiciste, y qué fue lo que NO reclamaste para ti mismo?"
+  },
+  "rubric": {
+    "must_include": [
+      "who the person was and why their work was at risk of going unseen — the visibility gap the candidate identified",
+      "the specific action the candidate took to direct credit toward that person — a concrete action (sent an email naming them, mentioned them in a review, corrected attribution in a presentation) not a vague gesture",
+      "who witnessed or received the credit-giving — credit distribution only counts if it reaches someone with influence or visibility over the contributor's career or reputation",
+      "at least one thing the candidate explicitly did NOT claim for themselves — the renunciation of credit is the RFI signal, not just the giving of credit",
+      "whether the person being credited knew the candidate had done this — and the candidate's reasoning about whether to tell them or not"
+    ],
+    "must_avoid": [
+      "credit-hoarding with a modesty veneer: 'we did it as a team, but really I was the one driving most of it' — this is not credit-giving, it is credit-sharing after retaining the majority",
+      "framing the credit-giving as a strategic move ('I knew it would make me look like a good leader') rather than as something owed to the contributor",
+      "vague language about 'making sure people got recognition' without naming the person, the contribution, or the specific act of attribution",
+      "omitting what the candidate gave up — if the candidate lost nothing by giving credit, the story is probably not an RFI story"
+    ],
+    "value_alignment": "Respect for Individuals",
+    "min_words": 150
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-credit-flow-upward",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Distributing credit specifically and generously",
+    "es": "Distribuir el crédito de forma específica y generosa"
+  },
+  "prompt": {
+    "en": "Your team shipped a successful API redesign. A data analyst on an adjacent team identified the original bottleneck that motivated the redesign, and a junior engineer on your team built the core abstraction. Your manager is asking you to present the outcome to senior leadership. Which framing distributes credit correctly?",
+    "es": "Tu equipo lanzó con éxito un rediseño de API. Un analista de datos de un equipo adyacente identificó el cuello de botella original que motivó el rediseño, y un ingeniero junior de tu equipo construyó la abstracción central. Tu manager te pide presentar el resultado a la dirección senior. ¿Cuál enfoque distribuye el crédito correctamente?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Open with: 'This was a true team effort and I'm proud of what we all accomplished together.' Then walk through the technical architecture.",
+        "es": "Comenzar con: 'Este fue un verdadero esfuerzo de equipo y estoy orgulloso de lo que logramos juntos.' Luego explicar la arquitectura técnica."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Open with: 'The redesign was motivated by latency data that [analyst's name] surfaced from the adjacent team. The core abstraction that made this scalable was built by [junior engineer's name]. My role was coordination and stakeholder alignment.' Then walk through the technical architecture.",
+        "es": "Comenzar con: 'El rediseño fue motivado por los datos de latencia que [nombre del analista] identificó desde el equipo adyacente. La abstracción central que hizo esto escalable fue construida por [nombre del ingeniero junior]. Mi rol fue coordinación y alineación con los stakeholders.' Luego explicar la arquitectura técnica."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Open with: 'I mean, yes, I drove most of this, but the team was helpful — especially the junior engineer who handled the abstraction layer, though we had to revise it a few times.'",
+        "es": "Comenzar con: 'Quiero decir, sí, yo lideré la mayor parte de esto, pero el equipo fue útil — especialmente el ingeniero junior que se encargó de la capa de abstracción, aunque tuvimos que revisarla varias veces.'"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Focus entirely on the technical outcome and metrics — leadership cares about results, not individual attributions, and naming people can come across as deflecting responsibility.",
+        "es": "Enfocarse completamente en el resultado técnico y las métricas — el liderazgo se preocupa por los resultados, no por atribuciones individuales, y nombrar personas puede parecer que estás eludiendo la responsabilidad."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the RFI signal: it names both contributors specifically (the analyst and the junior engineer), attributes specific work to each (surfacing the data, building the abstraction), and acknowledges the candidate's own role accurately (coordination). Crucially, both contributors are less visible than the presenter — the analyst is from an adjacent team, and the junior engineer is below the presenter in seniority. Option A is the generic 'team effort' statement that gives no one specific credit and erases both contributors. Option C is credit-hoarding disguised as modesty: 'yes, I drove most of this' followed by a qualified mention undercut by 'though we had to revise it' — that qualifier is a subtle slight on the junior engineer's work. Option D treats attribution as a liability rather than an obligation, which is the opposite of RFI.",
+    "es": "La opción B es la señal RFI: nombra a ambos colaboradores específicamente (el analista y el ingeniero junior), atribuye trabajo específico a cada uno (identificar los datos, construir la abstracción) y reconoce el propio rol del candidato con precisión (coordinación). Es crucial que ambos colaboradores son menos visibles que el presentador — el analista es de un equipo adyacente, y el ingeniero junior está por debajo del presentador en antigüedad. La opción A es la declaración genérica de 'esfuerzo de equipo' que no da crédito específico a nadie y borra a ambos colaboradores. La opción C es acaparamiento de crédito disfrazado de modestia: 'sí, yo lideré la mayor parte' seguido de una mención calificada socavada por 'aunque tuvimos que revisarla' — ese calificador es un insulto sutil al trabajo del ingeniero junior. La opción D trata la atribución como un pasivo en lugar de una obligación, que es lo opuesto al RFI."
+  }
+}

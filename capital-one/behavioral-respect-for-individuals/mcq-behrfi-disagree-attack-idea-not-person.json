@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behrfi-disagree-attack-idea-not-person",
+  "type": "mcq",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Pushing hard on the idea, not the person",
+    "es": "Presionar la idea con firmeza, no a la persona"
+  },
+  "prompt": {
+    "en": "Your team is debating whether to defer a database migration that will require several days of engineering effort. A colleague argues strongly for deferral, citing competing priorities. You believe deferral will create compounding technical debt and want to push back hard. Which response pushes hard on the idea without pushing on the person?",
+    "es": "Tu equipo debate si posponer una migración de base de datos que requiere varios días de trabajo de ingeniería. Un colega argumenta fuertemente por el aplazamiento, citando prioridades que compiten. Crees que el aplazamiento creará deuda técnica acumulada y quieres refutar con firmeza. ¿Cuál respuesta presiona la idea con firmeza sin presionar a la persona?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Say: 'I hear you on the priority pressure, and I want to challenge the deferral itself. If we push this another quarter, the coupling will increase and the migration will cost roughly twice the time — here's why.' Then present the compounding cost model specifically.",
+        "es": "Decir: 'Entiendo la presión de las prioridades, y quiero cuestionar el aplazamiento en sí. Si lo posponemos otro trimestre, el acoplamiento aumentará y la migración costará aproximadamente el doble de tiempo — aquí está el por qué.' Luego presentar el modelo de costo acumulado de forma específica."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Say: 'I think you're underestimating the risk here. You always prioritize short-term velocity over long-term health, and this is another example of that pattern.'",
+        "es": "Decir: 'Creo que estás subestimando el riesgo aquí. Siempre priorizas la velocidad a corto plazo sobre la salud a largo plazo, y este es otro ejemplo de ese patrón.'"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Defer to the colleague to keep the relationship smooth, then document your objection privately in a design doc in case the decision backfires later.",
+        "es": "Ceder al colega para mantener la relación fluida, luego documentar tu objeción de forma privada en un documento de diseño en caso de que la decisión salga mal más adelante."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Escalate to your manager before the meeting concludes, so the final decision comes from someone with more authority than either of you.",
+        "es": "Escalar a tu manager antes de que concluya la reunión, para que la decisión final venga de alguien con más autoridad que cualquiera de los dos."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is the RFI response: it acknowledges the colleague's constraint ('I hear you on the priority pressure'), then redirects squarely to the argument ('I want to challenge the deferral itself') and supports that challenge with specifics. The disagreement stays on the technical claim, not on the person making it. Option B is the classic anti-pattern — it attacks the person's character ('you always prioritize short-term velocity') rather than the argument, which is the opposite of RFI. Option C avoids conflict rather than engaging with it, which is neither RFI nor helpful to the team. Option D authority-routes the disagreement rather than working through it directly — it sidesteps the conversation instead of having it respectfully.",
+    "es": "La opción A es la respuesta RFI: reconoce la restricción del colega ('entiendo la presión de las prioridades'), luego redirige directamente hacia el argumento ('quiero cuestionar el aplazamiento en sí') y apoya ese cuestionamiento con datos específicos. El desacuerdo se mantiene en la afirmación técnica, no en la persona que la hace. La opción B es el anti-patrón clásico — ataca el carácter de la persona ('siempre priorizas la velocidad a corto plazo') en lugar del argumento, que es lo opuesto al RFI. La opción C evita el conflicto en lugar de enfrentarlo, lo que no es ni RFI ni útil para el equipo. La opción D redirige el desacuerdo a una autoridad en lugar de trabajarlo directamente — esquiva la conversación en lugar de tenerla de manera respetuosa."
+  }
+}

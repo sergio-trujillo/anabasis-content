@@ -1,0 +1,30 @@
+{
+  "id": "op-behrfi-wrong-about-teammate",
+  "type": "open-prompt",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Realizing you had a teammate wrong",
+    "es": "Darte cuenta de que tenías una idea equivocada sobre un compañero"
+  },
+  "question": {
+    "en": "Describe a time you concluded someone was being difficult, lazy, or incompetent — and later realized you had it wrong. What did you learn about that person, and what did you change about yourself?",
+    "es": "Describe una ocasión en que concluiste que alguien era difícil, perezoso o incompetente — y luego te diste cuenta de que estabas equivocado. ¿Qué aprendiste sobre esa persona, y qué cambiaste en ti mismo?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific (wrong) conclusion the candidate drew — not 'I thought they had a bad attitude' but what specific behavior led to that interpretation, and the specific label the candidate was applying internally",
+      "the candidate's own bias or blind-spot that enabled the wrong conclusion — what the candidate assumed that turned out to be false, and why they were in a position to make that assumption",
+      "the specific moment or piece of information that changed their view — what they learned about the person that they didn't know before",
+      "what the candidate did to repair the dynamic after they realized they were wrong — a concrete action, not just an internal attitude shift",
+      "the specific behavior change the candidate made in how they read or approach similar situations — what they do differently now, stated as a concrete habit or question they now ask first"
+    ],
+    "must_avoid": [
+      "framing the story primarily as a growth narrative about the candidate without fully restoring the other person's dignity — 'this taught me so much about myself' without 'and I realized I had been unfair to them'",
+      "vague self-criticism without naming the specific wrong assumption ('I realized I was being judgmental' without stating what the judgment was)",
+      "resolving the story too cleanly — 'once I understood them, everything was fine' — without acknowledging that the candidate may have caused damage during the period they had it wrong",
+      "naming the teammate only as a category ('the difficult engineer', 'the PM who seemed checked-out') rather than as a person with a context and perspective that turned out to be valid"
+    ],
+    "value_alignment": "Respect for Individuals",
+    "min_words": 200
+  }
+}

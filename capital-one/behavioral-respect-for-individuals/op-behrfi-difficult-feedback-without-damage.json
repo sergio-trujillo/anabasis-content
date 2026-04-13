@@ -1,0 +1,30 @@
+{
+  "id": "op-behrfi-difficult-feedback-without-damage",
+  "type": "open-prompt",
+  "section": "behavioral-respect-for-individuals",
+  "title": {
+    "en": "Giving hard feedback that someone could actually use",
+    "es": "Dar retroalimentación difícil que alguien pudiera realmente usar"
+  },
+  "question": {
+    "en": "Describe a time you gave someone hard feedback. How did you frame it so they could actually use it, and what did you learn from their reaction?",
+    "es": "Describe una ocasión en que le diste retroalimentación difícil a alguien. ¿Cómo la enmarcaste para que pudieran usarla realmente, y qué aprendiste de su reacción?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific behavior or outcome the feedback addressed — what was observed, not how the person came across or what they seemed like",
+      "the actual framing used to deliver it — what the candidate said, including how they separated the behavior from the person's character or worth",
+      "the person's reaction — their initial response, even if it was defensive, dismissive, or distressed — as a factual observation, not an evaluation of whether the reaction was fair",
+      "what the candidate learned from the reaction — what the reaction revealed about how the feedback landed, and whether the candidate revised anything about their framing based on it",
+      "a sign that the feedback was actually usable — a behavior change, a follow-up conversation, or at minimum an acknowledgment from the person that it gave them something to work with"
+    ],
+    "must_avoid": [
+      "tone-policing the other person's reaction: describing their response as 'too emotional', 'defensive', or 'not receptive' without naming what they actually said or did — the characterization of their reaction tells us more about the candidate than the person receiving feedback",
+      "framing the feedback as a kindness the candidate did for the person ('I was really doing them a favor by being honest') rather than as a genuine observation with real stakes",
+      "'sandwich' structure as the entire story: if the candidate describes only the technique (positive-negative-positive) without the actual content of the feedback, the signal is missing",
+      "a story where the person immediately agreed and nothing was uncomfortable — if the feedback was genuinely hard, there should be some friction in the telling"
+    ],
+    "value_alignment": "Respect for Individuals",
+    "min_words": 200
+  }
+}
