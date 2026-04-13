@@ -28,6 +28,8 @@
         { "id": "behavioral-do-the-right-thing", "name": "Behavioral — Do the Right Thing", "kind": "behavioral" },
         { "id": "behavioral-respect-for-individuals", "name": "Behavioral — Respect for Individuals", "kind": "behavioral" },
         { "id": "behavioral-succeed-together", "name": "Behavioral — Succeed Together", "kind": "behavioral" },
+        { "id": "business-case-fundamentals", "name": "Business Case — Fundamentals", "kind": "business-case" },
+        { "id": "business-case-frameworks", "name": "Business Case — Frameworks", "kind": "business-case" },
         { "id": "business-case-banking", "name": "Business Case — Banking", "kind": "business-case" },
         { "id": "power-day-mock", "name": "Mock Power Day", "kind": "mock-loop" }
       ]
