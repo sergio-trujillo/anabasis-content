@@ -1,0 +1,21 @@
+{
+  "id": "ic-sdb-mobile-statement-service",
+  "type": "interviewer-chat",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Mobile account statements backend",
+    "es": "Backend de estados de cuenta para la aplicación móvil"
+  },
+  "topic": "Design the backend for the mobile app's account-statements view. The system must serve ~200M cardholder accounts; the mobile app expects sub-second p99 page-load for the current-month statement and the last 12 months of statement summaries. Full transaction history must be available for the last 7 years (regulatory retention requirement). Disputed-transaction status updates can arrive retroactively — a transaction from 3 months ago can change status from 'posted' to 'in dispute' at any time — and those updates must be reflected in the mobile app within 30 seconds of the dispute being filed.",
+  "persona": "Senior engineer, 7 years at Capital One, owns the statements platform. Measured and curious. Does not push back aggressively but probes trade-offs with 'why that and not X?' follow-ups. Particularly interested in how the candidate thinks about the difference between data that is read constantly and data that is almost never read.",
+  "must_explore": [
+    "statement storage strategy: pre-computed statement snapshots vs. on-the-fly aggregation at read time, with latency and consistency trade-offs for each",
+    "cache and CDN layering: what is cached at each tier (CDN edge, application cache, database read replica), what the cache key is, and how the candidate handles the cold-start for accounts that haven't been accessed in months",
+    "retroactive dispute-status update propagation: how a status change on a 3-month-old transaction propagates to the cached statement within the 30-second SLA without a full cache bust",
+    "cold vs. hot data tiering: how the candidate separates the last 30 days (hot, accessed constantly) from 31-day-to-7-year history (cold, rarely accessed), and what storage class each tier uses",
+    "PCI implications of the mobile statement view: which fields in the statement response are in PCI scope, and how the architecture ensures raw PAN never appears in the mobile response",
+    "path to sub-second p99 at 200M accounts: what the read path looks like under load, where the bottlenecks are, and how the candidate would validate the p99 target before launch"
+  ],
+  "opening_message": "Hi, thanks for joining. Let's dive in. I want you to design the backend for the account-statements view in our mobile app. We've got about 200M cardholder accounts. The app needs to load the current month's statement in under a second p99, and we need 7 years of history available — though most customers never go back more than a year. Oh, and disputed transactions: when someone disputes a charge from 3 months ago, that status change has to show up in the app within 30 seconds. Where would you start?",
+  "max_turns": 6
+}

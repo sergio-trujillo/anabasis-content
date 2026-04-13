@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-at-least-once-vs-exactly-once",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Delivery semantics: posting a transaction to the ledger",
+    "es": "Semánticas de entrega: registrar una transacción en el ledger"
+  },
+  "prompt": {
+    "en": "You are designing the consumer that posts authorization events to the general ledger. The event bus guarantees at-least-once delivery. Which delivery-semantic strategy should your ledger consumer implement?",
+    "es": "Estás diseñando el consumidor que registra los eventos de autorización en el libro contable general. El bus de eventos garantiza entrega at-least-once. ¿Qué estrategia de semántica de entrega debe implementar tu consumidor del ledger?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Best-effort (fire-and-forget): consume the event and write to the ledger with no retry or deduplication logic.",
+        "es": "Mejor esfuerzo (fire-and-forget): consumir el evento y escribir en el ledger sin lógica de reintento ni deduplicación."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "At-most-once: acknowledge the event before writing to the ledger to avoid duplicate processing.",
+        "es": "At-most-once: reconocer el evento antes de escribir en el ledger para evitar procesamiento duplicado."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "At-least-once delivery with an idempotent consumer (deduplication on the idempotency key), achieving effectively exactly-once posting.",
+        "es": "Entrega at-least-once con un consumidor idempotente (deduplicación sobre la clave de idempotencia), logrando un registro efectivamente exactly-once."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "True exactly-once delivery using distributed two-phase commit (2PC) across the event bus and the ledger database.",
+        "es": "Entrega verdaderamente exactly-once usando confirmación distribuida en dos fases (2PC) entre el bus de eventos y la base de datos del ledger."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "True exactly-once delivery is a distributed-systems myth in practice: it requires either 2PC (which is slow, fragile, and couples the event bus tightly to the database) or Kafka's transactional API (which only works within a single Kafka cluster). The industry-standard answer for financial systems is at-least-once delivery with an idempotent consumer: the consumer deduplicates on the event's idempotency key (or a composite of account + authorization ID + amount), so replays are safe. Option A (best-effort) can silently drop postings — money is lost. Option B (at-most-once) is worse: acknowledging before writing means a crash between ack and write silently skips the posting, also losing money. Option D (2PC) is theoretically correct but adds 10–100× write latency and is almost never used at scale in modern systems.",
+    "es": "La entrega verdaderamente exactly-once es un mito en la práctica de los sistemas distribuidos: requiere 2PC (lento, frágil y acopla estrechamente el bus de eventos a la base de datos) o la API transaccional de Kafka (que solo funciona dentro de un único clúster de Kafka). La respuesta estándar de la industria para sistemas financieros es la entrega at-least-once con un consumidor idempotente: el consumidor deduplica sobre la clave de idempotencia del evento (o un compuesto de cuenta + ID de autorización + monto), por lo que las repeticiones son seguras. La opción A (mejor esfuerzo) puede descartar registros silenciosamente — se pierde dinero. La opción B (at-most-once) es peor: reconocer antes de escribir significa que un crash entre el ack y la escritura omite silenciosamente el registro, también perdiendo dinero. La opción D (2PC) es teóricamente correcta pero añade entre 10 y 100× la latencia de escritura y casi nunca se usa a escala en sistemas modernos."
+  }
+}

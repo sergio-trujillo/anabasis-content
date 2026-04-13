@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-fraud-check-fanout",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Fraud-check fanout: hot-path integration without tanking latency",
+    "es": "Fanout de verificación de fraude: integración en el hot-path sin degradar la latencia"
+  },
+  "prompt": {
+    "en": "Your authorization hot-path must meet sub-100ms p99 end-to-end. The fraud-scoring service takes 40–120ms depending on model complexity. What integration pattern best balances fraud coverage and latency?",
+    "es": "Tu hot-path de autorización debe cumplir menos de 100ms p99 de extremo a extremo. El servicio de puntuación de fraude tarda entre 40 y 120ms según la complejidad del modelo. ¿Qué patrón de integración equilibra mejor la cobertura de fraude y la latencia?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Always call the fraud scorer inline (synchronous, blocking) before responding to the authorization request.",
+        "es": "Llamar siempre al evaluador de fraude de forma inline (síncrona y bloqueante) antes de responder a la solicitud de autorización."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Fire-and-forget asynchronous fraud scoring for the default cohort; inline blocking only for the pre-flagged high-risk cohort (e.g. velocity-triggered cards).",
+        "es": "Envío asíncrono sin espera de respuesta para el cohorte predeterminado; bloqueo inline solo para el cohorte de alto riesgo pre-marcado (p. ej., tarjetas con alta velocidad de transacciones)."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Always route fraud scoring asynchronously, posting a retrospective block on the card if fraud is detected after authorization.",
+        "es": "Enrutar siempre la puntuación de fraude de forma asíncrona, publicando un bloqueo retroactivo en la tarjeta si se detecta fraude después de la autorización."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Sample 10% of transactions for fraud scoring to reduce load on the fraud scorer.",
+        "es": "Muestrear el 10% de las transacciones para la puntuación de fraude a fin de reducir la carga en el evaluador."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Option B is the standard pattern in payment hot-paths: segment the population by risk signal, apply the expensive inline check only where it matters most (high-risk cohort), and accept fire-and-forget for the low-risk majority where the cost of a post-auth block is acceptable. Option A tanks p99 — a 120ms fraud scorer added inline to a 100ms budget is simply impossible at the tail. Option C fully misses pre-authorization fraud for the entire population; a sophisticated fraudster exploits the async window deliberately. Option D is the worst of all worlds: the 10% sample means 90% of fraud events receive no real-time signal, which is commercially and regulatorily unacceptable.",
+    "es": "La opción B es el patrón estándar en los hot-paths de pagos: segmentar la población por señal de riesgo, aplicar la verificación costosa inline solo donde más importa (cohorte de alto riesgo) y aceptar el envío sin espera para la mayoría de bajo riesgo donde el costo de un bloqueo post-autorización es aceptable. La opción A destruye el p99 — un evaluador de fraude de 120ms añadido inline a un presupuesto de 100ms es simplemente imposible en la cola. La opción C no detecta fraude antes de la autorización para toda la población; un defraudador sofisticado explota deliberadamente la ventana asíncrona. La opción D es la peor de todas: el muestreo del 10% significa que el 90% de los eventos de fraude no reciben señal en tiempo real, lo que es comercial y regulatoriamente inaceptable."
+  }
+}

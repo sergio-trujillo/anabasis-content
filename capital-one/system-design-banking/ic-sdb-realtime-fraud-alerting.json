@@ -1,0 +1,21 @@
+{
+  "id": "ic-sdb-realtime-fraud-alerting",
+  "type": "interviewer-chat",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Near-real-time fraud alerting system",
+    "es": "Sistema de alertas de fraude en tiempo casi real"
+  },
+  "topic": "Design a near-real-time fraud alerting system that flags suspicious transactions within 60 seconds of authorization. Input is the authorization event stream at ~40K events per second peak (the same hot-path output from the authorization service). The system must: (a) propagate a block to the authorization hot-path within 60 seconds of a flag so that future transactions on the flagged card are declined; (b) deliver a push notification to the cardholder's mobile app within 60 seconds; (c) write an immutable audit trail entry for every flag decision to support regulatory investigation. The system must also handle flapping correctly — a card flagged as fraudulent and then cleared within the same 60-second window must not generate a false push notification or a spurious block.",
+  "persona": "Principal engineer, 9 years at Capital One, runs the fraud platform. Calm and precise. Cares intensely about false-positive rates — 'Every spurious block is a customer harmed.' Probes the candidate's reasoning about consistency vs. latency when the two are in tension.",
+  "must_explore": [
+    "event-stream processing topology: what framework or primitives process the 40K/sec stream, and how the fraud-scoring step fits into the topology",
+    "60-second budget allocation: how the candidate breaks down the 60s window across stream ingestion, model inference, propagation to the auth hot-path, and push notification delivery",
+    "block propagation back to the authorization hot-path: what the data path looks like (write to shared cache? publish a block event? direct API call?) and its consistency guarantees",
+    "flapping protection: how a flag-then-clear within the same window is handled without sending a false push notification or leaving a stale block in the auth hot-path cache",
+    "audit-log schema and write path: what fields every flag decision entry contains, how immutability is enforced, and how a regulator would reconstruct the timeline for a disputed case",
+    "broken-pipeline detection: how the team would know within minutes that the fraud pipeline has stopped processing — before cardholders or regulators report it"
+  ],
+  "opening_message": "Hey, good to meet you. Let's get into it. I want you to design the near-real-time fraud alerting system that sits downstream of our card authorization hot-path. The input is the authorization event stream — about 40K events per second at peak. Within 60 seconds of a suspicious transaction, you need to block the card, push a notification to the cardholder, and write an audit entry. Oh, and flapping — a card flagged and cleared in the same minute — needs to be handled correctly. Where would you start?",
+  "max_turns": 6
+}

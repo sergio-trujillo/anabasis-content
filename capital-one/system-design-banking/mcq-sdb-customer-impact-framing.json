@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-customer-impact-framing",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Customer-impact framing in a banking postmortem",
+    "es": "Encuadre de impacto al cliente en un postmortem bancario"
+  },
+  "prompt": {
+    "en": "Your team is writing the executive summary for an outage postmortem. Which framing matches banking engineering culture and would satisfy a capital-markets regulator reviewing the document?",
+    "es": "Tu equipo está redactando el resumen ejecutivo de un postmortem de interrupción. ¿Qué encuadre se ajusta a la cultura de ingeniería bancaria y satisfaría a un regulador de mercados de capitales que revise el documento?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"Our authorization service experienced a 15-minute incident window. Monthly availability was 99.97%, above our 99.9% SLA target.\"",
+        "es": "\"Nuestro servicio de autorización experimentó una ventana de incidente de 15 minutos. La disponibilidad mensual fue del 99.97%, por encima de nuestro objetivo de SLA del 99.9%.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"2.3M cardholders were unable to authorize transactions between 14:02 and 14:17 PT; an estimated $180M in transaction volume was declined during the window.\"",
+        "es": "\"2.3 millones de titulares de tarjetas no pudieron autorizar transacciones entre las 14:02 y las 14:17 PT; se estima que $180M en volumen de transacciones fueron rechazados durante esa ventana.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"A bug in the rate-limiter caused a regression that triggered the incident. The fix was deployed within the incident window.\"",
+        "es": "\"Un error en el limitador de tasa causó una regresión que desencadenó el incidente. La corrección se desplegó dentro de la ventana del incidente.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"We are confident that the root-cause fix is in production and we do not expect a recurrence.\"",
+        "es": "\"Tenemos confianza en que la corrección de la causa raíz está en producción y no esperamos una recurrencia.\""
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Banking engineering culture frames every outage in customer and monetary terms first — not service-metric terms. A regulator reviewing a postmortem wants to know: how many customers were harmed, for how long, and what was the financial exposure? Option B answers all three questions with precise numbers and timestamps. Option A is the classic service-centric framing ('99.97% availability') that sounds reassuring to an engineering audience but is meaningless to a customer whose payment was declined or a regulator quantifying systemic risk. Option C names the root cause but omits customer impact entirely — it belongs in the technical details section, not the executive summary. Option D is forward-looking reassurance with no numbers — useful in a conclusion paragraph but not as the primary impact statement.",
+    "es": "La cultura de ingeniería bancaria enmarca cada interrupción en términos de clientes y monetarios primero — no en términos de métricas de servicio. Un regulador que revise un postmortem quiere saber: ¿cuántos clientes fueron afectados, por cuánto tiempo y cuál fue la exposición financiera? La opción B responde las tres preguntas con números precisos y marcas de tiempo. La opción A es el clásico encuadre centrado en el servicio ('99.97% de disponibilidad') que suena tranquilizador para una audiencia de ingeniería pero no tiene sentido para un cliente cuyo pago fue rechazado o un regulador que cuantifica el riesgo sistémico. La opción C nombra la causa raíz pero omite por completo el impacto al cliente — pertenece a la sección de detalles técnicos, no al resumen ejecutivo. La opción D es un mensaje tranquilizador orientado al futuro sin números — útil en un párrafo de conclusión pero no como declaración principal de impacto."
+  }
+}

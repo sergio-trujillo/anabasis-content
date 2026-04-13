@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-mainframe-integration",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Mainframe integration: the right pattern for a new customer-facing service",
+    "es": "Integración con el mainframe: el patrón correcto para un nuevo servicio orientado al cliente"
+  },
+  "prompt": {
+    "en": "A new customer-facing microservice needs credit-limit data that currently lives only on the mainframe. The mainframe cannot be modified. Which integration strategy is most appropriate?",
+    "es": "Un nuevo microservicio orientado al cliente necesita datos de límite de crédito que actualmente solo existen en el mainframe. El mainframe no puede modificarse. ¿Qué estrategia de integración es la más adecuada?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Issue a synchronous CICS/MQ call to the mainframe on every incoming HTTP request from the microservice.",
+        "es": "Emitir una llamada CICS/MQ síncrona al mainframe en cada solicitud HTTP entrante al microservicio."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Run a nightly batch export from the mainframe, loading the latest credit-limit snapshot into the microservice's database each morning.",
+        "es": "Ejecutar una exportación por lotes nocturna desde el mainframe, cargando la instantánea más reciente de límites de crédito en la base de datos del microservicio cada mañana."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Use CDC (change-data-capture) to stream mainframe mutations into the microservice's own cache, with an explicit staleness SLA documented in the service contract.",
+        "es": "Usar CDC (captura de cambios) para transmitir las mutaciones del mainframe al caché propio del microservicio, con un SLA de obsolescencia explícito documentado en el contrato del servicio."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Dual-write: have every upstream system that updates the mainframe also write to the microservice's database directly.",
+        "es": "Escritura dual: hacer que cada sistema upstream que actualiza el mainframe también escriba directamente en la base de datos del microservicio."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "CDC (change-data-capture) is the canonical pattern for extracting data from a mainframe you cannot instrument or modify: it taps the transaction log (or uses a log-shipping agent like IBM IIDR) to stream changes into a modern data store the microservice owns. The key discipline is publishing an explicit staleness SLA — for example 'credit limits reflect mainframe state within 60 seconds' — so consumers know what they are getting. Option A makes the mainframe a synchronous dependency on every user request, tanking latency and turning the mainframe into a single point of failure. Option B produces up-to-24h stale data, which is unacceptable for credit-limit checks. Option D (dual-write) introduces a consistency nightmare: two systems must always agree, but network partitions or app crashes will cause them to diverge, and there is no canonical source-of-truth.",
+    "es": "CDC (captura de cambios) es el patrón canónico para extraer datos de un mainframe que no se puede instrumentar ni modificar: aprovecha el log de transacciones (o usa un agente de envío de logs como IBM IIDR) para transmitir cambios a un almacén de datos moderno que el microservicio controla. La disciplina clave es publicar un SLA de obsolescencia explícito — por ejemplo, 'los límites de crédito reflejan el estado del mainframe con una latencia máxima de 60 segundos' — para que los consumidores sepan qué están obteniendo. La opción A convierte al mainframe en una dependencia síncrona en cada solicitud de usuario, destruyendo la latencia y convirtiéndolo en un punto único de fallo. La opción B produce datos obsoletos de hasta 24h, lo cual es inaceptable para las verificaciones de límites de crédito. La opción D (escritura dual) introduce una pesadilla de consistencia: dos sistemas siempre deben coincidir, pero las particiones de red o fallos de aplicación los harán divergir, y no hay una fuente de verdad canónica."
+  }
+}

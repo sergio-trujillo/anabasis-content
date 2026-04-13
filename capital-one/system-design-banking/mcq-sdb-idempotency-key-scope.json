@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-idempotency-key-scope",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Idempotency key: correct scope for a payment API",
+    "es": "Clave de idempotencia: alcance correcto para una API de pagos"
+  },
+  "prompt": {
+    "en": "A mobile banking app retries failed payment requests due to network timeouts. Which scoping strategy for the idempotency key is correct?",
+    "es": "Una aplicación bancaria móvil reintenta solicitudes de pago fallidas por timeouts de red. ¿Qué estrategia de alcance para la clave de idempotencia es la correcta?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "A globally unique UUID generated server-side on first receipt, stored indefinitely.",
+        "es": "Un UUID globalmente único generado del lado del servidor al primer recibo, almacenado indefinidamente."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "A hash of the full request body, stored indefinitely.",
+        "es": "Un hash del cuerpo completo de la solicitud, almacenado indefinidamente."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "A client-provided key scoped to (client_id, key, endpoint) with time-bounded storage (e.g. 24 hours).",
+        "es": "Una clave provista por el cliente con alcance en (client_id, clave, endpoint) y almacenamiento acotado en el tiempo (p. ej., 24 horas)."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "The user's session ID, which uniquely identifies a login session.",
+        "es": "El ID de sesión del usuario, que identifica de forma única una sesión de inicio de sesión."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The correct scope is (client_id, key, endpoint) so that the same key cannot accidentally deduplicate requests to different payment endpoints from the same client. Time-bounded storage (e.g. 24h) is intentional: indefinite retention would grow the deduplication store without bound and could mask legitimate re-submissions days later. Option B fails when retries add a non-semantic field (e.g. a retry-count header) that changes the hash. Option D fails because a session can span multiple independent payments — session expiry or reuse would break idempotency guarantees.",
+    "es": "El alcance correcto es (client_id, clave, endpoint) para que la misma clave no pueda deduplicar accidentalmente solicitudes a distintos endpoints de pago del mismo cliente. El almacenamiento acotado en el tiempo (p. ej., 24h) es intencional: la retención indefinida haría crecer sin límite el almacén de deduplicación y podría enmascarar reenvíos legítimos días después. La opción B falla cuando los reintentos agregan un campo no semántico (p. ej., un encabezado retry-count) que cambia el hash. La opción D falla porque una sesión puede abarcar múltiples pagos independientes — la expiración o reutilización de sesión rompería las garantías de idempotencia."
+  }
+}

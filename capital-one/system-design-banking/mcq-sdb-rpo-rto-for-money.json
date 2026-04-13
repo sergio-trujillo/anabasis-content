@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-rpo-rto-for-money",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "RPO/RTO: meeting a 15-minute recovery point objective for payments",
+    "es": "RPO/RTO: cumplir un objetivo de punto de recuperación de 15 minutos para pagos"
+  },
+  "prompt": {
+    "en": "Your payment processing system has a regulatory RPO requirement of ≤15 minutes. A complete primary-region failure must not lose more than 15 minutes of committed transactions. Which architecture satisfies this?",
+    "es": "Tu sistema de procesamiento de pagos tiene un requisito regulatorio de RPO ≤ 15 minutos. Un fallo completo de la región primaria no debe perder más de 15 minutos de transacciones confirmadas. ¿Qué arquitectura satisface este requisito?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Nightly full backup to S3, with weekly point-in-time restore tests.",
+        "es": "Copia de seguridad completa nocturna en S3, con pruebas semanales de restauración en un punto en el tiempo."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Single-region deployment with Multi-AZ redundancy and automated failover within the same region.",
+        "es": "Despliegue en una sola región con redundancia Multi-AZ y conmutación por error automatizada dentro de la misma región."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Cross-region asynchronous replication with measured replication lag ≤10 minutes, plus a warm standby in the secondary region that promotes automatically on primary failure.",
+        "es": "Replicación asíncrona entre regiones con latencia de replicación medida ≤ 10 minutos, más un warm standby en la región secundaria que se promueve automáticamente ante el fallo de la primaria."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "On-call runbooks with a 15-minute mean-time-to-respond SLA for the database operations team.",
+        "es": "Runbooks de guardia con un SLA de tiempo medio de respuesta de 15 minutos para el equipo de operaciones de base de datos."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "RPO measures data loss — how much committed work can be lost on failure — not recovery time. To meet ≤15 min RPO, data must be replicated to a durable secondary location within that window. Cross-region async replication with a lag budget under 15 minutes (here ≤10 min, giving 5-minute margin), plus an automated warm standby, satisfies the requirement. Synchronous cross-region replication also works but adds write latency. Option A (nightly backup) has an RPO of up to 24 hours — unacceptable. Option B (single-region Multi-AZ) protects against AZ failures but a full regional outage destroys data not yet replicated cross-region. Option D confuses RTO (recovery time) with RPO (data loss); runbooks address how fast you recover, not how much data you lose.",
+    "es": "El RPO mide la pérdida de datos — cuánto trabajo confirmado se puede perder ante un fallo — no el tiempo de recuperación. Para cumplir RPO ≤ 15 min, los datos deben replicarse en una ubicación secundaria duradera dentro de esa ventana. La replicación asíncrona entre regiones con un presupuesto de latencia inferior a 15 minutos (aquí ≤ 10 min, con 5 minutos de margen), más un warm standby automatizado, satisface el requisito. La replicación síncrona entre regiones también funciona pero añade latencia de escritura. La opción A (copia nocturna) tiene un RPO de hasta 24 horas — inaceptable. La opción B (Multi-AZ en una sola región) protege contra fallos de AZ pero un apagón regional completo destruye los datos que aún no se replicaron entre regiones. La opción D confunde RTO (tiempo de recuperación) con RPO (pérdida de datos); los runbooks abordan la rapidez de recuperación, no la cantidad de datos perdidos."
+  }
+}

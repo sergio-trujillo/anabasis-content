@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-audit-log-as-first-class",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Audit log: correct treatment as a first-class component",
+    "es": "Registro de auditoría: tratamiento correcto como componente de primera clase"
+  },
+  "prompt": {
+    "en": "A regulatory examiner asks your team to demonstrate that every balance mutation is traceable and tamper-evident. Which design satisfies this requirement?",
+    "es": "Un inspector regulatorio le pide a tu equipo demostrar que toda mutación de saldo es trazable y a prueba de manipulaciones. ¿Qué diseño satisface este requisito?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Append-only immutable audit log in a separate store (e.g. write-once S3 with object-lock), with every balance mutation producing a signed entry before the mutation commits.",
+        "es": "Registro de auditoría de solo adición e inmutable en un almacén separado (p. ej., S3 de escritura única con object-lock), donde cada mutación de saldo produce una entrada firmada antes de que la mutación se confirme."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "A `deleted` flag and `updated_at` timestamp column on the same transactions table, with row-level security preventing deletion.",
+        "es": "Una columna de indicador `deleted` y marca de tiempo `updated_at` en la misma tabla de transacciones, con seguridad a nivel de fila que impide la eliminación."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "A Kafka topic that audit events are published to, consumed exclusively by the analytics pipeline for reporting.",
+        "es": "Un topic de Kafka al que se publican los eventos de auditoría, consumido exclusivamente por el pipeline de analítica para generación de informes."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Application-level logging (stdout) shipped to Splunk with a 90-day retention policy.",
+        "es": "Registro a nivel de aplicación (stdout) enviado a Splunk con una política de retención de 90 días."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "A correct audit log is append-only, physically separate from the business database (so a database rollback or DROP cannot erase it), and tamper-evident — either via cryptographic signatures or WORM storage like S3 Object Lock. Critically, the audit entry must be written before or atomically with the mutation so there is never a committed change without a log entry. Option B is wrong because a mutable table with a soft-delete flag is not tamper-evident — a privileged user can UPDATE the audit columns. Option C is wrong because Kafka is a streaming bus, not a durable write-once audit store — topics can be compacted or deleted, and using it only for analytics ignores the regulatory function. Option D is wrong because application logs are mutable, retention can be shortened, and they lack the structure needed for a regulatory audit trail.",
+    "es": "Un registro de auditoría correcto es de solo adición, físicamente separado de la base de datos de negocio (para que un rollback o DROP de base de datos no pueda borrarlo) y a prueba de manipulaciones — ya sea mediante firmas criptográficas o almacenamiento WORM como S3 Object Lock. De forma crítica, la entrada de auditoría debe escribirse antes o de forma atómica con la mutación, para que nunca exista un cambio confirmado sin una entrada en el log. La opción B es incorrecta porque una tabla mutable con un indicador de borrado suave no es a prueba de manipulaciones — un usuario privilegiado puede hacer UPDATE en las columnas de auditoría. La opción C es incorrecta porque Kafka es un bus de streaming, no un almacén duradero de escritura única — los topics pueden ser compactados o eliminados, y usarlo solo para analítica ignora la función regulatoria. La opción D es incorrecta porque los logs de aplicación son mutables, la retención puede reducirse y carecen de la estructura necesaria para un rastro de auditoría regulatorio."
+  }
+}

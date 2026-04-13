@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-pci-scope-containment",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "PCI-DSS scope containment: minimizing the cardholder data environment",
+    "es": "Contención del alcance PCI-DSS: minimizar el entorno de datos del titular de tarjeta"
+  },
+  "prompt": {
+    "en": "Your architecture review board wants to minimize PCI-DSS scope to reduce compliance burden. Which design choice most directly shrinks the cardholder data environment (CDE)?",
+    "es": "Tu junta de revisión de arquitectura quiere minimizar el alcance PCI-DSS para reducir la carga de cumplimiento. ¿Qué decisión de diseño reduce más directamente el entorno de datos del titular de tarjeta (CDE)?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Encrypt all cardholder data at rest with AES-256 across every service that touches it.",
+        "es": "Cifrar todos los datos del titular de tarjeta en reposo con AES-256 en cada servicio que los manipule."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Tokenize raw PAN (primary account number) at the network edge; all downstream services store and process only opaque tokens, never raw card data.",
+        "es": "Tokenizar el PAN (número de cuenta primario) sin procesar en el perímetro de red; todos los servicios posteriores almacenan y procesan solo tokens opacos, nunca datos de tarjeta sin procesar."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Restrict access to cardholder data with role-based access control (RBAC) and multi-factor authentication.",
+        "es": "Restringir el acceso a los datos del titular de tarjeta con control de acceso basado en roles (RBAC) y autenticación multifactor."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Declare all internal services as in-scope for PCI-DSS and apply the full standard uniformly.",
+        "es": "Declarar todos los servicios internos como dentro del alcance de PCI-DSS y aplicar el estándar completo de manera uniforme."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "PCI-DSS scope is driven by data presence, not data protection. A service that stores encrypted PANs is still in-scope; a service that stores only tokens is not. Tokenization at the edge means raw card data never traverses or rests in downstream systems — they are categorically out of PCI scope. This shrinks the compliance boundary to a small, auditable vault (the tokenization service), reducing audit surface dramatically. Option A (encryption at rest) is a valid security control but does not remove services from PCI scope — the data is still present. Option C (RBAC + MFA) is similarly a required control within the CDE but does nothing to shrink it. Option D is the worst outcome: every service pays the full compliance cost unnecessarily.",
+    "es": "El alcance PCI-DSS está determinado por la presencia de datos, no por su protección. Un servicio que almacena PANs cifrados sigue estando en alcance; un servicio que almacena solo tokens no lo está. La tokenización en el perímetro significa que los datos de tarjeta sin procesar nunca atraviesan ni residen en sistemas posteriores — están categóricamente fuera del alcance PCI. Esto reduce el perímetro de cumplimiento a un vault pequeño y auditable (el servicio de tokenización), reduciendo dramáticamente la superficie de auditoría. La opción A (cifrado en reposo) es un control de seguridad válido pero no elimina los servicios del alcance PCI — los datos siguen presentes. La opción C (RBAC + MFA) es igualmente un control requerido dentro del CDE pero no hace nada para reducirlo. La opción D es el peor resultado: cada servicio paga el costo de cumplimiento completo innecesariamente."
+  }
+}

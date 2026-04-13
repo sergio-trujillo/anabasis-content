@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-strong-consistency-for-money",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Strong consistency: which banking subsystem requires it?",
+    "es": "Consistencia fuerte: ¿qué subsistema bancario la requiere?"
+  },
+  "prompt": {
+    "en": "Your team is deciding which data stores can tolerate eventual consistency to improve throughput. Which subsystem MUST have strong consistency and cannot be relaxed?",
+    "es": "Tu equipo está decidiendo qué almacenes de datos pueden tolerar consistencia eventual para mejorar el rendimiento. ¿Qué subsistema DEBE tener consistencia fuerte y no puede relajarse?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Customer profile (name, address, contact preferences).",
+        "es": "Perfil del cliente (nombre, dirección, preferencias de contacto)."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Marketing preference flags (email opt-in, push notification consent).",
+        "es": "Indicadores de preferencias de marketing (opt-in de email, consentimiento de notificaciones push)."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Ledger balances and transaction postings.",
+        "es": "Saldos del libro contable y registros de transacciones."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Clickstream and analytics events from the mobile app.",
+        "es": "Eventos de flujo de clics y analítica de la aplicación móvil."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Ledger balances and postings are the one area where eventual consistency is categorically unacceptable. A stale balance read could allow an overdraft, a double-spend, or a reconciliation failure that triggers a regulatory audit. Banks require reads-your-writes and serializable (or at minimum snapshot-isolated) transactions across the ledger. Customer profiles (A), marketing flags (B), and analytics events (D) are all amenable to eventual consistency because a momentary stale read has no monetary consequence and no regulatory exposure.",
+    "es": "Los saldos del libro contable y los registros de transacciones son el único área donde la consistencia eventual es categóricamente inaceptable. Una lectura de saldo obsoleta podría permitir un sobregiro, un doble gasto o un fallo de conciliación que desencadene una auditoría regulatoria. Los bancos requieren reads-your-writes y transacciones serializables (o al menos con snapshot isolation) en el ledger. Los perfiles de clientes (A), los indicadores de marketing (B) y los eventos de analítica (D) admiten consistencia eventual porque una lectura obsoleta momentánea no tiene consecuencias monetarias ni exposición regulatoria."
+  }
+}

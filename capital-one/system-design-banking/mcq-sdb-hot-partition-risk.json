@@ -1,0 +1,48 @@
+{
+  "id": "mcq-sdb-hot-partition-risk",
+  "type": "mcq",
+  "section": "system-design-banking",
+  "title": {
+    "en": "Hot-partition risk in a payments Kafka topic",
+    "es": "Riesgo de partición caliente en un topic de Kafka de pagos"
+  },
+  "prompt": {
+    "en": "You are designing partition keys for the authorization event stream. During a Black Friday sale, a single mega-merchant processes 15% of all transactions. Which keying strategy creates a hot-partition risk, and what mitigates it?",
+    "es": "Estás diseñando las claves de partición para el stream de eventos de autorización. Durante una venta de Black Friday, un único mega-comercio procesa el 15% de todas las transacciones. ¿Qué estrategia de claves crea riesgo de partición caliente y qué lo mitiga?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Keying by account_id creates the hot-partition risk; mitigate by keying on merchant_id instead.",
+        "es": "Usar account_id como clave crea el riesgo; mitigarlo usando merchant_id en su lugar."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Keying by merchant_id creates the hot-partition risk because the mega-merchant dominates a single partition; mitigate with a composite key (merchant_id + shard_suffix) or secondary routing to a dedicated high-volume topic.",
+        "es": "Usar merchant_id como clave crea el riesgo porque el mega-comercio domina una sola partición; mitigarlo con una clave compuesta (merchant_id + shard_suffix) o enrutamiento secundario a un topic dedicado de alto volumen."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Keying by event timestamp avoids hot partitions because writes are uniformly distributed over time.",
+        "es": "Usar la marca de tiempo del evento como clave evita las particiones calientes porque las escrituras se distribuyen uniformemente en el tiempo."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Using fully random keys distributes load evenly across all partitions with no hot-partition risk.",
+        "es": "Usar claves completamente aleatorias distribuye la carga uniformemente entre todas las particiones sin riesgo de partición caliente."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Merchant_id keying is the classic hot-partition trap in payments: a mega-merchant (e.g. Amazon, Walmart) can route 10–15% of all volume to a single Kafka partition, saturating that partition's throughput and lagging every downstream consumer that reads it. The mitigation is a composite key that salts the merchant ID — for example (merchant_id, shard_id % N) — spreading the merchant's volume across N partitions, at the cost of losing ordering guarantees within a merchant. A dedicated high-volume topic for known mega-merchants is an alternative. Option A gets cause and effect backwards — account_id tends to be uniformly distributed because no single account has 15% of all volume. Option C (timestamp keying) is wrong for a different reason: all events arriving in the same second hash to the same partition, creating a time-based hot partition. Option D (random keys) eliminates hot partitions but destroys ordering guarantees needed by fraud detection and ledger posting consumers.",
+    "es": "El keying por merchant_id es la trampa clásica de partición caliente en pagos: un mega-comercio (p. ej., Amazon, Walmart) puede enrutar el 10-15% de todo el volumen a una sola partición de Kafka, saturando el throughput de esa partición y rezagando a todos los consumidores que la leen. La mitigación es una clave compuesta que saluda el ID del comercio — por ejemplo (merchant_id, shard_id % N) — distribuyendo el volumen del comercio entre N particiones, a costa de perder las garantías de ordenamiento dentro de un comercio. Un topic dedicado de alto volumen para mega-comercios conocidos es una alternativa. La opción A invierte causa y efecto — el account_id tiende a ser uniformemente distribuido porque ninguna cuenta individual tiene el 15% de todo el volumen. La opción C (keying por timestamp) está mal por otra razón: todos los eventos que llegan en el mismo segundo se hashean a la misma partición, creando una partición caliente basada en el tiempo. La opción D (claves aleatorias) elimina las particiones calientes pero destruye las garantías de ordenamiento necesarias para los consumidores de detección de fraude y registro en el ledger."
+  }
+}
