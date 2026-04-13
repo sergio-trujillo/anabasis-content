@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-breakeven-units",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Breakeven unit calculation",
+    "es": "Cálculo del punto de equilibrio en unidades"
+  },
+  "prompt": {
+    "en": "A new product has fixed costs of $2,000,000 per year, a selling price of $50 per unit, and a variable cost of $20 per unit. Approximately how many units must the business sell per year to break even?",
+    "es": "Un nuevo producto tiene costos fijos de $2,000,000 por año, un precio de venta de $50 por unidad y un costo variable de $20 por unidad. ¿Aproximadamente cuántas unidades debe vender el negocio por año para alcanzar el punto de equilibrio?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "40,000 units",
+        "es": "40,000 unidades"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "67,000 units",
+        "es": "67,000 unidades"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "100,000 units",
+        "es": "100,000 unidades"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Not enough information — the discount rate is needed to calculate breakeven.",
+        "es": "Información insuficiente: se necesita la tasa de descuento para calcular el punto de equilibrio."
+      }
+    }
+  ],
+  "correctOptionId": "b",
+  "explanation": {
+    "en": "Breakeven units = Fixed Costs / Contribution Margin per unit = $2,000,000 / ($50 − $20) = $2,000,000 / $30 ≈ 66,667 units, rounded to ~67K. Option A ($40K) comes from dividing fixed costs by the price alone ($2M / $50), ignoring variable costs entirely — a common error that overstates unit economics. Option C ($100K) divides by the variable cost ($2M / $20), which has no basis in the breakeven formula. Option D is wrong: a discount rate is used in NPV analysis, not in simple breakeven, which is a cash-flow-neutral calculation with no time-value component.",
+    "es": "Unidades de equilibrio = Costos Fijos / Margen de Contribución por unidad = $2,000,000 / ($50 − $20) = $2,000,000 / $30 ≈ 66,667 unidades, redondeado a ~67K. La opción A ($40K) resulta de dividir los costos fijos únicamente por el precio ($2M / $50), ignorando los costos variables por completo — un error frecuente que sobreestima la economía unitaria. La opción C ($100K) divide por el costo variable ($2M / $20), lo cual no tiene base en la fórmula de punto de equilibrio. La opción D es incorrecta: la tasa de descuento se utiliza en el análisis de NPV, no en el punto de equilibrio simple, que es un cálculo de neutralidad de flujo de caja sin componente de valor temporal."
+  }
+}

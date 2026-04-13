@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-payback-vs-npv",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Payback period vs NPV: two investments compared",
+    "es": "Período de recuperación vs NPV: comparación de dos inversiones"
+  },
+  "prompt": {
+    "en": "Investment A costs $1M and returns $500K per year for exactly 2 years, then stops. Investment B costs $1M and returns $250K per year for 10 years. Which statement correctly describes both the payback period comparison AND the NPV comparison (assume a 10% discount rate)?",
+    "es": "La inversión A cuesta $1M y devuelve $500K por año durante exactamente 2 años y luego se detiene. La inversión B cuesta $1M y devuelve $250K por año durante 10 años. ¿Qué enunciado describe correctamente tanto la comparación del período de recuperación como la del NPV (asuma una tasa de descuento del 10%)?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Investment A has a shorter payback period and also the higher NPV, so it is clearly superior.",
+        "es": "La inversión A tiene un período de recuperación más corto y también el NPV más alto, por lo que claramente es superior."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Investment B has the shorter payback period because it pays smaller amounts over longer time.",
+        "es": "La inversión B tiene el período de recuperación más corto porque paga montos menores durante más tiempo."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Investment A has the shorter payback period (2 years vs 4 years), but Investment B likely has the higher NPV because it generates cash flows for 10 years.",
+        "es": "La inversión A tiene el período de recuperación más corto (2 años vs 4 años), pero la inversión B probablemente tiene el NPV más alto porque genera flujos de caja durante 10 años."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Both investments have the same NPV because they have the same initial cost.",
+        "es": "Ambas inversiones tienen el mismo NPV porque tienen el mismo costo inicial."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Payback for A: $1M / $500K = 2 years. Payback for B: $1M / $250K = 4 years. A wins on payback. NPV for A: $500K × annuity factor (10%, 2 yr) ≈ $500K × 1.736 = $868K − $1M = −$132K (actually negative). NPV for B: $250K × annuity factor (10%, 10 yr) ≈ $250K × 6.145 = $1.536M − $1M = +$536K (positive). So B creates value at 10% while A destroys it — despite A's shorter payback. This illustrates the core lesson: payback ignores both the time value of money and cash flows after the payback date. Option A is wrong because A's NPV is actually negative. Option B misreads which investment pays back faster. Option D conflates initial cost with NPV.",
+    "es": "Recuperación de A: $1M / $500K = 2 años. Recuperación de B: $1M / $250K = 4 años. A gana en período de recuperación. NPV de A: $500K × factor de anualidad (10%, 2 años) ≈ $500K × 1.736 = $868K − $1M = −$132K (en realidad negativo). NPV de B: $250K × factor de anualidad (10%, 10 años) ≈ $250K × 6.145 = $1.536M − $1M = +$536K (positivo). Entonces B crea valor al 10% mientras A lo destruye, a pesar del período de recuperación más corto de A. Esto ilustra la lección central: el período de recuperación ignora tanto el valor temporal del dinero como los flujos de caja posteriores a la fecha de recuperación. La opción A es incorrecta porque el NPV de A es en realidad negativo. La opción B malinterpreta cuál inversión se recupera más rápido. La opción D confunde el costo inicial con el NPV."
+  }
+}

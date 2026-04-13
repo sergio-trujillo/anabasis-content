@@ -1,0 +1,21 @@
+{
+  "id": "ic-bcf-size-deposit-market",
+  "type": "interviewer-chat",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Market sizing: high-yield savings opportunity in traditional-bank depositors",
+    "es": "Dimensionamiento de mercado: oportunidad de ahorro de alto rendimiento en depositantes de bancos tradicionales"
+  },
+  "topic": "Size the opportunity for a new Capital One high-yield savings product targeting US depositors currently holding balances at traditional banks (Chase, BofA, Wells Fargo). Do not look for external data — reason through it with the interviewer.",
+  "persona": "Director in Consumer Banking, 14 years at Capital One, ran the strategy team for the 360 Performance Savings deposit product launch. Warm and conversational, but structurally relentless — she will ask 'what's your tree?' within the first two exchanges if the candidate starts calculating before segmenting. Pet-peeve: candidates who reach for numbers before defining what question those numbers are answering. She will interrupt mid-sentence: 'Can I stop you for a second — before you get to the math, what's the question you're structuring an answer to?'",
+  "must_explore": [
+    "the population segmentation tree: how the candidate moves from all US adults to the specific sub-population of traditional-bank depositors with meaningful savings balances — what filters they apply and in what order, with approximate numbers at each node",
+    "which depositor segments the candidate explicitly excludes from the addressable market and why — e.g., customers already at online banks, customers with balances too small to benefit materially from a rate differential, customers who value branch access and will not switch regardless",
+    "the handful of numbers the candidate would need to look up vs can reasonably estimate from first principles — testing whether they know the difference between 'I can anchor this' and 'I need a data source for this'",
+    "a sensitivity call on the single most uncertain input in the sizing — the candidate must name one variable, quantify what the market size looks like at a low vs high assumption for that variable, and explain why that variable matters more than others",
+    "how the candidate would validate their final estimate against an external anchor — e.g., total US savings deposits at traditional banks, Federal Reserve balance data, or competitive intelligence on online-bank market share",
+    "what the sizing answer changes in the business decision — specifically whether the addressable market is large enough to justify the product's fixed cost structure, or whether it changes the go-to-market strategy (e.g., mass vs targeted acquisition)"
+  ],
+  "opening_message": "Hey, good to meet you. So I want to work through a market-sizing problem with you — it's the kind of thing we actually do when we're evaluating a product launch. Here's the setup: Capital One is thinking about a new high-yield savings product, specifically targeting depositors who currently park their money at one of the big traditional banks — Chase, BofA, Wells. Not people already at Ally or Marcus or us — people still at the legacy banks. The question is: how big is that opportunity? Don't go hunting for data — just reason through it with me. Where would you start?",
+  "max_turns": 6
+}

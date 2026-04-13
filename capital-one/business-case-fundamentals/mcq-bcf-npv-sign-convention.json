@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-npv-sign-convention",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Negative NPV: what it means and what to do",
+    "es": "NPV negativo: qué significa y qué hacer"
+  },
+  "prompt": {
+    "en": "A project is evaluated at a 10% discount rate (Capital One's internal cost of capital). The NPV is −$500,000. How should a candidate interpret this result and frame a recommendation?",
+    "es": "Se evalúa un proyecto con una tasa de descuento del 10% (costo de capital interno de Capital One). El NPV es −$500,000. ¿Cómo debe interpretar un candidato este resultado y plantear una recomendación?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "The NPV is close enough to zero that the project is acceptable; slight forecasting errors could make it positive.",
+        "es": "El NPV es suficientemente cercano a cero como para que el proyecto sea aceptable; pequeños errores de pronóstico podrían hacerlo positivo."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "More data is needed; a single discount rate is not sufficient to make a decision.",
+        "es": "Se necesitan más datos; una sola tasa de descuento no es suficiente para tomar una decisión."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "At a 10% discount rate this project destroys value. The recommendation is to reject unless the team can identify levers to improve cash flows, reduce costs, or justify a lower discount rate with a specific rationale.",
+        "es": "Con una tasa de descuento del 10%, este proyecto destruye valor. La recomendación es rechazarlo a menos que el equipo pueda identificar palancas para mejorar los flujos de caja, reducir costos o justificar una tasa de descuento más baja con una justificación específica."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "A negative NPV at 10% means the project would be positive at a higher discount rate, so it should be approved.",
+        "es": "Un NPV negativo al 10% significa que el proyecto sería positivo a una tasa de descuento más alta, por lo que debe aprobarse."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "A negative NPV at the firm's cost of capital means the project returns less than what the capital could earn in its next-best alternative — it destroys value in present-value terms. The correct response is to reject or to identify specific levers that change the math. Option A is a rationalization, not a decision — 'close enough' is not a standard in capital allocation. Option B misunderstands NPV: the discount rate represents the hurdle; if the hurdle is met (positive NPV) the answer is yes, if not (negative NPV) the answer is no — no additional data changes the sign convention. Option D has the direction backwards: a higher discount rate makes future cash flows worth even less, so the NPV would become MORE negative, not positive.",
+    "es": "Un NPV negativo al costo de capital de la empresa significa que el proyecto rinde menos de lo que el capital podría ganar en su mejor alternativa — destruye valor en términos de valor presente. La respuesta correcta es rechazarlo o identificar palancas específicas que cambien la matemática. La opción A es una racionalización, no una decisión — 'suficientemente cercano' no es un estándar en la asignación de capital. La opción B malinterpreta el NPV: la tasa de descuento representa el umbral; si se cumple el umbral (NPV positivo) la respuesta es sí, si no (NPV negativo) la respuesta es no — ningún dato adicional cambia la convención de signos. La opción D tiene la dirección invertida: una tasa de descuento más alta hace que los flujos de caja futuros valgan aún menos, por lo que el NPV se volvería MÁS negativo, no positivo."
+  }
+}

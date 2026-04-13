@@ -1,0 +1,29 @@
+{
+  "id": "op-bcf-payback-investment",
+  "type": "open-prompt",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Payback period: evaluating a $50M marketing-channel investment",
+    "es": "Período de recuperación: evaluar una inversión de $50M en canal de marketing"
+  },
+  "question": {
+    "en": "Capital One is evaluating a $50M investment in a new marketing channel. Leadership has set a hard requirement: payback must be achieved within 3 years. What incremental annual cash flow would the channel need to generate to meet that threshold? What assumptions does that number depend on, and what would make those assumptions fragile?",
+    "es": "Capital One está evaluando una inversión de $50M en un nuevo canal de marketing. La dirección ha establecido un requisito estricto: la recuperación debe lograrse en 3 años. ¿Qué flujo de caja anual incremental necesitaría generar el canal para cumplir ese umbral? ¿De qué suposiciones depende ese número, y qué haría que esas suposiciones fueran frágiles?"
+  },
+  "rubric": {
+    "must_include": [
+      "the explicit payback calculation: required annual cash flow = $50M / 3 years ≈ $16.7M per year",
+      "a named definition of 'incremental': the $16.7M must be net of variable costs the channel incurs — not gross revenue from new customers, but contribution margin after channel-specific costs (creative, ops, servicing of acquired customers)",
+      "acknowledgment of the limitation of payback as a metric: it ignores cash flows beyond year 3 and the time value of money — a channel that pays back in year 3 then generates zero is very different from one that pays back in year 3 and continues generating $10M/year for a decade",
+      "at least two specific fragility factors — e.g., customer LTV assumption (churn rate changes the cash flow curve), channel efficiency degradation (cost-per-acquisition rising as easy audiences are exhausted), attribution model uncertainty (how much revenue is truly incremental vs would have come anyway)",
+      "a complementary NPV framing — noting that a ≤3-year payback at $16.7M/year is a much weaker signal than the NPV at the firm's cost of capital, which is the fuller question management should also be asking"
+    ],
+    "must_avoid": [
+      "confusing gross revenue with incremental cash flow — new customers acquired through the channel carry variable costs that must be subtracted before the payback calculation is meaningful",
+      "treating the 3-year payback requirement as the complete investment criterion without noting what it does not measure",
+      "point-estimate confidence without naming the assumptions that could cause the actual payback to be 4 or 5 years instead of 3"
+    ],
+    "value_alignment": "Business Case Fundamentals",
+    "min_words": 200
+  }
+}

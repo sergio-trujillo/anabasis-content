@@ -1,0 +1,29 @@
+{
+  "id": "op-bcf-cannibalization-reasoning",
+  "type": "open-prompt",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Cannibalization assessment: new card with 40% internal migration",
+    "es": "Evaluación de canibalización: nueva tarjeta con 40% de migración interna"
+  },
+  "question": {
+    "en": "A new card product is projected to bring in $20M in year-one revenue. Your product manager estimates that 40% of applicants will come from existing Capital One cardholders. How would you assess whether this product is good for the company? What specifically would you want to know before you could answer?",
+    "es": "Se proyecta que un nuevo producto de tarjeta generará $20M en ingresos en el primer año. Tu gerente de producto estima que el 40% de los solicitantes serán titulares de tarjetas Capital One existentes. ¿Cómo evaluarías si este producto es bueno para la empresa? ¿Qué necesitarías saber específicamente antes de poder responder?"
+  },
+  "rubric": {
+    "must_include": [
+      "explicit distinction between product-level economics (new card revenue: $20M) and firm-level economics (net revenue after deducting the foregone margin from cannibalized accounts)",
+      "the cannibalization math structure: identify the contribution margin of the existing products being cannibalized (not just revenue), then calculate the net contribution as new-product CM minus foregone existing-product CM for the cannibalized cohort",
+      "the three specific data points needed to complete the assessment: (1) CM % of the existing products the migrating customers currently hold, (2) whether the migrating customers will fully cancel their old cards or hold both, (3) the new card's CM %",
+      "acknowledgment that cannibalization is not automatically bad — if the new product captures a customer who would otherwise have churned to a competitor, the 'cannibalization' is actually retention",
+      "a named scenario where the product would fail the firm-level test: e.g., if existing-card CM is 65% and the new card is 45%, every cannibalizing customer dilutes total margin even though product-level revenue grows"
+    ],
+    "must_avoid": [
+      "treating the $20M revenue figure as the bottom line without adjusting for cannibalization",
+      "assuming cannibalization is always harmful — the direction depends on the margin comparison between old and new products",
+      "generic 'it depends' without naming the specific margin comparison that drives the answer"
+    ],
+    "value_alignment": "Business Case Fundamentals",
+    "min_words": 200
+  }
+}

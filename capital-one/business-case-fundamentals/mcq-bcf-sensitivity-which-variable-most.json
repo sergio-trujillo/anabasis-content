@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-sensitivity-which-variable-most",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Sensitivity analysis: identifying and showing the swing variable",
+    "es": "Análisis de sensibilidad: identificar y mostrar la variable de mayor impacto"
+  },
+  "prompt": {
+    "en": "A candidate has just presented a business case projecting $25M NPV for a new credit-card product. The senior interviewer asks: \"Which input variable swings your answer the most?\" Which response is strongest?",
+    "es": "Un candidato acaba de presentar un caso de negocio que proyecta un NPV de $25M para un nuevo producto de tarjeta de crédito. El entrevistador senior pregunta: \"¿Qué variable de entrada mueve más tu respuesta?\" ¿Qué respuesta es la más sólida?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"All of them matter, so it's hard to single out just one.\"",
+        "es": "\"Todas importan, así que es difícil destacar solo una.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"I think it's the customer penetration rate — that feels like the most uncertain assumption.\"",
+        "es": "\"Creo que es la tasa de penetración de clientes — esa parece la suposición más incierta.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"It's market size — a bigger market always means a bigger NPV.\"",
+        "es": "\"Es el tamaño del mercado — un mercado más grande siempre significa un NPV más alto.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"Customer penetration rate is the swing variable: at 5% penetration the NPV is $8M, at 10% it's $25M, and at 15% it reaches $42M — a $34M range. No other variable moves the answer that far within a realistic range.\"",
+        "es": "\"La tasa de penetración de clientes es la variable determinante: con 5% de penetración el NPV es $8M, con 10% es $25M y con 15% alcanza $42M — un rango de $34M. Ninguna otra variable mueve la respuesta tanto dentro de un rango realista.\""
+      }
+    }
+  ],
+  "correctOptionId": "d",
+  "explanation": {
+    "en": "A sensitivity answer earns full credit only when it names the variable AND shows the range — the swing. Option D identifies penetration rate and quantifies what happens at low, base, and high cases, demonstrating that the analyst actually ran the sensitivity rather than guessing. This is the pattern senior Capital One interviewers reward: structured quantitative thinking, not gut feel. Option A is a non-answer — saying everything matters is equivalent to saying nothing. Option B identifies the right variable but provides no evidence; it is a guess dressed as analysis. Option C commits an analytical error: market size matters, but in a typical model it affects the top of the funnel proportionally — penetration rate, average revenue per user, or churn are often more sensitive because small percentage-point changes compound across the customer lifetime.",
+    "es": "Una respuesta de sensibilidad merece crédito completo solo cuando nombra la variable Y muestra el rango — el movimiento. La opción D identifica la tasa de penetración y cuantifica qué ocurre en los casos bajo, base y alto, demostrando que el analista realmente ejecutó la sensibilidad en lugar de adivinar. Este es el patrón que recompensan los entrevistadores senior de Capital One: pensamiento cuantitativo estructurado, no intuición. La opción A no responde — decir que todo importa es equivalente a no decir nada. La opción B identifica la variable correcta pero no proporciona evidencia; es una suposición disfrazada de análisis. La opción C comete un error analítico: el tamaño del mercado importa, pero en un modelo típico afecta la parte superior del embudo de manera proporcional — la tasa de penetración, los ingresos promedio por usuario o la tasa de abandono suelen ser más sensibles porque los cambios de pequeños puntos porcentuales se acumulan a lo largo de la vida del cliente."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "op-bcf-size-new-segment",
+  "type": "open-prompt",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Size the addressable market: recent college graduates",
+    "es": "Dimensionar el mercado objetivo: recién egresados universitarios"
+  },
+  "question": {
+    "en": "Capital One is considering launching a new credit card targeting recent US college graduates. Size the addressable market for this segment. Walk through your assumptions out loud.",
+    "es": "Capital One está considerando lanzar una nueva tarjeta de crédito dirigida a recién egresados universitarios en EE. UU. Dimensiona el mercado objetivo para este segmento. Explica tus suposiciones en voz alta."
+  },
+  "rubric": {
+    "must_include": [
+      "a visible segmentation tree — not a narrative: start from a population anchor (US adults or annual graduates), strip to the addressable segment through named filters with approximate numbers at each step",
+      "explicit distinction between TAM (total graduates with credit need) and SAM (graduates Capital One could realistically win given product fit, credit score minimums, and competitive alternatives like Discover it Student)",
+      "at least one named uncertainty with a stated sensitivity — e.g., 'if the graduation-to-first-card conversion rate is 40% vs 60%, the SAM shifts from Xm to Ym'",
+      "a stated assumption about what makes this segment economically attractive or not — LTV potential, card activation rates, or early-career income trajectory",
+      "numbers at every node of the tree — not 'a significant portion' but specific percentages and resulting headcounts"
+    ],
+    "must_avoid": [
+      "top-down-only reasoning ('the US student card market is $Xbn') without a bottom-up segmentation to cross-check or anchor it",
+      "ignoring cannibalization risk — if Capital One already has existing student or secured-card products, new entrants from this campaign may displace existing product revenue",
+      "generic 'it depends' statements without naming what it depends on and why that variable matters"
+    ],
+    "value_alignment": "Business Case Fundamentals",
+    "min_words": 200
+  }
+}

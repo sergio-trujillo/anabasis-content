@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-contribution-margin-vs-gross-margin",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Contribution margin vs gross margin: marginal customer economics",
+    "es": "Margen de contribución vs margen bruto: economía del cliente marginal"
+  },
+  "prompt": {
+    "en": "A candidate analyzes a new customer acquisition opportunity and says: \"Our gross margin is 60%, so every incremental customer we acquire is 60% profit.\" Which response most precisely identifies the flaw in this reasoning?",
+    "es": "Un candidato analiza una oportunidad de adquisición de nuevos clientes y dice: \"Nuestro margen bruto es del 60%, así que cada cliente incremental que adquirimos representa un 60% de ganancia.\" ¿Qué respuesta identifica con mayor precisión el error en este razonamiento?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "The 60% figure is optimistic; real gross margins in this industry are lower.",
+        "es": "El 60% es optimista; los márgenes brutos reales en esta industria son menores."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "You also need to subtract income taxes before calling it profit.",
+        "es": "También se deben descontar los impuestos sobre la renta antes de llamarlo ganancia."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Gross margin may include allocated fixed costs per unit. The marginal customer's profitability depends on contribution margin — revenue minus only the variable costs that increase because of that customer — not gross margin.",
+        "es": "El margen bruto puede incluir costos fijos asignados por unidad. La rentabilidad del cliente marginal depende del margen de contribución — ingresos menos únicamente los costos variables que aumentan por ese cliente — no del margen bruto."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "The 60% must be discounted for time value of money before comparing across customers.",
+        "es": "El 60% debe descontarse por el valor temporal del dinero antes de compararlo entre clientes."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The core principle is contribution margin: for the next incremental customer, the relevant cost is only the costs that change — variable costs like transaction processing, fraud loss, and servicing. Gross margin often includes a share of fixed overhead allocated per unit (data-center costs, compliance headcount). That allocated overhead does not actually increase when you add one more customer; it was already being paid. Option A challenges the number but not the reasoning error. Option B is a downstream concern about net income, not about the marginal economics. Option D introduces NPV concepts that are correct in their own right but do not address the fixed-vs-variable confusion the candidate made.",
+    "es": "El principio fundamental es el margen de contribución: para el siguiente cliente incremental, el costo relevante son únicamente los costos que cambian — costos variables como el procesamiento de transacciones, la pérdida por fraude y el servicio. El margen bruto frecuentemente incluye una porción de gastos generales fijos asignados por unidad (costos de centros de datos, personal de cumplimiento). Esa sobrecarga asignada en realidad no aumenta al agregar un cliente más; ya se estaba pagando. La opción A cuestiona el número pero no el error de razonamiento. La opción B es una preocupación posterior sobre el ingreso neto, no sobre la economía marginal. La opción D introduce conceptos de NPV que son correctos en sí mismos, pero no abordan la confusión entre costos fijos y variables que cometió el candidato."
+  }
+}

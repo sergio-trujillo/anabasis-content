@@ -1,0 +1,29 @@
+{
+  "id": "op-bcf-sensitivity-analysis-verbal",
+  "type": "open-prompt",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Sensitivity analysis: which variable drove the outcome",
+    "es": "Análisis de sensibilidad: qué variable determinó el resultado"
+  },
+  "question": {
+    "en": "Describe a business or technical decision you analyzed quantitatively. Which input variable did the answer turn out to be most sensitive to? How did you discover that, and what did you do about it once you knew?",
+    "es": "Describe una decisión empresarial o técnica que hayas analizado cuantitativamente. ¿A qué variable de entrada resultó ser más sensible la respuesta? ¿Cómo lo descubriste y qué hiciste al respecto una vez que lo supiste?"
+  },
+  "rubric": {
+    "must_include": [
+      "a concrete decision with a named outcome metric — not 'I analyzed a project' but 'I was evaluating whether to expand capacity / launch a product / prioritize feature X, with success defined as ROI > 20% / payback < 2 years / etc.'",
+      "the variable identified as most sensitive AND a quantitative demonstration — even if approximate: 'when I moved churn from 15% to 25%, the NPV swung from +$4M to −$1M; no other input caused a sign change within a realistic range'",
+      "a named method for discovering the sensitivity — whether that was a formal tornado chart, manual what-if analysis, a conversation with a domain expert who challenged the assumption, or something else",
+      "a concrete action taken once the swing variable was identified — e.g., invested in better data to narrow the range, redesigned the product to reduce sensitivity to that variable, added a monitoring checkpoint tied to the variable",
+      "acknowledgment of the distinction between uncertainty (the variable is hard to forecast) and sensitivity (the variable moves the answer a lot) — both matter but they are different; the most dangerous variables are both uncertain AND sensitive"
+    ],
+    "must_avoid": [
+      "describing only what the model showed without explaining how the sensitivity was discovered or acted on",
+      "naming a variable as sensitive without any quantitative evidence — 'customer count was the most important factor' without showing what changed when the assumption changed",
+      "conflating the variable that was largest in the model with the variable the answer was most sensitive to — the biggest number is often a fixed assumption; sensitivity belongs to the variables with the widest realistic range"
+    ],
+    "value_alignment": "Business Case Fundamentals",
+    "min_words": 200
+  }
+}

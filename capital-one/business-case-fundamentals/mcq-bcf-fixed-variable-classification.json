@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-fixed-variable-classification",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Fixed vs variable cost classification in consumer credit",
+    "es": "Clasificación de costos fijos vs variables en crédito al consumidor"
+  },
+  "prompt": {
+    "en": "A consumer-credit business is modeling how costs will change as it grows its customer base from 1M to 2M accounts over three years. Which of the following cost items is most clearly variable — meaning it scales directly with account volume?",
+    "es": "Un negocio de crédito al consumidor está modelando cómo cambiarán los costos al hacer crecer su base de clientes de 1M a 2M cuentas en tres años. ¿Cuál de los siguientes ítems de costo es más claramente variable — es decir, escala directamente con el volumen de cuentas?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Data-center and cloud infrastructure footprint.",
+        "es": "Infraestructura de centros de datos y nube."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Corporate headquarters lease and facilities.",
+        "es": "Arriendo de sede corporativa e instalaciones."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Fraud losses (fraud rate × transaction volume per account).",
+        "es": "Pérdidas por fraude (tasa de fraude × volumen de transacciones por cuenta)."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Compliance and legal department headcount.",
+        "es": "Dotación de personal de cumplimiento y legal."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Fraud losses scale directly with the number of accounts and transaction volume: more accounts means more cards in circulation, more transaction events, and proportionally more fraud exposure. The cost is driven by a rate multiplied by a volume — the defining characteristic of a variable cost. Option A (infrastructure) is a common trap: cloud costs are often cited as variable, but in practice data-center and core infrastructure investments step up in large chunks when capacity thresholds are crossed — they are step-variable, not purely variable. Option B (HQ facilities) is clearly fixed; lease obligations do not change whether you have 1M or 2M accounts. Option D (compliance headcount) is fixed in the short run and step-variable in the long run; headcount does not scale linearly with account count the way fraud losses do.",
+    "es": "Las pérdidas por fraude escalan directamente con el número de cuentas y el volumen de transacciones: más cuentas significa más tarjetas en circulación, más eventos de transacciones y proporcionalmente mayor exposición al fraude. El costo está determinado por una tasa multiplicada por un volumen — la característica definitoria de un costo variable. La opción A (infraestructura) es una trampa común: los costos de la nube a menudo se citan como variables, pero en la práctica las inversiones en centros de datos e infraestructura central aumentan en grandes bloques cuando se superan los umbrales de capacidad — son semi-variables, no puramente variables. La opción B (instalaciones de la sede) es claramente fija; las obligaciones de arrendamiento no cambian si se tienen 1M o 2M de cuentas. La opción D (personal de cumplimiento) es fija a corto plazo y semi-variable a largo plazo; la dotación no escala linealmente con el número de cuentas de la manera en que lo hacen las pérdidas por fraude."
+  }
+}

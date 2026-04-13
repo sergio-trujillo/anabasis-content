@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-cannibalization-adjustment",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Cannibalization: adjusting new-product revenue for internal share shift",
+    "es": "Canibalización: ajustar los ingresos del nuevo producto por desplazamiento interno de participación"
+  },
+  "prompt": {
+    "en": "A new rewards card is projected to generate $10M in year-one revenue. Analysis shows 30% of applicants will migrate from an existing Capital One card that carries a contribution margin of $7M on $10M of revenue (70% CM). The new card has a contribution margin of 50%. What is the net incremental contribution to Capital One in year one, and what principle does the adjustment demonstrate?",
+    "es": "Se proyecta que una nueva tarjeta de recompensas generará $10M en ingresos en el primer año. El análisis muestra que el 30% de los solicitantes migrarán desde una tarjeta Capital One existente que tiene un margen de contribución de $7M sobre $10M de ingresos (70% CM). La nueva tarjeta tiene un margen de contribución del 50%. ¿Cuál es la contribución incremental neta para Capital One en el año uno, y qué principio demuestra el ajuste?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Net contribution is $5M (50% CM on $10M). Cannibalization is irrelevant because the customer stays at Capital One regardless.",
+        "es": "La contribución neta es $5M (50% CM sobre $10M). La canibalización es irrelevante porque el cliente permanece en Capital One de todas formas."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "The entire $3M from cannibalizing customers ($10M × 30%) should be subtracted from revenue before calculating margin.",
+        "es": "Los $3M completos de clientes canibalizados ($10M × 30%) deben restarse de los ingresos antes de calcular el margen."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "New-product gross contribution is $5M (50% on $10M). The cannibalized portion loses $2.1M in foregone existing-card CM ($7M CM × 30%), yielding ~$2.9M net incremental contribution. The principle is: evaluate new products at firm level, not product level.",
+        "es": "La contribución bruta del nuevo producto es $5M (50% sobre $10M). La porción canibalizada pierde $2.1M en CM de tarjeta existente sacrificada ($7M CM × 30%), resultando en ~$2.9M de contribución incremental neta. El principio es: evaluar nuevos productos a nivel de empresa, no a nivel de producto."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "The answer depends on price elasticity of the cannibalized segment; without that data the calculation cannot be completed.",
+        "es": "La respuesta depende de la elasticidad de precio del segmento canibalizado; sin esos datos no se puede completar el cálculo."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The cannibalization adjustment requires a firm-level lens: the 30% of customers who migrate from the existing card were previously generating $7M CM on $10M revenue. The $3M of new-card revenue they represent ($10M × 30%) comes with new-card CM of $1.5M ($3M × 50%), but it displaces existing-card CM of $2.1M ($7M × 30%). So that cannibalized cohort is actually margin-dilutive ($1.5M gained vs $2.1M lost). The remaining 70% of new-card revenue ($7M) adds $3.5M in genuine new CM. Total net: $3.5M + $1.5M − $2.1M ≈ $2.9M. Option A ignores the economics entirely — the fact that the customer 'stays at Capital One' is the reason firm-level accounting matters, not a reason to skip it. Option B subtracts revenue rather than foregone contribution margin — the wrong adjustment. Option D over-complicates: the cannibalization impact is calculable with the given CM data; elasticity governs how many migrate, which is already given as 30%.",
+    "es": "El ajuste por canibalización requiere una perspectiva a nivel de empresa: el 30% de clientes que migran de la tarjeta existente anteriormente generaban $7M de CM sobre $10M de ingresos. Los $3M de ingresos de la nueva tarjeta que representan ($10M × 30%) vienen con CM de la nueva tarjeta de $1.5M ($3M × 50%), pero desplazan CM de la tarjeta existente de $2.1M ($7M × 30%). Por lo tanto, ese grupo canibalizado en realidad diluye el margen ($1.5M ganados vs $2.1M perdidos). El 70% restante de los ingresos de la nueva tarjeta ($7M) agrega $3.5M en CM genuinamente nuevo. Total neto: $3.5M + $1.5M − $2.1M ≈ $2.9M. La opción A ignora la economía por completo — el hecho de que el cliente 'permanezca en Capital One' es la razón por la que importa la contabilidad a nivel de empresa, no una razón para omitirla. La opción B resta ingresos en lugar del margen de contribución sacrificado — el ajuste incorrecto. La opción D sobrecompilca: el impacto de la canibalización es calculable con los datos de CM dados; la elasticidad rige cuántos migran, lo cual ya se da como 30%."
+  }
+}

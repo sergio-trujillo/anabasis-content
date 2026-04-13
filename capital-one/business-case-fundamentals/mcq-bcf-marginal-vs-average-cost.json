@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-marginal-vs-average-cost",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Marginal vs average cost: pricing the next customer",
+    "es": "Costo marginal vs costo promedio: precio del próximo cliente"
+  },
+  "prompt": {
+    "en": "A consumer-lending business has 500,000 customers, total annual operating costs of $50M (including fixed data-center and compliance costs), yielding an average cost per customer of $100. A new marketing campaign could add 10,000 customers. Should the team use $100 as the cost basis for pricing this incremental cohort?",
+    "es": "Un negocio de crédito al consumidor tiene 500,000 clientes, costos operativos anuales totales de $50M (incluyendo costos fijos de centros de datos y cumplimiento), lo que resulta en un costo promedio por cliente de $100. Una nueva campaña de marketing podría agregar 10,000 clientes. ¿Debería el equipo usar $100 como base de costos para fijar el precio de este grupo incremental?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Yes — the average cost reflects the true all-in cost per customer, which is the right basis for any pricing decision.",
+        "es": "Sí — el costo promedio refleja el costo total real por cliente, que es la base correcta para cualquier decisión de precios."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Yes, but add a 20% margin on $100 to ensure profitability.",
+        "es": "Sí, pero agrega un margen del 20% sobre $100 para asegurar la rentabilidad."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "No — the incremental cohort should be priced against the marginal cost: the additional costs that actually increase by adding these 10,000 customers. Fixed costs are already committed and do not change.",
+        "es": "No — el grupo incremental debe fijarse contra el costo marginal: los costos adicionales que realmente aumentan al agregar estos 10,000 clientes. Los costos fijos ya están comprometidos y no cambian."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "The average cost needs to be recalculated using the new total customer base before making any pricing decision.",
+        "es": "El costo promedio debe recalcularse usando la nueva base total de clientes antes de tomar cualquier decisión de precios."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The marginal cost principle: the fixed costs (data center, compliance headcount) are already incurred whether or not the new 10,000 customers join. They are sunk from the decision's perspective. The variable costs that change — servicing, fraud exposure, credit-risk provisioning per account — are the relevant cost for pricing the marginal cohort. Using average cost ($100) overstates the cost of the next customer (fixed portion is included) and can lead to incorrectly rejecting a profitable cohort. Option A is the classic average-cost trap. Option B compounds the error: 20% margin on an inflated base still misprices the economics. Option D is a distractor — recalculating average cost with the new base simply smooths the error; it does not fix the fixed-vs-variable distinction.",
+    "es": "El principio del costo marginal: los costos fijos (centro de datos, personal de cumplimiento) ya se incurren independientemente de si los nuevos 10,000 clientes se incorporan o no. Son costos hundidos desde la perspectiva de la decisión. Los costos variables que cambian — servicio, exposición a fraude, provisión de riesgo crediticio por cuenta — son el costo relevante para fijar el precio del grupo marginal. Usar el costo promedio ($100) sobreestima el costo del próximo cliente (se incluye la porción fija) y puede llevar a rechazar incorrectamente un grupo rentable. La opción A es la trampa clásica del costo promedio. La opción B agrava el error: un margen del 20% sobre una base inflada sigue fijando mal la economía. La opción D es un distractor — recalcular el costo promedio con la nueva base simplemente suaviza el error; no corrige la distinción entre costos fijos y variables."
+  }
+}

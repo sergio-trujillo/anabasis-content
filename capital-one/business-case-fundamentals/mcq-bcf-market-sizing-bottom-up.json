@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-market-sizing-bottom-up",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Bottom-up market sizing: US credit-card-eligible adults",
+    "es": "Estimación bottom-up: adultos elegibles para tarjeta de crédito en EE. UU."
+  },
+  "prompt": {
+    "en": "An interviewer asks: \"How many US adults are credit-card eligible — meaning they could plausibly qualify for a standard consumer credit card?\" Which approach and answer is closest to correct?",
+    "es": "Un entrevistador pregunta: \"¿Cuántos adultos en EE. UU. son elegibles para tarjeta de crédito — es decir, podrían razonablemente calificar para una tarjeta de crédito al consumidor estándar?\" ¿Qué enfoque y respuesta están más cerca de ser correctos?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "~330 million — use total US population as the addressable universe since anyone could apply.",
+        "es": "~330 millones — usar la población total de EE. UU. como el universo objetivo ya que cualquiera podría aplicar."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "~50 million — only affluent households can realistically carry revolving credit.",
+        "es": "~50 millones — solo los hogares de altos ingresos pueden llevar crédito revolvente de manera realista."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Bottom-up: ~330M total US population → ~260M adults (18+) → subtract unbanked/thin-credit/low-income (~20%) → ~210M eligible adults.",
+        "es": "Bottom-up: ~330M de población total de EE. UU. → ~260M adultos (18+) → restar sin banco/crédito escaso/bajos ingresos (~20%) → ~210M adultos elegibles."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "This question cannot be answered without survey data or census reports — estimation is too imprecise to be useful.",
+        "es": "Esta pregunta no puede responderse sin datos de encuestas o informes del censo — la estimación es demasiado imprecisa para ser útil."
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "The bottom-up segmentation path is the correct method: start with a known anchor (US total population ~330M), strip to the relevant segment (adults 18+, ~260M), then apply a reasonable exclusion rate for the unbanked, thin-credit-file, and very-low-income population (~20%, leaving ~210M). The answer ~200–210M is consistent with published Federal Reserve data on credit-card account prevalence. Option A uses total population, ignoring that children and a meaningful share of adults do not qualify — it overstates the market. Option B excludes the working and middle class who represent the majority of credit-card holders — it dramatically understates. Option D is the trap of refusing to estimate; in a case round, declining to size the market signals an inability to work under ambiguity, not methodological caution.",
+    "es": "El camino de segmentación bottom-up es el método correcto: comenzar con un ancla conocida (población total de EE. UU. ~330M), reducir al segmento relevante (adultos 18+, ~260M), luego aplicar una tasa de exclusión razonable para la población sin banco, con historial crediticio escaso y de muy bajos ingresos (~20%, dejando ~210M). La respuesta ~200–210M es consistente con los datos publicados por la Reserva Federal sobre la prevalencia de cuentas de tarjetas de crédito. La opción A usa la población total, ignorando que los niños y una parte significativa de adultos no califican — sobreestima el mercado. La opción B excluye a la clase trabajadora y media, que representan la mayoría de los titulares de tarjetas de crédito — subestima dramáticamente. La opción D es la trampa de negarse a estimar; en una ronda de casos, negarse a dimensionar el mercado señala incapacidad para trabajar bajo ambigüedad, no cautela metodológica."
+  }
+}

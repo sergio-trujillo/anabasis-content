@@ -1,0 +1,29 @@
+{
+  "id": "op-bcf-unit-economics-exercise",
+  "type": "open-prompt",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Unit economics structure: 5-year credit-card customer lifetime",
+    "es": "Estructura de economía unitaria: vida útil de 5 años de un cliente de tarjeta de crédito"
+  },
+  "question": {
+    "en": "Walk me through the unit economics of a Capital One credit-card customer over a 5-year lifetime. Do not use real numbers — use reasonable assumptions and show your structure clearly. Flag which variables you would want to sharpen if you were actually building this model.",
+    "es": "Explícame la economía unitaria de un cliente de tarjeta de crédito de Capital One durante 5 años. No uses números reales — usa suposiciones razonables y muestra tu estructura claramente. Señala qué variables querrías afinar si realmente estuvieras construyendo este modelo."
+  },
+  "rubric": {
+    "must_include": [
+      "a structured revenue waterfall showing the main income streams in order: interchange revenue (% of spend × average monthly spend × 12 × 5), interest income (revolve rate × average balance × APR × months revolving), and fee income (annual fee if applicable, late fees — noted as declining with tenure)",
+      "a structured cost waterfall showing: acquisition cost (one-time CAC), credit loss provision (expected loss rate × average balance × tenure), fraud loss (fraud rate × spend volume), and ongoing servicing cost (per-account-year × 5)",
+      "explicit separation of one-time costs (CAC, onboarding) from recurring costs (servicing, loss provision) — flagging that CAC is incurred in year 0 and the model only becomes positive once cumulative CM exceeds CAC",
+      "at least three variables flagged as high-sensitivity with a brief reason each: revolve rate (drives interest income materially), credit loss rate (varies 3–10x between prime and subprime), and annual spend (drives interchange, the primary driver for transactors)",
+      "the payback intuition: approximate the year in which CAC is recovered from cumulative CM, showing the reasoning even if rough"
+    ],
+    "must_avoid": [
+      "mixing LTV (multi-year cumulative) with per-year economics without labeling which timeframe each number refers to",
+      "ignoring that customers who revolve and customers who pay in full (transactors) have completely different unit economics — the model should distinguish or at least name this bifurcation",
+      "presenting only the revenue side without costs, or only costs without revenue — unit economics requires both"
+    ],
+    "value_alignment": "Business Case Fundamentals",
+    "min_words": 200
+  }
+}

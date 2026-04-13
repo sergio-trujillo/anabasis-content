@@ -1,0 +1,48 @@
+{
+  "id": "mcq-bcf-scenario-framing",
+  "type": "mcq",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Scenario framing: base / upside / downside",
+    "es": "Encuadre de escenarios: base / optimista / pesimista"
+  },
+  "prompt": {
+    "en": "A candidate has been asked to recommend whether Capital One should launch a new balance-transfer promotion. Which response best demonstrates scenario-trained business reasoning?",
+    "es": "Se le ha pedido a un candidato que recomiende si Capital One debe lanzar una nueva promoción de transferencia de saldo. ¿Qué respuesta demuestra mejor el razonamiento empresarial entrenado en escenarios?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "\"Based on our model, the promotion will generate $20M in incremental profit. I recommend we launch.\"",
+        "es": "\"Según nuestro modelo, la promoción generará $20M en ganancias incrementales. Recomiendo que lancemos.\""
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "\"The promotion could generate somewhere between $10M and $30M depending on conditions. I recommend we launch but monitor closely.\"",
+        "es": "\"La promoción podría generar entre $10M y $30M dependiendo de las condiciones. Recomiendo lanzar pero con seguimiento cercano.\""
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "\"Base case: $20M profit if approval rate holds at 35% and attrition is normal. Downside: $7M if approval tightens to 25% or balance-transfer utilization underperforms. Upside: $34M if we hit stretch utilization and low loss rates. The downside is acceptable; I recommend launch with a 60-day checkpoint on approval rate.\"",
+        "es": "\"Caso base: $20M de ganancia si la tasa de aprobación se mantiene en 35% y la deserción es normal. Caso pesimista: $7M si la aprobación se ajusta al 25% o el uso de transferencia de saldo tiene bajo rendimiento. Caso optimista: $34M si alcanzamos la utilización máxima y tasas de pérdida bajas. El caso pesimista es aceptable; recomiendo el lanzamiento con un punto de control a 60 días sobre la tasa de aprobación.\""
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "\"I'd need more data before making a recommendation — specifically loss-rate assumptions from the risk team.\"",
+        "es": "\"Necesitaría más datos antes de hacer una recomendación — específicamente las suposiciones de tasa de pérdida del equipo de riesgo.\""
+      }
+    }
+  ],
+  "correctOptionId": "c",
+  "explanation": {
+    "en": "Scenario framing requires three things: a named base case with specific assumption anchors, a quantified downside that tests whether the business can absorb a bad outcome, and a quantified upside that shows the ceiling. Option C delivers all three, names the variables (approval rate, utilization, loss rate), and closes with a conditional recommendation and a monitoring checkpoint — the pattern of a senior analyst. Option A is a point estimate; it presents a confident number but gives the decision-maker no way to assess risk. Option B provides a range without scenarios: '$10M–$30M' does not tell the interviewer which inputs drive each end, nor does it name what has to go right or wrong. Option D is a stall — asking for more data when the question provides enough structure to reason is a signal of analysis paralysis, not rigor.",
+    "es": "El encuadre de escenarios requiere tres cosas: un caso base nombrado con anclas de suposiciones específicas, un caso pesimista cuantificado que pruebe si el negocio puede absorber un mal resultado, y un caso optimista cuantificado que muestre el techo. La opción C entrega los tres, nombra las variables (tasa de aprobación, utilización, tasa de pérdida) y cierra con una recomendación condicional y un punto de control de seguimiento — el patrón de un analista senior. La opción A es una estimación puntual; presenta un número confiado pero no da al tomador de decisiones ninguna manera de evaluar el riesgo. La opción B proporciona un rango sin escenarios: '$10M–$30M' no le dice al entrevistador qué entradas impulsan cada extremo, ni nombra qué tiene que salir bien o mal. La opción D es una dilación — pedir más datos cuando la pregunta proporciona suficiente estructura para razonar es una señal de parálisis de análisis, no de rigor."
+  }
+}

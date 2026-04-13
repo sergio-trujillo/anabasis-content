@@ -1,0 +1,29 @@
+{
+  "id": "op-bcf-breakeven-pricing",
+  "type": "open-prompt",
+  "section": "business-case-fundamentals",
+  "title": {
+    "en": "Breakeven analysis: fraud-detection feature justification",
+    "es": "Análisis de punto de equilibrio: justificación de función de detección de fraude"
+  },
+  "question": {
+    "en": "A new fraud-detection feature costs $3M per year in fixed operating expenses to maintain. Each fraud case it successfully prevents averts an average of $40 in direct loss. How many fraud cases per year must the feature prevent to break even? Walk through the calculation and name the assumptions your answer depends on.",
+    "es": "Una nueva función de detección de fraude cuesta $3M por año en gastos operativos fijos para mantener. Cada caso de fraude que previene exitosamente evita una pérdida directa promedio de $40. ¿Cuántos casos de fraude por año debe prevenir la función para alcanzar el punto de equilibrio? Explica el cálculo y nombra las suposiciones de las que depende tu respuesta."
+  },
+  "rubric": {
+    "must_include": [
+      "the explicit breakeven formula applied: breakeven cases = fixed cost / value per prevented case = $3M / $40 = 75,000 cases per year",
+      "acknowledgment that $40 is likely an average that masks a distribution — high-value fraud events (account takeover, card-present fraud) may save far more per case while low-value disputes save less",
+      "distinction between fraud cases prevented and fraud cases detected — a false-positive rate means some 'prevented' cases are legitimate transactions, which carries its own cost (customer friction, declined spend, potential churn)",
+      "the assumption about marginal vs fully-loaded cost: if the $3M includes only incremental cost, the breakeven holds; if shared infrastructure is allocated into the $3M, the true incremental breakeven is lower",
+      "at least one named fragility: what would cause the breakeven to move by a factor of 2 or more (e.g., if average averted loss is $20 instead of $40, breakeven doubles to 150K cases)"
+    ],
+    "must_avoid": [
+      "stopping at the arithmetic answer (75,000) without discussing the assumptions it depends on",
+      "confusing total fraud cases in the portfolio with incremental cases the feature would prevent — the feature does not prevent all fraud, only the subset its model catches",
+      "ignoring the cost of false positives as a business expense that should factor into the net benefit calculation"
+    ],
+    "value_alignment": "Business Case Fundamentals",
+    "min_words": 150
+  }
+}
