@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-weak-st-smell",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Red flags in a Succeed Together story",
+    "es": "Señales de alerta en una historia de Succeed Together"
+  },
+  "prompt": {
+    "en": "An interviewer asks for a Succeed Together story and receives the following response. Which response contains the strongest ST red flag?",
+    "es": "Un entrevistador pide una historia de Succeed Together y recibe la siguiente respuesta. ¿Cuál respuesta contiene la señal de alerta más fuerte de ST?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "'We had a tough Q4 push. I led the team, coordinated across three squads, and made sure everyone stayed aligned. We shipped on time, and I personally delivered the two highest-complexity modules. The team succeeded because I kept everyone focused.'",
+        "es": "'Tuvimos un duro push en el Q4. Lideré al equipo, coordiné entre tres squads y me aseguré de que todos se mantuvieran alineados. Enviamos a tiempo, y yo personalmente entregué los dos módulos de mayor complejidad. El equipo tuvo éxito porque yo mantuve a todos enfocados.'"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "'We had a tough Q4. I wasn't the tech lead, but I spent two weeks on the integration glue code that nobody wanted to own because it was boring work. It wasn't what I had planned to work on, but the team needed someone to hold that piece together.'",
+        "es": "'Tuvimos un duro Q4. No era el líder técnico, pero pasé dos semanas en el código de integración que nadie quería porque era trabajo aburrido. No era lo que había planeado hacer, pero el equipo necesitaba a alguien que mantuviera esa pieza unida.'"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "'In that sprint, I let my teammate take the lead on the demo even though I'd done most of the underlying work. I wanted her to get the recognition, and it felt like the right thing for the team.'",
+        "es": "'En ese sprint, dejé que mi compañera tomara la delantera en la demo aunque yo había hecho la mayor parte del trabajo subyacente. Quería que ella obtuviera el reconocimiento, y se sintió como lo correcto para el equipo.'"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "'I noticed the PM was struggling to get engineering estimates in time for planning. I started including them in our architecture syncs and giving them early rough estimates before the official request. It made planning much smoother for both sides.'",
+        "es": "'Noté que la PM tenía dificultades para obtener estimaciones de ingeniería a tiempo para la planificación. Comencé a incluirla en nuestras sincronizaciones de arquitectura y a darle estimaciones aproximadas anticipadas antes de la solicitud oficial. Hizo que la planificación fuera mucho más fluida para ambos lados.'"
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is the hero narrative in team-story clothing — the strongest ST red flag. The candidate claims the team succeeded 'because I kept everyone focused,' personally delivered the hardest work, and coordinated everything. No teammate is named, no one else's contribution is described, and the structure of the story positions the team as an orchestra the candidate conducted. This conflates individual output with shared outcome. Option B is actually a clean ST signal: accepting unglamorous work for team need, without martyrdom framing ('it wasn't what I planned, but the team needed it' — matter of fact). Option C has a mild ST signal (credit handoff), though 'I wanted her to get recognition' edges toward performed generosity — the 'felt like the right thing' framing is slightly self-congratulatory. It's a mediocre ST story, not a red flag. Option D is solid cross-functional allyship with no red flags.",
+    "es": "La opción A es la narrativa heroica vestida como historia de equipo — la señal de alerta más fuerte de ST. El candidato afirma que el equipo tuvo éxito 'porque yo mantuve a todos enfocados', entregó personalmente el trabajo más difícil, y coordinó todo. No se nombra a ningún compañero, no se describe la contribución de nadie más, y la estructura de la historia posiciona al equipo como una orquesta que el candidato dirigió. Esto conflate el resultado individual con el resultado compartido. La opción B es en realidad una señal limpia de ST: aceptar trabajo poco glamoroso por necesidad del equipo, sin enmarcado de martirologio ('no era lo que planeé, pero el equipo lo necesitaba' — hecho simple). La opción C tiene una señal leve de ST (traspaso de crédito), aunque 'quería que ella obtuviera el reconocimiento' bordea la generosidad performativa — el enmarcado de 'se sintió como lo correcto' es ligeramente autocongratulatorio. Es una historia de ST mediocre, no una señal de alerta. La opción D es una alianza multifuncional sólida sin señales de alerta."
+  }
+}

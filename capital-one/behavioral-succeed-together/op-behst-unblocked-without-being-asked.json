@@ -1,0 +1,30 @@
+{
+  "id": "op-behst-unblocked-without-being-asked",
+  "type": "open-prompt",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Noticing the blocker before anyone named it",
+    "es": "Notar el bloqueador antes de que alguien lo nombrara"
+  },
+  "question": {
+    "en": "Describe a time you noticed a teammate was stuck and stepped in without being asked. How did you notice, and what specifically did you do to help?",
+    "es": "Describe una ocasión en la que notaste que un compañero estaba bloqueado y interviniste sin que te lo pidieran. ¿Cómo lo notaste, y qué específicamente hiciste para ayudar?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific signal the candidate noticed — not a formal blocker declaration, but the early pattern or behavior that indicated the teammate was stuck (e.g., a repeated standup mention, a Slack tone change, a PR sitting unreviewed)",
+      "the named teammate who was stuck — without a name, the story cannot demonstrate that this was a real relationship and not a constructed scenario",
+      "the specific action the candidate took to unblock — not 'I helped them' but the concrete thing: a contact they reached out to, a piece of work they took on, a dependency they resolved",
+      "why this was the candidate's move to make — the reasoning for stepping in rather than waiting: relevant context, network access, capacity, or skill that made them the right person",
+      "the outcome for the teammate and the project — specifically whether the unblock worked and what it allowed the team to do"
+    ],
+    "must_avoid": [
+      "stories where the teammate explicitly asked for help — proactive unblocking requires noticing before the ask; if the teammate had to surface the blocker, this is not the story",
+      "generic 'I was always available' framing with no specific instance — availability is not unblocking; the story requires a concrete action in a specific situation",
+      "escalating to a manager as the unblocking move — unless the escalation was the only path, this signals reactive rather than proactive behavior",
+      "framing the unblock as the candidate's initiative in a way that diminishes the teammate's agency ('I saw they couldn't handle it so I stepped in')"
+    ],
+    "value_alignment": "Succeed Together",
+    "min_words": 150
+  }
+}

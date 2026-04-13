@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-st-vs-rfi",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "ST vs. RFI: identifying the canonical label",
+    "es": "ST vs. RFI: identificar la etiqueta canónica"
+  },
+  "prompt": {
+    "en": "A candidate tells this story: 'We had a critical deadline coming up, and two of my teammates were stuck on separate problems. I stayed late two nights — not because anyone asked me to — to pair with each of them and get them unblocked. During one of those sessions, my teammate pushed back hard on how I was explaining something, and I had to slow down and actually listen to understand where her mental model differed from mine before I could help her. We got both features shipped in time.' Which Capital One value is this story CANONICALLY about?",
+    "es": "Un candidato cuenta esta historia: 'Teníamos una fecha límite crítica acercándose, y dos de mis compañeros estaban bloqueados en problemas separados. Me quedé tarde dos noches — no porque nadie me lo pidiera — para hacer pair programming con cada uno de ellos y desbloquearlos. Durante una de esas sesiones, mi compañera me rebatió fuertemente sobre cómo estaba explicando algo, y tuve que ralentizarme y realmente escuchar para entender dónde su modelo mental difería del mío antes de poder ayudarla. Ambas funciones se enviaron a tiempo.' ¿Sobre qué valor de Capital One trata canónicamente esta historia?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Succeed Together — the structurally dominant action is proactive unblocking: the candidate volunteered unglamorous late-night work to enable the team's shared outcome, not because they were assigned to it.",
+        "es": "Succeed Together — la acción estructuralmente dominante es el desbloqueo proactivo: el candidato se ofreció a hacer trabajo poco glamoroso de noche para permitir el resultado compartido del equipo, sin que se lo asignaran."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Respect for Individuals — the structurally dominant action is listening and adjusting when a teammate pushed back, which reflects dignity under pressure.",
+        "es": "Respect for Individuals — la acción estructuralmente dominante es escuchar y ajustarse cuando una compañera rebatió, lo que refleja dignidad bajo presión."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Both values equally — the story contains clear elements of both ST and RFI and cannot be canonically labeled as one.",
+        "es": "Ambos valores igualmente — la historia contiene elementos claros tanto de ST como de RFI y no puede etiquetarse canónicamente como uno."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Excellence — the candidate voluntarily worked late and drove two features to completion under deadline pressure.",
+        "es": "Excellence — el candidato trabajó voluntariamente hasta tarde y llevó dos funciones a la completación bajo la presión de la fecha límite."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is correct. The structural center of this story is ST: the candidate voluntarily took on additional work (two late nights, pairing across two teammates) to unblock a shared team outcome. The listening moment is present, but it is instrumental — it was something the candidate had to do in the middle of an unblocking session, not the subject of the story. The canonical label follows the structural action, not a single moment in the story. Option B would be correct if the story were primarily about a difficult interpersonal dynamic the candidate navigated — but the interpersonal moment here is one beat in a larger unblocking story. Option C is the 'both' trap: most real stories contain elements of multiple values. The skill is identifying the CANONICAL label by asking what the story is structurally about. Option D (Excellence) might describe the output but misses the direction of effort — Excellence is about the candidate's own standard of work; ST is about directing effort toward the team's shared outcome.",
+    "es": "La opción A es correcta. El centro estructural de esta historia es ST: el candidato asumió voluntariamente trabajo adicional (dos noches tarde, haciendo pair programming con dos compañeros) para desbloquear un resultado compartido del equipo. El momento de escucha está presente, pero es instrumental — fue algo que el candidato tuvo que hacer en medio de una sesión de desbloqueo, no el tema de la historia. La etiqueta canónica sigue la acción estructural, no un solo momento en la historia. La opción B sería correcta si la historia tratara principalmente sobre una dinámica interpersonal difícil que el candidato navegó — pero el momento interpersonal aquí es un solo beat en una historia de desbloqueo más amplia. La opción C es la trampa del 'ambos': la mayoría de las historias reales contienen elementos de múltiples valores. La habilidad es identificar la etiqueta CANÓNICA preguntando de qué trata la historia estructuralmente. La opción D (Excellence) podría describir el resultado pero se pierde la dirección del esfuerzo — Excellence trata sobre el propio estándar de trabajo del candidato; ST trata sobre dirigir el esfuerzo hacia el resultado compartido del equipo."
+  }
+}

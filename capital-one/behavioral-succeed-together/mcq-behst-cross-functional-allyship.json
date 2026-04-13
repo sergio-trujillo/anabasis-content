@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-cross-functional-allyship",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Treating PM and design as partners, not ticket-dispensers",
+    "es": "Tratar a PM y diseño como socios, no como dispensadores de tickets"
+  },
+  "prompt": {
+    "en": "Your team is mid-sprint on a new payments flow. The PM, Daniela, sends a Slack message: 'Just flagging — I heard from a few customers in a research session that the confirmation step feels confusing. Not sure if that changes anything technically but wanted you to know.' Which framing of your response best demonstrates cross-functional allyship?",
+    "es": "Tu equipo está a mitad del sprint en un nuevo flujo de pagos. La PM, Daniela, envía un mensaje de Slack: 'Solo avisando — escuché de algunos clientes en una sesión de investigación que el paso de confirmación se siente confuso. No estoy segura si eso cambia algo técnicamente pero quería que lo supieran.' ¿Cuál framing de tu respuesta demuestra mejor la alianza multifuncional?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Reply: 'Thanks Daniela — this is useful before we finalize the flow. Can we get 30 minutes together this week? I want to understand what specifically confused them — that might affect where we put the confirmation logic, not just the copy.'",
+        "es": "Responder: 'Gracias Daniela — esto es útil antes de que finalicemos el flujo. ¿Podemos reunirnos 30 minutos esta semana? Quiero entender qué específicamente los confundió — eso podría afectar dónde ponemos la lógica de confirmación, no solo el texto.'"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Reply: 'Thanks for flagging! If you want to create a ticket with the UX changes you'd like, I can look at the effort estimate and see what we can fit in the sprint.'",
+        "es": "Responder: '¡Gracias por avisar! Si quieres crear un ticket con los cambios de UX que deseas, puedo revisar la estimación de esfuerzo y ver qué podemos incluir en el sprint.'"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Reply: 'Appreciated — I'll flag this to the design team so they can look at the confirmation step copy and visual layout.'",
+        "es": "Responder: 'Agradecido — informaré al equipo de diseño para que puedan revisar el texto del paso de confirmación y el diseño visual.'"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Reply: 'Got it, noted. We're too deep in the sprint to change the flow now, but I'll add this to the backlog for the next cycle.'",
+        "es": "Responder: 'Entendido, anotado. Estamos demasiado avanzados en el sprint para cambiar el flujo ahora, pero lo agregaré al backlog para el próximo ciclo.'"
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A treats Daniela as a domain expert who surfaced a signal the engineering team couldn't have surfaced themselves — it asks a question that could affect the technical architecture, not just the surface text, and makes room for a real conversation before the decision is locked. That's allyship: using her knowledge to improve the outcome together. Option B is the ticket-dispenser pattern: it reduces Daniela to a request-generator and positions the engineer as the decision-maker who'll grant or deny effort. The PM becomes an input queue. Option C passes the signal sideways to design without engaging with the underlying insight — it disposes of the information rather than using it. Option D closes the door in the name of sprint discipline: technically defensible but ST-failure because it treats an incoming insight as a disruption rather than an opportunity for the team to ship something better.",
+    "es": "La opción A trata a Daniela como una experta en el dominio que identificó una señal que el equipo de ingeniería no podría haber identificado por sí solo — hace una pregunta que podría afectar la arquitectura técnica, no solo el texto superficial, y crea espacio para una conversación real antes de que la decisión esté bloqueada. Eso es alianza: usar su conocimiento para mejorar el resultado juntos. La opción B es el patrón del dispensador de tickets: reduce a Daniela a un generador de solicitudes y posiciona al ingeniero como el tomador de decisiones que concederá o negará esfuerzo. La PM se convierte en una cola de entrada. La opción C pasa la señal lateralmente al diseño sin comprometerse con el conocimiento subyacente — elimina la información en lugar de usarla. La opción D cierra la puerta en nombre de la disciplina del sprint: técnicamente defendible pero un fallo de ST porque trata un conocimiento entrante como una interrupción en lugar de una oportunidad para que el equipo entregue algo mejor."
+  }
+}

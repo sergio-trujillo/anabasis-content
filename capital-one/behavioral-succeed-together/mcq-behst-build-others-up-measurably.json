@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-build-others-up-measurably",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Building up a teammate measurably, not just culturally",
+    "es": "Hacer crecer a un compañero de forma medible, no solo culturalmente"
+  },
+  "prompt": {
+    "en": "An interviewer asks: 'Tell me about a time you helped a teammate grow.' Which answer best demonstrates a measurable, specific contribution to another person's capability?",
+    "es": "Un entrevistador pregunta: 'Cuéntame sobre una ocasión en la que ayudaste a un compañero a crecer.' ¿Cuál respuesta demuestra mejor una contribución medible y específica a la capacidad de otra persona?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "I worked with Jorge for six months while he was ramping up on distributed systems. I gave him ownership of the retry-logic module and reviewed every PR with detailed comments on failure-mode thinking specifically. By the end of the quarter, he wrote the incident post-mortem for a production outage without any prompting — something he told me he wouldn't have felt confident doing four months earlier.",
+        "es": "Trabajé con Jorge durante seis meses mientras se ponía al día en sistemas distribuidos. Le di propiedad del módulo de lógica de reintentos y revisé cada PR con comentarios detallados específicamente sobre el pensamiento de modos de falla. Al final del trimestre, escribió el post-mortem de incidente por una interrupción de producción sin necesidad de que se lo pidieran — algo que me dijo que no hubiera sentido capaz de hacer cuatro meses antes."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "I was always available for my team — I made it a point to have an open-door policy. People knew they could come to me with questions at any time, and I'd stop what I was doing to help them.",
+        "es": "Siempre estuve disponible para mi equipo — me propuse tener una política de puerta abierta. La gente sabía que podía venir a mí con preguntas en cualquier momento, y yo dejaría lo que estaba haciendo para ayudarlos."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "I mentored a junior engineer on my team for a year. She's great now — she got promoted and the whole team recognizes her as a strong contributor.",
+        "es": "Tutoré a una ingeniera junior en mi equipo durante un año. Ahora es excelente — fue promovida y todo el equipo la reconoce como una colaboradora fuerte."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "I made sure to share knowledge across the team through weekly tech talks. Knowledge-sharing is important for team health, and I took ownership of driving that culture.",
+        "es": "Me aseguré de compartir conocimiento en el equipo a través de charlas técnicas semanales. El intercambio de conocimiento es importante para la salud del equipo, y asumí la responsabilidad de impulsar esa cultura."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A has all three elements of measurable teammate development: a specific skill (distributed systems, failure-mode thinking), a specific artifact (the incident post-mortem Jorge wrote independently), and a specific indicator from Jorge himself about what changed. The promotion outcome reflects his growth, not just the work environment. Option B is availability theater: being present is not the same as building capability. It names no specific skill, no specific person, no artifact, no outcome. Option C has the promotion outcome but is otherwise hollow — 'she's great now' is the candidate's assessment, not a named skill or artifact. The story also implies the promotion proves the mentorship, which reverses the logic. Option D shifts to a structural (weekly talks) rather than relational intervention — useful but it is building culture, not building a person's specific capability.",
+    "es": "La opción A tiene los tres elementos del desarrollo medible de un compañero: una habilidad específica (sistemas distribuidos, pensamiento de modos de falla), un artefacto específico (el post-mortem de incidente que Jorge escribió independientemente), y un indicador específico del propio Jorge sobre qué cambió. El resultado de la promoción refleja su crecimiento, no solo el entorno de trabajo. La opción B es el teatro de la disponibilidad: estar presente no es lo mismo que construir capacidad. No nombra ninguna habilidad específica, ninguna persona específica, ningún artefacto, ningún resultado. La opción C tiene el resultado de la promoción pero es hueca en lo demás — 'ahora es excelente' es la evaluación del candidato, no una habilidad o artefacto nombrado. La historia también implica que la promoción prueba la mentoría, lo que invierte la lógica. La opción D cambia a una intervención estructural (charlas semanales) en lugar de relacional — útil pero es construir cultura, no la capacidad específica de una persona."
+  }
+}

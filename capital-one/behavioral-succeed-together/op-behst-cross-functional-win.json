@@ -1,0 +1,30 @@
+{
+  "id": "op-behst-cross-functional-win",
+  "type": "open-prompt",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "A win that required genuine cross-functional partnership",
+    "es": "Un éxito que requirió una verdadera alianza multifuncional"
+  },
+  "question": {
+    "en": "Tell me about a project that succeeded because of how you worked with a non-engineering partner — a PM, designer, compliance officer, ops lead, or legal contact. What specifically did you do that a typical engineering hand-off wouldn't have done?",
+    "es": "Cuéntame sobre un proyecto que tuvo éxito debido a cómo trabajaste con un socio no técnico — un PM, diseñador, oficial de cumplimiento, líder de operaciones o contacto legal. ¿Qué hiciste específicamente que un traspaso de ingeniería típico no hubiera hecho?"
+  },
+  "rubric": {
+    "must_include": [
+      "the named non-engineering partner and their specific role — 'the PM' without a name or the nature of their domain is insufficient",
+      "the specific thing the candidate did that went beyond the standard engineering hand-off — concrete: attending their planning sessions, translating a technical constraint into product language, surfacing an insight from the codebase that changed a product decision",
+      "a concrete artifact or outcome that would not have existed if the candidate had treated the relationship as a ticket queue — the actual thing that was different because of how they engaged",
+      "the non-engineering partner's contribution — what they brought that the engineering team could not have surfaced alone; if the story centers only what engineering contributed, it is not a partnership story",
+      "an honest account of friction, if any — cross-functional work that 'just worked smoothly' is suspect; real partnership usually requires translation and adjustment"
+    ],
+    "must_avoid": [
+      "framing the non-engineering partner as a requirements-gatherer or ticket-source — 'I worked closely with the PM to understand requirements' describes consumption, not partnership",
+      "stories where the non-engineering partner is unnamed or described only by function ('the design team') — if you cannot name the person, the partnership is not real in the story",
+      "outcome framing that credits only the engineering execution ('we built exactly what they asked for and it shipped') — ST cross-functional win requires the partner's domain to have shaped the outcome, not just the input",
+      "'built relationships' or 'aligned stakeholders' language with no artifact — relationship language without a concrete outcome is not a partnership story"
+    ],
+    "value_alignment": "Succeed Together",
+    "min_words": 175
+  }
+}

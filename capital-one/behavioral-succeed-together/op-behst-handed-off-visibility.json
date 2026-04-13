@@ -1,0 +1,30 @@
+{
+  "id": "op-behst-handed-off-visibility",
+  "type": "open-prompt",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Letting someone else take the visibility",
+    "es": "Dejar que otra persona tome la visibilidad"
+  },
+  "question": {
+    "en": "Tell me about a time you let someone else take the visibility on a project you contributed heavily to. Why did you make that call, and what did you do instead of being in front?",
+    "es": "Cuéntame sobre una ocasión en la que dejaste que otra persona tomara la visibilidad en un proyecto al que contribuiste en gran medida. ¿Por qué tomaste esa decisión, y qué hiciste en lugar de estar al frente?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific teammate named by name and role — ST stories without a named peer are structurally suspect",
+      "what the candidate specifically chose not to claim — the work, the presentation, the credit attribution they gave up, not paraphrased as 'I stepped back'",
+      "the reason the handoff was the right call for the team or for that specific person — not a statement that it was the right thing, but the reasoning that drove it",
+      "what the candidate did instead — the unglamorous or invisible contribution they made while the named person had the visible role",
+      "evidence of how the handoff was received — by the teammate, the audience, or the project outcome — as an observation, not self-validation ('she told me afterward it was the first time she'd presented to a VP')"
+    ],
+    "must_avoid": [
+      "flat 'we shared credit' framing — sharing credit is not handing it off; this story requires the candidate to have made themselves invisible while someone else was visible",
+      "hero narrative in handoff clothing — 'I coached them through it and they did great' still centers the candidate as the enabler; the story should center the teammate and what they achieved",
+      "'I also shipped X' appended to the handoff story — individual output conflated with the team-visibility decision undermines the ST signal",
+      "describing the handoff as a sacrifice or moral act — the framing should be matter-of-fact: this was what the team needed, not a test of character the candidate passed"
+    ],
+    "value_alignment": "Succeed Together",
+    "min_words": 175
+  }
+}

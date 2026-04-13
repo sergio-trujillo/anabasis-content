@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-leave-team-stronger",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Leaving the team stronger — beyond your features shipping",
+    "es": "Dejar al equipo mejor — más allá de que tus funciones hayan salido"
+  },
+  "prompt": {
+    "en": "You are wrapping up 18 months on a high-impact team before rotating to a new role. An interviewer asks: 'What will be better about this team because you were on it — setting aside the features you personally built?' Which answer best demonstrates a Succeed Together legacy?",
+    "es": "Estás terminando 18 meses en un equipo de alto impacto antes de rotar a un nuevo rol. Un entrevistador pregunta: '¿Qué será mejor en este equipo porque estuvieras en él — dejando de lado las funciones que construiste personalmente?' ¿Cuál respuesta demuestra mejor un legado de Succeed Together?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Two specific things: First, our on-call rotation is more sustainable — I wrote the runbook and ran three incident-response dry runs last quarter; the team now resolves most P1s without escalation. Second, Lena — who joined as a new grad — can now design and review distributed systems architecture independently. I specifically paired with her on three design reviews and gave her primary authorship on the last one.",
+        "es": "Dos cosas específicas: Primero, nuestra rotación de guardia es más sostenible — escribí el runbook y realicé tres simulacros de respuesta a incidentes el trimestre pasado; el equipo ahora resuelve la mayoría de los P1s sin escalación. Segundo, Lena — quien se unió como recién graduada — ahora puede diseñar y revisar arquitectura de sistemas distribuidos de forma independiente. Me asocié específicamente con ella en tres revisiones de diseño y le di autoría principal en la última."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "I think I brought a culture of quality and attention to detail. People know that if something goes through my review, it's going to be solid. I hope I raised the bar for what good work looks like on this team.",
+        "es": "Creo que traje una cultura de calidad y atención al detalle. La gente sabe que si algo pasa por mi revisión, va a ser sólido. Espero haber elevado el listón de cómo se ve el buen trabajo en este equipo."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "We shipped a lot together. The team's velocity increased significantly while I was here, and I think the strong delivery record we built will carry forward even after I leave.",
+        "es": "Enviamos mucho juntos. La velocidad del equipo aumentó significativamente mientras estuve aquí, y creo que el fuerte historial de entrega que construimos seguirá adelante incluso después de que me vaya."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "I became the go-to person for architecture decisions and cross-team dependencies. I built strong relationships across four partner teams and made sure our team had good visibility with senior leadership.",
+        "es": "Me convertí en la persona de referencia para las decisiones de arquitectura y dependencias entre equipos. Construí relaciones sólidas con cuatro equipos socios y me aseguré de que nuestro equipo tuviera buena visibilidad con el liderazgo senior."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A names two things that will persist after the candidate leaves: a process (the runbook and on-call protocols that the whole team now uses) and a person's capability (Lena's independent architecture skills). Critically, neither of these is the candidate's features — both would survive even if all the candidate's code were rolled back. Option B is culture-talk with no artifacts: 'culture of quality' is a feeling, not a capability. If the candidate leaves, does the culture stay? There's no mechanism named. Option C conflates the team's output metrics with the team's capability — velocity during the candidate's tenure is not durable improvement; it may just have been the candidate doing the work. Option D names relationships and visibility that are personal to the candidate — when they leave, those relationships leave with them. That's individual capital, not team-strengthening.",
+    "es": "La opción A nombra dos cosas que persistirán después de que el candidato se vaya: un proceso (el runbook y los protocolos de guardia que todo el equipo ahora usa) y la capacidad de una persona (las habilidades de arquitectura independientes de Lena). Críticamente, ninguno de estos son las funciones del candidato — ambos sobrevivirían incluso si todo el código del candidato fuera revertido. La opción B es charla cultural sin artefactos: 'cultura de calidad' es un sentimiento, no una capacidad. Si el candidato se va, ¿la cultura se queda? No se nombra ningún mecanismo. La opción C conflate las métricas de salida del equipo con la capacidad del equipo — la velocidad durante el mandato del candidato no es una mejora duradera; puede que haya sido simplemente el candidato haciendo el trabajo. La opción D nombra relaciones y visibilidad que son personales al candidato — cuando se van, esas relaciones se van con ellos. Eso es capital individual, no fortalecimiento del equipo."
+  }
+}

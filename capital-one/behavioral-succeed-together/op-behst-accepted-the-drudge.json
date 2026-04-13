@@ -1,0 +1,30 @@
+{
+  "id": "op-behst-accepted-the-drudge",
+  "type": "open-prompt",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Taking the unglamorous piece because the team needed it",
+    "es": "Tomar la parte poco glamorosa porque el equipo la necesitaba"
+  },
+  "question": {
+    "en": "Describe a time you took on boring, unglamorous, or career-limiting work because the team needed it. How did you feel about it in the moment, and what actually happened?",
+    "es": "Describe una ocasión en la que asumiste trabajo aburrido, poco glamoroso o que limitaba tu carrera porque el equipo lo necesitaba. ¿Cómo te sentiste en el momento, y qué pasó en realidad?"
+  },
+  "rubric": {
+    "must_include": [
+      "the specific work the candidate took on — named concretely: legacy data pipeline cleanup, test coverage for an inherited codebase, documentation that nobody wanted to write, migration glue code, on-call rotation no one was willing to own",
+      "why it was boring or career-limiting — the candidate should be able to name what made it unglamorous: no architectural novelty, not visible to leadership, would not appear on a resume, was someone else's mess",
+      "who benefited from the candidate taking it — the named teammate or team function that was unblocked or enabled by the candidate doing this work",
+      "an honest account of how the candidate actually felt — not a polished retrospective ('I knew it was the right call') but what the in-the-moment experience was; flat affect ('it was fine') is more credible than performed nobility",
+      "the actual outcome — whether anyone noticed, whether it mattered, whether the team shipped because of it; including the possibility that it went largely unnoticed is acceptable and adds credibility"
+    ],
+    "must_avoid": [
+      "martyrdom or sacrifice framing — 'I gave up my own growth to help the team' signals resentment and frames the contribution as moral performance rather than team-oriented action",
+      "retroactive nobility — 'I always believe in doing the unglamorous work' as a general principle rather than a specific instance with a real cost and a real beneficiary",
+      "minimizing the unpleasantness ('it wasn't that bad, really') — if the work wasn't actually unglamorous, this is not the story; the whole point is acknowledging the real cost",
+      "framing where the candidate negotiated a trade ('I took the boring work in exchange for getting Track A next sprint') — conditional contributions are not ST; they are deals"
+    ],
+    "value_alignment": "Succeed Together",
+    "min_words": 150
+  }
+}

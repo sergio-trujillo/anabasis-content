@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-take-the-hit",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Accepting the unglamorous task without martyrdom",
+    "es": "Aceptar la tarea poco glamorosa sin martirologio"
+  },
+  "prompt": {
+    "en": "Sprint planning. The team has two tracks: Track A is building the new recommendation engine — architecturally interesting, high visibility, will be demoed to the VP. Track B is fixing legacy data pipeline inconsistencies — tedious, no glamour, critical for Track A to work correctly. Nobody volunteers for Track B. You have relevant context that would make you the most efficient person to do it. Which response best reflects a Succeed Together posture?",
+    "es": "Planificación del sprint. El equipo tiene dos tracks: Track A está construyendo el nuevo motor de recomendación — arquitectónicamente interesante, alta visibilidad, será demostrado al VP. Track B está arreglando inconsistencias en el pipeline de datos heredado — tedioso, sin glamour, crítico para que Track A funcione correctamente. Nadie se ofrece voluntario para el Track B. Tienes contexto relevante que te haría la persona más eficiente para hacerlo. ¿Cuál respuesta refleja mejor una postura de Succeed Together?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Say: 'I'll take Track B — I've worked in that pipeline before and I can move through the inconsistencies faster than anyone starting fresh. It'll unblock Track A sooner.' Then work Track B without making it a point of ongoing commentary.",
+        "es": "Decir: 'Yo tomo el Track B — he trabajado en ese pipeline antes y puedo moverme por las inconsistencias más rápido que alguien que empieza de cero. Desbloqueará el Track A más rápido.' Luego trabajar en el Track B sin convertirlo en un punto de comentario continuo."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Volunteer for Track B, but make sure to mention to your manager afterward that you did it as a favor to the team — you want your sacrifice to be recognized at review time.",
+        "es": "Ofrecerse voluntario para el Track B, pero asegurarse de mencionar a tu manager después que lo hiciste como un favor al equipo — quieres que tu sacrificio sea reconocido en el momento de la evaluación."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Suggest that the team rotate Track B work fairly — everyone should share the burden, and no one person should get stuck with the unglamorous work.",
+        "es": "Sugerir que el equipo rote el trabajo del Track B de forma justa — todos deben compartir la carga, y ninguna persona debería quedarse atascada con el trabajo poco glamoroso."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Note that you have the context to do Track B efficiently, but express that you'd prefer Track A and ask if the work could be distributed differently so you also get some interesting problems this sprint.",
+        "es": "Señalar que tienes el contexto para hacer el Track B eficientemente, pero expresar que preferirías el Track A y preguntar si el trabajo podría distribuirse de forma diferente para que también tengas algunos problemas interesantes en este sprint."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is the ST response: the candidate volunteers on the basis of team efficiency (I'll unblock Track A faster), not as a favor or sacrifice, and then does the work without converting it into a running narrative about their contribution. The absence of martyrdom language is deliberate — ST contribution is matter-of-fact, not performed. Option B volunteers but immediately activates a credit-tracking mechanism — the 'sacrifice' framing and manager mention reveals the contribution was conditional on visibility. That's a ST anti-pattern. Option C proposes fairness rotation, which is reasonable in general but sidesteps the specific situation where the candidate has unique efficiency and the team needs the work done now. Fairness rotation is a long-term structural fix, not an immediate unblocking move. Option D is honest about preferences, which is fine, but it explicitly declines to take the hit when the candidate is the best positioned person — the opposite of the ST move when the team needs someone to take the boring work.",
+    "es": "La opción A es la respuesta ST: el candidato se ofrece voluntario sobre la base de la eficiencia del equipo (desbloquearé el Track A más rápido), no como un favor o sacrificio, y luego hace el trabajo sin convertirlo en una narrativa en curso sobre su contribución. La ausencia del lenguaje de martirologio es deliberada — la contribución de ST es un hecho, no una actuación. La opción B se ofrece voluntario pero inmediatamente activa un mecanismo de seguimiento de crédito — el enmarcado de 'sacrificio' y la mención al manager revela que la contribución era condicional a la visibilidad. Ese es un anti-patrón de ST. La opción C propone una rotación de equidad, que es razonable en general pero evita la situación específica donde el candidato tiene eficiencia única y el equipo necesita que el trabajo se haga ahora. La rotación de equidad es una solución estructural a largo plazo, no un movimiento de desbloqueo inmediato. La opción D es honesta sobre las preferencias, lo cual está bien, pero explícitamente se niega a asumir el golpe cuando el candidato es la persona mejor posicionada — lo opuesto al movimiento ST cuando el equipo necesita que alguien tome el trabajo aburrido."
+  }
+}

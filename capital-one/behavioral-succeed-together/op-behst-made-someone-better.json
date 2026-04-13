@@ -1,0 +1,30 @@
+{
+  "id": "op-behst-made-someone-better",
+  "type": "open-prompt",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "A skill a teammate has now that they didn't when you started",
+    "es": "Una habilidad que un compañero tiene ahora que no tenía cuando empezaron"
+  },
+  "question": {
+    "en": "Tell me about a specific skill or capability a teammate has now that they didn't have when you started working with them — and what you did to help them get there.",
+    "es": "Cuéntame sobre una habilidad o capacidad específica que un compañero tiene ahora que no tenía cuando comenzaron a trabajar juntos — y qué hiciste para ayudarlos a llegar ahí."
+  },
+  "rubric": {
+    "must_include": [
+      "the specific teammate named by name — 'a junior engineer' or 'someone on my team' is not sufficient; if this is real, the candidate remembers the name",
+      "the specific skill or capability that changed — 'grew as an engineer' is not a skill; 'now independently designs and reviews distributed systems failure modes' is",
+      "the specific thing the candidate did — not 'I mentored them' but the concrete mechanism: giving ownership of a module, reviewing with detailed failure-mode comments, co-authoring and then stepping back, running deliberate scenario exercises",
+      "a concrete artifact that demonstrates the capability now exists — a PR they wrote independently, a design doc they authored, a presentation they led, an incident post-mortem they drove",
+      "evidence the capability belongs to the teammate, not the candidate — 'they told me they felt confident for the first time' or 'they were assigned lead on the next project in that area' rather than 'I could tell they had improved'"
+    ],
+    "must_avoid": [
+      "describing the teammate's promotion as the evidence of growth — promotions are organizational decisions; the capability artifact should be named separately",
+      "availability-based mentoring ('I was always there when they needed me') — being present is not developing a skill; the story requires the candidate to have designed the growth path, not just been accessible",
+      "vague 'they grew a lot' or 'they're great now' framing — these are the candidate's impressions, not signals of the teammate's capability",
+      "centering the candidate's effort rather than the teammate's outcome — if the story is about how much the candidate invested, it is an Excellence story about effort; if it's about what the teammate can now do, it is ST"
+    ],
+    "value_alignment": "Succeed Together",
+    "min_words": 175
+  }
+}

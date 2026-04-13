@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-team-win-over-individual-visibility",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Handing off the high-visibility piece",
+    "es": "Ceder la parte de mayor visibilidad"
+  },
+  "prompt": {
+    "en": "Your team is building a major new feature under tight deadline. You designed the core architecture and have been the technical lead throughout. One week before demo day, your manager mentions that presenting the demo to the executive audience would be great visibility for a junior engineer on the team who has been doing strong work. What is the Succeed Together response?",
+    "es": "Tu equipo está construyendo una función importante bajo un plazo ajustado. Tú diseñaste la arquitectura central y has sido el líder técnico durante todo el proyecto. Una semana antes del día de la demo, tu manager menciona que presentar la demo al público ejecutivo sería buena visibilidad para un ingeniero junior del equipo que ha estado haciendo un trabajo sólido. ¿Cuál es la respuesta de Succeed Together (éxito compartido)?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "Actively set up the junior engineer to present: walk them through the architecture, prepare them for tough questions from the executives, and explicitly tell the room before stepping back — 'This feature was a team effort. I want Priya to walk you through it; she's been driving the implementation.'",
+        "es": "Preparar activamente al ingeniero junior para presentar: explicarle la arquitectura, prepararlos para preguntas difíciles de los ejecutivos, y decirle explícitamente a la sala antes de retirarte — 'Esta función fue un esfuerzo del equipo. Quiero que Priya les explique; ella ha estado liderando la implementación.'"
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Agree to let them present, but co-present so that both of you get visibility and the technical depth is covered properly.",
+        "es": "Aceptar que presenten, pero co-presentar para que ambos tengan visibilidad y la profundidad técnica esté cubierta correctamente."
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Agree enthusiastically, and mention afterward to your manager that you hope this kind of contribution is noted — you want the team to succeed but also want your own effort recognized.",
+        "es": "Aceptar con entusiasmo, y mencionar después a tu manager que esperas que este tipo de contribución sea notada — quieres que el equipo tenga éxito pero también quieres que tu propio esfuerzo sea reconocido."
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Offer to present together and share credit equally, since both of you contributed to the feature and equal credit is the fair outcome.",
+        "es": "Ofrecer presentar juntos y compartir el crédito equitativamente, ya que ambos contribuyeron a la función y el crédito igualitario es el resultado justo."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is the ST response: the candidate actively invests effort in giving the visibility away — preparing the junior engineer, handling the transition gracefully, and naming the transfer explicitly. The handoff requires work, not just permission. Option B is the credit-sharing trap: co-presenting splits visibility but doesn't give it up — the candidate still stays in the room as the technical authority. Option C reveals credit-tracking under the surface of generosity — agreeing then immediately surfacing personal recognition concerns is the 'AND I also' anti-pattern. Option D frames equal credit as fairness, but ST is specifically about the team win over individual visibility — when the junior needs visibility more, equal split can still be a form of visibility-hoarding.",
+    "es": "La opción A es la respuesta ST: el candidato invierte activamente esfuerzo en ceder la visibilidad — preparando al ingeniero junior, manejando la transición con gracia, y nombrando explícitamente la transferencia. La entrega requiere trabajo, no solo permiso. La opción B es la trampa de compartir crédito: co-presentar divide la visibilidad pero no la cede — el candidato sigue en la sala como autoridad técnica. La opción C revela seguimiento de crédito bajo la superficie de la generosidad — aceptar y luego inmediatamente plantear preocupaciones de reconocimiento personal es el anti-patrón del 'Y además yo también'. La opción D enmarca el crédito igualitario como justicia, pero ST trata específicamente del éxito del equipo sobre la visibilidad individual — cuando el junior necesita visibilidad más, la división igualitaria puede seguir siendo una forma de acaparamiento de visibilidad."
+  }
+}

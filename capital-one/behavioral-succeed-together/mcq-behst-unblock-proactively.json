@@ -1,0 +1,48 @@
+{
+  "id": "mcq-behst-unblock-proactively",
+  "type": "mcq",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "Unblocking a teammate before being asked",
+    "es": "Desbloquear a un compañero antes de que te lo pidan"
+  },
+  "prompt": {
+    "en": "You notice during standup that a teammate, Marcus, keeps mentioning the same integration dependency two days in a row — he hasn't called it a blocker, but the phrasing is 'still waiting on confirmation from the platform team.' You are not formally assigned to that dependency. Which response best demonstrates proactive unblocking?",
+    "es": "Durante el standup, notas que un compañero, Marcus, menciona la misma dependencia de integración dos días seguidos — no lo ha llamado un bloqueador, pero la frase es 'todavía esperando confirmación del equipo de plataforma'. Tú no estás asignado formalmente a esa dependencia. ¿Cuál respuesta demuestra mejor el desbloqueo proactivo?"
+  },
+  "options": [
+    {
+      "id": "a",
+      "label": {
+        "en": "After standup, tell Marcus: 'I noticed you've mentioned the platform dependency twice — I have a contact there, I can chase it for you today. Want me to take that off your plate?' Then follow through without waiting for him to ask again.",
+        "es": "Después del standup, decirle a Marcus: 'Noté que mencionaste la dependencia de plataforma dos veces — tengo un contacto allí, puedo perseguirla hoy. ¿Quieres que te lo quite de encima?' Luego cumplir sin esperar a que vuelva a pedir."
+      }
+    },
+    {
+      "id": "b",
+      "label": {
+        "en": "Flag it in the team Slack channel: 'Heads up everyone — looks like Marcus may have a blocker on the platform dependency. Marcus, let us know if you need help!'",
+        "es": "Señalarlo en el canal de Slack del equipo: '¡Aviso a todos — parece que Marcus puede tener un bloqueador en la dependencia de plataforma. Marcus, avísanos si necesitas ayuda!'"
+      }
+    },
+    {
+      "id": "c",
+      "label": {
+        "en": "Bring it up in the next standup: 'Marcus, is the platform dependency a blocker? Should we escalate this to our manager?'",
+        "es": "Plantearlo en el siguiente standup: 'Marcus, ¿es la dependencia de plataforma un bloqueador? ¿Deberíamos escalar esto a nuestro manager?'"
+      }
+    },
+    {
+      "id": "d",
+      "label": {
+        "en": "Wait for Marcus to formally declare a blocker — intervening before he asks could undermine his autonomy and make him feel micromanaged.",
+        "es": "Esperar a que Marcus declare formalmente un bloqueador — intervenir antes de que pida podría socavar su autonomía y hacerle sentir micromanejado."
+      }
+    }
+  ],
+  "correctOptionId": "a",
+  "explanation": {
+    "en": "Option A is proactive unblocking: the candidate noticed the pattern (not a declared blocker — a repeated mention), used their own network to make intervention actionable, offered privately rather than publicizing the teammate's situation, and committed to following through. The move is quiet and effective. Option B is reactive noise: broadcasting to the team what the candidate noticed could embarrass Marcus and puts the next step back on him. It's awareness performance, not unblocking. Option C escalates rather than unblocks — going to the manager before trying the direct path is the wrong default, especially when the candidate has a direct channel. Option D frames autonomy as a reason not to act; this confuses micromanagement (checking on someone's work) with unblocking (removing an obstacle they can't remove themselves).",
+    "es": "La opción A es el desbloqueo proactivo: el candidato notó el patrón (no un bloqueador declarado — una mención repetida), usó su propia red para hacer la intervención factible, ofreció de forma privada en lugar de publicitar la situación del compañero, y se comprometió a hacer seguimiento. El movimiento es silencioso y efectivo. La opción B es ruido reactivo: transmitir al equipo lo que el candidato notó podría avergonzar a Marcus y devuelve el siguiente paso a él. Es actuación de conciencia, no desbloqueo. La opción C escala en lugar de desbloquear — ir al manager antes de intentar el camino directo es el predeterminado incorrecto, especialmente cuando el candidato tiene un canal directo. La opción D enmarca la autonomía como razón para no actuar; esto confunde el micromanagement (verificar el trabajo de alguien) con el desbloqueo (eliminar un obstáculo que no pueden eliminar solos)."
+  }
+}

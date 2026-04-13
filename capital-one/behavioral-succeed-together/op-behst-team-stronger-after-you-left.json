@@ -1,0 +1,30 @@
+{
+  "id": "op-behst-team-stronger-after-you-left",
+  "type": "open-prompt",
+  "section": "behavioral-succeed-together",
+  "title": {
+    "en": "What the team kept after you left",
+    "es": "Lo que el equipo conservó después de que te fuiste"
+  },
+  "question": {
+    "en": "Tell me about a team or project you left in a better place. What specifically is better — in a way that would still be true even if every feature you personally built was removed?",
+    "es": "Cuéntame sobre un equipo o proyecto que dejaste en un mejor lugar. ¿Qué específicamente está mejor — de una manera que seguiría siendo cierta incluso si se eliminara cada función que construiste personalmente?"
+  },
+  "rubric": {
+    "must_include": [
+      "a specific capability, process, or person's skill that the team now has — not the candidate's features, but something durable: a runbook, an architectural pattern, a testing discipline, a teammate who can now independently do something they couldn't before",
+      "what the candidate specifically did to create or transfer that capability — not 'I contributed to a positive culture' but the concrete mechanism: wrote and ran practice incident drills, gave ownership of a specific module, established a review process that the team continued using",
+      "at least one named person who is part of the stronger team — if no teammate is named, the story is about the candidate's output, not the team's strength",
+      "evidence that the improvement persists independent of the candidate — a teammate still using the process, a successor who relied on the documentation, a junior engineer who was promoted based on skills developed during the candidate's tenure",
+      "an honest assessment of what is NOT better — 'everything improved' is not credible; naming what the candidate did not change (and why) demonstrates calibration"
+    ],
+    "must_avoid": [
+      "output metrics as the legacy — 'our velocity doubled' or 'we shipped 3 major features' may reflect the candidate's contribution but are not durable team capabilities; they describe what was done, not what the team can now do",
+      "relationship capital as the legacy — 'I built strong relationships across the org' is personal capital that leaves with the candidate; it is not team-strengthening in the ST sense",
+      "vague culture claims — 'I fostered a culture of collaboration' without a named artifact or named person who carries that culture forward",
+      "features as legacy — if every named improvement is a feature the candidate built, this is an Excellence story, not a ST story; the distinction is between what was delivered and what the team now has"
+    ],
+    "value_alignment": "Succeed Together",
+    "min_words": 200
+  }
+}
