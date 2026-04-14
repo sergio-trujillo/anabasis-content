@@ -118,13 +118,17 @@ The goal is training **pattern recognition under pressure** — by variant 8, th
 | slug | status |
 |---|---|
 | `capital-one`  | `active`      |
-| `amazon`       | `coming-soon` |
 | `stripe`       | `coming-soon` |
-| `google`       | `coming-soon` |
+| `shopify`      | `coming-soon` |
 | `mercadolibre` | `coming-soon` |
-| `globant`      | `coming-soon` |
+| `nubank`       | `coming-soon` |
+| `doordash`     | `coming-soon` |
 
-Do not flip any other company to `active` without shipping its matching `loop.json` + content tree first.
+The coming-soon roster is curated to well-documented processes (not pure FAANG): Stripe's integration-day + bug-squash loop, Shopify's Life Story + pair programming, MercadoLibre's LATAM tech challenge, Nubank's pair programming + cultural, DoorDash's LC + system design + behavioral. Do not flip any other company to `active` without shipping its matching `loop.json` + content tree first.
+
+## Bilingual interviewer-chat content
+
+As of F3, every `interviewer-chat` exercise is fully bilingual. The `topic`, `persona`, `must_explore`, and `opening_message` fields each accept either a plain `string` (English-only legacy shape) or `{ en, es }` / `{ en: string[], es: string[] }`. The server resolves the active locale from `chat.start({ locale })` and feeds the interviewer prompt template in the matching language. The Spanish register is neutral professional with tuteo ("tú", never "vos" or "usted"); industry-standard English terms (stateless, framework, tradeoff, stream, pipeline, stakeholder, etc.) stay untranslated.
 
 ---
 
