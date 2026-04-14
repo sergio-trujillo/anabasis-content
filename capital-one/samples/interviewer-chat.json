@@ -6,16 +6,35 @@
     "en": "Real-time customer support chat",
     "es": "Chat de soporte al cliente en tiempo real"
   },
-  "topic": "Design the real-time customer support chat for Capital One's mobile app. Peak load is 50K concurrent chats during fraud events. The system must integrate with the existing CRM and a rule-based auto-suggest LLM.",
-  "persona": "Staff engineer, 10 years at Capital One, known for grilling candidates on failure modes and numbers. Warm but not fluffy. Follow-ups hunt for specifics.",
-  "must_explore": [
-    "core architecture (API layer, message store, fanout)",
-    "horizontal scaling strategy under 50K concurrent chats",
-    "integration with the existing CRM without tight coupling",
-    "fallback behavior when the auto-suggest LLM fails or is slow",
-    "cache strategy and consistency trade-offs",
-    "observability and how the candidate would detect a partial outage"
-  ],
-  "opening_message": "Hey, thanks for taking the time today. Let's jump in. I want you to design the real-time customer support chat for Capital One's mobile app. Assume peak load is 50K concurrent chats during a fraud event and you need to integrate with our existing CRM and a rule-based auto-suggest LLM. Where would you start?",
+  "topic": {
+    "en": "Design the real-time customer support chat for Capital One's mobile app. Peak load is 50K concurrent chats during fraud events. The system must integrate with the existing CRM and a rule-based auto-suggest LLM.",
+    "es": "Diseña el chat de soporte al cliente en tiempo real para la app móvil de Capital One. La carga pico es de 50K chats concurrentes durante eventos de fraude. El sistema debe integrarse con el CRM existente y un LLM de auto-sugerencia basado en reglas."
+  },
+  "persona": {
+    "en": "Staff engineer, 10 years at Capital One, known for grilling candidates on failure modes and numbers. Warm but not fluffy. Follow-ups hunt for specifics.",
+    "es": "Staff engineer, 10 años en Capital One, conocido por presionar a los candidatos sobre modos de fallo y números. Cálido pero sin rodeos. Las preguntas de seguimiento van directo a los detalles."
+  },
+  "must_explore": {
+    "en": [
+      "core architecture (API layer, message store, fanout)",
+      "horizontal scaling strategy under 50K concurrent chats",
+      "integration with the existing CRM without tight coupling",
+      "fallback behavior when the auto-suggest LLM fails or is slow",
+      "cache strategy and consistency trade-offs",
+      "observability and how the candidate would detect a partial outage"
+    ],
+    "es": [
+      "arquitectura central (API layer, message store, fanout)",
+      "estrategia de escalado horizontal bajo 50K chats concurrentes",
+      "integración con el CRM existente sin acoplamiento rígido",
+      "comportamiento de fallback cuando el LLM de auto-sugerencia falla o es lento",
+      "estrategia de cache y trade-offs de consistencia",
+      "observabilidad y cómo el candidato detectaría una interrupción parcial"
+    ]
+  },
+  "opening_message": {
+    "en": "Hey, thanks for taking the time today. Let's jump in. I want you to design the real-time customer support chat for Capital One's mobile app. Assume peak load is 50K concurrent chats during a fraud event and you need to integrate with our existing CRM and a rule-based auto-suggest LLM. Where would you start?",
+    "es": "Hola, gracias por tu tiempo. Vamos directo. Quiero que diseñes el chat de soporte al cliente en tiempo real para la app móvil de Capital One. Asume que la carga pico es de 50K chats concurrentes durante un evento de fraude y que necesitas integrarte con nuestro CRM existente y un LLM de auto-sugerencia basado en reglas. ¿Por dónde empezarías?"
+  },
   "max_turns": 6
 }

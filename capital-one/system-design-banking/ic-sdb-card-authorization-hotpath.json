@@ -6,16 +6,35 @@
     "en": "Real-time card authorization hot-path",
     "es": "Hot-path de autorización de tarjetas en tiempo real"
   },
-  "topic": "Design the real-time card authorization hot-path for Capital One's consumer credit cards. Peak load is 40K authorizations per second during the Black Friday 16:00 ET window; the end-to-end p99 budget is sub-100ms from card-swipe to approved/declined response. The hot-path must query the card-issuance mainframe for current credit-limit data (mainframe cannot be modified) and must incorporate a fraud score before the response is sent — whether inline or asynchronous is the candidate's call to justify.",
-  "persona": "Staff engineer, 11 years at Capital One, built the current-generation authorization stack from its 2018 re-platform. Warm and technically generous, but hunts for numbers at every turn — 'Where is the 100ms going?' is a recurring follow-up. Knows where the bodies are buried in the mainframe integration.",
-  "must_explore": [
-    "core path architecture: what services sit between the card network (Visa/MC) and the response, and what does each one do",
-    "idempotency strategy: how duplicate auth requests from the card network are detected and handled without double-posting",
-    "mainframe integration pattern for credit-limit reads: sync call vs. CDC-fed cache, staleness SLA, and cache invalidation on limit changes",
-    "fraud fanout latency decision: inline vs. async scoring, which cohort gets which treatment, and how the p99 budget is allocated across segments",
-    "cache strategy and invalidation: what is cached, what the TTL is, and what happens when the cache is cold on the first request of a new account",
-    "what breaks first when load doubles to 80K/sec, and what the scaling path looks like for the authorization service itself"
-  ],
-  "opening_message": "Hey, thanks for taking the time today. Let's jump in. I want you to design the card authorization hot-path for Capital One consumer credit cards. Assume we're targeting a sub-100ms p99 end-to-end at 40K authorizations per second — that's our Black Friday peak — and you need to hit the mainframe for credit-limit data and run a fraud score before you respond. Where would you start?",
+  "topic": {
+    "en": "Design the real-time card authorization hot-path for Capital One's consumer credit cards. Peak load is 40K authorizations per second during the Black Friday 16:00 ET window; the end-to-end p99 budget is sub-100ms from card-swipe to approved/declined response. The hot-path must query the card-issuance mainframe for current credit-limit data (mainframe cannot be modified) and must incorporate a fraud score before the response is sent — whether inline or asynchronous is the candidate's call to justify.",
+    "es": "Diseña el hot-path de autorización de tarjetas en tiempo real para las tarjetas de crédito de consumo de Capital One. La carga pico es de 40K autorizaciones por segundo durante la ventana del Black Friday a las 16:00 ET; el presupuesto p99 de extremo a extremo es de menos de 100ms desde el swipe de la tarjeta hasta la respuesta aprobado/rechazado. El hot-path debe consultar el mainframe de emisión de tarjetas para los datos del límite de crédito actual (el mainframe no puede modificarse) e incorporar un fraud score antes de enviar la respuesta — si inline o asíncrono es decisión del candidato y debe justificarlo."
+  },
+  "persona": {
+    "en": "Staff engineer, 11 years at Capital One, built the current-generation authorization stack from its 2018 re-platform. Warm and technically generous, but hunts for numbers at every turn — 'Where is the 100ms going?' is a recurring follow-up. Knows where the bodies are buried in the mainframe integration.",
+    "es": "Staff engineer, 11 años en Capital One, construyó el stack de autorización de la generación actual desde su re-plataforma de 2018. Cálido y generoso técnicamente, pero busca números en cada oportunidad — '¿A dónde van los 100ms?' es un follow-up recurrente. Sabe dónde están enterrados los cadáveres en la integración con el mainframe."
+  },
+  "must_explore": {
+    "en": [
+      "core path architecture: what services sit between the card network (Visa/MC) and the response, and what does each one do",
+      "idempotency strategy: how duplicate auth requests from the card network are detected and handled without double-posting",
+      "mainframe integration pattern for credit-limit reads: sync call vs. CDC-fed cache, staleness SLA, and cache invalidation on limit changes",
+      "fraud fanout latency decision: inline vs. async scoring, which cohort gets which treatment, and how the p99 budget is allocated across segments",
+      "cache strategy and invalidation: what is cached, what the TTL is, and what happens when the cache is cold on the first request of a new account",
+      "what breaks first when load doubles to 80K/sec, and what the scaling path looks like for the authorization service itself"
+    ],
+    "es": [
+      "arquitectura del path central: qué servicios se encuentran entre la red de tarjetas (Visa/MC) y la respuesta, y qué hace cada uno",
+      "estrategia de idempotency: cómo se detectan y manejan las solicitudes de autorización duplicadas de la red de tarjetas sin double-posting",
+      "patrón de integración con el mainframe para lecturas del límite de crédito: llamada sync vs. cache alimentado por CDC, SLA de obsolescencia y cache invalidation en cambios de límite",
+      "decisión de latency de fraud fanout: scoring inline vs. async, qué cohorte recibe qué tratamiento y cómo se asigna el presupuesto p99 entre segmentos",
+      "estrategia de cache e invalidation: qué se cachea, cuál es el TTL y qué pasa cuando el cache está frío en la primera solicitud de una cuenta nueva",
+      "qué falla primero cuando la carga se duplica a 80K/seg, y cómo es el scaling path del propio servicio de autorización"
+    ]
+  },
+  "opening_message": {
+    "en": "Hey, thanks for taking the time today. Let's jump in. I want you to design the card authorization hot-path for Capital One consumer credit cards. Assume we're targeting a sub-100ms p99 end-to-end at 40K authorizations per second — that's our Black Friday peak — and you need to hit the mainframe for credit-limit data and run a fraud score before you respond. Where would you start?",
+    "es": "Hola, gracias por tu tiempo. Vamos directo. Quiero que diseñes el hot-path de autorización de tarjetas para las tarjetas de crédito de consumo de Capital One. Asume que apuntamos a un p99 de extremo a extremo de menos de 100ms a 40K autorizaciones por segundo — ese es nuestro pico de Black Friday — y necesitas consultar el mainframe para los datos del límite de crédito y correr un fraud score antes de responder. ¿Por dónde empezarías?"
+  },
   "max_turns": 6
 }

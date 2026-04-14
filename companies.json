@@ -7,25 +7,18 @@
     "accentColor": "#004977"
   },
   {
-    "slug": "amazon",
-    "name": "Amazon",
-    "status": "coming-soon",
-    "tagline": "Bar raiser + LPs",
-    "accentColor": "#FF9900"
-  },
-  {
     "slug": "stripe",
     "name": "Stripe",
     "status": "coming-soon",
-    "tagline": "Integration day",
+    "tagline": "Integration day + bug squash",
     "accentColor": "#635BFF"
   },
   {
-    "slug": "google",
-    "name": "Google",
+    "slug": "shopify",
+    "name": "Shopify",
     "status": "coming-soon",
-    "tagline": "Googleyness + DSA",
-    "accentColor": "#4285F4"
+    "tagline": "Life Story + pair programming",
+    "accentColor": "#96BF48"
   },
   {
     "slug": "mercadolibre",
@@ -35,10 +28,17 @@
     "accentColor": "#FFE600"
   },
   {
-    "slug": "globant",
-    "name": "Globant",
+    "slug": "nubank",
+    "name": "Nubank",
     "status": "coming-soon",
-    "tagline": "Pod + studio fit",
-    "accentColor": "#00C853"
+    "tagline": "Pair programming + cultural",
+    "accentColor": "#8A05BE"
+  },
+  {
+    "slug": "doordash",
+    "name": "DoorDash",
+    "status": "coming-soon",
+    "tagline": "LC + system design + behavioral",
+    "accentColor": "#EB1700"
   }
 ]
