@@ -7,12 +7,40 @@
       "name": "General Coding Assessment",
       "description": "70-minute timed coding assessment on CodeSignal. 4 problems of increasing difficulty.",
       "sections": [
-        { "id": "gca-overview", "name": "Overview", "kind": "lesson+drills" },
-        { "id": "gca-module-1-warmup", "name": "Module 1 — Warmup", "kind": "code" },
-        { "id": "gca-module-2-data-manipulation", "name": "Module 2 — Data Manipulation", "kind": "code" },
-        { "id": "gca-module-3-implementation", "name": "Module 3 — Implementation", "kind": "code" },
-        { "id": "gca-module-4-algorithms", "name": "Module 4 — Algorithm Patterns", "kind": "code" },
-        { "id": "gca-mock", "name": "Mock GCA", "kind": "timed" }
+        {
+          "id": "gca-overview",
+          "name": "Overview",
+          "kind": "lesson+drills"
+        },
+        {
+          "id": "gca-module-1-warmup",
+          "name": "M1 · Warmup",
+          "kind": "code",
+          "group": "Modules"
+        },
+        {
+          "id": "gca-module-2-data-manipulation",
+          "name": "M2 · Data",
+          "kind": "code",
+          "group": "Modules"
+        },
+        {
+          "id": "gca-module-3-implementation",
+          "name": "M3 · Implementation",
+          "kind": "code",
+          "group": "Modules"
+        },
+        {
+          "id": "gca-module-4-algorithms",
+          "name": "M4 · Patterns",
+          "kind": "code",
+          "group": "Modules"
+        },
+        {
+          "id": "gca-mock",
+          "name": "Mock",
+          "kind": "timed"
+        }
       ]
     },
     {
@@ -20,18 +48,76 @@
       "name": "Power Day — Virtual Onsite",
       "description": "Four back-to-back rounds: 2 coding, 1 system design or behavioral, 1 business case.",
       "sections": [
-        { "id": "power-day-overview", "name": "Overview", "kind": "lesson+drills" },
-        { "id": "coding-round-1", "name": "Coding Round 1", "kind": "code" },
-        { "id": "coding-round-2-job-fit", "name": "Coding Round 2 — Job Fit", "kind": "code+defense" },
-        { "id": "system-design-banking", "name": "System Design — Banking", "kind": "interviewer-chat" },
-        { "id": "behavioral-excellence", "name": "Behavioral — Excellence", "kind": "behavioral" },
-        { "id": "behavioral-do-the-right-thing", "name": "Behavioral — Do the Right Thing", "kind": "behavioral" },
-        { "id": "behavioral-respect-for-individuals", "name": "Behavioral — Respect for Individuals", "kind": "behavioral" },
-        { "id": "behavioral-succeed-together", "name": "Behavioral — Succeed Together", "kind": "behavioral" },
-        { "id": "business-case-fundamentals", "name": "Business Case — Fundamentals", "kind": "business-case" },
-        { "id": "business-case-frameworks", "name": "Business Case — Frameworks", "kind": "business-case" },
-        { "id": "business-case-banking", "name": "Business Case — Banking", "kind": "business-case" },
-        { "id": "power-day-mock", "name": "Mock Power Day", "kind": "mock-loop" }
+        {
+          "id": "power-day-overview",
+          "name": "Overview",
+          "kind": "lesson+drills"
+        },
+        {
+          "id": "coding-round-1",
+          "name": "R1 · Coding",
+          "kind": "code",
+          "group": "Coding"
+        },
+        {
+          "id": "coding-round-2-job-fit",
+          "name": "R2 · Coding + Fit",
+          "kind": "code+defense",
+          "group": "Coding"
+        },
+        {
+          "id": "system-design-banking",
+          "name": "Banking",
+          "kind": "interviewer-chat",
+          "group": "System Design"
+        },
+        {
+          "id": "behavioral-excellence",
+          "name": "Excellence",
+          "kind": "behavioral",
+          "group": "Behavioral"
+        },
+        {
+          "id": "behavioral-do-the-right-thing",
+          "name": "Do the Right Thing",
+          "kind": "behavioral",
+          "group": "Behavioral"
+        },
+        {
+          "id": "behavioral-respect-for-individuals",
+          "name": "Respect for Individuals",
+          "kind": "behavioral",
+          "group": "Behavioral"
+        },
+        {
+          "id": "behavioral-succeed-together",
+          "name": "Succeed Together",
+          "kind": "behavioral",
+          "group": "Behavioral"
+        },
+        {
+          "id": "business-case-fundamentals",
+          "name": "Fundamentals",
+          "kind": "business-case",
+          "group": "Business Case"
+        },
+        {
+          "id": "business-case-frameworks",
+          "name": "Frameworks",
+          "kind": "business-case",
+          "group": "Business Case"
+        },
+        {
+          "id": "business-case-banking",
+          "name": "Banking",
+          "kind": "business-case",
+          "group": "Business Case"
+        },
+        {
+          "id": "power-day-mock",
+          "name": "Mock",
+          "kind": "mock-loop"
+        }
       ]
     }
   ]
