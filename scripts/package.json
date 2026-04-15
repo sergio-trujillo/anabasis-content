@@ -1,0 +1,19 @@
+{
+  "name": "anabasis-content-scripts",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Maintenance scripts for the anabasis-content tree.",
+  "scripts": {
+    "enrich": "tsx enrich-code-exercises.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.89.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3"
+  }
+}

@@ -6,3 +6,6 @@
 
 # generated content cache
 .cache/
+
+# script workspace
+scripts/node_modules/
